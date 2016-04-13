@@ -40,12 +40,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-5 topbar-left text-left info-text1">
-                    <div class="email"><a href="#"><i class="topbar-icon fa fa-envelope-o"></i><span>hello.shinway@gmail.com</span></a></div>
-                    <div class="hotline"><a href="#"><i class="topbar-icon fa fa-phone"></i><span>+84 909 015 345</span></a></div>
+                    <div class="email"><a href="#"><i class="topbar-icon fa fa-envelope-o"></i><span>info@ces.com</span></a></div>
+                    <div class="hotline"><a href="#"><i class="topbar-icon fa fa-phone"></i><span>+92 345 3570132</span></a></div>
                 </div>
                 <div class="col-md-2 logo-topbar info-text2"><a href="index.html"><img src="assets/images/logo-color-1.png" alt=""/></a></div>
                 <div class="col-md-5 topbar-right text-right info-text3">
-                    <div class="group-sign-in"><a href="login.html" class="login">login</a><a href="register.html" class="register">register</a></div>
+                    <div class="group-sign-in"><a href="login.html" class="login">Subscription Expires in 13 Day(s)</a><a href="register.html" class="register">Renew Package</a></div>
                 </div>
             </div>
         </div>
