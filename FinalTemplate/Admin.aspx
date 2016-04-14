@@ -83,13 +83,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- SLIDER TALK ABOUT US-->                    
-                    <div id="topStudents" class="group-title-index"><h4 class="top-title">Some of the top students in your school</h4>
-
-                            <h2 class="center-title">These are the top 5 students</h2>
-
-                            <div class="bottom-title"><i class="bottom-icon icon-icon-04"></i></div>
-                        </div>
+                <!-- SLIDER TALK ABOUT US-->                                        
                 <div class="section background-opacity slider-talk-about-us">
                     <div class="container">
                          
