@@ -201,7 +201,6 @@
     <Content Include="assets\libs\smooth-scroll\jquery-smoothscroll.js" />
     <Content Include="assets\libs\wow-js\wow.min.js" />
     <Content Include="Default.aspx" />
-    <Content Include="homepage-03.html" />
     <Content Include="select_registration_type.aspx" />
     <Content Include="StudentRegistration.aspx" />
     <Content Include="TeacherPanel.aspx" />
