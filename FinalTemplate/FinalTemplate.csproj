@@ -206,6 +206,7 @@
     <Content Include="select_resistration_type.aspx" />
     <Content Include="studentpanel.aspx" />
     <Content Include="StudentRegistration.aspx" />
+    <Content Include="teacher.aspx" />
     <Content Include="TeacherPanel.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -266,6 +267,13 @@
     </Compile>
     <Compile Include="StudentRegistration.aspx.designer.cs">
       <DependentUpon>StudentRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="teacher.aspx.cs">
+      <DependentUpon>teacher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="teacher.aspx.designer.cs">
+      <DependentUpon>teacher.aspx</DependentUpon>
     </Compile>
     <Compile Include="Teacher.Master.cs">
       <DependentUpon>Teacher.Master</DependentUpon>
