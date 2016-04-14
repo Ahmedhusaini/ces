@@ -1,17 +1,25 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="FinalTemplate.Admin1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="AdminHeadPlaceHolder" runat="server">
+    
+    <script src="assets/js/jquery-2.2.3.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#topStudents').addClass('topPadding');
+        });
+    </script>
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="AdminContentPlaceHolder" runat="server">
                 <!-- SLIDER BANNER-->
                 <div class="section slider-banner-03 background-opacity-2">
                     <div class="container">
-                        <div class="slider-banner-wrapper"><h3 data-wow-delay="0.5s" class="sub-title wow fadeInUp">This is a place of</h3>
+                        <div class="slider-banner-wrapper"><h3 data-wow-delay="0.5s" class="sub-title wow fadeInUp">Login Date:03/08/2016 and Login Time: 09:23:00 AM</h3>
 
-                            <h1 data-wow-delay="0.5s" class="main-title wow fadeInUp">Learning & creating</h1>
+                            <h1 data-wow-delay="0.5s" class="main-title wow fadeInUp">School Name</h1>
 
                             <div class="group-button">
-                                <button data-wow-delay="1.3s" data-wow-duration="1s" class="btn btn-transition-3 wow fadeInLeft"><span>Puschase theme</span></button>
-                                <button data-wow-delay="1.3s" data-wow-duration="1s" class="btn btn-green-3 wow fadeInRight"><span>start Learn now</span></button>
+                                <button data-wow-delay="1.3s" data-wow-duration="1s" class="btn btn-transition-3 wow fadeInLeft"><span>View Public Profile</span></button>
+                                <button data-wow-delay="1.3s" data-wow-duration="1s" class="btn btn-green-3 wow fadeInRight"><span>Update Profile Details</span></button>
                             </div>
                         </div>
                     </div>
@@ -22,27 +30,27 @@
                         <div class="item-course">
                             <div class="item-course-wrapper">
                                 <div class="icon-course"><i class="icons-img icon-globe"></i></div>
-                                <div class="info-course"><a href="#" class="name-course">Language</a>
+                                <div class="info-course"><a href="#" class="name-course">Results</a>
 
-                                    <div class="info">It is a long established fact that a reader will be distracted.</div>
+                                    <div class="info">Search, view and generate results for any type of exames. You can also check feedback regarding any result posted by students or parents.</div>
                                 </div>
                             </div>
                         </div>
                         <div class="item-course">
                             <div class="item-course-wrapper">
                                 <div class="icon-course"><i class="icons-img fa fa-database"></i></div>
-                                <div class="info-course"><a href="#" class="name-course">Software</a>
+                                <div class="info-course"><a href="#" class="name-course">Management</a>
 
-                                    <div class="info">It is a long established fact that a reader will be distracted.</div>
+                                    <div class="info">All features related to any management section are available in this section of website. Click anywhere on this to view more options.</div>
                                 </div>
                             </div>
                         </div>
                         <div class="item-course">
                             <div class="item-course-wrapper">
                                 <div class="icon-course"><i class="icons-img icon-computer_network"></i></div>
-                                <div class="info-course"><a href="#" class="name-course">Social Media</a>
+                                <div class="info-course"><a href="#" class="name-course">School Feedback</a>
 
-                                    <div class="info">It is a long established fact that a reader will be distracted.</div>
+                                    <div class="info">Check what other people are saying about your school. View their feedback for improvement.</div>
                                 </div>
                             </div>
                         </div>
@@ -51,7 +59,7 @@
                                 <div class="icon-course"><i class="icons-img icon-photocamera_1"></i></div>
                                 <a href="#" class="info-course">
                                     <div class="name-course">Photography</div>
-                                    <div class="info">It is a long established fact that a reader will be distracted.</div>
+                                    <div class="info">Relive the past memories and view all pictures from past events and functions.</div>
                                 </a></div>
                         </div>
                         <div class="item-course">
@@ -59,7 +67,7 @@
                                 <div class="icon-course"><i class="icons-img icon-credit_card"></i></div>
                                 <div class="info-course"><a href="#" class="name-course">Business</a>
 
-                                    <div class="info">It is a long established fact that a reader will be distracted.</div>
+                                    <div class="info">Check your monthly expense and view subscription details. Keep an eye on everything that is important. If you find any kind of information irrelevent to your school kindly let us know my going to support section.</div>
                                 </div>
                             </div>
                         </div>
@@ -68,15 +76,23 @@
                                 <div class="icon-course"><i class="icons-img icon-chat_bubbles"></i></div>
                                 <div class="info-course"><a href="#" class="name-course">Communication</a>
 
-                                    <div class="info">It is a long established fact that a reader will be distracted.</div>
+                                    <div class="info">Make some interaction to students/parents and answer some queries. Click to check what is available now.</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- SLIDER TALK ABOUT US-->
+                    <div id="topStudents" class="group-title-index"><h4 class="top-title">Some of the top students in your schools based on the results.</h4>
+
+                            <h2 class="center-title">Top 5 students</h2>
+
+                            <div class="bottom-title"><i class="bottom-icon icon-icon-04"></i></div>
+                    </div>
                 <div class="section background-opacity slider-talk-about-us">
                     <div class="container">
+                         
+
                         <div id="people-talk" data-ride="carousel" data-interval="5000" class="slider-talk-about-us-wrapper carousel slide">
                             <div role="listbox" class="slider-talk-about-us-content carousel-inner">
                                 <div class="peopel-item item active"><p class="peopel-comment">" There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. "</p>

@@ -1,3 +1,7 @@
 .heightfix {    
     height: 100%;
 }
+.topPadding {
+    padding-top:20px;
+
+}
