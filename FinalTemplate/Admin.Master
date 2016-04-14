@@ -135,13 +135,13 @@
     <!-- FOOTER-->
 <footer>
     <div class="footer-top">
-        <div class="container">
+        <div class="container ">
             <div class="footer-top-wrapper">
-                <div class="footer-top-left"><p class="footer-top-focus">BECOME AN INSTRUCTOR</p>
+                <div class="footer-top-left"><p class="footer-top-focus">Create Advertisment</p>
 
-                    <p class="footer-top-text">Join thousand of instructors and earn money hassle free!</p></div>
+                    <p class="footer-top-text">We offer you to advertise your school ads on your portal. Kindly <a href="#">Click Here</a> to fill out simple advertisment form and choose suitable plan.</p></div>
                 <div class="footer-top-right">
-                    <button onclick="window.location.href='contact.html'" class="btn btn-blue btn-bold"><span>GET STARTED NOW</span></button>
+                    <button onclick="window.location.href='contact.html'" class="btn btn-blue btn-bold"><span>Post advertisment form</span></button>
                 </div>
             </div>
         </div>

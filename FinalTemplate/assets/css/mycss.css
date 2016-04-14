@@ -5,6 +5,40 @@
     padding-top:20px;
 }
 .teachingbackgroundImage {
-     background-image: url("../images/background-best-staff.jpg");
+     background-image: url("../images/teaching-staff/teachingstaff.jpg");
+}
+.animate {
+    height: auto;
+    width: 100%;
+    border: 1px solid #000;
+    -webkit-animation: animate_bg 5s;
+    animation: animate_bg 5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
 }
 
+@keyframes animate_bg {
+    0%   {background:#2876e2;}
+    10%  {background:#5aeed3;}
+    20%  {background:#903fc7;}
+    30%  {background:#ff4c99;}
+    50%  {background:#96f56a;}
+    60%  {background:#f7dd61;}
+    70%  {background:#0d98ba;}
+    80%  {background:#6699cc;}
+    90%  {background:#688bae;}
+    100% {background:#eb9c9c;}
+}
+
+@-webkit-keyframes animate_bg {
+    0%   {background:#2876e2;}
+    10%  {background:#5aeed3;}
+    20%  {background:#903fc7;}
+    30%  {background:#ff4c99;}
+    50%  {background:#96f56a;}
+    60%  {background:#f7dd61;}
+    70%  {background:#0d98ba;}
+    80%  {background:#6699cc;}
+    90%  {background:#688bae;}
+    100% {background:#eb9c9c;}
+}

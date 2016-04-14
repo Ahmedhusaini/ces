@@ -5,9 +5,9 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('#topStudents').addClass('topPadding');
-            
+            $('#teachingstaff').addClass('teachingbackgroundImage');            
         });
-    </script>
+    </script> 
     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="AdminContentPlaceHolder" runat="server">
@@ -292,7 +292,7 @@
                     </div>
                 </div>
                 <!-- BEST STAFF-->
-                <div class="section section-padding background-opacity best-staff">
+                <div id="teachingstaff" class="section section-padding background-opacity best-staff">
                     <div class="container">
                         <div class="group-title-index"><h4 class="top-title">Complete teacher list</h4>
 
