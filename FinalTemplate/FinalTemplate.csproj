@@ -202,6 +202,7 @@
     <Content Include="assets\libs\wow-js\wow.min.js" />
     <Content Include="Default.aspx" />
     <Content Include="homepage-03.html" />
+    <Content Include="select_registration_type.aspx" />
     <Content Include="StudentRegistration.aspx" />
     <Content Include="TeacherPanel.aspx" />
     <Content Include="Web.config" />
@@ -235,6 +236,13 @@
     </Compile>
     <Compile Include="Register.Master.designer.cs">
       <DependentUpon>Register.Master</DependentUpon>
+    </Compile>
+    <Compile Include="select_registration_type.aspx.cs">
+      <DependentUpon>select_registration_type.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="select_registration_type.aspx.designer.cs">
+      <DependentUpon>select_registration_type.aspx</DependentUpon>
     </Compile>
     <Compile Include="StudentRegistration.aspx.cs">
       <DependentUpon>StudentRegistration.aspx</DependentUpon>
