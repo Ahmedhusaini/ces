@@ -150,6 +150,7 @@
     <Content Include="assets\images\recent-post\recent-post-3.jpg" />
     <Content Include="assets\images\recent-post\recent-post-4.jpg" />
     <Content Include="assets\images\teacher-skill.png" />
+    <Content Include="assets\images\teaching-staff\teachingstaff.jpg" />
     <Content Include="assets\js\jquery-2.2.3.js" />
     <Content Include="assets\js\main.js" />
     <Content Include="assets\js\pages\contact.js" />

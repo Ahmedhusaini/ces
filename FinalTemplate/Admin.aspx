@@ -5,6 +5,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('#topStudents').addClass('topPadding');
+            
         });
     </script>
     
@@ -85,9 +86,7 @@
                 <!-- SLIDER TALK ABOUT US-->
                     <div id="topStudents" class="group-title-index"><h4 class="top-title">Some of the top students in your schools based on the results.</h4>
 
-                            <h2 class="center-title">Top 5 students</h2>
-
-                            <div class="bottom-title"><i class="bottom-icon icon-icon-04"></i></div>
+                           <h2 class="center-title">Top 5 students</h2>
                     </div>
                 <div class="section background-opacity slider-talk-about-us">
                     <div class="container">
@@ -189,59 +188,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="top-courses-slider">
-                                <div class="top-courses-item">
-                                    <div class="edugate-layout-2">
-                                        <div class="edugate-layout-2-wrapper">
-                                            <div class="edugate-content"><a href="courses-detail.html" class="title">Photoghaphy Master</a>
-
-                                                <div class="info">
-                                                    <div class="author item"><a href="#">By Admin</a></div>
-                                                    <div class="date-time item"><a href="#">17 sep 2015</a></div>
-                                                </div>
-                                                <div class="info-more">
-                                                    <div class="view item"><i class="fa fa-user"></i>
-
-                                                        <p> 56</p></div>
-                                                    <div class="comment item"><i class="fa fa-comment"></i>
-
-                                                        <p> 239</p></div>
-                                                </div>
-                                                <div title="Rated 5.00 out of 5" class="star-rating"><span class="width-70"><strong class="rating">5.00</strong> out of 5</span></div>
-                                                <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout...</div>
-                                                <button onclick="window.location.href='courses-detail.html'" class="btn btn-green"><span>learn now</span></button>
-                                            </div>
-                                            <div class="edugate-image"><img src="assets/images/courses/courses-3.jpg" alt="" class="img-responsive"/></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="top-courses-item">
-                                    <div class="edugate-layout-2">
-                                        <div class="edugate-layout-2-wrapper">
-                                            <div class="edugate-content"><a href="courses-detail.html" class="title">Photoghaphy Master</a>
-
-                                                <div class="info">
-                                                    <div class="author item"><a href="#">By Admin</a></div>
-                                                    <div class="date-time item"><a href="#">17 sep 2015</a></div>
-                                                </div>
-                                                <div class="info-more">
-                                                    <div class="view item"><i class="fa fa-user"></i>
-
-                                                        <p> 00</p></div>
-                                                    <div class="comment item"><i class="fa fa-comment"></i>
-
-                                                        <p> 02</p></div>
-                                                </div>
-                                                <div title="Rated 5.00 out of 5" class="star-rating"><span class="width-90"><strong class="rating">5.00</strong> out of 5</span></div>
-                                                <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout...</div>
-                                                <button onclick="window.location.href='courses-detail.html'" class="btn btn-green"><span>learn now</span></button>
-                                            </div>
-                                            <div class="edugate-image"><img src="assets/images/courses/courses-4.jpg" alt="" class="img-responsive"/></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            </div>                            
                             <div class="group-btn-top-courses-slider">
                                 <div class="btn-prev">&lsaquo;</div>
                                 <div class="btn-next">&rsaquo;</div>
@@ -276,7 +223,7 @@
                 <div class="section progress-bars section-padding">
                     <div class="container">
                         <div class="progress-bars-content">
-                            <div class="progress-bar-wrapper"><h2 class="title-2">Some important facts about us</h2>
+                            <div class="progress-bar-wrapper"><h2 class="title-2">Some useful information about your school</h2>
 
                                 <div class="row">
                                     <div class="content">
@@ -303,8 +250,8 @@
                                     </div>
                                 </div>
                                 <div class="group-button">
-                                    <button onclick="window.location.href='categories.html'" class="btn btn-transition-3"><span>Purchase theme</span></button>
-                                    <button onclick="window.location.href='about-us.html'" class="btn btn-green-3"><span>start Learn now</span></button>
+                                    <button onclick="window.location.href='categories.html'" class="btn btn-transition-3"><span>View Statics</span></button>
+                                    <button onclick="window.location.href='about-us.html'" class="btn btn-green-3"><span>Generate Report</span></button>
                                 </div>
                                 <div class="group-btn-slider">
                                     <div class="btn-prev"><i class="fa fa-angle-left"></i></div>
@@ -318,10 +265,10 @@
                 <div class="section why-choose-us">
                     <div class="why-choose-us-wrapper-top">
                         <div class="container">
-                            <div class="why-choose-us-wrapper"><h2 class="title-2">Why Edugate?</h2>
+                            <div class="why-choose-us-wrapper"><h2 class="title-2">Name of the teacher</h2>
 
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-                                <button onclick="window.location.href='categories.html'" class="btn btn-green-2"><span>start Learn now</span></button>
+                                <p>introduction of the teacher and his/her achievements</p>
+                                <button onclick="window.location.href='categories.html'" class="btn btn-green-2"><span>View Complete Profile</span></button>
                             </div>
                             <div data-wow-delay="0.2s" data-wow-duration="1.2s" class="background-girl-1 wow fadeInUp"><img src="assets/images/girl-1.png" alt="" class="img-responsive"/></div>
                         </div>
@@ -332,71 +279,24 @@
                                 <div class="customs-row">
                                     <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-pencil-square-o"></i>
 
-                                        <p> Over 600 free tutorial</p></div>
-                                    <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-compress"></i>
-
-                                        <p> Refund if not Satisfied</p></div>
-                                </div>
-                                <div class="customs-row">
-                                    <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-paper-plane"></i>
-
-                                        <p> Easy to learning everytime, everywhere</p></div>
+                                        <p>343 Days Present</p></div>
                                     <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-folder-open"></i>
-
-                                        <p> Over 3000 Ebook a-vailable</p></div>
-                                </div>
-                                <div class="customs-row">
+                                        <p>Updates all tasks on time.</p>
+                                    </div>
                                     <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-external-link"></i>
 
-                                        <p> Free updates & support</p></div>
-                                    <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-stumbleupon-circle"></i>
-
-                                        <p> Flexible payment methods</p></div>
-                                </div>
+                                        <p>003 Days Absent</p></div>
+                                </div>                                
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <!--LATEST NEW-->
-                <div class="section section-padding latest-news">
-                    <div class="container">
-                        <div class="group-title-index"><h4 class="top-title">latest news</h4>
-
-                            <h2 class="center-title">all about edugate updates</h2>
-
-                            <div class="bottom-title"><i class="bottom-icon icon-a-01-01"></i></div>
-                        </div>
-                        <div class="latest-news-wrapper">
-                            <div class="edugate-layout-1">
-                                <div class="edugate-image"><img src="assets/images/news/news-1.jpg" alt="" class="img-responsive"/></div>
-                                <div class="edugate-content"><a href="news-detail.html" class="title">Effective researching method</a>
-
-                                    <div class="info">
-                                        <div class="author item"><a href="#">By Admin</a></div>
-                                        <div class="date-time item"><a href="#">17 sep 2015</a></div>
-                                    </div>
-                                    <div class="info-more">
-                                        <div class="view item"><i class="fa fa-user"></i>
-
-                                            <p> 56</p></div>
-                                        <div class="comment item"><i class="fa fa-comment"></i>
-
-                                            <p> 239</p></div>
-                                    </div>
-                                    <div class="description">Dalmatian hello amazing the rmore flung as thanks a manta dealt to under emu some the and one baldbe dear sobbingly save and spitefully less Dalmatian hello amazing the rmore flung as thanks a manta dealt to under emu some the and one baldbe dear sobbingly save and spitefully Dalmatian hello amazing the...</div>
-                                    <button onclick="window.location.href='news-detail.html'" class="btn btn-green"><span>learn now</span></button>
-                                </div>
-                            </div>                                                 
-                            <button class="btn btn-green btn-latest-new"><span>Browser All Post<i class="fa fa-long-arrow-right"></i></span></button>
                         </div>
                     </div>
                 </div>
                 <!-- BEST STAFF-->
                 <div class="section section-padding background-opacity best-staff">
                     <div class="container">
-                        <div class="group-title-index"><h4 class="top-title">touch them if you want</h4>
+                        <div class="group-title-index"><h4 class="top-title">Complete teacher list</h4>
 
-                            <h2 class="center-title">learn from the best</h2>
+                            <h2 class="center-title">Here is your teaching staff</h2>
 
                             <div class="bottom-title"><i class="bottom-icon icon-icon-05"></i></div>
                         </div>
@@ -449,6 +349,41 @@
                         <div class="btn-prev"><i class="fa fa-angle-left"></i></div>
                         <div class="btn-next"><i class="fa fa-angle-right"></i></div>
                     </div>
-                </div>                             
+                </div>
+                <!--LATEST NEW-->
+                <div class="section section-padding latest-news">
+                    <div class="container">
+                        <div class="group-title-index"><h4 class="top-title">latest news</h4>
+
+                            <h2 class="center-title">all about edugate updates</h2>
+
+                            <div class="bottom-title"><i class="bottom-icon icon-a-01-01"></i></div>
+                        </div>
+                        <div class="latest-news-wrapper">
+                            <div class="edugate-layout-1">
+                                <div class="edugate-image"><img src="assets/images/news/news-1.jpg" alt="" class="img-responsive"/></div>
+                                <div class="edugate-content"><a href="news-detail.html" class="title">Effective researching method</a>
+
+                                    <div class="info">
+                                        <div class="author item"><a href="#">By Admin</a></div>
+                                        <div class="date-time item"><a href="#">17 sep 2015</a></div>
+                                    </div>
+                                    <div class="info-more">
+                                        <div class="view item"><i class="fa fa-user"></i>
+
+                                            <p> 56</p></div>
+                                        <div class="comment item"><i class="fa fa-comment"></i>
+
+                                            <p> 239</p></div>
+                                    </div>
+                                    <div class="description">Dalmatian hello amazing the rmore flung as thanks a manta dealt to under emu some the and one baldbe dear sobbingly save and spitefully less Dalmatian hello amazing the rmore flung as thanks a manta dealt to under emu some the and one baldbe dear sobbingly save and spitefully Dalmatian hello amazing the...</div>
+                                    <button onclick="window.location.href='news-detail.html'" class="btn btn-green"><span>learn now</span></button>
+                                </div>
+                            </div>                                                 
+                            <button class="btn btn-green btn-latest-new"><span>Browser All Post<i class="fa fa-long-arrow-right"></i></span></button>
+                        </div>
+                    </div>
+                </div>
+                                            
               
 </asp:Content>
