@@ -3,5 +3,8 @@
 }
 .topPadding {
     padding-top:20px;
-
 }
+.teachingbackgroundImage {
+     background-image: url("../images/background-best-staff.jpg");
+}
+
