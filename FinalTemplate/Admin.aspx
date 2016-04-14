@@ -14,7 +14,7 @@
                 <!-- SLIDER BANNER-->
                 <div class="section slider-banner-03 background-opacity-2">
                     <div class="container">
-                        <div class="slider-banner-wrapper"><h3 data-wow-delay="0.5s" class="sub-title wow fadeInUp">Login Date:03/08/2016 and Login Time: 09:23:00 AM</h3>
+                        <div class="slider-banner-wrapper"><h3 data-wow-delay="0.5s" class="sub-title wow fadeInUp">Login Date:03/08/2016 &nbsp;&nbsp; Login Time: 09:23:00 AM</h3>
 
                             <h1 data-wow-delay="0.5s" class="main-title wow fadeInUp">School Name</h1>
 
