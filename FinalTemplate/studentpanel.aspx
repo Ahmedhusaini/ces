@@ -18,16 +18,38 @@
                     </div>
                 </div>
         </div><br />
-    <%--profile pic--%>
-       <div class="staff-item">
-        <div class="staff-item-wrapper">
-            <div class="staff-info">
-                <a href="#" class="staff-avatar">
-                    <img src="assets/images/people-avatar-2.jpg" alt="" class="img-responsive" /></a><a href="#" class="staff-name">Sufiyan Big</a>
-                      <div class="staff-job">student class 5B</div>
-             </div>
-        </div>
-    </div><br />
+     <!-- CHOOSE COURSES-->
+              <div class="section choose-course-3">
+                    <div class="choose-course-3-wrapper row">
+                        <div class="item-course">
+                            <div class="item-course-wrapper">
+                                <div class="icon-course"><i class="icons-img icon-globe"></i></div>
+                                <div class="info-course"><a href="#" class="name-course">Results</a>
+
+                                    <div class="info">Search, view and generate results for any type of exames. You can also check feedback regarding any result posted by students or parents.</div>
+                                </div>
+                            </div>
+                        </div>
+                       <div class="item-course">
+                            <div class="item-course-wrapper">
+                                <div class="icon-course"><i class="icons-img icon-photocamera_1"></i></div>
+                                <a href="#" class="info-course">
+                                    <div class="name-course">Photography</div>
+                                    <div class="info">Relive the past memories and view all pictures from past events and functions.</div>
+                                </a></div>
+                        </div>
+                        <div class="item-course">
+                            <div class="item-course-wrapper">
+                                <div class="icon-course"><i class="icons-img icon-computer_network"></i></div>
+                                <div class="info-course"><a href="#" class="name-course">School Feedback</a>
+
+                                    <div class="info">Check what other people are saying about your school. View their feedback for improvement.</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div><br />
     <!-- WHY CHOOSE US-->
                 <div class="section why-choose-us">
                     <div class="why-choose-us-wrapper-bottom background-opacity">
