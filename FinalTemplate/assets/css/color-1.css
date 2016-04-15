@@ -2675,7 +2675,7 @@ footer {
 }
 
 .best-staff {
-    background-image: url("../images/background-best-staff.jpg");
+  
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
@@ -4390,7 +4390,7 @@ ul.list-detail li i {
 .rlp {
     background: url(../images/bg-register-login.jpg) no-repeat center center;
     background-size: cover;
-    height: 100vh;
+    
 }
 
 .rlp .container {
