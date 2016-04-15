@@ -9,7 +9,7 @@
                     <div class="container">
                         <div class="page-title-wrapper"><!--.page-title-content-->
                            <div class="slider-banner-wrapper"><h4 data-wow-delay="0.5s" class="sub-title wow fadeInUp">Login Date:03/08/2016 &nbsp;&nbsp; Login Time: 09:23:00 AM</h4>
-                             <h2 class="captions">profile</h2>
+                             <h2 class="captions">Student Name</h2>
                             <ol class="breadcrumb">
                                 <li><a href="index.html">Home</a></li>
                                 <li class="active"><a href="#">profile</a></li>
@@ -96,5 +96,77 @@
                         </div>
                             </div>
                     </div>
-                </div><br />
+                </div>
+    <%--course name---%>
+    <div class="section teacher-course section-padding">
+                    <div class="container teacher-course-wrapper">
+                        <div class="underline">Subjects</div>
+                        <div class="course-table">
+                            <div class="outer-container">
+                                <div class="inner-container">
+                                    <div class="table-header">
+                                        <table class="edu-table-responsive">
+                                            <thead>
+                                            <tr class="heading-table">
+                                                <th class="col-1">Id</th>
+                                                <th class="col-2">Subject</th>
+                                                <th class="col-3">duration</th>
+                                                <th class="col-4">Chapters</th>
+                                            </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    <div class="table-body">
+                                        <table class="edu-table-responsive table-hover">
+                                            <tbody>
+                                            <tr class="table-row">
+                                                <td class="col-1"><span>1</span></td>
+                                                <td class="col-2"><a href="courses-detail.html">Computer</a></td>
+                                                <td class="col-3"><span>8 months</span></td>
+                                                <td class="col-4"><span>All Chapters</span></td>
+                                            </tr>
+                                            <tr class="table-row">
+                                                <td class="col-1"><span>2</span></td>
+                                                <td class="col-2"><a href="courses-detail.html">Islamiat</a></td>
+                                                <td class="col-3"><span>8 months</span></td>
+                                                <td class="col-4"><span>All Chapters</span></td>
+                                            </tr>
+                                            <tr class="table-row">
+                                                <td class="col-1"><span>3</span></td>
+                                                <td class="col-2"><a href="courses-detail.html">Pakistan Studies</a></td>
+                                                <td class="col-3"><span>8 months</span></td>
+                                                <td class="col-4"><span>All Chapters</span></td>
+                                            </tr>
+                                            <tr class="table-row">
+                                                <td class="col-1"><span>4</span></td>
+                                                <td class="col-2"><a href="courses-detail.html">Urdu</a></td>
+                                                <td class="col-3"><span>8 months</span></td>
+                                                <td class="col-4"><span>All Chapters</span></td>
+                                            </tr>
+                                            <tr class="table-row">
+                                                <td class="col-1"><span>5</span></td>
+                                                <td class="col-2"><a href="courses-detail.html">English</a></td>
+                                                <td class="col-3"><span>8 months</span></td>
+                                                <td class="col-4"><span>All Chapters</span></td>
+                                            </tr>
+                                            <tr class="table-row">
+                                                <td class="col-1"><span>7</span></td>
+                                                <td class="col-2"><a href="courses-detail.html">Biology</a></td>
+                                                <td class="col-3"><span>8 months</span></td>
+                                                <td class="col-4"><span>All Chapters</span></td>
+                                            </tr>
+                                            <tr class="table-row">
+                                                <td class="col-1"><span>8</span></td>
+                                                <td class="col-2"><a href="courses-detail.html">Mathematics</a></td>
+                                                <td class="col-3"><span>8 months</span></td>
+                                                <td class="col-4"><span>All Chapters</span></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 </asp:Content>
