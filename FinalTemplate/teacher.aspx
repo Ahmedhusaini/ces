@@ -88,12 +88,12 @@
                                                         <table class="edu-table-responsive table-hover">
                                                             <tbody>
                                                             <tr class="heading-content">
-                                                                <td colspan="4" class="left heading-content">1. Principle</td>
+                                                                <td colspan="4" class="left heading-content">Principle</td>
                                                             </tr>
                                                             <tr class="table-row">
                                                                 <td class="left col-1"><a href="#"><span>1. HILAL QURESHI</span></a></td>
                                                                 <td class="col-2"><span>PHD CS</span></td>
-                                                                <td class="col-3"><i class="fa-calendar-o"></i><span>10-4-2010</span></td>
+                                                                <td class="col-3"><span>10-4-2010</span></td>
                                                                 <td class="col-4"><span>abc</span></td>
                                                             </tr>
                                                            
@@ -101,43 +101,43 @@
                                                                 <td colspan="4"></td>
                                                             </tr>
                                                             <tr class="heading-content">
-                                                                <td colspan="4" class="left heading-content">2. Senior Teachers</td>
+                                                                <td colspan="4" class="left heading-content">Senior Teachers</td>
                                                             </tr>
                                                             <tr class="table-row">
-                                                                <td class="left col-1"><a href="#"><span> Ms. Mehwish Wahid</span></a></td>
+                                                                <td class="left col-1"><a href="#"><span>1. Ms. Mehwish Wahid</span></a></td>
                                                                 <td class="col-2"><span>MS CS</span></td>
-                                                                <td class="col-3"><i class="fa-calendar-o"></i><span>05-04-2011</span></td>
+                                                                <td class="col-3"><span>05-04-2011</span></td>
                                                                 <td class="col-4"><span>abc</span></td>
                                                             </tr>
                                                             <tr class="table-row">
-                                                                <td class="left col-1"><a href="#"><span>Mr. Waleej Haider</span></a></td>
+                                                                <td class="left col-1"><a href="#"><span>2. Mr. Waleej Haider</span></a></td>
                                                                 <td class="col-2"><span>MS CS</span></td>
-                                                                <td class="col-3"><i class="fa-calendar-o"></i><span>01-5-2011</span></td>
+                                                                <td class="col-3"><span>01-5-2011</span></td>
                                                                 <td class="col-4"><span>ate</span></td>
                                                             </tr>
                                                             <tr class="spacing-table">
                                                                 <td colspan="4"></td>
                                                             </tr>
                                                             <tr class="heading-content">
-                                                                <td colspan="4" class="left heading-content">3. Junior Teachers</td>
+                                                                <td colspan="4" class="left heading-content">Junior Teachers</td>
                                                             </tr>
                                                             <tr class="table-row">
-                                                                <td class="left col-1"><a href="#"><span>Ms. Aqsa</span></a></td>
+                                                                <td class="left col-1"><a href="#"><span>1. Ms. Aqsa</span></a></td>
                                                                 <td class="col-2"><span>BS CS</span></td>
-                                                                <td class="col-3"><i class="fa-calendar-o"></i><span>4-5-2013</span></td>
+                                                                <td class="col-3"><span>4-5-2013</span></td>
                                                                 <td class="col-4"><span>CGHFHDGe</span></td>
                                                             </tr>
                                                             <tr class="table-row">
-                                                                <td class="left col-1"><a href="#"><span>Ms. Mehwish</span></a></td>
+                                                                <td class="left col-1"><a href="#"><span>2. Ms. Mehwish</span></a></td>
                                                                 <td class="col-2"><span>BS CS</span></td>
-                                                                <td class="col-3"><i class=" fa-calendar-o"></i><span>20-5-2013</span></td>
+                                                                <td class="col-3"><span>20-5-2013</span></td>
                                                                 <td class="col-4"><span>Leing</span></td>
                                                             </tr>
                                                           
                                                             <tr class="table-row">
-                                                                <td class="left col-1"><a href="#"><span>Mr. Sallar Khan</span></a></td>
+                                                                <td class="left col-1"><a href="#"><span>3. Mr. Sallar Khan</span></a></td>
                                                                 <td class="col-2"><span>BS CS</span></td>
-                                                                <td class="col-3"><i class="fa-calendar-o"></i><span>10-2-2015</span></td>
+                                                                <td class="col-3"><span>10-2-2015</span></td>
                                                                 <td class="col-4"><span>Prvt</span></td>
                                                             </tr>
                                                       
