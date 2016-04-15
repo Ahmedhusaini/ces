@@ -33,15 +33,3 @@
     100% {background:#eb9c9c;}
 }
 
-@-webkit-keyframes animate_bg {
-    0%   {background:#2876e2;}
-    10%  {background:#5aeed3;}
-    20%  {background:#903fc7;}
-    30%  {background:#ff4c99;}
-    50%  {background:#96f56a;}
-    60%  {background:#f7dd61;}
-    70%  {background:#0d98ba;}
-    80%  {background:#6699cc;}
-    90%  {background:#688bae;}
-    100% {background:#eb9c9c;}
-}
