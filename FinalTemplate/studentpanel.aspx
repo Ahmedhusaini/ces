@@ -1,15 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/studentpanel.Master" AutoEventWireup="true" CodeBehind="studentpanel.aspx.cs" Inherits="FinalTemplate.studentpanel1" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">      
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">  
+        
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <!-- SLIDER BANNER-->
-                
-    <div class="section background-opacity page-title set-height-top">
+        <!-- SLIDER BANNER-->
+   <div class="section background-opacity page-title set-height-top">
          
                     <div class="container">
                         <div class="page-title-wrapper"><!--.page-title-content-->
                            <div class="slider-banner-wrapper"><h4 data-wow-delay="0.5s" class="sub-title wow fadeInUp">Login Date:03/08/2016 &nbsp;&nbsp; Login Time: 09:23:00 AM</h4>
-                             <h2 class="captions">Student Name</h2>
+                             <h2 class="captions">Student profile</h2>
                             <ol class="breadcrumb">
                                 <li><a href="index.html">Home</a></li>
                                 <li class="active"><a href="#">profile</a></li>
@@ -17,7 +17,17 @@
                         </div>
                     </div>
                 </div>
-        </div><br />
+        </div>
+    <%--profile pic--%>
+       <div class="staff-item">
+        <div class="staff-item-wrapper">
+            <div class="staff-info">
+                <a href="#" class="staff-avatar">
+                    <img src="assets/images/people-avatar-2.jpg" alt="" class="img-responsive" /></a><a href="#" class="staff-name">Sufiyan Big</a>
+                      <div class="staff-job">student class 5B</div>
+             </div>
+        </div>
+    </div><br />
         
      <!-- CHOOSE COURSES-->
                 <div class="section choose-course-3">
@@ -169,4 +179,54 @@
                         </div>
                     </div>
                 </div>
+      <!-- SLIDER TALK ABOUT US-->
+
+    <%--<div class="section section-padding latest-news">--%>
+        <div class="container">
+            <div class="group-title-index">
+                <h4 class="top-title">Pride Student</h4>
+
+                <h2 class="center-title">Most Work Hard Students</h2>
+
+                <div class="bottom-title"><i class="bottom-icon icon-a-01-01"></i></div>
+            </div>
+        </div>
+    <%--</div>--%>
+                <div class="section background-opacity slider-talk-about-us">
+                    <div class="container">
+                        <div id="people-talk" data-ride="carousel" data-interval="5000" class="slider-talk-about-us-wrapper carousel slide">
+                            <div role="listbox" class="slider-talk-about-us-content carousel-inner">
+                                <div class="peopel-item item active"><p class="peopel-comment">" There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. "</p>
+
+                                    <div class="group-peole-info">
+                                        <div class="peopel-avatar"><img src="assets/images/people-avatar-1.jpg" alt="" class="img-responsive"/></div>
+                                        <div class="peopel-name">john doe</div>
+                                        <div class="people-job">Microshop Crop.SEO</div>
+                                    </div>
+                                </div>
+                                <div class="peopel-item item"><p class="peopel-comment">" There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. "</p>
+
+                                    <div class="group-peole-info">
+                                        <div class="peopel-avatar"><img src="assets/images/people-avatar-1.jpg" alt="" class="img-responsive"/></div>
+                                        <div class="peopel-name">john doe</div>
+                                        <div class="people-job">Microshop Crop.SEO</div>
+                                    </div>
+                                </div>
+                                <div class="peopel-item item"><p class="peopel-comment">" There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. "</p>
+
+                                    <div class="group-peole-info">
+                                        <div class="peopel-avatar"><img src="assets/images/people-avatar-1.jpg" alt="" class="img-responsive"/></div>
+                                        <div class="peopel-name">john doe</div>
+                                        <div class="people-job">Microshop Crop.SEO</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group-btn-slider"><a href="#people-talk" role="button" data-slide="prev">
+                        <div class="btn-prev carousel-control left"><i class="fa fa-angle-left"></i></div>
+                    </a><a href="#people-talk" role="button" data-slide="next">
+                        <div class="btn-next carousel-control right"><i class="fa fa-angle-right"></i></div>
+                    </a></div>
+                </div><br />
 </asp:Content>

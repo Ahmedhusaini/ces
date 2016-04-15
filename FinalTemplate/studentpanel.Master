@@ -40,13 +40,13 @@
     <div class="header-topbar homepage-03">
         <div class="container">
             <div class="row">
-                <%--<div class="col-md-5 topbar-left text-left info-text1">
-                    <div class="email"><a href="#"><i class="topbar-icon fa fa-envelope-o"></i><span>info@ces.com</span></a></div>
-                    <div class="hotline"><a href="#"><i class="topbar-icon fa fa-phone"></i><span>+92 345 3570132</span></a></div>
-                </div>--%>
+                <div class="col-md-5 topbar-left text-left info-text1">
+<%--                    <div class="email"><a href="#"><i class="topbar-icon fa fa-envelope-o"></i><span>info@ces.com</span></a></div>--%>
+                    <div class="hotline"><a href="#"><i class="topbar-icon fa fa-photo"></i><span>Update Profile Detail</span></a></div>
+                </div>
                 <div class="col-md-2 logo-topbar info-text2"><a href="index.html"><img src="assets/images/logo-color-1.png" alt=""/></a></div>
                 <div class="col-md-5 topbar-right text-right info-text3">
-                    <div class="group-sign-in"><a href="#" class="login">Update Profile Detail</a><a href="register.html" class="register">Logout</a></div>
+                    <div class="group-sign-in"><a href="#" class="login"></a><a href="register.html" class="register">Logout</a></div>
                 </div>
             </div>
         </div>
@@ -119,18 +119,6 @@
     </div>
     <!-- FOOTER-->
 <footer>
-    <div class="footer-top">
-        <div class="container">
-            <div class="footer-top-wrapper">
-                <div class="footer-top-left"><p class="footer-top-focus">BECOME AN INSTRUCTOR</p>
-
-                    <p class="footer-top-text">Join thousand of instructors and earn money hassle free!</p></div>
-                <div class="footer-top-right">
-                    <button onclick="window.location.href='contact.html'" class="btn btn-blue btn-bold"><span>GET STARTED NOW</span></button>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="footer-main">
         <div class="container">
             <div class="footer-main-wrapper">
