@@ -11,19 +11,22 @@
         $(document).ready(function () {  
             $("#form1").validate({  
                 rules: {  
-                    //This section we need to place our custom rule   
-                    //for the control.  
-                    <%=TextBox1.UniqueID %>:{  
-                        required:true  
-                    },   
-                },  
-                messages: {  
-                    //This section we need to place our custom   
-                    //validation message for each control.  
-                    <%=TextBox1.UniqueID %>:{  
-                          required: "Name is required."  
-                      },  
-                },  
+                    TextBox1: {
+                        required: true,
+                        minlength:10
+                            
+                    
+                    },  
+                },
+                  
+                    messages: {
+                        TextBox1:{
+                            required:"Please enter your name",
+                            minlength:"The username is too short"
+                    
+                     
+                        }, 
+                    }
             });  
          }); 
 
@@ -41,6 +44,9 @@
     <div>
         <asp:Label ID="Label1" runat="server" Text="name"></asp:Label>
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        <br />
+        <br />
+        <asp:Button ID="Button1" runat="server" Text="Button" />
     </div>
     </form>
 </body>
