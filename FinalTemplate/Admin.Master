@@ -149,16 +149,16 @@
                     <div class="col-2">
                         <div class="col-md-3 col-sm-6 col-xs-6 sd380">
                             <div class="edugate-widget widget">
-                                <div class="title-widget">EDUGATE</div>
-                                <div class="content-widget"><p>Edugate is a great start for an education personnel or organization to start the online business with 1 Click.</p>
+                                <div class="title-widget">CES</div>
+                                <div class="content-widget"><p>CES is Pakistan's only web portal that combines the educational institutes all over the pakistan to enhance the quality of education and support the future by securing the education quality and make it easier for everyone to approach to best and modern education.</p>
 
                                     <div class="info-list">
                                         <ul class="list-unstyled">
-                                            <li><i class="fa fa-envelope-o"></i><a href="#">hello@edugate.com</a></li>
-                                            <li><i class="fa fa-phone"></i><a href="#">P: 3333 222 1111</a></li>
-                                            <li><i class="fa fa-map-marker"></i><a href="#"><p>99 Barnard St - Suite 111</p>
+                                            <li><i class="fa fa-envelope-o"></i><a href="#">support@ces.com</a></li>
+                                            <li><i class="fa fa-phone"></i><a href="#">+92 345 357012</a></li>
+                                            <li><i class="fa fa-map-marker"></i><a href="#"><p>Gulistan-e-jauhar block-7, uniersity road karachi.</p>
 
-                                                <p>United States - GA 22222</p></a></li>
+                                                <p>Sindh-Pakistan</p></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -174,20 +174,20 @@
                                                 <ul class="list-unstyled">
                                                     <li><i class="fa fa-angle-right"></i><a href="#">Teachers</a></li>
                                                     <li><i class="fa fa-angle-right"></i><a href="#">Courses</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Support</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Why Edugate</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Social Media</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">CES Suggestions</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">CES Technical Support</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">Parent Tickets</a></li>
                                                     <li><i class="fa fa-angle-right"></i><a href="#">Site Map</a></li>
                                                 </ul>
                                             </div>
                                             <div class="col-md-6 col-sm-6 col-xs-6">
                                                 <ul class="list-unstyled">
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Company</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Latest Courses</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Partners</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Blog Post</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Help Topic</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Policies</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">School Repo</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">Updates</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">User views</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">Last psoted job</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">Last Posted news</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">addmission policies</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -198,14 +198,7 @@
                     </div>
                     <div class="col-2">
                         <div class="col-md-3 col-sm-6 col-xs-6 sd380">
-                            <div class="gallery-widget widget">
-                                <div class="title-widget">GALLERY</div>
-                                <div class="content-widget">
-                                    <div class="gallery-list"><a href="#" class="thumb"><img src="assets/images/gallery/gallery-01.jpg" alt="" class="img-responsive"/></a><a href="#" class="thumb"><img src="assets/images/gallery/gallery-02.jpg" alt="" class="img-responsive"/></a><a href="#" class="thumb"><img src="assets/images/gallery/gallery-03.jpg" alt="" class="img-responsive"/></a><a href="#" class="thumb"><img src="assets/images/gallery/gallery-04.jpg" alt="" class="img-responsive"/></a><a href="#" class="thumb"><img src="assets/images/gallery/gallery-05.jpg" alt="" class="img-responsive"/></a><a href="#" class="thumb"><img src="assets/images/gallery/gallery-06.jpg" alt="" class="img-responsive"/></a><a href="#" class="thumb"><img src="assets/images/gallery/gallery-07.jpg" alt="" class="img-responsive"/></a><a href="#" class="thumb"><img src="assets/images/gallery/gallery-08.jpg"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        alt="" class="img-responsive"/></a></div>
-                                    <div class="clearfix"></div>
-                                    <a href="#" class="view-more">View more&nbsp;<i class="fa fa-angle-double-right mls"></i></a></div>
-                            </div>
+                            
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-6 sd380">
                             <div class="mailing-widget widget">
