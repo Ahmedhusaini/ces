@@ -7,6 +7,9 @@
 .teachingbackgroundImage {
      background-image: url("../images/teaching-staff/teachingstaff.jpg");
 }
+.staff{
+    background-image: url("http://localhost:9738/assets/images/background-best-staff.jpg");
+}
 .animate {
     height: auto;
     width: 100%;
