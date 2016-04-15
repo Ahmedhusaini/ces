@@ -4,7 +4,6 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link rel="icon" href="assets/images/popular/popular-4.jpg"/>
     <title>Student Profile</title>
     
       <meta charset="utf-8"/>
@@ -19,6 +18,7 @@
     <link type="text/css" rel="stylesheet" href="assets/font/font-icon/font-svg/css/Glyphter.css"/>
     
     <!-- LIBRARY CSS-->
+    <link type="text/css" rel="stylesheet" href="assets/css/color-1.css" />
     <link href="assets/css/mycss.css" rel="stylesheet" />
     <link type="text/css" rel="stylesheet" href="assets/libs/animate/animate.css"/>
     <link type="text/css" rel="stylesheet" href="assets/libs/bootstrap-3.3.5/css/bootstrap.css"/>
