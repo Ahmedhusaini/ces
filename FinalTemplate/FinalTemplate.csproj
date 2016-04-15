@@ -208,9 +208,14 @@
     <Content Include="assets\libs\smooth-scroll\jquery-smoothscroll.js" />
     <Content Include="assets\libs\wow-js\wow.min.js" />
     <Content Include="Default.aspx" />
+    <Content Include="sample.aspx" />
     <Content Include="select_resistration_type.aspx" />
+    <Content Include="studentpanel.aspx" />
+    <Content Include="StudentProfile.aspx" />
     <Content Include="StudentRegistration.aspx" />
+    <Content Include="teacher.aspx" />
     <Content Include="TeacherPanel.aspx" />
+    <Content Include="Teacherprofile.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -243,6 +248,13 @@
     <Compile Include="Register.Master.designer.cs">
       <DependentUpon>Register.Master</DependentUpon>
     </Compile>
+    <Compile Include="sample.aspx.cs">
+      <DependentUpon>sample.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sample.aspx.designer.cs">
+      <DependentUpon>sample.aspx</DependentUpon>
+    </Compile>
     <Compile Include="select_resistration_type.aspx.cs">
       <DependentUpon>select_resistration_type.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -250,12 +262,40 @@
     <Compile Include="select_resistration_type.aspx.designer.cs">
       <DependentUpon>select_resistration_type.aspx</DependentUpon>
     </Compile>
+    <Compile Include="studentpanel.aspx.cs">
+      <DependentUpon>studentpanel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="studentpanel.aspx.designer.cs">
+      <DependentUpon>studentpanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="studentpanel.Master.cs">
+      <DependentUpon>studentpanel.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="studentpanel.Master.designer.cs">
+      <DependentUpon>studentpanel.Master</DependentUpon>
+    </Compile>
+    <Compile Include="StudentProfile.aspx.cs">
+      <DependentUpon>StudentProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentProfile.aspx.designer.cs">
+      <DependentUpon>StudentProfile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="StudentRegistration.aspx.cs">
       <DependentUpon>StudentRegistration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="StudentRegistration.aspx.designer.cs">
       <DependentUpon>StudentRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="teacher.aspx.cs">
+      <DependentUpon>teacher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="teacher.aspx.designer.cs">
+      <DependentUpon>teacher.aspx</DependentUpon>
     </Compile>
     <Compile Include="Teacher.Master.cs">
       <DependentUpon>Teacher.Master</DependentUpon>
@@ -270,6 +310,13 @@
     </Compile>
     <Compile Include="TeacherPanel.aspx.designer.cs">
       <DependentUpon>TeacherPanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Teacherprofile.aspx.cs">
+      <DependentUpon>Teacherprofile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teacherprofile.aspx.designer.cs">
+      <DependentUpon>Teacherprofile.aspx</DependentUpon>
     </Compile>
     <Compile Include="User.Master.cs">
       <DependentUpon>User.Master</DependentUpon>
@@ -298,6 +345,7 @@
     <Content Include="Admin.Master" />
     <Content Include="Register.Master" />
     <Content Include="Teacher.Master" />
+    <Content Include="studentpanel.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

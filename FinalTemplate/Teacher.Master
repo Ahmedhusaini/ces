@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Edugate | Home</title>    
+    <title>TeacherPanel | Home</title>    
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -16,7 +16,9 @@
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400italic,700,900,300"/>
     <link type="text/css" rel="stylesheet" href="assets/font/font-icon/font-awesome-4.4.0/css/font-awesome.css"/>
     <link type="text/css" rel="stylesheet" href="assets/font/font-icon/font-svg/css/Glyphter.css"/>
+
     <!-- LIBRARY CSS-->
+    <link href="assets/css/mycss.css" rel="stylesheet" />
     <link type="text/css" rel="stylesheet" href="assets/libs/animate/animate.css"/>
     <link type="text/css" rel="stylesheet" href="assets/libs/bootstrap-3.3.5/css/bootstrap.css"/>
     <link type="text/css" rel="stylesheet" href="assets/libs/owl-carousel-2.0/assets/owl.carousel.css"/>
@@ -46,8 +48,7 @@
                 <div class="hotline"><a href="#"><i class="topbar-icon fa fa-phone"></i><span>+84 909 015 345</span></a></div>
             </div>
             <div class="topbar-right pull-right">
-                <div class="socials"><a href="#" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" class="google"><i class="fa fa-google-plus"></i></a><a href="#" class="twitter"><i class="fa fa-twitter"></i></a><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a><a href="#" class="blog"><i class="fa fa-rss"></i></a><a href="#" class="dribbble"><i class="fa fa-dribbble"></i></a></div>
-                <div class="group-sign-in"><a href="login.html" class="login">login</a><a href="register.html" class="register">register</a></div>
+            <div class="group-sign-in"><a href="select_resistration_type.aspx" class="logout">logout</a></div>
             </div>
         </div>
     </div>
@@ -60,49 +61,57 @@
                 </div>
                 <nav class="navigation collapse navbar-collapse pull-right">
                     <ul class="nav-links nav navbar-nav">
-                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Home<span class="fa fa-angle-down icons-dropdown"></span></a>
+                        <li><a href="javascript:void(0)" class="main-menu">Home<span class="fa fa-angle-down icons-dropdown"></span></a>                    
+                        </li>
+                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Admissions<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                <li><a href="index.html" class="link-page">Home page 01</a></li>
-                                <li><a href="homepage-02.html" class="link-page">Home page 02</a></li>
-                                <li><a href="homepage-03.html" class="link-page">Home page 03</a></li>
+                                <li><a href="courses.html" class="link-page">Pre-Nursery</a></li>
+                                <li><a href="courses-detail.html" class="link-page">Nursery-X</a></li>
+                                <li><a href="events.html" class="link-page">A-levels</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Courses<span class="fa fa-angle-down icons-dropdown"></span></a>
+                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Profile<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                <li><a href="courses.html" class="link-page">courses</a></li>
-                                <li><a href="courses-detail.html" class="link-page">course detail</a></li>
-                                <li><a href="events.html" class="link-page">events</a></li>
-                                <li><a href="event-detail.html" class="link-page">event detail</a></li>
+                                <li><a href="Teacherprofile.aspx" class="link-page">My Profile</a></li>
+                                <li><a href="Teacherprofile.aspx" class="link-page">Staff Profile</a></li>
+                                <li><a href="gallery-4column.html" class="link-page">Student Profile</a></li>                        
                             </ul>
                         </li>
-                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu">gallery<span class="fa fa-angle-down icons-dropdown"></span></a>
+                        <li class="dropdown"><a href="Admin.aspx" class="main-menu">Attendance<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                <li><a href="gallery-3column.html" class="link-page">gallery 3 column</a></li>
-                                <li><a href="gallery-4column.html" class="link-page">gallery 4 column</a></li>
-                                <li><a href="gallery-masonry.html" class="link-page">gallery masonry</a></li>
+                                <li><a href="teacher.aspx" class="link-page">Mark Attendance</a></li>
+                                <li><a href="teacher.aspx" class="link-page">View Attendance</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown active"><a href="javascript:void(0)" class="main-menu">pages<span class="fa fa-angle-down icons-dropdown"></span></a>
+                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Schedules<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                <li><a href="categories.html" class="link-page">categories</a></li>
-                                <li><a href="profile-teacher.html" class="link-page">profile teacher</a></li>
-                                <li><a href="about-us.html" class="link-page">about us</a></li>
-                                <li><a href="login.html" class="link-page">login</a></li>
-                                <li><a href="register.html" class="link-page">register</a></li>
-                                <li><a href="404.html" class="link-page">404 page</a></li>
-                                <li><a href="faq.html" class="link-page">FAQ page</a></li>
+                                <li><a href="categories.html" class="link-page">View Class Timetable</a></li>
+                                <li><a href="categories.html" class="link-page">Manage Class Timetable</a></li>
+                                <li><a href="categories.html" class="link-page">View Teacher Timetable</a></li>
+                                <li><a href="categories.html" class="link-page">Manage Teacher Timetable</a></li>
+                                <li><a href="about-us.html" class="link-page">Syllabus</a></li>
+                                <li><a href="categories.html" class="link-page">Date Sheet</a></li>
+                                <li><a href="categories.html" class="link-page">Mark Sheet</a></li>
+                                <li><a href="profile-teacher.html" class="link-page">Annual Report</a></li>
+                                 
                             </ul>
                         </li>
                         <li class="dropdown"><a href="javascript:void(0)" class="main-menu">News<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                <li><a href="news.html" class="link-page">news list</a></li>
-                                <li><a href="news-grid.html" class="link-page">news grid</a></li>
-                                <li><a href="news-grid-nonsidebar.html" class="link-page">news grid nonsidebar</a></li>
-                                <li><a href="news-masonry.html" class="link-page">news masonry</a></li>
-                                <li><a href="news-detail.html" class="link-page">news detail</a></li>
+                                <li><a href="news.html" class="link-page">News Alerts</a></li>
+                                <li><a href="news-grid.html" class="link-page">News and Updates</a></li>
+                                <li><a href="news-grid-nonsidebar.html" class="link-page">News Detail</a></li>
+                                <li><a href="news-masonry.html" class="link-page">Job Vacancies</a></li>
                             </ul>
                         </li>
-                        <li><a href="contact.html" class="main-menu">Contact</a></li>
+                          <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Upload<span class="fa fa-angle-down icons-dropdown"></span></a>
+                            <ul class="dropdown-menu edugate-dropdown-menu-1">
+                                <li><a href="news.html" class="link-page">Upload Lectures</a></li>
+                                <li><a href="news-grid.html" class="link-page">Upload Homework</a></li>
+                                <li><a href="news-grid-nonsidebar.html" class="link-page">Upload Assignments</a></li>
+                            </ul>
+                        </li>
+                       
                         <li class="button-search"><p class="main-menu"><i class="fa fa-search"></i></p></li>
                         <div class="nav-search hide">
                             <form><input type="text" placeholder="Search" class="searchbox"/>
@@ -126,6 +135,7 @@
                     <form id="form1" runat="server">
                         <div>
                             <asp:ContentPlaceHolder ID="TeacherPlaceHolder1" runat="server">
+                               
                             </asp:ContentPlaceHolder>
                         </div>
                     </form>

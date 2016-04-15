@@ -1,20 +1,20 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="FinalTemplate.Admin1" %>
+﻿<%@ Page Title="AdminPanel - CES " Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="FinalTemplate.Admin1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="AdminHeadPlaceHolder" runat="server">
     
     <script src="assets/js/jquery-2.2.3.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $('#topStudents').addClass('topPadding');
-            
+            $('#teachingstaff').addClass('teachingbackgroundImage');            
         });
-    </script>
+    </script> 
     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="AdminContentPlaceHolder" runat="server">
                 <!-- SLIDER BANNER-->
                 <div class="section slider-banner-03 background-opacity-2">
                     <div class="container">
-                        <div class="slider-banner-wrapper"><h3 data-wow-delay="0.5s" class="sub-title wow fadeInUp">Login Date:03/08/2016 and Login Time: 09:23:00 AM</h3>
+                        <div class="slider-banner-wrapper"><h3 data-wow-delay="0.5s" class="sub-title wow fadeInUp">Login Date:03/08/2016 &nbsp;&nbsp; Login Time: 09:23:00 AM</h3>
 
                             <h1 data-wow-delay="0.5s" class="main-title wow fadeInUp">School Name</h1>
 
@@ -83,11 +83,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- SLIDER TALK ABOUT US-->
-                    <div id="topStudents" class="group-title-index"><h4 class="top-title">Some of the top students in your schools based on the results.</h4>
-
-                           <h2 class="center-title">Top 5 students</h2>
-                    </div>
+                <!-- SLIDER TALK ABOUT US-->                                        
                 <div class="section background-opacity slider-talk-about-us">
                     <div class="container">
                          
@@ -292,7 +288,7 @@
                     </div>
                 </div>
                 <!-- BEST STAFF-->
-                <div class="section section-padding background-opacity best-staff">
+                <div id="teachingstaff" class="section section-padding background-opacity best-staff">
                     <div class="container">
                         <div class="group-title-index"><h4 class="top-title">Complete teacher list</h4>
 

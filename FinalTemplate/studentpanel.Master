@@ -1,16 +1,17 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="FinalTemplate.Admin" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="studentpanel.master.cs" Inherits="FinalTemplate.studentpanel" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-     <title>Edugate | Home</title>    
-    <meta charset="utf-8"/>
+    <link rel="icon" href="assets/images/popular/popular-4.jpg"/>
+    <title>Student Profile</title>
+    
+      <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <!--- Asp.Net ContentPlaceHolder------>
-    <asp:ContentPlaceHolder runat="server" ID="AdminHeadPlaceHolder">
-
+    <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <!-- LIBRARY FONT-->
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400italic,700,900,300"/>
@@ -35,19 +36,19 @@
 } else if ((Cookies.get('colorskin') == undefined) || (Cookies.get('colorskin') == 'color-1')) {
     $('#colorskins').attr('href', 'assets/css/color-1.css');
 }</script>
-</head>
+    </head>
 <body>
- <header>
+    <header>
     <div class="header-topbar homepage-03">
         <div class="container">
             <div class="row">
                 <div class="col-md-5 topbar-left text-left info-text1">
-                    <div class="email"><a href="#"><i class="topbar-icon fa fa-envelope-o"></i><span>info@ces.com</span></a></div>
-                    <div class="hotline"><a href="#"><i class="topbar-icon fa fa-phone"></i><span>+92 345 3570132</span></a></div>
+<%--                    <div class="email"><a href="#"><i class="topbar-icon fa fa-envelope-o"></i><span>info@ces.com</span></a></div>--%>
+                    <div class="hotline"><a href="#"><i class="topbar-icon fa fa-photo"></i><span>Update Profile Detail</span></a></div>
                 </div>
                 <div class="col-md-2 logo-topbar info-text2"><a href="index.html"><img src="assets/images/logo-color-1.png" alt=""/></a></div>
                 <div class="col-md-5 topbar-right text-right info-text3">
-                    <div class="group-sign-in"><a href="login.html" class="login">Subscription Expires in 13 Day(s)</a><a href="register.html" class="register">Renew Package</a></div>
+                    <div class="group-sign-in"><a href="#" class="login"></a><a href="register.html" class="register">Logout</a></div>
                 </div>
             </div>
         </div>
@@ -61,37 +62,32 @@
                 </div>
                 <nav class="navigation collapse navbar-collapse">
                     <ul class="nav-links nav navbar-nav">
-                        <li class="dropdown active"><a href="javascript:void(0)" class="main-menu">Home</a></li>
-                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Teachers<span class="fa fa-angle-down icons-dropdown"></span></a>
+                        <li class="dropdown active"><a href="javascript:void(0)" class="main-menu">Home<span class="fa fa-angle-down icons-dropdown"></span></a></li>
+                        <%--<li class="dropdown"><a href="javascript:void(0)" class="main-menu">Teachers<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                <li><a href="courses.html" class="link-page">View All</a></li>
-                                <li><a href="courses-detail.html" class="link-page">Make Teacher of the month</a></li>
-                                <li><a href="events.html" class="link-page">Give and modify existing privileges</a></li>
-                                <li><a href="event-detail.html" class="link-page">Update Teacher information</a></li>                                
+                                <li><a href="courses.html" class="link-page">courses</a></li>
+                                <li><a href="courses-detail.html" class="link-page">course detail</a></li>
+                                <li><a href="events.html" class="link-page">events</a></li>
+                                <li><a href="event-detail.html" class="link-page">event detail</a></li>
                             </ul>
-                        </li>
-                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu">gallery<span class="fa fa-angle-down icons-dropdown"></span></a>
-                            <ul class="dropdown-menu edugate-dropdown-menu-1">
+                        </li>--%>
+                        <li class="dropdown"><a href="StudentRegistration.aspx" class="main-menu">gallery<span class="fa fa-angle-down icons-dropdown"></span></a>
+                            <%--<ul class="dropdown-menu edugate-dropdown-menu-1">
                                 <li><a href="gallery-3column.html" class="link-page">gallery 3 column</a></li>
-                                <li><a href="gallery-4column.html" class="link-page">gallery 4 column</a></li>
-                                <li><a href="gallery-masonry.html" class="link-page">gallery masonry</a></li>
-                            </ul>
+                            </ul>--%>
                         </li>
-                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Events<span class="fa fa-angle-down icons-dropdown"></span></a>
+                        <%--<li class="dropdown"><a href="javascript:void(0)" class="main-menu">pages<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                <li><a href="categories.html" class="link-page">All events</a></li>
-                                <li><a href="profile-teacher.html" class="link-page">Update event</a></li>
-                                <li><a href="about-us.html" class="link-page">View event detial</a></li>                                
+                                <li><a href="categories.html" class="link-page">categories</a></li>
+                                <li><a href="profile-teacher.html" class="link-page">profile teacher</a></li>
+                                <li><a href="about-us.html" class="link-page">about us</a></li>
                             </ul>
-                        </li>
-                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu">News<span class="fa fa-angle-down icons-dropdown"></span></a>
-                            <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                <li><a href="news.html" class="link-page">news list</a></li>
-                                <li><a href="news-grid.html" class="link-page">news grid</a></li>
-                                <li><a href="news-grid-nonsidebar.html" class="link-page">news grid nonsidebar</a></li>
-                                <li><a href="news-masonry.html" class="link-page">news masonry</a></li>
-                                <li><a href="news-detail.html" class="link-page">news detail</a></li>
-                            </ul>
+                        </li>--%>
+                        <li class="dropdown"><a href="#" class="main-menu">News<span class="fa fa-angle-down icons-dropdown"></span></a>
+                            <%--<ul class="dropdown-menu edugate-dropdown-menu-1">
+                                <li><a href="news.html" class="link-page">News List</a></li>
+                                <li><a href="news-detail.html" class="link-page">News Detail</a></li>
+                            </ul>--%>
                         </li>
                         <li><a href="contact.html" class="main-menu">Contact</a></li>
                         <li class="button-search"><p class="main-menu"><i class="fa fa-search"></i></p></li>
@@ -106,42 +102,25 @@
         </div>
     </div>
 </header>
-
-    <div id="wrapper-content">
-        <!-- PAGE WRAPPER-->
-        <div id="page-wrapper">
-            <!-- MAIN CONTENT-->
-            <div class="main-content">
-                <!-- CONTENT-->
-                <div class="content">
-                    <form id="form1" runat="server">
-                        <asp:ContentPlaceHolder ID="AdminContentPlaceHolder" runat="server">
-
-                        </asp:ContentPlaceHolder>
-                    </form>
-                </div>
+    <div id="wrapper-content"><!-- PAGE WRAPPER-->
+    <div id="page-wrapper"><!-- MAIN CONTENT-->
+        <div class="main-content"><!-- CONTENT-->
+            <div class="content">
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
             </div>
+         </div>
         </div>
         <!-- BUTTON BACK TO TOP-->
         <div id="back-top"><a href="#top"><i class="fa fa-angle-double-up"></i></a></div>
     </div>
-
-
-
     <!-- FOOTER-->
 <footer>
-    <div class="footer-top">
-        <div class="container ">
-            <div class="footer-top-wrapper">
-                <div class="footer-top-left"><p class="footer-top-focus">Create Advertisment</p>
-
-                    <p class="footer-top-text">We offer you to advertise your school ads on your portal. Kindly <a href="#">Click Here</a> to fill out simple advertisment form and choose suitable plan.</p></div>
-                <div class="footer-top-right">
-                    <button onclick="window.location.href='contact.html'" class="btn btn-blue btn-bold"><span>Post advertisment form</span></button>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="footer-main">
         <div class="container">
             <div class="footer-main-wrapper">
@@ -149,16 +128,16 @@
                     <div class="col-2">
                         <div class="col-md-3 col-sm-6 col-xs-6 sd380">
                             <div class="edugate-widget widget">
-                                <div class="title-widget">CES</div>
-                                <div class="content-widget"><p>CES is Pakistan's only web portal that combines the educational institutes all over the pakistan to enhance the quality of education and support the future by securing the education quality and make it easier for everyone to approach to best and modern education.</p>
+                                <div class="title-widget">EDUGATE</div>
+                                <div class="content-widget"><p>Edugate is a great start for an education personnel or organization to start the online business with 1 Click.</p>
 
                                     <div class="info-list">
                                         <ul class="list-unstyled">
-                                            <li><i class="fa fa-envelope-o"></i><a href="#">support@ces.com</a></li>
-                                            <li><i class="fa fa-phone"></i><a href="#">+92 345 357012</a></li>
-                                            <li><i class="fa fa-map-marker"></i><a href="#"><p>Gulistan-e-jauhar block-7, uniersity road karachi.</p>
+                                            <li><i class="fa fa-envelope-o"></i><a href="#">hello@edugate.com</a></li>
+                                            <li><i class="fa fa-phone"></i><a href="#">P: 3333 222 1111</a></li>
+                                            <li><i class="fa fa-map-marker"></i><a href="#"><p>99 Barnard St - Suite 111</p>
 
-                                                <p>Sindh-Pakistan</p></a></li>
+                                                <p>United States - GA 22222</p></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -174,20 +153,20 @@
                                                 <ul class="list-unstyled">
                                                     <li><i class="fa fa-angle-right"></i><a href="#">Teachers</a></li>
                                                     <li><i class="fa fa-angle-right"></i><a href="#">Courses</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">CES Suggestions</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">CES Technical Support</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Parent Tickets</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">Support</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">Why Edugate</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">Social Media</a></li>
                                                     <li><i class="fa fa-angle-right"></i><a href="#">Site Map</a></li>
                                                 </ul>
                                             </div>
                                             <div class="col-md-6 col-sm-6 col-xs-6">
                                                 <ul class="list-unstyled">
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">School Repo</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Updates</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">User views</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Last psoted job</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Last Posted news</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">addmission policies</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">Company</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">Latest Courses</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">Partners</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">Blog Post</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">Help Topic</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">Policies</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -198,7 +177,14 @@
                     </div>
                     <div class="col-2">
                         <div class="col-md-3 col-sm-6 col-xs-6 sd380">
-                            
+                            <div class="gallery-widget widget">
+                                <div class="title-widget">GALLERY</div>
+                                <div class="content-widget">
+                                    <div class="gallery-list"><a href="#" class="thumb"><img src="assets/images/gallery/gallery-01.jpg" alt="" class="img-responsive"/></a><a href="#" class="thumb"><img src="assets/images/gallery/gallery-02.jpg" alt="" class="img-responsive"/></a><a href="#" class="thumb"><img src="assets/images/gallery/gallery-03.jpg" alt="" class="img-responsive"/></a><a href="#" class="thumb"><img src="assets/images/gallery/gallery-04.jpg" alt="" class="img-responsive"/></a><a href="#" class="thumb"><img src="assets/images/gallery/gallery-05.jpg" alt="" class="img-responsive"/></a><a href="#" class="thumb"><img src="assets/images/gallery/gallery-06.jpg" alt="" class="img-responsive"/></a><a href="#" class="thumb"><img src="assets/images/gallery/gallery-07.jpg" alt="" class="img-responsive"/></a><a href="#" class="thumb"><img src="assets/images/gallery/gallery-08.jpg"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        alt="" class="img-responsive"/></a></div>
+                                    <div class="clearfix"></div>
+                                    <a href="#" class="view-more">View more&nbsp;<i class="fa fa-angle-double-right mls"></i></a></div>
+                            </div>
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-6 sd380">
                             <div class="mailing-widget widget">
@@ -257,11 +243,7 @@
         </ul>
     </div>
 </div>
-<!-- LOADING-->
-<div class="body-2 loading">
-    <div class="dots-loader"></div>
-</div>
-<!-- JAVASCRIPT LIBS-->
+<!-- LOADING--><!-- JAVASCRIPT LIBS-->
 <script>if ((Cookies.get('color-skin') != undefined) && (Cookies.get('color-skin') != 'color-1')) {
     $('.logo .header-logo img').attr('src', 'assets/images/logo-' + Cookies.get('color-skin') + '.png');
 } else if ((Cookies.get('color-skin') == undefined) || (Cookies.get('color-skin') == 'color-1')) {
@@ -279,8 +261,6 @@
 <!-- MAIN JS-->
 <script src="assets/js/main.js"></script>
 <!-- LOADING SCRIPTS FOR PAGE-->
-<script src="assets/libs/isotope/isotope.pkgd.min.js"></script>
-<script src="assets/libs/isotope/fit-columns.js"></script>
-<script src="assets/js/pages/homepage.js"></script>
+<script src="assets/js/pages/profile-teacher.js"></script>
 </body>
 </html>
