@@ -1,53 +1,73 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="sample.aspx.cs" Inherits="FinalTemplate.sample" %>
 
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
 <!DOCTYPE html>
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
-     <script src="assets/js/jquery-2.2.3.js"></script>
-    <script src="assets/js/jquery.validate.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {  
-            $("#form1").validate({  
-                rules: {  
-                    TextBox1: {
-                        required: true,
-                        minlength:10
-                            
-                    
-                    },  
+<script src="assets/js/jquery-2.2.3.js"></script>
+<script src="assets/js/jquery.validate.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#form1").validate({
+
+
+            rules: {
+                nametxt: {
+                    required: true,
+                    minlength: 10
                 },
-                  
-                    messages: {
-                        TextBox1:{
-                            required:"Please enter your name",
-                            minlength:"The username is too short"
-                    
-                     
-                        }, 
-                    }
-            });  
-         }); 
+                pass: "required",
+                repass: {
+                    required: true,
+                    equalTo:"#pass"
+
+                }
+            },
+
+            messages: {
+                nametxt: {
+                    required: "Please enter your name",
+                    minlength: "The username is too short"
+                },
+            }
+
+        });
+    });
 
 
 
 
-    </script>
+
+
+</script>
+
+
 <head runat="server">
-   
-    
+
+   <%-- <style type="text/css">
+        label.error {
+            color: red;
+            display: inline-flex;
+        }
+    </style>--%>
     <title></title>
 </head>
+
 <body>
+
     <form id="form1" runat="server">
-    <div>
-        <asp:Label ID="Label1" runat="server" Text="name"></asp:Label>
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-        <br />
-        <br />
-        <asp:Button ID="Button1" runat="server" Text="Button" />
-    </div>
+        <div>
+            <asp:Label ID="Label1" runat="server" Text="name"></asp:Label>
+            <asp:TextBox ID="nametxt" runat="server"></asp:TextBox><br />
+            <asp:TextBox ID="pass" TextMode="Password" runat="server"></asp:TextBox><br />
+            <asp:TextBox ID="repass" TextMode="Password" runat="server"></asp:TextBox>
+
+            <br />
+            <br />
+            <asp:Button ID="Button1" runat="server" Text="Button" />
+        </div>
     </form>
+
 </body>
 </html>

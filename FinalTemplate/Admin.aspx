@@ -5,7 +5,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('#topStudents').addClass('topPadding');
-            $('#teachingstaff').addClass('teachingbackgroundImage');            
+            $('#teachingstaff').addClass('teachingbackgroundImage');
         });
     </script> 
     
