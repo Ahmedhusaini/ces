@@ -4,7 +4,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link rel="icon" href="assets/images/popular/popular-4.jpg"/>
     <title>Student Profile</title>
+    
       <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -81,11 +83,11 @@
                                 <li><a href="about-us.html" class="link-page">about us</a></li>
                             </ul>
                         </li>--%>
-                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu">News<span class="fa fa-angle-down icons-dropdown"></span></a>
-                            <ul class="dropdown-menu edugate-dropdown-menu-1">
+                        <li class="dropdown"><a href="#" class="main-menu">News<span class="fa fa-angle-down icons-dropdown"></span></a>
+                            <%--<ul class="dropdown-menu edugate-dropdown-menu-1">
                                 <li><a href="news.html" class="link-page">News List</a></li>
                                 <li><a href="news-detail.html" class="link-page">News Detail</a></li>
-                            </ul>
+                            </ul>--%>
                         </li>
                         <li><a href="contact.html" class="main-menu">Contact</a></li>
                         <li class="button-search"><p class="main-menu"><i class="fa fa-search"></i></p></li>
