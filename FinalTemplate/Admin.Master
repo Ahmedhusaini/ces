@@ -92,7 +92,7 @@
                                 <li><a href="news-masonry.html" class="link-page">news masonry</a></li>
                                 <li><a href="news-detail.html" class="link-page">news detail</a></li>
                             </ul>
-                        </li>
+                        </li>                     
                         <li><a href="contact.html" class="main-menu">Contact</a></li>
                         <li class="button-search"><p class="main-menu"><i class="fa fa-search"></i></p></li>
                         <div class="nav-search hide">
