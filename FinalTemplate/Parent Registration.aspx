@@ -1,8 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Register.Master" AutoEventWireup="true" CodeBehind="Parent Registration.aspx.cs" Inherits="FinalTemplate.Parent_Registration" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="RegisterHeadPlaceHolder" runat="server">
 </asp:Content>
-
-    <asp:Content ID="Content3" ContentPlaceHolderID="RegisterPlaceHolder1" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="RegisterPlaceHolder1" runat="server">
 
     <link href="assets/css/mycss.css" rel="stylesheet" />
     <style>
@@ -189,8 +188,7 @@
                                         </div>
                                         
                                 <br />
-                            <h4>Upload your photo:</h4>
-                                <asp:FileUpload ID="FileUpload1" runat="server" />
+                            
                             
 
                                 <h3 style="text-align:center">Authorization Detail's</h3>

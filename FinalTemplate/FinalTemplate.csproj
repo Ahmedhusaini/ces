@@ -209,7 +209,7 @@
     <Content Include="assets\libs\smooth-scroll\jquery-smoothscroll.js" />
     <Content Include="assets\libs\wow-js\wow.min.js" />
     <Content Include="Default.aspx" />
-    <Content Include="ParentRegistration.aspx" />
+    <Content Include="Parent Registration.aspx" />
     <Content Include="news_description.aspx" />
     <Content Include="news_update_alerts.aspx" />
     <Content Include="sample.aspx" />
@@ -243,6 +243,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Parent Registration.aspx.cs">
+      <DependentUpon>Parent Registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parent Registration.aspx.designer.cs">
+      <DependentUpon>Parent Registration.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.Master.cs">
