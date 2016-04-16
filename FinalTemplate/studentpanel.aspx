@@ -45,7 +45,7 @@
                                 <p>CLASS-9 SECTION-B</p>
                                 <button class="btn btn-green-2" formaction="StudentProfile.aspx"><span>View Complete Profile</span></button>
                             </div>
-                            <div data-wow-delay="0.2s" data-wow-duration="1.2s" class="background-girl-1 wow fadeInDown"><img src="assets/images/people-avatar-1.jpg" alt="" class="img-responsive" style="border-radius:70%"/></div>
+                            <div data-wow-delay="0.2s" data-wow-duration="1.2s" class="background-girl-1 wow fadeInDown"><img src="assets/images/edit.jpg" alt="" class="img-responsive" style="border-radius:70%"/></div>
                         </div>
                     </div>
                 </div>
