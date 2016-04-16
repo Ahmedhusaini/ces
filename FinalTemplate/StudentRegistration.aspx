@@ -1,40 +1,35 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Register.Master" AutoEventWireup="true" CodeBehind="StudentRegistration.aspx.cs" Inherits="FinalTemplate.StudentRegistration" %>
 
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="RegisterHeadPlaceHolder" runat="server">
-<%--    <script src="assets/js/jquery-2.2.3.js"></script>
+   <script src="assets/js/jquery-2.2.3.js"></script>
     <script src="assets/js/jquery.validate.js"></script>
-
     <script type="text/javascript">
+        $(document).ready(function () {
+            $("#col-md-6").validate({
+                rules: {
+                    TextBox1: {
+                        required: true,
+                        minlength: 10
+                    },
+                },
 
-        $(document).ready(function () {  
-            $("Panel1").validate({  
-                rules: {  
-                      
-                    <%=TextBox1.UniqueID %>:{  
-                        required:true  
-                    },   
-                },  
-                messages: {  
-                    //This section we need to place our custom   
-                    //validation message for each control.  
-                    <%=TextBox1.UniqueID %>: {  
-                        required: "Name is required."  
-                    },  
-                },  
-            });  
+                messages: {
+                    TextBox1: {
+                        required: "Please enter your name",
+                        minlength: "The username is too short"
+                    },
+                }
+            });
         });
 
-
-
-
-    </script>--%>
+    </script>
 
 
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="RegisterPlaceHolder1" runat="server">
+
     <link href="assets/css/mycss.css" rel="stylesheet" />
     <style>
         .reg-sk {
@@ -50,14 +45,14 @@
                         <img src="assets/images/logo-color-1.png" alt="" class="login" /></a>
 
                     <div class="register-title rlp-title">create your account and join with us!</div>
-                    <div class="register-title rlp-title">Registration</div>
+                    <h3>Student Detail</h3>
+                   
                     <asp:Panel ID="Panel1" runat="server">
 
                    
-                        <div class="register-form bg-w-form rlp-form">
-
-                            <div class="row">
+                        <div class="register-form bg-w-form rlp-form">          
                                 <div class="col-md-6">
+
                                     <label for="regname" class="control-label form-label">
                                         NAME <span class="highlight">*<br />
                                         </span>
@@ -98,7 +93,7 @@
                                 </div>
                                      <div class="col-md-6">
                                     <label for="regname" class="control-label form-label">
-                                        guardian Name <span class="highlight">*<br />
+                                        Guardian Name <span class="highlight">*<br />
                                         </span>
                                     </label>
                                     <!-- p.help-block Warning !-->
@@ -109,7 +104,7 @@
                                 </div>
                                      <div class="col-md-6">
                                     <label for="regname" class="control-label form-label">
-                                        Contact No <span class="highlight">*<br />
+                                    Guardian Contact No <span class="highlight">*<br />
                                         </span>
                                     </label>
                                     <!-- p.help-block Warning !-->
@@ -216,8 +211,12 @@
                                     <br />
                                     <asp:TextBox ID="preclass" CssClass="form-control  form-input" runat="server"></asp:TextBox>
                             </div>
+                                <br />
+                            <h4>Upload your photo:</h4>
+                                <asp:FileUpload ID="FileUpload1" runat="server" />
+                            
 
-                                <h3>School Information</h3>
+                                <h3 style="text-align:center">School Detail's</h3>
 
                                   <div class="col-md-6">
                                     <label for="regname" class="control-label form-label">
@@ -263,7 +262,7 @@
                                     <br />
                                     <asp:TextBox ID="section" CssClass="form-control  form-input" runat="server"></asp:TextBox>
                                       </div>
-                                <h3>Sign up</h3>
+                                <h3 style="text-align:center">Authorization Detail's</h3>
                                 <div class="col-md-6">
                                     <label for="regname" class="control-label form-label">
                                         Username <span class="highlight">*<br />
@@ -317,27 +316,16 @@
                                     <!-- p.help-block Warning !-->
                                     <br />
                                     <asp:TextBox ID="semail" CssClass="form-control  form-input" runat="server"></asp:TextBox>
-                                      </div>
-                                
-                                <h4>Upload your photo:</h4>
-                                <asp:FileUpload ID="FileUpload1" runat="server" />
-                                </div>
-     
-                                </div>
+                                      </div>                             
+                                           </div>                      
                         <div class="register-submit">
                             <button type="submit" onclick="window.location.href='index.html'" class="btn btn-register btn-green">
                                 <span>
                                     <asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" /></span></button>
-                           
-                    
-                        </div>
-                
-                 </asp:Panel>
-                    </div>
-               
-                </div>
-          
+                     </div>          
+                 </asp:Panel>                
+                    </div>            
+                </div>          
             </div>
-        </div>
-   
+        </div>  
 </asp:Content>
