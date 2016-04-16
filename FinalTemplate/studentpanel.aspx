@@ -25,7 +25,11 @@
                 <div class="teacher-info">
                     <div class="staff-item2 customize"><br />
                                     <div class="staff-item-wrapper">
-                                        <div class="staff-info"><a href="#" class="staff-avatar"><img src="assets/images/people-avatar-4.jpg" alt="" class="img-responsive"/></a><a href="#" class="staff-name">UZKABAIN</a></div>
+                                        <div class="staff-info"><a href="#" class="staff-avatar">
+                                        <img src="assets/images/people-avatar-4.jpg" alt="" class="img-responsive"/></a>
+                                       <a href="#" class="staff-name"><b>KASHIF NOMAN</b></a><br />
+                                            <a href="#" class="heading-table">Class-3 Sec-B</a>
+                                        </div>
                                     </div>
                                     
                                 </div>
