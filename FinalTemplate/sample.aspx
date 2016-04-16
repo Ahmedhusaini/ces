@@ -34,7 +34,7 @@
                 lname: {
                     required: true,
                     lettersonly:true    
-                },
+                }
 
 
             },
