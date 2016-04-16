@@ -31,31 +31,31 @@
                                                         <table class="edu-table-responsive table-hover">
                                                             <tbody>
                                                             <tr class="table-row">
-                                                                <td class="col"><span> AHMED</span></td>
-                                                                <td class="col"><span>56</span></td>
+                                                                <td class="col-1"><span> AHMED</span></td>
+                                                                <td class="col-2"><span>56</span></td>
                                                                 <td class="col-3"><span>aca</span></td>
                                                                 <td class="col-4"><span>paid</span></td>
                                                             </tr>                                                                                                                                                                                                                                                                                                     
                                                             <tr class="table-row">
-                                                                <td class="col"><span>JAHANGEER</span></td>
+                                                                <td class="col-1"><span>JAHANGEER</span></td>
                                                                 <td class="col-2"><span>333</span></td>
                                                                 <td class="col-3"><span>asas</span></td>
                                                                 <td class="col-4"><span>paid</span></td>
                                                             </tr>
                                                             <tr class="table-row">
-                                                                <td class="col"><span>SIDDIQUE</span></td>
+                                                                <td class="col-1"><span>SIDDIQUE</span></td>
                                                                 <td class="col-2"><span>22</span></td>
                                                                 <td class="col-3"><span>ssd</span></td>
                                                                 <td class="col-4"><span>paid</span></td>
                                                             </tr>
                                                                  <tr class="table-row">
-                                                                <td class="col"><span>SHEHREYAR</span></td>
+                                                                <td class="col-1"><span>SHEHREYAR</span></td>
                                                                 <td class="col-2"><span>232</span></td>
                                                                 <td class="col-3"><span>th</span></td>
                                                                 <td class="col-4"><span>paid</span></td>
                                                             </tr>
                                                                  <tr class="table-row">
-                                                                <td class="col"><span>SHAHWAIZ</span></td>
+                                                                <td class="col-1"><span>SHAHWAIZ</span></td>
                                                                 <td class="col-2"><span>55</span></td>
                                                                 <td class="col-3"><span>djd</span></td>
                                                                 <td class="col-4"><span>paid</span></td>
