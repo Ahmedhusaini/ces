@@ -8,6 +8,7 @@
          
                     <div class="container">
                         <div class="page-title-wrapper"><!--.page-title-content-->
+
                            <div class="slider-banner-wrapper"><h4 data-wow-delay="0.5s" class="sub-title wow fadeInUp">Login Date:03/08/2016 &nbsp;&nbsp; Login Time: 09:23:00 AM</h4>
                              <h2 class="captions">Student profile</h2>
                             <ol class="breadcrumb">
@@ -21,7 +22,7 @@
     <!--profile-->
         
                     <div class="container">
-            <div class="profile-teacher-wrapper">
+            <div class="profile-teacher-wrapper" style="border:solid;color:#86bc42">
                 <div class="teacher-info">
                     <div class="staff-item2 customize"><br />
                                     <div class="staff-item-wrapper">
@@ -31,12 +32,31 @@
                                             <a href="#" class="heading-table">Class-3 Sec-B</a>
                                         </div>
                                     </div>
-                                    
                                 </div>
                 </div>
             </div>
         </div>
-<!-- CHOOSE COURSES-->
+<!-- WHY CHOOSE US-->
+                <div class="section why-choose-us">
+                    <div class="why-choose-us-wrapper-bottom background-opacity">
+                        <div class="container">
+                            <div data-wow-delay="0.4s" data-wow-duration="1s" class="row why-choose-us-wrapper wow zoomIn">
+                                <div class="customs-row">
+                                    <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-calendar"></i>
+
+                                        <p>365 Days</p></div>
+                                    <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-bookmark-o"></i>
+                                        <p>300 Days Present</p>
+                                    </div>
+                                    <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-close"></i>
+
+                                        <p>003 Days Absent</p></div>
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+    <!-- CHOOSE COURSES-->
               <div class="section choose-course-3">
                     <div class="choose-course-3-wrapper row">
                         <div class="item-course">
@@ -67,27 +87,7 @@
                         </div>
                         
                     </div>
-                </div><br />
-<!-- WHY CHOOSE US-->
-                <div class="section why-choose-us">
-                    <div class="why-choose-us-wrapper-bottom background-opacity">
-                        <div class="container">
-                            <div data-wow-delay="0.4s" data-wow-duration="1s" class="row why-choose-us-wrapper wow zoomIn">
-                                <div class="customs-row">
-                                    <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-calendar"></i>
-
-                                        <p>365 Days</p></div>
-                                    <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-bookmark-o"></i>
-                                        <p>300 Days Present</p>
-                                    </div>
-                                    <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-close"></i>
-
-                                        <p>003 Days Absent</p></div>
-                                </div>                                
-                            </div>
-                        </div>
-                    </div>
-                </div><br />        
+                </div>    
     <%--ststus--%>
       <div class="section teacher-skill">
                     <div class="container teacher-skill-content">
