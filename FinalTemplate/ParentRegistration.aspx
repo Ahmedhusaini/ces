@@ -18,7 +18,7 @@
                         <img src="assets/images/logo-color-1.png" alt="" class="login" /></a>
 
                     <div class="register-title rlp-title">create your account and join with us!</div>
-                    <h3>Student Detail</h3>
+                    <h3>Parent Detail's</h3>
                    
                     <asp:Panel ID="Panel1" runat="server">
 
