@@ -43,9 +43,9 @@
                             <div class="why-choose-us-wrapper"><h2 class="title-2">Name of the Student</h2>
 
                                 <p>CLASS-9 SECTION-B</p>
-                                <button onclick="window.location.href='categories.html'" class="btn btn-green-2"><span>View Complete Profile</span></button>
+                                <button class="btn btn-green-2" formaction="StudentProfile.aspx"><span>View Complete Profile</span></button>
                             </div>
-                            <div data-wow-delay="0.2s" data-wow-duration="1.2s" class="background-girl-1 wow fadeInUp"><img src="assets/images/girl-1.png" alt="" class="img-responsive"/></div>
+                            <div data-wow-delay="0.2s" data-wow-duration="1.2s" class="background-girl-1 wow fadeInDown"><img src="assets/images/edit.jpg" alt="" class="img-responsive" style="border-radius:70%"/></div>
                         </div>
                     </div>
                 </div>

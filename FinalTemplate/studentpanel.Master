@@ -63,35 +63,40 @@
                 </div>
                 <nav class="navigation collapse navbar-collapse">
                     <ul class="nav-links nav navbar-nav">
-                        <li class="dropdown active"><a href="studentpanel.aspx" class="main-menu">Home</a></li>
-                        <%--<li class="dropdown"><a href="javascript:void(0)" class="main-menu">Teachers<span class="fa fa-angle-down icons-dropdown"></span></a>
-                            <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                <li><a href="courses.html" class="link-page">courses</a></li>
-                                <li><a href="courses-detail.html" class="link-page">course detail</a></li>
-                                <li><a href="events.html" class="link-page">events</a></li>
-                                <li><a href="event-detail.html" class="link-page">event detail</a></li>
-                            </ul>
-                        </li>--%>
+
+                        <li class="dropdown active"><a href="studentpanel.aspx" class="main-menu">Home</a>
+                        </li>
+                         
                         <li class="dropdown"><a href="StudentRegistration.aspx" class="main-menu">gallery</a>
-                            <%--<ul class="dropdown-menu edugate-dropdown-menu-1">
-                                <li><a href="gallery-3column.html" class="link-page">gallery 3 column</a></li>
-                            </ul>--%>
                         </li>
-                        <%--<li class="dropdown"><a href="javascript:void(0)" class="main-menu">pages<span class="fa fa-angle-down icons-dropdown"></span></a>
+                         <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Schedules<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                <li><a href="categories.html" class="link-page">categories</a></li>
-                                <li><a href="profile-teacher.html" class="link-page">profile teacher</a></li>
-                                <li><a href="about-us.html" class="link-page">about us</a></li>
+                                <li><a href="about-us.html" class="link-page">Syllabus</a></li>
+                                <li><a href="categories.html" class="link-page">Date Sheet</a></li>
+                                <li><a href="categories.html" class="link-page">Mark Sheet</a></li>
                             </ul>
-                        </li>--%>
-                        <li class="dropdown"><a href="#" class="main-menu">News</a>
-                            <%--<ul class="dropdown-menu edugate-dropdown-menu-1">
-                                <li><a href="news.html" class="link-page">News List</a></li>
-                                <li><a href="news-detail.html" class="link-page">News Detail</a></li>
-                            </ul>--%>
                         </li>
-                        <li><a href="contact.html" class="main-menu">Contact</a></li>
-                        <li class="button-search"><p class="main-menu"><i class="fa fa-search"></i></p></li>
+
+                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Download<span class="fa fa-angle-down icons-dropdown"></span></a>
+                            <ul class="dropdown-menu edugate-dropdown-menu-1">
+                                <li><a href="news.html" class="link-page">Download Lectures</a></li>
+                                <li><a href="news-grid.html" class="link-page">Download Homework</a></li>
+                                <li><a href="news-grid-nonsidebar.html" class="link-page">Download Assignments</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="Admin.aspx" class="main-menu">Attendance<span class="fa fa-angle-down icons-dropdown"></span></a>
+                            <ul class="dropdown-menu edugate-dropdown-menu-1">
+                                <li><a href="teacher.aspx" class="link-page">View Attendance</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="#" class="main-menu">News</a>
+                        </li>
+
+                        <li><a href="contact.html" class="main-menu">Contact</a>
+                        </li>
+                        <li class="button-search"><p class="main-menu"><i class="fa fa-search"></i></p>
+                        </li>
+
                         <div class="nav-search hide">
                             <form><input type="text" placeholder="Search" class="searchbox"/>
                                 <button type="submit" class="searchbutton fa fa-search"></button>

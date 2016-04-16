@@ -89,6 +89,7 @@
     <Content Include="assets\images\courses\courses-2.jpg" />
     <Content Include="assets\images\courses\courses-3.jpg" />
     <Content Include="assets\images\courses\courses-4.jpg" />
+    <Content Include="assets\images\edit.jpg" />
     <Content Include="assets\images\event-detail-1.jpg" />
     <Content Include="assets\images\gallery\gallery-01.jpg" />
     <Content Include="assets\images\gallery\gallery-02.jpg" />
@@ -208,7 +209,8 @@
     <Content Include="assets\libs\smooth-scroll\jquery-smoothscroll.js" />
     <Content Include="assets\libs\wow-js\wow.min.js" />
     <Content Include="Default.aspx" />
-    <Content Include="ParentRegistration.aspx" />
+    <Content Include="news_description.aspx" />
+    <Content Include="news_update_alerts.aspx" />
     <Content Include="sample.aspx" />
     <Content Include="select_resistration_type.aspx" />
     <Content Include="studentpanel.aspx" />
@@ -241,12 +243,19 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ParentRegistration.aspx.cs">
-      <DependentUpon>ParentRegistration.aspx</DependentUpon>
+    <Compile Include="news_description.aspx.cs">
+      <DependentUpon>news_description.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ParentRegistration.aspx.designer.cs">
-      <DependentUpon>ParentRegistration.aspx</DependentUpon>
+    <Compile Include="news_description.aspx.designer.cs">
+      <DependentUpon>news_description.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="news_update_alerts.aspx.cs">
+      <DependentUpon>news_update_alerts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="news_update_alerts.aspx.designer.cs">
+      <DependentUpon>news_update_alerts.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.Master.cs">
