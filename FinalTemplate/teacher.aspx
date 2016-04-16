@@ -73,7 +73,7 @@
                                             <div class="outer-container">
                                                 <div class="inner-container">
                                                     <div class="table-header">
-                                                        <table class="edu-table-responsive">
+                                                        <table class="edu-table-responsive table-hover">
                                                             <thead>
                                                             <tr class="heading-table">
                                                                 <th class="col-1">Name</th>
