@@ -3,8 +3,8 @@
         
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <!-- SLIDER BANNER-->
-   <div class="section background-opacity page-title set-height-top">
+<!-- SLIDER BANNER-->
+        <div class="section background-opacity page-title set-height-top">
          
                     <div class="container">
                         <div class="page-title-wrapper"><!--.page-title-content-->
@@ -17,8 +17,22 @@
                         </div>
                     </div>
                 </div>
-        </div><br />
-     <!-- CHOOSE COURSES-->
+          </div>
+    <!--profile-->
+        
+                    <div class="container">
+            <div class="profile-teacher-wrapper">
+                <div class="teacher-info">
+                    <div class="staff-item2 customize"><br />
+                                    <div class="staff-item-wrapper">
+                                        <div class="staff-info"><a href="#" class="staff-avatar"><img src="assets/images/people-avatar-4.jpg" alt="" class="img-responsive"/></a><a href="#" class="staff-name">UZKABAIN</a></div>
+                                    </div>
+                                    
+                                </div>
+                </div>
+            </div>
+        </div>
+<!-- CHOOSE COURSES-->
               <div class="section choose-course-3">
                     <div class="choose-course-3-wrapper row">
                         <div class="item-course">
@@ -26,7 +40,7 @@
                                 <div class="icon-course"><i class="icons-img icon-globe"></i></div>
                                 <div class="info-course"><a href="#" class="name-course">Results</a>
 
-                                    <div class="info">Search, view and generate results for any type of exames. You can also check feedback regarding any result posted by students or parents.</div>
+                                    <div class="info">view results of Your exams. You can also check feedback regarding any result posted by Teachers & parents.</div>
                                 </div>
                             </div>
                         </div>
@@ -35,22 +49,22 @@
                                 <div class="icon-course"><i class="icons-img icon-photocamera_1"></i></div>
                                 <a href="#" class="info-course">
                                     <div class="name-course">Photography</div>
-                                    <div class="info">Relive the past memories and view all pictures from past events and functions.</div>
+                                    <div class="info">Relive the past memories and view the pictures of past events and functions.</div>
                                 </a></div>
                         </div>
                         <div class="item-course">
                             <div class="item-course-wrapper">
-                                <div class="icon-course"><i class="icons-img icon-computer_network"></i></div>
-                                <div class="info-course"><a href="#" class="name-course">School Feedback</a>
+                                <div class="icon-course"><i class="icons-img icon-chat_bubbles"></i></div>
+                                <div class="info-course"><a href="#" class="name-course">Communication</a>
 
-                                    <div class="info">Check what other people are saying about your school. View their feedback for improvement.</div>
+                                    <div class="info">Make some interaction to Teacher and ask some queries. Click to check what is available now.</div>
                                 </div>
                             </div>
                         </div>
                         
                     </div>
                 </div><br />
-    <!-- WHY CHOOSE US-->
+<!-- WHY CHOOSE US-->
                 <div class="section why-choose-us">
                     <div class="why-choose-us-wrapper-bottom background-opacity">
                         <div class="container">
@@ -70,9 +84,6 @@
                         </div>
                     </div>
                 </div><br />        
-    
-   
-
     <%--ststus--%>
       <div class="section teacher-skill">
                     <div class="container teacher-skill-content">
@@ -104,8 +115,95 @@
                                     </div>
                             </div>--%>
                         </div>
-                            </div>
+                         </div>
                     </div>
                 </div>
-  
+<%--timetable--%>
+  <div class="section teacher-course section-padding">
+                    <div class="container teacher-course-wrapper" style="width:1220px">
+                        <div class="underline">TIME TABLE</div>
+                        <div class="course-table">
+                            <div class="outer-container">
+                                <div class="inner-container">
+                                    <div class="table-header">
+                                        <table class="edu-table-responsive">
+                                            <thead>
+                                            <tr class="heading-table">
+                                                <th class="col-1">ID</th>
+                                                <th class="col-3">MONDAY</th>
+                                                <th class="col-3">TUESDAY</th>
+                                                <th class="col-3">WEDNESDAY</th>
+                                                <th class="col-3">THURSDAY</th>
+                                                <th class="col-3">FRIDAY</th>
+                                            </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    <div class="table-body">
+                                        <table class="edu-table-responsive table-hover">
+                                            <tbody>
+                                            <tr class="table-row">
+                                                <td class="col-1"><span>P1</span></td>
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>                                                
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
+                                            </tr>
+                                            <tr class="table-row">
+                                                <td class="col-1"><span>P2</span></td>
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>                                                
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
+                                            </tr>
+                                            <tr class="table-row">
+                                                <td class="col-1"><span>P3</span></td>
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>                                                
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
+                                            </tr>
+                                            <tr class="table-row">
+                                                <td class="col-1"><span>P4</span></td>
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>                                                
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
+                                            </tr>
+                                            <tr class="table-row">
+                                                <td class="col-1"><span>P5</span></td>
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>                                                
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
+                                            </tr>
+                                            <tr class="table-row">
+                                                <td class="col-1"><span>P6</span></td>
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>                                                
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
+                                            </tr>
+                                            <tr class="table-row">
+                                                <td class="col-1"><span>P7</span></td>
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>                                                
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
+                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 </asp:Content>
