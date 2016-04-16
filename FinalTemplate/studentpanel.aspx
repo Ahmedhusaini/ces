@@ -20,7 +20,7 @@
                 </div>
           </div>
     <!--profile-->
-        
+<%--        
                     <div class="container">
             <div class="profile-teacher-wrapper" style="border:solid;color:#86bc42">
                 <div class="teacher-info">
@@ -35,10 +35,23 @@
                                 </div>
                 </div>
             </div>
-        </div>
+        </div>--%>
+       <!-- WHY CHOOSE US-->
+                <div class="section why-choose-us">
+                    <div class="why-choose-us-wrapper-top">
+                        <div class="container">
+                            <div class="why-choose-us-wrapper"><h2 class="title-2">Name of the Student</h2>
+
+                                <p>CLASS-9 SECTION-B</p>
+                                <button onclick="window.location.href='categories.html'" class="btn btn-green-2"><span>View Complete Profile</span></button>
+                            </div>
+                            <div data-wow-delay="0.2s" data-wow-duration="1.2s" class="background-girl-1 wow fadeInUp"><img src="assets/images/girl-1.png" alt="" class="img-responsive"/></div>
+                        </div>
+                    </div>
+                </div>
 <!-- WHY CHOOSE US-->
                 <div class="section why-choose-us">
-                    <div class="why-choose-us-wrapper-bottom background-opacity">
+                    <div class="why-choose-us-wrapper<%-- bottom background-opacity--%>">
                         <div class="container">
                             <div data-wow-delay="0.4s" data-wow-duration="1s" class="row why-choose-us-wrapper wow zoomIn">
                                 <div class="customs-row">
