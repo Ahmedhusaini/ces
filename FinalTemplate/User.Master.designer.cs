@@ -11,6 +11,6 @@ namespace FinalTemplate {
     
     
     public partial class User {
-      
+       
     }
 }
