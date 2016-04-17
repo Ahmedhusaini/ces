@@ -147,27 +147,7 @@
                                     <asp:TextBox ID="religion" CssClass="form-control  form-input" runat="server"></asp:TextBox>
 
                             </div>
-                                 <div class="col-md-6">
-                                    <label for="regname" class="control-label form-label">
-                                        City <span class="highlight">*<br />
-                                        </span>
-                                    </label>
-                                    <!-- p.help-block Warning !-->
-                                    <br />
-                                    <asp:TextBox ID="city" CssClass="form-control  form-input" Width="200px" runat="server"></asp:TextBox>
-
-                            </div>
-                                <div class="col-md-6">
-                                    <label for="regname" class="control-label form-label">
-                                        Country  <span class="highlight">*<br />
-                                        </span>
-                                    </label>
-                                    <!-- p.help-block Warning !-->
-                                    <br />
-                                    <asp:TextBox ID="country" CssClass="form-control  form-input" Width="200px" runat="server"></asp:TextBox>
-
-                            </div>
-                                  <div class="col-md-6">
+                            <div class="col-md-6">
                                     <label for="regname" class="control-label form-label">
                                      Home Address <span class="highlight">*<br />
                                         </span>
@@ -186,8 +166,38 @@
                                     <asp:TextBox ID="postal" CssClass="form-control  form-input" runat="server"></asp:TextBox>
 
                                         </div>
+                                 <div class="col-md-6">
+                                    <label for="regname" class="control-label form-label">
+                                        City <span class="highlight">*<br />
+                                        </span>
+                                    </label>
+                                    <!-- p.help-block Warning !-->
+                                    <br />
+                                         <asp:DropDownList ID="DropDownList2" CssClass="form-control  form-input" placeholder="----Select----"  runat="server">
+                                          <asp:ListItem></asp:ListItem>
+                                          <asp:ListItem>Karachi</asp:ListItem>
+                                          <asp:ListItem>Lahore</asp:ListItem>
+                                         <asp:ListItem>Peshawar</asp:ListItem>
+                                         <asp:ListItem>Islamabad</asp:ListItem>
+                                         <asp:ListItem>Quetta</asp:ListItem>
+                                         <asp:ListItem>Hyderabad</asp:ListItem>
+                                          </asp:DropDownList>
+                            </div>
+                                <div class="col-md-6">
+                                    <label for="regname" class="control-label form-label">
+                                        Country  <span class="highlight">*<br />
+                                        </span>
+                                    </label>
+                                    <!-- p.help-block Warning !-->
+                                    <br />
+                                    <asp:TextBox ID="country" CssClass="form-control  form-input" Width="200px" runat="server" Text="Pakistan"></asp:TextBox>
+
+                            </div>
+                                  
                                         
                                 <br />
+                             <h4>Upload your photo:</h4>
+                                <asp:FileUpload ID="FileUpload1" runat="server" />
                             
                             
 

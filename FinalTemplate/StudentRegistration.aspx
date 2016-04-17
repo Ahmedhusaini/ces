@@ -161,7 +161,15 @@
                                     </label>
                                     <!-- p.help-block Warning !-->
                                     <br />
-                                    <asp:TextBox ID="city" CssClass="form-control  form-input" Width="200px" runat="server"></asp:TextBox>
+                                     <asp:DropDownList ID="DropDownList2" CssClass="form-control  form-input" placeholder="----Select----"  runat="server">
+                                          <asp:ListItem></asp:ListItem>
+                                          <asp:ListItem>Karachi</asp:ListItem>
+                                          <asp:ListItem>Lahore</asp:ListItem>
+                                         <asp:ListItem>Peshawar</asp:ListItem>
+                                         <asp:ListItem>Islamabad</asp:ListItem>
+                                         <asp:ListItem>Quetta</asp:ListItem>
+                                         <asp:ListItem>Hyderabad</asp:ListItem>
+                                          </asp:DropDownList>
 
                             </div>
                                 <div class="col-md-6">
@@ -171,7 +179,7 @@
                                     </label>
                                     <!-- p.help-block Warning !-->
                                     <br />
-                                    <asp:TextBox ID="country" CssClass="form-control  form-input" Width="200px" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="country" CssClass="form-control  form-input" Width="200px" runat="server" Text="Pakistan"></asp:TextBox>
 
                             </div>
                                   <div class="col-md-6">
