@@ -179,7 +179,7 @@
                                     <div class="col-md-6">
                                     <label for="regname" class="control-label form-label">
                                         postal Code <span class="highlight">*<br />
-                                        </span>
+                                        </span> 
                                     </label>
                                     <!-- p.help-block Warning !-->
                                     <br />

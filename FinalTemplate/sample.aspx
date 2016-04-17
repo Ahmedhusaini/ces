@@ -7,28 +7,42 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <script src="assets/js/jquery-2.2.3.js"></script>
 <script src="assets/js/jquery.validate.js"></script>
+ <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
 <script type="text/javascript">
+    $.validator.addMethod("lettersonly", function (value, element) {
+        return this.optional(element) || /^[a-z]+$/i.test(value);
+    }, "Letters only please");
     $(document).ready(function () {
         $("#form1").validate({
 
 
             rules: {
-                nametxt: {
+                email: {
                     required: true,
-                    minlength: 10
+                   email:true
                 },
                 pass: "required",
                 repass: {
                     required: true,
                     equalTo:"#pass"
 
+                },
+                fname: {
+                    required: true,                
+                    lettersonly:true
+                },
+                lname: {
+                    required: true,
+                    lettersonly:true    
                 }
+
+
             },
 
             messages: {
-                nametxt: {
-                    required: "Please enter your name",
-                    minlength: "The username is too short"
+                email: {
+                    required: "Please enter your an email.",
+                    email:"Please enter a <em>valid</em> email address."
                 },
             }
 
@@ -58,8 +72,12 @@
 
     <form id="form1" runat="server">
         <div>
-            <asp:Label ID="Label1" runat="server" Text="name"></asp:Label>
-            <asp:TextBox ID="nametxt" runat="server"></asp:TextBox><br />
+            <asp:Label ID="Label1" runat="server" Text="email"></asp:Label>
+            <asp:TextBox ID="email" runat="server"></asp:TextBox><br />
+            <asp:Label ID="Label2" runat="server" Text="name"></asp:Label>
+             <asp:TextBox ID="fname" runat="server"></asp:TextBox><br />
+            <asp:Label ID="Label3" runat="server" Text="2name"></asp:Label>
+             <asp:TextBox ID="lname" runat="server"></asp:TextBox><br />
             <asp:TextBox ID="pass" TextMode="Password" runat="server"></asp:TextBox><br />
             <asp:TextBox ID="repass" TextMode="Password" runat="server"></asp:TextBox>
 
