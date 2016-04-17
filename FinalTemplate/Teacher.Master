@@ -61,7 +61,7 @@
                 </div>
                 <nav class="navigation collapse navbar-collapse pull-right">
                     <ul class="nav-links nav navbar-nav">
-                        <li><a href="javascript:void(0)" class="main-menu">Home<span class="fa fa-angle-down icons-dropdown"></span></a>                    
+                        <li><a href="teacher.aspx" class="main-menu">Home<span class="fa fa-angle-down icons-dropdown"></span></a>                    
                         </li>
                         <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Admissions<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
@@ -74,7 +74,7 @@
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
                                 <li><a href="Teacherprofile.aspx" class="link-page">My Profile</a></li>
                                 <li><a href="Teacherprofile.aspx" class="link-page">Staff Profile</a></li>
-                                <li><a href="gallery-4column.html" class="link-page">Student Profile</a></li>                        
+                                <li><a href="StudentProfile.aspx" class="link-page">Student Profile</a></li>                        
                             </ul>
                         </li>
                         <li class="dropdown"><a href="Admin.aspx" class="main-menu">Attendance<span class="fa fa-angle-down icons-dropdown"></span></a>
