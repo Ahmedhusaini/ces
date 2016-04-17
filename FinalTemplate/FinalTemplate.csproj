@@ -211,6 +211,7 @@
     <Content Include="Attendance.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="news_description.aspx" />
+    <Content Include="news_update_alerts.aspx" />
     <Content Include="Parent Registration.aspx" />
     <Content Include="sample.aspx" />
     <Content Include="select_resistration_type.aspx" />
@@ -257,6 +258,13 @@
     </Compile>
     <Compile Include="news_description.aspx.designer.cs">
       <DependentUpon>news_description.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="news_update_alerts.aspx.cs">
+      <DependentUpon>news_update_alerts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="news_update_alerts.aspx.designer.cs">
+      <DependentUpon>news_update_alerts.aspx</DependentUpon>
     </Compile>
     <Compile Include="Parent Registration.aspx.cs">
       <DependentUpon>Parent Registration.aspx</DependentUpon>
