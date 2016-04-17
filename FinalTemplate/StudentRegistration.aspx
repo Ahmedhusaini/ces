@@ -6,19 +6,22 @@
     <script src="assets/js/jquery.validate.js"></script>
      <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
     <script type="text/javascript">
+        $.validator.addMethod("lettersonly", function (value, element) {
+            return this.optional(element) || /^[a-z]+$/i.test(value);
+        }, "Letters only please");
         $(document).ready(function () {
-            $("#register-form bg-w-form rlp-form").validate({
+            $("#form").validate({
                 rules: {
                     TextBox1: {
                         required: true,
-                        minlength: 10
-                    },
+                        lettersonly:true
+                    }
                 },
 
                 messages: {
                     TextBox1: {
-                        required: "Please enter your name",
-                        minlength: "The username is too short"
+                        required: "Please enter your name"
+                        
                     },
                 }
             });
@@ -37,8 +40,21 @@
             padding-top:26px;
             padding-bottom:26px;
         }
+          label.error {
+            color: red;
+            display: inline-flex;
+            display:block;
+
+           
+        }
+        input.error {
+            border:1px solid red;
+            float: none; color: red;
+        padding-left: .3em; vertical-align: top;
+        }
+       
     </style>
-    <div class="page-register rlp">
+    <div id="form" class="page-register rlp">
         <div class="container">
             <div class="register-wrapper rlp-wrapper reg-sk">
                 <div class="register-table rlp-table">
@@ -48,10 +64,10 @@
                     <div class="register-title rlp-title">create your account and join with us!</div>
                     <h3>Student Detail's</h3>
                    
-                    <asp:Panel ID="Panel1" runat="server">
+                    
 
                    
-                        <div class="register-form bg-w-form rlp-form">          
+                        <div  class="register-form bg-w-form rlp-form">          
                                 <div class="col-md-6">
 
                                     <label for="regname" class="control-label form-label">
@@ -332,7 +348,7 @@
                                 <span>
                                     <asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" /></span></button>
                      </div>          
-                 </asp:Panel>                
+                               
                     </div>            
                 </div>          
             </div>

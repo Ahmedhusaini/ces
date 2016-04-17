@@ -102,8 +102,10 @@
 
             <asp:Label ID="Label2" runat="server" Text="name"></asp:Label>
              <asp:TextBox ID="fname" runat="server" ></asp:TextBox><br />
+
             <asp:Label ID="Label3" runat="server" Text="2name"></asp:Label>
              <asp:TextBox ID="lname" runat="server"></asp:TextBox><br />
+            
              <asp:Label ID="Label4" runat="server" Text="phone"></asp:Label>
              <asp:TextBox ID="phone" runat="server"></asp:TextBox><br />
             <asp:TextBox ID="pass" TextMode="Password" runat="server"></asp:TextBox><br />
