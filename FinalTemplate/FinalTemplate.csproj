@@ -212,7 +212,6 @@
     <Content Include="Default.aspx" />
     <Content Include="news_description.aspx" />
     <Content Include="Parent Registration.aspx" />
-    <Content Include="news_update_alerts.aspx" />
     <Content Include="sample.aspx" />
     <Content Include="select_resistration_type.aspx" />
     <Content Include="studentpanel.aspx" />
