@@ -7,7 +7,7 @@
      <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            $("#col-md-6").validate({
+            $("#register-form bg-w-form rlp-form").validate({
                 rules: {
                     TextBox1: {
                         required: true,
