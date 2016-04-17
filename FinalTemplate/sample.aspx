@@ -5,6 +5,7 @@
 
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+   
 <script src="assets/js/jquery-2.2.3.js"></script>
 <script src="assets/js/jquery.validate.js"></script>
  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
@@ -76,19 +77,31 @@
         label.error {
             color: red;
             display: inline-flex;
+            display:block;
+
+           
         }
+        input.error {
+            border:1px solid red;
+            float: none; color: red;
+        padding-left: .3em; vertical-align: top;
+        }
+       
+
     </style>
     <title></title>
+    
 </head>
 
 <body>
 
     <form id="form1" runat="server">
         <div>
-            <asp:Label ID="Label1" runat="server" Text="email"></asp:Label>
+            <asp:Label ID="Label1" runat="server" Text="email"></asp:Label><br />
             <asp:TextBox ID="email" runat="server"></asp:TextBox><br />
+
             <asp:Label ID="Label2" runat="server" Text="name"></asp:Label>
-             <asp:TextBox ID="fname" runat="server"></asp:TextBox><br />
+             <asp:TextBox ID="fname" runat="server" ></asp:TextBox><br />
             <asp:Label ID="Label3" runat="server" Text="2name"></asp:Label>
              <asp:TextBox ID="lname" runat="server"></asp:TextBox><br />
              <asp:Label ID="Label4" runat="server" Text="phone"></asp:Label>
