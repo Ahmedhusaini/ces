@@ -44,8 +44,8 @@
     <div class="header-topbar">
         <div class="container">
             <div class="topbar-left pull-left">
-                <div class="email"><a href="#"><i class="topbar-icon fa fa-envelope-o"></i><span>hello.shinway@gmail.com</span></a></div>
-                <div class="hotline"><a href="#"><i class="topbar-icon fa fa-phone"></i><span>+84 909 015 345</span></a></div>
+                <div class="email"><a href="#"><i class="topbar-icon fa fa-envelope-o"></i><span>ces@gmail.com</span></a></div>
+                <div class="hotline"><a href="#"><i class="topbar-icon fa fa-phone"></i><span>+92335667778</span></a></div>
             </div>
             <div class="topbar-right pull-right">
             <div class="group-sign-in"><a href="select_resistration_type.aspx" class="logout">logout</a></div>
@@ -61,7 +61,7 @@
                 </div>
                 <nav class="navigation collapse navbar-collapse pull-right">
                     <ul class="nav-links nav navbar-nav">
-                        <li><a href="teacher.aspx" class="main-menu">Home<span class="fa fa-angle-down icons-dropdown"></span></a>                    
+                        <li><a href="teacher.aspx" class="main-menu"><span>Home</span></a>                    
                         </li>
                         <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Admissions<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
@@ -79,8 +79,8 @@
                         </li>
                         <li class="dropdown"><a href="Admin.aspx" class="main-menu">Attendance<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                <li><a href="teacher.aspx" class="link-page">Mark Attendance</a></li>
-                                <li><a href="teacher.aspx" class="link-page">View Attendance</a></li>
+                                <li><a href="Attendance.aspx" class="link-page">Mark Attendance</a></li>
+                                <li><a href="Attendance.aspx" class="link-page">View Attendance</a></li>
                             </ul>
                         </li>
                         <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Schedules<span class="fa fa-angle-down icons-dropdown"></span></a>
