@@ -16,53 +16,56 @@
                                             <div class="outer-container">
                                                 <div class="inner-container">
                                                     <div class="table-header">
-                                                        <table class="edu-table-responsive table-hover">
+                                                        <table class="Attendance-table table-hover">
                                                             <thead>
                                                             <tr class="heading-table">
-                                                                <th class="col">Name</th>
-                                                                <th class="col">Roll No</th>
-                                                                <th class="col">Address</th>
-                                                                <th class="col">Fee Status</th>
+                                                                <th class="col-1">Student ID</th>
+                                                                <th class="col-2">Name</th>
+                                                                <th class="col-2">Roll No</th>
+                                                                <th class="col-3">Address</th>
+                                                                <th class="col-4">Fee Status</th>
                                                             </tr>
                                                             </thead>
                                                         </table>
                                                     </div>
                                                     <div class="table-body">
-                                                        <table class="edu-table-responsive table-hover">
+                                                        <table class="Attendance-table table-hover">
                                                             <tbody>
                                                             <tr class="table-row">
-                                                                <td class="col-1"><span> AHMED</span></td>
+                                                                <td class="col-1"><span>1</span></td>
+                                                                <td class="col-2"><span> AHMED</span></td>
                                                                 <td class="col-2"><span>56</span></td>
                                                                 <td class="col-3"><span>aca</span></td>
                                                                 <td class="col-4"><span>paid</span></td>
                                                             </tr>                                                                                                                                                                                                                                                                                                     
                                                             <tr class="table-row">
-                                                                <td class="col-1"><span>JAHANGEER</span></td>
+                                                                <td class="col-1"><span>2</span></td>
+                                                                <td class="col-2"><span>JAHANGEER</span></td>
                                                                 <td class="col-2"><span>333</span></td>
                                                                 <td class="col-3"><span>asas</span></td>
                                                                 <td class="col-4"><span>paid</span></td>
                                                             </tr>
                                                             <tr class="table-row">
-                                                                <td class="col-1"><span>SIDDIQUE</span></td>
+                                                                <td class="col-1"><span>3</span></td>
+                                                                <td class="col-2"><span>SIDDIQUE</span></td>
                                                                 <td class="col-2"><span>22</span></td>
                                                                 <td class="col-3"><span>ssd</span></td>
                                                                 <td class="col-4"><span>paid</span></td>
                                                             </tr>
                                                                  <tr class="table-row">
-                                                                <td class="col-1"><span>SHEHREYAR</span></td>
+                                                                <td class="col-1"><span>4</span></td>
+                                                                <td class="col-2"><span>SHEHREYAR</span></td>
                                                                 <td class="col-2"><span>232</span></td>
                                                                 <td class="col-3"><span>th</span></td>
                                                                 <td class="col-4"><span>paid</span></td>
                                                             </tr>
                                                                  <tr class="table-row">
-                                                                <td class="col-1"><span>SHAHWAIZ</span></td>
+                                                                <td class="col-1"><span>5</span></td>
+                                                                <td class="col-2"><span>SHAHWAIZ</span></td>
                                                                 <td class="col-2"><span>55</span></td>
                                                                 <td class="col-3"><span>djd</span></td>
                                                                 <td class="col-4"><span>paid</span></td>
-                                                            </tr>
-                                                          
-                                                           
-                                                           
+                                                            </tr>        
                                                                                   
                                                             </tbody>
                                                         </table>

@@ -12,9 +12,7 @@
 }
 
 .Attendance-table  {
-    border-collapse: collapse;
-    width: 100%
-
+    border-collapse: collapse 
 }
 
 .Attendance-table  tr {
@@ -24,7 +22,9 @@
 }
 
 .Attendance-table  tr.heading-table {
-    background-color: #90a1ae
+    background-color: #90a1ae;
+    width:50px;
+   
 }
 
 .Attendance-table  th {
@@ -84,7 +84,7 @@
 }
 
 .Attendance-table  td i.fa-caret-right :before {
-    position: relative;
+    position:relative;
     right: -1px
 }
 
@@ -92,13 +92,6 @@
     color: #86bc42
 }
 
-.Attendance-table  td i.mr18 {
-    margin-right: 18px
-}
-
-.Attendance-table  td i.mr25 {
-    margin-right: 16px
-}
 
 .Attendance-table  td .bg-yellow {
     background-color: #e2cf00;

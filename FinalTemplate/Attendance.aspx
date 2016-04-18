@@ -40,7 +40,7 @@
                                     </div>
                                         
                                 
-                                    <button type="submit" class="form-submit btn btn-blue"><span>Download</span></button>
+                                    <button type="submit" class="form-submit btn btn-blue"><span>Search</span></button>
                                     <div class="clearfix"></div>
                                 </form>
                             </div>
@@ -48,7 +48,7 @@
                     </div>
     <div class="inner-container">
                                                     <div class="table-header">
-                                                        <table class="Attendance-table  table-hover">
+                                                        <table class="Attendance-table ">
                                                             <thead>
                                                             <tr class="heading-table">
                                                                 <th class="col-1">Student ID</th>
@@ -60,7 +60,7 @@
                                                         </table>
                                                     </div>
                                                     <div class="table-body">
-                                                        <table class="Attendance-table  table-hover">
+                                                        <table class="Attendance-table">
                                                             <tbody>
                                                             <tr class="table-row">
                                                                 <td class="col-1"><a href="#"><span>1</span></a></td>
@@ -93,7 +93,8 @@
                                                                     &nbsp;&nbsp;&nbsp;<asp:CheckBox ID="CheckBox10" runat="server" />ABSENT
                                                                     &nbsp;&nbsp;&nbsp;<asp:CheckBox ID="CheckBox11" runat="server" />LEAVE
                                                                     &nbsp;&nbsp;&nbsp;<asp:CheckBox ID="CheckBox12" runat="server" />LATE
-                                                                </td>  
+                                                                </td> 
+                                                                     </tr> 
                                                                       <tr class="table-row">
                                                                 <td class="col-1"><a href="#"><span>4</span></a></td>
                                                                 <td class="col-2"><span>120</span></td>
@@ -116,15 +117,15 @@
                                                                     &nbsp;&nbsp;&nbsp;<asp:CheckBox ID="CheckBox20" runat="server" />LATE
                                                                 </td>                                                                                                                               
                                                             </tr>                                                                                                                                  
-                                                            </tr>                                                                                                                  
+                                                                                                                                                                    
                                                           </tbody>
                                                         </table>
                                                     </div>
                                                 </div>
                     <div class="container">
                         <div class="group-button">    
-                            <button class="btn btn-transition-2"><span>SAVE</span></button>
-                            <button class="btn btn-transition-2"><span>CLEAR</span></button>
+                            <button class="btn btn-transition-2"><span>Submit</span></button>
+                            <button class="btn btn-transition-2"><span>Clear</span></button>
                                     </div>
                     </div>
              
