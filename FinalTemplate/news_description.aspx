@@ -32,11 +32,6 @@
 
                                         <div class="info">
                                             <div class="author item"><a href="#"><span>By&nbsp;</span><span>Admin</span></a></div>
-                                            <div class="category item"><a href="#">Creative and Learning</a></div>
-                                            <div class="comment item"><a href="#"><span>24</span><span>&nbsp;Comments</span></a></div>
-                                            <div class="date-time item"><a href="#"><span>Posted&nbsp;</span><span>20 Aug 2015</span></a></div>
-                                            <div class="like item"><a href="#"><span>124</span><span>&nbsp;Likes</span></a></div>
-                                            <div class="share item"><a href="#">Share This Post</a></div>
                                         </div>
                                         <div class="news-content">
                                             <div class="news-des"><p>In varius varius justo, eget ultrices mauris rhoncus non. Morbi tristique, mauris eu imperdiet bibendum, velit diam iaculis velit, in ornare massa enim at lorem. Etiam risus diam, porttitor vitae ultrices quis.</p></div>
@@ -69,7 +64,7 @@
                                                         <div class="info">
                                                             <div class="date-created item"><a href="#"><span>Aug 18, 2015</span></a></div>
                                                         </div>
-                                                        <a href="courses-detail.html" class="link comment"><i class="fa fa-comment"></i><span>3</span></a><a href="courses-detail.html" class="link title">Build a Microblogging App With Flux and React</a></div>
+                                                        <a href="courses-detail.html" class="link title">Build a Microblogging App With Flux and React</a></div>
                                                 </div>
                                                 <div class="media">
                                                     <div class="media-left"><a href="courses-detail.html" class="link"><img src="assets/images/recent-post/recent-post-2.jpg" alt="" class="media-image"/></a></div>
@@ -77,7 +72,7 @@
                                                         <div class="info">
                                                             <div class="date-created item"><a href="#"><span>Aug 18, 2015</span></a></div>
                                                         </div>
-                                                        <a href="courses-detail.html" class="link comment"><i class="fa fa-comment"></i><span>3</span></a><a href="courses-detail.html" class="link title">Build a Microblogging App With Flux and React</a></div>
+                                                        <a href="courses-detail.html" class="link title">Build a Microblogging App With Flux and React</a></div>
                                                 </div>
                                                 <div class="media">
                                                     <div class="media-left"><a href="courses-detail.html" class="link"><img src="assets/images/recent-post/recent-post-3.jpg" alt="" class="media-image"/></a></div>
@@ -85,7 +80,7 @@
                                                         <div class="info">
                                                             <div class="date-created item"><a href="#"><span>Aug 18, 2015</span></a></div>
                                                         </div>
-                                                        <a href="courses-detail.html" class="link comment"><i class="fa fa-comment"></i><span>3</span></a><a href="courses-detail.html" class="link title">Build a Microblogging App With Flux and React</a></div>
+                                                        <a href="courses-detail.html" class="link title">Build a Microblogging App With Flux and React</a></div>
                                                 </div>
                                                 <div class="media">
                                                     <div class="media-left"><a href="courses-detail.html" class="link"><img src="assets/images/recent-post/recent-post-4.jpg" alt="" class="media-image"/></a></div>
@@ -93,7 +88,7 @@
                                                         <div class="info">
                                                             <div class="date-created item"><a href="#"><span>Aug 18, 2015</span></a></div>
                                                         </div>
-                                                        <a href="courses-detail.html" class="link comment"><i class="fa fa-comment"></i><span>3</span></a><a href="courses-detail.html" class="link title">Build a Microblogging App With Flux and React</a></div>
+                                                       <a href="courses-detail.html" class="link title">Build a Microblogging App With Flux and React</a></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -102,31 +97,15 @@
                                             <div class="title-widget">categories</div>
                                             <div class="content-widget">
                                                 <ul class="category-widget list-unstyled">
-                                                    <li><a href="categories.html" class="link cat-item"><span class="pull-left">Web Design</span><span class="pull-right">125</span></a></li>
-                                                    <li><a href="categories.html" class="link cat-item"><span class="pull-left">Wordpress Themes</span><span class="pull-right">97</span></a></li>
+                                                    <li><a href="categories.html" class="link cat-item"><span class="pull-left">RESULTS</span><span class="pull-right">125</span></a></li>
+                                                    <li><a href="categories.html" class="link cat-item"><span class="pull-left">ASSIGNMENTS</span><span class="pull-right">97</span></a></li>
                                                     <li><a href="categories.html" class="link cat-item"><span class="pull-left">Photography</span><span class="pull-right">56</span></a></li>
-                                                    <li><a href="categories.html" class="link cat-item"><span class="pull-left">Video</span><span class="pull-right">24</span></a></li>
-                                                    <li><a href="categories.html" class="link cat-item"><span class="pull-left">Miscellaneous</span><span class="pull-right">13</span></a></li>
+                                                    <li><a href="categories.html" class="link cat-item"><span class="pull-left">NEWS</span><span class="pull-right">24</span></a></li>
                                                 </ul>
                                             </div>
                                         </div>
                                         <div class="clearfix"></div>
-                                        <div class="archive-widget widget col-sm-6 col-md-12 col-xs-6 sd380">
-                                            <div class="title-widget">archive</div>
-                                            <div class="content-widget">
-                                                <ul class="archive-widget list-unstyled">
-                                                    <li><a href="news-detail.html" class="link archive-item"><span class="pull-left">March 2016</span><span class="pull-right">09</span></a></li>
-                                                    <li><a href="news-detail.html" class="link archive-item"><span class="pull-left">February 2016</span><span class="pull-right">14</span></a></li>
-                                                    <li><a href="news-detail.html" class="link archive-item"><span class="pull-left">January 2016</span><span class="pull-right">15</span></a></li>
-                                                    <li><a href="news-detail.html" class="link archive-item"><span class="pull-left">December 2016</span><span class="pull-right">23</span></a></li>
-                                                    <li><a href="news-detail.html" class="link archive-item"><span class="pull-left">November 2016</span><span class="pull-right">34</span></a></li>
-                                                    <li><a href="news-detail.html" class="link archive-item"><span class="pull-left">March 2015</span><span class="pull-right">09</span></a></li>
-                                                    <li><a href="news-detail.html" class="link archive-item"><span class="pull-left">February 2015</span><span class="pull-right">14</span></a></li>
-                                                    <li><a href="news-detail.html" class="link archive-item"><span class="pull-left">January 2015</span><span class="pull-right">15</span></a></li>
-                                                    <li><a href="news-detail.html" class="link archive-item"><span class="pull-left">December 2012</span><span class="pull-right">23</span></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                        
                                         <div class="share-widget widget col-sm-6 col-md-12 col-xs-6 sd380">
                                             <div class="title-widget">share this news</div>
                                             <div class="content-widget">
