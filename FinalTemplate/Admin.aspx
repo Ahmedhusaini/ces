@@ -1,17 +1,26 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="FinalTemplate.Admin1" %>
+﻿<%@ Page Title="AdminPanel - CES " Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="FinalTemplate.Admin1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="AdminHeadPlaceHolder" runat="server">
+    
+    <script src="assets/js/jquery-2.2.3.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#topStudents').addClass('topPadding');
+            $('#teachingstaff').addClass('teachingbackgroundImage');
+        });
+    </script> 
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="AdminContentPlaceHolder" runat="server">
                 <!-- SLIDER BANNER-->
                 <div class="section slider-banner-03 background-opacity-2">
                     <div class="container">
-                        <div class="slider-banner-wrapper"><h3 data-wow-delay="0.5s" class="sub-title wow fadeInUp">This is a place of</h3>
+                        <div class="slider-banner-wrapper"><h3 data-wow-delay="0.5s" class="sub-title wow fadeInUp">Login Date:03/08/2016 &nbsp;&nbsp; Login Time: 09:23:00 AM</h3>
 
-                            <h1 data-wow-delay="0.5s" class="main-title wow fadeInUp">Learning & creating</h1>
+                            <h1 data-wow-delay="0.5s" class="main-title wow fadeInUp">School Name</h1>
 
                             <div class="group-button">
-                                <button data-wow-delay="1.3s" data-wow-duration="1s" class="btn btn-transition-3 wow fadeInLeft"><span>Puschase theme</span></button>
-                                <button data-wow-delay="1.3s" data-wow-duration="1s" class="btn btn-green-3 wow fadeInRight"><span>start Learn now</span></button>
+                                <button data-wow-delay="1.3s" data-wow-duration="1s" class="btn btn-transition-3 wow fadeInLeft"><span>View Public Profile</span></button>
+                                <button data-wow-delay="1.3s" data-wow-duration="1s" class="btn btn-green-3 wow fadeInRight"><span>Update Profile Details</span></button>
                             </div>
                         </div>
                     </div>
@@ -22,27 +31,27 @@
                         <div class="item-course">
                             <div class="item-course-wrapper">
                                 <div class="icon-course"><i class="icons-img icon-globe"></i></div>
-                                <div class="info-course"><a href="#" class="name-course">Language</a>
+                                <div class="info-course"><a href="#" class="name-course">Results</a>
 
-                                    <div class="info">It is a long established fact that a reader will be distracted.</div>
+                                    <div class="info">Search, view and generate results for any type of exames. You can also check feedback regarding any result posted by students or parents.</div>
                                 </div>
                             </div>
                         </div>
                         <div class="item-course">
                             <div class="item-course-wrapper">
                                 <div class="icon-course"><i class="icons-img fa fa-database"></i></div>
-                                <div class="info-course"><a href="#" class="name-course">Software</a>
+                                <div class="info-course"><a href="#" class="name-course">Management</a>
 
-                                    <div class="info">It is a long established fact that a reader will be distracted.</div>
+                                    <div class="info">All features related to any management section are available in this section of website. Click anywhere on this to view more options.</div>
                                 </div>
                             </div>
                         </div>
                         <div class="item-course">
                             <div class="item-course-wrapper">
                                 <div class="icon-course"><i class="icons-img icon-computer_network"></i></div>
-                                <div class="info-course"><a href="#" class="name-course">Social Media</a>
+                                <div class="info-course"><a href="#" class="name-course">School Feedback</a>
 
-                                    <div class="info">It is a long established fact that a reader will be distracted.</div>
+                                    <div class="info">Check what other people are saying about your school. View their feedback for improvement.</div>
                                 </div>
                             </div>
                         </div>
@@ -51,7 +60,7 @@
                                 <div class="icon-course"><i class="icons-img icon-photocamera_1"></i></div>
                                 <a href="#" class="info-course">
                                     <div class="name-course">Photography</div>
-                                    <div class="info">It is a long established fact that a reader will be distracted.</div>
+                                    <div class="info">Relive the past memories and view all pictures from past events and functions.</div>
                                 </a></div>
                         </div>
                         <div class="item-course">
@@ -59,7 +68,7 @@
                                 <div class="icon-course"><i class="icons-img icon-credit_card"></i></div>
                                 <div class="info-course"><a href="#" class="name-course">Business</a>
 
-                                    <div class="info">It is a long established fact that a reader will be distracted.</div>
+                                    <div class="info">Check your monthly expense and view subscription details. Keep an eye on everything that is important. If you find any kind of information irrelevent to your school kindly let us know my going to support section.</div>
                                 </div>
                             </div>
                         </div>
@@ -68,15 +77,17 @@
                                 <div class="icon-course"><i class="icons-img icon-chat_bubbles"></i></div>
                                 <div class="info-course"><a href="#" class="name-course">Communication</a>
 
-                                    <div class="info">It is a long established fact that a reader will be distracted.</div>
+                                    <div class="info">Make some interaction to students/parents and answer some queries. Click to check what is available now.</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- SLIDER TALK ABOUT US-->
+                <!-- SLIDER TALK ABOUT US-->                                        
                 <div class="section background-opacity slider-talk-about-us">
                     <div class="container">
+                         
+
                         <div id="people-talk" data-ride="carousel" data-interval="5000" class="slider-talk-about-us-wrapper carousel slide">
                             <div role="listbox" class="slider-talk-about-us-content carousel-inner">
                                 <div class="peopel-item item active"><p class="peopel-comment">" There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. "</p>
@@ -173,59 +184,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="top-courses-slider">
-                                <div class="top-courses-item">
-                                    <div class="edugate-layout-2">
-                                        <div class="edugate-layout-2-wrapper">
-                                            <div class="edugate-content"><a href="courses-detail.html" class="title">Photoghaphy Master</a>
-
-                                                <div class="info">
-                                                    <div class="author item"><a href="#">By Admin</a></div>
-                                                    <div class="date-time item"><a href="#">17 sep 2015</a></div>
-                                                </div>
-                                                <div class="info-more">
-                                                    <div class="view item"><i class="fa fa-user"></i>
-
-                                                        <p> 56</p></div>
-                                                    <div class="comment item"><i class="fa fa-comment"></i>
-
-                                                        <p> 239</p></div>
-                                                </div>
-                                                <div title="Rated 5.00 out of 5" class="star-rating"><span class="width-70"><strong class="rating">5.00</strong> out of 5</span></div>
-                                                <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout...</div>
-                                                <button onclick="window.location.href='courses-detail.html'" class="btn btn-green"><span>learn now</span></button>
-                                            </div>
-                                            <div class="edugate-image"><img src="assets/images/courses/courses-3.jpg" alt="" class="img-responsive"/></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="top-courses-item">
-                                    <div class="edugate-layout-2">
-                                        <div class="edugate-layout-2-wrapper">
-                                            <div class="edugate-content"><a href="courses-detail.html" class="title">Photoghaphy Master</a>
-
-                                                <div class="info">
-                                                    <div class="author item"><a href="#">By Admin</a></div>
-                                                    <div class="date-time item"><a href="#">17 sep 2015</a></div>
-                                                </div>
-                                                <div class="info-more">
-                                                    <div class="view item"><i class="fa fa-user"></i>
-
-                                                        <p> 00</p></div>
-                                                    <div class="comment item"><i class="fa fa-comment"></i>
-
-                                                        <p> 02</p></div>
-                                                </div>
-                                                <div title="Rated 5.00 out of 5" class="star-rating"><span class="width-90"><strong class="rating">5.00</strong> out of 5</span></div>
-                                                <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout...</div>
-                                                <button onclick="window.location.href='courses-detail.html'" class="btn btn-green"><span>learn now</span></button>
-                                            </div>
-                                            <div class="edugate-image"><img src="assets/images/courses/courses-4.jpg" alt="" class="img-responsive"/></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            </div>                            
                             <div class="group-btn-top-courses-slider">
                                 <div class="btn-prev">&lsaquo;</div>
                                 <div class="btn-next">&rsaquo;</div>
@@ -260,7 +219,7 @@
                 <div class="section progress-bars section-padding">
                     <div class="container">
                         <div class="progress-bars-content">
-                            <div class="progress-bar-wrapper"><h2 class="title-2">Some important facts about us</h2>
+                            <div class="progress-bar-wrapper"><h2 class="title-2">Some useful information about your school</h2>
 
                                 <div class="row">
                                     <div class="content">
@@ -287,8 +246,8 @@
                                     </div>
                                 </div>
                                 <div class="group-button">
-                                    <button onclick="window.location.href='categories.html'" class="btn btn-transition-3"><span>Purchase theme</span></button>
-                                    <button onclick="window.location.href='about-us.html'" class="btn btn-green-3"><span>start Learn now</span></button>
+                                    <button onclick="window.location.href='categories.html'" class="btn btn-transition-3"><span>View Statics</span></button>
+                                    <button onclick="window.location.href='about-us.html'" class="btn btn-green-3"><span>Generate Report</span></button>
                                 </div>
                                 <div class="group-btn-slider">
                                     <div class="btn-prev"><i class="fa fa-angle-left"></i></div>
@@ -302,10 +261,10 @@
                 <div class="section why-choose-us">
                     <div class="why-choose-us-wrapper-top">
                         <div class="container">
-                            <div class="why-choose-us-wrapper"><h2 class="title-2">Why Edugate?</h2>
+                            <div class="why-choose-us-wrapper"><h2 class="title-2">Name of the teacher</h2>
 
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-                                <button onclick="window.location.href='categories.html'" class="btn btn-green-2"><span>start Learn now</span></button>
+                                <p>introduction of the teacher and his/her achievements</p>
+                                <button onclick="window.location.href='categories.html'" class="btn btn-green-2"><span>View Complete Profile</span></button>
                             </div>
                             <div data-wow-delay="0.2s" data-wow-duration="1.2s" class="background-girl-1 wow fadeInUp"><img src="assets/images/girl-1.png" alt="" class="img-responsive"/></div>
                         </div>
@@ -316,71 +275,24 @@
                                 <div class="customs-row">
                                     <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-pencil-square-o"></i>
 
-                                        <p> Over 600 free tutorial</p></div>
-                                    <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-compress"></i>
-
-                                        <p> Refund if not Satisfied</p></div>
-                                </div>
-                                <div class="customs-row">
-                                    <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-paper-plane"></i>
-
-                                        <p> Easy to learning everytime, everywhere</p></div>
+                                        <p>343 Days Present</p></div>
                                     <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-folder-open"></i>
-
-                                        <p> Over 3000 Ebook a-vailable</p></div>
-                                </div>
-                                <div class="customs-row">
+                                        <p>Updates all tasks on time.</p>
+                                    </div>
                                     <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-external-link"></i>
 
-                                        <p> Free updates & support</p></div>
-                                    <div class="col-sm-4 col-xs-6 section-icon"><i class="fa fa-stumbleupon-circle"></i>
-
-                                        <p> Flexible payment methods</p></div>
-                                </div>
+                                        <p>003 Days Absent</p></div>
+                                </div>                                
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--LATEST NEW-->
-                <div class="section section-padding latest-news">
-                    <div class="container">
-                        <div class="group-title-index"><h4 class="top-title">latest news</h4>
-
-                            <h2 class="center-title">all about edugate updates</h2>
-
-                            <div class="bottom-title"><i class="bottom-icon icon-a-01-01"></i></div>
-                        </div>
-                        <div class="latest-news-wrapper">
-                            <div class="edugate-layout-1">
-                                <div class="edugate-image"><img src="assets/images/news/news-1.jpg" alt="" class="img-responsive"/></div>
-                                <div class="edugate-content"><a href="news-detail.html" class="title">Effective researching method</a>
-
-                                    <div class="info">
-                                        <div class="author item"><a href="#">By Admin</a></div>
-                                        <div class="date-time item"><a href="#">17 sep 2015</a></div>
-                                    </div>
-                                    <div class="info-more">
-                                        <div class="view item"><i class="fa fa-user"></i>
-
-                                            <p> 56</p></div>
-                                        <div class="comment item"><i class="fa fa-comment"></i>
-
-                                            <p> 239</p></div>
-                                    </div>
-                                    <div class="description">Dalmatian hello amazing the rmore flung as thanks a manta dealt to under emu some the and one baldbe dear sobbingly save and spitefully less Dalmatian hello amazing the rmore flung as thanks a manta dealt to under emu some the and one baldbe dear sobbingly save and spitefully Dalmatian hello amazing the...</div>
-                                    <button onclick="window.location.href='news-detail.html'" class="btn btn-green"><span>learn now</span></button>
-                                </div>
-                            </div>                                                 
-                            <button class="btn btn-green btn-latest-new"><span>Browser All Post<i class="fa fa-long-arrow-right"></i></span></button>
-                        </div>
-                    </div>
-                </div>
                 <!-- BEST STAFF-->
-                <div class="section section-padding background-opacity best-staff">
+                <div id="teachingstaff" class="section section-padding background-opacity best-staff">
                     <div class="container">
-                        <div class="group-title-index"><h4 class="top-title">touch them if you want</h4>
+                        <div class="group-title-index"><h4 class="top-title">Complete teacher list</h4>
 
-                            <h2 class="center-title">learn from the best</h2>
+                            <h2 class="center-title">Here is your teaching staff</h2>
 
                             <div class="bottom-title"><i class="bottom-icon icon-icon-05"></i></div>
                         </div>
@@ -433,6 +345,41 @@
                         <div class="btn-prev"><i class="fa fa-angle-left"></i></div>
                         <div class="btn-next"><i class="fa fa-angle-right"></i></div>
                     </div>
-                </div>                             
+                </div>
+                <!--LATEST NEW-->
+                <div class="section section-padding latest-news">
+                    <div class="container">
+                        <div class="group-title-index"><h4 class="top-title">latest news</h4>
+
+                            <h2 class="center-title">all about edugate updates</h2>
+
+                            <div class="bottom-title"><i class="bottom-icon icon-a-01-01"></i></div>
+                        </div>
+                        <div class="latest-news-wrapper">
+                            <div class="edugate-layout-1">
+                                <div class="edugate-image"><img src="assets/images/news/news-1.jpg" alt="" class="img-responsive"/></div>
+                                <div class="edugate-content"><a href="news-detail.html" class="title">Effective researching method</a>
+
+                                    <div class="info">
+                                        <div class="author item"><a href="#">By Admin</a></div>
+                                        <div class="date-time item"><a href="#">17 sep 2015</a></div>
+                                    </div>
+                                    <div class="info-more">
+                                        <div class="view item"><i class="fa fa-user"></i>
+
+                                            <p> 56</p></div>
+                                        <div class="comment item"><i class="fa fa-comment"></i>
+
+                                            <p> 239</p></div>
+                                    </div>
+                                    <div class="description">Dalmatian hello amazing the rmore flung as thanks a manta dealt to under emu some the and one baldbe dear sobbingly save and spitefully less Dalmatian hello amazing the rmore flung as thanks a manta dealt to under emu some the and one baldbe dear sobbingly save and spitefully Dalmatian hello amazing the...</div>
+                                    <button onclick="window.location.href='news-detail.html'" class="btn btn-green"><span>learn now</span></button>
+                                </div>
+                            </div>                                                 
+                            <button class="btn btn-green btn-latest-new"><span>Browser All Post<i class="fa fa-long-arrow-right"></i></span></button>
+                        </div>
+                    </div>
+                </div>
+                                            
               
 </asp:Content>

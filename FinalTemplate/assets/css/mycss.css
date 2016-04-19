@@ -1,3 +1,144 @@
 .heightfix {    
     height: 100%;
 }
+.topPadding {
+    padding-top:20px;
+}
+.teachingbackgroundImage {
+     background-image: url("../images/teaching-staff/teachingstaff.jpg");
+}
+.staff{
+    background-image: url("http://localhost:9738/assets/images/background-best-staff.jpg");
+}
+
+.Attendance-table  {
+    border-collapse: collapse 
+}
+
+.Attendance-table  tr {
+    height: 50px;
+    background-color: #fafafa;
+    border-bottom-color: #fff
+}
+
+.Attendance-table  tr.heading-table {
+    background-color: #90a1ae;
+    width:50px;
+   
+}
+
+.Attendance-table  th {
+    vertical-align: middle;
+    text-align: center;
+    display: table-cell;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: bold;
+    border: 1px solid #fff
+}
+
+.Attendance-table td {
+    display: table-cell;
+    color: #6f8190;
+    font-weight: normal;
+    vertical-align: middle;
+    text-align: center
+}
+
+.Attendance-table td a {
+    color: #6f8190
+}
+
+.Attendance-table  td a:hover {
+    color: #86bc42
+}
+
+.Attendance-table  td.bold-color {
+    color: #49575f
+}
+
+.Attendance-table  td.bolder-color {
+    color: #242c42
+}
+
+.Attendance-table  td.green-color {
+    color: #86bc42
+}
+
+.Attendance-table  td i.w20 {
+    width: 20px
+}
+
+.Attendance-table  td i.w27 {
+    width: 27px
+}
+
+.Attendance-table  td i.fa-caret-right {
+    background-color: #86bc42;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    text-align: center;
+    line-height: 14px;
+    color: #fff
+}
+
+.Attendance-table  td i.fa-caret-right :before {
+    position:relative;
+    right: -1px
+}
+
+.Attendance-table  td i.fa-file-text {
+    color: #86bc42
+}
+
+
+.Attendance-table  td .bg-yellow {
+    background-color: #e2cf00;
+    color: #fff;
+    display: initial;
+    padding: 5px 9px
+}
+
+.Attendance-table  .col-1 {
+    width: 50px;
+    min-width: 50px;
+}
+
+.Attendance-table  .col-2{
+    width: 150px;
+    min-width: 150px
+}
+
+.Attendance-table .col-3{
+    width:250px;
+    min-width:250px;
+} 
+.Attendance-table  .col-4 {
+    width: 360px;
+    min-width: 360px
+}
+.animate {
+    height: auto;
+    width: 100%;
+    border: 1px solid #000;
+    -webkit-animation: animate_bg 5s;
+    animation: animate_bg 5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animate_bg {
+    0%   {background:#2876e2;}
+    10%  {background:#5aeed3;}
+    20%  {background:#903fc7;}
+    30%  {background:#ff4c99;}
+    50%  {background:#96f56a;}
+    60%  {background:#f7dd61;}
+    70%  {background:#0d98ba;}
+    80%  {background:#6699cc;}
+    90%  {background:#688bae;}
+    100% {background:#eb9c9c;}
+}
+#set {
+}
