@@ -13,7 +13,7 @@
                                   </div>
                                 <div class="teacher-des">
                                         <div class="course-table" style="height: 500px; width:600px;">
-                                            <div class="outer-container">
+                                          
                                                 <div class="inner-container">
                                                     <div class="table-header">
                                                         <table class="Attendance-table table-hover">
@@ -78,6 +78,6 @@
                             </div>                      
                         </div>
                     </div>
-                </div>
+             
 
 </asp:Content>

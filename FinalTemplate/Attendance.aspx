@@ -45,10 +45,16 @@
                                 </form>
                             </div>
                         </div>
-                    </div>
-    <div class="inner-container">
-                                                    <div class="table-header">
-                                                        <table class="Attendance-table ">
+                    </div>  
+                                                  
+                                          
+                   
+    <div class="section attendance">
+                    <div class="container">
+                        <div class="attendance-logo-wrapper">
+                            <div class="attendance-logo-content">
+                 <div class="table-header">
+                                                        <table class="Attendance-table">
                                                             <thead>
                                                             <tr class="heading-table">
                                                                 <th class="col-1">Student ID</th>
@@ -73,7 +79,7 @@
                                                                     &nbsp;&nbsp;&nbsp;<asp:CheckBox ID="CheckBox4" runat="server" />LATE
                                                                 </td>                                                                                                                               
                                                             </tr>      
-                                                                 <tr class="table-row">
+                                                                <tr class="table-row">
                                                                 <td class="col-1"><a href="#"><span>2</span></a></td>
                                                                 <td class="col-2"><span>101</span></td>
                                                                 <td class="col-3"><span>Siddique</span></td>
@@ -121,12 +127,15 @@
                                                           </tbody>
                                                         </table>
                                                     </div>
-                                                </div>
-                    <div class="container">
+                                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              <div class="container">
                         <div class="group-button">    
                             <button class="btn btn-transition-2"><span>Submit</span></button>
                             <button class="btn btn-transition-2"><span>Clear</span></button>
                                     </div>
                     </div>
-             
 </asp:Content>

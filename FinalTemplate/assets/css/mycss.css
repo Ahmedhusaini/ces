@@ -12,18 +12,20 @@
 }
 
 .Attendance-table  {
-    border-collapse: collapse 
+    border-collapse: collapse;
+    height:auto
 }
 
 .Attendance-table  tr {
     height: 50px;
     background-color: #fafafa;
     border-bottom-color: #fff
+
 }
 
 .Attendance-table  tr.heading-table {
     background-color: #90a1ae;
-    width:50px;
+    width:50px
    
 }
 
@@ -42,7 +44,8 @@
     color: #6f8190;
     font-weight: normal;
     vertical-align: middle;
-    text-align: center
+    text-align: center;
+    
 }
 
 .Attendance-table td a {
