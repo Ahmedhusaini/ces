@@ -35,6 +35,13 @@
 } else if ((Cookies.get('colorskin') == undefined) || (Cookies.get('colorskin') == 'color-1')) {
     $('#colorskins').attr('href', 'assets/css/color-1.css');
 }</script>
+     <link type="text/css" rel="stylesheet" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css" />
+     <script type="text/javascript" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+   <script type="text/javascript">
+       $(document).ready(function () {
+           $('#datatable').dataTable();
+       })
+   </script>
 </head>
 <body>
 
