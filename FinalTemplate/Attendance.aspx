@@ -53,9 +53,12 @@
                     <div class="container">
                         <div class="attendance-logo-wrapper">
                             <div class="attendance-logo-content">
-                 <div class="table-header">
-                                                        <table class="Attendance-table">
-                                                            <thead>
+           
+                                                    <div class="table-body">
+                                                        <table class="Attendance-table" id="datatable">
+
+                                                         
+                                                                <thead>
                                                             <tr class="heading-table">
                                                                 <th class="col-1">Student ID</th>
                                                                 <th class="col-2">Student Rollno</th>
@@ -63,11 +66,7 @@
                                                                 <th class="col-4">Remarks</th>
                                                             </tr>
                                                             </thead>
-                                                        </table>
-                                                    </div>
-                                                    <div class="table-body">
-                                                        <table class="Attendance-table">
-                                                            <tbody>
+                                                               <tbody>
                                                             <tr class="table-row">
                                                                 <td class="col-1"><a href="#"><span>1</span></a></td>
                                                                 <td class="col-2"><span>96</span></td>
