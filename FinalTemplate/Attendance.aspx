@@ -5,7 +5,7 @@
     <div class="search-input">
                         <div class="container">
                             <div class="search-input-wrapper">
-                                <form>
+                              
                                    
                                      <asp:DropDownList ID="DropDownList1" runat="server" CssClass="sbHolder">
                                         <asp:ListItem>Class 1</asp:ListItem>
@@ -42,7 +42,7 @@
                                 
                                     <button type="submit" class="form-submit btn btn-blue"><span>Search</span></button>
                                     <div class="clearfix"></div>
-                                </form>
+                               
                             </div>
                         </div>
                     </div>  

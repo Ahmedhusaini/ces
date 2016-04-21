@@ -34,6 +34,10 @@
 } else if ((Cookies.get('colorskin') == undefined) || (Cookies.get('colorskin') == 'color-1')) {
     $('#colorskins').attr('href', 'assets/css/color-1.css');
 }</script>
+
+    
+  
+ 
 </head>
 <body>
     <div id="wrapper-content">
@@ -44,12 +48,12 @@
                 <!-- CONTENT-->
                 <div class="content">
 
-                    <form id="form1" runat="server">
+                   <form  runat="server">
                         <div>
                             <asp:ContentPlaceHolder ID="RegisterPlaceHolder1" runat="server">
                             </asp:ContentPlaceHolder>
                         </div>
-                    </form>
+                   </form>
                 </div>
             </div>
         </div>
@@ -98,8 +102,10 @@
 <script src="assets/libs/selectbox/js/jquery.selectbox-0.2.min.js"></script>
 <script src="assets/libs/fancybox/js/jquery.fancybox.js"></script>
 <script src="assets/libs/fancybox/js/jquery.fancybox-buttons.js"></script>
+<script type="text/javascript" src="jquery.js" ></script>
 <!-- MAIN JS-->
 <script src="assets/js/main.js"></script>
+
 <!-- LOADING SCRIPTS FOR PAGE-->
 </body>
 </html>

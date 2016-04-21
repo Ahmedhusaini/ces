@@ -2,48 +2,55 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="RegisterHeadPlaceHolder" runat="server">
-   <script src="assets/js/jquery-2.2.3.js"></script>
+ 
+    <script src="assets/js/jquery-2.2.3.js"></script>
     <script src="assets/js/jquery.validate.js"></script>
-    
-    <script type="text/javascript">
-        $.validator.addMethod("lettersonly", function (value, element) {
-            return this.optional(element) || /^[a-z]+$/i.test(value);
-        }, "Letters only please");
-        $.validator.addMethod("phone", function (phone_number, element) {
-            phone_number = phone_number.replace(/\s+/g, "");
-            return this.optional(element) || phone_number.length > 9 &&
-                phone_number.match(/^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/);
-        }, "Please specify a valid phone number with+92");
-        $(document).ready(function () {
-            $('#my').validate({
-                rules: {
-                    lname: {
-                        required: true,
-                        lettersonly:true
-                    },
-                    contact1: {
-                        required: true,
-                        contact1:true
-                    }
-                },
+       <script type="text/javascript">
+           $.validator.addMethod("lettersonly", function (value, element) {
+               return this.optional(element) || /^[a-z]+$/i.test(value);
+           }, "Letters only please");
+           $.validator.addMethod("phone", function (phone_number, element) {
+               phone_number = phone_number.replace(/\s+/g, "");
+               return this.optional(element) || phone_number.length > 9 &&
+                   phone_number.match(/^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/);
+           }, "Please specify a valid phone number with+92");
+           $(document).ready(function () {
+               $('#name').validate({
+                   rules: {
+                       name: {
+                           required: true,
+                           lettersonly: true
+                       },
+                       lname: {
+                           required: true,
+                           lettersonly: true
+                       },
+                       contact1: {
+                           required: true,
+                           contact1: true
+                       }
+                   },
 
-                messages: {
-                    lname: {
-                        required: "Please enter your name"
-                        
-                    },
-                }
-            });
-        });
+                   messages: {
+                       name: {
+                           required: "Please enter your name"
 
-    </script>
+                       },
+                       lname:
+                           {
+                               required: "Please enter your last name"
+                           },
+                   }
+               });
+           });
 
+    </script> 
 
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="RegisterPlaceHolder1" runat="server">
 
-    <link href="assets/css/mycss.css" rel="stylesheet" />
+      <link href="assets/css/mycss.css" rel="stylesheet" />
     <style>
         .reg-sk {
             padding-top:26px;
@@ -85,7 +92,7 @@
                   
                     
                       <div class="register-form bg-w-form rlp-form" runat="server">   
-                         
+                      
                                  
                                 <div class="col-md-6">
 
@@ -95,7 +102,7 @@
                                     </label>
                                     <!--p.help-block Warning !-->
                                     <br />
-                                    <asp:TextBox ID="TextBox1" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="name" CssClass="form-control  form-input" runat="server"></asp:TextBox>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="regname" class="control-label form-label">
@@ -134,7 +141,7 @@
                                     </label>
                                     <!-- p.help-block Warning !-->
                                     <br />
-                                    <asp:TextBox ID="gardian" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="guardian" CssClass="form-control  form-input" runat="server"></asp:TextBox>
 
 
                                 </div>
@@ -176,7 +183,7 @@
                                     </label>
                                     <!-- p.help-block Warning !-->
                                     <br />
-                                    <asp:TextBox ID="nation" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="nationality" CssClass="form-control  form-input" runat="server"></asp:TextBox>
                                 
 
                             </div>
@@ -234,7 +241,7 @@
                                     </label>
                                     <!-- p.help-block Warning !-->
                                     <br />
-                                    <asp:TextBox ID="postal" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="postalcode" CssClass="form-control  form-input" runat="server"></asp:TextBox>
 
                                         </div>
                                         <div class="col-md-6">
@@ -244,7 +251,7 @@
                                     </label>
                                     <!-- p.help-block Warning !-->
                                     <br />
-                                    <asp:TextBox ID="preschool" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="prevchool" CssClass="form-control  form-input" runat="server"></asp:TextBox>
                             </div>
                                       <div class="col-md-6">
                                     <label for="regname" class="control-label form-label">
@@ -314,7 +321,7 @@
                                     </label>
                                     <!-- p.help-block Warning !-->
                                     <br />
-                                    <asp:TextBox ID="user" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="username" CssClass="form-control  form-input" runat="server"></asp:TextBox>
                                       </div>
                                  <div class="col-md-6">
                                     <label for="regname" class="control-label form-label">
@@ -323,7 +330,7 @@
                                     </label>
                                     <!-- p.help-block Warning !-->
                                     <br />
-                                    <asp:TextBox ID="accountp" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="accountpin" CssClass="form-control  form-input" runat="server"></asp:TextBox>
                                       </div>
                                  <div class="col-md-6">
                                     <label for="regname" class="control-label form-label">
@@ -332,7 +339,7 @@
                                     </label>
                                     <!-- p.help-block Warning !-->
                                     <br />
-                                    <asp:TextBox ID="pass" CssClass="form-control  form-input" TextMode="Password" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="password" CssClass="form-control  form-input" TextMode="Password" runat="server"></asp:TextBox>
                                      </div>
                                       <div class="col-md-6">
                                     <label for="regname" class="control-label form-label">
@@ -341,7 +348,7 @@
                                     </label>
                                     <!-- p.help-block Warning !-->
                                     <br />
-                                    <asp:TextBox ID="repass" CssClass="form-control  form-input" TextMode="Password" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="repassword" CssClass="form-control  form-input" TextMode="Password" runat="server"></asp:TextBox>
                                       </div>
                                  <div class="col-md-6">
                                     <label for="regname" class="control-label form-label">
@@ -379,6 +386,6 @@
             </div>
         
         </div>  
-        
+       
         
 </asp:Content>
