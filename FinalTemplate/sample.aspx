@@ -20,7 +20,6 @@
     }, "Please specify a valid phone number with+92");
 
 
-
     $(document).ready(function () {
         $("#form1").validate({
 
@@ -28,29 +27,28 @@
             rules: {
                 email: {
                     required: true,
-                   email:true
+                    email:true
                 },
                 pass: "required",
                 repass: {
                     required: true,
                     equalTo:"#pass"
-
                 },
                 fname: {
-                    required: true,                
-                    lettersonly:true
-                },
-                lname: {
                     required: true,
-                    lettersonly:true    
-                },
-                phone: {
-                    required: true,
-                    phone:true
+                    lettersonly: true
+                    },
+                    lname: {
+                        required: true,
+                        lettersonly:true    
+                    },
+                    phone: {
+                        required: true,
+                        phone:true
+                    },
+                    ab: {
+                        required: true,
                 }
-
-
-
             },
 
             messages: {
@@ -96,7 +94,7 @@
 <body>
 
     <form id="form1" runat="server">
-        <div>
+        
             <asp:Label ID="Label1" runat="server" Text="email"></asp:Label><br />
             <asp:TextBox ID="email" runat="server"></asp:TextBox><br />
 
@@ -110,12 +108,9 @@
              <asp:TextBox ID="phone" runat="server"></asp:TextBox><br />
             <asp:TextBox ID="pass" TextMode="Password" runat="server"></asp:TextBox><br />
             <asp:TextBox ID="repass" TextMode="Password" runat="server"></asp:TextBox>
-
             <br />
             <br />
             <asp:Button ID="Button1" runat="server" Text="Button" />
-        </div>
-    </form>
-
-</body>
-</html>
+</form>
+    </body>
+   </html>

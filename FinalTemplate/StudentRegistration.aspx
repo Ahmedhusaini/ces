@@ -1,25 +1,34 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Register.Master" AutoEventWireup="true" CodeBehind="StudentRegistration.aspx.cs" Inherits="FinalTemplate.StudentRegistration" %>
+﻿    <%@ Page Title="" Language="C#" MasterPageFile="~/Register.Master" AutoEventWireup="true" CodeBehind="StudentRegistration.aspx.cs" Inherits="FinalTemplate.StudentRegistration" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="RegisterHeadPlaceHolder" runat="server">
    <script src="assets/js/jquery-2.2.3.js"></script>
     <script src="assets/js/jquery.validate.js"></script>
-     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+    
     <script type="text/javascript">
         $.validator.addMethod("lettersonly", function (value, element) {
             return this.optional(element) || /^[a-z]+$/i.test(value);
         }, "Letters only please");
+        $.validator.addMethod("phone", function (phone_number, element) {
+            phone_number = phone_number.replace(/\s+/g, "");
+            return this.optional(element) || phone_number.length > 9 &&
+                phone_number.match(/^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/);
+        }, "Please specify a valid phone number with+92");
         $(document).ready(function () {
-            $("#form").validate({
+            $('#my').validate({
                 rules: {
-                    TextBox1: {
+                    lname: {
                         required: true,
                         lettersonly:true
+                    },
+                    contact1: {
+                        required: true,
+                        contact1:true
                     }
                 },
 
                 messages: {
-                    TextBox1: {
+                    lname: {
                         required: "Please enter your name"
                         
                     },
@@ -54,20 +63,30 @@
         }
        
     </style>
-    <div id="form" class="page-register rlp">
+    
+    <div class="page-register rlp">
+        
         <div class="container">
+             
             <div class="register-wrapper rlp-wrapper reg-sk">
+
+                
+                    
                 <div class="register-table rlp-table">
+                    
+                    
                     <a href="index.html">
                         <img src="assets/images/logo-color-1.png" alt="" class="login" /></a>
+                   
 
                     <div class="register-title rlp-title">create your account and join with us!</div>
                     <h3>Student Detail's</h3>
                    
+                  
                     
-
-                   
-                        <div  class="register-form bg-w-form rlp-form">          
+                      <div class="register-form bg-w-form rlp-form" runat="server">   
+                         
+                                 
                                 <div class="col-md-6">
 
                                     <label for="regname" class="control-label form-label">
@@ -85,7 +104,7 @@
                                     </label>
                                     <!-- p.help-block Warning !-->
                                     <br />
-                                    <asp:TextBox ID="name" CssClass="form-control  form-input " runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="lname" CssClass="form-control  form-input " runat="server"></asp:TextBox>
 
                                 </div>
                                 <div class="col-md-6">
@@ -341,16 +360,25 @@
                                     <!-- p.help-block Warning !-->
                                     <br />
                                     <asp:TextBox ID="semail" CssClass="form-control  form-input" runat="server"></asp:TextBox>
-                                      </div>                             
-                                           </div>                      
+                                      </div>     
+                                                     
+                                           </div>   
+                                       
                         <div class="register-submit">
                             <button type="submit" onclick="window.location.href='index.html'" class="btn btn-register btn-green">
                                 <span>
                                     <asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" /></span></button>
-                     </div>          
-                               
-                    </div>            
-                </div>          
+                     </div>      
+                       
+                           
+                    </div> 
+                </div>
+                    
+                
+                           
             </div>
+        
         </div>  
+        
+        
 </asp:Content>
