@@ -48,7 +48,7 @@
                 <!-- CONTENT-->
                 <div class="content">
 
-                   <form  runat="server">
+                   <form  runat="server" id="name">
                         <div>
                             <asp:ContentPlaceHolder ID="RegisterPlaceHolder1" runat="server">
                             </asp:ContentPlaceHolder>
