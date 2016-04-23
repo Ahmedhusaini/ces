@@ -1,5 +1,51 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Register.Master" AutoEventWireup="true" CodeBehind="Parent Registration.aspx.cs" Inherits="FinalTemplate.Parent_Registration" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="RegisterHeadPlaceHolder" runat="server">
+
+ <script src="assets/js/jquery-2.2.3.js"></script>
+    
+    <script src="assets/js/jquery.validate.js"></script>
+       <script type="text/javascript">      
+
+
+           $.validator.addMethod("lettersonly", function (value, element) {
+               return this.optional(element) || /^[a-z]+$/i.test(value);
+           }, "Letters only please");
+           $.validator.addMethod("phone", function (phone_number, element) {
+               phone_number = phone_number.replace(/\s+/g, "");
+               return this.optional(element) || phone_number.length > 9 &&
+                   phone_number.match(/^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/);
+           }, "Please specify a valid phone number with+92");
+           $(document).ready(function () {
+               $('#name').validate({
+                   rules: {
+                       name: {
+                           required: true,
+                           lettersonly: true
+                       },
+                       lname: {
+                           required: true,
+                           lettersonly: true
+                       },
+                       contact1: {
+                           required: true,
+                           contact1: true
+                       }
+                   },
+
+                   messages: {
+                       name: {
+                           required: "Please enter your name"
+
+                       },
+                       lname:
+                           {
+                               required: "Please enter your last name"
+                           },
+                   }
+               });
+           });
+
+    </script> 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="RegisterPlaceHolder1" runat="server">
 
@@ -21,8 +67,6 @@
                     <h3>Parent Detail's</h3>
                    
                     <asp:Panel ID="Panel1" runat="server">
-
-                   
                         <div class="register-form bg-w-form rlp-form">          
                                 <div class="col-md-6">
 
