@@ -10,16 +10,34 @@
 namespace FinalTemplate {
     
     
-    public partial class StudentRegistration {
+    public partial class aaa {
         
         /// <summary>
-        /// TextBox1 control.
+        /// colorskins control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.HtmlControls.HtmlLink colorskins;
+        
+        /// <summary>
+        /// form1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
+        /// <summary>
+        /// name control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox name;
         
         /// <summary>
         /// lname control.
@@ -49,13 +67,13 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.TextBox contact1;
         
         /// <summary>
-        /// gardian control.
+        /// guardian control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox gardian;
+        protected global::System.Web.UI.WebControls.TextBox guardian;
         
         /// <summary>
         /// contact2 control.
@@ -94,13 +112,13 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.TextBox dob;
         
         /// <summary>
-        /// nation control.
+        /// nationality control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nation;
+        protected global::System.Web.UI.WebControls.TextBox nationality;
         
         /// <summary>
         /// religion control.
@@ -139,22 +157,22 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.TextBox address;
         
         /// <summary>
-        /// postal control.
+        /// postalcode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox postal;
+        protected global::System.Web.UI.WebControls.TextBox postalcode;
         
         /// <summary>
-        /// preschool control.
+        /// prevchool control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox preschool;
+        protected global::System.Web.UI.WebControls.TextBox prevchool;
         
         /// <summary>
         /// preclass control.
@@ -211,40 +229,40 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.TextBox section;
         
         /// <summary>
-        /// user control.
+        /// username control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox user;
+        protected global::System.Web.UI.WebControls.TextBox username;
         
         /// <summary>
-        /// accountp control.
+        /// accountpin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox accountp;
+        protected global::System.Web.UI.WebControls.TextBox accountpin;
         
         /// <summary>
-        /// pass control.
+        /// password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox pass;
+        protected global::System.Web.UI.WebControls.TextBox password;
         
         /// <summary>
-        /// repass control.
+        /// repassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox repass;
+        protected global::System.Web.UI.WebControls.TextBox repassword;
         
         /// <summary>
         /// pemail control.

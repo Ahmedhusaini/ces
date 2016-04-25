@@ -29,25 +29,25 @@
                 email: {
                     required: true,
                     email:true
-                },
+                    },
                 pass: "required",
                 repass: {
                     required: true,
                     equalTo:"#pass"
-                },
+                    },
                 fname: {
                     required: true,
                     lettersonly: true
                     },
-                    lname: {
+                lname: {
                         required: true,
                         lettersonly:true    
                     },
-                    phone: {
+                phone: {
                         required: true,
                         phone:true
                     },
-                    ab: {
+                ab: {
                         required: true,
                 }
             },
@@ -75,7 +75,7 @@
     <style type="text/css">
         label.error {
             color: red;
-            display: inline-flex;
+            display: inline-flexbox;
             display:block;
 
            

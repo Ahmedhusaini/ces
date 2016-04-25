@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace FinalTemplate
 {
-    public partial class StudentRegistration : System.Web.UI.Page
+    public partial class aaa : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -61,6 +61,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Student_registration.aspx" />
     <Content Include="Admin.aspx" />
     <Content Include="assets\css\mycss.css" />
     <Content Include="assets\css\color-1.css" />
@@ -217,15 +218,20 @@
     <Content Include="select_resistration_type.aspx" />
     <Content Include="studentpanel.aspx" />
     <Content Include="StudentProfile.aspx" />
-    <Content Include="StudentRegistration.aspx" />
     <Content Include="Teacher Registration.aspx" />
     <Content Include="teacher.aspx" />
     <Content Include="TeacherPanel.aspx" />
     <Content Include="Teacherprofile.aspx" />
-    <Content Include="UserLogin.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Student_registration.aspx.cs">
+      <DependentUpon>Student_registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student_registration.aspx.designer.cs">
+      <DependentUpon>Student_registration.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin.aspx.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -311,13 +317,6 @@
     <Compile Include="StudentProfile.aspx.designer.cs">
       <DependentUpon>StudentProfile.aspx</DependentUpon>
     </Compile>
-    <Compile Include="StudentRegistration.aspx.cs">
-      <DependentUpon>StudentRegistration.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="StudentRegistration.aspx.designer.cs">
-      <DependentUpon>StudentRegistration.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Teacher Registration.aspx.cs">
       <DependentUpon>Teacher Registration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -359,13 +358,6 @@
     </Compile>
     <Compile Include="User.Master.designer.cs">
       <DependentUpon>User.Master</DependentUpon>
-    </Compile>
-    <Compile Include="UserLogin.aspx.cs">
-      <DependentUpon>UserLogin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UserLogin.aspx.designer.cs">
-      <DependentUpon>UserLogin.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
