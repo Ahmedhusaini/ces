@@ -21,7 +21,8 @@
 
 
     $(document).ready(function () {
-        $("#form1").validate({
+          $("#form1").validate({
+      
 
 
             rules: {

@@ -84,7 +84,7 @@
                    
                   
                     
-                      <div class="register-form bg-w-form rlp-form" runat="server">   
+                      <div class="register-form bg-w-form rlp-form">   
                          
                                  
                                 <div class="col-md-6">

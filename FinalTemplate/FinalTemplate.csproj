@@ -91,6 +91,7 @@
     <Content Include="assets\images\courses\courses-4.jpg" />
     <Content Include="assets\images\edit.jpg" />
     <Content Include="assets\images\event-detail-1.jpg" />
+    <Content Include="assets\images\field.png" />
     <Content Include="assets\images\gallery\gallery-01.jpg" />
     <Content Include="assets\images\gallery\gallery-02.jpg" />
     <Content Include="assets\images\gallery\gallery-03.jpg" />
@@ -221,6 +222,7 @@
     <Content Include="teacher.aspx" />
     <Content Include="TeacherPanel.aspx" />
     <Content Include="Teacherprofile.aspx" />
+    <Content Include="UserLogin.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -357,6 +359,13 @@
     </Compile>
     <Compile Include="User.Master.designer.cs">
       <DependentUpon>User.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserLogin.aspx.cs">
+      <DependentUpon>UserLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserLogin.aspx.designer.cs">
+      <DependentUpon>UserLogin.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
