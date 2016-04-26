@@ -26,7 +26,7 @@
                                 </div>
                                        <div class="col-md-4" style="top:17px;">
                                     <div class="method-item">
-                                       <button  class="btn btn-green" style="width:200px;height:190px;" formaction="home.aspx"><span><h2 class="heading-content">ADMIN</h2></span></button>
+                                       <button  class="btn btn-green" style="width:200px;height:190px;" formaction="home.aspx"><span><h2 class="heading-content">SCHOOL</h2></span></button>
                                     </div>
                                 </div>
                                 
