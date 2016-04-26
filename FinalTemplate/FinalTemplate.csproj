@@ -61,7 +61,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Student_registration.aspx" />
+    <Content Include="StudentRgistration.aspx" />
     <Content Include="Admin.aspx" />
     <Content Include="assets\css\mycss.css" />
     <Content Include="assets\css\color-1.css" />
@@ -226,12 +226,12 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Student_registration.aspx.cs">
-      <DependentUpon>Student_registration.aspx</DependentUpon>
+    <Compile Include="StudentRgistration.aspx.cs">
+      <DependentUpon>StudentRgistration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Student_registration.aspx.designer.cs">
-      <DependentUpon>Student_registration.aspx</DependentUpon>
+    <Compile Include="StudentRgistration.aspx.designer.cs">
+      <DependentUpon>StudentRgistration.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin.aspx.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
