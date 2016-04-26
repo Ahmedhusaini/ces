@@ -9,6 +9,8 @@
             padding-top:26px;
             padding-bottom:26px;
         }
+   
+    
     </style>
     <div class="page-register rlp">
         <div class="container">
@@ -72,9 +74,12 @@
                                     </label>
                                          <br />
                                     <!-- p.help-block Warning !-->
-                                     &nbsp; &nbsp;&nbsp;    <asp:RadioButton ID="RadioButton1" runat="server" Text="Male" />
-                                        &nbsp;&nbsp;   <asp:RadioButton ID="RadioButton2" runat="server" Text="Female" />
-     
+                                   <%--  &nbsp; &nbsp;&nbsp;    <asp:RadioButton ID="RadioButton1" runat="server" Text="Male" />
+                                        &nbsp;&nbsp;   <asp:RadioButton ID="RadioButton2" runat="server" Text="Female" />--%>
+                                         <asp:RadioButtonList ID="RadioButtonList1" runat="server" RepeatDirection="Horizontal">
+                                            <asp:ListItem Text="Male &nbsp &nbsp " Value="Male"></asp:ListItem> 
+                                               <asp:ListItem Text="Female" Value="Female"></asp:ListItem>
+                                             </asp:RadioButtonList>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="regname" class="control-label form-label">
@@ -83,7 +88,7 @@
                                     </label>
                                     <!-- p.help-block Warning !-->
                                     <br />
-                                    <asp:TextBox ID="dob" CssClass="form-control  form-input"  runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="dob" CssClass="form-control  form-input"  placeholder="dd/mm/yyyy"  runat="server"></asp:TextBox>
 
                             </div>
                             <div class="col-md-6">
