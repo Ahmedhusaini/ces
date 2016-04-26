@@ -213,6 +213,7 @@
     <Content Include="news_description.aspx" />
     <Content Include="Parent Registration.aspx" />
     <Content Include="sample.aspx" />
+    <Content Include="School Registration.aspx" />
     <Content Include="select_resistration_type.aspx" />
     <Content Include="studentpanel.aspx" />
     <Content Include="StudentProfile.aspx" />
@@ -280,6 +281,13 @@
     </Compile>
     <Compile Include="sample.aspx.designer.cs">
       <DependentUpon>sample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="School Registration.aspx.cs">
+      <DependentUpon>School Registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="School Registration.aspx.designer.cs">
+      <DependentUpon>School Registration.aspx</DependentUpon>
     </Compile>
     <Compile Include="select_resistration_type.aspx.cs">
       <DependentUpon>select_resistration_type.aspx</DependentUpon>

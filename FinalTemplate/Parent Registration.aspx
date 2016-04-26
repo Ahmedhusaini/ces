@@ -123,7 +123,7 @@
                                     </label>
                                     <!-- p.help-block Warning !-->
                                     <br />
-                                    <asp:TextBox ID="dob" CssClass="form-control  form-input"  runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="dob" CssClass="form-control  form-input"  placeholder="dd/mm/yyyy"  runat="server"></asp:TextBox>
 
                             </div>
                             <div class="col-md-6">
