@@ -112,8 +112,12 @@
                                     </label>
                                          <br />
                                     <!-- p.help-block Warning !-->
-                                     &nbsp; &nbsp;&nbsp;    <asp:RadioButton ID="RadioButton1" runat="server" Text="Male" />
-                                        &nbsp;&nbsp;   <asp:RadioButton ID="RadioButton2" runat="server" Text="Female" />
+                                  <%--   &nbsp; &nbsp;&nbsp;    <asp:RadioButton ID="RadioButton1" runat="server" Text="Male" />
+                                        &nbsp;&nbsp;   <asp:RadioButton ID="RadioButton2" runat="server" Text="Female" />--%>
+                                          <asp:RadioButtonList ID="RadioButtonList1" runat="server" RepeatDirection="Horizontal">
+                                            <asp:ListItem Text="Male &nbsp &nbsp " Value="Male"></asp:ListItem> 
+                                               <asp:ListItem Text="Female" Value="Female"></asp:ListItem>
+                                             </asp:RadioButtonList>
      
                                 </div>
                                 <div class="col-md-6">
