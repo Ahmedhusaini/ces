@@ -89,11 +89,13 @@
     </div>
 </div>
 <!-- LOADING--><!-- JAVASCRIPT LIBS-->
-<script>if ((Cookies.get('color-skin') != undefined) && (Cookies.get('color-skin') != 'color-1')) {
+<script>
+    if ((Cookies.get('color-skin') != undefined) && (Cookies.get('color-skin') != 'color-1')) {
     $('.logo .header-logo img').attr('src', 'assets/images/logo-' + Cookies.get('color-skin') + '.png');
 } else if ((Cookies.get('color-skin') == undefined) || (Cookies.get('color-skin') == 'color-1')) {
     $('.logo .header-logo img').attr('src', 'assets/images/logo-color-1.png');
-}</scripts>
+}
+</script>
 <script src="assets/libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="assets/libs/smooth-scroll/jquery-smoothscroll.js"></script>
 <script src="assets/libs/owl-carousel-2.0/owl.carousel.min.js"></script>
