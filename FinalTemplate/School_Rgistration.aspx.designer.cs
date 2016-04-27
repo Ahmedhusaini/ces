@@ -10,7 +10,7 @@
 namespace FinalTemplate {
     
     
-    public partial class School_Registration {
+    public partial class School_Rgistration {
         
         /// <summary>
         /// Panel1 control.
@@ -119,5 +119,14 @@ namespace FinalTemplate {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox country;
+        
+        /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

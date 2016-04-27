@@ -1,9 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Register.Master" AutoEventWireup="true" CodeBehind="SchoolRegistration.aspx.cs" Inherits="FinalTemplate.School_Registration" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Register.Master" AutoEventWireup="true" CodeBehind="School_Rgistration.aspx.cs" Inherits="FinalTemplate.School_Rgistration" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="RegisterHeadPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="RegisterPlaceHolder1" runat="server">
-    
-    <link href="assets/css/mycss.css" rel="stylesheet" />
     <style>
         .reg-sk {
             padding-top:26px;
@@ -143,14 +141,13 @@
                                     <asp:TextBox ID="country" CssClass="form-control  form-input" Width="200px" runat="server" Text="Pakistan"></asp:TextBox>
 
                             </div>
-                                 
-                                <br />
+                               
                                  
                                            </div>                      
                         <div class="register-submit">
                             <button type="submit" onclick="window.location.href='index.html'" class="btn btn-register btn-green">
                                 <span>
-                                    <asp:Button ID="Button1" runat="server" Text="Submit"Style="background-color: transparent" BorderStyle="None" /></span></button>
+                                  <asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" /></span></button>
                      </div>          
                  </asp:Panel>                
                     </div>            

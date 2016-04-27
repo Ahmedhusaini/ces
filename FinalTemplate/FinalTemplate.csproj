@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logintype.aspx" />
+    <Content Include="School_Rgistration.aspx" />
     <Content Include="StudentRgistration.aspx" />
     <Content Include="Admin.aspx" />
     <Content Include="assets\css\mycss.css" />
@@ -213,7 +214,6 @@
     <Content Include="news_description.aspx" />
     <Content Include="ParentRegistration.aspx" />
     <Content Include="sample.aspx" />
-    <Content Include="SchoolRegistration.aspx" />
     <Content Include="select_resistration_type.aspx" />
     <Content Include="studentpanel.aspx" />
     <Content Include="StudentProfile.aspx" />
@@ -230,6 +230,13 @@
     </Compile>
     <Compile Include="Logintype.aspx.designer.cs">
       <DependentUpon>Logintype.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="School_Rgistration.aspx.cs">
+      <DependentUpon>School_Rgistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="School_Rgistration.aspx.designer.cs">
+      <DependentUpon>School_Rgistration.aspx</DependentUpon>
     </Compile>
     <Compile Include="StudentRgistration.aspx.cs">
       <DependentUpon>StudentRgistration.aspx</DependentUpon>
@@ -294,12 +301,6 @@
     </Compile>
     <Compile Include="sample.aspx.designer.cs">
       <DependentUpon>sample.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="SchoolRegistration.aspx.cs">
-      <DependentUpon>SchoolRegistration.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="SchoolRegistration.aspx.designer.cs">
-      <DependentUpon>SchoolRegistration.aspx</DependentUpon>
     </Compile>
     <Compile Include="select_resistration_type.aspx.cs">
       <DependentUpon>select_resistration_type.aspx</DependentUpon>
