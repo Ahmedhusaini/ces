@@ -145,3 +145,7 @@
 }
 #set {
 }
+#submitbutton {
+    margin:auto;
+    width:130px;
+}
