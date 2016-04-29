@@ -325,8 +325,10 @@
                                         <div class="btn btn-register btn-green">
                                             <span class="aspbutton">
                                                 <asp:Button ID="btn_goto_RegistrationDetails" runat="server" Text="Next" Style="background-color: transparent" BorderStyle="None" OnClick="btn_goto_RegistrationDetails_Click" />
-                                            </span>
-                                            <span class="aspbutton">
+               <%--                             </span>
+
+                                            <span class="aspbutton">--%>
+                                                &nbsp; &nbsp; &nbsp;
                                                 <asp:Button ID="btn_gobackto_viewpackages" runat="server" Text="Back" Style="background-color: transparent" BorderStyle="None" OnClick="btn_gobackto_viewpackages_Click" />
                                             </span>
                                         </div>
