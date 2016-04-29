@@ -61,29 +61,51 @@
                     <a href="index.html">
                         <img src="assets/images/logo-color-1.png" alt="" class="login" /></a>
 
-                    <div class="register-title rlp-title">create your account and join with us!</div>
-                    <h3>Login</h3>
+                    <div class="register-title rlp-title">create your account and join us!</div>
+                    <div class="register-title rlp-title">Sign In</div>
                    
                     <asp:Panel ID="Panel1" runat="server">
-                        <div class="register-form bg-w-form rlp-form">          
-                                <div class="col-md-6">
+                        <div class="register-form bg-w-form rlp-form">  
+                                    
+                            <div style="padding-left:131px">
 
                                     <label for="regname" class="control-label form-label">
-                                        NAME <span class="highlight">*<br />
+                                        Account Type<span class="highlight">*<br />
                                         </span>
                                     </label>
                                     <!--p.help-block Warning !-->
                                     <br />
-                                    <asp:TextBox ID="name" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                              <asp:DropDownList ID="DropDownList2" CssClass="form-control form-input" Width="331px" placeholder="----Select----" runat="server">
+                                    <asp:ListItem></asp:ListItem>
+                                    <asp:ListItem>Admin</asp:ListItem>
+                                    <asp:ListItem>Teacher</asp:ListItem>
+                                    <asp:ListItem>Student</asp:ListItem>
+                                    <asp:ListItem>Parent</asp:ListItem>
+                                  
+                                  </asp:DropDownList>
                                 </div>
-                                <div class="col-md-6">
+
+                                <div style="padding-left:131px">
+
                                     <label for="regname" class="control-label form-label">
-                                        Last Name <span class="highlight">*<br />
+                                        User Name<span class="highlight">*<br />
+                                        </span>
+                                    </label>
+                                    <!--p.help-block Warning !-->
+                                    <br />
+                                    <asp:TextBox ID="name" CssClass="form-control  form-input"  placeholder="Email id or User name"  Width="331px" runat="server"></asp:TextBox>
+                                </div>
+                                
+                                      
+                               
+                                <div style="padding-left:131px">
+                                    <label for="regname" class="control-label form-label">
+                                        Password <span class="highlight">*<br />
                                         </span>
                                     </label>
                                     <!-- p.help-block Warning !-->
                                     <br />
-                                    <asp:TextBox ID="lname" CssClass="form-control  form-input " runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="lname" CssClass="form-control  form-input "  placeholder="Password or Pin code " Width="331px" runat="server"></asp:TextBox>
 
                                 </div>
                                                            

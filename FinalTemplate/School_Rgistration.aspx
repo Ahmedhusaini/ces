@@ -13,6 +13,7 @@
             padding-top:26px;
             padding-bottom:26px;
         }
+
     </style>
     <div class="page-register rlp">
         <div class="container">

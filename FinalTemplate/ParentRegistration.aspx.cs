@@ -13,5 +13,10 @@ namespace FinalTemplate
 		{
 
 		}
+
+        protected void country_TextChanged(object sender, EventArgs e)
+        {
+            country.ReadOnly = true;
+        }
 	}
 }
