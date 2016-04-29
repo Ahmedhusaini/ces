@@ -19,7 +19,7 @@
          function ActivePackage() {
              $('.pricing-button').click(function () {                                                   
                  $('.active').removeClass('active');
-                 var currentPricing = $(this).parent().parent().addClass('active');
+                 $(this).parent().parent().addClass('active');
              });
          }
          function PriceHover() {
