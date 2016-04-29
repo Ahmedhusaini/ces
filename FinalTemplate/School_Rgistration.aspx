@@ -8,7 +8,7 @@
              SetTextFont();
              RemoveSelectedPackage();
              ActivePackage();
-
+             
          });
          function SetTextFont() {
              $('.inner').find('.inner-number').removeClass('inner-number').addClass('innerNumber');
@@ -21,6 +21,9 @@
                  $('.active').removeClass('active');
                  $(this).parent().parent().addClass('active');
              });
+         }
+         function PriceHover() {
+             $('.pricing-widget').hover(function () { $(this).css('background-color', '#D2542A'); }, function () { $(this).css('background-color', '#EAEDF5'); });
          }
      </script>
 </asp:Content>
@@ -41,8 +44,14 @@
                              <div class="section section-padding pricing">
                                 <div class="container">
                                     <div class="group-title-index">
-                                        <h4 class="top-title">chooses your pricing</h4>
-                                        <h2 class="center-title">the best pricing we offered</h2>
+                                        <h2 class="center-title">Centralized Education System</h2>
+                                        <h4 class="top-title">We offer pakistan's best online education support</h4>
+                                        <img src="assets/images/registerschool_green.jpg" height="300px" width="100%" />
+                                        <p class="pGreen">As we are witnessing the age of new technology it is now a fact that everyone is using it for his/her betterment. So CES gives you a chance to contribute in the betterment of education in pakistan by CENTRALIZING your education system and follow new rules that are more easly and very effective.</p>
+                                        <p class="pGreen">CES offers different packages amoung you can choose and select the best which fits your requirements.</p>
+                                    </div>
+                                    <div class="group-title-index">                                        
+                                        <h2 class="center-title">Choose the desired one</h2>
                                         <div class="bottom-title"><i class="bottom-icon icon-a-1-01-01"></i></div>
                                     </div>
                                     <div class="row">
@@ -57,9 +66,9 @@
                                                         </div>
                                                     </div>
                                                     <div class="pricing-content">
-                                                        <h3 class="pricing-title">trial</h3>
+                                                        <h3 class="pricing-title">Silver</h3>
 
-                                                        <p class="pricing-subtitle">30 days free trial</p>
+                                                        <p class="pricing-subtitle">The most basic package</p>
                                                         <ul class="pricing-list">
                                                             <li>
                                                                 <p><strong>One day</strong> trial</p>
@@ -97,9 +106,9 @@
                                                         </div>
                                                     </div>
                                                     <div class="pricing-content">
-                                                        <h3 class="pricing-title">Standard</h3>
+                                                        <h3 class="pricing-title">Gold</h3>
 
-                                                        <p class="pricing-subtitle">per month when paid annually</p>
+                                                        <p class="pricing-subtitle">Most likely and affordable. Fits all requirements</p>
                                                         <ul class="pricing-list">
                                                             <li>
                                                                 <p><strong>One year</strong> standard access</p>
@@ -137,9 +146,9 @@
                                                         </div>
                                                     </div>
                                                     <div class="pricing-content">
-                                                        <h3 class="pricing-title">Premiere</h3>
+                                                        <h3 class="pricing-title">Platinum</h3>
 
-                                                        <p class="pricing-subtitle">per month when paid annually</p>
+                                                        <p class="pricing-subtitle">Best of all. A wise desicion to select this one </p>
                                                         <ul class="pricing-list">
                                                             <li>
                                                                 <p><strong>Life time</strong> access</p>
@@ -177,207 +186,219 @@
                             </div>
                         </asp:View>
                         <asp:View ID="ViewSchoolDetails" runat="server">
-                             <h3>School Details</h3>
-                             <asp:Panel ID="Panel1" runat="server">
+                            <div class="section section-padding pricing">
+                                <div class="container">
+                                    <div class="group-title-index">
+                                        <h4 class="top-title">chooses your pricing</h4>
+                                        <h2 class="center-title">the best pricing we offered</h2>
+                                        <div class="bottom-title"><i class="bottom-icon icon-a-1-01-01"></i></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="pricing-wrapper">
+                                            <div class="col-md-6">
 
+                                                <label for="regname" class="control-label form-label">
+                                                    School Name <span class="highlight">*<br />
+                                                    </span>
+                                                </label>
+                                                <!--p.help-block Warning !-->
+                                                <br />
 
-                        <div class="register-form bg-w-form rlp-form">
-                            <div class="col-md-6">
+                                                <asp:TextBox ID="TextBox1" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="regname" class="control-label form-label">
+                                                    Owner's Name <span class="highlight">*<br />
+                                                    </span>
+                                                </label>
+                                                <!-- p.help-block Warning !-->
+                                                <br />
+                                                <asp:TextBox ID="name" CssClass="form-control  form-input " runat="server"></asp:TextBox>
 
-                                <label for="regname" class="control-label form-label">
-                                    School Name <span class="highlight">*<br />
-                                    </span>
-                                </label>
-                                <!--p.help-block Warning !-->
-                                <br />
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="regname" class="control-label form-label">
+                                                    Campus name  <span class="highlight">*<br />
+                                                    </span>
+                                                </label>
+                                                <!-- p.help-block Warning !-->
+                                                <br />
+                                                <asp:TextBox ID="cname" CausesValidation="true" CssClass="form-control  form-input" runat="server"></asp:TextBox>
 
-                                <asp:TextBox ID="TextBox1" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="regname" class="control-label form-label">
+                                                    Founded In <span class="highlight">*<br />
+                                                    </span>
+                                                </label>
+                                                <!-- p.help-block Warning !-->
+                                                <br />
+                                                <asp:TextBox ID="email" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="regname" class="control-label form-label">
+                                                    Email <span class="highlight">*<br />
+                                                    </span>
+                                                </label>
+                                                <!-- p.help-block Warning !-->
+                                                <br />
+                                                <asp:TextBox ID="contact" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="regname" class="control-label form-label">
+                                                    Contact No <span class="highlight">*<br />
+                                                    </span>
+                                                </label>
+                                                <!-- p.help-block Warning !-->
+                                                <br />
+                                                <asp:TextBox ID="contact2" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="regname" class="control-label form-label">
+                                                    Address <span class="highlight">*<br />
+                                                    </span>
+                                                </label>
+                                                <!-- p.help-block Warning !-->
+                                                <br />
+                                                <asp:TextBox ID="address" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="regname" class="control-label form-label">
+                                                    postal Code <span class="highlight">*<br />
+                                                    </span>
+                                                </label>
+                                                <!-- p.help-block Warning !-->
+                                                <br />
+                                                <asp:TextBox ID="postal" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="regname" class="control-label form-label">
+                                                    City <span class="highlight">*<br />
+                                                    </span>
+                                                </label>
+                                                <!-- p.help-block Warning !-->
+                                                <br />
+                                                <asp:DropDownList ID="DropDownList2" CssClass="form-control  form-input" placeholder="----Select----" runat="server">
+                                                    <asp:ListItem></asp:ListItem>
+                                                    <asp:ListItem>Karachi</asp:ListItem>
+                                                    <asp:ListItem>Lahore</asp:ListItem>
+                                                    <asp:ListItem>Peshawar</asp:ListItem>
+                                                    <asp:ListItem>Islamabad</asp:ListItem>
+                                                    <asp:ListItem>Quetta</asp:ListItem>
+                                                    <asp:ListItem>Hyderabad</asp:ListItem>
+
+                                                </asp:DropDownList>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="regname" class="control-label form-label">
+                                                    Country  <span class="highlight">*<br />
+                                                    </span>
+                                                </label>
+                                                <!-- p.help-block Warning !-->
+                                                <br />
+                                                <asp:TextBox ID="country" CssClass="form-control  form-input" Width="200px" runat="server" Text="Pakistan"></asp:TextBox>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="group-btn-slider">
+                                        <div class="btn-prev"><i class="fa fa-angle-left"></i></div>
+                                        <div class="btn-next"><i class="fa fa-angle-right"></i></div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                <label for="regname" class="control-label form-label">
-                                    Owner's Name <span class="highlight">*<br />
-                                    </span>
-                                </label>
-                                <!-- p.help-block Warning !-->
-                                <br />
-                                <asp:TextBox ID="name" CssClass="form-control  form-input " runat="server"></asp:TextBox>
 
-                            </div>
-                            <div class="col-md-6">
-                                <label for="regname" class="control-label form-label">
-                                    Campus name  <span class="highlight">*<br />
-                                    </span>
-                                </label>
-                                <!-- p.help-block Warning !-->
-                                <br />
-                                <asp:TextBox ID="cname" CausesValidation="true" CssClass="form-control  form-input" runat="server"></asp:TextBox>
-
-                            </div>
-                            <div class="col-md-6">
-                                <label for="regname" class="control-label form-label">
-                                    Founded In <span class="highlight">*<br />
-                                    </span>
-                                </label>
-                                <!-- p.help-block Warning !-->
-                                <br />
-                                <asp:TextBox ID="email" CssClass="form-control  form-input" runat="server"></asp:TextBox>
-
-                            </div>
-
-                            <div class="col-md-6">
-                                <label for="regname" class="control-label form-label">
-                                    Email <span class="highlight">*<br />
-                                    </span>
-                                </label>
-                                <!-- p.help-block Warning !-->
-                                <br />
-                                <asp:TextBox ID="contact" CssClass="form-control  form-input" runat="server"></asp:TextBox>
-
-                            </div>
-                            <div class="col-md-6">
-                                <label for="regname" class="control-label form-label">
-                                    Contact No <span class="highlight">*<br />
-                                    </span>
-                                </label>
-                                <!-- p.help-block Warning !-->
-                                <br />
-                                <asp:TextBox ID="contact2" CssClass="form-control  form-input" runat="server"></asp:TextBox>
-
-                            </div>
-                            <br />
-
-                            <h4>Upload a Logo :</h4>
-                            <asp:FileUpload ID="FileUpload2" runat="server" />
-
-                            <br />
-                            <div class="col-md-6">
-                                <label for="regname" class="control-label form-label">
-                                    Address <span class="highlight">*<br />
-                                    </span>
-                                </label>
-                                <!-- p.help-block Warning !-->
-                                <br />
-                                <asp:TextBox ID="address" CssClass="form-control  form-input" runat="server"></asp:TextBox>
-
-                            </div>
-
-
-                            <div class="col-md-6">
-                                <label for="regname" class="control-label form-label">
-                                    postal Code <span class="highlight">*<br />
-                                    </span>
-                                </label>
-                                <!-- p.help-block Warning !-->
-                                <br />
-                                <asp:TextBox ID="postal" CssClass="form-control  form-input" runat="server"></asp:TextBox>
-
-                            </div>
-
-                            <div class="col-md-6">
-                                <label for="regname" class="control-label form-label">
-                                    City <span class="highlight">*<br />
-                                    </span>
-                                </label>
-                                <!-- p.help-block Warning !-->
-                                <br />
-                                <asp:DropDownList ID="DropDownList2" CssClass="form-control  form-input" placeholder="----Select----" runat="server">
-                                    <asp:ListItem></asp:ListItem>
-                                    <asp:ListItem>Karachi</asp:ListItem>
-                                    <asp:ListItem>Lahore</asp:ListItem>
-                                    <asp:ListItem>Peshawar</asp:ListItem>
-                                    <asp:ListItem>Islamabad</asp:ListItem>
-                                    <asp:ListItem>Quetta</asp:ListItem>
-                                    <asp:ListItem>Hyderabad</asp:ListItem>
-
-                                </asp:DropDownList>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="regname" class="control-label form-label">
-                                    Country  <span class="highlight">*<br />
-                                    </span>
-                                </label>
-                                <!-- p.help-block Warning !-->
-                                <br />
-                                <asp:TextBox ID="country" CssClass="form-control  form-input" Width="200px" runat="server" Text="Pakistan"></asp:TextBox>
-
-                            </div>
-
-
-                        </div>
-
-                    </asp:Panel>
+                        
                         </asp:View>
                         <asp:View ID="ViewRegistrationDetails" runat="server">
-                             <h3>Registration Details</h3>
-                             <asp:Panel ID="Panel2" runat="server">
-                        <div class="register-form bg-w-form rlp-form">
-                            <div class="col-md-6">
-                                <label for="regname" class="control-label form-label">
-                                    Username <span class="highlight">*<br />
-                                    </span>
-                                </label>
-                                <!--p.help-block Warning !-->
-                                <br />
+                            <div class="section section-padding pricing">
+                                <div class="container">
+                                    <div class="group-title-index">
+                                        <h4 class="top-title">chooses your pricing</h4>
+                                        <h2 class="center-title">the best pricing we offered</h2>
+                                        <div class="bottom-title"><i class="bottom-icon icon-a-1-01-01"></i></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="pricing-wrapper">
+                                            <div class="col-md-6">
+                                                <label for="regname" class="control-label form-label">
+                                                    Username <span class="highlight">*<br />
+                                                    </span>
+                                                </label>
+                                                <!--p.help-block Warning !-->
+                                                <br />
 
-                                <asp:TextBox ID="txt_username" CssClass="form-control  form-input" runat="server"></asp:TextBox>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="regname" class="control-label form-label">
-                                    Password<span class="highlight">*<br />
-                                    </span>
-                                </label>
-                                <!-- p.help-block Warning !-->
-                                <br />
-                                <asp:TextBox ID="txt_password" CssClass="form-control  form-input " runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txt_username" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="regname" class="control-label form-label">
+                                                    Password<span class="highlight">*<br />
+                                                    </span>
+                                                </label>
+                                                <!-- p.help-block Warning !-->
+                                                <br />
+                                                <asp:TextBox ID="txt_password" CssClass="form-control  form-input " runat="server"></asp:TextBox>
 
-                            </div>
-                            <div class="col-md-6">
-                                <label for="regname" class="control-label form-label">
-                                    Confirm Password<span class="highlight">*<br />
-                                    </span>
-                                </label>
-                                <!-- p.help-block Warning !-->
-                                <br />
-                                <asp:TextBox ID="txt_confirmPassword" CausesValidation="true" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="regname" class="control-label form-label">
+                                                    Confirm Password<span class="highlight">*<br />
+                                                    </span>
+                                                </label>
+                                                <!-- p.help-block Warning !-->
+                                                <br />
+                                                <asp:TextBox ID="txt_confirmPassword" CausesValidation="true" CssClass="form-control  form-input" runat="server"></asp:TextBox>
 
-                            </div>
-                            <div class="col-md-6">
-                                <label for="regname" class="control-label form-label">
-                                    Account Pin<span class="highlight">*<br />
-                                    </span>
-                                </label>
-                                <!-- p.help-block Warning !-->
-                                <br />
-                                <asp:TextBox ID="txt_accountPin" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="regname" class="control-label form-label">
+                                                    Account Pin<span class="highlight">*<br />
+                                                    </span>
+                                                </label>
+                                                <!-- p.help-block Warning !-->
+                                                <br />
+                                                <asp:TextBox ID="txt_accountPin" CssClass="form-control  form-input" runat="server"></asp:TextBox>
 
-                            </div>
+                                            </div>
 
-                            <div class="col-md-6">
-                                <label for="regname" class="control-label form-label">
-                                    Primary Email Address <span class="highlight">*<br />
-                                    </span>
-                                </label>
-                                <!-- p.help-block Warning !-->
-                                <br />
-                                <asp:TextBox ID="txt_primaryEmailAddress" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                            <div class="col-md-6">
+                                                <label for="regname" class="control-label form-label">
+                                                    Primary Email Address <span class="highlight">*<br />
+                                                    </span>
+                                                </label>
+                                                <!-- p.help-block Warning !-->
+                                                <br />
+                                                <asp:TextBox ID="txt_primaryEmailAddress" CssClass="form-control  form-input" runat="server"></asp:TextBox>
 
-                            </div>
-                            <div class="col-md-6">
-                                <label for="regname" class="control-label form-label">
-                                    Secondary Email Address<span class="highlight">*<br />
-                                    </span>
-                                </label>
-                                <!-- p.help-block Warning !-->
-                                <br />
-                                <asp:TextBox ID="txt_secondaryEmailAddress" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="regname" class="control-label form-label">
+                                                    Secondary Email Address<span class="highlight">*<br />
+                                                    </span>
+                                                </label>
+                                                <!-- p.help-block Warning !-->
+                                                <br />
+                                                <asp:TextBox ID="txt_secondaryEmailAddress" CssClass="form-control  form-input" runat="server"></asp:TextBox>
 
+                                            </div>
+                                            <div id="submitbutton" class="register-submit">
+                                                <button type="submit" onclick="window.location.href='index.html'" class="btn btn-register btn-green">
+                                                    <span>
+                                                        <asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" /></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="group-btn-slider">
+                                        <div class="btn-prev"><i class="fa fa-angle-left"></i></div>
+                                        <div class="btn-next"><i class="fa fa-angle-right"></i></div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="submitbutton" class="register-submit">
-                                <button type="submit" onclick="window.location.href='index.html'" class="btn btn-register btn-green">
-                                    <span>
-                                        <asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" /></span></button>
-                            </div>
-                    </asp:Panel>
                         </asp:View>                                               
                     </asp:MultiView>
                 </div>

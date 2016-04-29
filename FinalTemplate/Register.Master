@@ -18,6 +18,7 @@
     <link type="text/css" rel="stylesheet" href="assets/font/font-icon/font-awesome-4.4.0/css/font-awesome.css"/>
     <link type="text/css" rel="stylesheet" href="assets/font/font-icon/font-svg/css/Glyphter.css"/>
     <!-- LIBRARY CSS-->
+    
     <link href="assets/css/mycss.css" rel="stylesheet" />
     <link type="text/css" rel="stylesheet" href="assets/libs/animate/animate.css"/>
     <link type="text/css" rel="stylesheet" href="assets/libs/bootstrap-3.3.5/css/bootstrap.css"/>
