@@ -139,6 +139,24 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.TextBox country;
         
         /// <summary>
+        /// btn_goto_RegistrationDetails control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_goto_RegistrationDetails;
+        
+        /// <summary>
+        /// btn_gobackto_viewpackages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_gobackto_viewpackages;
+        
+        /// <summary>
         /// ViewRegistrationDetails control.
         /// </summary>
         /// <remarks>
@@ -202,12 +220,12 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.TextBox txt_secondaryEmailAddress;
         
         /// <summary>
-        /// Button1 control.
+        /// btn_goto_summary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btn_goto_summary;
     }
 }

@@ -9,6 +9,8 @@
              RemoveSelectedPackage();
              ActivePackage();
              RemovePadding();
+             PaddingToSubmitButtion();
+             BackButton();
          });
          function SetTextFont() {
              $('.inner').find('.inner-number').removeClass('inner-number').addClass('innerNumber');
@@ -27,6 +29,12 @@
          }
          function RemovePadding() {
              $('.section-padding').removeClass('section-padding');
+         }
+         function PaddingToSubmitButtion() {
+             $('.register-submit').find('.btn').css('margin-top', '20px');
+         }
+         function BackButton() {
+             $('#btn_goto_RegistrationDetails').css('background-color', 'red');
          }
      </script>
 </asp:Content>
@@ -187,9 +195,9 @@
                                         <div class="btn-next"><i class="fa fa-angle-right"></i></div>
                                     </div>
                                     <div id="submitbutton" class="register-submit">                                        
-                                        <button type="submit" onclick="window.location.href='index.html'" class="btn btn-register btn-green">
+                                        <div class="btn btn-register btn-green">
                                             <span>
-                                                <asp:Button ID="btn_goto_ViewSchoolDetails" runat="server" Text="Next" Style="background-color: transparent" BorderStyle="None" OnClick="btn_goto_ViewSchoolDetails_Click" /></span></button>
+                                                <asp:Button ID="btn_goto_ViewSchoolDetails" runat="server" Text="Next" Style="background-color: transparent" BorderStyle="None" OnClick="btn_goto_ViewSchoolDetails_Click" /></span></div>
                                     </div>
                                 </div>
                             </div>
@@ -312,7 +320,17 @@
 
                                             </div>
                                         </div>
-                                    </div>                                   
+                                    </div>
+                                    <div id="submitbutton" class="register-submit">                                        
+                                        <div class="btn btn-register btn-green">
+                                            <span class="aspbutton">
+                                                <asp:Button ID="btn_goto_RegistrationDetails" runat="server" Text="Next" Style="background-color: transparent" BorderStyle="None" OnClick="btn_goto_RegistrationDetails_Click" />
+                                            </span>
+                                            <span class="aspbutton">
+                                                <asp:Button ID="btn_gobackto_viewpackages" runat="server" Text="Back" Style="background-color: transparent" BorderStyle="None" OnClick="btn_gobackto_viewpackages_Click" />
+                                            </span>
+                                        </div>
+                                    </div>                                    
                                 </div>
                             </div>
 
@@ -388,12 +406,15 @@
                                                 <br />
                                                 <asp:TextBox ID="txt_secondaryEmailAddress" CssClass="form-control  form-input" runat="server"></asp:TextBox>
 
-                                            </div>
-                                            <div id="submitbutton" class="register-submit">
-                                                <button type="submit" onclick="window.location.href='index.html'" class="btn btn-register btn-green">
-                                                    <span>
-                                                        <asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" /></span></button>
-                                            </div>
+                                            </div>                                            
+                                           <div id="submitbutton" class="register-submit">
+                                                 <div class="btn btn-register btn-green">
+                                                     <span>
+                                                         <asp:Button ID="btn_goto_summary" runat="server" Text="Next" Style="background-color: transparent" BorderStyle="None" OnClick="btn_goto_summary_Click" />
+                                                     </span>
+                                                 </div>
+                                           </div>
+                                            
                                         </div>
                                     </div>
                                     <div class="group-btn-slider">

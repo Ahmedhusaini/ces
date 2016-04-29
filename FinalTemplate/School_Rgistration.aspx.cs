@@ -22,5 +22,20 @@ namespace FinalTemplate
         {
             MultiviewRegisterSchool.ActiveViewIndex = 1;
         }
+
+        protected void btn_goto_RegistrationDetails_Click(object sender, EventArgs e)
+        {
+            MultiviewRegisterSchool.ActiveViewIndex = 2;
+        }
+
+        protected void btn_gobackto_viewpackages_Click(object sender, EventArgs e)
+        {
+            MultiviewRegisterSchool.ActiveViewIndex = 0;
+        }
+
+        protected void btn_goto_summary_Click(object sender, EventArgs e)
+        {
+            MultiviewRegisterSchool.ActiveViewIndex = 2;
+        }
     }
 }
