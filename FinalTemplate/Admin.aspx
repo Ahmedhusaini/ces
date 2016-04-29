@@ -6,6 +6,7 @@
         $(document).ready(function () {
             $('#topStudents').addClass('topPadding');
             $('#teachingstaff').addClass('teachingbackgroundImage');
+            $('.btn').css('width', 'auto');
         });
     </script> 
     

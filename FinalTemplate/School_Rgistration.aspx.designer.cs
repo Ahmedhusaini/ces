@@ -13,13 +13,31 @@ namespace FinalTemplate {
     public partial class School_Rgistration {
         
         /// <summary>
-        /// Panel1 control.
+        /// MultiviewRegisterSchool control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
+        protected global::System.Web.UI.WebControls.MultiView MultiviewRegisterSchool;
+        
+        /// <summary>
+        /// ViewPackages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View ViewPackages;
+        
+        /// <summary>
+        /// ViewSchoolDetails control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View ViewSchoolDetails;
         
         /// <summary>
         /// TextBox1 control.
@@ -76,15 +94,6 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.TextBox contact2;
         
         /// <summary>
-        /// FileUpload2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload2;
-        
-        /// <summary>
         /// address control.
         /// </summary>
         /// <remarks>
@@ -121,13 +130,13 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.TextBox country;
         
         /// <summary>
-        /// Panel2 control.
+        /// ViewRegistrationDetails control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel2;
+        protected global::System.Web.UI.WebControls.View ViewRegistrationDetails;
         
         /// <summary>
         /// txt_username control.

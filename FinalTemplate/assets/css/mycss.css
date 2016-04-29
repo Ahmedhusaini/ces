@@ -149,3 +149,15 @@
     margin:auto;
     width:130px;
 }
+.innerNumber {
+    font-size:20px;
+    font-style:italic;
+    font-weight:bolder;
+}
+.pGreen {
+    font-size:15px;
+    font-kerning:normal;
+    font-stretch:wider;
+    font-weight:600;
+    padding:10px 0px 10px 0px;
+}
