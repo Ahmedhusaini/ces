@@ -17,5 +17,10 @@ namespace FinalTemplate
                 MultiviewRegisterSchool.ActiveViewIndex = 0;
             }
         }
+
+        protected void btn_goto_ViewSchoolDetails_Click(object sender, EventArgs e)
+        {
+            MultiviewRegisterSchool.ActiveViewIndex = 1;
+        }
     }
 }

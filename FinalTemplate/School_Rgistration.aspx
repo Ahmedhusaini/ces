@@ -8,7 +8,7 @@
              SetTextFont();
              RemoveSelectedPackage();
              ActivePackage();
-             
+             RemovePadding();
          });
          function SetTextFont() {
              $('.inner').find('.inner-number').removeClass('inner-number').addClass('innerNumber');
@@ -24,6 +24,9 @@
          }
          function PriceHover() {
              $('.pricing-widget').hover(function () { $(this).css('background-color', '#D2542A'); }, function () { $(this).css('background-color', '#EAEDF5'); });
+         }
+         function RemovePadding() {
+             $('.section-padding').removeClass('section-padding');
          }
      </script>
 </asp:Content>
@@ -183,6 +186,11 @@
                                         <div class="btn-prev"><i class="fa fa-angle-left"></i></div>
                                         <div class="btn-next"><i class="fa fa-angle-right"></i></div>
                                     </div>
+                                    <div id="submitbutton" class="register-submit">                                        
+                                        <button type="submit" onclick="window.location.href='index.html'" class="btn btn-register btn-green">
+                                            <span>
+                                                <asp:Button ID="btn_goto_ViewSchoolDetails" runat="server" Text="Next" Style="background-color: transparent" BorderStyle="None" OnClick="btn_goto_ViewSchoolDetails_Click" /></span></button>
+                                    </div>
                                 </div>
                             </div>
                         </asp:View>
@@ -190,8 +198,7 @@
                             <div class="section section-padding pricing">
                                 <div class="container">
                                     <div class="group-title-index">
-                                        <h4 class="top-title">chooses your pricing</h4>
-                                        <h2 class="center-title">the best pricing we offered</h2>
+                                        <h2 class="center-title">Please give us information about your school</h2>                                        
                                         <div class="bottom-title"><i class="bottom-icon icon-a-1-01-01"></i></div>
                                     </div>
                                     <div class="row">
@@ -284,8 +291,7 @@
                                                 </label>
                                                 <!-- p.help-block Warning !-->
                                                 <br />
-                                                <asp:DropDownList ID="DropDownList2" CssClass="form-control  form-input" placeholder="----Select----" runat="server">
-                                                    <asp:ListItem></asp:ListItem>
+                                                <asp:DropDownList ID="DropDownList2" CssClass="form-control  form-input" placeholder="----Select----" runat="server">                                                    
                                                     <asp:ListItem>Karachi</asp:ListItem>
                                                     <asp:ListItem>Lahore</asp:ListItem>
                                                     <asp:ListItem>Peshawar</asp:ListItem>
@@ -302,15 +308,11 @@
                                                 </label>
                                                 <!-- p.help-block Warning !-->
                                                 <br />
-                                                <asp:TextBox ID="country" CssClass="form-control  form-input" Width="200px" runat="server" Text="Pakistan"></asp:TextBox>
+                                                <asp:TextBox ID="country" CssClass="form-control  form-input" runat="server" Text="Pakistan"></asp:TextBox>
 
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="group-btn-slider">
-                                        <div class="btn-prev"><i class="fa fa-angle-left"></i></div>
-                                        <div class="btn-next"><i class="fa fa-angle-right"></i></div>
-                                    </div>
+                                    </div>                                   
                                 </div>
                             </div>
 
