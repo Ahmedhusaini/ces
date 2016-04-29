@@ -95,7 +95,7 @@
                                                                 <p><strong>No</strong> supporter</p>
                                                             </li>
                                                             <li>
-                                                                <p><strong>No</strong> ebook</p>
+                                                                <p><strong>No</strong> ebook</p >
                                                             </li>
                                                             <li>
                                                                 <p><strong>No</strong> tutorial</p>
