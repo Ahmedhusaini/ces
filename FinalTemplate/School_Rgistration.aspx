@@ -78,9 +78,9 @@
                                                         </div>
                                                     </div>
                                                     <div class="pricing-content">
-                                                        <h3 class="pricing-title">Silver</h3>
-
+                                                        <h3 class="pricing-title">Silver</h3>                                                     
                                                         <p class="pricing-subtitle">The most basic package</p>
+                                                        <br />
                                                         <ul class="pricing-list">
                                                             <li>
                                                                 <p><strong>One day</strong> trial</p>
