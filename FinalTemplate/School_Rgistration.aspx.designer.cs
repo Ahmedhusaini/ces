@@ -13,42 +13,6 @@ namespace FinalTemplate {
     public partial class School_Rgistration {
         
         /// <summary>
-        /// MultiviewRegisterSchool control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.MultiView MultiviewRegisterSchool;
-        
-        /// <summary>
-        /// ViewPackages control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewPackages;
-        
-        /// <summary>
-        /// btn_goto_ViewSchoolDetails control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_goto_ViewSchoolDetails;
-        
-        /// <summary>
-        /// ViewSchoolDetails control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewSchoolDetails;
-        
-        /// <summary>
         /// TextBox1 control.
         /// </summary>
         /// <remarks>
@@ -139,33 +103,6 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.TextBox country;
         
         /// <summary>
-        /// btn_goto_RegistrationDetails control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_goto_RegistrationDetails;
-        
-        /// <summary>
-        /// btn_gobackto_viewpackages control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_gobackto_viewpackages;
-        
-        /// <summary>
-        /// ViewRegistrationDetails control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewRegistrationDetails;
-        
-        /// <summary>
         /// txt_username control.
         /// </summary>
         /// <remarks>
@@ -173,6 +110,15 @@ namespace FinalTemplate {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_username;
+        
+        /// <summary>
+        /// txt_accountPin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_accountPin;
         
         /// <summary>
         /// txt_password control.
@@ -191,15 +137,6 @@ namespace FinalTemplate {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_confirmPassword;
-        
-        /// <summary>
-        /// txt_accountPin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_accountPin;
         
         /// <summary>
         /// txt_primaryEmailAddress control.
