@@ -161,3 +161,6 @@
     font-weight:600;
     padding:10px 0px 10px 0px;
 }
+.pricingClickEvent {
+    opacity:0.1;    
+}

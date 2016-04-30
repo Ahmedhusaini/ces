@@ -11,31 +11,27 @@ namespace FinalTemplate
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            country.Enabled = false;
-            if (!IsPostBack)
-            {
-                MultiviewRegisterSchool.ActiveViewIndex = 0;
-            }
+           
         }
 
         protected void btn_goto_ViewSchoolDetails_Click(object sender, EventArgs e)
         {
-            MultiviewRegisterSchool.ActiveViewIndex = 1;
+           
         }
 
         protected void btn_goto_RegistrationDetails_Click(object sender, EventArgs e)
         {
-            MultiviewRegisterSchool.ActiveViewIndex = 2;
+          
         }
 
         protected void btn_gobackto_viewpackages_Click(object sender, EventArgs e)
         {
-            MultiviewRegisterSchool.ActiveViewIndex = 0;
+          
         }
 
         protected void btn_goto_summary_Click(object sender, EventArgs e)
         {
-            MultiviewRegisterSchool.ActiveViewIndex = 2;
+          
         }
     }
 }
