@@ -29,17 +29,17 @@
                      var platinum = pricingwrapper.children().eq(2).children().eq(0).children().eq(1)
                      var packagename = $(this).siblings(0).html();
                      if (packagename == 'Silver') {
-                         silver.css('background-color', '#D2542A');
+                         silver.css('background-color', '#C0C0C0');
                          gold.css('background-color', '');
                          platinum.css('background-color', '');
                      } else if (packagename == 'Gold') {
                          silver.css('background-color', '');
-                         gold.css('background-color', '#D2542A');
+                         gold.css('background-color', '#CFB53B');
                          platinum.css('background-color', '');
                      } else if (packagename == 'Platinum') {
                          gold.css('background-color', '');
                          silver.css('background-color', '');
-                         platinum.css('background-color', '#D2542A');
+                         platinum.css('background-color', '#E5E4E2');
                      }
                  }                 
              });
