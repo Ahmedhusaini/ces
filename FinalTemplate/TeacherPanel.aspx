@@ -1,190 +1,150 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher.Master" AutoEventWireup="true" CodeBehind="TeacherPanel.aspx.cs" Inherits="FinalTemplate.TeacherPanel" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TeacherHeadPlaceHolder" runat="server">
+    <script src="assets/js/jquery-2.2.3.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#topStudents').addClass('topPadding');
+            $('#teachingstaff').addClass('staff');
+        });
+    </script> 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="TeacherPlaceHolder1" runat="server">
-        <div class="section background-opacity page-title set-height-top">
+
+    <div id="teachingstaff" class="section section-padding background-opacity best-staff">
                     <div class="container">
-                        <div class="page-title-wrapper"><!--.page-title-content--><h2 class="captions">profile</h2>
-                            <ol class="breadcrumb">
-                                <li><a href="index.html">Home</a></li>
-                                <li class="active"><a href="#">profile</a></li>
-                            </ol>
+                        <div class="group-title-index"><h4 class="top-title">SCHOOL FACULTY</h4>
+
+                            <h2 class="center-title">TEACHING STAFF PROFILE</h2>
+
+                            <div class="bottom-title"><i class="bottom-icon icon-icon-05"></i></div>
                         </div>
-                    </div>
-                </div>
-                <div class="section nav-subscribe">
-                    <div class="container">
-                        <div class="nav-subscribe-wrapper">
-                            <div class="nav-subscribe-left"><p class="subscribe-text">Subscribe <b class="focus">Edugate</b> to learn new creative skill</p></div>
-                            <div class="nav-subscribe-right">
-                                <button class="btn btn-green btn-bold"><span>SUBSCRIBE NOW</span></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="section section-padding profile-teacher">
-                    <div class="container">
-                        <div class="profile-teacher-wrapper">
-                            <div class="teacher-info">
-                                <div class="staff-item2 customize">
+                        <div class="best-staff-wrapper">
+                            <div class="best-staff-content">
+                                <div class="staff-item">
                                     <div class="staff-item-wrapper">
-                                        <div class="staff-info"><a href="#" class="staff-avatar"><img src="assets/images/people-avatar-4.jpg" alt="" class="img-responsive"/></a><a href="#" class="staff-name">barry join</a></div>
+                                        <div class="staff-info"><a href="#" class="staff-avatar"><img src="assets/images/people-avatar-2.jpg" alt="" class="img-responsive"/></a><a href="#" class="staff-name">Alex trevor</a>
+
+                                            <div class="staff-job">head teacher</div>
+                                            <div class="staff-desctiption">Nam libelo tempore, cum soluta nobis est eligendi optio cumque nilhi impedil quo minus end maximie fade posimus the end.</div>
+                                        </div>
                                     </div>
                                     <div class="staff-socials"><a href="#" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" class="google"><i class="fa fa-google-plus"></i></a><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></div>
                                 </div>
-                                <div class="teacher-des">
-                                    <div class="title">Barry Join</div>
-                                    <div class="subtitle">Vice Head Teacher</div>
-                                    <div class="content"><p class="content-detail">Dalmatian hello amazing the rmore flung as thanks a manta dealt to under emu some the and one baldbe dear sobbingly save and spitefully less. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believabl.</p>
+                                <div class="staff-item">
+                                    <div class="staff-item-wrapper">
+                                        <div class="staff-info"><a href="#" class="staff-avatar"><img src="assets/images/people-avatar-3.jpg" alt="" class="img-responsive"/></a><a href="#" class="staff-name">lana simth</a>
 
-                                        <p class="content-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu tellus ipsum. Nunc maximus sapien ac dui vulputate tincidunt. Morbi luctus nisi vel suscipit volutpat. Donec vitae auctor nisl. Ut malesuada felis in erat rutrum ultrices.</p>
-                                        <ul class="detail-list">
-                                            <li>Fusce iaculis ornare nunc rutrum ornare.</li>
-                                            <li>Proin ut placerat enim, vel venenatis urna.</li>
-                                            <li>Phasellus sed diam tincidunt mauris malesuada mattis et in nisl.</li>
-                                            <li>Quisque massa eros, molestie at mi eget, aliquam tristique eros.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="certificate-title underline">Certificates</div>
-                            <div class="slider-logo">
-                                <div class="slider-logo-wrapper">
-                                    <div class="slider-logo-content">
-                                        <div class="carousel-logos owl-carousel">
-                                            <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-1.png" alt="" class="img-responsive"/></a></div>
-                                            <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-2.png" alt="" class="img-responsive"/></a></div>
-                                            <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-3.png" alt="" class="img-responsive"/></a></div>
-                                            <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-4.png" alt="" class="img-responsive"/></a></div>
-                                            <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-5.png" alt="" class="img-responsive"/></a></div>
-                                            <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-6.png" alt="" class="img-responsive"/></a></div>
-                                            <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-1.png" alt="" class="img-responsive"/></a></div>
-                                            <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-2.png" alt="" class="img-responsive"/></a></div>
-                                            <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-3.png" alt="" class="img-responsive"/></a></div>
-                                            <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-4.png" alt="" class="img-responsive"/></a></div>
-                                            <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-5.png" alt="" class="img-responsive"/></a></div>
-                                            <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-6.png" alt="" class="img-responsive"/></a></div>
+                                            <div class="staff-job">vice head teacher</div>
+                                            <div class="staff-desctiption">Nam libelo tempore, cum soluta nobis est eligendi optio cumque nilhi impedil quo minus end maximie fade posimus the end.</div>
                                         </div>
                                     </div>
+                                    <div class="staff-socials"><a href="#" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" class="google"><i class="fa fa-google-plus"></i></a><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></div>
+                                </div>
+                                <div class="staff-item">
+                                    <div class="staff-item-wrapper">
+                                        <div class="staff-info"><a href="#" class="staff-avatar"><img src="assets/images/people-avatar-4.jpg" alt="" class="img-responsive"/></a><a href="#" class="staff-name">barry join</a>
+
+                                            <div class="staff-job">advisory professor</div>
+                                            <div class="staff-desctiption">Nam libelo tempore, cum soluta nobis est eligendi optio cumque nilhi impedil quo minus end maximie fade posimus the end.</div>
+                                        </div>
+                                    </div>
+                                    <div class="staff-socials"><a href="#" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" class="google"><i class="fa fa-google-plus"></i></a><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></div>
+                                </div>
+                                <div class="staff-item">
+                                    <div class="staff-item-wrapper">
+                                        <div class="staff-info"><a href="#" class="staff-avatar"><img src="assets/images/people-avatar-5.jpg" alt="" class="img-responsive"/></a><a href="#" class="staff-name">Ven Tomarme</a>
+
+                                            <div class="staff-job">Design teacher</div>
+                                            <div class="staff-desctiption">Nam libelo tempore, cum soluta nobis est eligendi optio cumque nilhi impedil quo minus end maximie fade posimus the end.</div>
+                                        </div>
+                                    </div>
+                                    <div class="staff-socials"><a href="#" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" class="google"><i class="fa fa-google-plus"></i></a><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="section teacher-skill">
-                    <div class="container teacher-skill-content">
-                        <div class="teacher-skill-wrapper">
-                            <div class="title">barry join's key skill</div>
-                            <div class="row skill-content">
-                                <div class="col-md-6 skill-level">
-                                    <div class="skill-name">online marketing</div>
-                                    <div class="progress">
-                                        <div role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" class="progress-bar skill-1"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 skill-level">
-                                    <div class="skill-name">online marketing</div>
-                                    <div class="progress">
-                                        <div role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" class="progress-bar skill-2"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 skill-level">
-                                    <div class="skill-name">branding</div>
-                                    <div class="progress">
-                                        <div role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" class="progress-bar skill-3"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 skill-level">
-                                    <div class="skill-name">branding</div>
-                                    <div class="progress">
-                                        <div role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" class="progress-bar skill-4"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 skill-level">
-                                    <div class="skill-name">creativity</div>
-                                    <div class="progress">
-                                        <div role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" class="progress-bar skill-5"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 skill-level">
-                                    <div class="skill-name">creativity</div>
-                                    <div class="progress">
-                                        <div role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" class="progress-bar skill-6"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="group-btn-slider">
+                        <div class="btn-prev"><i class="fa fa-angle-left"></i></div>
+                        <div class="btn-next"><i class="fa fa-angle-right"></i></div>
                     </div>
                 </div>
-                <div class="section teacher-course section-padding">
-                    <div class="container teacher-course-wrapper">
-                        <div class="underline">Courses</div>
-                        <div class="course-table">
-                            <div class="outer-container">
-                                <div class="inner-container">
-                                    <div class="table-header">
-                                        <table class="edu-table-responsive">
-                                            <thead>
-                                            <tr class="heading-table">
-                                                <th class="col-1">id</th>
-                                                <th class="col-2">course name</th>
-                                                <th class="col-3">duration</th>
-                                                <th class="col-4">timeline</th>
-                                            </tr>
-                                            </thead>
-                                        </table>
-                                    </div>
-                                    <div class="table-body">
-                                        <table class="edu-table-responsive table-hover">
-                                            <tbody>
-                                            <tr class="table-row">
-                                                <td class="col-1"><span>ED1</span></td>
-                                                <td class="col-2"><a href="courses-detail.html">Sport Exercise Sciences</a></td>
-                                                <td class="col-3"><span>2 months</span></td>
-                                                <td class="col-4"><span>01/01/2016 -  02/15/2016</span></td>
-                                            </tr>
-                                            <tr class="table-row">
-                                                <td class="col-1"><span>ED1</span></td>
-                                                <td class="col-2"><a href="courses-detail.html">Learning Website Optimization With Bootstrap</a></td>
-                                                <td class="col-3"><span>2 months</span></td>
-                                                <td class="col-4"><span>01/01/2016 -  02/15/2016</span></td>
-                                            </tr>
-                                            <tr class="table-row">
-                                                <td class="col-1"><span>ED1</span></td>
-                                                <td class="col-2"><a href="courses-detail.html">Skeching Custom Item Prize Design</a></td>
-                                                <td class="col-3"><span>2 months</span></td>
-                                                <td class="col-4"><span>01/01/2016 -  02/15/2016</span></td>
-                                            </tr>
-                                            <tr class="table-row">
-                                                <td class="col-1"><span>ED1</span></td>
-                                                <td class="col-2"><a href="courses-detail.html">Learning Website Optimization With Bootstrap</a></td>
-                                                <td class="col-3"><span>2 months</span></td>
-                                                <td class="col-4"><span>01/01/2016 -  02/15/2016</span></td>
-                                            </tr>
-                                            <tr class="table-row">
-                                                <td class="col-1"><span>ED1</span></td>
-                                                <td class="col-2"><a href="courses-detail.html">Learning Viral Web Design Projects</a></td>
-                                                <td class="col-3"><span>2 months</span></td>
-                                                <td class="col-4"><span>01/01/2016 -  02/15/2016</span></td>
-                                            </tr>
-                                            <tr class="table-row">
-                                                <td class="col-1"><span>ED1</span></td>
-                                                <td class="col-2"><a href="courses-detail.html">Email Marketing Strategy With MailChimp</a></td>
-                                                <td class="col-3"><span>2 months</span></td>
-                                                <td class="col-4"><span>01/01/2016 -  02/15/2016</span></td>
-                                            </tr>
-                                            <tr class="table-row">
-                                                <td class="col-1"><span>ED1</span></td>
-                                                <td class="col-2"><a href="courses-detail.html">Social Media Network & Marketing</a></td>
-                                                <td class="col-3"><span>2 months</span></td>
-                                                <td class="col-4"><span>01/01/2016 -  02/15/2016</span></td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="course-syllabus-title underline">Faculty Members</div>
+    <div class="course-table" style="height: 1378px; width:100%;">
+                                            <div class="outer-container">
+                                                <div class="inner-container">
+                                                    <div class="table-header">
+                                                        <table class="edu-table-responsive table-hover">
+                                                            <thead>
+                                                            <tr class="heading-table">
+                                                                <th class="col-1">Name</th>
+                                                                <th class="col-2">Qualification</th>
+                                                                <th class="col-3">Joining Date</th>
+                                                                <th class="col-4">Address</th>
+                                                            </tr>
+                                                            </thead>
+                                                        </table>
+                                                    </div>
+                                                    <div class="table-body">
+                                                        <table class="edu-table-responsive table-hover">
+                                                            <tbody>
+                                                            <tr class="heading-content">
+                                                                <td colspan="4" class="left heading-content">Principle</td>
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><span>1. HILAL QURESHI</span></a></td>
+                                                                <td class="col-2"><span>PHD CS</span></td>
+                                                                <td class="col-3"><span>10-4-2010</span></td>
+                                                                <td class="col-4"><span>abc</span></td>
+                                                            </tr>
+                                                           
+                                                            <tr class="spacing-table">
+                                                                <td colspan="4"></td>
+                                                            </tr>
+                                                            <tr class="heading-content">
+                                                                <td colspan="4" class="left heading-content">Senior Teachers</td>
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><span>1. Ms. Mehwish Wahid</span></a></td>
+                                                                <td class="col-2"><span>MS CS</span></td>
+                                                                <td class="col-3"><span>05-04-2011</span></td>
+                                                                <td class="col-4"><span>abc</span></td>
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><span>2. Mr. Waleej Haider</span></a></td>
+                                                                <td class="col-2"><span>MS CS</span></td>
+                                                                <td class="col-3"><span>01-5-2011</span></td>
+                                                                <td class="col-4"><span>ate</span></td>
+                                                            </tr>
+                                                            <tr class="spacing-table">
+                                                                <td colspan="4"></td>
+                                                            </tr>
+                                                            <tr class="heading-content">
+                                                                <td colspan="4" class="left heading-content">Junior Teachers</td>
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><span>1. Ms. Aqsa</span></a></td>
+                                                                <td class="col-2"><span>BS CS</span></td>
+                                                                <td class="col-3"><span>4-5-2013</span></td>
+                                                                <td class="col-4"><span>CGHFHDGe</span></td>
+                                                            </tr>
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><span>2. Ms. Mehwish</span></a></td>
+                                                                <td class="col-2"><span>BS CS</span></td>
+                                                                <td class="col-3"><span>20-5-2013</span></td>
+                                                                <td class="col-4"><span>Leing</span></td>
+                                                            </tr>
+                                                          
+                                                            <tr class="table-row">
+                                                                <td class="left col-1"><a href="#"><span>3. Mr. Sallar Khan</span></a></td>
+                                                                <td class="col-2"><span>BS CS</span></td>
+                                                                <td class="col-3"><span>10-2-2015</span></td>
+                                                                <td class="col-4"><span>Prvt</span></td>
+                                                            </tr>
+                                                      
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 </asp:Content>

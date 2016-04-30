@@ -219,7 +219,6 @@
     <Content Include="studentpanel.aspx" />
     <Content Include="StudentProfile.aspx" />
     <Content Include="TeacherRegistration.aspx" />
-    <Content Include="teacher.aspx" />
     <Content Include="TeacherPanel.aspx" />
     <Content Include="Teacherprofile.aspx" />
     <Content Include="Web.config" />
@@ -338,12 +337,12 @@
     <Compile Include="TeacherRegistration.aspx.designer.cs">
       <DependentUpon>TeacherRegistration.aspx</DependentUpon>
     </Compile>
-    <Compile Include="teacher.aspx.cs">
-      <DependentUpon>teacher.aspx</DependentUpon>
+    <Compile Include="TeacherPanel.aspx.cs">
+      <DependentUpon>TeacherPanel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="teacher.aspx.designer.cs">
-      <DependentUpon>teacher.aspx</DependentUpon>
+    <Compile Include="TeacherPanel.aspx.designer.cs">
+      <DependentUpon>TeacherPanel.aspx</DependentUpon>
     </Compile>
     <Compile Include="Teacher.Master.cs">
       <DependentUpon>Teacher.Master</DependentUpon>
@@ -351,13 +350,6 @@
     </Compile>
     <Compile Include="Teacher.Master.designer.cs">
       <DependentUpon>Teacher.Master</DependentUpon>
-    </Compile>
-    <Compile Include="TeacherPanel.aspx.cs">
-      <DependentUpon>TeacherPanel.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TeacherPanel.aspx.designer.cs">
-      <DependentUpon>TeacherPanel.aspx</DependentUpon>
     </Compile>
     <Compile Include="Teacherprofile.aspx.cs">
       <DependentUpon>Teacherprofile.aspx</DependentUpon>
