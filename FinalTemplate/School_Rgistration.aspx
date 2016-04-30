@@ -9,6 +9,7 @@
              RemoveSelectedPackage();
              ActivePackage();
              PaddingTOButtion();
+             AspButton();
          });
          function SetTextFont() {
              $('.inner').find('.inner-number').removeClass('inner-number').addClass('innerNumber');
@@ -19,7 +20,11 @@
          function ActivePackage() {
              $('.pricing-button').click(function () {                                                   
                  $('.active').removeClass('active');
-                 $(this).parent().parent().addClass('active');
+                 var pricingwidget = $(this).parent().parent();
+                 pricingwidget.addClass('active');
+                 if (pricingwidget.hasClass('active')) {
+                     pricingwidget.children().eq(1).css('background-color', '#D2542A');                    
+                 }                 
              });
          }
          function PriceHover() {
@@ -28,7 +33,10 @@
          function PaddingTOButtion(){
              $('.register-submit').css('padding-top','200px');
          }
-         
+         function AspButton() {
+             $('#<%= btn_goto_summary.ClientID%>').addClass('btn btn-register  btn-green');
+             $('.btn').css('width', 'auto');
+         }
         
      </script>
 </asp:Content>
@@ -371,11 +379,9 @@
                                     </div>
                                     
                                     <div id="submitbutton" class="register-submit">
-                                        <div class="btn btn-register  btn-green">
-                                            <span>
-                                                <asp:Button ID="btn_goto_summary" runat="server" Text="Next" Style="background-color: transparent" BorderStyle="None" OnClick="btn_goto_summary_Click" />
-                                            </span>
-                                        </div>
+                                        
+                                                <asp:Button ID="btn_goto_summary" runat="server" Text="Submit Order"  OnClick="btn_goto_summary_Click" />
+                                            
                                     </div>
                                       
                                 </div>
