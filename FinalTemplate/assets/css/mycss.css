@@ -164,3 +164,29 @@
 .pricingClickEvent {
     opacity:0.1;    
 }
+ .pic {
+  border: 10px solid #fff;  
+  float: left;
+  height: 300px;
+  width: 100%;
+  margin: 20px;
+  overflow: hidden;
+  
+  -webkit-box-shadow: 5px 5px 5px #111;
+          box-shadow: 5px 5px 5px #111;  
+}
+.tilt {
+  -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+}
+ 
+.tilt:hover {
+  -webkit-transform: rotate(-3deg);
+     -moz-transform: rotate(-3deg);
+       -o-transform: rotate(-3deg);
+      -ms-transform: rotate(-3deg);
+          transform: rotate(-3deg);
+}

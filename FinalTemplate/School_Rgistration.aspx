@@ -39,7 +39,7 @@
                      } else if (packagename == 'Platinum') {
                          gold.css('background-color', '');
                          silver.css('background-color', '');
-                         platinum.css('background-color', '#E5E4E2');
+                         platinum.css('background-color', '#E5DEDE');
                      }
                  }                 
              });
@@ -49,6 +49,9 @@
          }
          function PaddingTOButtion(){
              $('.register-submit').css('padding-top','200px');
+         }
+         function TitleImageHover() {
+
          }
          function AspButton() {
              $('#<%= btn_goto_summary.ClientID%>').addClass('btn btn-register  btn-green');
@@ -75,7 +78,9 @@
                             <div class="group-title-index">
                                 <h2 class="center-title">Centralized Education System</h2>
                                 <h4 class="top-title">We offer pakistan's best online education support</h4>
-                                <img src="assets/images/registerschool_green.jpg" height="300px" width="100%" />
+                                <div class="tilt pic">
+                                   <img src="assets/images/registerschool_green.jpg" height="300px" width="100%" />
+                                </div>
                                 <p class="pGreen">As we are witnessing the age of new technology it is now a fact that everyone is using it for his/her betterment. So CES gives you a chance to contribute in the betterment of education in pakistan by CENTRALIZING your education system and follow new rules that are more easly and very effective.</p>
                                 <p class="pGreen">CES offers different packages amoung you can choose and select the best which fits your requirements.</p>
                             </div>
