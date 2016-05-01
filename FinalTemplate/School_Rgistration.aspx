@@ -55,24 +55,7 @@
          function AspButton() {
              $('#<%= btn_goto_summary.ClientID%>').addClass('btn btn-register  btn-green');
              $('.btn').css('width', 'auto');
-         }
-         function ValidateForm(){
-             
-             $("#form1").validate({
-                 
-                 rules: {
-                     <%=txt_schoolName.UniqueID%> : {
-                          required:true,
-                          rangelength:[5,25]
-                      }
-                 },                 
-                 messages:{
-                    <%=txt_schoolName.UniqueID%>
-                 }
-              });
-          }
-     
-        
+         }        
      </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="RegisterPlaceHolder1" runat="server">
@@ -117,7 +100,7 @@
                                             </div>
                                             <div class="pricing-content">
                                                 <h3 class="pricing-title">Silver</h3>
-                                                <p class="pricing-subtitle">The most basic package</p>
+                                                <p class="pricing-subtitle">The most basic package</p><br />
                                                 <ul class="pricing-list">
                                                     <li>
                                                         <p><strong>Online Admissions</strong> | Yes</p>
