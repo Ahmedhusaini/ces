@@ -1,15 +1,17 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Register.Master" AutoEventWireup="true" CodeBehind="School_Rgistration.aspx.cs" Inherits="FinalTemplate.School_Rgistration" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="RegisterHeadPlaceHolder" runat="server">
      <script src="assets/js/jquery-2.2.3.js"></script>
+    <script src="assets/js/jquery.validate.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
      <script type="text/javascript">
          $(document).ready(function () {
              $('#submitbutton').addClass('submitbutton');
              $('#RegistrationSchoolWidthFix').css('width', '70%');
              SetTextFont();
              RemoveSelectedPackage();
-             ActivePackage();
-             PaddingTOButtion();
+             ActivePackage();             
              AspButton();
+             ValidateForm();
          });
          function SetTextFont() {
              $('.inner').find('.inner-number').removeClass('inner-number').addClass('innerNumber');
@@ -47,15 +49,22 @@
          function PriceHover() {
              $('.pricing-content').hover(function () { $(this).css('background-color', '#D2542A'); }, function () { $(this).css('background-color', '#EAEDF5'); });
          }
-         function PaddingTOButtion(){
-             $('.register-submit').css('padding-top','200px');
-         }
          function TitleImageHover() {
 
          }
          function AspButton() {
              $('#<%= btn_goto_summary.ClientID%>').addClass('btn btn-register  btn-green');
              $('.btn').css('width', 'auto');
+         }
+         function ValidateForm(){
+             $('#formRegister').validate({
+                 rules: {
+                     <%=txt_schoolName.UniqueID%>:{
+                         required:true,
+                         rangelength:[5,25]
+                     }
+                 }
+             });
          }
         
      </script>
@@ -71,7 +80,8 @@
     <div class="page-register rlp">
         <div class="container">
             <div id="RegistrationSchoolWidthFix" class="register-wrapper rlp-wrapper reg-sk ">
-                <div class="register-table rlp-table">
+                <div id="formRegister">
+                    <div class="register-table rlp-table">
                     <!-- PRICING-->
                     <div class="section pricing">
                         <div class="container">
@@ -103,25 +113,52 @@
                                                 <p class="pricing-subtitle">The most basic package</p>
                                                 <ul class="pricing-list">
                                                     <li>
-                                                        <p><strong>One day</strong> trial</p>
+                                                        <p><strong>Online Admission</strong> Yes</p>
                                                     </li>
                                                     <li>
-                                                        <p><strong>Limited</strong> courses</p>
+                                                        <p><strong>Teacher's Profile</strong> Yes</p>
                                                     </li>
                                                     <li>
-                                                        <p><strong>Free</strong> 3 lessons</p>
+                                                        <p><strong>Post job vacancies</strong> NO</p>
                                                     </li>
                                                     <li>
-                                                        <p><strong>No</strong> supporter</p>
+                                                        <p><strong>Email</strong>700</p>
                                                     </li>
                                                     <li>
-                                                        <p><strong>No</strong> ebook</p>
+                                                        <p><strong>Attendance for staff</strong>Manual</p>
                                                     </li>
                                                     <li>
-                                                        <p><strong>No</strong> tutorial</p>
+                                                        <p><strong>Attendance for students</strong>NO</p>
                                                     </li>
                                                     <li>
-                                                        <p><strong>Limited</strong> registered user</p>
+                                                        <p><strong>Results</strong>Yes</p>
+                                                    </li>
+                                                    <li>
+                                                        <p><strong>Fees Structure</strong>Yes</p>
+                                                    </li>
+                                                    <li>
+                                                        <p><strong>Syllabus</strong>Yes - Allow 1 change</p>
+                                                    </li>
+                                                    <li>
+                                                        <p><strong>Date Sheets</strong>Unlimited</p>
+                                                    </li>
+                                                    <li>
+                                                        <p><strong>Events</strong>3</p>
+                                                    </li>
+                                                    <li>
+                                                        <p><strong>Gallery</strong>No</p>
+                                                    </li>
+                                                    <li>
+                                                        <p><strong>Report</strong>Admin can view</p>
+                                                    </li>
+                                                    <li>
+                                                        <p><strong>Student of the month</strong>Yes</p>
+                                                    </li>
+                                                    <li>
+                                                        <p><strong>Assignment/Home work</strong>Yes</p>
+                                                    </li>
+                                                    <li>
+                                                        <p><strong>Results</strong>Yes</p>
                                                     </li>
                                                 </ul>
                                                 <div class="pricing-button">choose plan</div>
@@ -229,7 +266,7 @@
                                         <!--p.help-block Warning !-->
                                         <br />
 
-                                        <asp:TextBox ID="TextBox1" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txt_schoolName" CssClass="form-control  form-input" runat="server"></asp:TextBox>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="regname" class="control-label form-label">
@@ -399,18 +436,18 @@
                                         <asp:TextBox ID="txt_secondaryEmailAddress" CssClass="form-control  form-input" runat="server"></asp:TextBox>
 
                                     </div>
-                                    
-                                    <div id="submitbutton" class="register-submit">
-                                        
-                                                <asp:Button ID="btn_goto_summary" runat="server" Text="Submit Order"  OnClick="btn_goto_summary_Click" />
-                                            
-                                    </div>
-                                      
                                 </div>
                             </div>                            
                         </div>
                     </div>
+                    <div id="submitbutton" class="register-submit">
+
+                        <asp:Button ID="btn_goto_summary" runat="server" Text="Submit Order" OnClick="btn_goto_summary_Click" />
+
+                    </div>
                 </div>
+                </div>
+                
             </div>          
             </div>
         </div>
