@@ -57,7 +57,7 @@
              $('.btn').css('width', 'auto');
          }
          function ValidateForm(){
-             $('#formRegister').validate({
+             $("#form1").validate({
                  rules: {
                      <%=txt_schoolName.UniqueID%>:{
                          required:true,
@@ -80,7 +80,7 @@
     <div class="page-register rlp">
         <div class="container">
             <div id="RegistrationSchoolWidthFix" class="register-wrapper rlp-wrapper reg-sk ">
-                <div id="formRegister">
+                
                     <div class="register-table rlp-table">
                     <!-- PRICING-->
                     <div class="section pricing">
@@ -113,55 +113,38 @@
                                                 <p class="pricing-subtitle">The most basic package</p>
                                                 <ul class="pricing-list">
                                                     <li>
-                                                        <p><strong>Online Admission</strong> Yes</p>
+                                                        <p><strong>Online Admissions</strong> | Yes</p>
                                                     </li>
                                                     <li>
-                                                        <p><strong>Teacher's Profile</strong> Yes</p>
+                                                        <p><strong>Post job vacancies</strong> | No</p>
                                                     </li>
                                                     <li>
-                                                        <p><strong>Post job vacancies</strong> NO</p>
+                                                        <p><strong>Emails</strong> | 700</p>
                                                     </li>
                                                     <li>
-                                                        <p><strong>Email</strong>700</p>
+                                                        <p><strong>Email Accounts</strong> | 5</p>
                                                     </li>
                                                     <li>
-                                                        <p><strong>Attendance for staff</strong>Manual</p>
+                                                        <p><strong>Notifications Via</strong> | Email</p>
                                                     </li>
                                                     <li>
-                                                        <p><strong>Attendance for students</strong>NO</p>
+                                                        <p><strong>Events</strong> | 3</p>
                                                     </li>
                                                     <li>
-                                                        <p><strong>Results</strong>Yes</p>
+                                                        <p><strong>School Rating</strong> | Yes</p>
                                                     </li>
                                                     <li>
-                                                        <p><strong>Fees Structure</strong>Yes</p>
+                                                        <p><strong>Comparison of schools</strong> | 5x</p>
+                                                    </li>                                                    
+                                                    <li>
+                                                        <p><strong>Data Filters</strong> | No</p>
                                                     </li>
                                                     <li>
-                                                        <p><strong>Syllabus</strong>Yes - Allow 1 change</p>
-                                                    </li>
-                                                    <li>
-                                                        <p><strong>Date Sheets</strong>Unlimited</p>
-                                                    </li>
-                                                    <li>
-                                                        <p><strong>Events</strong>3</p>
-                                                    </li>
-                                                    <li>
-                                                        <p><strong>Gallery</strong>No</p>
-                                                    </li>
-                                                    <li>
-                                                        <p><strong>Report</strong>Admin can view</p>
-                                                    </li>
-                                                    <li>
-                                                        <p><strong>Student of the month</strong>Yes</p>
-                                                    </li>
-                                                    <li>
-                                                        <p><strong>Assignment/Home work</strong>Yes</p>
-                                                    </li>
-                                                    <li>
-                                                        <p><strong>Results</strong>Yes</p>
+                                                        <p><strong>Admin Panel</strong> | Basic</p>
                                                     </li>
                                                 </ul>
                                                 <div class="pricing-button">choose plan</div>
+                                                <div class="ViewAll"><a href="assets/cesFiles/Packages.pdf" target="_blank">View Full Package</a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -178,30 +161,40 @@
                                                 <h3 class="pricing-title">Gold</h3>
 
                                                 <p class="pricing-subtitle">Most likely and affordable. Fits all requirements</p>
-                                                <ul class="pricing-list">
+                                                    <ul class="pricing-list">
                                                     <li>
-                                                        <p><strong>One year</strong> standard access</p>
+                                                        <p><strong>Online Admissions</strong> | Yes</p>
                                                     </li>
                                                     <li>
-                                                        <p><strong>Limited</strong> courses</p>
+                                                        <p><strong>Post job vacancies</strong> | Yes</p>
                                                     </li>
                                                     <li>
-                                                        <p><strong>300+</strong> lessons</p>
+                                                        <p><strong>Emails</strong> | 1500</p>
                                                     </li>
                                                     <li>
-                                                        <p><strong>Random</strong> supporter</p>
+                                                        <p><strong>Email Accounts</strong> | 8</p>
                                                     </li>
                                                     <li>
-                                                        <p><strong>View only</strong> ebook</p>
+                                                        <p><strong>Notifications</strong> | Email/SMS</p>
                                                     </li>
                                                     <li>
-                                                        <p><strong>Standard</strong> tutorials</p>
+                                                        <p><strong>Events</strong> | 8</p>
                                                     </li>
                                                     <li>
-                                                        <p><strong>Unlimited</strong> registered user</p>
+                                                        <p><strong>School Rating</strong> | Yes</p>
+                                                    </li>
+                                                    <li>
+                                                        <p><strong>Comparison of schools</strong> | 15x</p>
+                                                    </li>                                                   
+                                                    <li>
+                                                        <p><strong>Data Filters</strong> | Basic</p>
+                                                    </li>
+                                                    <li>
+                                                        <p><strong>Admin Panel</strong> | Medium</p>
                                                     </li>
                                                 </ul>
                                                 <div class="pricing-button">choose plan</div>
+                                                <div class="ViewAll"><a href="assets/cesFiles/Packages.pdf" target="_blank">View Full Package</a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -218,30 +211,40 @@
                                                 <h3 class="pricing-title">Platinum</h3>
 
                                                 <p class="pricing-subtitle">Best of all. A wise desicion to select this one </p>
-                                                <ul class="pricing-list">
+                                                    <ul class="pricing-list">
                                                     <li>
-                                                        <p><strong>Life time</strong> access</p>
+                                                        <p><strong>Online Admissions</strong> | Yes</p>
                                                     </li>
                                                     <li>
-                                                        <p><strong>Unlimited</strong> All courses</p>
+                                                        <p><strong>Post job vacancies</strong> | Yes</p>
                                                     </li>
                                                     <li>
-                                                        <p><strong>3000+</strong> lessons & growing</p>
+                                                        <p><strong>Emails</strong> | Unlimited</p>
                                                     </li>
                                                     <li>
-                                                        <p><strong>Free</strong> supporter</p>
+                                                        <p><strong>Email Accounts</strong> | 12</p>
                                                     </li>
                                                     <li>
-                                                        <p><strong>Free</strong> Ebook Downloads</p>
+                                                        <p><strong>Notifications</strong> | Email/SMS</p>
                                                     </li>
                                                     <li>
-                                                        <p><strong>Premium</strong> tutorials</p>
+                                                        <p><strong>Events</strong> | Unlimited</p>
                                                     </li>
                                                     <li>
-                                                        <p><strong>Unlimited</strong> registered user</p>
+                                                        <p><strong>School Rating</strong> | Yes</p>
+                                                    </li>
+                                                    <li>
+                                                        <p><strong>Comparison of schools</strong> | 20x</p>
+                                                    </li>                                                  
+                                                    <li>
+                                                        <p><strong>Data Filters</strong> | Advanced</p>
+                                                    </li>
+                                                    <li>
+                                                        <p><strong>Admin Panel</strong> | Advanced</p>
                                                     </li>
                                                 </ul>
                                                 <div class="pricing-button">choose plan</div>
+                                                <div class="ViewAll"><a href="assets/cesFiles/Packages.pdf" target="_blank">View Full Package</a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -446,7 +449,7 @@
 
                     </div>
                 </div>
-                </div>
+               
                 
             </div>          
             </div>

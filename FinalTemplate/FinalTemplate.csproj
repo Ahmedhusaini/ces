@@ -388,6 +388,7 @@
     <Content Include="Teacher.Master" />
     <Content Include="studentpanel.Master" />
     <Fakes Include="Fakes\AjaxControlToolkit.fakes" />
+    <Content Include="assets\cesFiles\Packages.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

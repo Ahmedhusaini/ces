@@ -190,3 +190,6 @@
       -ms-transform: rotate(-3deg);
           transform: rotate(-3deg);
 }
+.ViewAll{
+    padding-bottom:20px;
+}
