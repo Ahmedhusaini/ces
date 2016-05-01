@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Register.Master" AutoEventWireup="true" CodeBehind="School_Rgistration.aspx.cs" Inherits="FinalTemplate.School_Rgistration" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="RegisterHeadPlaceHolder" runat="server">
      <script src="assets/js/jquery-2.2.3.js"></script>
-    <script src="assets/js/jquery.validate.js"></script>
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+     <script src="assets/js/jquery.validate.js"></script>
+     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
      <script type="text/javascript">
          $(document).ready(function () {
              $('#submitbutton').addClass('submitbutton');
@@ -11,7 +11,7 @@
              RemoveSelectedPackage();
              ActivePackage();             
              AspButton();
-             ValidateForm();
+            
          });
          function SetTextFont() {
              $('.inner').find('.inner-number').removeClass('inner-number').addClass('innerNumber');
@@ -57,15 +57,21 @@
              $('.btn').css('width', 'auto');
          }
          function ValidateForm(){
+             
              $("#form1").validate({
+                 
                  rules: {
-                     <%=txt_schoolName.UniqueID%>:{
-                         required:true,
-                         rangelength:[5,25]
-                     }
+                     <%=txt_schoolName.UniqueID%> : {
+                          required:true,
+                          rangelength:[5,25]
+                      }
+                 },                 
+                 messages:{
+                    <%=txt_schoolName.UniqueID%>
                  }
-             });
-         }
+              });
+          }
+     
         
      </script>
 </asp:Content>
@@ -77,7 +83,8 @@
         }
 
     </style>
-    <div class="page-register rlp">
+      
+         <div class="page-register rlp">
         <div class="container">
             <div id="RegistrationSchoolWidthFix" class="register-wrapper rlp-wrapper reg-sk ">
                 
@@ -454,4 +461,5 @@
             </div>          
             </div>
         </div>
+      
 </asp:Content>
