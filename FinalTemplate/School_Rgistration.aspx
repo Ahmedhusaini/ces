@@ -100,7 +100,7 @@
                                             </div>
                                             <div class="pricing-content">
                                                 <h3 class="pricing-title">Silver</h3>
-                                                <p class="pricing-subtitle">The most basic package</p><br />
+                                                <p class="pricing-subtitle">The most basic package</p>
                                                 <ul class="pricing-list">
                                                     <li>
                                                         <p><strong>Online Admissions</strong> | Yes</p>
