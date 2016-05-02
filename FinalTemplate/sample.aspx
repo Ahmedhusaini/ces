@@ -35,11 +35,11 @@
                     required: true,
                     equalTo:"#pass"
                     },
-                fname: {
+                lname: {
                     required: true,
                     lettersonly: true
                     },
-                lname: {
+                name: {
                         required: true,
                         lettersonly:true    
                     },
@@ -95,7 +95,6 @@
 <body>
 
     <form id="form1" runat="server">
-        
             <asp:Label ID="Label1" runat="server" Text="email"></asp:Label><br />
             <asp:TextBox ID="email" runat="server"></asp:TextBox><br />
 
