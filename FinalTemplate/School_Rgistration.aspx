@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Register.Master" AutoEventWireup="true" CodeBehind="School_Rgistration.aspx.cs" Inherits="FinalTemplate.School_Rgistration" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="RegisterHeadPlaceHolder" runat="server">
-     <script src="assets/js/jquery-2.2.3.js"></script>
+    
      <script src="assets/js/jquery.validate.js"></script>
      <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
      <script type="text/javascript">
@@ -11,7 +11,7 @@
              RemoveSelectedPackage();
              ActivePackage();             
              AspButton();
-            
+             Validate();
          });
          function SetTextFont() {
              $('.inner').find('.inner-number').removeClass('inner-number').addClass('innerNumber');
@@ -55,7 +55,18 @@
          function AspButton() {
              $('#<%= btn_goto_summary.ClientID%>').addClass('btn btn-register  btn-green');
              $('.btn').css('width', 'auto');
-         }        
+         }
+         function Validate() {
+             $('#form1').validate({
+                 rules: {
+                     <%=txt_schoolName.UniqueID%>:{
+                         required:true,
+                         minlength:2,
+                         maxlength:20
+                     }
+                 }
+             });
+         }
      </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="RegisterPlaceHolder1" runat="server">
