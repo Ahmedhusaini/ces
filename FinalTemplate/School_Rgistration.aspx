@@ -57,13 +57,30 @@
              $('.btn').css('width', 'auto');
          }
          function Validate() {
+             $.validator.addMethod( "lettersonly", function( value, element ) {
+                 return this.optional( element ) || /^[a-z]+$/i.test( value );
+             }, "Letters only please" );
              $('#form1').validate({
                  rules: {
                      <%=txt_schoolName.UniqueID%>:{
+                         lettersonly:true,
                          required:true,
-                         minlength:2,
-                         maxlength:20
+                         minlength:6,
+                         maxlength:20                         
+                     },
+                     <%=txt_ownername.UniqueID%>:{
+                         lettersonly:true,
+                         required: true,
+                         minlength:3,
+                         maxlength:20                         
                      }
+                 },
+                 messages:{
+                    <%=txt_schoolName.UniqueID%>:{
+                        required:"School name can not be null",
+                        minlength:"School name must be 6 characters long",
+                        maxlength:"School name can not exceed 20 characters in length"
+                    }
                  }
              });
          }
@@ -279,7 +296,7 @@
                                         </label>
                                         <!-- p.help-block Warning !-->
                                         <br />
-                                        <asp:TextBox ID="name" CssClass="form-control  form-input " runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txt_ownername" CssClass="form-control  form-input " runat="server"></asp:TextBox>
 
                                     </div>
                                     <div class="col-md-6">
@@ -289,7 +306,7 @@
                                         </label>
                                         <!-- p.help-block Warning !-->
                                         <br />
-                                        <asp:TextBox ID="cname" CausesValidation="true" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txt_campusname" CausesValidation="true" CssClass="form-control  form-input" runat="server"></asp:TextBox>
 
                                     </div>
                                     <div class="col-md-6">
@@ -299,7 +316,7 @@
                                         </label>
                                         <!-- p.help-block Warning !-->
                                         <br />
-                                        <asp:TextBox ID="email" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txt_foundedin" CssClass="form-control  form-input" runat="server"></asp:TextBox>
 
                                     </div>
                                     <div class="col-md-6">
@@ -309,7 +326,7 @@
                                         </label>
                                         <!-- p.help-block Warning !-->
                                         <br />
-                                        <asp:TextBox ID="contact" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txt_email" CssClass="form-control  form-input" runat="server"></asp:TextBox>
 
                                     </div>
                                     <div class="col-md-6">
@@ -319,7 +336,7 @@
                                         </label>
                                         <!-- p.help-block Warning !-->
                                         <br />
-                                        <asp:TextBox ID="contact2" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txt_contact" CssClass="form-control  form-input" runat="server"></asp:TextBox>
 
                                     </div>
                                     <div class="col-md-6">
@@ -329,7 +346,7 @@
                                         </label>
                                         <!-- p.help-block Warning !-->
                                         <br />
-                                        <asp:TextBox ID="address" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txt_address" CssClass="form-control  form-input" runat="server"></asp:TextBox>
 
                                     </div>
                                     <div class="col-md-6">
@@ -339,7 +356,7 @@
                                         </label>
                                         <!-- p.help-block Warning !-->
                                         <br />
-                                        <asp:TextBox ID="postal" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txt_postalcode" CssClass="form-control  form-input" runat="server"></asp:TextBox>
 
                                     </div>
                                     <div class="col-md-6">
@@ -349,7 +366,7 @@
                                         </label>
                                         <!-- p.help-block Warning !-->
                                         <br />
-                                        <asp:DropDownList ID="DropDownList2" CssClass="form-control  form-input" placeholder="----Select----" runat="server">
+                                        <asp:DropDownList ID="ddl_city" CssClass="form-control  form-input" placeholder="----Select----" runat="server">
                                             <asp:ListItem>Karachi</asp:ListItem>
                                             <asp:ListItem>Lahore</asp:ListItem>
                                             <asp:ListItem>Peshawar</asp:ListItem>
@@ -366,7 +383,7 @@
                                         </label>
                                         <!-- p.help-block Warning !-->
                                         <br />
-                                        <asp:TextBox ID="country" CssClass="form-control  form-input" runat="server" Text="Pakistan"></asp:TextBox>
+                                        <asp:TextBox ID="txt_country" CssClass="form-control  form-input" runat="server" Text="Pakistan"></asp:TextBox>
 
                                     </div>
                                 </div>

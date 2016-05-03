@@ -22,85 +22,85 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.TextBox txt_schoolName;
         
         /// <summary>
-        /// name control.
+        /// txt_ownername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox name;
+        protected global::System.Web.UI.WebControls.TextBox txt_ownername;
         
         /// <summary>
-        /// cname control.
+        /// txt_campusname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox cname;
+        protected global::System.Web.UI.WebControls.TextBox txt_campusname;
         
         /// <summary>
-        /// email control.
+        /// txt_foundedin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox email;
+        protected global::System.Web.UI.WebControls.TextBox txt_foundedin;
         
         /// <summary>
-        /// contact control.
+        /// txt_email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox contact;
+        protected global::System.Web.UI.WebControls.TextBox txt_email;
         
         /// <summary>
-        /// contact2 control.
+        /// txt_contact control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox contact2;
+        protected global::System.Web.UI.WebControls.TextBox txt_contact;
         
         /// <summary>
-        /// address control.
+        /// txt_address control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox address;
+        protected global::System.Web.UI.WebControls.TextBox txt_address;
         
         /// <summary>
-        /// postal control.
+        /// txt_postalcode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox postal;
+        protected global::System.Web.UI.WebControls.TextBox txt_postalcode;
         
         /// <summary>
-        /// DropDownList2 control.
+        /// ddl_city control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_city;
         
         /// <summary>
-        /// country control.
+        /// txt_country control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox country;
+        protected global::System.Web.UI.WebControls.TextBox txt_country;
         
         /// <summary>
         /// txt_username control.
