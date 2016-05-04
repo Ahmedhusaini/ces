@@ -22,6 +22,15 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.TextBox txt_schoolName;
         
         /// <summary>
+        /// ddl_schooltype control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_schooltype;
+        
+        /// <summary>
         /// txt_ownername control.
         /// </summary>
         /// <remarks>
@@ -40,22 +49,22 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.TextBox txt_campusname;
         
         /// <summary>
-        /// txt_foundedin control.
+        /// txt_foundedIn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_foundedin;
+        protected global::System.Web.UI.WebControls.TextBox txt_foundedIn;
         
         /// <summary>
-        /// txt_email control.
+        /// fileupload_logo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_email;
+        protected global::System.Web.UI.WebControls.FileUpload fileupload_logo;
         
         /// <summary>
         /// txt_contact control.

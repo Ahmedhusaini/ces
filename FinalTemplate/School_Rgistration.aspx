@@ -12,6 +12,7 @@
              ActivePackage();             
              AspButton();
              Validate();
+             
          });
          function SetTextFont() {
              $('.inner').find('.inner-number').removeClass('inner-number').addClass('innerNumber');
@@ -56,6 +57,7 @@
              $('#<%= btn_goto_summary.ClientID%>').addClass('btn btn-register  btn-green');
              $('.btn').css('width', 'auto');
          }
+        
          function Validate() {
              $.validator.addMethod( "lettersonly", function( value, element ) {
                  return this.optional( element ) || /^[a-z]+$/i.test( value );
@@ -289,6 +291,19 @@
 
                                         <asp:TextBox ID="txt_schoolName" CssClass="form-control  form-input" runat="server"></asp:TextBox>
                                     </div>
+                                     <div class="col-md-6">
+
+                                        <label for="regname" class="control-label form-label">
+                                            School Type <span class="highlight">*<br />
+                                            </span>
+                                        </label>
+                                        <!--p.help-block Warning !-->
+                                        <br />
+                                        <asp:DropDownList CssClass="form-control  form-input" ID="ddl_schooltype" runat="server">
+                                            <asp:listitem>A-Level</asp:listitem>
+                                            <asp:listitem>O-Level</asp:listitem>
+                                        </asp:DropDownList>
+                                    </div>
                                     <div class="col-md-6">
                                         <label for="regname" class="control-label form-label">
                                             Owner's Name <span class="highlight">*<br />
@@ -315,18 +330,18 @@
                                             </span>
                                         </label>
                                         <!-- p.help-block Warning !-->
+                                        
                                         <br />
-                                        <asp:TextBox ID="txt_foundedin" CssClass="form-control  form-input" runat="server"></asp:TextBox>
-
+                                        <asp:TextBox ID="txt_foundedIn" placeholder="dd/mm/yyyy" runat="server" CssClass="form-control  form-input"></asp:TextBox>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="regname" class="control-label form-label">
-                                            Email <span class="highlight">*<br />
+                                            Logo<span class="highlight">*<br />
                                             </span>
                                         </label>
                                         <!-- p.help-block Warning !-->
                                         <br />
-                                        <asp:TextBox ID="txt_email" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                        <asp:FileUpload  ID="fileupload_logo" runat="server"  CssClass="form-control  form-input"/>
 
                                     </div>
                                     <div class="col-md-6">
