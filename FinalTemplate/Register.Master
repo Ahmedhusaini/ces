@@ -38,7 +38,7 @@
 }</script>
 
    
- 
+    
  
 </head>
 <body>
@@ -51,6 +51,7 @@
                 <div class="content">
 
                  <form id="form1" runat="server" >
+                     <asp:ScriptManager runat="server"></asp:ScriptManager>
                         <div>
                             <asp:ContentPlaceHolder ID="RegisterPlaceHolder1" runat="server">   
                             </asp:ContentPlaceHolder>

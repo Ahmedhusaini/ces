@@ -193,3 +193,6 @@
 .ViewAll{
     padding-bottom:20px;
 }
+.top {
+    z-index:999;
+}
