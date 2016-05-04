@@ -104,7 +104,9 @@
                          },
                          <%=txt_contact.UniqueID%>:{
                              required:true,
-                             phone:true
+                             phone:true,
+                             digitsonly:true,
+                             minlength:6
 
                          },
                          <%=txt_address.UniqueID%>:{
@@ -180,6 +182,9 @@
                        
 
                          },
+                          <%=txt_contact.UniqueID%>:{
+                            minlength:"Postal code must contain 6 digits"
+                          }
                          <%=txt_secondaryEmailAddress.UniqueID%>:{
                              required:"Please enter your an email",
                          },
@@ -209,11 +214,8 @@
             float: none; color: red;
         padding-left: .3em; vertical-align: top;
         }
-        .reg-sk {
-            padding-top:26px;
-            padding-bottom:26px;
-        }
-
+      
+      
     </style>
       
          <div class="page-register rlp">

@@ -13,15 +13,6 @@ namespace FinalTemplate {
     public partial class Parent_Registration {
         
         /// <summary>
-        /// Panel1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
-        
-        /// <summary>
         /// name control.
         /// </summary>
         /// <remarks>
@@ -76,13 +67,13 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.TextBox salary;
         
         /// <summary>
-        /// gardian control.
+        /// officeadd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox gardian;
+        protected global::System.Web.UI.WebControls.TextBox officeadd;
         
         /// <summary>
         /// contact2 control.

@@ -15,34 +15,76 @@
                return this.optional(element) || phone_number.length > 9 &&
                    phone_number.match(/^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/);
            }, "Please specify a valid phone number with+92");
+           $.validator.addMethod( "digitsonly", function( value, element ) {
+               return this.optional( element ) || /^[0-9]+$/i.test( value );
+           }, "Numbers only please" );
            $(document).ready(function () {
               
-               $('.container').validate({
-                   onfocusout:true,
+               $("#form1").validate({
+                   
                    rules: {
-                       name: {
+                       <%=name.UniqueID%>:{
                            required: true,
                            lettersonly: true
                        },
-                       lname: {
-                           required: true,
-                           lettersonly: true
+                       <%=lname.UniqueID%>:{
+                           required:true,
+                           lettersonly:true
                        },
-                       contact1: {
-                           required: true,
-                           contact1: true
-                       }
-                   },
+                       <%=contact1.UniqueID%>:{
+                           required:true,
+                           phone:true
+                       },
+                       <%=nic.UniqueID%>:{
+                           required:true,
+                           digitsonly:true,
+                           minlength:13
+                        
+                       },
+                       <%=post.UniqueID%>:{
+                           required:true,
+                           lettersonly:true
+
+                       },
+                       <%=salary.UniqueID%>:{
+                           required:true,
+                           digitsonly:true
+                       },
+                       <%=officeadd.UniqueID%>:{
+                       required:true
+                       },
+                         <%=contact2.UniqueID%>:{
+                             required:true,
+                             digitsonly:true
+                         }
+
+                      
+                       
+                      
+                       },
 
                    messages: {
-                       name: {
+                      <%=name.UniqueID%>: {
                            required: "Please enter your name"
 
-                       },
-                       lname:
-                           {
-                               required: "Please enter your last name"
-                           },
+                      },
+                         <%=nic.UniqueID%>:{
+                             required:"Please enter your CNIC",
+                             digitsonly:" Invalid entry only numbers",
+                             minlength:"CNIC should have 13 character"
+                         },
+                         <%=salary.UniqueID%>:{
+                             required:"Please enter your salary",
+                             digitsonly:"Only digits"
+                         },
+                         <%=officeadd.UniqueID%>:{
+                             required:"Please provide your office address"
+                         },
+                        <%=contact2.UniqueID%>:{
+                            required:"Provide office contact number",
+                            digitsonly:"Only digits"
+                        }
+                     
                    }
                });
            });
@@ -58,21 +100,67 @@
             padding-top:26px;
             padding-bottom:26px;
         }
+         label.error {
+            color: red;
+            display: inline-flexbox;
+            display:block;
+           
+        }
+        input.error {
+            border:1px solid red;
+            float: none; color: red;
+        padding-left: .3em; vertical-align: top;
+        }
+      
+      
     </style>
     <div class="page-register rlp">
         <div class="container">
-            <div class="register-wrapper rlp-wrapper reg-sk">
-                <div class="register-table rlp-table">
-                    <a href="index.html">
-                        <img src="assets/images/logo-color-1.png" alt="" class="login" /></a>
-
-                    <div class="register-title rlp-title">create your account and join with us!</div>
-                    <h3>Parent Detail's</h3>
-                   
-                    <asp:Panel ID="Panel1" runat="server">
-                        <div class="register-form bg-w-form rlp-form">   
-                                   
-                                <div class="col-md-6">
+            <div id="RegistrationSchoolWidthFix" class="register-wrapper rlp-wrapper reg-sk ">
+                
+                    <div class="register-table rlp-table">
+                    <!-- PRICING-->
+                    <div class="section pricing">
+                        <div class="container">                   
+                            <div class="row">
+                                <div class="pricing-wrapper">
+                                    <div class="col-sm-4">
+                                        <div class="pricing-widget">
+                                            <div class="pricing-header">
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="pricing-widget main active ">
+                                            <div class="pricing-header">
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="pricing-widget">
+                                            <div class="pricing-header">
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section pricing">
+                        <div class="container">
+                            <div class="group-title-index">
+                                <br />
+                                <h2 class="center-title">Parents Detail's</h2>                                                            
+                            </div>
+                            <div class="row">
+                                <div class="pricing-wrapper">
+                                 <div class="col-md-6">
 
                                     <label for="regname" class="control-label form-label">
                                         NAME <span class="highlight">*<br />
@@ -139,7 +227,7 @@
                                     </label>
                                     <!-- p.help-block Warning !-->
                                     <br />
-                                    <asp:TextBox ID="gardian" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="officeadd" CssClass="form-control  form-input" runat="server"></asp:TextBox>
 
 
                                 </div>
@@ -253,8 +341,19 @@
                             
                             
 
-                                <h3 style="text-align:center">Authorization Detail's</h3>
-                                <div class="col-md-6">
+
+                                </div>
+                            </div>                           
+                        </div>
+                    </div>
+                    <div class="section pricing">
+                        <div class="container">
+                            <div class="group-title-index">                                
+                                <h2 class="center-title">we need your authentication details</h2>                                
+                            </div>
+                            <div class="row">
+                                <div class="pricing-wrapper">
+                                   <div class="col-md-6">
                                     <label for="regname" class="control-label form-label">
                                         Username <span class="highlight">*<br />
                                         </span>
@@ -307,16 +406,24 @@
                                     <!-- p.help-block Warning !-->
                                     <br />
                                     <asp:TextBox ID="semail" CssClass="form-control  form-input" runat="server"></asp:TextBox>
-                                      </div>                             
-                                           </div>                      
-                        <div class="register-submit">
-                            <button type="submit" onclick="window.location.href='index.html'" class="btn btn-register btn-green">
+                                      </div> 
+                               
+                                                                
+                                    </div>
+                                  
+                                </div>
+                                                    <div class="register-submit">
+                            <button type="submit"   class="btn btn-register btn-green">
                                 <span>
                                     <asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" /></span></button>
-                     </div>          
-                 </asp:Panel>                
-                    </div>            
-                </div>          
+                     </div> 
+                            </div>                            
+                        </div>
+                    </div>
+
+                    </div>
+               
+                
+            </div>          
             </div>
-        </div>  
 </asp:Content>
