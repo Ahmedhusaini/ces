@@ -3,46 +3,15 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="UserContentPlaceHolder" runat="server">
        <!-- SLIDER BANNER-->
-                <div class="section slider-banner set-height-top">
-                    <div class="slider-item">
-                        <div class="slider-1">
-                            <div class="slider-caption">
-                                <div class="container"><h5 class="text-info-2">You only have to know one thing</h5>                                    
-                                    <h1 class="text-info-1">You can learn anything</h1>
+                  <div class="section slider-banner-03 background-opacity-2">
+                    <div class="container" style="color:#86bc42">
+                        <div class="slider-banner-wrapper">
+                            <h6 data-wow-delay="0.5s" class="main-title wow fadeInUp">Centralized Education System</h6>
 
-                                    <p class="text-info-3">For free. For everyone</p>
-                                    <button class="btn btn-green"><span>Start learning now !</span></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slider-item">
-                        <div class="slider-2">
-                            <div class="slider-caption">
-                                <div class="container"><h5 class="text-info-2">You only have to know one thing</h5>
-
-                                    <h1 class="text-info-1">You can learn anything</h1>
-
-                                    <p class="text-info-3">For free. For everyone</p>
-                                    <button class="btn btn-green"><span>Start learning now !</span></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slider-item">
-                        <div class="slider-3">
-                            <div class="slider-caption">
-                                <div class="container"><h5 class="text-info-2">You only have to know one thing</h5>
-
-                                    <h1 class="text-info-1">You can learn anything</h1>
-
-                                    <p class="text-info-3">For free. For everyone</p>
-                                    <button class="btn btn-green"><span>Start learning now !</span></button>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
+
                 <!-- CHOOSE COURSES-->
                 <div class="section section-padding choose-course">
                     <div class="container">
@@ -117,6 +86,29 @@
                                         </div>
                                     </div>
                                     <div class="name-course"><a href="courses.html">Communication</a><i class="fa fa-long-arrow-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    <!-- SLIDER LOGO-->
+                <div class="section slider-logo">
+                    <div class="container">
+                        <div class="slider-logo-wrapper">
+                            <div class="slider-logo-content">
+                                <div class="carousel-logos owl-carousel">
+                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-1.png" alt="" class="img-responsive"/></a></div>
+                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-2.png" alt="" class="img-responsive"/></a></div>
+                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-3.png" alt="" class="img-responsive"/></a></div>
+                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-4.png" alt="" class="img-responsive"/></a></div>
+                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-5.png" alt="" class="img-responsive"/></a></div>
+                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-6.png" alt="" class="img-responsive"/></a></div>
+                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-1.png" alt="" class="img-responsive"/></a></div>
+                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-2.png" alt="" class="img-responsive"/></a></div>
+                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-3.png" alt="" class="img-responsive"/></a></div>
+                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-4.png" alt="" class="img-responsive"/></a></div>
+                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-5.png" alt="" class="img-responsive"/></a></div>
+                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-6.png" alt="" class="img-responsive"/></a></div>
                                 </div>
                             </div>
                         </div>
@@ -285,7 +277,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- WHY CHOOSE US-->
+             <%--   <!-- WHY CHOOSE US-->
                 <div class="section why-choose-us">
                     <div class="why-choose-us-wrapper-top">
                         <div class="container">
@@ -415,7 +407,7 @@
                             <div class="btn-next"><i class="fa fa-angle-right"></i></div>
                         </div>
                     </div>
-                </div>
+                </div>--%>
                 <!-- SLIDER TALK ABOUT US-->
                 <div class="section background-opacity slider-talk-about-us">
                     <div class="container">
@@ -653,29 +645,6 @@
                                     <div class="grid-item grid-item-height1"><a href="assets/images/lib-pictures/pictures-5.jpg" class="content fancybox-button"><img src="assets/images/lib-pictures/pictures-5.jpg" alt="" class="img-responsive"/></a></div>
                                     <div class="grid-item grid-item-height2"><a href="assets/images/lib-pictures/pictures-6.jpg" class="content fancybox-button"><img src="assets/images/lib-pictures/pictures-6.jpg" alt="" class="img-responsive"/></a></div>
                                     <div class="grid-item grid-item-height1"><a href="assets/images/lib-pictures/pictures-4.jpg" class="content fancybox-button"><img src="assets/images/lib-pictures/pictures-4.jpg" alt="" class="img-responsive"/></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- SLIDER LOGO-->
-                <div class="section slider-logo">
-                    <div class="container">
-                        <div class="slider-logo-wrapper">
-                            <div class="slider-logo-content">
-                                <div class="carousel-logos owl-carousel">
-                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-1.png" alt="" class="img-responsive"/></a></div>
-                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-2.png" alt="" class="img-responsive"/></a></div>
-                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-3.png" alt="" class="img-responsive"/></a></div>
-                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-4.png" alt="" class="img-responsive"/></a></div>
-                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-5.png" alt="" class="img-responsive"/></a></div>
-                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-6.png" alt="" class="img-responsive"/></a></div>
-                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-1.png" alt="" class="img-responsive"/></a></div>
-                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-2.png" alt="" class="img-responsive"/></a></div>
-                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-3.png" alt="" class="img-responsive"/></a></div>
-                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-4.png" alt="" class="img-responsive"/></a></div>
-                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-5.png" alt="" class="img-responsive"/></a></div>
-                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-6.png" alt="" class="img-responsive"/></a></div>
                                 </div>
                             </div>
                         </div>
