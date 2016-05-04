@@ -61,7 +61,7 @@
                  rules: {
                      <%=txt_schoolName.UniqueID%>:{
                          required:true,
-                         minlength:2,
+                         minlength:5,
                          maxlength:20
                      }
                  }
