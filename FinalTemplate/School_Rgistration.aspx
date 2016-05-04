@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Register.Master" AutoEventWireup="true" CodeBehind="School_Rgistration.aspx.cs" Inherits="FinalTemplate.School_Rgistration" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="RegisterHeadPlaceHolder" runat="server">
     
      <script src="assets/js/jquery.validate.js"></script>
@@ -57,7 +58,7 @@
              $('#<%= btn_goto_summary.ClientID%>').addClass('btn btn-register  btn-green');
              $('.btn').css('width', 'auto');
          }
-        
+         
          function Validate() {
              $.validator.addMethod( "lettersonly", function( value, element ) {
                  return this.optional( element ) || /^[a-z]+$/i.test( value );
@@ -332,7 +333,11 @@
                                         <!-- p.help-block Warning !-->
                                         
                                         <br />
-                                        <asp:TextBox ID="txt_foundedIn" placeholder="dd/mm/yyyy" runat="server" CssClass="form-control  form-input"></asp:TextBox>
+                                                                                       
+                                                <asp:TextBox ID="txt_foundedIn" placeholder="dd/mm/yyyy" runat="server" CssClass="form-control  form-input"></asp:TextBox>
+                                                <cc1:CalendarExtender CssClass="top" ID="txt_foundedIn_CalendarExtender" runat="server" Enabled="True" TargetControlID="txt_foundedIn" Format="dd/mm/yyyy">
+                                                </cc1:CalendarExtender>
+                                            
                                     </div>
                                     <div class="col-md-6">
                                         <label for="regname" class="control-label form-label">

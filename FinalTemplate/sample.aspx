@@ -1,6 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="sample.aspx.cs" Inherits="FinalTemplate.sample" %>
 
 
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="cc1" %>
+
+
 <!DOCTYPE html>
 
 
@@ -95,6 +98,7 @@
 <body>
 
     <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
             <asp:Label ID="Label1" runat="server" Text="email"></asp:Label><br />
             <asp:TextBox ID="email" runat="server"></asp:TextBox><br />
 
@@ -109,6 +113,11 @@
             <asp:TextBox ID="pass" TextMode="Password" runat="server"></asp:TextBox><br />
             <asp:TextBox ID="repass" TextMode="Password" runat="server"></asp:TextBox>
             <br />
+            <br />
+        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <cc1:CalendarExtender ID="TextBox1_CalendarExtender" runat="server" Enabled="True" TargetControlID="TextBox1">
+            </cc1:CalendarExtender>
+        <br />
             <br />
             <asp:Button ID="Button1" runat="server" Text="Button" />
 </form>
