@@ -16,7 +16,9 @@
                    phone_number.match(/^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/);
            }, "Please specify a valid phone number with+92");
            $(document).ready(function () {
-               $('#name').validate({
+              
+               $('.container').validate({
+                   onfocusout:true,
                    rules: {
                        name: {
                            required: true,
@@ -47,6 +49,7 @@
 
     </script> 
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="RegisterPlaceHolder1" runat="server">
 
     <link href="assets/css/mycss.css" rel="stylesheet" />
@@ -67,7 +70,8 @@
                     <h3>Parent Detail's</h3>
                    
                     <asp:Panel ID="Panel1" runat="server">
-                        <div class="register-form bg-w-form rlp-form">          
+                        <div class="register-form bg-w-form rlp-form">   
+                                   
                                 <div class="col-md-6">
 
                                     <label for="regname" class="control-label form-label">
@@ -76,7 +80,7 @@
                                     </label>
                                     <!--p.help-block Warning !-->
                                     <br />
-                                    <asp:TextBox ID="TextBox1" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="name" CssClass="form-control  form-input" runat="server"></asp:TextBox>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="regname" class="control-label form-label">
@@ -85,7 +89,7 @@
                                     </label>
                                     <!-- p.help-block Warning !-->
                                     <br />
-                                    <asp:TextBox ID="name" CssClass="form-control  form-input " runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="lname" CssClass="form-control  form-input " runat="server"></asp:TextBox>
 
                                 </div>
                                 <div class="col-md-6">

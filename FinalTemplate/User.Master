@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title> --- CES --- </title>    
+    <title> ---Welcome in CES --- </title>    
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -40,12 +40,12 @@
     <div class="header-topbar">
         <div class="container">
             <div class="topbar-left pull-left">
-                <div class="email"><a href="#"><i class="topbar-icon fa fa-envelope-o"></i><span>hello.shinway@gmail.com</span></a></div>
-                <div class="hotline"><a href="#"><i class="topbar-icon fa fa-phone"></i><span>+84 909 015 345</span></a></div>
+                <div class="email"><a href="#"><i class="topbar-icon fa fa-envelope-o"></i><span>www.ces.edu.pk</span></a></div>
+                <div class="hotline"><a href="#"><i></i><span>| Be The First </span></a></div>
             </div>
             <div class="topbar-right pull-right">
-                <div class="socials"><a href="#" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" class="google"><i class="fa fa-google-plus"></i></a><a href="#" class="twitter"><i class="fa fa-twitter"></i></a><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a><a href="#" class="blog"><i class="fa fa-rss"></i></a><a href="#" class="dribbble"><i class="fa fa-dribbble"></i></a></div>
-                <div class="group-sign-in"><a href="login.html" class="login">login</a><a href="select_resistration_type.aspx" class="register">register</a></div>
+                <div class="socials"><a href="#" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" class="google"><i class="fa fa-google-plus"></i></a><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></div>
+                <div class="group-sign-in"><a href="Logintype.aspx" class="login">login</a><a href="select_resistration_type.aspx" class="register">register</a></div>
             </div>
         </div>
     </div>
@@ -58,48 +58,19 @@
                 </div>
                 <nav class="navigation collapse navbar-collapse pull-right">
                     <ul class="nav-links nav navbar-nav">
-                        <li class="dropdown active"><a href="javascript:void(0)" class="main-menu">Home<span class="fa fa-angle-down icons-dropdown"></span></a>
+                        <li class="dropdown active"><a href="javascript:void(0)" class="main-menu">Home</a>
+                             </li>
+                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu">comparision<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                <li><a href="index.html" class="link-page">Home page 01</a></li>
-                                <li><a href="homepage-02.html" class="link-page">Home page 02</a></li>
-                                <li><a href="homepage-03.html" class="link-page">Home page 03</a></li>
+                                <li><a href="courses.html" class="link-page">School Comparision</a></li>
+                                <li><a href="courses-detail.html" class="link-page">Student Comparision</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Courses<span class="fa fa-angle-down icons-dropdown"></span></a>
-                            <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                <li><a href="courses.html" class="link-page">courses</a></li>
-                                <li><a href="courses-detail.html" class="link-page">course detail</a></li>
-                                <li><a href="events.html" class="link-page">events</a></li>
-                                <li><a href="event-detail.html" class="link-page">event detail</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu">gallery<span class="fa fa-angle-down icons-dropdown"></span></a>
-                            <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                <li><a href="gallery-3column.html" class="link-page">gallery 3 column</a></li>
-                                <li><a href="gallery-4column.html" class="link-page">gallery 4 column</a></li>
-                                <li><a href="gallery-masonry.html" class="link-page">gallery masonry</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu">pages<span class="fa fa-angle-down icons-dropdown"></span></a>
-                            <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                <li><a href="categories.html" class="link-page">categories</a></li>
-                                <li><a href="profile-teacher.html" class="link-page">profile teacher</a></li>
-                                <li><a href="about-us.html" class="link-page">about us</a></li>
-                                <li><a href="login.html" class="link-page">login</a></li>
-                                <li><a href="register.html" class="link-page">register</a></li>
-                                <li><a href="404.html" class="link-page">404 page</a></li>
-                                <li><a href="faq.html" class="link-page">FAQ page</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu">News<span class="fa fa-angle-down icons-dropdown"></span></a>
-                            <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                <li><a href="news.html" class="link-page">news list</a></li>
-                                <li><a href="news-grid.html" class="link-page">news grid</a></li>
-                                <li><a href="news-grid-nonsidebar.html" class="link-page">news grid nonsidebar</a></li>
-                                <li><a href="news-masonry.html" class="link-page">news masonry</a></li>
-                                <li><a href="news-detail.html" class="link-page">news detail</a></li>
-                            </ul>
-                        </li>
+                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu">gallery</a>
+                            </li>
+                      <li class="dropdown"><a href="javascript:void(0)" class="main-menu">News</a>
+                            </li>
+                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu">About Us</a></li>
                         <li><a href="contact.html" class="main-menu">Contact</a></li>
                         <li class="button-search"><p class="main-menu"><i class="fa fa-search"></i></p></li>
                         <div class="nav-search hide">
@@ -136,18 +107,6 @@
     </div>
    <!-- FOOTER-->
 <footer>
-    <div class="footer-top">
-        <div class="container">
-            <div class="footer-top-wrapper">
-                <div class="footer-top-left"><p class="footer-top-focus">BECOME AN INSTRUCTOR</p>
-
-                    <p class="footer-top-text">Join thousand of instructors and earn money hassle free!</p></div>
-                <div class="footer-top-right">
-                    <button onclick="window.location.href='contact.html'" class="btn btn-blue btn-bold"><span>GET STARTED NOW</span></button>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="footer-main">
         <div class="container">
             <div class="footer-main-wrapper">
@@ -155,16 +114,16 @@
                     <div class="col-2">
                         <div class="col-md-3 col-sm-6 col-xs-6 sd380">
                             <div class="edugate-widget widget">
-                                <div class="title-widget">EDUGATE</div>
-                                <div class="content-widget"><p>Edugate is a great start for an education personnel or organization to start the online business with 1 Click.</p>
+                                <div class="title-widget">CES</div>
+                                <div class="content-widget"><p>CES is Pakistan's only web portal that combines the educational institutes all over the pakistan to enhance the quality of education and support the future by securing the education quality and make it easier for everyone to approach to best and modern education</p>
 
                                     <div class="info-list">
                                         <ul class="list-unstyled">
-                                            <li><i class="fa fa-envelope-o"></i><a href="#">hello@edugate.com</a></li>
-                                            <li><i class="fa fa-phone"></i><a href="#">P: 3333 222 1111</a></li>
-                                            <li><i class="fa fa-map-marker"></i><a href="#"><p>99 Barnard St - Suite 111</p>
+                                            <li><i class="fa fa-envelope-o"></i><a href="#">www.ces/edu.pk</a></li>
+                                            <li><i class="fa fa-phone"></i><a href="#">P:03322556848</a></li>
+                                            <li><i class="fa fa-map-marker"></i><a href="#"><p>johar chorangi</p>
 
-                                                <p>United States - GA 22222</p></a></li>
+                                                <p>karachi,pakistan 73950</p></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -178,22 +137,11 @@
                                         <div class="row">
                                             <div class="col-md-6 col-sm-6 col-xs-6">
                                                 <ul class="list-unstyled">
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Teachers</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Courses</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Support</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Why Edugate</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Social Media</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">Schools</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">Why CES</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">about us</a></li>
+                                                     <li><i class="fa fa-angle-right"></i><a href="#">contact us</a></li>
                                                     <li><i class="fa fa-angle-right"></i><a href="#">Site Map</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-6 col-sm-6 col-xs-6">
-                                                <ul class="list-unstyled">
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Company</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Latest Courses</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Partners</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Blog Post</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Help Topic</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Policies</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -215,33 +163,20 @@
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-6 sd380">
                             <div class="mailing-widget widget">
-                                <div class="title-widget">MAILING</div>
-                                <div class="content-wiget"><p>Sign up for our mailing list to get latest updates and offers.</p>
+                                <div class="title-widget">Subscribe</div>
+                                <div class="content-wiget"><p>Sign up to get latest News and Updates</p>
 
                                     <form action="http://swlabs.co/edugate/index.html">
                                         <div class="input-group"><input type="text" placeholder="Email address" class="form-control form-email-widget"/><span class="input-group-btn"><input type="submit" value="✓" class="btn btn-email"/></span></div>
                                     </form>
                                     <p>We respect your privacy</p>
 
-                                    <div class="socials"><a href="#" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" class="google"><i class="fa fa-google-plus"></i></a><a href="#" class="twitter"><i class="fa fa-twitter"></i></a><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a><a href="#" class="blog"><i class="fa fa-rss"></i></a><a href="#" class="dribbble"><i class="fa fa-dribbble"></i></a></div>
+                                    <div class="socials"><a href="#" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" class="google"><i class="fa fa-google-plus"></i></a><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="hyperlink">
-                <div class="pull-left hyper-left">
-                    <ul class="list-inline">
-                        <li><a href="index.html">HOME</a></li>
-                        <li><a href="courses.html">COURSES</a></li>
-                        <li><a href="about-us.html">ABOUT</a></li>
-                        <li><a href="categories.html">PAGES</a></li>
-                        <li><a href="news.html">NEWS</a></li>
-                        <li><a href="contact.html">CONTACT</a></li>
-                    </ul>
-                </div>
-                <div class="pull-right hyper-right">@ SWLABS</div>
             </div>
         </div>
     </div>
