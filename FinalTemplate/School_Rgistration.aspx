@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Register.Master" AutoEventWireup="true" CodeBehind="School_Rgistration.aspx.cs" Inherits="FinalTemplate.School_Rgistration" %>
-<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="cc1" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="RegisterHeadPlaceHolder" runat="server">
     
      <script src="assets/js/jquery.validate.js"></script>
@@ -60,37 +60,155 @@
          }
          
          function Validate() {
+             $.validator.addMethod("phone", function (phone_number, element) {
+                 phone_number = phone_number.replace(/\s+/g, "");
+                 return this.optional(element) || phone_number.length > 9 &&
+                     phone_number.match(/^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/);
+             }, "Please specify a valid phone number with+92");
              $.validator.addMethod( "lettersonly", function( value, element ) {
                  return this.optional( element ) || /^[a-z]+$/i.test( value );
              }, "Letters only please" );
-             $('#form1').validate({
-                 rules: {
-                     <%=txt_schoolName.UniqueID%>:{
-                         lettersonly:true,
-                         required:true,
-                         minlength:6,
-                         maxlength:20                         
+             $.validator.addMethod( "digitsonly", function( value, element ) {
+                 return this.optional( element ) || /^[0-9]+$/i.test( value );
+             }, "Numbers only please" );
+             $.validator.addMethod("email", function(value, element) {
+                 return this.optional(element) || /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(value);
+             }, "Please enter a valid email address.");
+             $.validator.addMethod( "date", function( value, element ) {
+                 return this.optional( element ) || /\b\d{1,2}[\/-]\d{1,2}[\/-]\d{4}\b/.test( value );
+             }, "Numbers only please" );
+         
+        
+          
+           
+                 $('#form1').validate({
+
+                     //errorPlacement: function(error, element) {
+                     //    element.attr("placeholder", error.text());
+                     //},
+                     rules: {
+                         <%=txt_schoolName.UniqueID%>:{
+                             lettersonly:true,
+                             required:true,
+                             minlength:6,
+                             maxlength:20                         
+                         },
+                         <%=txt_ownername.UniqueID%>:{
+                             lettersonly:true,
+                             required: true,
+                             minlength:3,
+                             maxlength:20                         
+                         },
+                         <%=txt_campusname.UniqueID%>:{
+                             required:true
+                         },
+                         <%=txt_contact.UniqueID%>:{
+                             required:true,
+                             phone:true
+
+                         },
+                         <%=txt_address.UniqueID%>:{
+                             required:true
+                         },
+
+                         <%=txt_postalcode.UniqueID%>:{
+                             required:true,
+                             digitsonly:true
+                       
+                         },
+                         <%=txt_username.UniqueID%>:{
+                             required:true
+                         },
+                         <%=txt_accountPin.UniqueID%>:{
+                             required:true,
+                             digitsonly:true,
+                             minlength:6,
+                             maxlength:10
+                         },
+                         <%=txt_password.UniqueID%>:"required",
+                            
+                         <%=txt_confirmPassword.UniqueID%>:{
+                             required:true,
+                             equalTo:"#txt_password.UniqueID"
+                         
+                         },
+                         <%=txt_primaryEmailAddress.UniqueID%>:{
+                             required:true,
+                             email:true
+                        
+                         },
+                         <%=txt_secondaryEmailAddress.UniqueID%>:{
+                             required:true,
+                             email:true
+
+                         },
+                         <%=txt_foundedIn.UniqueID%>:{
+                             required:true,
+                             date:true
+                         }
+
+
                      },
-                     <%=txt_ownername.UniqueID%>:{
-                         lettersonly:true,
-                         required: true,
-                         minlength:3,
-                         maxlength:20                         
+                     messages:{
+                         <%=txt_schoolName.UniqueID%>:{
+                             required:"Please Enter School name",
+                             minlength:"School name must be 6 characters long",
+                             maxlength:"School name can not exceed 20 characters in length"
+                         },
+                         <%=txt_ownername.UniqueID%>:{
+                             required:"Please enter Owner's name"
+                         },
+                         <%=txt_contact.UniqueID%>:{
+                             required:"Please mention Contact no"  
+                      
+                         },
+                         <%=txt_accountPin.UniqueID%>:{
+                             minlength:"Pin must contain 6 digits",
+                             maxlength:"Pin cannot exceed 10 digits"    
+                     
+                         },
+                         <%=txt_password.UniqueID%>:{
+                             required: "What is your password?"  
+                         },
+                         <%=txt_confirmPassword.UniqueID%>:{
+                             required: "You must confirm your password",
+                         
+                         },
+                         <%=txt_primaryEmailAddress.UniqueID%>:{
+                     
+                             required: "Please enter your an email.",
+                       
+
+                         },
+                         <%=txt_secondaryEmailAddress.UniqueID%>:{
+                             required:"Please enter your an email",
+                         },
+                         <%=txt_foundedIn.UniqueID%>:{
+                             date:"Please fill the date in pattern  mm/dd/yyyy or mm-dd-yyyy"
+                         }
                      }
-                 },
-                 messages:{
-                    <%=txt_schoolName.UniqueID%>:{
-                        required:"School name can not be null",
-                        minlength:"School name must be 6 characters long",
-                        maxlength:"School name can not exceed 20 characters in length"
-                    }
-                 }
-             });
-         }
-     </script>
+                 });
+             }
+         
+    </script>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="RegisterPlaceHolder1" runat="server">
+<asp:Content ID="Content" ContentPlaceHolderID="RegisterPlaceHolder1" runat="server">
     <style>
+        .reg-sk {
+            padding-top:26px;
+            padding-bottom:26px;
+        }
+           label.error {
+            color: red;
+            display: inline-flexbox;
+            display:block;
+           
+        }
+        input.error {
+            border:1px solid red;
+            float: none; color: red;
+        padding-left: .3em; vertical-align: top;
+        }
         .reg-sk {
             padding-top:26px;
             padding-bottom:26px;
@@ -335,8 +453,7 @@
                                         <br />
                                                                                        
                                                 <asp:TextBox ID="txt_foundedIn" placeholder="dd/mm/yyyy" runat="server" CssClass="form-control  form-input"></asp:TextBox>
-                                                <cc1:CalendarExtender CssClass="top" ID="txt_foundedIn_CalendarExtender" runat="server" Enabled="True" TargetControlID="txt_foundedIn" Format="dd/mm/yyyy">
-                                                </cc1:CalendarExtender>
+                                                
                                             
                                     </div>
                                     <div class="col-md-6">

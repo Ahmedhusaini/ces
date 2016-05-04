@@ -58,15 +58,6 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.TextBox txt_foundedIn;
         
         /// <summary>
-        /// txt_foundedIn_CalendarExtender control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.CalendarExtender txt_foundedIn_CalendarExtender;
-        
-        /// <summary>
         /// fileupload_logo control.
         /// </summary>
         /// <remarks>
