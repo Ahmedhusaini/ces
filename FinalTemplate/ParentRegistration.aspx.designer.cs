@@ -157,13 +157,13 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.TextBox country;
         
         /// <summary>
-        /// FileUpload1 control.
+        /// fileupload_logo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        protected global::System.Web.UI.WebControls.FileUpload fileupload_logo;
         
         /// <summary>
         /// user control.

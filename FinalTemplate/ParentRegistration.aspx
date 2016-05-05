@@ -79,11 +79,32 @@
                            digitsonly:true,
                            minlength:5,
                            maxlength:6
-                       }
-
-                      
+                       },
+                       <%=user.UniqueID%>:{
+                        required:true
                        
-                      
+                       },
+                       <%=accountp.UniqueID%>:{
+                           required:true,
+                           digitsonly:true
+                       },
+                        <%=pass.UniqueID%>:{
+                            required:true
+
+                        },
+                       <%=repass.UniqueID%>:{
+                           required:true,
+                           equalTo:"#pass.UniqueID"
+                            
+                       },
+                       <%=pemail.UniqueID%>:{
+                           required:true,
+                           email:true
+                       },
+                       <%=semail.UniqueID%>:{
+                           required:true,
+                           email:true
+                            }      
                        },
 
                    messages: {
@@ -126,7 +147,21 @@
                           <%=postal.UniqueID%>:   {
                               minlength:"Postal code must contain 5 digits",
                                  maxlength:"Postal code can't exceed more then 6 digits"
-                            }
+                          },
+                         <%=pass.UniqueID%>:{
+                             required:"What is your password ?"
+
+                         },
+                         <%=repass.UniqueID%>:{
+                             required:"You must confirm your password",
+                         
+                         },
+                       <%=pemail.UniqueID%>:{
+                          required:"Please enter your an email"
+                       },
+                         <%=semail.UniqueID%>:{
+                            required:"Please enter your an email"
+                         }
                         
                    }
                });
@@ -357,7 +392,7 @@
                                     <!-- p.help-block Warning !-->
                                     <br />
                                          <asp:DropDownList ID="DropDownList2" CssClass="form-control  form-input" placeholder="----Select----"  runat="server">
-                                          <asp:ListItem></asp:ListItem>
+                                          
                                           <asp:ListItem>Karachi</asp:ListItem>
                                           <asp:ListItem>Lahore</asp:ListItem>
                                          <asp:ListItem>Peshawar</asp:ListItem>
@@ -373,15 +408,21 @@
                                     </label>
                                     <!-- p.help-block Warning !-->
                                     <br />
-                                    <asp:TextBox ID="country" CssClass="form-control  form-input" Width="200px" runat="server" Text="Pakistan" OnTextChanged="country_TextChanged"></asp:TextBox>
+                                    <asp:TextBox ID="country" CssClass="form-control  form-input"  runat="server" Text="Pakistan" OnTextChanged="country_TextChanged"></asp:TextBox>
 
                             </div>
                                   
                                         
-                                <br />
-                             <h4>Upload your photo:</h4>
-                                <asp:FileUpload ID="FileUpload1" runat="server" />
-                            
+                              <div class="col-md-6">
+                                        <label for="regname" class="control-label form-label">
+                                            Upkoad an Image<span class="highlight">*<br />
+                                            </span>
+                                        </label>
+                                        <!-- p.help-block Warning !-->
+                                        <br />
+                                        <asp:FileUpload  ID="fileupload_logo" runat="server"  CssClass="form-control  form-input"/>
+
+                                    </div>
                             
 
 
