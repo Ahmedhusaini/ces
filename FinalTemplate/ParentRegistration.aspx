@@ -56,7 +56,30 @@
                          <%=contact2.UniqueID%>:{
                              required:true,
                              digitsonly:true
-                         }
+                         },
+                         <%=radiobut.UniqueID%>:{
+                                required:true
+                         
+                         },
+                       <%=nation.UniqueID%>:{
+                           required:true,
+                           lettersonly:true
+                       },
+                       <%=religion.UniqueID%>:{
+                           required:true,
+                           lettersonly:true,
+                           maxlength:8
+                       },
+                       <%=address.UniqueID%>:{
+                            required:true
+
+                       },
+                       <%=postal.UniqueID%>:{
+                           required:true,
+                           digitsonly:true,
+                           minlength:5,
+                           maxlength:6
+                       }
 
                       
                        
@@ -68,6 +91,9 @@
                            required: "Please enter your name"
 
                       },
+                       <%=lname.UniqueID%>:{
+                            required:"Please enter your last name"
+                       },
                          <%=nic.UniqueID%>:{
                              required:"Please enter your CNIC",
                              digitsonly:" Invalid entry only numbers",
@@ -83,8 +109,25 @@
                         <%=contact2.UniqueID%>:{
                             required:"Provide office contact number",
                             digitsonly:"Only digits"
-                        }
-                     
+                        },
+                         <%=radiobut.UniqueID%>:{
+                            required:"Please select Gender"
+                         },
+                        <%=nation.UniqueID%>:{
+                            required:"What's your nationality ?"
+                        },
+                       <%=religion.UniqueID%>:{
+                           required:"What's your religion ?",
+                           maxlength:"Can't exceed more then 8 character"
+                       },
+                        <%=address.UniqueID%>:{
+                            required:"Please enter your Home address"
+                        },
+                          <%=postal.UniqueID%>:   {
+                              minlength:"Postal code must contain 5 digits",
+                                 maxlength:"Postal code can't exceed more then 6 digits"
+                            }
+                        
                    }
                });
            });
@@ -250,7 +293,7 @@
                                     <!-- p.help-block Warning !-->
                                   <%--   &nbsp; &nbsp;&nbsp;    <asp:RadioButton ID="RadioButton1" runat="server" Text="Male" />
                                         &nbsp;&nbsp;   <asp:RadioButton ID="RadioButton2" runat="server" Text="Female" />--%>
-                                          <asp:RadioButtonList ID="RadioButtonList1" runat="server" RepeatDirection="Horizontal">
+                                          <asp:RadioButtonList ID="radiobut" runat="server" RepeatDirection="Horizontal">
                                             <asp:ListItem Text="Male &nbsp &nbsp " Value="Male"></asp:ListItem> 
                                                <asp:ListItem Text="Female" Value="Female"></asp:ListItem>
                                              </asp:RadioButtonList>

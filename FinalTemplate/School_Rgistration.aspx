@@ -115,7 +115,8 @@
 
                          <%=txt_postalcode.UniqueID%>:{
                              required:true,
-                             digitsonly:true
+                             digitsonly:true,
+                             minlength:5
                        
                          },
                          <%=txt_username.UniqueID%>:{
@@ -182,9 +183,9 @@
                        
 
                          },
-                          <%=txt_contact.UniqueID%>:{
-                            minlength:"Postal code must contain 6 digits"
-                          }
+                          <%=txt_postalcode.UniqueID%>:{
+                            minlength:"Postal code must contain 5 digits"
+                          },
                          <%=txt_secondaryEmailAddress.UniqueID%>:{
                              required:"Please enter your an email",
                          },
