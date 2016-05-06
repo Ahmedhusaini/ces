@@ -121,6 +121,12 @@
                            minlength:1,
                            maxlength:2
                        },
+                       <%=Dropd.UniqueID%>:{
+                           required:true,
+                       },
+                       <%=fileupload.UniqueID%>:{
+                            required:true 
+                       }
                     },
 
                    messages: {
@@ -145,6 +151,12 @@
                             minlenght:"minimum 1 character or maximum 2",
                             maxlength:"minimum 1 character or maximum 2"
                         
+                        },
+                        <%=fileupload.UniqueID%>:{
+                            required:"Please upload your photo"    
+                        },
+                        <%=Dropd.UniqueID%>:{
+                            required:"Selection is required"
                         },
                          
                         <%=contact2.UniqueID%>:{
@@ -444,7 +456,7 @@
                                         </label>
                                         <!-- p.help-block Warning !-->
                                         <br />
-                                        <asp:FileUpload  ID="fileupload_logo" runat="server"  CssClass="form-control  form-input"/>
+                                        <asp:FileUpload  ID="fileupload" runat="server"  CssClass="form-control  form-input"/>
 
                                     </div>
                                     </div>
