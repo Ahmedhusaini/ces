@@ -105,7 +105,7 @@
                          <%=txt_contact.UniqueID%>:{
                              required:true,
                              phone:true,
-                             digitsonly:true,
+                            
                              minlength:6
 
                          },

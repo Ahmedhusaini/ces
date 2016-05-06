@@ -31,13 +31,13 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.TextBox lname;
         
         /// <summary>
-        /// email control.
+        /// emaill control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox email;
+        protected global::System.Web.UI.WebControls.TextBox emaill;
         
         /// <summary>
         /// contact1 control.
@@ -67,13 +67,13 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.TextBox contact2;
         
         /// <summary>
-        /// RadioButtonList1 control.
+        /// radiobut control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
+        protected global::System.Web.UI.WebControls.RadioButtonList radiobut;
         
         /// <summary>
         /// dob control.
@@ -85,13 +85,13 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.TextBox dob;
         
         /// <summary>
-        /// nationality control.
+        /// nation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nationality;
+        protected global::System.Web.UI.WebControls.TextBox nation;
         
         /// <summary>
         /// religion control.
@@ -130,13 +130,13 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.TextBox address;
         
         /// <summary>
-        /// postalcode control.
+        /// postal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox postalcode;
+        protected global::System.Web.UI.WebControls.TextBox postal;
         
         /// <summary>
         /// prevchool control.
@@ -157,13 +157,13 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.TextBox preclass;
         
         /// <summary>
-        /// FileUpload1 control.
+        /// fileupload_logo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        protected global::System.Web.UI.WebControls.FileUpload fileupload_logo;
         
         /// <summary>
         /// sname control.
@@ -175,13 +175,13 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.TextBox sname;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// Dropd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList Dropd;
         
         /// <summary>
         /// classtxt control.
@@ -202,40 +202,40 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.TextBox section;
         
         /// <summary>
-        /// username control.
+        /// user control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox username;
+        protected global::System.Web.UI.WebControls.TextBox user;
         
         /// <summary>
-        /// accountpin control.
+        /// accountp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox accountpin;
+        protected global::System.Web.UI.WebControls.TextBox accountp;
         
         /// <summary>
-        /// password control.
+        /// pass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox password;
+        protected global::System.Web.UI.WebControls.TextBox pass;
         
         /// <summary>
-        /// repassword control.
+        /// repass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox repassword;
+        protected global::System.Web.UI.WebControls.TextBox repass;
         
         /// <summary>
         /// pemail control.

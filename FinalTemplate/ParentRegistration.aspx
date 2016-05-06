@@ -1,8 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Register.Master" AutoEventWireup="true" CodeBehind="ParentRegistration.aspx.cs" Inherits="FinalTemplate.Parent_Registration" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="RegisterHeadPlaceHolder" runat="server">
 
- <script src="assets/js/jquery-2.2.3.js"></script>
-    
+ <script src="assets/js/jquery-2.2.3.js"></script>   
     <script src="assets/js/jquery.validate.js"></script>
        <script type="text/javascript">      
 
@@ -132,7 +131,7 @@
                             digitsonly:"Only digits"
                         },
                          <%=radiobut.UniqueID%>:{
-                            required:"Please select Gender"
+                            required:"Please select your Gender"
                          },
                         <%=nation.UniqueID%>:{
                             required:"What's your nationality ?"
@@ -415,7 +414,7 @@
                                         
                               <div class="col-md-6">
                                         <label for="regname" class="control-label form-label">
-                                            Upkoad an Image<span class="highlight">*<br />
+                                            Upload an Image<span class="highlight">*<br />
                                             </span>
                                         </label>
                                         <!-- p.help-block Warning !-->
