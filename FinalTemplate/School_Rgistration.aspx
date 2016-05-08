@@ -66,7 +66,7 @@
                      phone_number.match(/^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/);
              }, "Please specify a valid phone number with+92");
              $.validator.addMethod( "lettersonly", function( value, element ) {
-                 return this.optional( element ) || /^[a-z]+$/i.test( value );
+                 return this.optional( element ) || /^[a-z\s]+$/i.test( value );
              }, "Letters only please" );
              $.validator.addMethod( "digitsonly", function( value, element ) {
                  return this.optional( element ) || /^[0-9]+$/i.test( value );

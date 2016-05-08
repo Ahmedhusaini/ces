@@ -4,7 +4,7 @@
     <script src="assets/js/jquery.validate.js"></script>
      <script type="text/javascript">      
       $.validator.addMethod("lettersonly", function (value, element) {
-               return this.optional(element) || /^[a-z]+$/i.test(value);
+          return this.optional(element) || /^[a-z\s]+$/i.test(value);
            }, "Letters only please");
            $.validator.addMethod("phone", function (phone_number, element) {
                phone_number = phone_number.replace(/\s+/g, "");
@@ -17,8 +17,7 @@
            $(document).ready(function () {
                $.validator.addMethod( "romanonly", function( value, element ) {
                    return this.optional( element ) || /^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/g.test( value );
-               }, "Please type in Roman ( I,II,IX,X ) " );
-              
+               }, "Please type in Roman ( I,II,IX,X ) " );  
                $("#form1").validate({
                    
                    rules: {

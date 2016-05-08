@@ -7,7 +7,7 @@
 
 
         $.validator.addMethod("lettersonly", function (value, element) {
-            return this.optional(element) || /^[a-z]+$/i.test(value);
+            return this.optional(element) || /^[a-z\s]+$/i.test(value);
         }, "Letters only please");
         $.validator.addMethod("phone", function (phone_number, element) {
             phone_number = phone_number.replace(/\s+/g, "");
