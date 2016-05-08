@@ -17,7 +17,10 @@
            $(document).ready(function () {
                $.validator.addMethod( "romanonly", function( value, element ) {
                    return this.optional( element ) || /^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/g.test( value );
-               }, "Please type in Roman ( I,II,IX,X ) " );  
+               }, "Please type in Roman ( I,II,IX,X ) " ); 
+               $.validator.addMethod( "imageonly", function( value, element ) {
+                   return this.optional( element ) || /^([a-zA-Z0-9\s_\\.\-:])+(.png|.jpg|.gif)$/.test( value );
+               }, ".jpeg ,.png, .gif format allow only " );  
                $("#form1").validate({
                    
                    rules: {
@@ -124,7 +127,8 @@
                            required:true,
                        },
                        <%=fileupload.UniqueID%>:{
-                            required:true 
+                           required:true,
+                           imageonly:true
                        }
                     },
 
