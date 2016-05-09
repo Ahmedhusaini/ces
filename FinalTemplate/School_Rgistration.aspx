@@ -22,7 +22,7 @@
              $('div').find('.active').removeClass('active');
          }
          function ActivePackage() {
-             $('.pricing-button').click(function () {                                                   
+             $('.pricing-button').click(function () {  
                  $('.active').removeClass('active');
                  var pricingwidget = $(this).parent().parent();
                  pricingwidget.addClass('active');
@@ -447,6 +447,7 @@
 
                                     </div>
                                     <div class="col-md-6">
+                                        
                                         <label for="regname" class="control-label form-label">
                                             Founded In <span class="highlight">*<br />
                                             </span>
