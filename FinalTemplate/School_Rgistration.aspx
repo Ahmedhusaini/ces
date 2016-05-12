@@ -23,10 +23,10 @@
          }
          function ActivePackage() {
              $('.pricing-button').click(function () {  
-                 $('.active').removeClass('active');
+                 $('.active').removeClass("active");
                  var pricingwidget = $(this).parent().parent();
-                 pricingwidget.addClass('active');
-                 if (pricingwidget.hasClass('active')) {                     
+                 pricingwidget.addClass("active");
+                 if (pricingwidget.hasClass("active")) {                     
                      var pricingwrapper = pricingwidget.parent().parent();
                      var silver = pricingwrapper.children().eq(0).children().eq(0).children().eq(1);
                      var gold = pricingwrapper.children().eq(1).children().eq(0).children().eq(1)
