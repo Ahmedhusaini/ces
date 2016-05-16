@@ -29,8 +29,8 @@
                  if (pricingwidget.hasClass("active")) {                     
                      var pricingwrapper = pricingwidget.parent().parent();
                      var silver = pricingwrapper.children().eq(0).children().eq(0).children().eq(1);
-                     var gold = pricingwrapper.children().eq(1).children().eq(0).children().eq(1)
-                     var platinum = pricingwrapper.children().eq(2).children().eq(0).children().eq(1)
+                     var gold = pricingwrapper.children().eq(1).children().eq(0).children().eq(1);
+                     var platinum = pricingwrapper.children().eq(2).children().eq(0).children().eq(1);
                      var packagename = $(this).siblings(0).html();
                      if (packagename == 'Silver') {
                          silver.css('background-color', '#C0C0C0');
