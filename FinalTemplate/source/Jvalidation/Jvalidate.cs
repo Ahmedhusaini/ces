@@ -10,7 +10,7 @@ namespace FinalTemplate.source.Validation
         public static bool FilterBlackLIstKeywords(string[] AssumedBlackList)
         {
             //Getting physical path of the file in with all sql server keywords are stored.
-            string path = HttpContext.Current.Server.MapPath("~") + @"Classes\Jvalidation\blacklist_keywords.txt";
+            string path = HttpContext.Current.Server.MapPath("~") + @"source\Jvalidation\blacklist_keywords.txt";
             //creating file stream which will handle the file operations.     
             FileStream fstream = new FileStream(path, FileMode.Open, FileAccess.Read);
             //Stream reader will read the text from file opened by file streamer.
