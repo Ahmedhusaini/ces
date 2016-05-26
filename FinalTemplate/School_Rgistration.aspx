@@ -55,7 +55,7 @@
 
          }
          function AspButton() {
-             $('#<%= btn_goto_summary.ClientID%>').addClass('btn btn-register  btn-green');
+             $('#<%= btn_submit.ClientID%>').addClass('btn btn-register  btn-green');
              $('.btn').css('width', 'auto');
          }
          
@@ -604,7 +604,7 @@
                     </div>
                     <div id="submitbutton" class="register-submit">
 
-                        <asp:Button ID="btn_goto_summary" runat="server" Text="Submit Order" OnClick="btn_goto_summary_Click" />
+                        <asp:Button ID="btn_submit" runat="server" Text="Submit Order" OnClick="btn_submit_Click" />
 
                     </div>
                 </div>

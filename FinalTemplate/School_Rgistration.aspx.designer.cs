@@ -166,12 +166,12 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.TextBox txt_secondaryEmailAddress;
         
         /// <summary>
-        /// btn_goto_summary control.
+        /// btn_submit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_goto_summary;
+        protected global::System.Web.UI.WebControls.Button btn_submit;
     }
 }
