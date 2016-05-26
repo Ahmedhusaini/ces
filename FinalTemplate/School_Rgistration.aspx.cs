@@ -5,6 +5,7 @@ namespace FinalTemplate
 {
     public partial class School_Rgistration : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
 

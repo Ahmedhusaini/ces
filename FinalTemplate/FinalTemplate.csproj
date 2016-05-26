@@ -67,6 +67,7 @@
     <Content Include="assets\images\registerschool_green.jpg" />
     <Content Include="Logintype.aspx" />
     <Content Include="School_Rgistration.aspx" />
+    <Content Include="source\Jvalidation\blacklist_keywords.txt" />
     <Content Include="StudentRgistration.aspx" />
     <Content Include="Admin.aspx" />
     <Content Include="assets\css\mycss.css" />
@@ -244,6 +245,8 @@
     <Compile Include="School_Rgistration.aspx.designer.cs">
       <DependentUpon>School_Rgistration.aspx</DependentUpon>
     </Compile>
+    <Compile Include="source\Database\Database.cs" />
+    <Compile Include="source\Jvalidation\Jvalidate.cs" />
     <Compile Include="StudentRgistration.aspx.cs">
       <DependentUpon>StudentRgistration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
