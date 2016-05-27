@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Register.Master" AutoEventWireup="true" CodeBehind="StudentRgistration.aspx.cs" Inherits="FinalTemplate.StudentRgistration" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/Register.Master" AutoEventWireup="true" CodeBehind="StudentRgistration.aspx.cs" Inherits="FinalTemplate.StudentRgistration" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="RegisterHeadPlaceHolder" runat="server">
     <script src="assets/js/jquery-2.2.3.js"></script>
     <script src="assets/js/jquery.validate.js"></script>

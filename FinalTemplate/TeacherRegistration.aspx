@@ -17,6 +17,9 @@
         $.validator.addMethod( "digitsonly", function( value, element ) {
             return this.optional( element ) || /^[0-9]+$/i.test( value );
         }, "Numbers only please" );
+        $.validator.addMethod( "imageonly", function( value, element ) {
+            return this.optional( element ) || /^([a-zA-Z0-9\s_\\.\-:])+(.png|.jpg|.gif)$/.test( value );
+        }, ".jpeg ,.png, .gif format allow only " ); 
         $(document).ready(function () {
               
             $("#form1").validate({
@@ -90,7 +93,11 @@
                        <%=semail.UniqueID%>:{
                            required:true,
                            email:true
-                       }      
+                       },
+                     <%=fileupload.UniqueID%>:{
+                         required:true,
+                         imageonly:true
+                     }
                    },
 
                    messages: {
@@ -101,6 +108,9 @@
                        <%=lname.UniqueID%>:{
                            required:"Please enter your last name"
                        },
+                        <%=fileupload.UniqueID%>:{
+                            required:"Please upload your photo"    
+                        },
                        <%=nic.UniqueID%>:{
                              required:"Please enter your CNIC",
                              digitsonly:" Invalid entry only numbers",
@@ -357,7 +367,7 @@
                                         </label>
                                         <!-- p.help-block Warning !-->
                                         <br />
-                                        <asp:FileUpload  ID="fileupload_logo" runat="server"  CssClass="form-control  form-input"/>
+                                        <asp:FileUpload  ID="fileupload" runat="server"  CssClass="form-control  form-input"/>
 
                                     </div>
                                     </div>

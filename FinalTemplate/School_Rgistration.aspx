@@ -77,6 +77,9 @@
              $.validator.addMethod( "date", function( value, element ) {
                  return this.optional( element ) || /\b\d{1,2}[\/-]\d{1,2}[\/-]\d{4}\b/.test( value );
              }, "Numbers only please" );
+             $.validator.addMethod( "imageonly", function( value, element ) {
+                 return this.optional( element ) || /^([a-zA-Z0-9\s_\\.\-:])+(.png|.jpg|.gif)$/.test( value );
+             }, ".jpeg ,.png, .gif format allow only " );  
          
         
           
@@ -148,7 +151,11 @@
                          <%=txt_foundedIn.UniqueID%>:{
                              required:true,
                              date:true
-                         }
+                         },
+                           <%=fileupload.UniqueID%>:{
+                               required:true,
+                               imageonly:true
+                           }
 
 
                      },
@@ -173,6 +180,9 @@
                          <%=txt_password.UniqueID%>:{
                              required: "What is your password?"  
                          },
+                           <%=fileupload.UniqueID%>:{
+                               required:"Please upload your photo"    
+                           },
                          <%=txt_confirmPassword.UniqueID%>:{
                              required: "You must confirm your password",
                          
@@ -467,7 +477,7 @@
                                         </label>
                                         <!-- p.help-block Warning !-->
                                         <br />
-                                        <asp:FileUpload  ID="fileupload_logo" runat="server"  CssClass="form-control  form-input"/>
+                                        <asp:FileUpload  ID="fileupload" runat="server"  CssClass="form-control  form-input"/>
 
                                     </div>
                                     <div class="col-md-6">

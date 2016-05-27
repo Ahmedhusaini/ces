@@ -17,6 +17,9 @@
            $.validator.addMethod( "digitsonly", function( value, element ) {
                return this.optional( element ) || /^[0-9]+$/i.test( value );
            }, "Numbers only please" );
+           $.validator.addMethod( "imageonly", function( value, element ) {
+               return this.optional( element ) || /^([a-zA-Z0-9\s_\\.\-:])+(.png|.jpg|.gif)$/.test( value );
+           }, ".jpeg ,.png, .gif format allow only " );  
            $(document).ready(function () {
               
                $("#form1").validate({
@@ -103,7 +106,11 @@
                        <%=semail.UniqueID%>:{
                            required:true,
                            email:true
-                            }      
+                       } ,
+                        <%=fileupload.UniqueID%>:{
+                            required:true,
+                            imageonly:true
+                        }
                        },
 
                    messages: {
@@ -155,6 +162,9 @@
                              required:"You must confirm your password",
                          
                          },
+                          <%=fileupload.UniqueID%>:{
+                              required:"Please upload your photo"    
+                          },
                        <%=pemail.UniqueID%>:{
                           required:"Please enter your an email"
                        },
@@ -419,7 +429,7 @@
                                         </label>
                                         <!-- p.help-block Warning !-->
                                         <br />
-                                        <asp:FileUpload  ID="fileupload_logo" runat="server"  CssClass="form-control  form-input"/>
+                                        <asp:FileUpload  ID="fileupload" runat="server"  CssClass="form-control  form-input"/>
 
                                     </div>
                             
