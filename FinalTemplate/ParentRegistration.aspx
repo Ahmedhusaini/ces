@@ -17,6 +17,11 @@
            $.validator.addMethod( "digitsonly", function( value, element ) {
                return this.optional( element ) || /^[0-9]+$/i.test( value );
            }, "Numbers only please" );
+           $.validator.addMethod("pwcheck", function(value) {
+               return /^[A-Za-z0-9\d=!\-@._*]*$/.test(value) // consists of only these
+                   && /[a-z]/.test(value) // has a lowercase letter
+                   && /\d/.test(value) // has a digit
+           },"please only Lowercase and must have digits ");
            $.validator.addMethod( "imageonly", function( value, element ) {
                return this.optional( element ) || /^([a-zA-Z0-9\s_\\.\-:])+(.png|.jpg|.gif)$/.test( value );
            }, ".jpeg ,.png, .gif format allow only " );  
@@ -91,7 +96,8 @@
                            digitsonly:true
                        },
                         <%=pass.UniqueID%>:{
-                            required:true
+                            required:true,
+                            pwcheck:true
 
                         },
                        <%=repass.UniqueID%>:{

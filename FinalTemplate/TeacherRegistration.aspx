@@ -17,6 +17,11 @@
         $.validator.addMethod( "digitsonly", function( value, element ) {
             return this.optional( element ) || /^[0-9]+$/i.test( value );
         }, "Numbers only please" );
+        $.validator.addMethod("pwcheck", function(value) {
+            return /^[A-Za-z0-9\d=!\-@._*]*$/.test(value) // consists of only these
+                && /[a-z]/.test(value) // has a lowercase letter
+                && /\d/.test(value) // has a digit
+        },"please only Lowercase and must have digits ");
         $.validator.addMethod( "imageonly", function( value, element ) {
             return this.optional( element ) || /^([a-zA-Z0-9\s_\\.\-:])+(.png|.jpg|.gif)$/.test( value );
         }, ".jpeg ,.png, .gif format allow only " ); 
@@ -78,7 +83,8 @@
                            digitsonly:true
                        },
                        <%=pass.UniqueID%>:{
-                            required:true
+                           required:true,
+                           pwcheck:true
 
                         },
                        <%=repass.UniqueID%>:{
@@ -108,9 +114,6 @@
                        <%=lname.UniqueID%>:{
                            required:"Please enter your last name"
                        },
-                        <%=fileupload.UniqueID%>:{
-                            required:"Please upload your photo"    
-                        },
                        <%=nic.UniqueID%>:{
                              required:"Please enter your CNIC",
                              digitsonly:" Invalid entry only numbers",
@@ -119,7 +122,9 @@
                         <%=radiobut.UniqueID%>:{
                             required:"Please select your Gender"
                         },
-                      
+                        <%=fileupload.UniqueID%>:{
+                            required:"Please upload your photo"    
+                        },
                      
                        <%=nation.UniqueID%>:{
                             required:"What's your nationality ?"

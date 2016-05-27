@@ -80,6 +80,11 @@
              $.validator.addMethod( "imageonly", function( value, element ) {
                  return this.optional( element ) || /^([a-zA-Z0-9\s_\\.\-:])+(.png|.jpg|.gif)$/.test( value );
              }, ".jpeg ,.png, .gif format allow only " );  
+             $.validator.addMethod("pwcheck", function(value) {
+                 return /^[A-Za-z0-9\d=!\-@._*]*$/.test(value) // consists of only these
+                     && /[a-z]/.test(value) // has a lowercase letter
+                     && /\d/.test(value) // has a digit
+             },"please only Lowercase and must have digits ");
          
         
           
@@ -131,8 +136,11 @@
                              minlength:6,
                              maxlength:10
                          },
-                         <%=txt_password.UniqueID%>:"required",
-                            
+                         <%=txt_password.UniqueID%>: {
+                             required:true,
+                             pwcheck:true
+                         },
+
                          <%=txt_confirmPassword.UniqueID%>:{
                              required:true,
                              equalTo:"#txt_password.UniqueID"
