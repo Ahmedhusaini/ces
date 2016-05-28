@@ -30,94 +30,97 @@
                $("#form1").validate({
                    
                    rules: {
-                       <%=name.UniqueID%>:{
-                           required: true,
-                           lettersonly: true
-                       },
-                       <%=lname.UniqueID%>:{
-                           required:true,
-                           lettersonly:true
-                       },
-                       <%=contact1.UniqueID%>:{
-                           required:true,
-                           phone:true
-                       },
-                       <%=nic.UniqueID%>:{
-                           required:true,
-                           digitsonly:true,
-                           minlength:13
-                        
-                       },
-                       <%=post.UniqueID%>:{
-                           required:true,
-                           lettersonly:true
+                           <%=name.UniqueID%>: {
+                               required: true,
+                               lettersonly: true
+                           },
+                           <%=lname.UniqueID%>: {
+                               required: true,
+                               lettersonly: true
+                           },
+                           <%=contact1.UniqueID%>: {
+                               required: true,
+                               phone: true
+                           },
+                           <%=nic.UniqueID%>: {
+                               required: true,
+                               digitsonly: true,
+                               minlength: 13
 
-                       },
-                       <%=salary.UniqueID%>:{
-                           required:true,
-                           digitsonly:true
-                       },
-                       <%=officeadd.UniqueID%>:{
-                       required:true
-                       },
-                         <%=contact2.UniqueID%>:{
-                             required:true,
-                             digitsonly:true
-                         },
-                         <%=radiobut.UniqueID%>:{
-                                required:true
-                         
-                         },
-                       <%=nation.UniqueID%>:{
-                           required:true,
-                           lettersonly:true
-                       },
-                       <%=religion.UniqueID%>:{
-                           required:true,
-                           lettersonly:true,
-                           maxlength:8
-                       },
-                       <%=address.UniqueID%>:{
-                            required:true
+                           },
+                           <%=post.UniqueID%>: {
+                               required: true,
+                               lettersonly: true
 
-                       },
-                       <%=postal.UniqueID%>:{
-                           required:true,
-                           digitsonly:true,
-                           minlength:5,
-                           maxlength:6
-                       },
-                       <%=user.UniqueID%>:{
-                        required:true
-                       
-                       },
-                       <%=accountp.UniqueID%>:{
-                           required:true,
-                           digitsonly:true
-                       },
-                        <%=pass.UniqueID%>:{
-                            required:true,
-                            pwcheck:true
+                           },
+                           <%=salary.UniqueID%>: {
+                               required: true,
+                               digitsonly: true
+                           },
+                           <%=officeadd.UniqueID%>: {
+                               required: true
+                           },
+                           <%=contact2.UniqueID%>: {
+                               required: true,
+                               digitsonly: true
+                           },
+                           <%=radiobut.UniqueID%>: {
+                               required: true
 
-                        },
-                       <%=repass.UniqueID%>:{
-                           required:true,
-                           equalTo:"#pass.UniqueID"
-                            
-                       },
-                       <%=pemail.UniqueID%>:{
-                           required:true,
-                           email:true
-                       },
-                       <%=semail.UniqueID%>:{
-                           required:true,
-                           email:true
-                       } ,
-                        <%=fileupload.UniqueID%>:{
-                            required:true,
-                            imageonly:true
-                        }
-                       },
+                           },
+                           <%=nation.UniqueID%>: {
+                               required: true,
+                               lettersonly: true
+                           },
+                           <%=religion.UniqueID%>: {
+                               required: true,
+                               lettersonly: true,
+                               maxlength: 8
+                           },
+                           <%=address.UniqueID%>: {
+                               required: true
+
+                           },
+                           <%=postal.UniqueID%>: {
+                               required: true,
+                               digitsonly: true,
+                               minlength: 5,
+                               maxlength: 6
+                           },
+                           <%=user.UniqueID%>: {
+                               required: true
+
+                           },
+                           <%=accountp.UniqueID%>: {
+                               required: true,
+                               digitsonly: true
+                           },
+                           <%=pass.UniqueID%>: {
+                               required: true,
+                               pwcheck: true
+
+                           },
+                           <%=repass.UniqueID%>: {
+                               required: true,
+                               equalTo: "#pass.UniqueID"
+
+                           },
+                           <%=pemail.UniqueID%>: {
+                               required: true,
+                               email: true
+                           },
+                           <%=semail.UniqueID%>: {
+                               required: true,
+                               email: true
+                           },
+                           <%=fileupload.UniqueID%>: {
+                               required: true,
+                               imageonly: true
+                           },
+                           <%=dob.UniqueID%>:{
+                               required:true
+                       }
+                   },
 
                    messages: {
                       <%=name.UniqueID%>: {
@@ -176,6 +179,9 @@
                        },
                          <%=semail.UniqueID%>:{
                             required:"Please enter your an email"
+                         },
+                         <%=dob.UniqueID%>:{
+                             required:"Please mention your correct Date of birth"
                          }
                         
                    }
@@ -356,7 +362,7 @@
                                     </label>
                                     <!-- p.help-block Warning !-->
                                     <br />
-                                    <asp:TextBox ID="dob" CssClass="form-control  form-input"  placeholder="dd/mm/yyyy"  runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="dob" CssClass="form-control  form-input" type="date" runat="server"></asp:TextBox>
 
                             </div>
                             <div class="col-md-6">

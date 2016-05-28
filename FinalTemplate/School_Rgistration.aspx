@@ -74,9 +74,9 @@
              $.validator.addMethod("email", function(value, element) {
                  return this.optional(element) || /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(value);
              }, "Please enter a valid email address.");
-             $.validator.addMethod( "date", function( value, element ) {
-                 return this.optional( element ) || /\b\d{1,2}[\/-]\d{1,2}[\/-]\d{4}\b/.test( value );
-             }, "Numbers only please" );
+             //$.validator.addMethod( "date", function( value, element ) {
+             //    return this.optional( element ) || /\b\d{1,2}[\/-]\d{1,2}[\/-]\d{4}\b/.test( value );
+             //}, "Numbers only please" );
              $.validator.addMethod( "imageonly", function( value, element ) {
                  return this.optional( element ) || /^([a-zA-Z0-9\s_\\.\-:])+(.png|.jpg|.gif)$/.test( value );
              }, ".jpeg ,.png, .gif format allow only " );  
@@ -158,7 +158,7 @@
                          },
                          <%=txt_foundedIn.UniqueID%>:{
                              required:true,
-                             date:true
+                             
                          },
                            <%=fileupload.UniqueID%>:{
                                required:true,
@@ -207,9 +207,9 @@
                          <%=txt_secondaryEmailAddress.UniqueID%>:{
                              required:"Please enter your an email",
                          },
-                         <%=txt_foundedIn.UniqueID%>:{
+                       <%--  <%=txt_foundedIn.UniqueID%>:{
                              date:"Please fill the date in pattern  mm/dd/yyyy or mm-dd-yyyy"
-                         }
+                         }--%>
                      }
                  });
              }
@@ -474,7 +474,7 @@
                                         
                                         <br />
                                                                                        
-                                                <asp:TextBox ID="txt_foundedIn" placeholder="dd/mm/yyyy" runat="server" CssClass="form-control  form-input"></asp:TextBox>
+                                                <asp:TextBox ID="txt_foundedIn" type="date"  runat="server" CssClass="form-control  form-input"></asp:TextBox>
                                                 
                                             
                                     </div>

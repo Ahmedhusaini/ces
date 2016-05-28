@@ -103,8 +103,11 @@
                      <%=fileupload.UniqueID%>:{
                          required:true,
                          imageonly:true
-                     }
-                   },
+                     },
+                    <%=dob.UniqueID%>: {
+                        required:true
+                    }
+                },
 
                    messages: {
                        <%=name.UniqueID%>: {
@@ -153,7 +156,10 @@
                        },
                        <%=semail.UniqueID%>:{
                              required:"Please enter your an email"
-                         }
+                       },
+                        <%=dob.UniqueID%>:{
+                            required:"Please mention your correct Date of birth"
+                        }
                         
                    }
                });
@@ -292,7 +298,7 @@
                                     </label>
                                     <!-- p.help-block Warning !-->
                                     <br />
-                                    <asp:TextBox ID="dob" CssClass="form-control  form-input"  placeholder="dd/mm/yyyy"  runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="dob" CssClass="form-control  form-input"  type="date" runat="server"></asp:TextBox>
 
                             </div>
                             <div class="col-md-6">
