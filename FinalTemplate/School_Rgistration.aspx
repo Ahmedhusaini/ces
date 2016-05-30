@@ -143,7 +143,7 @@
 
                          <%=txt_confirmPassword.UniqueID%>:{
                              required:true,
-                             equalTo:"#txt_password.UniqueID"
+                           
                          
                          },
                          <%=txt_primaryEmailAddress.UniqueID%>:{
@@ -583,7 +583,7 @@
                                         </label>
                                         <!-- p.help-block Warning !-->
                                         <br />
-                                        <asp:TextBox ID="txt_password" CssClass="form-control  form-input " runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txt_password" CssClass="form-control  form-input " TextMode="Password" runat="server"></asp:TextBox>
 
                                     </div>
                                     <div class="col-md-6">
@@ -593,8 +593,8 @@
                                         </label>
                                         <!-- p.help-block Warning !-->
                                         <br />
-                                        <asp:TextBox ID="txt_confirmPassword" CausesValidation="true" CssClass="form-control  form-input" runat="server"></asp:TextBox>
-
+                                        <asp:TextBox ID="txt_confirmPassword" CausesValidation="true" TextMode="Password" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                          <asp:CompareValidator ID="CompareValidator1" ControlToCompare="txt_password" ControlToValidate="txt_confirmPassword" CssClass=" input.error" ForeColor="#ff0000" ErrorMessage="Your password does not match" runat="server" Display="Dynamic"></asp:CompareValidator>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="regname" class="control-label form-label">
