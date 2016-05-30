@@ -102,7 +102,7 @@
                            },
                            <%=repass.UniqueID%>: {
                                required: true,
-                               equalTo: "#pass.UniqueID"
+                               
 
                            },
                            <%=pemail.UniqueID%>: {
@@ -493,7 +493,8 @@
                                     <!-- p.help-block Warning !-->
                                     <br />
                                     <asp:TextBox ID="repass" CssClass="form-control  form-input" TextMode="Password" runat="server"></asp:TextBox>
-                                      </div>
+                                       <asp:CompareValidator ID="CompareValidator1" ControlToCompare="pass" ControlToValidate="repass" CssClass=" input.error" ForeColor="#ff0000" ErrorMessage="Your password does not match" runat="server" Display="Dynamic"></asp:CompareValidator>
+                                           </div>
                                  <div class="col-md-6">
                                     <label for="regname" class="control-label form-label">
                                         Primary Email <span class="highlight">*<br />
