@@ -32,109 +32,109 @@
                    
                 rules: {
                     <%=name.UniqueID%>:{
-                           required: true,
-                           lettersonly: true
-                       },
-                       <%=lname.UniqueID%>:{
+                        required: true,
+                        lettersonly: true
+                    },
+                    <%=lname.UniqueID%>:{
                            required:true,
                            lettersonly:true
                        },
-                       <%=contact1.UniqueID%>:{
+                    <%=contact1.UniqueID%>:{
                            required:true,
                            phone:true
                        },
                    
                      
-                       <%=contact2.UniqueID%>:{
-                             required:true,
-                             phone:true
-                         },
-                       <%=radiobut.UniqueID%>:{
-                             required:true
+                    <%=contact2.UniqueID%>:{
+                           required:true,
+                           phone:true
+                       },
+                    <%=radiobut.UniqueID%>:{
+                           required:true
                          
-                         },
-                       <%=guardian.UniqueID%>:{
+                       },
+                    <%=guardian.UniqueID%>:{
                            required:true,
                            lettersonly:true
 
                        },
 
-                       <%=nation.UniqueID%>:{
+                    <%=nation.UniqueID%>:{
                            required:true,
                            lettersonly:true
                        },
-                       <%=religion.UniqueID%>:{
+                    <%=religion.UniqueID%>:{
                            required:true,
                            lettersonly:true,
                            maxlength:8
                        },
-                       <%=address.UniqueID%>:{
+                    <%=address.UniqueID%>:{
                            required:true
 
                        },
-                       <%=postal.UniqueID%>:{
+                    <%=postal.UniqueID%>:{
                            required:true,
                            digitsonly:true,
                            minlength:5,
                            maxlength:6
                        },
-                       <%=user.UniqueID%>:{
+                    <%=user.UniqueID%>:{
                            required:true
                        
                        },
-                       <%=accountp.UniqueID%>:{
+                    <%=accountp.UniqueID%>:{
                            required:true,
                            digitsonly:true
                        },
-                          <%=sname.UniqueID%>:{
-                            required:true,
-                            lettersonly:true
-                        },
-                     <%=pass.UniqueID%>:{
+                    <%=sname.UniqueID%>:{
+                              required:true,
+                              lettersonly:true
+                          },
+                       <%=pass.UniqueID%>:{
                          required:true,
                          pwcheck:true
 
                         },
                        
-                       <%=repass.UniqueID%>:{
+                    <%=repass.UniqueID%>:{
                            required:true,
-                           equalTo:"#pass.UniqueID"
+                         
                            
                        },
                        <%=emaill.UniqueID%>:{
                            required:true,
                            email:true
                        },
-                       <%=pemail.UniqueID%>:{
+                    <%=pemail.UniqueID%>:{
                            required:true,
                            email:true
                        },
-                       <%=semail.UniqueID%>:{
+                    <%=semail.UniqueID%>:{
                            required:true,
                            email:true
                        },
-                       <%=prevchool.UniqueID%>:{
+                    <%=prevchool.UniqueID%>:{
                            required:true,
                            lettersonly:true
                        },
-                       <%=preclass.UniqueID%>:{
+                    <%=preclass.UniqueID%>:{
                            required:true, 
                            romanonly:true
                        },
-                       <%=classtxt.UniqueID%>:{
+                    <%=classtxt.UniqueID%>:{
                            required:true,
                            romanonly:true
                        
                        },
-                       <%=section.UniqueID%>:{
+                    <%=section.UniqueID%>:{
                            required:true,
                            minlength:1,
                            maxlength:2
                        },
-                       <%=Dropd.UniqueID%>:{
+                    <%=Dropd.UniqueID%>:{
                            required:true,
                        },
-                       <%=fileupload.UniqueID%>:{
+                    <%=fileupload.UniqueID%>:{
                            required:true,
                            imageonly:true
                        },
@@ -144,68 +144,68 @@
                     }
                 },
 
-                   messages: {
-                       <%=name.UniqueID%>: {
-                          required: "Please enter your name"
+                messages: {
+                    <%=name.UniqueID%>: {
+                           required: "Please enter your name"
 
-                      },
+                       },
                        <%=lname.UniqueID%>:{
                            required:"Please enter your last name"
                        },
                        <%=guardian.UniqueID%>:{
-                            required:"Please mention your guardian name"
-                        },
+                           required:"Please mention your guardian name"
+                       },
                        <%=sname.UniqueID%>:{
-                            required:"Please mention your full name"
-                        },
+                           required:"Please mention your full name"
+                       },
                        <%=classtxt.UniqueID%>:{
-                            required:"Please mention your current Class"
-                        },
+                           required:"Please mention your current Class"
+                       },
                        <%=section.UniqueID%>:{
-                            required:"Please mention your current Section",
-                            minlenght:"minimum 1 character or maximum 2",
-                            maxlength:"minimum 1 character or maximum 2"
+                           required:"Please mention your current Section",
+                           minlenght:"minimum 1 character or maximum 2",
+                           maxlength:"minimum 1 character or maximum 2"
                         
-                        },
+                       },
                        <%=fileupload.UniqueID%>:{
-                            required:"Please upload your photo"    
-                        },
+                           required:"Please upload your photo"    
+                       },
                        <%=Dropd.UniqueID%>:{
-                            required:"Selection is required"
-                        },
+                           required:"Selection is required"
+                       },
                          
                        <%=contact2.UniqueID%>:{
-                            required:"Provide  contact number",
-                            digitsonly:"Only digits"
-                        },
+                           required:"Provide  contact number",
+                           digitsonly:"Only digits"
+                       },
                        <%=radiobut.UniqueID%>:{
-                             required:"Please select your Gender"
-                         },
+                           required:"Please select your Gender"
+                       },
                        <%=nation.UniqueID%>:{
-                            required:"What's your nationality ?"
-                        },
+                           required:"What's your nationality ?"
+                       },
                        <%=religion.UniqueID%>:{
                            required:"What's your religion ?",
                            maxlength:"Can't exceed more then 8 character"
                        },
                        <%=address.UniqueID%>:{
-                            required:"Please enter your Home address"
-                        },
+                           required:"Please enter your Home address"
+                       },
                        <%=postal.UniqueID%>:   {
-                              minlength:"Postal code must contain 5 digits",
-                              maxlength:"Postal code can't exceed more then 6 digits"
-                          },
+                           minlength:"Postal code must contain 5 digits",
+                           maxlength:"Postal code can't exceed more then 6 digits"
+                       },
                        <%=prevchool.UniqueID%>:{
-                            required:"Please mention your previous school name"
-                        },
+                           required:"Please mention your previous school name"
+                       },
                        <%=preclass.UniqueID%>:{
-                            required:"Please mention last class attended"
-                        },
-                       <%=pass.UniqueID%>:{
+                           required:"Please mention last class attended"
+                       },
+                        <%=pass.UniqueID%>:{
                              required:"What is your password ?"
 
                          },
-                       <%=repass.UniqueID%>:{
+                     <%=repass.UniqueID%>:{
                              required:"You must confirm your password",
                          
                          },
@@ -216,7 +216,7 @@
                            required:"Please enter your an email"
                        },
                        <%=semail.UniqueID%>:{
-                             required:"Please enter your an email"
+                           required:"Please enter your an email"
                        },
                        <%=dob.UniqueID%>: {
                            required:"Please mention your correct Date of Birth"
@@ -224,8 +224,8 @@
                        }
                         
                    }
-               });
-           });
+            });
+        });
 
     </script>
 </asp:Content>
@@ -378,7 +378,7 @@
                                         </label>
                                         <!-- p.help-block Warning !-->
                                         <br />
-                                        <asp:TextBox ID="dob" CssClass="form-control  form-input"  type="date" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="dob" CssClass="form-control  form-input" type="date" runat="server"></asp:TextBox>
 
                                     </div>
                                     <div class="col-md-6">
@@ -571,6 +571,7 @@
                                             <!-- p.help-block Warning !-->
                                             <br />
                                             <asp:TextBox ID="pass" CssClass="form-control  form-input" TextMode="Password" runat="server"></asp:TextBox>
+                                            <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="pass" ErrorMessage="What's Your password?"></asp:RequiredFieldValidator>--%>
                                         </div>
                                         <div class="col-md-6">
                                             <label for="regname" class="control-label form-label">
@@ -580,6 +581,8 @@
                                             <!-- p.help-block Warning !-->
                                             <br />
                                             <asp:TextBox ID="repass" CssClass="form-control  form-input" TextMode="Password" runat="server"></asp:TextBox>
+                                            <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="repass" ErrorMessage="Retype your password"></asp:RequiredFieldValidator>--%>
+                                            <asp:CompareValidator ID="CompareValidator1" ControlToCompare="pass" ControlToValidate="repass" CssClass=" input.error" ForeColor="#ff0000" ErrorMessage="Your password does not match" runat="server" Display="Dynamic"></asp:CompareValidator>
                                         </div>
                                         <div class="col-md-6">
                                             <label for="regname" class="control-label form-label">
