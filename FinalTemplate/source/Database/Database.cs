@@ -3,6 +3,7 @@ using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Text;
 
 namespace FinalTemplate.source.Database
@@ -21,6 +22,7 @@ namespace FinalTemplate.source.Database
         private SqlConnection obj_sqlconnection;
         private SqlCommand obj_sqlcommand;
         private SqlDataReader obj_reader;
+        private SqlParameter[] obj_sqlparameter;
         #endregion
         #region Private Data Members
         //This variable contains the actual connection string to the database. It is advices to change it only once.
@@ -68,6 +70,13 @@ namespace FinalTemplate.source.Database
             obj_sqlcommand = new SqlCommand();
             obj_sqlcommand.Connection = GetCurrentConnection;
             obj_sqlcommand.CommandType = CommandType.Text;
+            obj_sqlcommand.CommandText = CommandText;
+        }
+        private void InitializeSQLCommandObject(SqlConnection sqlConectioConnection, string CommandText, bool isSP)
+        {
+            obj_sqlcommand = new SqlCommand();
+            obj_sqlcommand.Connection = GetCurrentConnection;
+            obj_sqlcommand.CommandType = CommandType.StoredProcedure;
             obj_sqlcommand.CommandText = CommandText;
         }
         #endregion
@@ -366,6 +375,85 @@ namespace FinalTemplate.source.Database
             return finalResult;
 
         }
+        #region StoreProcedures
+
+        public bool ExecuteProcedure(string spName, string[] parametersName, object[] parametersValues)
+        {
+            if (parametersName.Length == parametersValues.Length)
+            {
+                int outputParameterCount = 0;
+                int ParameterLength = 0;
+                string currentParameterValue = string.Empty;
+                CreateConnection();
+                try
+                {
+                    InitializeSQLCommandObject(GetCurrentConnection, spName, true);
+                    SqlParameter[] objSqlParameters = new SqlParameter[parametersName.Length];
+                    //calculating output parameters
+                    for (int i = 0; i < parametersValues.Length; i++)
+                    {
+                        if (parametersValues[i] == "output" || parametersValues[i] == "Output" || parametersValues[i] == "OUTPUT" || parametersValues[i] == "OutPut")
+                        {
+                            outputParameterCount++;
+                        }
+                    }
+                    //initialize the array for output parameters.
+                    objSqlParameters = new SqlParameter[outputParameterCount];
+                    for (int i = 0; i < parametersName.Length; i++)
+                    {
+                        currentParameterValue = parametersValues.GetType().ToString();
+                        if (parametersValues[i] == "output" || parametersValues[i] == "Output" || parametersValues[i] == "OUTPUT" || parametersValues[i] == "OutPut")
+                        {
+                            obj_sqlparameter[ParameterLength].ParameterName = "@" + parametersName[i].ToString();
+                            obj_sqlparameter[ParameterLength].Direction = ParameterDirection.Output;
+                            if (currentParameterValue == "System.Text")
+                            {
+                                obj_sqlparameter[ParameterLength].SqlDbType = SqlDbType.VarChar;
+                                obj_sqlparameter[ParameterLength].Size = currentParameterValue.Max();
+                            }
+                            else if (currentParameterValue == "System.Int" || currentParameterValue == "System.Int32")
+                                obj_sqlparameter[ParameterLength].SqlDbType = SqlDbType.Int;
+                            else if (currentParameterValue == "System.Decimal")
+                                obj_sqlparameter[ParameterLength].SqlDbType = SqlDbType.Decimal;
+                            else if (currentParameterValue == "System.Date")
+                                obj_sqlparameter[ParameterLength].SqlDbType = SqlDbType.Date;
+                            //adding the parameter to sql command object
+                            obj_sqlcommand.Parameters.Add(obj_sqlparameter[ParameterLength]);
+                            ParameterLength++;
+                        }
+                        else
+                        {
+                            if (currentParameterValue == "System.Text")
+                                obj_sqlcommand.Parameters.AddWithValue("@" + parametersName[i], parametersValues[i].ToString());
+                            else if (currentParameterValue == "System.Int")
+                                obj_sqlcommand.Parameters.AddWithValue("@" + parametersName[i], Convert.ToInt32(parametersValues[i]));
+                            else if (currentParameterValue == "System.Decimal")
+                                obj_sqlcommand.Parameters.AddWithValue("@" + parametersName[i], Convert.ToDecimal(parametersValues[i]));
+                            else if (currentParameterValue == "System.Date")
+                                obj_sqlcommand.Parameters.AddWithValue("@" + parametersName[i], Convert.ToDateTime(parametersValues[i]));
+                        }
+                        OpenConnection();
+                        int rowsAffected = obj_sqlcommand.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            ParameterLength = 0;
+                        }
+                    }
+                }
+                catch (Exception exception)
+                {
+
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+            return true;
+        }
+
+        #endregion
         #endregion
     }
 }
