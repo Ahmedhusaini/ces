@@ -388,17 +388,16 @@ namespace FinalTemplate.source.Database
                 try
                 {
                     InitializeSQLCommandObject(GetCurrentConnection, spName, true);
-                    SqlParameter[] objSqlParameters = new SqlParameter[parametersName.Length];
                     //calculating output parameters
                     for (int i = 0; i < parametersValues.Length; i++)
                     {
-                        if (parametersValues[i] == "output" || parametersValues[i] == "Output" || parametersValues[i] == "OUTPUT" || parametersValues[i] == "OutPut")
+                        if (parametersValues[i] == "output" || parametersValues[i] == "Output" || parametersValues[i] == "OUTPUT" || parametersValues[i] == "OutPut" || parametersValues[i] == "OUT" || parametersValues[i] == "Out" || parametersValues[i] == "out")
                         {
                             outputParameterCount++;
                         }
                     }
                     //initialize the array for output parameters.
-                    objSqlParameters = new SqlParameter[outputParameterCount];
+                    obj_sqlparameter = new SqlParameter[outputParameterCount];
                     for (int i = 0; i < parametersName.Length; i++)
                     {
                         currentParameterValue = parametersValues.GetType().ToString();
