@@ -66,6 +66,7 @@
     <Content Include="assets\images\crissxcross.png" />
     <Content Include="assets\images\registerschool_green.jpg" />
     <Content Include="Logintype.aspx" />
+    <Content Include="parentpanel.aspx" />
     <Content Include="School_Rgistration.aspx" />
     <Content Include="source\Jvalidation\blacklist_keywords.txt" />
     <Content Include="StudentRgistration.aspx" />
@@ -237,6 +238,13 @@
     </Compile>
     <Compile Include="Logintype.aspx.designer.cs">
       <DependentUpon>Logintype.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="parentpanel.aspx.cs">
+      <DependentUpon>parentpanel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="parentpanel.aspx.designer.cs">
+      <DependentUpon>parentpanel.aspx</DependentUpon>
     </Compile>
     <Compile Include="parentpanel.Master.cs">
       <DependentUpon>parentpanel.Master</DependentUpon>
