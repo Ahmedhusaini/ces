@@ -238,6 +238,13 @@
     <Compile Include="Logintype.aspx.designer.cs">
       <DependentUpon>Logintype.aspx</DependentUpon>
     </Compile>
+    <Compile Include="parentpanel.Master.cs">
+      <DependentUpon>parentpanel.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="parentpanel.Master.designer.cs">
+      <DependentUpon>parentpanel.Master</DependentUpon>
+    </Compile>
     <Compile Include="School_Rgistration.aspx.cs">
       <DependentUpon>School_Rgistration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -397,6 +404,7 @@
     <Content Include="studentpanel.Master" />
     <Fakes Include="Fakes\AjaxControlToolkit.fakes" />
     <Content Include="assets\cesFiles\Packages.pdf" />
+    <Content Include="parentpanel.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
