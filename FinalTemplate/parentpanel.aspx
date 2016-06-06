@@ -63,31 +63,38 @@
            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString %>" SelectCommand="SELECT [class_sec_info_id], [school_id], [Guardian_Name], [Std_id] FROM [tbl_Student_Reg]"></asp:SqlDataSource>
   
         <!-- CHOOSE COURSES-->
+    <br />
+                        <div class="group-title-index"><h4 class="top-title">Your Childerns</h4>
+
+                            <h2 class="center-title">check profile of your student</h2>
+
+                            <div class="bottom-title"><i class="bottom-icon icon-a-1-01-01"></i></div>
+                        </div>
               <div class="section choose-course-3">
                     <div class="choose-course-3-wrapper row">
                         <div class="item-course">
                             <div class="item-course-wrapper">
-                                <div class="icon-course"><i class="icons-img icon-globe"></i></div>
-                                <div class="info-course"><a href="#" class="name-course">Results</a>
+                                <div class="icon-course"><i class="icons-img fa fa-male"></i></div>
+                                <div class="info-course"><a href="#" class="name-course">ahmed hussaini</a>
 
-                                    <div class="info">view results of Your exams. You can also check feedback regarding any result posted by Teachers & parents.</div>
+                                    <div class="info">check them out</div>
                                 </div>
                             </div>
                         </div>
                        <div class="item-course">
                             <div class="item-course-wrapper">
-                                <div class="icon-course"><i class="icons-img icon-photocamera_1"></i></div>
+                                <div class="icon-course"><i class="icons-img fa fa-check"></i></div>
                                 <a href="#" class="info-course">
-                                    <div class="name-course">Photography</div>
-                                    <div class="info">Relive the past memories and view the pictures of past events and functions.</div>
+                                    <div class="name-course">jahangeer ahmed</div>
+                                    <div class="info">check them out</div>
                                 </a></div>
                         </div>
                         <div class="item-course">
                             <div class="item-course-wrapper">
-                                <div class="icon-course"><i class="icons-img icon-chat_bubbles"></i></div>
-                                <div class="info-course"><a href="#" class="name-course">Communication</a>
+                                <div class="icon-course"><i class="icons-img fa fa-male"></i></div>
+                                <div class="info-course"><a href="#" class="name-course">siddique</a>
 
-                                    <div class="info">Make some interaction to Teacher and ask some queries. Click to check what is available now.</div>
+                                    <div class="info">check them out</div>
                                 </div>
                             </div>
                         </div>
