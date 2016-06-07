@@ -5,7 +5,7 @@ namespace FinalTemplate
 {
     public partial class School_Rgistration : System.Web.UI.Page
     {
-        private Database _database = new Database("thisisconnectionstring");
+        private Database _database = new Database("Data Source=JAHANGEER;Initial Catalog=ces;Persist Security Info=True;User ID=sa;Password=159abbasi789");
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -27,6 +27,7 @@ namespace FinalTemplate
 
         protected void btn_submit_Click(object sender, EventArgs e)
         {
+
             Response.Write("It worked");
         }
 
