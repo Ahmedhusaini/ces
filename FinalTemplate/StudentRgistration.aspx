@@ -312,7 +312,7 @@
                                         </label>
                                         <!-- p.help-block Warning !-->
                                         <br />
-                                        <asp:TextBox ID="lname" CssClass="form-control  form-input " runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="lname" CssClass="form-control  form-input " runat="server" OnTextChanged="lname_TextChanged"></asp:TextBox>
 
                                     </div>
                                     <div class="col-md-6">
@@ -610,7 +610,7 @@
                                 <div class="register-submit">
                                     <button type="submit" class="btn btn-register btn-green">
                                         <span>
-                                            <asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" /></span></button>
+                                            <asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>
                                 </div>
                             </div>
                         </div>
