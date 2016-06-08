@@ -19,10 +19,10 @@ namespace FinalTemplate.source.Database
         }
         #endregion
         #region SQL Data Providers
-        private SqlConnection obj_sqlconnection;
-        private SqlCommand obj_sqlcommand;
-        private SqlDataReader obj_reader;
-        private SqlParameter[] obj_sqlparameter;
+        public SqlConnection obj_sqlconnection;
+        public SqlCommand obj_sqlcommand;
+        public SqlDataReader obj_reader;
+        public SqlParameter[] obj_sqlparameter;
         #endregion
         #region Private Data Members
         //This variable contains the actual connection string to the database. It is advices to change it only once.
@@ -54,7 +54,9 @@ namespace FinalTemplate.source.Database
         public SqlConnection GetCurrentConnection
         {
             get { return obj_sqlconnection; }
+            set { obj_sqlconnection = value; }
         }
+
         #endregion
         //This region contains all the methods which are require to perform any DML operation.
         #region Private DML Methods
@@ -441,7 +443,6 @@ namespace FinalTemplate.source.Database
                 }
                 catch (Exception exception)
                 {
-
                     return false;
                 }
             }
@@ -453,6 +454,36 @@ namespace FinalTemplate.source.Database
         }
 
         #endregion
+        #endregion
+        #region TableQueries
+
+        public string GetLastValueByColumnName(string columnName, string tableName)
+        {
+            string query = "select top 1" + columnName + " from " + tableName + " order by " + columnName + " desc;";
+            CreateConnection();
+            InitializeSQLCommandObject(GetCurrentConnection, query);
+            try
+            {
+                OpenConnection();
+                obj_reader = obj_sqlcommand.ExecuteReader();
+                if (obj_reader.HasRows)
+                {
+                    return obj_reader[0].ToString();
+                }
+            }
+            catch (Exception exception)
+            {
+                query = exception.ToString();
+            }
+            finally
+            {
+                CloseConnection();
+                obj_reader.Dispose();
+                obj_reader.Close();
+            }
+            return query;
+        }
+
         #endregion
     }
 }
