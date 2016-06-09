@@ -456,7 +456,7 @@
                                                  <div class="register-submit">
                             <button type="submit"   class="btn btn-register btn-green">
                                 <span>
-                                    <asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" /></span></button>
+                                    <asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>
                      </div> 
                             </div>                            
                         </div>                           
