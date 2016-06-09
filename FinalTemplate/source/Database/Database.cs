@@ -23,6 +23,8 @@ namespace FinalTemplate.source.Database
         public SqlCommand obj_sqlcommand;
         public SqlDataReader obj_reader;
         public SqlParameter[] obj_sqlparameter;
+        public SqlDataAdapter obj_adapter;
+        public DataSet obj_dataset;
         #endregion
         #region Private Data Members
         //This variable contains the actual connection string to the database. It is advices to change it only once.
@@ -67,14 +69,14 @@ namespace FinalTemplate.source.Database
             ConnectionString = p_ConnectionString;
         }
         //This method initialize the SQL command object with connection and command text(query)
-        private void InitializeSQLCommandObject(SqlConnection SQLConnectionObject, string CommandText)
+        public void InitializeSQLCommandObject(SqlConnection SQLConnectionObject, string CommandText)
         {
             obj_sqlcommand = new SqlCommand();
             obj_sqlcommand.Connection = GetCurrentConnection;
             obj_sqlcommand.CommandType = CommandType.Text;
             obj_sqlcommand.CommandText = CommandText;
         }
-        private void InitializeSQLCommandObject(SqlConnection sqlConectioConnection, string CommandText, bool isSP)
+        public void InitializeSQLCommandObject(SqlConnection sqlConectioConnection, string CommandText, bool isSP)
         {
             obj_sqlcommand = new SqlCommand();
             obj_sqlcommand.Connection = GetCurrentConnection;
@@ -459,16 +461,21 @@ namespace FinalTemplate.source.Database
 
         public string GetLastValueByColumnName(string columnName, string tableName)
         {
-            string query = "select top 1" + columnName + " from " + tableName + " order by " + columnName + " desc;";
+            string query = "select top 1 " + columnName + " from " + tableName + " order by " + columnName + " desc;";
             CreateConnection();
             InitializeSQLCommandObject(GetCurrentConnection, query);
             try
             {
+                string lastvalue = string.Empty;
                 OpenConnection();
                 obj_reader = obj_sqlcommand.ExecuteReader();
                 if (obj_reader.HasRows)
                 {
-                    return obj_reader[0].ToString();
+                    while (obj_reader.Read())
+                    {
+                        lastvalue = obj_reader[0].ToString();
+                    }
+                    return lastvalue;
                 }
             }
             catch (Exception exception)

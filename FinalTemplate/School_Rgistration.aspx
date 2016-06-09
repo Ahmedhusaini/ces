@@ -110,13 +110,7 @@
                          <%=txt_campusname.UniqueID%>:{
                              required:true
                          },
-                         <%=txt_contact.UniqueID%>:{
-                             required:true,
-                             phone:true,
-                            
-                             minlength:6
-
-                         },
+                        
                          <%=txt_address.UniqueID%>:{
                              required:true
                          },
@@ -176,10 +170,7 @@
                          <%=txt_ownername.UniqueID%>:{
                              required:"Please enter Owner's name"
                          },
-                         <%=txt_contact.UniqueID%>:{
-                             required:"Please mention Contact no"  
-                      
-                         },
+                         
                          <%=txt_accountPin.UniqueID%>:{
                              minlength:"Pin must contain 6 digits",
                              maxlength:"Pin cannot exceed 10 digits"    
@@ -488,16 +479,7 @@
                                         <asp:FileUpload  ID="fileupload" runat="server"  CssClass="form-control  form-input"/>
 
                                     </div>
-                                    <div class="col-md-6">
-                                        <label for="regname" class="control-label form-label">
-                                            Contact No <span class="highlight">*<br />
-                                            </span>
-                                        </label>
-                                        <!-- p.help-block Warning !-->
-                                        <br />
-                                        <asp:TextBox ID="txt_contact" CssClass="form-control  form-input" runat="server"></asp:TextBox>
-
-                                    </div>
+                                  
                                     <div class="col-md-6">
                                         <label for="regname" class="control-label form-label">
                                             Address <span class="highlight">*<br />
