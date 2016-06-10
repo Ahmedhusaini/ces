@@ -487,6 +487,7 @@ namespace FinalTemplate.source.Database
                 CloseConnection();
                 obj_reader.Dispose();
                 obj_reader.Close();
+                obj_sqlcommand.Dispose();
             }
             return query;
         }

@@ -2,7 +2,6 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Text;
 
 namespace FinalTemplate.source.Registration
@@ -10,56 +9,100 @@ namespace FinalTemplate.source.Registration
     public class ClassSchoolRegistration
     {
         private Database.Database myDatabase = new Database.Database("cesConnectionString");
-        public string RegisterSchool(string country_id, string city_id, string postalcode, string username, string password, string accountpin, string primaryemail, string secondaryemail, string schoolName, string ownerName, string foundedIn, string logo, string school_type_id, string campusName)
+        public string RegisterSchool(int country_id, int city_id, int postalcode, string username, string password, int accountpin, string primaryemail, string secondaryemail, string schoolName, string ownerName, string foundedIn, string logo, int school_type_id, string campusName)
         {
-            myDatabase.CreateConnection();
-            myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "spRegisterSchool", true);
-            myDatabase.obj_sqlparameter = new SqlParameter[4];
-            myDatabase.obj_sqlparameter[0] = new SqlParameter("@location_id_out", SqlDbType.Int);
-            myDatabase.obj_sqlparameter[1] = new SqlParameter("@authorized_id_out", SqlDbType.VarChar, 20);
-            myDatabase.obj_sqlparameter[2] = new SqlParameter("@school_id_out", SqlDbType.VarChar, 50);
-            myDatabase.obj_sqlparameter[3] = new SqlParameter("@campus_id_out", SqlDbType.VarChar, 50);
-            //setting the direction of the parameters
-            myDatabase.obj_sqlparameter[0].Direction = ParameterDirection.Output;//location id
-            myDatabase.obj_sqlparameter[1].Direction = ParameterDirection.Output;//authorized id
-            myDatabase.obj_sqlparameter[2].Direction = ParameterDirection.Output;//school id
-            myDatabase.obj_sqlparameter[3].Direction = ParameterDirection.Output;//campus id
-            //adding the parameters to sql command object
-            myDatabase.obj_sqlcommand.Parameters.Add(myDatabase.obj_sqlparameter[0]);
-            myDatabase.obj_sqlcommand.Parameters.Add(myDatabase.obj_sqlparameter[1]);
-            myDatabase.obj_sqlcommand.Parameters.Add(myDatabase.obj_sqlparameter[2]);
-            myDatabase.obj_sqlcommand.Parameters.Add(myDatabase.obj_sqlparameter[3]);
 
-            //adding intput parameters to the sql command object
-            myDatabase.obj_sqlcommand.Parameters.Add(new SqlParameter("@location_id", Convert.ToInt32(myDatabase.GetLastValueByColumnName("loc_id", "tbl_location") + 1)));
-            myDatabase.obj_sqlcommand.Parameters.Add(new SqlParameter("@country_id", Convert.ToInt32(country_id)));
-            myDatabase.obj_sqlcommand.Parameters.Add(new SqlParameter("@city_id", Convert.ToInt32(city_id)));
-            myDatabase.obj_sqlcommand.Parameters.Add(new SqlParameter("@postalcode", Convert.ToInt32(postalcode)));
-            //myDatabase.obj_sqlcommand.Parameters.Add(new SqlParameter("@loc_id_out", Convert.ToInt32(myDatabase.obj_sqlparameter[0].Value)));
-            myDatabase.obj_sqlcommand.Parameters.Add(new SqlParameter("@authorized_id", GenerateAuthorizedID(username, password)));
-            myDatabase.obj_sqlcommand.Parameters.Add(new SqlParameter("@username", username));
-            myDatabase.obj_sqlcommand.Parameters.Add(new SqlParameter("@password", password));
-            myDatabase.obj_sqlcommand.Parameters.Add(new SqlParameter("@account_pin", Convert.ToInt32(accountpin)));
-            myDatabase.obj_sqlcommand.Parameters.Add(new SqlParameter("@primary_email", primaryemail));
-            myDatabase.obj_sqlcommand.Parameters.Add(new SqlParameter("@secondary_email", secondaryemail));
-            myDatabase.obj_sqlcommand.Parameters.Add(new SqlParameter("@usertype_id", 1));
-            myDatabase.obj_sqlcommand.Parameters.Add(new SqlParameter("@login_count", 0));
-            myDatabase.obj_sqlcommand.Parameters.Add(new SqlParameter("@last_login_date", Convert.ToDateTime(JFunctions.GetSystemDate())));
-            myDatabase.obj_sqlcommand.Parameters.Add(new SqlParameter("@school_id", GenerateSchoolID(schoolName, ownerName)));
-            myDatabase.obj_sqlcommand.Parameters.Add(new SqlParameter("@school_name", schoolName));
-            myDatabase.obj_sqlcommand.Parameters.Add(new SqlParameter("@owner_name", ownerName));
-            myDatabase.obj_sqlcommand.Parameters.Add(new SqlParameter("@founded_in", Convert.ToDateTime(foundedIn)));
-            myDatabase.obj_sqlcommand.Parameters.Add(new SqlParameter("@logo", logo));
-            myDatabase.obj_sqlcommand.Parameters.Add(new SqlParameter("@school_type_id", Convert.ToInt32(school_type_id)));
-            myDatabase.obj_sqlcommand.Parameters.Add(new SqlParameter("@campus_id", GenerateCampusID(schoolName)));
-            myDatabase.obj_sqlcommand.Parameters.Add(new SqlParameter("@campus_name", campusName));
+            myDatabase.CreateConnection();
+
+           // SqlParameter locidParameter = new SqlParameter("@loc_id", SqlDbType.Int);
+            SqlParameter countryidParameter = new SqlParameter("@country_id", SqlDbType.Int);
+            SqlParameter cityidParameter = new SqlParameter("@city_id", SqlDbType.Int);
+            SqlParameter postalcodeParameter = new SqlParameter("@postal_code", SqlDbType.Int);
+            SqlParameter locidoutParameter = new SqlParameter("@loc_id_out", SqlDbType.Int);
+            SqlParameter authorizedidParameter = new SqlParameter("@authorized_id", SqlDbType.VarChar, 20);
+            SqlParameter usernameParameter = new SqlParameter("@username", SqlDbType.VarChar, 50);
+            SqlParameter passwordParameter = new SqlParameter("@password", SqlDbType.VarChar, 50);
+            SqlParameter accountpinParameter = new SqlParameter("@account_pin", SqlDbType.Int);
+            SqlParameter primaryemailParameter = new SqlParameter("@primary_email", SqlDbType.VarChar, 50);
+            SqlParameter secondaryemailParameter = new SqlParameter("@secondary_email", SqlDbType.VarChar, 50);
+            SqlParameter usertypeidParameter = new SqlParameter("@usertype_id", SqlDbType.Int);
+            SqlParameter logincountParameter = new SqlParameter("@login_count", SqlDbType.Int);
+            SqlParameter lastlogindateParameter = new SqlParameter("@last_login_date", SqlDbType.Date);
+            SqlParameter authorizedidoutParameter = new SqlParameter("@authorized_id_out", SqlDbType.VarChar, 20);
+            SqlParameter schoolidParameter = new SqlParameter("@school_id", SqlDbType.VarChar, 50);
+            SqlParameter schoolnameParameter = new SqlParameter("@school_name", SqlDbType.VarChar, 50);
+            SqlParameter ownernameParameter = new SqlParameter("@owner_name", SqlDbType.VarChar, 50);
+            SqlParameter foundedinParameter = new SqlParameter("@founded_in", SqlDbType.Date);
+            SqlParameter logoParameter = new SqlParameter("@logo", SqlDbType.VarChar, 200);
+            SqlParameter schooltypeidParameter = new SqlParameter("@school_type_id", SqlDbType.Int);
+            SqlParameter schoolidoutParameter = new SqlParameter("@school_id_out", SqlDbType.VarChar, 20);
+            SqlParameter campusidParameter = new SqlParameter("@campus_id", SqlDbType.VarChar, 20);
+            SqlParameter campusnameParameter = new SqlParameter("@campus_name", SqlDbType.VarChar, 50);
+
+
+           // locidParameter.Value = Convert.ToInt32(myDatabase.GetLastValueByColumnName("loc_id", "tbl_location")) + 1;
+            countryidParameter.Value = country_id;
+            cityidParameter.Value = city_id;
+            postalcodeParameter.Value = postalcode;
+            locidoutParameter.Direction = ParameterDirection.Output;
+            authorizedidParameter.Value = GenerateAuthorizedID(username, accountpin.ToString());
+            usernameParameter.Value = username;
+            passwordParameter.Value = password;
+            accountpinParameter.Value = accountpin;
+            primaryemailParameter.Value = primaryemail;
+            secondaryemailParameter.Value = secondaryemail;
+            usertypeidParameter.Value = 1;
+            logincountParameter.Value = 0;
+            lastlogindateParameter.Value = Convert.ToDateTime(JFunctions.GetSystemDate());
+            authorizedidoutParameter.Direction = ParameterDirection.Output;
+            schoolidParameter.Value = GenerateSchoolID(schoolName, ownerName);
+            schoolnameParameter.Value = schoolName;
+            ownernameParameter.Value = ownerName;
+            foundedinParameter.Value = Convert.ToDateTime(JFunctions.GetSystemDate());
+            logoParameter.Value = logo;
+            schooltypeidParameter.Value = school_type_id;
+            schoolidoutParameter.Direction = ParameterDirection.Output;
+            campusidParameter.Value = GenerateCampusID(schoolName);
+            campusnameParameter.Value = campusName;
+
+          //  myDatabase.obj_sqlcommand.Parameters.Add(locidParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(countryidParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(cityidParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(postalcodeParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(locidoutParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(authorizedidParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(usernameParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(passwordParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(accountpinParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(primaryemailParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(secondaryemailParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(usertypeidParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(logincountParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(lastlogindateParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(authorizedidoutParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(schoolidParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(schoolnameParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(ownernameParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(foundedinParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(logoParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(schooltypeidParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(schoolidoutParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(campusidParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(campusnameParameter);
+
+
+
             try
             {
                 myDatabase.OpenConnection();
-                int flag = myDatabase.obj_sqlcommand.ExecuteNonQuery();
-                if (flag > 0)
+                myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "spRegisterSchool", true);
+                if (myDatabase.obj_sqlcommand.ExecuteNonQuery() > 0)
                 {
                     return "true";
+                }
+                else
+                {
+                    return "false";
                 }
 
             }
@@ -76,7 +119,6 @@ namespace FinalTemplate.source.Registration
                 myDatabase.obj_sqlcommand.Parameters.Clear();
                 myDatabase.CloseConnection();
             }
-            return "true";
         }
 
         private string GenerateCampusID(string schoolName)
@@ -99,10 +141,10 @@ namespace FinalTemplate.source.Registration
         {
             StringBuilder id = new StringBuilder();
             id.Append("C/");
-            id.Append(SchoolName.Take(3));
+            id.Append(SchoolName.Substring(0, 3));
             id.Append("/E/");
-            id.Append(OwnerName.Take(3));
-            id.Append("S/");
+            id.Append(OwnerName.Substring(0, 3));
+            id.Append("/S/");
             id.Append(JFunctions.GetSystemDate());
             id.Append("/");
             id.Append(JFunctions.GetSystemTime());

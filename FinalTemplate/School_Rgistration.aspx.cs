@@ -38,10 +38,10 @@ namespace FinalTemplate
 
             try
             {
-                result = classSchool.RegisterSchool("1", ddl_city.SelectedValue,
-                txt_postalcode.Text, txt_username.Text, txt_password.Text, txt_accountPin.Text,
+                result = classSchool.RegisterSchool(1, Convert.ToInt32(ddl_city.SelectedValue),
+                Convert.ToInt32(txt_postalcode.Text), txt_username.Text, txt_password.Text, Convert.ToInt32(txt_accountPin.Text),
                 txt_primaryEmailAddress.Text, txt_secondaryEmailAddress.Text, txt_schoolName.Text, txt_ownername.Text,
-                txt_foundedIn.Text, fileupload.FileName, ddl_schooltype.SelectedValue, txt_campusname.Text);
+                txt_foundedIn.Text, fileupload.FileName, Convert.ToInt32(ddl_schooltype.SelectedValue), txt_campusname.Text);
                 if (result == "true")
                 {
                     Response.Write("register");
