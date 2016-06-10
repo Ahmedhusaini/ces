@@ -95,7 +95,7 @@ namespace FinalTemplate
 
                      try
     {
-        conn.Open();
+        std_con.Open();
         std_cmd.ExecuteNonQuery();
         Std_id = std_cmd.Parameters["@Std_id"].Value;
         General_Id = Convert.ToInt32(std_cmd.Parameters["@General_Id"].Value);
@@ -105,6 +105,22 @@ namespace FinalTemplate
         authorized_id = std_cmd.Parameters["@authorized_id"].Value.ToString;
        
     }
+            catch (Exception ex)
+    {
+        Label1.Text = ex.Message;
+    }
+    finally
+    {
+        std_con.Close();
+    }
+
+    Label2.Text = "student_id ID: " + student_id.ToString();
+    Label4.Text = "general id " + general_id.ToString();
+    Label7.Text = "location id" + location_id.ToString();
+    Label8.Text = "class id" + class_id.ToString();
+    Label7.Text = "location id" + location_id.ToString();
+    Label8.Text = "class id" + class_id.ToString();
+}
 
         }
 
@@ -112,5 +128,4 @@ namespace FinalTemplate
         {
 
         }
-    }
 }
