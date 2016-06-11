@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.Sql;
+using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
+using System.Web;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data.Sql;
-using System.Data.SqlClient;
-using System.Configuration;
-using System.Data;
 
 namespace FinalTemplate
 {
@@ -17,7 +19,6 @@ namespace FinalTemplate
         {
             
         }
-
         protected void Button1_Click(object sender, EventArgs e)
         {
             string name = "name";
@@ -47,7 +48,6 @@ namespace FinalTemplate
             string radiobut = "radiobut";
             string fileupload = "fileupload";
 
-
             string student_connection_string = "Data Source=SHAHWAIZHASAN;Initial Catalog=ces;Integrated Security=True";
             SqlConnection std_con = new SqlConnection(student_connection_string);
             SqlCommand std_cmd = new SqlCommand("sp_student_registr", std_con);
@@ -61,7 +61,7 @@ namespace FinalTemplate
             std_cmd.Parameters.Add("@authorized_id", SqlDbType.VarChar).Direction = ParameterDirection.Output;
 
             std_cmd.Parameters.Add("@name", SqlDbType.VarChar).Value = name;
-            std_cmd.Parameters.Add("@lname", SqlDbType.VarChar).Value = lname;
+            std_cmd.Parameters.AddWithValue ("@lname", SqlDbType.VarChar);
             std_cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = email;
             std_cmd.Parameters.Add("@contact1", SqlDbType.VarChar).Value = contact1;
             std_cmd.Parameters.Add("@guardian", SqlDbType.VarChar).Value = guardian;
@@ -77,6 +77,8 @@ namespace FinalTemplate
             std_cmd.Parameters.Add("@prevchool", SqlDbType.VarChar).Value = prevchool;
             std_cmd.Parameters.Add("@preclass", SqlDbType.VarChar).Value = preclass;
             std_cmd.Parameters.Add("@fileupload", SqlDbType.VarChar).Value = fileupload;
+
+
             std_cmd.Parameters.Add("@sname", SqlDbType.VarChar).Value = sname;
             std_cmd.Parameters.Add("@Dropd",Dropd.SelectedValue);
             std_cmd.Parameters.Add("@classtxt", SqlDbType.Int).Value = classtxt;
@@ -95,8 +97,6 @@ namespace FinalTemplate
             int loc_id = 5;
             string authorized_id = "5";
 
-     try
-    {
         SqlParameter outputpareamter = new SqlParameter();
         outputpareamter.ParameterName = "@Std_id";
         outputpareamter.ParameterName = "@General_Id";
@@ -109,24 +109,11 @@ namespace FinalTemplate
         std_cmd.Parameters.Add(outputpareamter);
         std_con.Open();
         std_cmd.ExecuteNonQuery();
-       
-    }
-            catch (Exception ex)
-    {
-        Label1.Text = ex.Message;
-    }
-    finally
-    {
+
+        string sd = outputpareamter.Value.ToString();
         std_con.Close();
+
+        FileUpload1.SaveAs(Request.PhysicalApplicationPath + "/assets/" + FileUpload1.FileName.ToString());
+        }
     }
-
-    Label2.Text = "student_id ID: " + student_id.ToString();
-    Label4.Text = "general id " + general_id.ToString();
-    Label7.Text = "location id" + location_id.ToString();
-    Label8.Text = "class id" + class_id.ToString();
-    Label7.Text = "location id" + location_id.ToString();
-    Label8.Text = "class id" + class_id.ToString();
-}
-
-   }
 }

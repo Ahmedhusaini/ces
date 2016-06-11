@@ -312,7 +312,7 @@
                                         </label>
                                         <!-- p.help-block Warning !-->
                                         <br />
-                                        <asp:TextBox ID="lname" CssClass="form-control  form-input " runat="server" OnTextChanged="lname_TextChanged"></asp:TextBox>
+                                        <asp:TextBox ID="lname" CssClass="form-control  form-input " runat="server"></asp:TextBox>
 
                                     </div>
                                     <div class="col-md-6">
@@ -475,7 +475,8 @@
                                         </label>
                                         <!-- p.help-block Warning !-->
                                         <br />
-                                        <asp:FileUpload ID="fileupload" runat="server" CssClass="form-control  form-input" />
+                                        <asp:FileUpload ID="FileUpload1" runat="server" CssClass="form-control  form-input" />
+                                        <asp:FileUpload ID="fileupload" runat="server" CssClass="form-control  form-input" Visible="False" />
 
                                     </div>
                                 </div>
