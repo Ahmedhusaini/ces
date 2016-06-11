@@ -477,6 +477,11 @@ namespace FinalTemplate.source.Database
                     }
                     return lastvalue;
                 }
+                else
+                {
+                    query = "0";
+                    return query;
+                }
             }
             catch (Exception exception)
             {
