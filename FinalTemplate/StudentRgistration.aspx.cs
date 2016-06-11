@@ -29,6 +29,7 @@ namespace FinalTemplate
             string dob = "dob";
             string nation = "nation";
             string religion = "religion";
+            string city = "city";
             string country = "country";
             string address = "address";
             string postal = "postal";
@@ -69,6 +70,7 @@ namespace FinalTemplate
             std_cmd.Parameters.Add("@radiobut", SqlDbType.Int).Value = radiobut;
             std_cmd.Parameters.Add("@nation", SqlDbType.VarChar).Value = nation;
             std_cmd.Parameters.Add("@religion", SqlDbType.VarChar).Value = religion;
+            std_cmd.Parameters.Add("@city",DropDownList2.SelectedValue);
             std_cmd.Parameters.Add("@country", SqlDbType.VarChar).Value = country;
             std_cmd.Parameters.Add("@address", SqlDbType.VarChar).Value = address;
             std_cmd.Parameters.Add("@postal", SqlDbType.Int).Value = postal;
@@ -76,7 +78,7 @@ namespace FinalTemplate
             std_cmd.Parameters.Add("@preclass", SqlDbType.VarChar).Value = preclass;
             std_cmd.Parameters.Add("@fileupload", SqlDbType.VarChar).Value = fileupload;
             std_cmd.Parameters.Add("@sname", SqlDbType.VarChar).Value = sname;
-            std_cmd.Parameters.Add("@Dropd", SqlDbType.VarChar).Value = Dropd;
+            std_cmd.Parameters.Add("@Dropd",Dropd.SelectedValue);
             std_cmd.Parameters.Add("@classtxt", SqlDbType.Int).Value = classtxt;
             std_cmd.Parameters.Add("@sec", SqlDbType.Int).Value = section;
             std_cmd.Parameters.Add("@user", SqlDbType.VarChar).Value = user;
@@ -86,23 +88,27 @@ namespace FinalTemplate
             std_cmd.Parameters.Add("@pemail", SqlDbType.VarChar).Value = pemail;
             std_cmd.Parameters.Add("@semail", SqlDbType.VarChar).Value = semail;
 
-            string Std_id = 5;
+            string Std_id = "5";
             int General_Id = 5;
             int dob_id = 5;
             int class_sec_info_id = 5;
             int loc_id = 5;
-            string authorized_id = 5;
+            string authorized_id = "5";
 
-                     try
+     try
     {
+        SqlParameter outputpareamter = new SqlParameter();
+        outputpareamter.ParameterName = "@Std_id";
+        outputpareamter.ParameterName = "@General_Id";
+        outputpareamter.ParameterName = "@dob_id";
+        outputpareamter.ParameterName = "@class_sec_info_id";
+        outputpareamter.ParameterName = "@loc_id";
+        outputpareamter.ParameterName = "@authorized_id";
+        outputpareamter.SqlDbType = System.Data.SqlDbType.Int;
+        outputpareamter.Direction = System.Data.ParameterDirection.Output;
+        std_cmd.Parameters.Add(outputpareamter);
         std_con.Open();
         std_cmd.ExecuteNonQuery();
-        Std_id = std_cmd.Parameters["@Std_id"].Value;
-        General_Id = Convert.ToInt32(std_cmd.Parameters["@General_Id"].Value);
-        dob_id = Convert.ToInt32(std_cmd.Parameters["@dob_id"].Value);
-        class_sec_info_id = Convert.ToInt32(std_cmd.Parameters["@class_sec_info_id"].Value);
-        loc_id = Convert.ToInt32(std_cmd.Parameters["@loc_id"].Value);
-        authorized_id = std_cmd.Parameters["@authorized_id"].Value.ToString;
        
     }
             catch (Exception ex)
@@ -122,10 +128,5 @@ namespace FinalTemplate
     Label8.Text = "class id" + class_id.ToString();
 }
 
-        }
-
-        protected void lname_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+   }
 }
