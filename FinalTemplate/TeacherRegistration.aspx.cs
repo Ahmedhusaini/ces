@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Data;
 
 namespace FinalTemplate
 {
@@ -25,28 +26,28 @@ namespace FinalTemplate
                  cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
 
-                 cmd.Parameters.AddWithValue("@firstname", name.Text);
-                 cmd.Parameters.AddWithValue("@lastname", lname.Text);
-                 cmd.Parameters.AddWithValue("@phone", contact1.Text);
-                 cmd.Parameters.AddWithValue("@gender", radiobut.SelectedValue);
-                 //cmd.Parameters.AddWithValue("@day", day.Text);
-                 //cmd.Parameters.AddWithValue("@month", month.Text);
-                 //cmd.Parameters.AddWithValue("@year", year.Text);
-                 cmd.Parameters.AddWithValue("@nationality", nation.Text);
-                 cmd.Parameters.AddWithValue("@religion", religion.Text);
-                 cmd.Parameters.AddWithValue("@address", address.Text);
-                 cmd.Parameters.AddWithValue("@postalcode", postal.Text);
-                 cmd.Parameters.AddWithValue("@city", DropDownList2.SelectedValue);
-                 cmd.Parameters.AddWithValue("@country", country.Text);
-                 //cmd.Parameters.AddWithValue("@photo", photo.Text);
-                 cmd.Parameters.AddWithValue("@username", user.Text);
-                 cmd.Parameters.AddWithValue("@accountpin", accountp.Text);
-                 cmd.Parameters.AddWithValue("@password", pass.Text);
-                 cmd.Parameters.AddWithValue("@primary_email", pemail.Text);
-                 cmd.Parameters.AddWithValue("@secondary_email", semail.Text);
+                 cmd.Parameters.AddWithValue("@firstname",SqlDbType.VarChar).Value = name.Text;
+                 cmd.Parameters.AddWithValue("@lastname",SqlDbType.VarChar).Value = lname.Text;
+                 cmd.Parameters.AddWithValue("@phone",SqlDbType.VarChar).Value = contact1.Text;
+                 cmd.Parameters.AddWithValue("@gender",SqlDbType.VarChar).Value = radiobut.SelectedValue;
+                 cmd.Parameters.AddWithValue("@day",SqlDbType.VarChar).Value = dob.Text;
+                 cmd.Parameters.AddWithValue("@month",SqlDbType.VarChar).Value = dob.Text;
+                 cmd.Parameters.AddWithValue("@year",SqlDbType.VarChar).Value = dob.Text;
+                 cmd.Parameters.AddWithValue("@nationality",SqlDbType.VarChar).Value = nation.Text;
+                 cmd.Parameters.AddWithValue("@religion",SqlDbType.VarChar).Value = religion.Text;
+                 cmd.Parameters.AddWithValue("@address",SqlDbType.VarChar).Value = address.Text;
+                 cmd.Parameters.AddWithValue("@postalcode",SqlDbType.VarChar).Value = postal.Text;
+                 cmd.Parameters.AddWithValue("@city",SqlDbType.VarChar).Value = DropDownList2.SelectedValue;
+                 cmd.Parameters.AddWithValue("@country",SqlDbType.VarChar).Value = country.Text;
+                 cmd.Parameters.AddWithValue("@photo",SqlDbType.VarChar).Value =fileupload ;
+                 cmd.Parameters.AddWithValue("@username",SqlDbType.VarChar).Value = user.Text;
+                 cmd.Parameters.AddWithValue("@accountpin",SqlDbType.VarChar).Value = accountp.Text;
+                 cmd.Parameters.AddWithValue("@password",SqlDbType.VarChar).Value = pass.Text;
+                 cmd.Parameters.AddWithValue("@primary_email",SqlDbType.VarChar).Value = pemail.Text;
+                 cmd.Parameters.AddWithValue("@secondary_email",SqlDbType.VarChar).Value = semail.Text;
 
 
-
+             
                  SqlParameter outputparameter = new SqlParameter();
                  // outputparameter.ParameterName = "@user_type_id_out";
                  outputparameter.ParameterName = "@authorized_id_out";
@@ -57,9 +58,20 @@ namespace FinalTemplate
                  outputparameter.Direction = System.Data.ParameterDirection.Output;
                  cmd.Parameters.Add(outputparameter);
 
+                 try
+                 {
+                     con.Open();
+                     cmd.ExecuteNonQuery();
+                     string authorized_id_out = cmd.Parameters["@authorized_id_out"].Value.ToString();
+                     string dob_id_out = cmd.Parameters["@dob_id_out"].Value.ToString();
+                     string loc_id = cmd.Parameters["@loc_id"].Value.ToString();
 
-                 con.Open();
-                 cmd.ExecuteNonQuery();
+
+                 }
+                 catch (Exception ex)
+                 {
+                     throw ex;
+                 }
              }
         }
     }
