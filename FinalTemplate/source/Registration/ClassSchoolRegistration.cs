@@ -11,10 +11,12 @@ namespace FinalTemplate.source.Registration
         private Database.Database myDatabase = new Database.Database("cesConnectionString");
         public string RegisterSchool(int country_id, int city_id, int postalcode, string username, string password, int accountpin, string primaryemail, string secondaryemail, string schoolName, string ownerName, string foundedIn, string logo, int school_type_id, string campusName)
         {
+            string locationid = myDatabase.GetLastValueByColumnName("loc_id", "tbl_location");
+
 
             myDatabase.CreateConnection();
-
-           // SqlParameter locidParameter = new SqlParameter("@loc_id", SqlDbType.Int);
+            myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "spRegisterSchool", true);
+            SqlParameter locidParameter = new SqlParameter("@loc_id", SqlDbType.Int);
             SqlParameter countryidParameter = new SqlParameter("@country_id", SqlDbType.Int);
             SqlParameter cityidParameter = new SqlParameter("@city_id", SqlDbType.Int);
             SqlParameter postalcodeParameter = new SqlParameter("@postal_code", SqlDbType.Int);
@@ -40,7 +42,7 @@ namespace FinalTemplate.source.Registration
             SqlParameter campusnameParameter = new SqlParameter("@campus_name", SqlDbType.VarChar, 50);
 
 
-           // locidParameter.Value = Convert.ToInt32(myDatabase.GetLastValueByColumnName("loc_id", "tbl_location")) + 1;
+            locidParameter.Value = Convert.ToInt32(locationid) + 1;
             countryidParameter.Value = country_id;
             cityidParameter.Value = city_id;
             postalcodeParameter.Value = postalcode;
@@ -65,7 +67,7 @@ namespace FinalTemplate.source.Registration
             campusidParameter.Value = GenerateCampusID(schoolName);
             campusnameParameter.Value = campusName;
 
-          //  myDatabase.obj_sqlcommand.Parameters.Add(locidParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(locidParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(countryidParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(cityidParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(postalcodeParameter);
@@ -95,7 +97,7 @@ namespace FinalTemplate.source.Registration
             try
             {
                 myDatabase.OpenConnection();
-                myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "spRegisterSchool", true);
+
                 if (myDatabase.obj_sqlcommand.ExecuteNonQuery() > 0)
                 {
                     return "true";
@@ -124,7 +126,7 @@ namespace FinalTemplate.source.Registration
         private string GenerateCampusID(string schoolName)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append(schoolName.Substring(0, 3));
+            builder.Append(schoolName.Substring(0, 5));
             builder.Append("/CES/");
             builder.Append(JFunctions.GetSystemDate());
             builder.Append("/");
@@ -139,6 +141,8 @@ namespace FinalTemplate.source.Registration
 
         private string GenerateSchoolID(string SchoolName, string OwnerName)
         {
+            Random random = new Random();
+
             StringBuilder id = new StringBuilder();
             id.Append("C/");
             id.Append(SchoolName.Substring(0, 3));
@@ -148,6 +152,7 @@ namespace FinalTemplate.source.Registration
             id.Append(JFunctions.GetSystemDate());
             id.Append("/");
             id.Append(JFunctions.GetSystemTime());
+            id.Append(random.Next(3, 10));
             return id.ToString();
         }
     }
