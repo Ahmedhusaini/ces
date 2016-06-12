@@ -28,7 +28,8 @@ namespace FinalTemplate
                  SqlCommand cmd = new SqlCommand("SP_TEACHER", con);
                  cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                 cmd.Parameters.AddWithValue("@General_id", SqlDbType.VarChar).Direction=ParameterDirection.Output;
+
+                 cmd.Parameters.AddWithValue("@authorized_id", SqlDbType.VarChar).Value = '5';
                  cmd.Parameters.AddWithValue("@firstname",SqlDbType.VarChar).Value = name.Text;
                  cmd.Parameters.AddWithValue("@lastname",SqlDbType.VarChar).Value = lname.Text;
                  cmd.Parameters.AddWithValue("@phone",SqlDbType.VarChar).Value = contact1.Text;
@@ -49,15 +50,12 @@ namespace FinalTemplate
                  cmd.Parameters.AddWithValue("@password",SqlDbType.VarChar).Value = pass.Text;     
                  cmd.Parameters.AddWithValue("@primary_email",SqlDbType.VarChar).Value = pemail.Text;
                  cmd.Parameters.AddWithValue("@secondary_email",SqlDbType.VarChar).Value = semail.Text;
-                 cmd.Parameters.AddWithValue("@teacher_id", SqlDbType.VarChar).Direction = ParameterDirection.Output;
-                 cmd.Parameters.AddWithValue("@login_count", SqlDbType.VarChar).Value = pemail.Text;
-                 cmd.Parameters.AddWithValue("@last_login_date", SqlDbType.VarChar).Value = pemail.Text;
-                 cmd.Parameters.AddWithValue("@user_type_id", SqlDbType.Int).Direction = ParameterDirection.Output;
-                 cmd.Parameters.AddWithValue("@usertype", SqlDbType.VarChar).Value = pemail.Text;
+                 cmd.Parameters.AddWithValue("@login_count", SqlDbType.VarChar).Value = 0;
+                 cmd.Parameters.AddWithValue("@last_login_date", SqlDbType.VarChar).Value = 0;
+                 cmd.Parameters.AddWithValue("@date_of_join", SqlDbType.VarChar).Value = 0;
 
              
-                 SqlParameter outputparameter = new SqlParameter();
-                 outputparameter.ParameterName = "@user_type_id_out";
+                 SqlParameter outputparameter = new SqlParameter();               
                  outputparameter.ParameterName = "@authorized_id_out";
                  outputparameter.ParameterName = "@dob_id_out";
                  outputparameter.ParameterName = "@loc_id";
@@ -68,8 +66,6 @@ namespace FinalTemplate
                  con.Open();
                  cmd.ExecuteNonQuery();                 
 
-                     string authorized_id_out = cmd.Parameters["@authorized_id_out"].Value.ToString();
-                     con.Close();
         
              }
         }
