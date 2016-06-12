@@ -100,10 +100,10 @@
                            required:true,
                            email:true
                        },
-                     <%=fileupload.UniqueID%>:{
+                    <%-- <%=fileupload.UniqueID%>:{
                          required:true,
                          imageonly:true
-                     },
+                     },--%>
                     <%=dob.UniqueID%>: {
                         required:true
                     }
@@ -125,9 +125,9 @@
                         <%=radiobut.UniqueID%>:{
                             required:"Please select your Gender"
                         },
-                        <%=fileupload.UniqueID%>:{
+                     <%--   <%=fileupload.UniqueID%>:{
                             required:"Please upload your photo"    
-                        },
+                        },--%>
                      
                        <%=nation.UniqueID%>:{
                             required:"What's your nationality ?"
@@ -349,7 +349,7 @@
                                     </label>
                                     <!-- p.help-block Warning !-->
                                     <br />
-                                         <asp:DropDownList ID="DropDownList2" CssClass="form-control  form-input" placeholder="----Select----"  runat="server">
+                                         <asp:DropDownList ID="DropDownList2" CssClass="form-control  form-input" placeholder="----Select----"  runat="server" DataSourceID="SqlDataSource1" DataTextField="city" DataValueField="city_id">
                                        
                                           <asp:ListItem>Karachi</asp:ListItem>
                                           <asp:ListItem>Lahore</asp:ListItem>
@@ -358,6 +358,7 @@
                                          <asp:ListItem>Quetta</asp:ListItem>
                                          <asp:ListItem>Hyderabad</asp:ListItem>
                                           </asp:DropDownList>
+                                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT * FROM [tbl_city]"></asp:SqlDataSource>
                             </div>
                                 <div class="col-md-6">
                                     <label for="regname" class="control-label form-label">
@@ -366,8 +367,12 @@
                                     </label>
                                     <!-- p.help-block Warning !-->
                                     <br />
-                                    <asp:TextBox ID="country" CssClass="form-control  form-input" runat="server" Text="Pakistan"></asp:TextBox>
-
+                                     <asp:DropDownList ID="DropDownList1" CssClass="form-control  form-input" placeholder="----Select----"  runat="server" DataSourceID="SqlDataSource2" DataTextField="country" DataValueField="country_id">
+                                       
+                                       
+                                          </asp:DropDownList>
+                                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT * FROM [tbl_country]"></asp:SqlDataSource>
+                                  
                             </div>
                                  
                                 <br />
@@ -378,8 +383,8 @@
                                         </label>
                                         <!-- p.help-block Warning !-->
                                         <br />
-                                        <asp:FileUpload  ID="fileupload" runat="server"  CssClass="form-control  form-input"/>
-
+                                      <%--  <asp:FileUpload  ID="fileupload" runat="server"  CssClass="form-control  form-input"/>--%>
+                                         <asp:TextBox ID="photo" CssClass="form-control  form-input" runat="server"></asp:TextBox>
                                     </div>
                                     </div>
                                 </div>
