@@ -116,7 +116,6 @@ namespace FinalTemplate.source.Registration
             finally
             {
                 myDatabase.obj_sqlcommand.Dispose();
-                myDatabase.obj_sqlconnection.Close();
                 myDatabase.obj_sqlconnection.Dispose();
                 myDatabase.obj_sqlcommand.Parameters.Clear();
                 myDatabase.CloseConnection();
