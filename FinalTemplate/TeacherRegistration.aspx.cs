@@ -25,10 +25,13 @@ namespace FinalTemplate
              string a = ConfigurationManager.ConnectionStrings["abc"].ConnectionString;
              using (SqlConnection con = new SqlConnection(a))
              {
-                 SqlCommand cmd = new SqlCommand("SP_TEACHER", con);
+                 SqlCommand cmd = new SqlCommand("SP_TEACHERREGISTRATION", con);
                  cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-
+                 cmd.Parameters.AddWithValue("@dob_id_out", SqlDbType.Int).Direction = ParameterDirection.Output;
+                 cmd.Parameters.AddWithValue("@loc_id", SqlDbType.Int).Direction = ParameterDirection.Output;
+                 cmd.Parameters.AddWithValue("@authorized_id_out", SqlDbType.VarChar).Direction = ParameterDirection.Output;
+                 cmd.Parameters.AddWithValue("@teacher_id_out", SqlDbType.Int).Direction = ParameterDirection.Output;
                  cmd.Parameters.AddWithValue("@authorized_id", SqlDbType.VarChar).Value = '5';
                  cmd.Parameters.AddWithValue("@firstname",SqlDbType.VarChar).Value = name.Text;
                  cmd.Parameters.AddWithValue("@lastname",SqlDbType.VarChar).Value = lname.Text;
@@ -41,28 +44,21 @@ namespace FinalTemplate
                  cmd.Parameters.AddWithValue("@nationality",SqlDbType.VarChar).Value = nation.Text;
                  cmd.Parameters.AddWithValue("@religion",SqlDbType.VarChar).Value = religion.Text;
                  cmd.Parameters.AddWithValue("@address",SqlDbType.VarChar).Value = address.Text;
-                 cmd.Parameters.AddWithValue("@postalcode",SqlDbType.VarChar).Value = postal.Text;
-                 cmd.Parameters.AddWithValue("@city",SqlDbType.VarChar).Value = DropDownList2.SelectedValue;
-                 cmd.Parameters.AddWithValue("@country",SqlDbType.VarChar).Value =DropDownList1.SelectedValue;
+                 cmd.Parameters.AddWithValue("@postal_code",SqlDbType.VarChar).Value = postal.Text;
+                 cmd.Parameters.AddWithValue("@city_id",SqlDbType.Int).Value = DropDownList2.SelectedValue;
+                 cmd.Parameters.AddWithValue("@country_id",SqlDbType.Int).Value =DropDownList1.SelectedValue;
                  cmd.Parameters.AddWithValue("@photo",SqlDbType.VarChar).Value =photo.Text;
                  cmd.Parameters.AddWithValue("@username",SqlDbType.VarChar).Value = user.Text;
-                 cmd.Parameters.AddWithValue("@accountpin",SqlDbType.VarChar).Value = accountp.Text;
+                 cmd.Parameters.AddWithValue("@account_pin",SqlDbType.VarChar).Value = accountp.Text;
                  cmd.Parameters.AddWithValue("@password",SqlDbType.VarChar).Value = pass.Text;     
                  cmd.Parameters.AddWithValue("@primary_email",SqlDbType.VarChar).Value = pemail.Text;
                  cmd.Parameters.AddWithValue("@secondary_email",SqlDbType.VarChar).Value = semail.Text;
                  cmd.Parameters.AddWithValue("@login_count", SqlDbType.VarChar).Value = 0;
-                 cmd.Parameters.AddWithValue("@last_login_date", SqlDbType.VarChar).Value = 0;
-                 cmd.Parameters.AddWithValue("@date_of_join", SqlDbType.VarChar).Value = 0;
+                 cmd.Parameters.AddWithValue("@last_login_date", SqlDbType.Date).Value = 0;
+                 cmd.Parameters.AddWithValue("@date_of_join", SqlDbType.Date).Value = 0;
 
              
-                 SqlParameter outputparameter = new SqlParameter();               
-                 outputparameter.ParameterName = "@authorized_id_out";
-                 outputparameter.ParameterName = "@dob_id_out";
-                 outputparameter.ParameterName = "@loc_id";
-                 outputparameter.ParameterName = "@teacher_id_out";
-                 outputparameter.SqlDbType = System.Data.SqlDbType.Int;
-                 outputparameter.Direction = System.Data.ParameterDirection.Output;
-                 cmd.Parameters.Add(outputparameter);
+           
                  con.Open();
                  cmd.ExecuteNonQuery();                 
 
