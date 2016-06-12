@@ -28,15 +28,15 @@ namespace FinalTemplate
                  SqlCommand cmd = new SqlCommand("SP_TEACHER", con);
                  cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                // cmd.Parameters.Add("@teacher_id", SqlDbType.VarChar).Direction = ParameterDirection.Output;
-                // cmd.Parameters.Add("@general_id", SqlDbType.VarChar).Direction = ParameterDirection.Output;
+                 cmd.Parameters.AddWithValue("@teacher_id", SqlDbType.VarChar).Direction=ParameterDirection.Output;
+                 cmd.Parameters.AddWithValue("@general_id", SqlDbType.VarChar).Direction=ParameterDirection.Output;
                  cmd.Parameters.AddWithValue("@firstname",SqlDbType.VarChar).Value = name.Text;
                  cmd.Parameters.AddWithValue("@lastname",SqlDbType.VarChar).Value = lname.Text;
                  cmd.Parameters.AddWithValue("@phone",SqlDbType.VarChar).Value = contact1.Text;
                  cmd.Parameters.AddWithValue("@gender",SqlDbType.VarChar).Value = radiobut.SelectedValue;
                  cmd.Parameters.AddWithValue("@day",SqlDbType.VarChar).Value = dob.Text;
-              //   cmd.Parameters.AddWithValue("@month",SqlDbType.VarChar).Value = dob.Text;
-              //   cmd.Parameters.AddWithValue("@year",SqlDbType.VarChar).Value = dob.Text;
+             //   cmd.Parameters.AddWithValue("@month",SqlDbType.VarChar).Value = dob.Text;
+             //   cmd.Parameters.AddWithValue("@year",SqlDbType.VarChar).Value = dob.Text;
                  cmd.Parameters.AddWithValue("@nationality",SqlDbType.VarChar).Value = nation.Text;
                  cmd.Parameters.AddWithValue("@religion",SqlDbType.VarChar).Value = religion.Text;
                  cmd.Parameters.AddWithValue("@address",SqlDbType.VarChar).Value = address.Text;
@@ -46,16 +46,14 @@ namespace FinalTemplate
                  cmd.Parameters.AddWithValue("@photo",SqlDbType.VarChar).Value =fileupload ;
                  cmd.Parameters.AddWithValue("@username",SqlDbType.VarChar).Value = user.Text;
                  cmd.Parameters.AddWithValue("@accountpin",SqlDbType.VarChar).Value = accountp.Text;
-                 cmd.Parameters.AddWithValue("@password",SqlDbType.VarChar).Value = pass.Text;
+                 cmd.Parameters.AddWithValue("@password",SqlDbType.VarChar).Value = pass.Text;     
                  cmd.Parameters.AddWithValue("@primary_email",SqlDbType.VarChar).Value = pemail.Text;
                  cmd.Parameters.AddWithValue("@secondary_email",SqlDbType.VarChar).Value = semail.Text;
+                 cmd.Parameters.AddWithValue("@login_count", SqlDbType.VarChar).Value = pemail.Text;
+                 cmd.Parameters.AddWithValue("@last_login_date", SqlDbType.VarChar).Value = pemail.Text;
+                 cmd.Parameters.AddWithValue("@user_type_id", SqlDbType.Int).Direction = ParameterDirection.Output;
+                 cmd.Parameters.AddWithValue("@usertype", SqlDbType.VarChar).Value = pemail.Text;
 
-                 int teacher_id = 1;
-                 int general_id = 1;
-                 int dob_id = 1;
-                 int user_type_id = 1;
-                 int loc_id = 5;
-                 string authorized_id = "5";
              
                  SqlParameter outputparameter = new SqlParameter();
                  outputparameter.ParameterName = "@user_type_id_out";
