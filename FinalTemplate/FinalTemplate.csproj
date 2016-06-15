@@ -260,6 +260,7 @@
     <Compile Include="School_Rgistration.aspx.designer.cs">
       <DependentUpon>School_Rgistration.aspx</DependentUpon>
     </Compile>
+    <Compile Include="source\ClassStudentRegistration.cs" />
     <Compile Include="source\Database\Database.cs" />
     <Compile Include="source\Functions\JFunctions.cs" />
     <Compile Include="source\Jvalidation\Jvalidate.cs" />
@@ -412,7 +413,7 @@
     <Content Include="Register.Master" />
     <Content Include="Teacher.Master" />
     <Content Include="studentpanel.Master" />
-    <Fakes Include="Fakes\AjaxControlToolkit.fakes" />
+    <Fakes Include="assets\Fakes\AjaxControlToolkit.fakes" />
     <Content Include="assets\cesFiles\Packages.pdf" />
     <Content Include="parentpanel.Master" />
     <None Include="Web.Debug.config">
@@ -422,7 +423,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="images\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
