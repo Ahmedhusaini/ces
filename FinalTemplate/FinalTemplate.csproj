@@ -263,6 +263,7 @@
     <Compile Include="source\ClassStudentRegistration.cs" />
     <Compile Include="source\Database\Database.cs" />
     <Compile Include="source\Functions\JFunctions.cs" />
+    <Compile Include="source\Functions\Login.cs" />
     <Compile Include="source\Jvalidation\Jvalidate.cs" />
     <Compile Include="source\Registration\ClassSchoolRegistration.cs" />
     <Compile Include="StudentRgistration.aspx.cs">
