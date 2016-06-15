@@ -13,7 +13,7 @@ namespace FinalTemplate.source
     public class ClassStudentRegistration
     {
         private Database.Database myDatabase = new Database.Database("cesConnectionString2");
-        public string studentregister(int General_Id, string Std_id, int dob_id, int class_sec_info_id, string authorized_id, int country_id, int city_id, int postalcode, string username, string password, int accountpin, string primaryemail, string secondaryemail, string schoolName, string ownerName, string firstname, string lastname, string email, string phone, string guardian, string gender, string dob, string nationality, string religion, string address, string photo, string last_class_attended, int day, int month, int year, int class_id, int section_id)
+        public string studentregister(int General_Id,int school_type_id,string school_type, string Std_id, int dob_id, int class_sec_info_id, string authorized_id, int country_id, int city_id, int postalcode, string username, string password, int accountpin, string primaryemail, string secondaryemail, string schoolName, string ownerName, string firstname, string lastname, string email, string phone, string guardian, string gender, string dob, string nationality, string religion, string address, string photo, string last_class_attended, int day, int month, int year, int class_id, int section_id)
         {
             string locationid = myDatabase.GetLastValueByColumnName("loc_id", "tbl_location");
 
@@ -48,6 +48,9 @@ namespace FinalTemplate.source
             SqlParameter cityidParameter = new SqlParameter("@city_id", SqlDbType.Int);
             SqlParameter postalcodeParameter = new SqlParameter("@postal_code", SqlDbType.Int);
             SqlParameter locidoutParameter = new SqlParameter("@loc_id_out", SqlDbType.Int);
+            SqlParameter school_type_idParameter = new SqlParameter("@school_type_id", SqlDbType.Int);
+            SqlParameter school_typeParameter = new SqlParameter("@school_type", SqlDbType.NChar, 10);
+            SqlParameter schooltypeidoutParameter = new SqlParameter("@school_type_out", SqlDbType.Int);
             SqlParameter authorizedidParameter = new SqlParameter("@authorized_id", SqlDbType.VarChar, 20);
             SqlParameter usernameParameter = new SqlParameter("@username", SqlDbType.VarChar, 50);
             SqlParameter passwordParameter = new SqlParameter("@password", SqlDbType.VarChar, 50);
@@ -88,6 +91,9 @@ namespace FinalTemplate.source
             cityidParameter.Value = city_id;
             postalcodeParameter.Value = postalcode;
             locidoutParameter.Direction = ParameterDirection.Output;
+            school_type_idParameter.Value = school_type_id;
+            school_typeParameter.Value = school_type;
+            schooltypeidoutParameter.Direction = ParameterDirection.Output;
             authorizedidParameter.Value = GenerateAuthorizedID(username, accountpin.ToString());
             usernameParameter.Value = username;
             passwordParameter.Value = password;
@@ -127,6 +133,9 @@ namespace FinalTemplate.source
             myDatabase.obj_sqlcommand.Parameters.Add(cityidParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(postalcodeParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(locidoutParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(schoolidParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(school_typeParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(schooltypeidoutParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(authorizedidParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(usernameParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(passwordParameter);
