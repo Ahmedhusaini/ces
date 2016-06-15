@@ -54,8 +54,8 @@ namespace FinalTemplate
                  cmd.Parameters.AddWithValue("@primary_email",SqlDbType.VarChar).Value = pemail.Text;
                  cmd.Parameters.AddWithValue("@secondary_email",SqlDbType.VarChar).Value = semail.Text;
                  cmd.Parameters.AddWithValue("@login_count", SqlDbType.VarChar).Value = 0;
-                 cmd.Parameters.AddWithValue("@last_login_date", SqlDbType.Date).Value = 0;
-                 cmd.Parameters.AddWithValue("@date_of_join", SqlDbType.Date).Value = 0;
+                 cmd.Parameters.AddWithValue("@last_login_date", SqlDbType.Date).Value = DateTime.Now.ToString("");
+                 cmd.Parameters.AddWithValue("@date_of_join", SqlDbType.Date).Value = DateTime.Now.ToString("");
 
              
            
