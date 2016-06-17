@@ -44,6 +44,25 @@
                });
            });
 
+           $(document).ready(function() {
+               $('.rlp').removeClass("rlp");
+               $('.register-form').css('margin-left', '25%');
+               centerform();
+               centerText( <%=ddl_type.ClientID%>);
+               centerText( <%=txt_username.ClientID%>);
+               centerText( <%=txt_password.ClientID%>);
+           });
+
+           function centerform() {
+               var windowHeight = $(window).height();
+               var formheight = $('div.register-wrappe').height();
+               var newheight = windowHeight - formheight;
+               $('div.register-wrappe').css('padding-top',newheight+" px");
+           }
+
+           function centerText(control) {
+               $(control).css('text-align', 'center');
+           }
     </script> 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="RegisterPlaceHolder1" runat="server">
@@ -75,14 +94,7 @@
                                     </label>
                                     <!--p.help-block Warning !-->
                                     <br />
-                              <asp:DropDownList ID="DropDownList2" CssClass="form-control form-input" Width="331px" placeholder="----Select----" runat="server">
-                                    <asp:ListItem></asp:ListItem>
-                                    <asp:ListItem>Admin</asp:ListItem>
-                                    <asp:ListItem>Teacher</asp:ListItem>
-                                    <asp:ListItem>Student</asp:ListItem>
-                                    <asp:ListItem>Parent</asp:ListItem>
-                                  
-                                  </asp:DropDownList>
+                              <asp:DropDownList ID="ddl_type" CssClass="form-control form-input" Width="331px" placeholder="----Select----" runat="server" OnSelectedIndexChanged="ddl_type_SelectedIndexChanged"></asp:DropDownList>
                                 </div>
 
                                 <div style="padding-left:131px">
@@ -93,7 +105,7 @@
                                     </label>
                                     <!--p.help-block Warning !-->
                                     <br />
-                                    <asp:TextBox ID="name" CssClass="form-control  form-input"  placeholder="Email id or User name"  Width="331px" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txt_username" CssClass="form-control  form-input"  placeholder="Email id or User name"  Width="331px" runat="server"></asp:TextBox>
                                 </div>
                                 
                                       
@@ -105,7 +117,7 @@
                                     </label>
                                     <!-- p.help-block Warning !-->
                                     <br />
-                                    <asp:TextBox ID="lname" CssClass="form-control  form-input "  placeholder="Password or Pin code " Width="331px" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txt_password" CssClass="form-control  form-input "  placeholder="Password or Pin code " Width="331px" runat="server"></asp:TextBox>
 
                                 </div>
                                                            
@@ -113,7 +125,7 @@
                         <div class="register-submit">
                             <button type="submit" onclick="window.location.href='index.html'" class="btn btn-register btn-green">
                                 <span>
-                                    <asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" /></span></button>
+                                    <asp:Button ID="Button1" runat="server" Text="Sign In" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>
                      </div>          
                  </asp:Panel>                
                     </div>            
