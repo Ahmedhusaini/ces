@@ -20,10 +20,19 @@ namespace FinalTemplate
         {
             if (ddl_type.SelectedIndex == 0)
             {
+                Response.Write("Please choose a user type");
+            }
+            else if (ddl_type.SelectedIndex == 1)
+            {
+                Login(txt_username.Text, txt_password.Text);
+                Response.Redirect("~/Admin.aspx");
+            }
+            else if (ddl_type.SelectedIndex == 2)
+            {
 
             }
         }
-        protected internal string Login(string username, string password, string redirectToPage)
+        protected internal string Login(string username, string password)
         {
             if ((username == "" || password == "") || (username == null || password == null))
             {

@@ -94,7 +94,7 @@
                                     </label>
                                     <!--p.help-block Warning !-->
                                     <br />
-                              <asp:DropDownList ID="ddl_type" CssClass="form-control form-input" Width="331px" placeholder="----Select----" runat="server" OnSelectedIndexChanged="ddl_type_SelectedIndexChanged"></asp:DropDownList>
+                              <asp:DropDownList ID="ddl_type" CssClass="form-control form-input" Width="331px" placeholder="----Select----" runat="server" ></asp:DropDownList>
                                 </div>
 
                                 <div style="padding-left:131px">
