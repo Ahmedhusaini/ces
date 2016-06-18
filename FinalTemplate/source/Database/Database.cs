@@ -373,8 +373,12 @@ namespace FinalTemplate.source.Database
                     lastValue++;
                 }
             }
-            catch { }
-            finally { CloseConnection(); }
+            finally
+            {
+                CloseConnection();
+                obj_reader.Dispose();
+                obj_sqlcommand.Dispose();
+            }
 
             return finalResult;
 
