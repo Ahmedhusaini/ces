@@ -13,7 +13,7 @@ namespace FinalTemplate.source
     public class ClassStudentRegistration
     {
         private Database.Database myDatabase = new Database.Database("cesConnectionString2");
-        public string studentregister(int General_Id,int school_type_id,string school_type, string Std_id, int dob_id, int class_sec_info_id, string authorized_id, int country_id, int city_id, int postalcode, string username, string password, int accountpin, string primaryemail, string secondaryemail, string schoolName, string ownerName, string firstname, string lastname, string email, string phone, string guardian, string gender, string dob, string nationality, string religion, string address, string photo, string last_class_attended, int day, int month, int year, int class_id, int section_id)
+        public string studentregister(int General_Id,int school_type_id,string school_id2, string school_type, string Std_id, int dob_id, int class_sec_info_id, string authorized_id, int country_id, int city_id, int postalcode, string username, string password, int accountpin, string primaryemail, string secondaryemail, string schoolName, string ownerName, string firstname, string lastname, string email, string phone, string guardian, string gender, string dob, string nationality, string religion, string address, string photo, string last_class_attended, int day, int month, int year, int class_id, int section_id)
         {
             string locationid = myDatabase.GetLastValueByColumnName("loc_id", "tbl_location");
 
@@ -50,6 +50,7 @@ namespace FinalTemplate.source
             SqlParameter locidoutParameter = new SqlParameter("@loc_id_out", SqlDbType.Int);
             SqlParameter school_type_idParameter = new SqlParameter("@school_type_id", SqlDbType.Int);
             SqlParameter school_typeParameter = new SqlParameter("@school_type", SqlDbType.NChar, 10);
+            SqlParameter school_id2Parameter = new SqlParameter("@school_id2", SqlDbType.VarChar, 50);
             SqlParameter schooltypeidoutParameter = new SqlParameter("@school_type_out", SqlDbType.Int);
             SqlParameter authorizedidParameter = new SqlParameter("@authorized_id", SqlDbType.VarChar, 20);
             SqlParameter usernameParameter = new SqlParameter("@username", SqlDbType.VarChar, 50);
@@ -93,6 +94,7 @@ namespace FinalTemplate.source
             locidoutParameter.Direction = ParameterDirection.Output;
             school_type_idParameter.Value = school_type_id;
             school_typeParameter.Value = school_type;
+            school_id2Parameter.Value = school_id2;
             schooltypeidoutParameter.Direction = ParameterDirection.Output;
             authorizedidParameter.Value = GenerateAuthorizedID(username, accountpin.ToString());
             usernameParameter.Value = username;
@@ -135,6 +137,7 @@ namespace FinalTemplate.source
             myDatabase.obj_sqlcommand.Parameters.Add(locidoutParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(schoolidParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(school_typeParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(school_id2Parameter);
             myDatabase.obj_sqlcommand.Parameters.Add(schooltypeidoutParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(authorizedidParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(usernameParameter);
@@ -213,5 +216,15 @@ namespace FinalTemplate.source
             id.Append(random.Next(3, 10));
             return id.ToString();
         }
+
+     internal string studentregister(int p1, int p2, int p3, string p4, string p5, int p6, string p7, string p8, string p9, string p10, int p11, string p12, string p13, string p14, string p15, string p16, string p17, string p18, int p19, string p20, int p21, string p22, string p23, string p24, string p25, string p26)
+     {
+         throw new NotImplementedException();
      }
+
+     internal string studentregister(int p1, int p2, int p3, string p4, string p5, int p6, string p7, string p8, string p9, string p10, int p11, string p12, string p13, string p14, string p15, string p16, string p17, string p18, int p19, string p20, int p21, string p22, string p23, string p24, string p25, string p26, string p27)
+     {
+         throw new NotImplementedException();
+     }
+    }
   }

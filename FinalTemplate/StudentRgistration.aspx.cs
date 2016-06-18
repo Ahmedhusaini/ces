@@ -126,15 +126,17 @@ namespace FinalTemplate
             //    std_con.Close();
             //}
 
-            ClassStudentRegistration classSchool = new ClassStudentRegistration ();
+            ClassStudentRegistration classStudent = new ClassStudentRegistration ();
             string result = string.Empty;
 
             try
             {
-                //result = classSchool.RegisterSchool(1, Convert.ToInt32(ddl_city.SelectedValue),
-                //Convert.ToInt32(txt_postalcode.Text), txt_username.Text, txt_password.Text, Convert.ToInt32(txt_accountPin.Text),
-                //txt_primaryEmailAddress.Text, txt_secondaryEmailAddress.Text, txt_schoolName.Text, txt_ownername.Text,
-                //txt_foundedIn.Text, fileupload.FileName, Convert.ToInt32(ddl_schooltype.SelectedValue), txt_campusname.Text);
+                result = classStudent.studentregister(1, Convert.ToInt32(Dropd.SelectedValue),
+                Convert.ToInt32(postal.Text),user.Text,pass.Text, Convert.ToInt32(accountp.Text),
+                pemail.Text,semail.Text,sname.Text,FileUpload1.FileName,
+                Convert.ToInt32(Dropd.SelectedValue),preclass.Text,prevchool.Text,address.Text,country.Text,religion.Text,nation.Text,dob.Text
+                ,Convert.ToInt32(contact2.Text),guardian.Text,Convert.ToInt32(contact1),emaill.Text,lname.Text,name.Text,classtxt.Text,
+                section.Text,radiobut.SelectedValue);
                 if (result == "true")
                 {
                     Response.Write("register");
