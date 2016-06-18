@@ -42,12 +42,15 @@
     <%--GridView--%>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
-            <asp:GridView runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Std_id" DataSourceID="SqlDataSource2" GridLines="Horizontal" Height="176px" Width="715px" AllowPaging="True" AllowSorting="True" AutoGenerateSelectButton="True" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px">
+            <asp:GridView runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Std_id" DataSourceID="SqlDataSource2" GridLines="Horizontal" Height="176px" Width="715px" AllowPaging="True" AllowSorting="True" AutoGenerateSelectButton="True" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" OnSelectedIndexChanged="Unnamed1_SelectedIndexChanged">
                 <Columns>
                     <asp:BoundField DataField="Std_id" HeaderText="Std_id" SortExpression="Std_id" ReadOnly="True" />
                     <asp:BoundField DataField="Guardian_Name" HeaderText="Guardian_Name" SortExpression="Guardian_Name" />
+                    <asp:BoundField DataField="Previous_school" HeaderText="Previous_school" SortExpression="Previous_school" />
                     <asp:BoundField DataField="General_Id" HeaderText="General_Id" SortExpression="General_Id" />
                     <asp:BoundField DataField="class_sec_info_id" HeaderText="class_sec_info_id" SortExpression="class_sec_info_id" />
+                    <asp:BoundField DataField="last_class_attended" HeaderText="last_class_attended" SortExpression="last_class_attended" />
+                    <asp:BoundField DataField="authorized_id" HeaderText="authorized_id" SortExpression="authorized_id" />
                     <asp:BoundField DataField="school_id" HeaderText="school_id" SortExpression="school_id" />
                 </Columns>
                 <FooterStyle BackColor="White" ForeColor="#333333" />
@@ -61,7 +64,7 @@
                 <SortedDescendingHeaderStyle BackColor="#275353" />
            </asp:GridView>
 
-           <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="SELECT * FROM [tbl_Student_Reg]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="cesConnectionString2" SelectCommand="SELECT * FROM [tbl_Student_Reg]"></asp:SqlDataSource>
   
         <!-- CHOOSE COURSES-->
     <br />
