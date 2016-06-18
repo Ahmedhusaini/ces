@@ -12,10 +12,19 @@ namespace FinalTemplate.source.Registration
         public string RegisterSchool(int country_id, int city_id, int postalcode, string username, string password, int accountpin, string primaryemail, string secondaryemail, string schoolName, string ownerName, string foundedIn, string logo, int school_type_id, string campusName)
         {
             string locationid = myDatabase.GetLastValueByColumnName("loc_id", "tbl_location");
-
-
             myDatabase.CreateConnection();
+
+
+
+
+
+
             myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "spRegisterSchool", true);
+
+
+
+
+
             SqlParameter locidParameter = new SqlParameter("@loc_id", SqlDbType.Int);
             SqlParameter countryidParameter = new SqlParameter("@country_id", SqlDbType.Int);
             SqlParameter cityidParameter = new SqlParameter("@city_id", SqlDbType.Int);
@@ -116,7 +125,6 @@ namespace FinalTemplate.source.Registration
             finally
             {
                 myDatabase.obj_sqlcommand.Dispose();
-                myDatabase.obj_sqlconnection.Close();
                 myDatabase.obj_sqlconnection.Dispose();
                 myDatabase.obj_sqlcommand.Parameters.Clear();
                 myDatabase.CloseConnection();
@@ -152,6 +160,7 @@ namespace FinalTemplate.source.Registration
             id.Append(JFunctions.GetSystemDate());
             id.Append("/");
             id.Append(JFunctions.GetSystemTime());
+            id.Append("/");
             id.Append(random.Next(3, 10));
             return id.ToString();
         }
