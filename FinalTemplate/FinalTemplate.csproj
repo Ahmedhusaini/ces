@@ -229,7 +229,9 @@
     <Content Include="TeacherRegistration.aspx" />
     <Content Include="TeacherPanel.aspx" />
     <Content Include="Teacherprofile.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Logintype.aspx.cs">
@@ -264,6 +266,7 @@
     <Compile Include="source\Functions\JFunctions.cs" />
     <Compile Include="source\Jvalidation\Jvalidate.cs" />
     <Compile Include="source\Registration\ClassSchoolRegistration.cs" />
+    <Compile Include="source\Registration\CParentRegistration.cs" />
     <Compile Include="StudentRgistration.aspx.cs">
       <DependentUpon>StudentRgistration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
