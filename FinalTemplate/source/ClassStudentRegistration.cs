@@ -9,7 +9,7 @@ using FinalTemplate.source.Functions;
 using FinalTemplate.source;
 
 namespace FinalTemplate.source
-{
+{ 
     public class ClassStudentRegistration
     {
         private Database.Database myDatabase = new Database.Database("cesConnectionString2");
@@ -217,14 +217,6 @@ namespace FinalTemplate.source
             return id.ToString();
         }
 
-     internal string studentregister(int p1, int p2, int p3, string p4, string p5, int p6, string p7, string p8, string p9, string p10, int p11, string p12, string p13, string p14, string p15, string p16, string p17, string p18, int p19, string p20, int p21, string p22, string p23, string p24, string p25, string p26)
-     {
-         throw new NotImplementedException();
-     }
-
-     internal string studentregister(int p1, int p2, int p3, string p4, string p5, int p6, string p7, string p8, string p9, string p10, int p11, string p12, string p13, string p14, string p15, string p16, string p17, string p18, int p19, string p20, int p21, string p22, string p23, string p24, string p25, string p26, string p27)
-     {
-         throw new NotImplementedException();
-     }
+    
     }
   }
