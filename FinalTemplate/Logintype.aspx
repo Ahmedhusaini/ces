@@ -63,6 +63,10 @@
            function centerText(control) {
                $(control).css('text-align', 'center');
            }
+
+           function invisiblediv() {
+               $('#divinvisible').delay(3200).fadeOut(1000);
+           }
     </script> 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="RegisterPlaceHolder1" runat="server">
@@ -82,11 +86,16 @@
 
                     <div class="register-title rlp-title">create your account and join us!</div>
                     <div class="register-title rlp-title">Sign In</div>
+                    <div id="divinvisible" class="register-title rlp-title">
+                        <asp:Label runat="server" ID="lbl_error">error message</asp:Label>
+                    </div>
                    
                     <asp:Panel ID="Panel1" runat="server">
                         <div class="register-form bg-w-form rlp-form">  
-                                    
+                                 
+                            
                             <div style="padding-left:131px">
+                                 
 
                                     <label for="regname" class="control-label form-label">
                                         Account Type<span class="highlight">*<br />
@@ -125,7 +134,7 @@
                         <div class="register-submit">
                             <button type="submit" onclick="window.location.href='index.html'" class="btn btn-register btn-green">
                                 <span>
-                                    <asp:Button ID="Button1" runat="server" Text="Sign In" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>
+                                    <asp:Button ID="Button1" OnClientClick="invisiblediv()" runat="server" Text="Sign In" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>
                      </div>          
                  </asp:Panel>                
                     </div>            

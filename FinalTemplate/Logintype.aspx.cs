@@ -1,15 +1,17 @@
-﻿using FinalTemplate.source.Database;
-using FinalTemplate.source.Functions;
+﻿using FinalTemplate.source.Functions;
 using System;
+using System.Drawing;
 
 namespace FinalTemplate
 {
     public partial class Logintype : System.Web.UI.Page
     {
-        private Database myDatabase = new Database("cesConnectionString");
-        private string valideUsername, validePasswoerd;
+        private Login myLogin = new Login();
+        private string loginresult;
         protected void Page_Load(object sender, EventArgs e)
         {
+            lbl_error.Visible = false;
+
             if (!IsPostBack)
             {
                 JFunctions.BindDropDownList(ddl_type, "usertype", "usertype_id", "select * from tbl_usertype");
@@ -18,36 +20,44 @@ namespace FinalTemplate
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
+            loginresult = myLogin.UserLogin(txt_username.Text, txt_password.Text);
             if (ddl_type.SelectedIndex == 0)
             {
-                Response.Write("Please choose a user type");
+                lbl_error.Visible = true;
+                lbl_error.Text = "Please choose a user type";
+                lbl_error.ForeColor = Color.Red;
             }
-            else if (ddl_type.SelectedIndex == 1)
+            else
             {
-                Login(txt_username.Text, txt_password.Text);
-                Response.Redirect("~/Admin.aspx");
-            }
-            else if (ddl_type.SelectedIndex == 2)
-            {
-
+                if (txt_username.Text == "" || txt_username.Text == string.Empty || txt_password.Text == "" || txt_password.Text == string.Empty)
+                {
+                    lbl_error.Visible = true;
+                    lbl_error.Text = "username and password fields can not be null or empty.";
+                    lbl_error.ForeColor = Color.SteelBlue;
+                }
+                else
+                {
+                    if (loginresult == "true")
+                    {
+                        if (ddl_type.SelectedIndex == 1)
+                        {
+                            if (loginresult == "true")
+                                Response.Redirect("~/Admin.aspx");
+                        }
+                        else if (ddl_type.SelectedIndex == 2)
+                        {
+                            if (loginresult == "true")
+                                Response.Redirect("~/Admin.aspx");
+                        }
+                    }
+                    else
+                    {
+                        lbl_error.Text = "username and password combination is incorrect.";
+                        lbl_error.Visible = true;
+                        lbl_error.ForeColor = Color.Gold;
+                    }
+                }
             }
         }
-        protected internal string Login(string username, string password)
-        {
-            if ((username == "" || password == "") || (username == null || password == null))
-            {
-                return "username/password can not be null or empty.";
-            }
-            string[] columns = { "username", "password" };
-            string[,] returnedValues;
-            returnedValues = myDatabase.SelectQuery("tbl_authorized_users", columns);
-            if (String.IsNullOrEmpty(returnedValues[0, 0]))
-                return "no user found";
-            valideUsername = returnedValues[0, 0];
-            validePasswoerd = returnedValues[0, 1];
-            return "true";
-
-        }
-
     }
 }
