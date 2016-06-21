@@ -508,12 +508,7 @@
                                         <!-- p.help-block Warning !-->
                                         <br />
                                         <asp:DropDownList ID="ddl_city" CssClass="form-control  form-input" placeholder="----Select----" runat="server">
-                                            <asp:ListItem>Karachi</asp:ListItem>
-                                            <asp:ListItem>Lahore</asp:ListItem>
-                                            <asp:ListItem>Peshawar</asp:ListItem>
-                                            <asp:ListItem>Islamabad</asp:ListItem>
-                                            <asp:ListItem>Quetta</asp:ListItem>
-                                            <asp:ListItem>Hyderabad</asp:ListItem>
+                                            
 
                                         </asp:DropDownList>
                                     </div>
