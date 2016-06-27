@@ -20,7 +20,9 @@ namespace FinalTemplate
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-            loginresult = myLogin.UserLogin(txt_username.Text, txt_password.Text);
+            myLogin.valideUsername = "\'"+txt_username.Text+"\'";
+            myLogin.validePasswoerd = "\'" + txt_password.Text + "\'";
+            loginresult = myLogin.UserLogin(myLogin.valideUsername, myLogin.validePasswoerd);
             if (ddl_type.SelectedIndex == 0)
             {
                 lbl_error.Visible = true;
@@ -41,13 +43,11 @@ namespace FinalTemplate
                     {
                         if (ddl_type.SelectedIndex == 1)
                         {
-                            if (loginresult == "true")
-                                Response.Redirect("~/Admin.aspx");
+                            Response.Redirect("~/Admin.aspx");
                         }
                         else if (ddl_type.SelectedIndex == 2)
                         {
-                            if (loginresult == "true")
-                                Response.Redirect("~/Admin.aspx");
+                            Response.Write("nai hoga bhai ");
                         }
                     }
                     else
