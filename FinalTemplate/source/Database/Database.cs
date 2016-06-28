@@ -103,7 +103,7 @@ namespace FinalTemplate.source.Database
         public void CloseConnection()
         {
             obj_sqlconnection.Close();
-
+            obj_sqlconnection.Dispose();
         }
         #endregion
         //this method will execute insert query.
@@ -532,7 +532,49 @@ namespace FinalTemplate.source.Database
         #endregion
         #endregion
         #region TableQueries
+        public string GetAuthorizedID(string username,string password)
+        {
+            string returnvalue= string.Empty;
+            string[] username_array={username};
+            string[] password_array={password};
+            if (Jvalidate.FilterBlackLIstKeywords(username_array) && Jvalidate.FilterBlackLIstKeywords(password_array))
+            {
+                Query.Clear();
+                Query.Append("select authorized_id from tbl_authorized_users where username = '" + username + "' and password = '" + password + "'");
+                try
+                {
+                    CreateConnection();
+                    InitializeSQLCommandObject(obj_sqlconnection, Query.ToString());
+                    OpenConnection();
+                    obj_reader = obj_sqlcommand.ExecuteReader();
+                    if (obj_reader.HasRows)
+                    {
+                        while (obj_reader.Read())
+                        {
+                            returnvalue = obj_reader[0].ToString();
+                        }
+                    }
+                    else
+                    {
+                        returnvalue = "no rows found";
+                    }
 
+                }
+                catch (Exception ex)
+                {
+                    returnvalue = ex.ToString();
+                }
+                finally
+                {
+                    CloseConnection();
+                    obj_reader.Dispose();
+                    obj_sqlcommand.Dispose();
+                    Query.Clear();
+                }
+            }
+                return returnvalue.ToString();
+            
+        }
         public string GetLastValueByColumnName(string columnName, string tableName)
         {
             string query = "select top 1 " + columnName + " from " + tableName + " order by " + columnName + " desc;";

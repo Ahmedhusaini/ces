@@ -1,13 +1,15 @@
 ﻿using System;
-
+using FinalTemplate.source.Functions;
 namespace FinalTemplate.source.Functions
 {
     public class Login
     {
-        private Database.Database myDatabase = new Database.Database("cesConnectionString");
+        
+        public Database.Database myDatabase = new Database.Database("cesConnectionString");
         public string valideUsername, validePasswoerd;
         public string UserLogin(string username, string password)
         {
+            
             string[] columns = { "username", "password" };
             string[] wherecolumns = { "username","password"};
             string[] whereoperators ={"=","="};

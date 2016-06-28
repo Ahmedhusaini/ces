@@ -16,7 +16,15 @@ namespace FinalTemplate
             {
                 JFunctions.BindDropDownList(ddl_type, "usertype", "usertype_id", "select * from tbl_usertype");
                 ddl_type.Items.Insert(0, "--- Select User Type ---");
+                if (Session["userid"]!=null)
+                {
+                    Session.Remove("userid");
+                    lbl_error.Text = "You are logged in, you need to go back to your logged in page by loggin in again.";
+                    lbl_error.Visible = true;
+                    lbl_error.ForeColor = Color.Blue;                   
+                }
             }
+            
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -43,7 +51,9 @@ namespace FinalTemplate
                     {
                         if (ddl_type.SelectedIndex == 1)
                         {
+                            Session["userid"] = myLogin.myDatabase.GetAuthorizedID(myLogin.valideUsername,myLogin.validePasswoerd);
                             Response.Redirect("~/Admin.aspx");
+
                         }
                         else if (ddl_type.SelectedIndex == 2)
                         {
