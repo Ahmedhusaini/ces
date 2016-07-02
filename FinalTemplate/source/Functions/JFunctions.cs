@@ -19,12 +19,15 @@ namespace FinalTemplate.source.Functions
         public static void SendEmail(string To,string Subject,string MessageBody)
         {
             string smtpUsername = "jahangeer.ahmed11@gmail.com";
+            //i changed my original password to this to check the email, later i will change this back to my original password.
+            //if you want to send email from your own email id change the id and password to yours and email will be sent through
+            //your email address.
             string smtpPassword = "abbasikhan";
             int smtpPort = 25; 
             try
             {
                 MailMessage message = new MailMessage();
-                message.From = new MailAddress(smtpUsername,"CES - Technical Team");
+                message.From = new MailAddress(smtpUsername,"CES - User Registration Team");
                 message.To.Add(To);
                 message.Subject = Subject;
                 message.Body = MessageBody;
