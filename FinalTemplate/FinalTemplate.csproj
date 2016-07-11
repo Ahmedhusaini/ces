@@ -234,6 +234,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="source\Functions\Jfunctionstudents.cs" />
     <Compile Include="Logintype.aspx.cs">
       <DependentUpon>Logintype.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

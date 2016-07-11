@@ -91,6 +91,7 @@ namespace FinalTemplate.source.Database
         {
             var ConfiguredString = ConfigurationManager.ConnectionStrings[ConnectionString].ConnectionString;
             obj_sqlconnection = new SqlConnection(ConfiguredString);
+
         }
 
         //Open database connection.    

@@ -6,17 +6,21 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Text;
 using FinalTemplate.source.Functions;
+using FinalTemplate.source.Registration;
 using FinalTemplate.source;
+using System.Data.ProviderBase;
+using System.Web.UI.WebControls;
 
 namespace FinalTemplate.source
 { 
     public class ClassStudentRegistration
     {
         private Database.Database myDatabase = new Database.Database("cesConnectionString2");
+
         public string studentregister(string firstname, string lastname, string email, string phone, string guardian, string contact2,
              string gender, string dob, string nationality, string religion, int city_id, int country_id, string address, int postalcode,
              string previousschool, string last_class_attended, string photo, string schoolName,string school_type, int class_id, 
-            int section_id,string username,int accountpin, string password, string primaryemail, string secondaryemail)
+            int section_id,string username,int accountpin,string repass, string password, string primaryemail, string secondaryemail)
        
         {
 
@@ -104,7 +108,7 @@ namespace FinalTemplate.source
             secondaryemailParameter.Value = secondaryemail;
             usertypeidParameter.Value = 1;
             logincountParameter.Value = 0;
-            lastlogindateParameter.Value = Convert.ToDateTime(JFunctions.GetSystemDate());
+            lastlogindateParameter.Value = Convert.ToDateTime(Jfunctionstudents.GetSystemDate());
             authorizedidoutParameter.Direction = ParameterDirection.Output;
 
             myDatabase.obj_sqlcommand.Parameters.Add(General_IdParameter);
@@ -177,6 +181,7 @@ namespace FinalTemplate.source
                 myDatabase.CloseConnection();
             }
  }
+
         private string GenerateclasssecinfoID(int class_id, int section_id)
         {
             Random random = new Random();
@@ -215,7 +220,5 @@ namespace FinalTemplate.source
             id.Append(random.Next(3, 10));
             return id.ToString();
         }
-
-    
     }
   }

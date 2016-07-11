@@ -1,8 +1,12 @@
 ﻿using FinalTemplate.source;
 using FinalTemplate.source.Functions;
+using FinalTemplate.source.Registration;
 using System;
 using System.Data.SqlClient;
+using System.Data.ProviderBase;
 using System.Data.Sql;
+using System.Collections;
+
 
 namespace FinalTemplate
 {
@@ -12,8 +16,8 @@ namespace FinalTemplate
         {
             if (!IsPostBack)
             {
-                JFunctions.BindDropDownList(DropDownList2, "city", "city_id", "select * from tbl_city");
-                JFunctions.BindDropDownList(Dropd, "school_type", "school_type_id", "select * from tbl_school_type");
+                Jfunctionstudents.BindDropDownList(DropDownList2, "city", "city_id", "select * from tbl_city");
+                Jfunctionstudents.BindDropDownList(Dropd, "school_type", "school_type_id", "select * from tbl_school_type");
             }
         }
         protected void Button1_Click(object sender, EventArgs e)
@@ -149,9 +153,15 @@ namespace FinalTemplate
             try
             {
 
-                result = classStudent.studentregister(name, lname, emaill, contact1, guardian, contact2, radiobut.SelectedValue,
-                    dob, nation, religion, Convert.ToInt32(DropDownList2.SelectedValue), country, address, postal, prevchool, preclass, FileUpload1.FileName, sname,
-                    Convert.ToInt32(Dropd.SelectedValue), classtxt, section, user, accountp, pass, repass, pemail, semail);
+                result = classStudent.studentregister(Convert.ToString(name), Convert.ToString(lname),
+                    Convert.ToString(emaill), Convert.ToString(contact1),Convert.ToString(guardian),
+                    Convert.ToString( contact2), radiobut.SelectedValue,Convert.ToString(dob), 
+                    Convert.ToString(nation), Convert.ToString(religion), Convert.ToInt32(DropDownList2.SelectedValue),
+                    Convert.ToInt32(country), Convert.ToString(address), Convert.ToInt32(postal), Convert.ToString(prevchool),
+                    Convert.ToString(preclass), FileUpload1.FileName, Convert.ToString(sname), Convert.ToString(Dropd.SelectedValue),
+                    Convert.ToInt32(classtxt), Convert.ToInt32(section),
+                    Convert.ToString(user),Convert.ToInt32( accountp),Convert.ToString( pass),
+                    Convert.ToString( repass),Convert.ToString( pemail),Convert.ToString( semail));
 
                 if (result == "true")
                 {
