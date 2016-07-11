@@ -1,6 +1,8 @@
 ﻿using FinalTemplate.source;
 using FinalTemplate.source.Functions;
 using System;
+using System.Data.SqlClient;
+using System.Data.Sql;
 
 namespace FinalTemplate
 {
@@ -70,7 +72,7 @@ namespace FinalTemplate
             //std_cmd.Parameters.AddWithValue("@postalcode", SqlDbType.Int).Value = postal;
             //std_cmd.Parameters.AddWithValue("@previous_chool", SqlDbType.VarChar).Value = prevchool;
             //std_cmd.Parameters.AddWithValue("@last_class_attended", SqlDbType.VarChar).Value = preclass;
-            //std_cmd.Parameters.AddWithValue("@photo", SqlDbType.VarChar).Value =FileUpload1.FileName;
+            //std_cmd.Parameters.AddWithValue("@photo", SqlDbType.VarChar).Value = FileUpload1.FileName;
             ////if (FileUpload1.HasFile)
             ////{
             ////    //FileUpload1.PostedFile.SaveAs(Server.MapPath("~/assets/") + FileUpload1.FileName);
@@ -140,24 +142,17 @@ namespace FinalTemplate
             //std_cmd.ExecuteNonQuery();
             //std_con.Close();
 
-            // jahangeer work         
+           
             ClassStudentRegistration classStudent = new ClassStudentRegistration();
             string result = string.Empty;
 
             try
             {
-                /*  shahwaiz ye comment remove kar dena aur agar commit mein conflict ay tou jo tumhara wala kam hua va hai wo keep karna 
-                 * means jis mein pora sahi se kam hua va hai wo wali file
-                 * 
-                 * result = classStudent.studentregister(1, Convert.ToInt32(Dropd.SelectedValue),
-                Convert.ToInt32(postal.Text), user.Text, pass.Text, Convert.ToInt32(accountp.Text),
-                pemail.Text, semail.Text, sname.Text, FileUpload1.FileName,
-                Convert.ToInt32(Dropd.SelectedValue), preclass.Text, prevchool.Text, address.Text, country.Text, religion.Text, nation.Text, dob.Text
-                , Convert.ToInt32(contact2.Text), guardian.Text, Convert.ToInt32(contact1), emaill.Text, lname.Text, name.Text, classtxt.Text,
-                section.Text, radiobut.SelectedValue);
-                 * 
-                 * 
-                 */
+
+                result = classStudent.studentregister(name, lname, emaill, contact1, guardian, contact2, radiobut.SelectedValue,
+                    dob, nation, religion, Convert.ToInt32(DropDownList2.SelectedValue), country, address, postal, prevchool, preclass, FileUpload1.FileName, sname,
+                    Convert.ToInt32(Dropd.SelectedValue), classtxt, section, user, accountp, pass, repass, pemail, semail);
+
                 if (result == "true")
                 {
                     Response.Write("register");
