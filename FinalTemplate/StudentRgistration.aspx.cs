@@ -156,12 +156,12 @@ namespace FinalTemplate
             
             try
             {
-                result = classStudent.studentregister(1, Convert.ToInt32(Dropd.SelectedValue),
-                Convert.ToInt32(postal.Text), user.Text, pass.Text, Convert.ToInt32(accountp.Text),
-                pemail.Text, semail.Text, sname.Text, FileUpload1.FileName,
-                Convert.ToInt32(Dropd.SelectedValue), preclass.Text, prevchool.Text, address.Text, country.Text, religion.Text, nation.Text, dob.Text
-                , Convert.ToInt32(contact2.Text), guardian.Text, Convert.ToInt32(contact1), emaill.Text, lname.Text, name.Text, classtxt.Text,
-                section.Text, radiobut.SelectedValue);
+                result = classStudent.studentregister(1, name.Text, lname.Text, emaill.Text,
+                     Convert.ToInt32(contact1), guardian.Text, Convert.ToInt32(contact2.Text), radiobut.SelectedValue, dob.Text,
+                     nation.Text, religion.Text, Convert.ToInt32(DropDownList2.SelectedValue), country.Text, address.Text,
+                     Convert.ToInt32(postal.Text), prevchool.Text, preclass.Text, FileUpload1.FileName, sname.Text,
+                      Convert.ToInt32(Dropd.SelectedValue),classtxt.Text,section.Text,
+                      user.Text, Convert.ToInt32(accountp.Text), pass.Text, pemail.Text, semail.Text);
                 if (result == "true")
                 {
                     Response.Write("register");
