@@ -126,7 +126,7 @@
                                     </label>
                                     <!-- p.help-block Warning !-->
                                     <br />
-                                    <asp:TextBox ID="txt_password" CssClass="form-control  form-input "  placeholder="Password or Pin code " Width="331px" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txt_password" CssClass="form-control  form-input "  placeholder="Password or Pin code " Width="331px" runat="server" TextMode="Password"></asp:TextBox>
 
                                 </div>
                                                            

@@ -1,4 +1,5 @@
 ﻿using System;
+
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -17,7 +18,13 @@ namespace FinalTemplate
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string date = "23/03/2016";
+            string day, month, year;
+            day = date.Substring(0, 2);
+            month = date.Substring(3, 2);
+            year = date.Substring(date.Length - 4);
+            Response.Write(day + "<br/> " + month + "<br/> " + year);
+  
         }
 
         protected void Button1_Click(object sender, EventArgs e)

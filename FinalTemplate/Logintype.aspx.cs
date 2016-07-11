@@ -10,6 +10,8 @@ namespace FinalTemplate
         private string loginresult;
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+
             lbl_error.Visible = false;
 
             if (!IsPostBack)
