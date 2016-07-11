@@ -12,19 +12,9 @@ namespace FinalTemplate.source.Registration
         public string RegisterSchool(int country_id, int city_id, int postalcode, string username, string password, int accountpin, string primaryemail, string secondaryemail, string schoolName, string ownerName, string foundedIn, string logo, int school_type_id, string campusName)
         {
             string locationid = myDatabase.GetLastValueByColumnName("loc_id", "tbl_location");
+
             myDatabase.CreateConnection();
-
-
-
-
-
-
             myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "spRegisterSchool", true);
-
-
-
-
-
             SqlParameter locidParameter = new SqlParameter("@loc_id", SqlDbType.Int);
             SqlParameter countryidParameter = new SqlParameter("@country_id", SqlDbType.Int);
             SqlParameter cityidParameter = new SqlParameter("@city_id", SqlDbType.Int);
@@ -100,8 +90,6 @@ namespace FinalTemplate.source.Registration
             myDatabase.obj_sqlcommand.Parameters.Add(schoolidoutParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(campusidParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(campusnameParameter);
-
-
 
             try
             {

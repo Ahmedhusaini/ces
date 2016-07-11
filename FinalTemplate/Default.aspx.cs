@@ -11,7 +11,13 @@ namespace FinalTemplate
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                if (Session["userid"] != null)
+                {
+                    Response.Redirect("~/Admin.aspx");
+                }
+            }
         }
     }
 }

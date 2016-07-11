@@ -17,10 +17,15 @@
                     <div class="container">
                         <div class="slider-banner-wrapper"><h3 data-wow-delay="0.5s" class="sub-title wow fadeInUp">Login Date:03/08/2016 &nbsp;&nbsp; Login Time: 09:23:00 AM</h3>
 
-                            <h1 data-wow-delay="0.5s" class="main-title wow fadeInUp">School Name</h1>
+                            <h1 data-wow-delay="0.5s" class="main-title wow fadeInUp"><asp:Label Text="school name" ID="lbl_schoolid" runat="server"></asp:Label></h1>
 
                             <div class="group-button">
-                                <button data-wow-delay="1.3s" data-wow-duration="1s" class="btn btn-transition-3 wow fadeInLeft"><span>View Public Profile</span></button>
+                                <button data-wow-delay="1.3s" data-wow-duration="1s" class="btn btn-transition-3 wow fadeInLeft">
+                                    <span>
+                                        <asp:Button runat="server" ID="btn_logout" Text="LOGOUT" OnClick="btn_logout_Click" Style="background-color: transparent" BorderStyle="None" />
+                                    </span>
+
+                                </button>
                                 <button data-wow-delay="1.3s" data-wow-duration="1s" class="btn btn-green-3 wow fadeInRight"><span>Update Profile Details</span></button>
                             </div>
                         </div>

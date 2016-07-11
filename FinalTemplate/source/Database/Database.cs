@@ -103,7 +103,7 @@ namespace FinalTemplate.source.Database
         public void CloseConnection()
         {
             obj_sqlconnection.Close();
-
+            obj_sqlconnection.Dispose();
         }
         #endregion
         //this method will execute insert query.
@@ -333,7 +333,6 @@ namespace FinalTemplate.source.Database
             #endregion
             return RowsAffected;
         }
-
         public string[,] SelectQuery(string TableName, string[] Columns)
         {
 
@@ -383,6 +382,77 @@ namespace FinalTemplate.source.Database
             return finalResult;
 
         }
+        public string[,] SelectQuery(string TableName, string[] Columns,string[] whereColumn,string[] whereOperator,string[] whereValue,string[] multipleWhereClauseOperator)
+        {
+
+            int columnCount = 0;
+            string[,] finalResult = { { }, { } };
+            string CountQuery = "select count(*) from " + TableName;
+            Query.Append("Select ");
+            for (int i = 0; i < Columns.Length; i++)
+            {
+                if (i + 1 == Columns.Length)
+                    Query.Append(Columns[i]);
+                else
+                    Query.Append(Columns[i] + ",");
+            }
+            Query.Append(" from ");
+            Query.Append(TableName);
+            Query.Append(" where ");
+            for (int i = 0; i < whereColumn.Length; i++)
+            {
+                if (whereColumn.Length == 1)
+                {
+                    Query.Append(" " + whereColumn[i] + " " + whereOperator[i] + " " + whereValue[i]);
+                }
+                else
+                {
+                    if (i == (whereColumn.Length - 1))
+                    {
+                        Query.Append(" " + whereColumn[i] + " " + whereOperator[i] + " " + whereValue[i]);
+                    }
+                    else
+                    {
+                        Query.Append(" " + whereColumn[i] + " " + whereOperator[i] + " " + whereValue[i] + multipleWhereClauseOperator[i] +" ");
+                    }
+                }                
+            }
+
+            CreateConnection();
+            try
+            {
+                OpenConnection();
+                InitializeSQLCommandObject(GetCurrentConnection, Query.ToString());
+                this.obj_sqlcommand.CommandText = CountQuery;
+                var rowCount = this.obj_sqlcommand.ExecuteScalar();
+                columnCount = Columns.Length;
+                int lastValue = 0;
+                finalResult = new string[Convert.ToInt32(rowCount), columnCount];
+                this.obj_sqlcommand.CommandText = Query.ToString();
+                this.obj_reader = this.obj_sqlcommand.ExecuteReader();
+                while (obj_reader.Read())
+                {
+
+                    for (int i = 0; i < columnCount; i++)
+                    {
+                        finalResult[lastValue, i] = obj_reader[i].ToString();
+                    }
+                    lastValue++;
+                }
+
+            }
+            finally
+            {
+                CloseConnection();
+                //obj_reader.Dispose();
+                obj_sqlcommand.Dispose();
+            }
+
+            return finalResult;
+
+        }
+
+
         #region StoreProcedures
 
         public bool ExecuteProcedure(string spName, string[] parametersName, object[] parametersValues)
@@ -462,7 +532,49 @@ namespace FinalTemplate.source.Database
         #endregion
         #endregion
         #region TableQueries
+        public string GetAuthorizedID(string username,string password)
+        {
+            string returnvalue= string.Empty;
+            string[] username_array={username};
+            string[] password_array={password};
+            if (Jvalidate.FilterBlackLIstKeywords(username_array) && Jvalidate.FilterBlackLIstKeywords(password_array))
+            {
+                Query.Clear();
+                Query.Append("select authorized_id from tbl_authorized_users where username = '" + username + "' and password = '" + password + "'");
+                try
+                {
+                    CreateConnection();
+                    InitializeSQLCommandObject(obj_sqlconnection, Query.ToString());
+                    OpenConnection();
+                    obj_reader = obj_sqlcommand.ExecuteReader();
+                    if (obj_reader.HasRows)
+                    {
+                        while (obj_reader.Read())
+                        {
+                            returnvalue = obj_reader[0].ToString();
+                        }
+                    }
+                    else
+                    {
+                        returnvalue = "no rows found";
+                    }
 
+                }
+                catch (Exception ex)
+                {
+                    returnvalue = ex.ToString();
+                }
+                finally
+                {
+                    CloseConnection();
+                    obj_reader.Dispose();
+                    obj_sqlcommand.Dispose();
+                    Query.Clear();
+                }
+            }
+                return returnvalue.ToString();
+            
+        }
         public string GetLastValueByColumnName(string columnName, string tableName)
         {
             string query = "select top 1 " + columnName + " from " + tableName + " order by " + columnName + " desc;";

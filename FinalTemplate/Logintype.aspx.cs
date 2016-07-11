@@ -1,53 +1,75 @@
-﻿using FinalTemplate.source.Database;
-using FinalTemplate.source.Functions;
+﻿using FinalTemplate.source.Functions;
 using System;
+using System.Drawing;
 
 namespace FinalTemplate
 {
     public partial class Logintype : System.Web.UI.Page
     {
-        private Database myDatabase = new Database("cesConnectionString");
-        private string valideUsername, validePasswoerd;
+        private Login myLogin = new Login();
+        private string loginresult;
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+
+            lbl_error.Visible = false;
+
             if (!IsPostBack)
             {
                 JFunctions.BindDropDownList(ddl_type, "usertype", "usertype_id", "select * from tbl_usertype");
                 ddl_type.Items.Insert(0, "--- Select User Type ---");
+                if (Session["userid"]!=null)
+                {
+                    Session.Remove("userid");
+                    lbl_error.Text = "You are logged in, you need to go back to your logged in page by loggin in again.";
+                    lbl_error.Visible = true;
+                    lbl_error.ForeColor = Color.Blue;                   
+                }
             }
+            
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
+            myLogin.valideUsername = "\'"+txt_username.Text+"\'";
+            myLogin.validePasswoerd = "\'" + txt_password.Text + "\'";
+            loginresult = myLogin.UserLogin(myLogin.valideUsername, myLogin.validePasswoerd);
             if (ddl_type.SelectedIndex == 0)
             {
-                Response.Write("Please choose a user type");
+                lbl_error.Visible = true;
+                lbl_error.Text = "Please choose a user type";
+                lbl_error.ForeColor = Color.Red;
             }
-            else if (ddl_type.SelectedIndex == 1)
+            else
             {
-                Login(txt_username.Text, txt_password.Text);
-                Response.Redirect("~/Admin.aspx");
-            }
-            else if (ddl_type.SelectedIndex == 2)
-            {
+                if (txt_username.Text == "" || txt_username.Text == string.Empty || txt_password.Text == "" || txt_password.Text == string.Empty)
+                {
+                    lbl_error.Visible = true;
+                    lbl_error.Text = "username and password fields can not be null or empty.";
+                    lbl_error.ForeColor = Color.SteelBlue;
+                }
+                else
+                {
+                    if (loginresult == "true")
+                    {
+                        if (ddl_type.SelectedIndex == 1)
+                        {
+                            Session["userid"] = myLogin.myDatabase.GetAuthorizedID(myLogin.valideUsername,myLogin.validePasswoerd);
+                            Response.Redirect("~/Admin.aspx");
 
+                        }
+                        else if (ddl_type.SelectedIndex == 2)
+                        {
+                            Response.Write("nai hoga bhai ");
+                        }
+                    }
+                    else
+                    {
+                        lbl_error.Text = "username and password combination is incorrect.";
+                        lbl_error.Visible = true;
+                        lbl_error.ForeColor = Color.Gold;
+                    }
+                }
             }
         }
-        protected internal string Login(string username, string password)
-        {
-            if ((username == "" || password == "") || (username == null || password == null))
-            {
-                return "username/password can not be null or empty.";
-            }
-            string[] columns = { "username", "password" };
-            string[,] returnedValues;
-            returnedValues = myDatabase.SelectQuery("tbl_authorized_users", columns);
-            if (String.IsNullOrEmpty(returnedValues[0, 0]))
-                return "no user found";
-            valideUsername = returnedValues[0, 0];
-            validePasswoerd = returnedValues[0, 1];
-            return "true";
-
-        }
-
     }
 }

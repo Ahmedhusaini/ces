@@ -13,17 +13,14 @@ namespace FinalTemplate.source
     public class ClassStudentRegistration
     {
         private Database.Database myDatabase = new Database.Database("cesConnectionString2");
-        public string studentregister(int school_type_id,int class_id,string school_type,string Std_id,
-            int country_id, int city_id, int postalcode, string username, string password, int accountpin,
-            string primaryemail, string secondaryemail, string schoolName, string ownerName, string firstname,
-            string lastname, string email, string phone, string guardian, string gender,string dob_id,
-            string nationality, string religion, string address, string photo, int generalid,
-            /*int day, int month, int year,*/ int section_id)
+        public string studentregister(string firstname, string lastname, string email, string phone, string guardian, string contact2,
+             string gender, string dob, string nationality, string religion, int city_id, int country_id, string address, int postalcode,
+             string previousschool, string last_class_attended, string photo, string schoolName,string school_type, int class_id, 
+            int section_id,string username,int accountpin, string password, string primaryemail, string secondaryemail)
+       
         {
+
             string locationid = myDatabase.GetLastValueByColumnName("loc_id", "tbl_location");
-            //string generalid = myDatabase.GetLastValueByColumnName("General_Id", "tbl_general");
-            //string dob_id = myDatabase.GetLastValueByColumnName("dob_id", "tbl_dob");
-            //string Std_id = myDatabase.GetLastValueByColumnName("Std_id", "tbl_Student_Reg");
 
             myDatabase.CreateConnection();
             myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "sp_student_registr", true);
@@ -70,7 +67,7 @@ namespace FinalTemplate.source
             SqlParameter lastlogindateParameter = new SqlParameter("@last_login_date", SqlDbType.Date);
             SqlParameter authorizedidoutParameter = new SqlParameter("@authorized_id_out", SqlDbType.VarChar, 20);
 
-            General_IdParameter.Value = Convert.ToInt32(generalid) + 1; ;
+
             firstnameParameter.Value = firstname;
             lastnameParameter.Value = lastname;
             NationalityParameter.Value = nationality;
@@ -80,14 +77,13 @@ namespace FinalTemplate.source
             phoneParameter.Value = phone;
             addressParameter.Value = address;
             generalidoutParameter.Direction = ParameterDirection.Output;
-            dobidParameter.Value = Convert.ToInt32(dob_id) + 1;
-            //dayParameter.Value = day;
-            //monthParameter.Value = month;
-            //yearParameter.Value = year;
+
+            dobidParameter.Value = Convert.ToInt32(dob) + 1;
             locidoutParameter.Direction = ParameterDirection.Output;
-            stdidParameter.Value = Convert.ToInt32(Std_id) + 1;
+
+            stdidParameter.Value = Convert.ToInt32(accountpin) + 1; //generate id
             gurdianParameter.Value = guardian;
-            schoolidParameter.Value = GenerateSchoolID(schoolName, ownerName);
+            schoolidParameter.Value = (schoolName);
             stdidoutParameter.Direction = ParameterDirection.Output;
             classsecinfoidParameter.Value = GenerateclasssecinfoID(class_id, section_id);
             classidParameter.Value = class_id;
@@ -98,7 +94,6 @@ namespace FinalTemplate.source
             cityidParameter.Value = city_id;
             postalcodeParameter.Value = postalcode;
             locidoutParameter.Direction = ParameterDirection.Output;
-            school_type_idParameter.Value = school_type_id;
             school_typeParameter.Value = school_type;
             schooltypeidoutParameter.Direction = ParameterDirection.Output;
             authorizedidParameter.Value = GenerateAuthorizedID(username, accountpin.ToString());
