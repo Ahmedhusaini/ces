@@ -18,12 +18,6 @@ namespace FinalTemplate
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string date = "23/03/2016";
-            string day, month, year;
-            day = date.Substring(0, 2);
-            month = date.Substring(3, 2);
-            year = date.Substring(date.Length - 4);
-            Response.Write(day + "<br/> " + month + "<br/> " + year);
   
         }
 
@@ -77,14 +71,15 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@usertype_id", SqlDbType.Int).Value = 3;
                 cmd.Parameters.AddWithValue("@date_of_join", SqlDbType.Date).Value = DateTime.Now.ToString("");
 
-
-
-
                 con.Open();
                 cmd.ExecuteNonQuery();
 
-
             }
+
+            Response.Redirect("Teacherpanel.aspx");
+
         }
+
+              
     }
 }
