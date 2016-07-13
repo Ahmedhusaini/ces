@@ -57,9 +57,9 @@ namespace FinalTemplate.source
             SqlParameter cityidParameter = new SqlParameter("@city_id", SqlDbType.Int);
             SqlParameter postalcodeParameter = new SqlParameter("@postal_code", SqlDbType.Int);
             SqlParameter locidoutParameter = new SqlParameter("@loc_id_out", SqlDbType.Int);
-            SqlParameter school_type_idParameter = new SqlParameter("@school_type_id", SqlDbType.Int);
-            SqlParameter school_typeParameter = new SqlParameter("@school_type", SqlDbType.NChar, 10);
-            SqlParameter schooltypeidoutParameter = new SqlParameter("@school_type_out", SqlDbType.Int);
+            //SqlParameter school_type_idParameter = new SqlParameter("@school_type_id", SqlDbType.Int);
+            //SqlParameter school_typeParameter = new SqlParameter("@school_type", SqlDbType.NChar, 10);
+            //SqlParameter schooltypeidoutParameter = new SqlParameter("@school_type_out", SqlDbType.Int);
             SqlParameter authorizedidParameter = new SqlParameter("@authorized_id", SqlDbType.VarChar, 20);
             SqlParameter usernameParameter = new SqlParameter("@username", SqlDbType.VarChar, 50);
             SqlParameter passwordParameter = new SqlParameter("@password", SqlDbType.VarChar, 50);
@@ -81,11 +81,11 @@ namespace FinalTemplate.source
             phoneParameter.Value = phone;
             addressParameter.Value = address;
             generalidoutParameter.Direction = ParameterDirection.Output;
-
             dobidParameter.Value = Convert.ToInt32(dob) + 1;
             locidoutParameter.Direction = ParameterDirection.Output;
 
-            stdidParameter.Value = Convert.ToInt32(accountpin) + 1; //generate id
+            stdidParameter.Value = Generatestudentid(schoolName,username,class_id,section_id);
+           
             gurdianParameter.Value = guardian;
             schoolidParameter.Value = (schoolName);
             stdidoutParameter.Direction = ParameterDirection.Output;
@@ -98,8 +98,8 @@ namespace FinalTemplate.source
             cityidParameter.Value = city_id;
             postalcodeParameter.Value = postalcode;
             locidoutParameter.Direction = ParameterDirection.Output;
-            school_typeParameter.Value = school_type;
-            schooltypeidoutParameter.Direction = ParameterDirection.Output;
+            //school_typeParameter.Value = school_type;
+            //schooltypeidoutParameter.Direction = ParameterDirection.Output;
             authorizedidParameter.Value = GenerateAuthorizedID(username, accountpin.ToString());
             usernameParameter.Value = username;
             passwordParameter.Value = password;
@@ -140,8 +140,8 @@ namespace FinalTemplate.source
             myDatabase.obj_sqlcommand.Parameters.Add(postalcodeParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(locidoutParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(schoolidParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(school_typeParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(schooltypeidoutParameter);
+            //myDatabase.obj_sqlcommand.Parameters.Add(school_typeParameter);
+            //myDatabase.obj_sqlcommand.Parameters.Add(schooltypeidoutParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(authorizedidParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(usernameParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(passwordParameter);
@@ -214,11 +214,29 @@ namespace FinalTemplate.source
             id.Append("/E/");
             id.Append(OwnerName.Substring(0, 3));
             id.Append("/S/");
-            id.Append(JFunctions.GetSystemDate());
+            id.Append(Jfunctionstudents.GetSystemDate());
             id.Append("/");
-            id.Append(JFunctions.GetSystemTime());
+            id.Append(Jfunctionstudents.GetSystemTime());
             id.Append(random.Next(3, 10));
             return id.ToString();
         }
+     private string Generatestudentid(string SchoolName, string username,int class_id ,int section_id)
+     {
+         Random random = new Random();
+
+         StringBuilder id = new StringBuilder();
+         id.Append("C/");
+         id.Append(SchoolName.Substring(0, 3));
+         id.Append("/E/");
+         id.Append(username.Substring(0, 3));
+         id.Append("/S/");
+         id.Append(username.Substring(0, 3));
+         id.Append("/S/");
+         id.Append(Jfunctionstudents.GetSystemDate());
+         id.Append("/");
+         id.Append(Jfunctionstudents.GetSystemTime());
+         id.Append(random.Next(3, 10));
+         return id.ToString();
+     }
     }
   }
