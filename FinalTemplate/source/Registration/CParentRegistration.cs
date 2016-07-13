@@ -19,11 +19,7 @@ namespace FinalTemplate.source.Registration
             myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "SP_PARENTREGISTRATIONN", true);
             SqlParameter locidParameter = new SqlParameter("@loc_id", SqlDbType.Int);
             SqlParameter countryidParameter = new SqlParameter("@country_id", SqlDbType.Int);
-            SqlParameter countryParameter = new SqlParameter("@country", SqlDbType.VarChar, 50);
-            SqlParameter countryidoutParameter = new SqlParameter("@country_id_out", SqlDbType.Int);
             SqlParameter cityidParameter = new SqlParameter("@city_id", SqlDbType.Int);
-            SqlParameter cityParameter = new SqlParameter("@city", SqlDbType.VarChar, 50);
-            SqlParameter cityoutParameter = new SqlParameter("@city_id_out", SqlDbType.Int);
             SqlParameter postalcodeParameter = new SqlParameter("@postal_code", SqlDbType.Int);
             SqlParameter locidoutParameter = new SqlParameter("@loc_id_out", SqlDbType.Int);
             SqlParameter authorizedidParameter = new SqlParameter("@authorized_id", SqlDbType.VarChar, 20);
@@ -56,7 +52,7 @@ namespace FinalTemplate.source.Registration
             SqlParameter parentoutParameter = new SqlParameter("parent_id_out", SqlDbType.VarChar, 20);
             SqlParameter dobidParameter = new SqlParameter("@dob_id", SqlDbType.Int);
             SqlParameter dayParameter = new SqlParameter("@day", SqlDbType.Int);
-            SqlParameter monthParameter = new SqlParameter("@month", SqlDbType.VarChar, 20);
+            SqlParameter monthParameter = new SqlParameter("@month", SqlDbType.Int);
             SqlParameter yearParameter = new SqlParameter("@year", SqlDbType.Int);
             SqlParameter dobidoutParameter = new SqlParameter("@dob_id_out", SqlDbType.Int);
 
@@ -92,11 +88,7 @@ namespace FinalTemplate.source.Registration
 
             myDatabase.obj_sqlcommand.Parameters.Add(locidParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(countryidParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(countryParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(countryidoutParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(cityidParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(cityParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(cityoutParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(cityidParameter);    
             myDatabase.obj_sqlcommand.Parameters.Add(postalcodeParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(locidoutParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(authorizedidParameter);

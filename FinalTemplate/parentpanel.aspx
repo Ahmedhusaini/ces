@@ -40,7 +40,7 @@
                     </div>
                 </div>
     <%--GridView--%>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<%--            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
             <asp:GridView runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Std_id" DataSourceID="SqlDataSource2" GridLines="Horizontal" Height="176px" Width="715px" AllowPaging="True" AllowSorting="True" AutoGenerateSelectButton="True" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" OnSelectedIndexChanged="Unnamed1_SelectedIndexChanged">
                 <Columns>
@@ -65,7 +65,7 @@
            </asp:GridView>
 
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="cesConnectionString2" SelectCommand="SELECT * FROM [tbl_Student_Reg]"></asp:SqlDataSource>
-  
+  --%>
         <!-- CHOOSE COURSES-->
     <br />
                         <div class="group-title-index"><h4 class="top-title">Your Childerns</h4>
