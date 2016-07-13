@@ -20,7 +20,12 @@
                             <h1 data-wow-delay="0.5s" class="main-title wow fadeInUp"><asp:Label Text="school name" ID="lbl_schoolid" runat="server"></asp:Label></h1>
 
                             <div class="group-button">
-                                <button data-wow-delay="1.3s" data-wow-duration="1s" class="btn btn-transition-3 wow fadeInLeft"><span><asp:Button runat="server" ID="btn_logout" Text="LOGOUT" OnClick="btn_logout_Click" /></span></button>
+                                <button data-wow-delay="1.3s" data-wow-duration="1s" class="btn btn-transition-3 wow fadeInLeft">
+                                    <span>
+                                        <asp:Button runat="server" ID="btn_logout" Text="LOGOUT" OnClick="btn_logout_Click" Style="background-color: transparent" BorderStyle="None" />
+                                    </span>
+
+                                </button>
                                 <button data-wow-delay="1.3s" data-wow-duration="1s" class="btn btn-green-3 wow fadeInRight"><span>Update Profile Details</span></button>
                             </div>
                         </div>

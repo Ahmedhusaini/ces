@@ -8,7 +8,7 @@
 
         $.validator.addMethod("lettersonly", function (value, element) {
             return this.optional(element) || /^[a-z\s]+$/i.test(value);
-        }, "Letters only please");
+        }, "Letters only please");      
         $.validator.addMethod("phone", function (phone_number, element) {
             phone_number = phone_number.replace(/\s+/g, "");
             return this.optional(element) || phone_number.length > 9 &&
@@ -461,7 +461,7 @@
                                                  <div class="register-submit">
                             <button type="submit"   class="btn btn-register btn-green">
                                 <span>
-                                    <asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>
+                                    <asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" OnClientClick="TeacherRegistration.target='_blank';" /></span></button>
                      </div> 
                             </div>                            
                         </div>                           
