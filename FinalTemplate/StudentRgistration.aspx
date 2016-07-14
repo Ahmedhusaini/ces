@@ -517,6 +517,7 @@
                                 </label>
                                 <!-- p.help-block Warning !-->
                                 <br />
+                                <asp:TextBox ID="classtxt" CssClass="form-control  form-input" runat="server"></asp:TextBox>
                             </div>
 
                             <div class="col-md-6">
@@ -526,7 +527,7 @@
                                 </label>
                                 <!-- p.help-block Warning !-->
                                 <br />
-                                <asp:TextBox ID="classtxt" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                
                                 <asp:TextBox ID="section" CssClass="form-control  form-input" runat="server"></asp:TextBox>
                             </div>
                             <div class="section pricing">
