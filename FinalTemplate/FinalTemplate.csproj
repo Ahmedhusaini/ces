@@ -262,7 +262,6 @@
     </Compile>
     <Compile Include="ParentsPanel.aspx.cs">
       <DependentUpon>ParentsPanel.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ParentsPanel.aspx.designer.cs">
       <DependentUpon>ParentsPanel.aspx</DependentUpon>
