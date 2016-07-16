@@ -23,6 +23,7 @@ namespace FinalTemplate
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+           
             string date = dob.Text;
             string a = ConfigurationManager.ConnectionStrings["abc"].ConnectionString;
             Database db = new Database("abc");
@@ -37,24 +38,24 @@ namespace FinalTemplate
                 SqlCommand cmd = new SqlCommand("SP_TEACHERREGISTRATION", con);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@general_id", SqlDbType.Int).Value =general_id +1;
-                cmd.Parameters.AddWithValue("@dob_id", SqlDbType.Int).Value =dob_id +1;
+                cmd.Parameters.AddWithValue("@general_id", SqlDbType.Int).Value = general_id + 1;
+                cmd.Parameters.AddWithValue("@dob_id", SqlDbType.Int).Value = dob_id + 1;
                 cmd.Parameters.AddWithValue("@dob_id_out", SqlDbType.Int).Direction = ParameterDirection.Output;
-                cmd.Parameters.AddWithValue("@loc_id", SqlDbType.Int).Value = loc_id +1;
+                cmd.Parameters.AddWithValue("@loc_id", SqlDbType.Int).Value = loc_id + 1;
                 cmd.Parameters.AddWithValue("@loc_id_out", SqlDbType.Int).Direction = ParameterDirection.Output;
-                cmd.Parameters.AddWithValue("@teacher_id", SqlDbType.Int).Value = teacher_id +1;
+                cmd.Parameters.AddWithValue("@teacher_id", SqlDbType.Int).Value = teacher_id + 1;
                 cmd.Parameters.AddWithValue("@teacher_id_out", SqlDbType.Int).Direction = ParameterDirection.Output;
                 cmd.Parameters.AddWithValue("@authorized_id", SqlDbType.VarChar).Value = authorized_id + 1;
-                cmd.Parameters.AddWithValue("@authorized_id_out", SqlDbType.VarChar).Direction = ParameterDirection.Output;
+                cmd.Parameters.AddWithValue("@authorized_id_out", SqlDbType.VarChar).Direction =ParameterDirection.Output;
 
                 cmd.Parameters.AddWithValue("@firstname", SqlDbType.VarChar).Value = name.Text;
                 cmd.Parameters.AddWithValue("@lastname", SqlDbType.VarChar).Value = lname.Text;
                 cmd.Parameters.AddWithValue("@phone", SqlDbType.VarChar).Value = contact1.Text;
                 cmd.Parameters.AddWithValue("@cnic_no", SqlDbType.VarChar).Value = nic.Text;
                 cmd.Parameters.AddWithValue("@gender", SqlDbType.VarChar).Value = radiobut.SelectedValue;
-                cmd.Parameters.AddWithValue("@day", SqlDbType.Int).Value =Convert.ToInt32( date.Substring(0,2));
-                cmd.Parameters.AddWithValue("@month", SqlDbType.Int).Value =Convert.ToInt32( date.Substring(0,2)) ;
-                cmd.Parameters.AddWithValue("@year", SqlDbType.Int).Value =Convert.ToInt32( date.Substring(0,4));
+                cmd.Parameters.AddWithValue("@day", SqlDbType.Int).Value = Convert.ToInt32(date.Substring(0, 2));
+                cmd.Parameters.AddWithValue("@month", SqlDbType.Int).Value = Convert.ToInt32(date.Substring(0, 2));
+                cmd.Parameters.AddWithValue("@year", SqlDbType.Int).Value = Convert.ToInt32(date.Substring(0, 4));
                 cmd.Parameters.AddWithValue("@nationality", SqlDbType.VarChar).Value = nation.Text;
                 cmd.Parameters.AddWithValue("@religion", SqlDbType.VarChar).Value = religion.Text;
                 cmd.Parameters.AddWithValue("@address", SqlDbType.VarChar).Value = address.Text;
@@ -72,17 +73,14 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@usertype_id", SqlDbType.Int).Value = 3;
                 cmd.Parameters.AddWithValue("@date_of_join", SqlDbType.Date).Value = DateTime.Now.ToString("");
 
-    
+
                 cmd.ExecuteNonQuery();
                 con.Close();
-        
-                Response.Redirect("Teacherpanel.aspx");
-
-               
             }
 
            
-
+                Label1.Text = "REGISTERED SUCCESSFULLY";
+            
         }
 
               
