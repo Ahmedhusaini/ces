@@ -9,7 +9,7 @@
         <Columns>
             <asp:TemplateField HeaderText="FILE">
                 <ItemTemplate>
-                    <asp:LinkButton ID="LinkButton1" runat="server" CommandName="Download"  Text='<%# Eval("FILE") %>'></asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton1" runat="server" CommandName="Download" CommandArgument='<%# Eval("FILE") %>' Text='<%# Eval("FILE") %>'></asp:LinkButton>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:BoundField DataField="SIZE" HeaderText="FILE SIZE" />

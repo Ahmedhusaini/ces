@@ -50,7 +50,7 @@ namespace FinalTemplate
              
                 Response.Clear();
                 Response.ContentType = "application/octect-stream";
-                Response.AppendHeader("content-disposition", "" + e.CommandArgument);
+                Response.AppendHeader("content-disposition", "filename=" + e.CommandArgument);
                 Response.TransmitFile(Server.MapPath("/files/") + e.CommandArgument);
                 Response.End(); 
                 }          
