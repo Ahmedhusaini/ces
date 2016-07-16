@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -45,15 +47,19 @@ namespace FinalTemplate
         {
             if (e.CommandName == "Download")
             {
+             
                 Response.Clear();
                 Response.ContentType = "application/octect-stream";
-                Response.AppendHeader("content-disposition","filename=" + e.CommandArgument);
+                Response.AppendHeader("content-disposition", "" + e.CommandArgument);
                 Response.TransmitFile(Server.MapPath("/files/") + e.CommandArgument);
-                Response.End();
-
+                Response.End(); 
+                }          
+           
+            else
+            {
+                Label1.ForeColor=System.Drawing.Color.Red;
+                Label1.Text = "FILE NOT FOUND";
             }
         }
-
-       
+       }    
     }
-}
