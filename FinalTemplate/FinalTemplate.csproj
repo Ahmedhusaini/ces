@@ -236,6 +236,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="source\Functions\Jfunctionparents.cs" />
     <Compile Include="source\Functions\Jfunctionstudents.cs" />
     <Compile Include="Logintype.aspx.cs">
       <DependentUpon>Logintype.aspx</DependentUpon>
