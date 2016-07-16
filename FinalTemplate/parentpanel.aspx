@@ -7,31 +7,20 @@
                         <div class="container">
                             <div class="search-input-wrapper">
                                 <form>
-                                    <select class="form-select style-1 selectbox">
-                                    <option value="all">Select School</option>
-                                    <option value="languages">generation</option>
-                                    <option value="science">metropolitan</option>
-                                    <option value="languages">habib public</option>
-                                    <option value="science">becon house</option>
-                                </select><select class="form-select style-2 selectbox">
-                                    <option value="price">Class</option>
-                                    <option value="datetime">1</option>
-                                    <option value="teacher">2</option>
-                                     <option value="datetime">3</option>
-                                    <option value="teacher">4</option>
-                                    <option value="datetime">5</option>
-                                    <option value="teacher">6</option>
-                                     <option value="datetime">7</option>
-                                    <option value="teacher">8</option>
-                                    <option value="datetime">9</option>
-                                    <option value="teacher">10</option>
-                                </select><select class="form-select style-2 selectbox">
-                                    <option value="price">Section</option>
-                                    <option value="datetime">A or 1</option>
-                                    <option value="teacher">B or 2</option>
-                                    <option value="datetime">C or 3</option>
-                                    <option value="teacher">D or 4</option>
-                                </select><input type="text" placeholder="Enter name of Your Student" class="form-input"/>
+                                    <asp:DropDownList ID="DropDownList1" CssClass="form-select style-2 selectbox" runat="server" DataSourceID="SqlDataSource1" DataTextField="school_name" DataValueField="school_name" AppendDataBoundItems="True">
+                                        <asp:ListItem>School</asp:ListItem>
+                                    </asp:DropDownList>
+                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="SELECT [school_name] FROM [tbl_school]"></asp:SqlDataSource>
+                                    <asp:DropDownList ID="DropDownList2"  CssClass="form-select style-2 selectbox" runat="server" DataSourceID="SqlDataSource3" DataTextField="class" DataValueField="class" AppendDataBoundItems="True">
+                                   <asp:ListItem>Class</asp:ListItem>
+                                         </asp:DropDownList>
+
+                                    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="SELECT [class] FROM [tbl_class]"></asp:SqlDataSource>                       
+                                    <asp:DropDownList ID="DropDownList3" CssClass="form-select style-2 selectbox" runat="server" DataSourceID="SqlDataSource4" DataTextField="section" DataValueField="section" AppendDataBoundItems="True">
+                                    <asp:ListItem>Section</asp:ListItem>
+                                         </asp:DropDownList>
+                                    <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="SELECT [section] FROM [tbl_section]"></asp:SqlDataSource>
+                                    <asp:TextBox ID="searchbox" placeholder="Enter the Student Name" CssClass="form-input" runat="server"></asp:TextBox>
                                     <button type="submit" class="form-submit btn btn-blue"><span>search<i class="fa fa-search"></i></span></button>
                                     <div class="clearfix"></div>
                                 </form>
@@ -39,33 +28,31 @@
                         </div>
                     </div>
                 </div>
-    <%--GridView--%>
-<%--            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <br />
-            <asp:GridView runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Std_id" DataSourceID="SqlDataSource2" GridLines="Horizontal" Height="176px" Width="715px" AllowPaging="True" AllowSorting="True" AutoGenerateSelectButton="True" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" OnSelectedIndexChanged="Unnamed1_SelectedIndexChanged">
-                <Columns>
-                    <asp:BoundField DataField="Std_id" HeaderText="Std_id" SortExpression="Std_id" ReadOnly="True" />
-                    <asp:BoundField DataField="Guardian_Name" HeaderText="Guardian_Name" SortExpression="Guardian_Name" />
-                    <asp:BoundField DataField="Previous_school" HeaderText="Previous_school" SortExpression="Previous_school" />
-                    <asp:BoundField DataField="General_Id" HeaderText="General_Id" SortExpression="General_Id" />
-                    <asp:BoundField DataField="class_sec_info_id" HeaderText="class_sec_info_id" SortExpression="class_sec_info_id" />
-                    <asp:BoundField DataField="last_class_attended" HeaderText="last_class_attended" SortExpression="last_class_attended" />
-                    <asp:BoundField DataField="authorized_id" HeaderText="authorized_id" SortExpression="authorized_id" />
-                    <asp:BoundField DataField="school_id" HeaderText="school_id" SortExpression="school_id" />
-                </Columns>
-                <FooterStyle BackColor="White" ForeColor="#333333" />
-                <HeaderStyle BackColor="#336666" BorderStyle="Solid" Font-Bold="True" ForeColor="White" HorizontalAlign="Justify" VerticalAlign="Middle" />
-                <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
-                <RowStyle BackColor="White" BorderStyle="Solid" ForeColor="#333333" />
-                <SelectedRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
-                <SortedAscendingCellStyle BackColor="#F7F7F7" />
-                <SortedAscendingHeaderStyle BackColor="#487575" />
-                <SortedDescendingCellStyle BackColor="#E5E5E5" />
-                <SortedDescendingHeaderStyle BackColor="#275353" />
+   
+<asp:GridView runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Std_id" DataSourceID="SqlDataSource2" Height="176px" Width="715px" AllowPaging="True" AllowSorting="True" AllowCustomPaging="True" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px">
+        <Columns>
+            <asp:BoundField DataField="Std_id" HeaderText="Std_id" SortExpression="Std_id" ReadOnly="True" />
+            <asp:BoundField DataField="Guardian_Name" HeaderText="Guardian_Name" SortExpression="Guardian_Name" />
+            <asp:BoundField DataField="Previous_school" HeaderText="Previous_school" SortExpression="Previous_school" />
+            <asp:BoundField DataField="General_Id" HeaderText="General_Id" SortExpression="General_Id" />
+            <asp:BoundField DataField="class_sec_info_id" HeaderText="class_sec_info_id" SortExpression="class_sec_info_id" />
+            <asp:BoundField DataField="last_class_attended" HeaderText="last_class_attended" SortExpression="last_class_attended" />
+            <asp:BoundField DataField="authorized_id" HeaderText="authorized_id" SortExpression="authorized_id" />
+            <asp:BoundField DataField="school_id" HeaderText="school_id" SortExpression="school_id" />
+        </Columns>
+
+        <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+        <HeaderStyle BackColor="#003399" BorderStyle="Solid" Font-Bold="True" ForeColor="#CCCCFF" HorizontalAlign="Justify" VerticalAlign="Middle" />
+        <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
+        <RowStyle BackColor="White" BorderStyle="Solid" ForeColor="#003399" />
+        <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+        <SortedAscendingCellStyle BackColor="#EDF6F6" />
+        <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
+        <SortedDescendingCellStyle BackColor="#D6DFDF" />
+        <SortedDescendingHeaderStyle BackColor="#002876" />
            </asp:GridView>
 
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="cesConnectionString2" SelectCommand="SELECT * FROM [tbl_Student_Reg]"></asp:SqlDataSource>
-  --%>
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="SELECT * FROM [tbl_Student_Reg]"></asp:SqlDataSource>
         <!-- CHOOSE COURSES-->
     <br />
                         <div class="group-title-index"><h4 class="top-title">Your Childerns</h4>
