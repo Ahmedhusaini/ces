@@ -33,6 +33,7 @@ namespace FinalTemplate
             var authorized_id = Convert.ToInt32(db.GetLastValueByColumnName("authorized_id", "tbl_authorized_users"));
             using (SqlConnection con = new SqlConnection(a))
             {
+                con.Open();
                 SqlCommand cmd = new SqlCommand("SP_TEACHERREGISTRATION", con);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
@@ -71,12 +72,16 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@usertype_id", SqlDbType.Int).Value = 3;
                 cmd.Parameters.AddWithValue("@date_of_join", SqlDbType.Date).Value = DateTime.Now.ToString("");
 
-                con.Open();
+    
                 cmd.ExecuteNonQuery();
+                con.Close();
+        
+                Response.Redirect("Teacherpanel.aspx");
 
+               
             }
 
-            Response.Redirect("Teacherpanel.aspx");
+           
 
         }
 

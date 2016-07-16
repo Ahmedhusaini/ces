@@ -230,6 +230,7 @@
     <Content Include="TeacherRegistration.aspx" />
     <Content Include="TeacherPanel.aspx" />
     <Content Include="Teacherprofile.aspx" />
+    <Content Include="TeacherUpload.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -400,6 +401,13 @@
     <Compile Include="Teacherprofile.aspx.designer.cs">
       <DependentUpon>Teacherprofile.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TeacherUpload.aspx.cs">
+      <DependentUpon>TeacherUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeacherUpload.aspx.designer.cs">
+      <DependentUpon>TeacherUpload.aspx</DependentUpon>
+    </Compile>
     <Compile Include="User.Master.cs">
       <DependentUpon>User.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -439,6 +447,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="files\" />
     <Folder Include="images\" />
   </ItemGroup>
   <PropertyGroup>

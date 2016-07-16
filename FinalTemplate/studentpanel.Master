@@ -98,7 +98,8 @@
                         </li>
 
                         <div class="nav-search hide">
-                            <form><input type="text" placeholder="Search" class="searchbox"/>
+                            <form>
+                                <input type="text" placeholder="Search" class="searchbox" />
                                 <button type="submit" class="searchbutton fa fa-search"></button>
                             </form>
                         </div>
