@@ -30,7 +30,7 @@ namespace FinalTemplate.source.Registration
             SqlParameter secondaryemailParameter = new SqlParameter("@secondary_email", SqlDbType.VarChar, 50);
             SqlParameter usertypeidParameter = new SqlParameter("@user_type_id", SqlDbType.Int);
             SqlParameter usertypeParameter = new SqlParameter("@user_type", SqlDbType.VarChar, 50);
-            SqlParameter usertypeoutParameter = new SqlParameter("@user_type_id_out", SqlDbType.Int);
+            //SqlParameter usertypeoutParameter = new SqlParameter("@user_type_id_out", SqlDbType.Int);
             SqlParameter logincountParameter = new SqlParameter("@login_count", SqlDbType.Int);
             SqlParameter lastlogindateParameter = new SqlParameter("@last_login_date", SqlDbType.Date);
             SqlParameter authorizedidoutParameter = new SqlParameter("@authorized_id_out", SqlDbType.VarChar, 20);
@@ -70,15 +70,15 @@ namespace FinalTemplate.source.Registration
             secondaryemailParameter.Value = secondaryemail;
             usertypeidParameter.Value = 1;
             logincountParameter.Value = 0;
-            lastlogindateParameter.Value = Convert.ToDateTime(JFunctions.GetSystemDate());
+            lastlogindateParameter.Value = Convert.ToDateTime(Jfunctionparents.GetSystemDate());
             authorizedidoutParameter.Direction = ParameterDirection.Output;
             parentidParameter.Value = GenerateParentID(firstname, lastname);
             fnameParameter.Value = firstname;
             lnameParameter.Value = lastname;
             //  nicParameter.Value = cnic;
-            dayParameter.Value = Convert.ToDateTime(JFunctions.GetSystemDate());
-            monthParameter.Value = Convert.ToDateTime(JFunctions.GetSystemDate());
-            yearParameter.Value = Convert.ToDateTime(JFunctions.GetSystemDate());
+            dayParameter.Value = Convert.ToDateTime(Jfunctionparents.GetSystemDate());
+            monthParameter.Value = Convert.ToDateTime(Jfunctionparents.GetSystemDate());
+            yearParameter.Value = Convert.ToDateTime(Jfunctionparents.GetSystemDate());
             photoParameter.Value = photo;
             parentoutParameter.Direction = ParameterDirection.Output;
             generaloutParameter.Direction = ParameterDirection.Output;
@@ -99,6 +99,7 @@ namespace FinalTemplate.source.Registration
             myDatabase.obj_sqlcommand.Parameters.Add(secondaryemailParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(logincountParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(lastlogindateParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(usertypeParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(authorizedidoutParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(parentidParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(generalParameter);
@@ -162,9 +163,9 @@ namespace FinalTemplate.source.Registration
             id.Append("/E/");
             id.Append(lastname.Substring(0, 3));
             id.Append("/S/");
-            id.Append(JFunctions.GetSystemDate());
+            id.Append(Jfunctionparents.GetSystemDate());
             id.Append("/");
-            id.Append(JFunctions.GetSystemTime());
+            id.Append(Jfunctionparents.GetSystemTime());
             id.Append(random.Next(3, 10));
             return id.ToString();
         }

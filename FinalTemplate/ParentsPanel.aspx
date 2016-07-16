@@ -8,16 +8,19 @@
             <div class="container">
                 <div class="search-input-wrapper">
                     <form>
-                        <select class="form-select style-1 selectbox">
-                            <asp:DropDownList ID="ddl_school" runat="server"></asp:DropDownList>
-
-                        </select>`<select class="form-select style-2 selectbox">
+                        `<asp:DropDownList ID="DropDownList1" CssClass="form-select style-2 selectbox"  runat="server" DataSourceID="SqlDataSource1" DataTextField="class" DataValueField="class"   AppendDataBoundItems="True">
+                            <asp:ListItem>Class</asp:ListItem>
+                           
+                           
+                        </asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="SELECT [class] FROM [tbl_class]"></asp:SqlDataSource>
+                        <select class="form-select style-2 selectbox">
                             <option value="price">Section</option>
                             <option value="datetime">A or 1</option>
                             <option value="teacher">B or 2</option>
                             <option value="datetime">C or 3</option>
                             <option value="teacher">D or 4</option>
-                        </select><input type="text" placeholder="Enter name of Your Student" class="form-input" />
+                        </select>
                         <button type="submit" class="form-submit btn btn-blue"><span>search<i class="fa fa-search"></i></span></button>
                         <div class="clearfix"></div>
                     </form>
