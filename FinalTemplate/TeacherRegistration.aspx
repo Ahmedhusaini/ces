@@ -461,8 +461,10 @@
                                                  <div class="register-submit">
                             <button type="submit"   class="btn btn-register btn-green">
                                 <span>
-                                    <asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" OnClientClick="TeacherRegistration.target='_blank';" /></span></button>
-                     </div> 
+                                    <asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>
+                     </div>
+                             <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+
                             </div>                            
                         </div>                           
                         </div>
