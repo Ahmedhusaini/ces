@@ -21,7 +21,11 @@
                                          </asp:DropDownList>
                                     <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="SELECT [section] FROM [tbl_section]"></asp:SqlDataSource>
                                     <asp:TextBox ID="searchbox" placeholder="Enter the Student Name" CssClass="form-input" runat="server"></asp:TextBox>
-                                    <button type="submit" class="form-submit btn btn-blue"><span>search<i class="fa fa-search"></i></span></button>
+                                &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                                  &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                                     &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&nbsp;
+                                       <button type="submit" class="form-submit btn btn-blue" style="margin-top: 6px; float: none"><span><asp:Button ID="Button1" runat="server" BorderStyle="None" style="background-color: Transparent" Text="Search" />
+                                        <i class="fa fa-search"></i></span></button>
                                     <div class="clearfix"></div>
                                 </form>
                             </div>
@@ -29,30 +33,30 @@
                     </div>
                 </div>
    
-<asp:GridView runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Std_id" DataSourceID="SqlDataSource2" Height="176px" Width="715px" AllowPaging="True" AllowSorting="True" AllowCustomPaging="True" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px">
+<asp:GridView runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Std_id" DataSourceID="SqlDataSource2" Height="176px" Width="715px" AllowCustomPaging="True" OnSelectedIndexChanged="Unnamed1_SelectedIndexChanged1" ForeColor="#333333" GridLines="None">
+        <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:BoundField DataField="Std_id" HeaderText="Std_id" SortExpression="Std_id" ReadOnly="True" />
-            <asp:BoundField DataField="Guardian_Name" HeaderText="Guardian_Name" SortExpression="Guardian_Name" />
-            <asp:BoundField DataField="Previous_school" HeaderText="Previous_school" SortExpression="Previous_school" />
-            <asp:BoundField DataField="General_Id" HeaderText="General_Id" SortExpression="General_Id" />
-            <asp:BoundField DataField="class_sec_info_id" HeaderText="class_sec_info_id" SortExpression="class_sec_info_id" />
-            <asp:BoundField DataField="last_class_attended" HeaderText="last_class_attended" SortExpression="last_class_attended" />
-            <asp:BoundField DataField="authorized_id" HeaderText="authorized_id" SortExpression="authorized_id" />
-            <asp:BoundField DataField="school_id" HeaderText="school_id" SortExpression="school_id" />
+            <asp:BoundField DataField="firstname" HeaderText="firstname" SortExpression="firstname" />
+            <asp:BoundField DataField="school_name" HeaderText="school_name" SortExpression="school_name" />
         </Columns>
 
-        <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
-        <HeaderStyle BackColor="#003399" BorderStyle="Solid" Font-Bold="True" ForeColor="#CCCCFF" HorizontalAlign="Justify" VerticalAlign="Middle" />
-        <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
-        <RowStyle BackColor="White" BorderStyle="Solid" ForeColor="#003399" />
-        <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
-        <SortedAscendingCellStyle BackColor="#EDF6F6" />
-        <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
-        <SortedDescendingCellStyle BackColor="#D6DFDF" />
-        <SortedDescendingHeaderStyle BackColor="#002876" />
+        <EditRowStyle BackColor="#2461BF" />
+
+        <FooterStyle BackColor="#507CD1" ForeColor="White" Font-Bold="True" />
+        <HeaderStyle BackColor="#507CD1" BorderStyle="Solid" Font-Bold="True" ForeColor="White" HorizontalAlign="Justify" VerticalAlign="Middle" />
+        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="#EFF3FB" BorderStyle="Solid" />
+        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+        <SortedAscendingCellStyle BackColor="#F5F7FB" />
+        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+        <SortedDescendingCellStyle BackColor="#E9EBEF" />
+        <SortedDescendingHeaderStyle BackColor="#4870BE" />
            </asp:GridView>
 
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="SELECT * FROM [tbl_Student_Reg]"></asp:SqlDataSource>
+           <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="SELECT tbl_Student_Reg.Std_id, tbl_general.firstname, tbl_school.school_name FROM tbl_Student_Reg INNER JOIN tbl_general ON tbl_Student_Reg.General_Id = tbl_general.General_Id INNER JOIN tbl_school ON tbl_Student_Reg.school_id = tbl_school.school_id"></asp:SqlDataSource>
+
+    
         <!-- CHOOSE COURSES-->
     <br />
                         <div class="group-title-index"><h4 class="top-title">Your Childerns</h4>
@@ -285,7 +289,6 @@
                         </div>
                     </div>
                     <div class="group-btn-slider"><a href="#people-talk" role="button" data-slide="prev">
-                        <div class="btn-prev carousel-control left"><i class="fa fa-angle-left"></i></div>
                     </a><a href="#people-talk" role="button" data-slide="next">
                         <div class="btn-next carousel-control right"><i class="fa fa-angle-right"></i></div>
                     </a></div>

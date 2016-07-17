@@ -6365,9 +6365,9 @@ button.close {
 }
 .carousel-control {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
+  top: 109px;
+  bottom: -58px;
+  left: 648px;
   width: 15%;
   font-size: 20px;
   color: #fff;

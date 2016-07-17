@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace FinalTemplate
 {
     public partial class parentpanel1 : System.Web.UI.Page
@@ -14,7 +15,12 @@ namespace FinalTemplate
 
         }
 
-        protected void Unnamed1_SelectedIndexChanged(object sender, EventArgs e)
+        protected void Unnamed1_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
         {
 
         }
