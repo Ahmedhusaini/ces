@@ -1,6 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/studentpanel.Master" AutoEventWireup="true" CodeBehind="studentpanel.aspx.cs" Inherits="FinalTemplate.studentpanel1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">  
-        
+    <style type="text/css">
+#profile_pic_wrapper{ position:relative; border:#ccc solid 1px; width:200px; height:200px;}
+#profile_pic_wrapper a{ position:absolute; display:none; top:0; right:0; line-height:20px; padding:5px; color:#fff; background-color:#333; text-decoration:underline;}
+#profile_pic_wrapper:hover a{ display:block; }
+#profile_pic_wrapper:hover a:hover{text-decoration:none;}
+.profile_pic{ width:200px; height:200px;}
+</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <!-- SLIDER BANNER-->
@@ -40,15 +46,39 @@
                 <div class="section why-choose-us">
                     <div class="why-choose-us-wrapper-top">
                         <div class="container">
+
                             <div class="why-choose-us-wrapper"><h2 class="title-2">Name of the Student</h2>
 
                                 <p>CLASS-9 SECTION-B</p>
-                                <button class="btn btn-green-2" formaction="StudentProfile.aspx"><span>View Complete Profile</span></button>
+                                <div>
+                                <asp:FileUpload ID="FileUpload1" runat="server" />
+                                <asp:button  id="btnSave" text="Save" runat="server" onclick="btnSave_Click" />
+                                </div>
+                                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                            </div>  
+                            <div data-wow-delay="0.2s" data-wow-duration="1.2s" class="background-girl-1 wow fadeInDown">
+                              <asp:Image runat="server" style="border-radius: 70%" Height="550px" Width="550px" />
                             </div>
-                            <div data-wow-delay="0.2s" data-wow-duration="1.2s" class="background-girl-1 wow fadeInDown"><img src="assets/images/edit.jpg" alt="" class="img-responsive" style="border-radius:70%"/></div>
                         </div>
                     </div>
                 </div>
+<%--                    <div class="section why-choose-us">
+                    <div class="why-choose-us-wrapper-top">
+                        <div class="container">
+                            <div class="why-choose-us-wrapper"><h2 class="title-2">Name of the Student</h2>
+
+                                <p>CLASS-9 SECTION-B</p>
+                                <button class="btn btn-green-2" formaction="StudentProfile.aspx">
+                                    <span>View Complete Profile</span>
+
+                                </button>
+                            </div>
+                            <div data-wow-delay="0.2s" data-wow-duration="1.2s" class="background-girl-1 wow fadeInDown">
+                                <img src="assets/images/edit.jpg" alt="" class="img-responsive" style="border-radius:70%"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>--%>
 <!-- WHY CHOOSE US-->
                 <div class="section why-choose-us">
                     <div class="why-choose-us-wrapper<%-- bottom background-opacity--%>">
