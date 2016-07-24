@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using System.Net;
 using System.Net.Mail;
 using System.Web;
@@ -49,7 +48,7 @@ namespace FinalTemplate.source.Functions
             }
         }
         //File size limit in bytes
-        public string UploadSingleFile(FileUpload objFileUpload, string filePath, int fileSizeLimit)
+        public static string UploadSingleFile(FileUpload objFileUpload, string filePath, int fileSizeLimit)
         {
             string fullPath = "~/" + filePath;
             string savedPath = string.Empty, returnvalue = string.Empty;
@@ -57,17 +56,17 @@ namespace FinalTemplate.source.Functions
             if (objFileUpload.HasFile)
             {
                 int currentFileSize = objFileUpload.PostedFile.ContentLength;
-                if (currentFileSize > fileSizeLimit)
+                if (currentFileSize < fileSizeLimit)
                 {
                     returnvalue = "value is over the limit.";
                 }
                 else
                 {
-                    savedPath = Path.Combine(fullPath, objFileUpload.FileName);
+                    savedPath = fullPath + objFileUpload.FileName;
                     try
                     {
-                        objFileUpload.PostedFile.SaveAs(HttpContext.Current.Server.MapPath(savedPath));
-                        returnvalue = savedPath;
+                        objFileUpload.SaveAs(HttpContext.Current.Server.MapPath(savedPath));
+                        returnvalue = "true";
                     }
                     catch (Exception exception)
                     {

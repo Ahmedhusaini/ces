@@ -441,7 +441,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="files\" />
-    <Folder Include="images\" />
+    <Folder Include="images\registeredSchools\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -45,8 +45,12 @@ namespace FinalTemplate
 
                 if (result == "true")
                 {
-                    Response.Write("register");
-                    JFunctions.SendEmail(txt_primaryEmailAddress.Text, "Successfully Registered", "Your are successfully registered at our portal");
+                    string fileuploaded = JFunctions.UploadSingleFile(fileupload, "images/", 90960);
+                    if (fileuploaded == "true")
+                    {
+                        Response.Write("register");
+                        // JFunctions.SendEmail(txt_primaryEmailAddress.Text, "Successfully Registered", "Your are successfully registered at our portal");
+                    }
                 }
                 else
                 {
