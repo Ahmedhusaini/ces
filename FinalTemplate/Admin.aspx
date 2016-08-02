@@ -7,6 +7,7 @@
             $('#topStudents').addClass('topPadding');
             $('#teachingstaff').addClass('teachingbackgroundImage');
             $('.btn').css('width', 'auto');
+            $('.item-course').css("height", "280px");
         });
     </script> 
     
@@ -61,7 +62,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="item-course">
+                        <div class="item-course" style="height: 280px;">
                             <div class="item-course-wrapper">
                                 <div class="icon-course"><i class="icons-img icon-photocamera_1"></i></div>
                                 <a href="#" class="info-course">
