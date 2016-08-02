@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Register.Master" AutoEventWireup="true" CodeBehind="TeacherRegistration.aspx.cs" Inherits="FinalTemplate.Teacher_Registration" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Register.Master" AutoEventWireup="true" CodeBehind="TeacherRegistration.aspx.cs" Inherits="FinalTemplate.TeacherRegistration" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="RegisterHeadPlaceHolder" runat="server">
 
     <script src="assets/js/jquery-2.2.3.js"></script>
