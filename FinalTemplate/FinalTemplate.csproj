@@ -65,6 +65,7 @@
   <ItemGroup>
     <Content Include="assets\images\calender.png" />
     <Content Include="assets\images\crissxcross.png" />
+    <Content Include="assets\images\green-bg-img.jpg" />
     <Content Include="assets\images\registerschool_green.jpg" />
     <Content Include="Logintype.aspx" />
     <Content Include="parentpanel.aspx" />

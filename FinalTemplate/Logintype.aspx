@@ -75,6 +75,7 @@
         .reg-sk {
             padding-top:26px;
             padding-bottom:26px;
+            opacity: 0.95;
         }
     </style>
     <div class="page-register rlp">
@@ -82,7 +83,7 @@
             <div class="register-wrapper rlp-wrapper reg-sk">
                 <div class="register-table rlp-table">
                     <a href="index.html">
-                        <img src="assets/images/logo-color-1.png" alt="" class="login" /></a>
+                        <img src="assets/images/logo-color-1.png" alt="" style="opacity: 0.7;" class="login" /></a>
 
                     <div class="register-title rlp-title">create your account and join us!</div>
                     <div class="register-title rlp-title">Sign In</div>
@@ -132,9 +133,9 @@
                                                            
                                            </div>                      
                         <div class="register-submit">
-                            <button type="submit" onclick="window.location.href='index.html'" class="btn btn-register btn-green">
+                            <button type="submit" class="btn btn-register btn-green">
                                 <span>
-                                    <asp:Button ID="Button1" OnClientClick="invisiblediv()" runat="server" Text="Sign In" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>
+                                    <asp:Button ID="Button1" runat="server" Text="Sign In" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>
                      </div>          
                  </asp:Panel>                
                     </div>            
