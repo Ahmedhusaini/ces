@@ -145,8 +145,8 @@
                                     </div>
                                 </div>
                                 <div class="group-button">
-                                    <button onclick="window.location.href='categories.html'" class="btn btn-transition-3"><span>Purchase theme</span></button>
-                                    <button onclick="window.location.href='about-us.html'" class="btn btn-green-3"><span>start Learn now</span></button>
+                                    <button onclick="window.location.href='categories.html'" style="padding-right: 148px" class="btn btn-transition-3"><span>Purchase theme</span></button>
+                                    <button onclick="window.location.href='about-us.html'" style="padding-right: 148px"  class="btn btn-green-3"><span>start Learn now</span></button>
                                 </div>
                                 <div class="group-btn-slider">
                                     <div class="btn-prev"><i class="fa fa-angle-left"></i></div>
@@ -186,7 +186,7 @@
                                                 </div>
                                                 <div title="Rated 5.00 out of 5" class="star-rating"><span class="width-80"><strong class="rating">5.00</strong> out of 5</span></div>
                                                 <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout...</div>
-                                                <button onclick="window.location.href='courses-detail.html'" class="btn btn-green"><span>learn now</span></button>
+                                                <button onclick="window.location.href='courses-detail.html'" style="padding-right: 106px" class="btn btn-green"><span>learn now</span></button>
                                             </div>
                                             <div class="edugate-image"><img src="assets/images/courses/courses-1.jpg" alt="" class="img-responsive"/></div>
                                         </div>
@@ -211,7 +211,7 @@
                                                 </div>
                                                 <div title="Rated 5.00 out of 5" class="star-rating"><span class="width-10"><strong class="rating">5.00</strong> out of 5</span></div>
                                                 <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout...</div>
-                                                <button onclick="window.location.href='courses-detail.html'" class="btn btn-green"><span>learn now</span></button>
+                                                <button onclick="window.location.href='courses-detail.html'" style="padding-right: 106px" class="btn btn-green"><span>learn now</span></button>
                                             </div>
                                             <div class="edugate-image"><img src="assets/images/courses/courses-2.jpg" alt="" class="img-responsive"/></div>
                                         </div>
@@ -238,7 +238,7 @@
                                                 </div>
                                                 <div title="Rated 5.00 out of 5" class="star-rating"><span class="width-70"><strong class="rating">5.00</strong> out of 5</span></div>
                                                 <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout...</div>
-                                                <button onclick="window.location.href='courses-detail.html'" class="btn btn-green"><span>learn now</span></button>
+                                                <button onclick="window.location.href='courses-detail.html'" style="padding-right: 106px" class="btn btn-green"><span>learn now</span></button>
                                             </div>
                                             <div class="edugate-image"><img src="assets/images/courses/courses-3.jpg" alt="" class="img-responsive"/></div>
                                         </div>
@@ -263,7 +263,7 @@
                                                 </div>
                                                 <div title="Rated 5.00 out of 5" class="star-rating"><span class="width-90"><strong class="rating">5.00</strong> out of 5</span></div>
                                                 <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout...</div>
-                                                <button onclick="window.location.href='courses-detail.html'" class="btn btn-green"><span>learn now</span></button>
+                                                <button onclick="window.location.href='courses-detail.html'"style="padding-right: 106px" class="btn btn-green"><span>learn now</span></button>
                                             </div>
                                             <div class="edugate-image"><img src="assets/images/courses/courses-4.jpg" alt="" class="img-responsive"/></div>
                                         </div>
@@ -473,7 +473,7 @@
                                             <p> 239</p></div>
                                     </div>
                                     <div class="description">Dalmatian hello amazing the rmore flung as thanks a manta dealt to under emu some the and one baldbe dear sobbingly save and spitefully less Dalmatian hello amazing the rmore flung as thanks a manta dealt to under emu some the and one baldbe dear sobbingly save and spitefully Dalmatian hello amazing the...</div>
-                                    <button onclick="window.location.href='news-detail.html'" class="btn btn-green"><span>learn now</span></button>
+                                    <button onclick="window.location.href='news-detail.html'" style="padding-right: 106px" class="btn btn-green"><span>learn now</span></button>
                                 </div>
                             </div>
                             <div class="edugate-layout-1">
@@ -493,7 +493,7 @@
                                             <p> 239</p></div>
                                     </div>
                                     <div class="description">Dalmatian hello amazing the rmore flung as thanks a manta dealt to under emu some the and one baldbe dear sobbingly save and spitefully less Dalmatian hello amazing the rmore flung as thanks a manta dealt to under emu some the and one baldbe dear sobbingly save and spitefully Dalmatian hello amazing the...</div>
-                                    <button onclick="window.location.href='news-detail.html'" class="btn btn-green"><span>learn now</span></button>
+                                    <button onclick="window.location.href='news-detail.html'" style="padding-right: 106px" class="btn btn-green"><span>learn now</span></button>
                                 </div>
                             </div>
                             <div class="edugate-layout-1">
@@ -513,10 +513,10 @@
                                             <p> 239</p></div>
                                     </div>
                                     <div class="description">Dalmatian hello amazing the rmore flung as thanks a manta dealt to under emu some the and one baldbe dear sobbingly save and spitefully less Dalmatian hello amazing the rmore flung as thanks a manta dealt to under emu some the and one baldbe dear sobbingly save and spitefully Dalmatian hello amazing the...</div>
-                                    <button onclick="window.location.href='news-detail.html'" class="btn btn-green"><span>learn now</span></button>
+                                    <button onclick="window.location.href='news-detail.html'" style="padding-right: 106px" class="btn btn-green"><span>learn now</span></button>
                                 </div>
                             </div>
-                            <button class="btn btn-green btn-latest-new"><span>Browser All Post<i class="fa fa-long-arrow-right"></i></span></button>
+                            <button class="btn btn-green btn-latest-new" style="padding-right: 180px"><span>Browser All Post<i class="fa fa-long-arrow-right"></i></span></button>
                         </div>
                     </div>
                 </div>
