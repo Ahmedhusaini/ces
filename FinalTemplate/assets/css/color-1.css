@@ -10,6 +10,7 @@
     overflow: hidden;
     color: #fff;
     transition: all 0.2s ease
+    
 }
 
 .btn span {
@@ -26,6 +27,7 @@
 
 .btn.btn-green {
     background-color: #86bc42
+    
 }
 
 .btn.btn-green:after {
@@ -5450,7 +5452,8 @@ h5 {
     position: absolute;
     left: 50%;
     margin-left: -65px;
-    bottom: -50px
+    bottom: -50px;
+   
 }
 
 .edugate-layout-2 .edugate-image {
