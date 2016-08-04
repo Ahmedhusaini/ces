@@ -24,23 +24,15 @@ namespace FinalTemplate.source.Functions
             //if you want to send email from your own email id change the id and password to yours and email will be sent through
             //your email address.
             string smtpPassword = "abbasikhan";
-            int smtpPort = 25;
+            int smtpPort = 587;
             try
             {
-                MailMessage message = new MailMessage();
-                message.From = new MailAddress(smtpUsername, "CES - User Registration Team");
-                message.To.Add(To);
-                message.Subject = Subject;
-                message.Body = MessageBody;
-                message.IsBodyHtml = false;
-                SmtpClient smtp = new SmtpClient();
-                smtp.Host = "smtp.gmail.com";
-                smtp.Port = smtpPort;
-                NetworkCredential network = new NetworkCredential(smtpUsername, smtpPassword);
-                smtp.UseDefaultCredentials = false;
-                smtp.Credentials = network;
-
-                smtp.Send(message);
+                var client = new SmtpClient("smtp.gmail.com", 587)
+                {
+                    Credentials =new  NetworkCredential(smtpUsername,smtpPassword),
+                    EnableSsl = true
+                };
+                client.Send(smtpUsername, To, "medo subject", "demo body");
             }
             catch (Exception ex)
             {
@@ -48,7 +40,7 @@ namespace FinalTemplate.source.Functions
             }
         }
         //File size limit in bytes
-        public static string UploadSingleFile(FileUpload objFileUpload, string filePath, int fileSizeLimit)
+        public static string UploadSingleFile(FileUpload objFileUpload, string filePath)
         {
             string fullPath = "~/" + filePath;
             string savedPath = string.Empty, returnvalue = string.Empty;
@@ -56,12 +48,6 @@ namespace FinalTemplate.source.Functions
             if (objFileUpload.HasFile)
             {
                 int currentFileSize = objFileUpload.PostedFile.ContentLength;
-                if (currentFileSize < fileSizeLimit)
-                {
-                    returnvalue = "value is over the limit.";
-                }
-                else
-                {
                     savedPath = fullPath + objFileUpload.FileName;
                     try
                     {
@@ -72,7 +58,7 @@ namespace FinalTemplate.source.Functions
                     {
                         returnvalue = exception.ToString();
                     }
-                }
+                
 
             }
             return returnvalue;

@@ -45,11 +45,11 @@ namespace FinalTemplate
 
                 if (result == "true")
                 {
-                    string fileuploaded = JFunctions.UploadSingleFile(fileupload, "images/registeredSchools/", 90960);
+                    string fileuploaded = JFunctions.UploadSingleFile(fileupload, "images/registeredSchools/");
                     if (fileuploaded == "true")
                     {
-                        Response.Write("register");
-                        //JFunctions.SendEmail(txt_primaryEmailAddress.Text, "Successfully Registered", "Your are successfully registered at our portal");
+                       JFunctions.SendEmail(txt_primaryEmailAddress.Text, "Successfully Registered", "Your are successfully registered at our portal");
+                       Response.Write("register");
                     }
                 }
                 else
