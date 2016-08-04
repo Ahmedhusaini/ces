@@ -233,30 +233,7 @@
         </div>
     </div>
 </footer>
-<!-- THEME SETTING-->
-<div class="theme-setting">
-    <div class="theme-loading">
-        <div class="theme-loading-content">
-            <div class="dots-loader"></div>
-        </div>
-    </div>
-    <a href="javascript:;" class="btn-theme-setting"><i class="fa fa-tint"></i></a>
 
-    <div class="content-theme-setting"><h2 class="title">setting color</h2>
-        <ul class="list-unstyled list-inline color-skins">
-            <li data-color="color-1"></li>
-            <li data-color="color-2"></li>
-            <li data-color="color-3"></li>
-            <li data-color="color-4"></li>
-            <li data-color="color-5"></li>
-            <li data-color="color-6"></li>
-            <li data-color="color-7"></li>
-            <li data-color="color-8"></li>
-            <li data-color="color-9"></li>
-            <li data-color="color-10"></li>
-        </ul>
-    </div>
-</div>
 <!-- LOADING-->
 <div class="body-2 loading">
     <div class="dots-loader"></div>

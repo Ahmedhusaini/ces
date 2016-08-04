@@ -254,7 +254,7 @@
     </style>
     <div class="page-register rlp">
         <div class="container">
-            <div id="RegistrationSchoolWidthFix" class="register-wrapper rlp-wrapper reg-sk ">
+            <div id="RegistrationSchoolWidthFix" style="opacity: 0.9;" class="register-wrapper rlp-wrapper reg-sk ">
 
                 <div class="register-table rlp-table">
                     <!-- PRICING-->
