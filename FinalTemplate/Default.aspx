@@ -440,11 +440,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="group-btn-slider"><a href="#people-talk" role="button" data-slide="prev">
-                        <div class="btn-prev carousel-control left"><i class="fa fa-angle-left"></i></div>
-                    </a><a href="#people-talk" role="button" data-slide="next">
-                        <div class="btn-next carousel-control right"><i class="fa fa-angle-right"></i></div>
-                    </a></div>
+                     
                 </div>
                 <!--LATEST NEW-->
                 <div class="section section-padding latest-news">
