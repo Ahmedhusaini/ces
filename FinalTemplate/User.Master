@@ -33,6 +33,12 @@
     } else if ((Cookies.get('colorskin') == undefined) || (Cookies.get('colorskin') == 'color-1')) {
     $('#colorskins').attr('href', 'assets/css/color-1.css');
     }</script>
+    <script>
+        $(document).ready(function () {
+            $('.mainLogo').css({ 'height': '54px', 'width': '63px' });
+            
+        });
+    </script>
 </head>
 <body>
     <!-- HEADER-->
@@ -53,7 +59,7 @@
         <div class="container">
             <div class="header-main-wrapper">
                 <div class="navbar-heade">
-                    <div class="logo pull-left"><a href="index.html"><img src="assets/images/logo-color-1.png" alt=""/></a></div>
+                    <div class="logo pull-left"><a href="index.html"><img class="mainLogo" src="assets/images/logo-color-1.png" alt=""/></a></div>
                     <button type="button" data-toggle="collapse" data-target=".navigation" class="navbar-toggle edugate-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
                 </div>
                 <nav class="navigation collapse navbar-collapse pull-right">
