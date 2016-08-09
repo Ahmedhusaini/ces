@@ -7,7 +7,7 @@
      <script type="text/javascript">
          $(document).ready(function () {
              $('#submitbutton').addClass('submitbutton');
-             $('#RegistrationSchoolWidthFix').css('width', '70%');
+             $('#RegistrationSchoolWidthFix').css({ 'width':'70%','opacity':'0.95' });
              SetTextFont();
              RemoveSelectedPackage();
              ActivePackage();             

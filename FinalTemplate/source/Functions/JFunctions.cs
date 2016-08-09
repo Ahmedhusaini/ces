@@ -1,8 +1,9 @@
 ﻿using System;
-using System.Web.UI.WebControls;
-using System.Net.Mail;
 using System.Net;
-using System.IO;
+using System.Net.Mail;
+using System.Web;
+using System.Web.UI.WebControls;
+
 namespace FinalTemplate.source.Functions
 {
     public class JFunctions
@@ -16,35 +17,52 @@ namespace FinalTemplate.source.Functions
         {
             return Convert.ToString(System.DateTime.Today.ToString("t"));
         }
-        public static void SendEmail(string To,string Subject,string MessageBody)
+        public static void SendEmail(string To, string Subject, string MessageBody)
         {
             string smtpUsername = "jahangeer.ahmed11@gmail.com";
             //i changed my original password to this to check the email, later i will change this back to my original password.
             //if you want to send email from your own email id change the id and password to yours and email will be sent through
             //your email address.
             string smtpPassword = "abbasikhan";
-            int smtpPort = 25; 
+            int smtpPort = 587;
             try
             {
-                MailMessage message = new MailMessage();
-                message.From = new MailAddress(smtpUsername,"CES - User Registration Team");
-                message.To.Add(To);
-                message.Subject = Subject;
-                message.Body = MessageBody;
-                message.IsBodyHtml = false;
-                SmtpClient smtp = new SmtpClient();
-                smtp.Host = "smtp.gmail.com";
-                smtp.Port = smtpPort;
-                NetworkCredential network = new NetworkCredential(smtpUsername,smtpPassword);
-                smtp.UseDefaultCredentials = false;
-                smtp.Credentials = network;
-                 
-                smtp.Send(message);
+                var client = new SmtpClient("smtp.gmail.com", 587)
+                {
+                    Credentials =new  NetworkCredential(smtpUsername,smtpPassword),
+                    EnableSsl = true
+                };
+                client.Send(smtpUsername, To, "medo subject", "demo body");
             }
             catch (Exception ex)
-            { 
-                
+            {
+
             }
+        }
+        //File size limit in bytes
+        public static string UploadSingleFile(FileUpload objFileUpload, string filePath)
+        {
+            string fullPath = "~/" + filePath;
+            string savedPath = string.Empty, returnvalue = string.Empty;
+            returnvalue = "null";
+            if (objFileUpload.HasFile)
+            {
+                int currentFileSize = objFileUpload.PostedFile.ContentLength;
+                    savedPath = fullPath + objFileUpload.FileName;
+                    try
+                    {
+                        objFileUpload.SaveAs(HttpContext.Current.Server.MapPath(savedPath));
+                        returnvalue = "true";
+                    }
+                    catch (Exception exception)
+                    {
+                        returnvalue = exception.ToString();
+                    }
+                
+
+            }
+            return returnvalue;
+
         }
         public static void BindDropDownList(DropDownList ddl, string displayField, string valueField, string query)
         {
@@ -62,7 +80,7 @@ namespace FinalTemplate.source.Functions
             finally
             {
                 myDatabase.CloseConnection();
-                myDatabase.obj_sqlcommand.Dispose();                
+                myDatabase.obj_sqlcommand.Dispose();
             }
         }
     }

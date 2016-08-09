@@ -10,6 +10,7 @@
     overflow: hidden;
     color: #fff;
     transition: all 0.2s ease
+    
 }
 
 .btn span {
@@ -26,6 +27,7 @@
 
 .btn.btn-green {
     background-color: #86bc42
+    
 }
 
 .btn.btn-green:after {
@@ -4411,13 +4413,15 @@ ul.list-detail li i {
 }
 
 .page-register {
-    min-height: 627px;    
+    min-height: 627px;
+    background-image: url("../images/green-bg-img.jpg")   
+    
 }
 
 .rlp-table {
     text-align: center;
     background-color: #fff;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);*/ 
     padding: 50px 100px
 }
 
@@ -5448,7 +5452,8 @@ h5 {
     position: absolute;
     left: 50%;
     margin-left: -65px;
-    bottom: -50px
+    bottom: -50px;
+   
 }
 
 .edugate-layout-2 .edugate-image {

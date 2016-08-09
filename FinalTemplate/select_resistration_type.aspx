@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="RegisterPlaceHolder1" runat="server">
     <div class="page-register rlp">
                      <div class="container">
-                         <div class="register-wrapper rlp-wrapper">
+                         <div class="register-wrapper rlp-wrapper" style="opacity: 0.9; padding: 6px ">
                 <div class="register-table rlp-table">
                             <div class="register-table rlp-table"><h1 class="table-hover">REGISTRATION</h1><h3 class="table-hover">-- Who You Are --</h3><br />
                                <div style="width:150%">  

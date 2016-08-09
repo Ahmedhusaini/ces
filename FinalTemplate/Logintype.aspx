@@ -51,6 +51,7 @@
                centerText( <%=ddl_type.ClientID%>);
                centerText( <%=txt_username.ClientID%>);
                centerText( <%=txt_password.ClientID%>);
+               removeBackToTop();
            });
 
            function centerform() {
@@ -67,6 +68,9 @@
            function invisiblediv() {
                $('#divinvisible').delay(3200).fadeOut(1000);
            }
+           function removeBackToTop() {
+               $('#back-top').css('display', 'none');
+           }
     </script> 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="RegisterPlaceHolder1" runat="server">
@@ -75,16 +79,19 @@
         .reg-sk {
             padding-top:26px;
             padding-bottom:26px;
+            opacity: 0.95;
         }
     </style>
     <div class="page-register rlp">
         <div class="container">
-            <div class="register-wrapper rlp-wrapper reg-sk">
+            <div class="register-wrapper rlp-wrapper reg-sk" style="opacity:0.9;">
                 <div class="register-table rlp-table">
+                    <!----
                     <a href="index.html">
-                        <img src="assets/images/logo-color-1.png" alt="" class="login" /></a>
+                        <img src="assets/images/logo-color-1.png" alt="" style="opacity: 0.7;" class="login" />
 
-                    <div class="register-title rlp-title">create your account and join us!</div>
+                    </a>
+                        ---->
                     <div class="register-title rlp-title">Sign In</div>
                     <div id="divinvisible" class="register-title rlp-title">
                         <asp:Label runat="server" ID="lbl_error">error message</asp:Label>
@@ -132,9 +139,9 @@
                                                            
                                            </div>                      
                         <div class="register-submit">
-                            <button type="submit" onclick="window.location.href='index.html'" class="btn btn-register btn-green">
+                            <button type="submit" class="btn btn-register btn-green">
                                 <span>
-                                    <asp:Button ID="Button1" OnClientClick="invisiblediv()" runat="server" Text="Sign In" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>
+                                    <asp:Button ID="Button1" runat="server" Text="Sign In" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>
                      </div>          
                  </asp:Panel>                
                     </div>            
