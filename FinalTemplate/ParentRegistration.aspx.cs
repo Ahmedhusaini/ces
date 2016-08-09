@@ -1,4 +1,7 @@
-﻿using System;
+﻿using FinalTemplate.source.Functions;
+using FinalTemplate.source.Registration;
+using System;
+using System.Web.UI;
 
 namespace FinalTemplate
 {
@@ -8,7 +11,7 @@ namespace FinalTemplate
         {
             if (!IsPostBack)
             {
-                // Jfunctionparents.BindDropDownList(DropDownList2, "city", "city_id", "select * from tbl_city");
+                 Jfunctionparents.BindDropDownList(DropDownList2, "city", "city_id", "select * from tbl_city");
             }
         }
 
@@ -17,32 +20,35 @@ namespace FinalTemplate
             country.ReadOnly = true;
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+       
+
+        protected void Button1_Click1(object sender, EventArgs e)
         {
-            //CParentRegistration classparent = new CParentRegistration();
-            //string result = string.Empty;
+            CParentRegistration classparent = new CParentRegistration();
+            string result = string.Empty;
 
-            //try
-            //{
-            //    result = classparent.ParentRegister(1, Convert.ToInt32(DropDownList2.SelectedValue),
-            //        Convert.ToInt32(postal.Text), user.Text, pass.Text, Convert.ToInt32(accountp.Text),
-            //        pemail.Text, semail.Text, name.Text, lname.Text, fileupload.FileName);
-            //    if (result=="true")
-            //    {
-            //        Response.Write("register");
-            //    }
-            //    else
-            //    {
-            //        Response.Write("not register");
-            //    }
+            try
+            {
+                result = classparent.ParentRegister(1, Convert.ToInt32(DropDownList2.SelectedValue),
+                    Convert.ToInt32(postal.Text), user.Text, pass.Text, Convert.ToInt32(accountp.Text),
+                    pemail.Text, semail.Text, name.Text, lname.Text, fileupload.FileName);
+                if (result == "true")
+                {
+                    Response.Write("register");
+                }
+                else
+                {
+                    Response.Write("not register");
+                }
 
-            //}
-            //catch (Exception ex)
-            //{
+            }
+            catch (Exception ex)
+            {
 
-            //    result = ex.ToString();
-            //    Response.Write(result);
-            //}
+                result = ex.ToString();
+                Response.Write(result);
+            }
+
         }
     }
 }
