@@ -54,10 +54,10 @@
                                 <asp:FileUpload ID="FileUpload1" runat="server" />
                                 <asp:button  id="btnSave" text="Save" runat="server" onclick="btnSave_Click" />
                                 </div>
-                                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                                <asp:Label ID="label" runat="server"></asp:Label>
                             </div>  
                             <div data-wow-delay="0.2s" data-wow-duration="1.2s" class="background-girl-1 wow fadeInDown">
-                              <asp:Image runat="server" style="border-radius: 70%" Height="550px" Width="550px" />
+                              <asp:Image runat="server" ImageUrl="~/studentpanel.aspx.cs" style="border-radius: 70%" Height="550px" Width="550px" />
                             </div>
                         </div>
                     </div>
