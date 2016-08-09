@@ -19,11 +19,11 @@ namespace FinalTemplate.source.Functions
         {
             return Convert.ToString(System.DateTime.Today.ToString("t"));
         }
-        public static void BindDropDownList(DropDownList ddl2, string displayField1, string valueField1, string query1)
+        public static void BindDropDownList(DropDownList ddl2, string displayField1, string valueField1, string queryy)
         {
             Database.Database myDatabase = new Database.Database("cesConnectionString3");
             myDatabase.CreateConnection();
-            myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, query1);
+            myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, queryy);
             try
             {
                 myDatabase.OpenConnection();

@@ -50,7 +50,7 @@ namespace FinalTemplate.source.Registration
             SqlParameter salaryParameter = new SqlParameter("Salary_Anum", SqlDbType.Int);
             SqlParameter generaloutParameter = new SqlParameter("general_id_out", SqlDbType.VarChar, 20);
             SqlParameter parentoutParameter = new SqlParameter("parent_id_out", SqlDbType.VarChar, 20);
-            SqlParameter dobidParameter = new SqlParameter("@dob_id", SqlDbType.Int);
+            SqlParameter dobidParameter = new SqlParameter("@dob_id", SqlDbType.Date);
             SqlParameter dayParameter = new SqlParameter("@day", SqlDbType.Int);
             SqlParameter monthParameter = new SqlParameter("@month", SqlDbType.Int);
             SqlParameter yearParameter = new SqlParameter("@year", SqlDbType.Int);
@@ -70,15 +70,15 @@ namespace FinalTemplate.source.Registration
             secondaryemailParameter.Value = secondaryemail;
             usertypeidParameter.Value = 1;
             logincountParameter.Value = 0;
-            lastlogindateParameter.Value = Convert.ToDateTime(Jfunctionparents.GetSystemDate());
+            lastlogindateParameter.Value = Convert.ToDateTime(Jfunctionparents. GetSystemDate());
             authorizedidoutParameter.Direction = ParameterDirection.Output;
             parentidParameter.Value = GenerateParentID(firstname, lastname);
             fnameParameter.Value = firstname;
             lnameParameter.Value = lastname;
             //  nicParameter.Value = cnic;
-            dayParameter.Value = Convert.ToDateTime(Jfunctionparents.GetSystemDate());
-            monthParameter.Value = Convert.ToDateTime(Jfunctionparents.GetSystemDate());
-            yearParameter.Value = Convert.ToDateTime(Jfunctionparents.GetSystemDate());
+            dayParameter.Value = Convert.ToString(Convert.ToDateTime(Jfunctionparents.GetSystemDate().Substring(0, 2)));
+            monthParameter.Value = Convert.ToString(Convert.ToDateTime(Jfunctionparents.GetSystemDate().Substring(3,2)));
+            yearParameter.Value = Convert.ToString(Convert.ToDateTime(Jfunctionparents.GetSystemDate().Substring(6,4)));
             photoParameter.Value = photo;
             parentoutParameter.Direction = ParameterDirection.Output;
             generaloutParameter.Direction = ParameterDirection.Output;
@@ -146,7 +146,6 @@ namespace FinalTemplate.source.Registration
             finally
             {
                 myDatabase.obj_sqlcommand.Dispose();
-                myDatabase.obj_sqlconnection.Close();
                 myDatabase.obj_sqlconnection.Dispose();
                 myDatabase.obj_sqlcommand.Parameters.Clear();
                 myDatabase.CloseConnection();
