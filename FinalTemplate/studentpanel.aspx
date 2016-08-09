@@ -57,7 +57,10 @@
                                 <asp:Label ID="label" runat="server"></asp:Label>
                             </div>  
                             <div data-wow-delay="0.2s" data-wow-duration="1.2s" class="background-girl-1 wow fadeInDown">
-                              <asp:Image runat="server" ImageUrl="~/studentpanel.aspx.cs" style="border-radius: 70%" Height="550px" Width="550px" />
+                              <%--<asp:Image runat="server" style="border-radius: 70%" Height="550px" Width="550px" />--%>
+
+                           <%-- <img src="assets/images/girl-1.png" alt="" class="img-responsive" style="border-radius: 70%; Height:350px; Width:550px"/>--%>
+                    <asp:Image ID="shah" runat="server" Height="350px" Width="300px" BorderStyle="None" style="border-radius:50px" />
                             </div>
                         </div>
                     </div>
