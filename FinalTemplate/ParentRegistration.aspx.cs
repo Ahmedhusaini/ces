@@ -17,7 +17,7 @@ namespace FinalTemplate
 
         protected void country_TextChanged(object sender, EventArgs e)
         {
-            country.ReadOnly = true;
+            
         }
 
        
@@ -31,7 +31,7 @@ namespace FinalTemplate
             {
                 result = classparent.ParentRegister(1, Convert.ToInt32(DropDownList2.SelectedValue),
                     Convert.ToInt32(postal.Text), user.Text, pass.Text, Convert.ToInt32(accountp.Text),
-                    pemail.Text, semail.Text, name.Text, lname.Text, fileupload.FileName);
+                    pemail.Text, semail.Text, name.Text, lname.Text, fileupload.FileName,nic.Text);
                 if (result == "true")
                 {
                     Response.Write("register");

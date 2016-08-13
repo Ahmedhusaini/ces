@@ -23,13 +23,13 @@ namespace FinalTemplate.source.Functions
             //i changed my original password to this to check the email, later i will change this back to my original password.
             //if you want to send email from your own email id change the id and password to yours and email will be sent through
             //your email address.
-            string smtpPassword = "abbasikhan";
+            string smtpPassword = "159abbasi789";
             int smtpPort = 587;
             try
             {
                 var client = new SmtpClient("smtp.gmail.com", 587)
                 {
-                    Credentials =new  NetworkCredential(smtpUsername,smtpPassword),
+                    Credentials = new NetworkCredential(smtpUsername, smtpPassword),
                     EnableSsl = true
                 };
                 client.Send(smtpUsername, To, "medo subject", "demo body");
@@ -48,17 +48,17 @@ namespace FinalTemplate.source.Functions
             if (objFileUpload.HasFile)
             {
                 int currentFileSize = objFileUpload.PostedFile.ContentLength;
-                    savedPath = fullPath + objFileUpload.FileName;
-                    try
-                    {
-                        objFileUpload.SaveAs(HttpContext.Current.Server.MapPath(savedPath));
-                        returnvalue = "true";
-                    }
-                    catch (Exception exception)
-                    {
-                        returnvalue = exception.ToString();
-                    }
-                
+                savedPath = fullPath + objFileUpload.FileName;
+                try
+                {
+                    objFileUpload.SaveAs(HttpContext.Current.Server.MapPath(savedPath));
+                    returnvalue = "true";
+                }
+                catch (Exception exception)
+                {
+                    returnvalue = exception.ToString();
+                }
+
 
             }
             return returnvalue;
@@ -83,5 +83,6 @@ namespace FinalTemplate.source.Functions
                 myDatabase.obj_sqlcommand.Dispose();
             }
         }
+
     }
 }

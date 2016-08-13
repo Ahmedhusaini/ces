@@ -42,7 +42,7 @@ namespace FinalTemplate
                 //string fileuploaded = JFunctions.UploadSingleFile(fileupload, "images/registeredSchools/");
                 if (JFunctions.UploadSingleFile(fileupload, "images/registeredSchools/") == "true")
                 {
-                    
+
                     result = classSchool.RegisterSchool(1, Convert.ToInt32(ddl_city.SelectedValue),
                 Convert.ToInt32(txt_postalcode.Text), txt_username.Text, txt_password.Text, Convert.ToInt32(txt_accountPin.Text),
                 txt_primaryEmailAddress.Text, txt_secondaryEmailAddress.Text, txt_schoolName.Text, txt_ownername.Text,
@@ -50,7 +50,7 @@ namespace FinalTemplate
 
                     if (result == "true")
                     {
-                        //JFunctions.SendEmail(txt_primaryEmailAddress.Text, "Successfully Registered", "Your are successfully registered at our portal");
+                        JFunctions.SendEmail(txt_primaryEmailAddress.Text, "Successfully Registered", "Your are successfully registered at our portal");
                         Response.Redirect("~/Default.aspx");
                     }
                     else
@@ -60,7 +60,7 @@ namespace FinalTemplate
 
 
                 }
-                else 
+                else
                 {
                     Response.Redirect("image was not uploaded to server. Hence the registration process is cancelled. Please try again");
                 }

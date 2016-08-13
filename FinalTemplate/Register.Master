@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Register.master.cs" Inherits="FinalTemplate.Register" %>
+﻿<%@ Master AutoEventWireup="true" CodeBehind="Register.master.cs" Inherits="FinalTemplate.Register" Language="C#" %>
 
 <!DOCTYPE html>
 

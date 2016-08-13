@@ -11,7 +11,7 @@ namespace FinalTemplate.source.Registration
         private Database.Database myDatabase = new Database.Database("cesConnectionString3");
 
         public string ParentRegister(int country_id, int city_id, int postalcode, string username, string password,
-            int accountpin, string primaryemail, string secondaryemail, string firstname, string lastname, string photo)
+            int accountpin, string primaryemail, string secondaryemail, string firstname, string lastname, string photo,string nicc)
         {
             string locationid = myDatabase.GetLastValueByColumnName("loc_id", "tbl_location");
 
@@ -30,7 +30,7 @@ namespace FinalTemplate.source.Registration
             SqlParameter secondaryemailParameter = new SqlParameter("@secondary_email", SqlDbType.VarChar, 50);
             SqlParameter usertypeidParameter = new SqlParameter("@user_type_id", SqlDbType.Int);
             SqlParameter usertypeParameter = new SqlParameter("@user_type", SqlDbType.VarChar, 50);
-            //SqlParameter usertypeoutParameter = new SqlParameter("@user_type_id_out", SqlDbType.Int);
+            SqlParameter usertypeoutParameter = new SqlParameter("@user_type_id_out", SqlDbType.Int);
             SqlParameter logincountParameter = new SqlParameter("@login_count", SqlDbType.Int);
             SqlParameter lastlogindateParameter = new SqlParameter("@last_login_date", SqlDbType.Date);
             SqlParameter authorizedidoutParameter = new SqlParameter("@authorized_id_out", SqlDbType.VarChar, 20);
@@ -45,9 +45,9 @@ namespace FinalTemplate.source.Registration
             SqlParameter phoneParameter = new SqlParameter("@phone", SqlDbType.VarChar, 50);
             SqlParameter addressParameter = new SqlParameter("@address", SqlDbType.VarChar, 50);
             SqlParameter officeParameter = new SqlParameter("office_address", SqlDbType.VarChar, 50);
-            SqlParameter nicParameter = new SqlParameter("CNIC_No", SqlDbType.Int);
+            SqlParameter nicParameter = new SqlParameter("CNIC_No", SqlDbType.VarChar,50);
             SqlParameter postParameter = new SqlParameter("Post_Designation", SqlDbType.VarChar, 50);
-            SqlParameter salaryParameter = new SqlParameter("Salary_Anum", SqlDbType.Int);
+            SqlParameter salaryParameter = new SqlParameter("Salary_Anum", SqlDbType.VarChar,50);
             SqlParameter generaloutParameter = new SqlParameter("general_id_out", SqlDbType.VarChar, 20);
             SqlParameter parentoutParameter = new SqlParameter("parent_id_out", SqlDbType.VarChar, 20);
             SqlParameter dobidParameter = new SqlParameter("@dob_id", SqlDbType.Date);
@@ -75,10 +75,10 @@ namespace FinalTemplate.source.Registration
             parentidParameter.Value = GenerateParentID(firstname, lastname);
             fnameParameter.Value = firstname;
             lnameParameter.Value = lastname;
-            //  nicParameter.Value = cnic;
-            dayParameter.Value = Convert.ToString(Convert.ToDateTime(Jfunctionparents.GetSystemDate().Substring(0, 2)));
-            monthParameter.Value = Convert.ToString(Convert.ToDateTime(Jfunctionparents.GetSystemDate().Substring(3,2)));
-            yearParameter.Value = Convert.ToString(Convert.ToDateTime(Jfunctionparents.GetSystemDate().Substring(6,4)));
+            nicParameter.Value = nicc;
+            dayParameter.Value = Convert.ToInt32(Jfunctionparents.GetSystemDate().Substring(0, 1));
+            monthParameter.Value = Convert.ToInt32(Jfunctionparents.GetSystemDate().Substring(2,2));
+            yearParameter.Value = Convert.ToInt32(Jfunctionparents.GetSystemDate().Substring(5,4));
             photoParameter.Value = photo;
             parentoutParameter.Direction = ParameterDirection.Output;
             generaloutParameter.Direction = ParameterDirection.Output;
