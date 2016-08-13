@@ -31,12 +31,21 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.Button btnSave;
         
         /// <summary>
-        /// Label1 control.
+        /// label control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label label;
+        
+        /// <summary>
+        /// shah control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image shah;
     }
 }
