@@ -14,14 +14,16 @@
              AspButton();
              Validate();
              
+            
          });
-          function SetTextFont() {
+
+         var packageName = "";
+
+         
+         function SetTextFont() {
              $('.inner').find('.inner-number').removeClass('inner-number').addClass('innerNumber');
          }
 
-         function showalert() {
-             alert("Your account created");
-         }
          function RemoveSelectedPackage() {
              $('div').find('.active').removeClass('active');
          }
@@ -40,19 +42,21 @@
                          silver.css('background-color', '#C0C0C0');
                          gold.css('background-color', '');
                          platinum.css('background-color', '');
+                         $("#hiddenFieild").val(packageName);
                      } else if (packagename == 'Gold') {
                          silver.css('background-color', '');
                          gold.css('background-color', '#CFB53B');
-                         platinum.css('background-color', '');
+                         platinum.css('background-color', '');                         
+                         $("#hiddenFieild").val(packageName);
                      } else if (packagename == 'Platinum') {
                          gold.css('background-color', '');
                          silver.css('background-color', '');
                          platinum.css('background-color', '#E5DEDE');
+                         $("#hiddenFieild").val(packageName);
                      }
                  }                 
              });
          }
-         
          function PriceHover() {
              $('.pricing-content').hover(function () { $(this).css('background-color', '#D2542A'); }, function () { $(this).css('background-color', '#EAEDF5'); });
          }
@@ -236,7 +240,8 @@
          <div class="page-register rlp">
         <div class="container">
             <div id="RegistrationSchoolWidthFix" class="register-wrapper rlp-wrapper reg-sk ">
-                
+                    <!---------------Hidden Field------------------>
+                <input type="hidden" runat="server" id="hiddenFieild"/>
                     <div class="register-table rlp-table">
                     <!-- PRICING-->
                     <div class="section pricing">
@@ -604,7 +609,7 @@
                     </div>
                     <div id="submitbutton" class="register-submit">
 
-                        <asp:Button ID="btn_submit" runat="server" Text="Submit Order" OnClick="btn_submit_Click" />
+                        <asp:Button ID="btn_submit" runat="server"  Text="Submit Order" OnClick="btn_submit_Click" />
 
                     </div>
                 </div>
