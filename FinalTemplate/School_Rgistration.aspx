@@ -42,17 +42,17 @@
                          silver.css('background-color', '#C0C0C0');
                          gold.css('background-color', '');
                          platinum.css('background-color', '');
-                         $("#hiddenFieild").val(packageName);
+                         $("#<%=hiddenFieild.ClientID%>").val(packagename);
                      } else if (packagename == 'Gold') {
                          silver.css('background-color', '');
                          gold.css('background-color', '#CFB53B');
                          platinum.css('background-color', '');                         
-                         $("#hiddenFieild").val(packageName);
+                         $("#<%=hiddenFieild.ClientID%>").val(packagename);
                      } else if (packagename == 'Platinum') {
                          gold.css('background-color', '');
                          silver.css('background-color', '');
                          platinum.css('background-color', '#E5DEDE');
-                         $("#hiddenFieild").val(packageName);
+                         $("#<%=hiddenFieild.ClientID%>").val(packagename);
                      }
                  }                 
              });
@@ -241,7 +241,7 @@
         <div class="container">
             <div id="RegistrationSchoolWidthFix" class="register-wrapper rlp-wrapper reg-sk ">
                     <!---------------Hidden Field------------------>
-                <input type="hidden" runat="server" id="hiddenFieild"/>
+                <input type="hidden" runat="server" value="" id="hiddenFieild"/>
                     <div class="register-table rlp-table">
                     <!-- PRICING-->
                     <div class="section pricing">

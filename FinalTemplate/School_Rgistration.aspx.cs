@@ -39,7 +39,7 @@ namespace FinalTemplate
 
             try
             {
-                result = this.hiddenFieild.ToString();
+                result = this.hiddenFieild.Value.ToString();
                 if (result == "Gold" || result == "Silver" || result == "Platinum")
                 {
                     if (JFunctions.UploadSingleFile(fileupload, "images/registeredSchools/") == "true")
@@ -72,7 +72,6 @@ namespace FinalTemplate
                 }
                 else
                 {
-                    //ScriptManager.RegisterClientScriptBlock(this, GetType(), "alert", "<script>alert('You have to select atleast one package.');</script>", true);
                     Response.Write("<script>alert('You have to select atleast one package.');</script>");
                 }
             }
