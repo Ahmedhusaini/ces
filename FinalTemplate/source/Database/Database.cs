@@ -576,6 +576,7 @@ namespace FinalTemplate.source.Database
                 return returnvalue.ToString();
             
         }
+        //insecure method
         public string GetLastValueByColumnName(string columnName, string tableName)
         {
             string query = "select top 1 " + columnName + " from " + tableName + " order by " + columnName + " desc;";
