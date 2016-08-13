@@ -182,7 +182,13 @@ namespace FinalTemplate.source.Database
                     {
                         //if black listed keywords are filtered successfully. Then converting actual value to respective column type match as sql server database table
                         if (Jvalidate.FilterBlackLIstKeywords(columnArray))
-                            this.obj_sqlcommand.Parameters.AddWithValue("@" + ColumnNames[i].ToString(), Convert.ToInt32(Jvalidate.RemoveHtmlTags(ColumnValues[i].ToString())));
+                        {
+                            this.obj_sqlcommand.Parameters.AddWithValue("@" + ColumnNames[i].ToString(),
+                                Convert.ToInt32(Jvalidate.RemoveHtmlTags(ColumnValues[i].ToString())));
+
+
+
+                        }
                         else
                             break;
                     }
@@ -576,6 +582,7 @@ namespace FinalTemplate.source.Database
                 return returnvalue.ToString();
             
         }
+        //insecure method
         public string GetLastValueByColumnName(string columnName, string tableName)
         {
             string query = "select top 1 " + columnName + " from " + tableName + " order by " + columnName + " desc;";

@@ -18,6 +18,10 @@
           function SetTextFont() {
              $('.inner').find('.inner-number').removeClass('inner-number').addClass('innerNumber');
          }
+
+         function showalert() {
+             alert("Your account created");
+         }
          function RemoveSelectedPackage() {
              $('div').find('.active').removeClass('active');
          }
@@ -48,6 +52,7 @@
                  }                 
              });
          }
+         
          function PriceHover() {
              $('.pricing-content').hover(function () { $(this).css('background-color', '#D2542A'); }, function () { $(this).css('background-color', '#EAEDF5'); });
          }
