@@ -7,7 +7,7 @@
                         <div class="container">
                             <div class="search-input-wrapper">
                                 <form>
-                                    <asp:DropDownList ID="DropDownList1" CssClass="form-select style-2 selectbox" runat="server" DataSourceID="SqlDataSource1" DataTextField="school_name" DataValueField="school_id" AppendDataBoundItems="True" AutoPostBack="True" >
+                                    x<asp:DropDownList ID="DropDownList1" CssClass="form-select style-2 selectbox" runat="server" DataSourceID="SqlDataSource1" DataTextField="school_name" DataValueField="school_id" AppendDataBoundItems="True" AutoPostBack="True" >
                                         <asp:ListItem>School</asp:ListItem>
                                     </asp:DropDownList>
                                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="SELECT [school_id], [school_name] FROM [tbl_school]"></asp:SqlDataSource>
@@ -36,8 +36,15 @@
         <div class="group-title-index edu-ab-title"><h2 class="center-title">Check<b> your student</b> time table</h2>
             <p clas&nbsp;&nbsp;&nbsp;
             </p>
-                <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" Width="415px">
+                <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" Width="415px" DataSourceID="SqlDataSource3">
+                    <Columns>
+                        <asp:BoundField DataField="school_name" HeaderText="school_name" SortExpression="school_name" />
+                        <asp:BoundField DataField="class" HeaderText="class" SortExpression="class" />
+                        <asp:BoundField DataField="section" HeaderText="section" SortExpression="section" />
+                        <asp:BoundField DataField="firstname" HeaderText="firstname" SortExpression="firstname" />
+                    </Columns>
                 </asp:GridView>
+                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="SELECT tbl_school.school_name, tbl_class.class, tbl_section.section, tbl_general.firstname FROM tbl_school INNER JOIN tbl_Student_Reg ON tbl_school.school_id = tbl_Student_Reg.school_id INNER JOIN tbl_class_sec_info ON tbl_Student_Reg.class_sec_info_id = tbl_class_sec_info.class_sec_info_id INNER JOIN tbl_section ON tbl_class_sec_info.section_id = tbl_section.Section_id INNER JOIN tbl_class ON tbl_class_sec_info.class_id = tbl_class.Class_id INNER JOIN tbl_general ON tbl_Student_Reg.General_Id = tbl_general.General_Id"></asp:SqlDataSource>
                 <%--<asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="SELECT tbl_Student_Reg.Std_id, tbl_class.class, tbl_section.section, tbl_school.school_name, tbl_general.firstname FROM tbl_class INNER JOIN tbl_class_sec_info ON tbl_class.Class_id = tbl_class_sec_info.class_id INNER JOIN tbl_Student_Reg ON tbl_class_sec_info.class_sec_info_id = tbl_Student_Reg.class_sec_info_id INNER JOIN tbl_general ON tbl_Student_Reg.General_Id = tbl_general.General_Id INNER JOIN tbl_school ON tbl_Student_Reg.school_id = tbl_school.school_id INNER JOIN tbl_section ON tbl_class_sec_info.section_id = tbl_section.Section_id"></asp:SqlDataSource>--%>
             </div>
                        <div class="course-table" style="border-style: none; border-width: inherit; border-color: #FFFFFF">

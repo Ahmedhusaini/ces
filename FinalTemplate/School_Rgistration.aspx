@@ -15,7 +15,7 @@
              Validate();
              
          });
-         function SetTextFont() {
+          function SetTextFont() {
              $('.inner').find('.inner-number').removeClass('inner-number').addClass('innerNumber');
          }
          function RemoveSelectedPackage() {
