@@ -22,21 +22,21 @@ namespace FinalTemplate.source.Functions
         }
         public static void BindDropDownList(DropDownList ddl2, string displayField1, string valueField1, string queryy)
         {
-            Database.Database myDatabase = new Database.Database("cesConnectionString3");
-            myDatabase.CreateConnection();
-            myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, queryy);
+            Database.Database mDatabase = new Database.Database("cesConnectionString3");
+            mDatabase.CreateConnection();
+            mDatabase.InitializeSQLCommandObject(mDatabase.GetCurrentConnection, queryy);
             try
             {
-                myDatabase.OpenConnection();
-                ddl2.DataSource = myDatabase.obj_sqlcommand.ExecuteReader();
+                mDatabase.OpenConnection();
+                ddl2.DataSource = mDatabase.obj_sqlcommand.ExecuteReader();
                 ddl2.DataTextField = displayField1;
                 ddl2.DataValueField = valueField1;
                 ddl2.DataBind();
             }
             finally
             {
-                myDatabase.CloseConnection();
-                myDatabase.obj_sqlcommand.Dispose();
+                mDatabase.CloseConnection();
+                mDatabase.obj_sqlcommand.Dispose();
             }
         }
     }
