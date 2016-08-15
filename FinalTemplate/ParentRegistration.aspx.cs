@@ -12,6 +12,7 @@ namespace FinalTemplate
             if (!IsPostBack)
             {
                  Jfunctionparents.BindDropDownList(DropDownList2, "city", "city_id", "select * from tbl_city");
+               
             }
         }
 
@@ -24,14 +25,15 @@ namespace FinalTemplate
 
         protected void Button1_Click1(object sender, EventArgs e)
         {
-            CParentRegistration classparent = new CParentRegistration();
+            CParents classparent = new CParents();
             string result = string.Empty;
 
             try
             {
-                result = classparent.ParentRegister(1, Convert.ToInt32(DropDownList2.SelectedValue),
-                    Convert.ToInt32(postal.Text), user.Text, pass.Text, Convert.ToInt32(accountp.Text),
-                    pemail.Text, semail.Text, name.Text, lname.Text, fileupload.FileName,nic.Text);
+                result = classparent.Registerparents(1, Convert.ToInt32(DropDownList2.SelectedValue),
+                    Convert.ToInt32(postal.Text),Convert.ToInt32(accountp.Text), user.Text, pass.Text,
+                    pemail.Text, semail.Text, name.Text, lname.Text, fileupload.FileName, Convert.ToInt32(nic.Text), post.Text, salary.Text, Convert.ToInt32(contact1.Text)
+                    , officeadd.Text, Convert.ToInt32(contact2.Text), radiobut.SelectedValue, dob.Text, nation.Text, religion.Text, address.Text);
                 if (result == "true")
                 {
                     Response.Write("register");
