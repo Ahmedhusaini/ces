@@ -23,7 +23,7 @@ namespace FinalTemplate.source.Functions
             //i changed my original password to this to check the email, later i will change this back to my original password.
             //if you want to send email from your own email id change the id and password to yours and email will be sent through
             //your email address.
-            string smtpPassword = "159abbasi789";
+            string smtpPassword = "dovocgsfopxjqjko";
             int smtpPort = 587;
             try
             {
@@ -32,7 +32,7 @@ namespace FinalTemplate.source.Functions
                     Credentials = new NetworkCredential(smtpUsername, smtpPassword),
                     EnableSsl = true
                 };
-                client.Send(smtpUsername, To, "medo subject", "demo body");
+                client.Send(smtpUsername, To, Subject, MessageBody);
             }
             catch (Exception ex)
             {
