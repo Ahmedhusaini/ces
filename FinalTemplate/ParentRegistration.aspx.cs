@@ -32,8 +32,8 @@ namespace FinalTemplate
             {
                 result = classparent.Registerparents(1, Convert.ToInt32(DropDownList2.SelectedValue),
                     Convert.ToInt32(postal.Text),Convert.ToInt32(accountp.Text), user.Text, pass.Text,
-                    pemail.Text, semail.Text, name.Text, lname.Text, fileupload.FileName, Convert.ToInt32(nic.Text), post.Text, salary.Text, Convert.ToInt32(contact1.Text)
-                    , officeadd.Text, Convert.ToInt32(contact2.Text), radiobut.SelectedValue, dob.Text, nation.Text, religion.Text, address.Text);
+                    pemail.Text, semail.Text, name.Text, lname.Text, fileupload.FileName, Convert.ToInt32(nic.Text), post.Text, salary.Text, Convert.ToInt32(contact1.Text.ToString())
+                    , officeadd.Text, Convert.ToInt32(contact2.Text.ToString()), radiobut.SelectedValue, dob.Text, nation.Text, religion.Text, address.Text);
                 if (result == "true")
                 {
                     Response.Write("register");

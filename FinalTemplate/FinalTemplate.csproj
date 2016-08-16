@@ -273,7 +273,7 @@
     <Compile Include="source\Functions\Login.cs" />
     <Compile Include="source\Jvalidation\Jvalidate.cs" />
     <Compile Include="source\Registration\ClassSchoolRegistration.cs" />
-    <Compile Include="source\Registration\CParents.cs" />
+    <Compile Include="source\Registration\CParentsregistration.cs" />
     <Compile Include="StudentRgistration.aspx.cs">
       <DependentUpon>StudentRgistration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
