@@ -54,7 +54,7 @@ namespace FinalTemplate
 
                         if (result == "true")
                         {
-                            // JFunctions.SendEmail(txt_primaryEmailAddress.Text, "Successfully Registered", "Your are successfully registered at our portal");
+                            JFunctions.SendEmail(txt_primaryEmailAddress.Text, "Successfully Registered", "Your are successfully registered at our portal");
                             Response.Redirect("~/Default.aspx");
                         }
                         else
