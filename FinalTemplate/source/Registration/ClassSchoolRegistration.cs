@@ -9,7 +9,7 @@ namespace FinalTemplate.source.Registration
     public class ClassSchoolRegistration
     {
         private Database.Database myDatabase = new Database.Database("cesConnectionString");
-        public string RegisterSchool(int country_id, int city_id, int postalcode, string username, string password, int accountpin, string primaryemail, string secondaryemail, string schoolName, string ownerName, string foundedIn, string logo, int school_type_id, string campusName)
+        public string RegisterSchool(int country_id, int city_id, int postalcode, string username, string password, int accountpin, string primaryemail, string secondaryemail, string contactPrimary, string contactSecondary, string schoolName, string ownerName, string foundedIn, string logo, int school_type_id, string campusName)
         {
             string locationid = myDatabase.GetLastValueByColumnName("loc_id", "tbl_location");
 
@@ -33,6 +33,8 @@ namespace FinalTemplate.source.Registration
             SqlParameter schoolidParameter = new SqlParameter("@school_id", SqlDbType.VarChar, 50);
             SqlParameter schoolnameParameter = new SqlParameter("@school_name", SqlDbType.VarChar, 50);
             SqlParameter ownernameParameter = new SqlParameter("@owner_name", SqlDbType.VarChar, 50);
+            SqlParameter contactprimaryParameter = new SqlParameter("@contact_primary", SqlDbType.VarChar, 20);
+            SqlParameter contactsecondaryParameter = new SqlParameter("@contact_secondary", SqlDbType.VarChar, 20);
             SqlParameter foundedinParameter = new SqlParameter("@founded_in", SqlDbType.Date);
             SqlParameter logoParameter = new SqlParameter("@logo", SqlDbType.VarChar, 200);
             SqlParameter schooltypeidParameter = new SqlParameter("@school_type_id", SqlDbType.Int);
@@ -59,6 +61,8 @@ namespace FinalTemplate.source.Registration
             schoolidParameter.Value = GenerateSchoolID(schoolName, ownerName);
             schoolnameParameter.Value = schoolName;
             ownernameParameter.Value = ownerName;
+            contactprimaryParameter.Value = contactPrimary;
+            contactsecondaryParameter.Value = contactSecondary;
             foundedinParameter.Value = Convert.ToDateTime(JFunctions.GetSystemDate());
             logoParameter.Value = logo;
             schooltypeidParameter.Value = school_type_id;
@@ -83,6 +87,8 @@ namespace FinalTemplate.source.Registration
             myDatabase.obj_sqlcommand.Parameters.Add(authorizedidoutParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(schoolidParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(schoolnameParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(contactprimaryParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(contactsecondaryParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(ownernameParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(foundedinParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(logoParameter);

@@ -13,6 +13,15 @@ namespace FinalTemplate {
     public partial class School_Rgistration {
         
         /// <summary>
+        /// hiddenFieild control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hiddenFieild;
+        
+        /// <summary>
         /// txt_schoolName control.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,24 @@ namespace FinalTemplate {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_campusname;
+        
+        /// <summary>
+        /// txt_contact_primary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_contact_primary;
+        
+        /// <summary>
+        /// txt_contact_secondary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_contact_secondary;
         
         /// <summary>
         /// txt_foundedIn control.

@@ -14,10 +14,16 @@
              AspButton();
              Validate();
              
+            
          });
+
+         var packageName = "";
+
+         
          function SetTextFont() {
              $('.inner').find('.inner-number').removeClass('inner-number').addClass('innerNumber');
          }
+
          function RemoveSelectedPackage() {
              $('div').find('.active').removeClass('active');
          }
@@ -36,14 +42,17 @@
                          silver.css('background-color', '#C0C0C0');
                          gold.css('background-color', '');
                          platinum.css('background-color', '');
+                         $("#<%=hiddenFieild.ClientID%>").val(packagename);
                      } else if (packagename == 'Gold') {
                          silver.css('background-color', '');
                          gold.css('background-color', '#CFB53B');
-                         platinum.css('background-color', '');
+                         platinum.css('background-color', '');                         
+                         $("#<%=hiddenFieild.ClientID%>").val(packagename);
                      } else if (packagename == 'Platinum') {
                          gold.css('background-color', '');
                          silver.css('background-color', '');
                          platinum.css('background-color', '#E5DEDE');
+                         $("#<%=hiddenFieild.ClientID%>").val(packagename);
                      }
                  }                 
              });
@@ -231,7 +240,8 @@
          <div class="page-register rlp">
         <div class="container">
             <div id="RegistrationSchoolWidthFix" class="register-wrapper rlp-wrapper reg-sk ">
-                
+                    <!---------------Hidden Field------------------>
+                <input type="hidden" runat="server" value="" id="hiddenFieild"/>
                     <div class="register-table rlp-table">
                     <!-- PRICING-->
                     <div class="section pricing">
@@ -445,7 +455,7 @@
                                         <asp:TextBox ID="txt_ownername" CssClass="form-control  form-input " runat="server"></asp:TextBox>
 
                                     </div>
-                                    <div class="col-md-6">
+                                      <div class="col-md-6">
                                         <label for="regname" class="control-label form-label">
                                             Campus name  <span class="highlight">*<br />
                                             </span>
@@ -455,6 +465,27 @@
                                         <asp:TextBox ID="txt_campusname" CausesValidation="true" CssClass="form-control  form-input" runat="server"></asp:TextBox>
 
                                     </div>
+                                      <div class="col-md-6">
+                                        <label for="regname" class="control-label form-label">
+                                            Contact Primary<span class="highlight">*<br />
+                                            </span>
+                                        </label>
+                                        <!-- p.help-block Warning !-->
+                                        <br />
+                                        <asp:TextBox ID="txt_contact_primary" CssClass="form-control  form-input " runat="server"></asp:TextBox>
+
+                                    </div>
+                                      <div class="col-md-6">
+                                        <label for="regname" class="control-label form-label">
+                                            Contact Secondary<span class="highlight">*<br />
+                                            </span>
+                                        </label>
+                                        <!-- p.help-block Warning !-->
+                                        <br />
+                                        <asp:TextBox ID="txt_contact_secondary" CssClass="form-control  form-input " runat="server"></asp:TextBox>
+
+                                    </div>
+                                  
                                     <div class="col-md-6">
                                         
                                         <label for="regname" class="control-label form-label">
@@ -599,7 +630,7 @@
                     </div>
                     <div id="submitbutton" class="register-submit">
 
-                        <asp:Button ID="btn_submit" runat="server" Text="Submit Order" OnClick="btn_submit_Click" />
+                        <asp:Button ID="btn_submit" runat="server"  Text="Submit Order" OnClick="btn_submit_Click" />
 
                     </div>
                 </div>

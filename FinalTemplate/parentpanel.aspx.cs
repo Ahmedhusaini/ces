@@ -37,7 +37,7 @@ namespace FinalTemplate
 
 
 
-            string str = "select * from tbl_general where (firstname like '%' + @search + '%')";
+            string str = "select firstname tbl_general where '"+searchbox.Text+"'";
             SqlCommand cmd = new SqlCommand(str, con);
             cmd.Parameters.Add("@search", SqlDbType.NVarChar).Value = searchbox.Text;
             con.Open();
