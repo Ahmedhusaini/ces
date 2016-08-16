@@ -52,7 +52,7 @@
                                 <p>CLASS-9 SECTION-B</p>
                                 <div>
                                 <asp:FileUpload ID="FileUpload1" runat="server" />
-                                <asp:button  id="btnSave" text="Save" runat="server" onclick="btnSave_Click" />
+                                <asp:button  id="btnSave" text="Upload" runat="server" ForeColor="Black" onclick="btnSave_Click" />
                                 </div>
                                 <asp:Label ID="label" runat="server"></asp:Label>
                             </div>  
@@ -60,7 +60,7 @@
                               <%--<asp:Image runat="server" style="border-radius: 70%" Height="550px" Width="550px" />--%>
 
                            <%-- <img src="assets/images/girl-1.png" alt="" class="img-responsive" style="border-radius: 70%; Height:350px; Width:550px"/>--%>
-                    <asp:Image ID="shah" runat="server" Height="350px" Width="300px" BorderStyle="None" style="border-radius:50px" />
+                    <asp:Image ID="shah" runat="server" Height="320px" Width="270px" BorderStyle="None" style="border-radius:150px" />
                             </div>
                         </div>
                     </div>
