@@ -65,17 +65,16 @@ namespace FinalTemplate
                     if (JFunctions.UploadSingleFile(fileupload, "images/registeredSchools/") == "true")
                     {
                         result = classSchool.RegisterSchool(1, Convert.ToInt32(ddl_city.SelectedValue),
-                            Convert.ToInt32(txt_postalcode.Text), txt_username.Text, txt_password.Text,
-                            Convert.ToInt32(txt_accountPin.Text),
-                            txt_primaryEmailAddress.Text, txt_secondaryEmailAddress.Text, txt_contact_primary.Text, txt_contact_secondary.Text, txt_schoolName.Text,
-                            txt_ownername.Text,
-                            txt_foundedIn.Text, fileupload.FileName, Convert.ToInt32(ddl_schooltype.SelectedValue),
-                            txt_campusname.Text);
+                             Convert.ToInt32(txt_postalcode.Text), txt_username.Text, txt_password.Text,
+                             Convert.ToInt32(txt_accountPin.Text),
+                             txt_primaryEmailAddress.Text, txt_secondaryEmailAddress.Text, txt_contact_primary.Text, txt_contact_secondary.Text, txt_schoolName.Text,
+                             txt_ownername.Text,
+                             txt_foundedIn.Text, fileupload.FileName, Convert.ToInt32(ddl_schooltype.SelectedValue),
+                             txt_campusname.Text);
                         if (result == "true")
                         {
                             JFunctions.SendEmail(txt_primaryEmailAddress.Text, "CES - Registration", EmailBody());
                             Response.Write("<script>alert('An email has been sent to your primary email address which contain basic information about your account. You will be redirected to home page.');</script>");
-                            Response.Redirect("~/Default.aspx");
                         }
                         else
                             Response.Write("not register");
