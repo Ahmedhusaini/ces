@@ -20,22 +20,17 @@ namespace FinalTemplate.source.Functions
         public static void SendEmail(string To, string Subject, string MessageBody)
         {
             string smtpUsername = "jahangeer.ahmed11@gmail.com";
-            //i changed my original password to this to check the email, later i will change this back to my original password.
-            //if you want to send email from your own email id change the id and password to yours and email will be sent through
-            //your email address.
-            string smtpPassword = "dovocgsfopxjqjko";
-            int smtpPort = 587;
-            try
+            using (MailMessage mailMessage = new MailMessage("jahangeer.ahmed11@gmail.com", To, Subject, MessageBody))
             {
-                var client = new SmtpClient("smtp.gmail.com", 587)
-                {
-                    Credentials = new NetworkCredential(smtpUsername, smtpPassword),
-                    EnableSsl = true
-                };
-                client.Send(smtpUsername, To, Subject, MessageBody);
-            }
-            catch (Exception ex)
-            {
+                mailMessage.IsBodyHtml = true;
+                SmtpClient smtp = new SmtpClient();
+                smtp.Host = "smtp.gmail.com";
+                smtp.EnableSsl = true;
+                NetworkCredential networkCredential = new NetworkCredential(smtpUsername, "dovocgsfopxjqjko");
+                smtp.UseDefaultCredentials = true;
+                smtp.Credentials = networkCredential;
+                smtp.Port = 587;
+                smtp.Send(mailMessage);
 
             }
         }

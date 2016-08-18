@@ -455,7 +455,7 @@
                                         <asp:TextBox ID="txt_ownername" CssClass="form-control  form-input " runat="server"></asp:TextBox>
 
                                     </div>
-                                    <div class="col-md-6">
+                                      <div class="col-md-6">
                                         <label for="regname" class="control-label form-label">
                                             Campus name  <span class="highlight">*<br />
                                             </span>
@@ -465,6 +465,27 @@
                                         <asp:TextBox ID="txt_campusname" CausesValidation="true" CssClass="form-control  form-input" runat="server"></asp:TextBox>
 
                                     </div>
+                                      <div class="col-md-6">
+                                        <label for="regname" class="control-label form-label">
+                                            Contact Primary<span class="highlight">*<br />
+                                            </span>
+                                        </label>
+                                        <!-- p.help-block Warning !-->
+                                        <br />
+                                        <asp:TextBox ID="txt_contact_primary" CssClass="form-control  form-input " runat="server"></asp:TextBox>
+
+                                    </div>
+                                      <div class="col-md-6">
+                                        <label for="regname" class="control-label form-label">
+                                            Contact Secondary<span class="highlight">*<br />
+                                            </span>
+                                        </label>
+                                        <!-- p.help-block Warning !-->
+                                        <br />
+                                        <asp:TextBox ID="txt_contact_secondary" CssClass="form-control  form-input " runat="server"></asp:TextBox>
+
+                                    </div>
+                                  
                                     <div class="col-md-6">
                                         
                                         <label for="regname" class="control-label form-label">
