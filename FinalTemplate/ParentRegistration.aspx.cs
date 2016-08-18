@@ -25,15 +25,14 @@ namespace FinalTemplate
 
         protected void Button1_Click1(object sender, EventArgs e)
         {
-            CParents classparent = new CParents();
+            CParentsregistraion classparent = new CParentsregistraion();
             string result = string.Empty;
 
             try
             {
-                result = classparent.Registerparents(1, Convert.ToInt32(DropDownList2.SelectedValue),
-                    Convert.ToInt32(postal.Text),Convert.ToInt32(accountp.Text), user.Text, pass.Text,
-                    pemail.Text, semail.Text, name.Text, lname.Text, fileupload.FileName, Convert.ToInt32(nic.Text), post.Text, salary.Text, Convert.ToInt32(contact1.Text.ToString())
-                    , officeadd.Text, Convert.ToInt32(contact2.Text.ToString()), radiobut.SelectedValue, dob.Text, nation.Text, religion.Text, address.Text);
+                result = classparent.Registerparents( name.Text, lname.Text, nation.Text, radiobut.SelectedValue, fileupload.FileName, religion.Text, contact1.Text, address.Text, officeadd.Text,
+                    contact2.Text,nic.Text,post.Text,salary.Text,1,Convert.ToInt32(DropDownList2.SelectedValue),Convert.ToInt32(postal.Text),user.Text,pass.Text,
+                    Convert.ToInt32(accountp.Text),pemail.Text,semail.Text);
                 if (result == "true")
                 {
                     Response.Write("register");
