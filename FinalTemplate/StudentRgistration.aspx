@@ -101,10 +101,10 @@
                          
                            
                        },
-                       <%=emaill.UniqueID%>:{
+<%--                       <%=emaill.UniqueID%>:{
                            required:true,
                            email:true
-                       },
+                       },--%>
                     <%=pemail.UniqueID%>:{
                            required:true,
                            email:true
@@ -209,9 +209,9 @@
                              required:"You must confirm your password",
                          
                          },
-                       <%=emaill.UniqueID%>:{
+<%--                       <%=emaill.UniqueID%>:{
                            required:"Please enter your an email"
-                       },
+                       },--%>
                        <%=pemail.UniqueID%>:{
                            required:"Please enter your an email"
                        },
@@ -315,7 +315,7 @@
                                         <asp:TextBox ID="lname" CssClass="form-control  form-input " runat="server"></asp:TextBox>
 
                                     </div>
-                                    <div class="col-md-6">
+<%--                                    <div class="col-md-6">
                                         <label for="regname" class="control-label form-label">
                                             Email <span class="highlight">*<br />
                                             </span>
@@ -324,7 +324,7 @@
                                         <br />
                                         <asp:TextBox ID="emaill" CausesValidation="true" CssClass="form-control  form-input" runat="server"></asp:TextBox>
 
-                                    </div>
+                                    </div>--%>
                                     <div class="col-md-6">
                                         <label for="regname" class="control-label form-label">
                                             Contact No <span class="highlight">*<br />
