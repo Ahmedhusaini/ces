@@ -23,8 +23,10 @@ namespace FinalTemplate.source
             int section_id,string username,int accountpin,string repass, string password, string primaryemail, string secondaryemail)
        
         {
-
+            string dobid = myDatabase.GetLastValueByColumnName("dob_id", "tbl_dob");  
             string locationid = myDatabase.GetLastValueByColumnName("loc_id", "tbl_location");
+            string GeneralId = myDatabase.GetLastValueByColumnName("General_Id", "tbl_general");
+            string tbl_Student_Reg = myDatabase.GetLastValueByColumnName("Std_id", "tbl_Student_Reg");
 
             myDatabase.CreateConnection();
             myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "sp_student_registr", true);
@@ -39,27 +41,31 @@ namespace FinalTemplate.source
             SqlParameter phoneParameter = new SqlParameter("@phone", SqlDbType.VarChar, 20);
             SqlParameter addressParameter = new SqlParameter("@address", SqlDbType.VarChar, 50);
             SqlParameter generalidoutParameter = new SqlParameter("@General_Id_out", SqlDbType.Int);
+
             SqlParameter dobidParameter = new SqlParameter("@dob_id", SqlDbType.Int);
             SqlParameter dayParameter = new SqlParameter("@day", SqlDbType.Int);
             SqlParameter monthParameter = new SqlParameter("@month", SqlDbType.VarChar);
             SqlParameter yearParameter = new SqlParameter("@year", SqlDbType.Int);
             SqlParameter dobidoutParameter = new SqlParameter("@dob_id_out", SqlDbType.Int);
+            
             SqlParameter stdidParameter = new SqlParameter("@Std_id", SqlDbType.VarChar, 50);
             SqlParameter gurdianParameter = new SqlParameter("@Guardian_Name", SqlDbType.VarChar, 50);
+            SqlParameter PreviousschoolParameter = new SqlParameter("@Previous_school", SqlDbType.VarChar, 50);
+            SqlParameter lastclassattendedParameter = new SqlParameter("@last_class_attended", SqlDbType.VarChar, 10);
             SqlParameter schoolidParameter = new SqlParameter("@school_id", SqlDbType.VarChar, 50);
             SqlParameter stdidoutParameter = new SqlParameter("@Std_id_out", SqlDbType.VarChar, 50);
+
             SqlParameter classsecinfoidParameter = new SqlParameter("@class_sec_info_id", SqlDbType.Int);
             SqlParameter classidParameter = new SqlParameter("@class_id", SqlDbType.Int);
             SqlParameter sectionidParameter = new SqlParameter("@section_id", SqlDbType.Int);
             SqlParameter classsecinfoidoutParameter = new SqlParameter("@class_sec_info_id_out", SqlDbType.Int);
+
             SqlParameter locidParameter = new SqlParameter("@loc_id", SqlDbType.Int);
             SqlParameter countryidParameter = new SqlParameter("@country_id", SqlDbType.Int);
             SqlParameter cityidParameter = new SqlParameter("@city_id", SqlDbType.Int);
             SqlParameter postalcodeParameter = new SqlParameter("@postal_code", SqlDbType.Int);
             SqlParameter locidoutParameter = new SqlParameter("@loc_id_out", SqlDbType.Int);
-            //SqlParameter school_type_idParameter = new SqlParameter("@school_type_id", SqlDbType.Int);
-            //SqlParameter school_typeParameter = new SqlParameter("@school_type", SqlDbType.NChar, 10);
-            //SqlParameter schooltypeidoutParameter = new SqlParameter("@school_type_out", SqlDbType.Int);
+
             SqlParameter authorizedidParameter = new SqlParameter("@authorized_id", SqlDbType.VarChar, 20);
             SqlParameter usernameParameter = new SqlParameter("@username", SqlDbType.VarChar, 50);
             SqlParameter passwordParameter = new SqlParameter("@password", SqlDbType.VarChar, 50);
@@ -71,7 +77,7 @@ namespace FinalTemplate.source
             SqlParameter lastlogindateParameter = new SqlParameter("@last_login_date", SqlDbType.Date);
             SqlParameter authorizedidoutParameter = new SqlParameter("@authorized_id_out", SqlDbType.VarChar, 20);
 
-
+            General_IdParameter.Value = Convert.ToInt32(GeneralId) + 1;
             firstnameParameter.Value = firstname;
             lastnameParameter.Value = lastname;
             NationalityParameter.Value = nationality;
@@ -81,25 +87,31 @@ namespace FinalTemplate.source
             phoneParameter.Value = phone;
             addressParameter.Value = address;
             generalidoutParameter.Direction = ParameterDirection.Output;
-            dobidParameter.Value = Convert.ToInt32(dob) + 1;
+
+            dobidParameter.Value = Convert.ToInt32(dob) +1;
+            dayParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(0, 1));
+            monthParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(2, 2));
+            yearParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(5, 4));
             locidoutParameter.Direction = ParameterDirection.Output;
 
             stdidParameter.Value = Generatestudentid(schoolName,username,class_id,section_id);
-           
             gurdianParameter.Value = guardian;
+            PreviousschoolParameter.Value = previousschool;
+            lastclassattendedParameter.Value = last_class_attended;
             schoolidParameter.Value = (schoolName);
             stdidoutParameter.Direction = ParameterDirection.Output;
+            
             classsecinfoidParameter.Value = GenerateclasssecinfoID(class_id, section_id);
             classidParameter.Value = class_id;
             sectionidParameter.Value = section_id;
             classsecinfoidoutParameter.Direction = ParameterDirection.Output;
+
             locidParameter.Value = Convert.ToInt32(locationid) + 1;
             countryidParameter.Value = country_id;
             cityidParameter.Value = city_id;
             postalcodeParameter.Value = postalcode;
             locidoutParameter.Direction = ParameterDirection.Output;
-            //school_typeParameter.Value = school_type;
-            //schooltypeidoutParameter.Direction = ParameterDirection.Output;
+
             authorizedidParameter.Value = GenerateAuthorizedID(username, accountpin.ToString());
             usernameParameter.Value = username;
             passwordParameter.Value = password;
@@ -126,10 +138,14 @@ namespace FinalTemplate.source
             myDatabase.obj_sqlcommand.Parameters.Add(monthParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(yearParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(locidoutParameter);
+
             myDatabase.obj_sqlcommand.Parameters.Add(stdidParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(gurdianParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(PreviousschoolParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(lastclassattendedParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(schoolidParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(stdidoutParameter);
+
             myDatabase.obj_sqlcommand.Parameters.Add(classsecinfoidParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(classidParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(sectionidParameter);
@@ -139,9 +155,6 @@ namespace FinalTemplate.source
             myDatabase.obj_sqlcommand.Parameters.Add(cityidParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(postalcodeParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(locidoutParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(schoolidParameter);
-            //myDatabase.obj_sqlcommand.Parameters.Add(school_typeParameter);
-            //myDatabase.obj_sqlcommand.Parameters.Add(schooltypeidoutParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(authorizedidParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(usernameParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(passwordParameter);
@@ -204,38 +217,25 @@ namespace FinalTemplate.source
             return Convert.ToString(Username.Substring(0, 3) + AccountPin.Substring(0, 3));
         }
             
-     private string GenerateSchoolID(string SchoolName, string OwnerName)
-        {
-            Random random = new Random();
 
-            StringBuilder id = new StringBuilder();
-            id.Append("C/");
-            id.Append(SchoolName.Substring(0, 3));
-            id.Append("/E/");
-            id.Append(OwnerName.Substring(0, 3));
-            id.Append("/S/");
-            id.Append(Jfunctionstudents.GetSystemDate());
-            id.Append("/");
-            id.Append(Jfunctionstudents.GetSystemTime());
-            id.Append(random.Next(3, 10));
-            return id.ToString();
-        }
      private string Generatestudentid(string SchoolName, string username,int class_id ,int section_id)
      {
          Random random = new Random();
 
          StringBuilder id = new StringBuilder();
-         id.Append("C/");
+         id.Append("G/");
          id.Append(SchoolName.Substring(0, 3));
          id.Append("/E/");
          id.Append(username.Substring(0, 3));
-         id.Append("/S/");
-         id.Append(username.Substring(0, 3));
-         id.Append("/S/");
+         id.Append("/N/");
+         id.Append(class_id);
+         id.Append("/");
+         id.Append(section_id);
+         id.Append("/");
          id.Append(Jfunctionstudents.GetSystemDate());
          id.Append("/");
          id.Append(Jfunctionstudents.GetSystemTime());
-         id.Append(random.Next(3, 10));
+         id.Append(random.Next(3,10));
          return id.ToString();
      }
     }
