@@ -19,16 +19,16 @@ namespace FinalTemplate
         {
             ClassStudentRegistration classStudent = new ClassStudentRegistration();
             string result = string.Empty;
-
+            //Convert.ToInt32(Dropd.SelectedValue) changes//
             try
             {
-                result = classStudent.studentregister(name.Text,lname.Text,(emaill.Text),(contact1.Text),
-                    (guardian.Text), (contact2.Text), radiobut.SelectedValue, (dob.Text), (nation.Text),
-                    (religion.Text), Convert.ToInt32(DropDownList2.SelectedValue), Convert.ToInt32(country.Text),
+                result = classStudent.studentregister(name.Text,lname.Text,(contact1.Text),
+                    (guardian.Text), (contact2.Text), radiobut.SelectedValue, (nation.Text),
+                    (religion.Text), Convert.ToInt32(DropDownList2.SelectedValue),1,
                     (address.Text), Convert.ToInt32(postal), (prevchool.Text), (preclass.Text),
-                    FileUpload1.FileName, (sname.Text), (Dropd.SelectedValue), Convert.ToInt32(classtxt.Text),
+                    FileUpload1.FileName, (sname.Text), Convert.ToInt32(classtxt.Text),
                     Convert.ToInt32(section.Text),(user.Text), Convert.ToInt32(accountp),(pass.Text),
-                    (repass.Text), (pemail.Text),(semail.Text));
+                     (pemail.Text),(semail.Text));
 
                 if (result == "true")
                 {

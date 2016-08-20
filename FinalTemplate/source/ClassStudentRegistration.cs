@@ -17,11 +17,11 @@ namespace FinalTemplate.source
     {
         private Database.Database myDatabase = new Database.Database("cesConnectionString2");
 
-        public string studentregister(string firstname, string lastname, string email, string phone, string guardian, string contact2,
-             string gender, string dob, string nationality, string religion, int city_id, int country_id, string address, int postalcode,
-             string previousschool, string last_class_attended, string photo, string schoolName,string school_type, int class_id, 
-            int section_id,string username,int accountpin,string repass, string password, string primaryemail, string secondaryemail)
-       
+        public string studentregister(string firstname, string lastname, string phone, string guardian, string contact2,
+             string gender, string nationality, string religion, int city_id, int country_id, string address, int postalcode,
+             string previousschool, string last_class_attended, string photo, string schoolName, int class_id, 
+            int section_id,string username,int accountpin, string password, string primaryemail, string secondaryemail)
+        // after school name int school_type,
         {
             string dobid = myDatabase.GetLastValueByColumnName("dob_id", "tbl_dob");  
             string locationid = myDatabase.GetLastValueByColumnName("loc_id", "tbl_location");
@@ -52,6 +52,7 @@ namespace FinalTemplate.source
             SqlParameter gurdianParameter = new SqlParameter("@Guardian_Name", SqlDbType.VarChar, 50);
             SqlParameter PreviousschoolParameter = new SqlParameter("@Previous_school", SqlDbType.VarChar, 50);
             SqlParameter lastclassattendedParameter = new SqlParameter("@last_class_attended", SqlDbType.VarChar, 10);
+            SqlParameter gurdiancontactParameter = new SqlParameter("@gurdian_contact", SqlDbType.VarChar, 50);
             SqlParameter schoolidParameter = new SqlParameter("@school_id", SqlDbType.VarChar, 50);
             SqlParameter stdidoutParameter = new SqlParameter("@Std_id_out", SqlDbType.VarChar, 50);
 
@@ -88,7 +89,7 @@ namespace FinalTemplate.source
             addressParameter.Value = address;
             generalidoutParameter.Direction = ParameterDirection.Output;
 
-            dobidParameter.Value = Convert.ToInt32(dob) +1;
+            dobidParameter.Value = Convert.ToInt32(dobid) +1;
             dayParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(0, 1));
             monthParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(2, 2));
             yearParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(5, 4));
@@ -98,6 +99,7 @@ namespace FinalTemplate.source
             gurdianParameter.Value = guardian;
             PreviousschoolParameter.Value = previousschool;
             lastclassattendedParameter.Value = last_class_attended;
+            gurdiancontactParameter.Value = contact2;
             schoolidParameter.Value = (schoolName);
             stdidoutParameter.Direction = ParameterDirection.Output;
             
@@ -143,6 +145,7 @@ namespace FinalTemplate.source
             myDatabase.obj_sqlcommand.Parameters.Add(gurdianParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(PreviousschoolParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(lastclassattendedParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(gurdiancontactParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(schoolidParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(stdidoutParameter);
 
