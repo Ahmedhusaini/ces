@@ -53,7 +53,7 @@
                                lettersonly: true
 
                            },
-                           <%=salary.UniqueID%>: {
+                          <%=salary.UniqueID%>: {
                                required: true,
                                digitsonly: true
                            },
