@@ -503,7 +503,7 @@
                                 <!-- p.help-block Warning !-->
                                 <br />
 
-                                <asp:DropDownList ID="Dropd" CssClass="form-control  form-input" placeholder="----Select----" runat="server">
+                                <asp:DropDownList ID="Dropd" CssClass="form-control  form-input" placeholder="----Select----" runat="server" OnSelectedIndexChanged="Dropd_SelectedIndexChanged">
 
                                     <asp:ListItem>Primary</asp:ListItem>
                                     <asp:ListItem>Secondary</asp:ListItem>
@@ -517,7 +517,12 @@
                                 </label>
                                 <!-- p.help-block Warning !-->
                                 <br />
-                                <asp:TextBox ID="classtxt" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+
+                                <asp:DropDownList ID="Dropd0" CssClass="form-control  form-input" placeholder="----Select----" runat="server">
+                                    <asp:ListItem>1</asp:ListItem>
+                                    <asp:ListItem>2</asp:ListItem>
+                                    
+                                </asp:DropDownList>
                             </div>
 
                             <div class="col-md-6">
@@ -528,7 +533,11 @@
                                 <!-- p.help-block Warning !-->
                                 <br />
                                 
-                                <asp:TextBox ID="section" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                <asp:DropDownList ID="Dropd1" CssClass="form-control  form-input" placeholder="----Select----" runat="server">
+                                    <asp:ListItem>a</asp:ListItem>
+                                    <asp:ListItem>b</asp:ListItem>
+                                    
+                                </asp:DropDownList>
                             </div>
                             <div class="section pricing">
                                 <div class="container">
