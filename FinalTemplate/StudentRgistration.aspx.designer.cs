@@ -193,22 +193,22 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.DropDownList Dropd;
         
         /// <summary>
-        /// Dropd0 control.
+        /// classx control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Dropd0;
+        protected global::System.Web.UI.WebControls.TextBox classx;
         
         /// <summary>
-        /// Dropd1 control.
+        /// sec control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Dropd1;
+        protected global::System.Web.UI.WebControls.TextBox sec;
         
         /// <summary>
         /// user control.

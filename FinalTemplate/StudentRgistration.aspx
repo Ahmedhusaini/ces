@@ -121,12 +121,12 @@
                            required:true, 
                            romanonly:true
                        },
-                    <%=classtxt.UniqueID%>:{
+                    <%=classx.UniqueID%>:{
                            required:true,
                            romanonly:true
                        
                        },
-                    <%=section.UniqueID%>:{
+                    <%=sec.UniqueID%>:{
                            required:true,
                            minlength:1,
                            maxlength:2
@@ -158,10 +158,10 @@
                        <%=sname.UniqueID%>:{
                            required:"Please mention your full name"
                        },
-                       <%=classtxt.UniqueID%>:{
+                       <%=classx.UniqueID%>:{
                            required:"Please mention your current Class"
                        },
-                       <%=section.UniqueID%>:{
+                       <%=sec.UniqueID%>:{
                            required:"Please mention your current Section",
                            minlenght:"minimum 1 character or maximum 2",
                            maxlength:"minimum 1 character or maximum 2"
@@ -518,11 +518,7 @@
                                 <!-- p.help-block Warning !-->
                                 <br />
 
-                                <asp:DropDownList ID="Dropd0" CssClass="form-control  form-input" placeholder="----Select----" runat="server">
-                                    <asp:ListItem>1</asp:ListItem>
-                                    <asp:ListItem>2</asp:ListItem>
-                                    
-                                </asp:DropDownList>
+                                <asp:TextBox ID="classx" CssClass="form-control  form-input" runat="server"></asp:TextBox>
                             </div>
 
                             <div class="col-md-6">
@@ -533,11 +529,7 @@
                                 <!-- p.help-block Warning !-->
                                 <br />
                                 
-                                <asp:DropDownList ID="Dropd1" CssClass="form-control  form-input" placeholder="----Select----" runat="server">
-                                    <asp:ListItem>a</asp:ListItem>
-                                    <asp:ListItem>b</asp:ListItem>
-                                    
-                                </asp:DropDownList>
+                                <asp:TextBox ID="sec" CssClass="form-control  form-input" runat="server"></asp:TextBox>
                             </div>
                             <div class="section pricing">
                                 <div class="container">
