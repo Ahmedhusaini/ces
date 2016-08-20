@@ -13,13 +13,14 @@ namespace FinalTemplate.source.Functions
     {
         public static string GetSystemDate()
         {
-            return Convert.ToString(System.DateTime.Today.ToString("d"));
+            return Convert.ToString(System.DateTime.Today.ToString("D"));
         }
 
         public static string GetSystemTime()
         {
             return Convert.ToString(System.DateTime.Today.ToString("t"));
         }
+
         public static void BindDropDownList(DropDownList ddl1, string displayField1, string valueField1, string query1)
         {
             Database.Database myDatabase = new Database.Database("cesConnectionString2");
