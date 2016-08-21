@@ -17,11 +17,13 @@ namespace FinalTemplate.source
     {
         private Database.Database myDatabase = new Database.Database("cesConnectionString2");
 
-        public string studentregister(string firstname, string lastname, string phone, string guardian, string contact2,
-             string gender, string nationality, string religion, int city_id, int country_id, string address, int postalcode,
-             string previousschool, string last_class_attended, string photo, string schoolName, int class_id, 
-            int section_id,string username,int accountpin, string password, string primaryemail, string secondaryemail)
-        // after school name int school_type,
+        public string studentregister(string firstname, string lastname, string nationality, string gender,
+             string photo, string religion, string phone, string address, string guardian, string previousschool,
+             string last_class_attended, string schoolName, string contact2, int class_id,int section_id,
+              int country_id, int city_id, int postalcode, string username, string password, int accountpin,
+              string primaryemail, string secondaryemail)
+        
+            // after school name int school_type,
         {
             string dobid = myDatabase.GetLastValueByColumnName("dob_id", "tbl_dob");  
             string locationid = myDatabase.GetLastValueByColumnName("loc_id", "tbl_location");
@@ -38,13 +40,13 @@ namespace FinalTemplate.source
             SqlParameter genderParameter = new SqlParameter("@Gender", SqlDbType.VarChar, 7);
             SqlParameter photoParameter = new SqlParameter("@photo", SqlDbType.VarChar, 50);
             SqlParameter religionParameter = new SqlParameter("@religion", SqlDbType.VarChar, 20);
-            SqlParameter phoneParameter = new SqlParameter("@phone", SqlDbType.VarChar, 20);
+            SqlParameter phoneParameter = new SqlParameter("@phone", SqlDbType.VarChar, 50);
             SqlParameter addressParameter = new SqlParameter("@address", SqlDbType.VarChar, 50);
             SqlParameter generalidoutParameter = new SqlParameter("@General_Id_out", SqlDbType.Int);
 
             SqlParameter dobidParameter = new SqlParameter("@dob_id", SqlDbType.Int);
             SqlParameter dayParameter = new SqlParameter("@day", SqlDbType.Int);
-            SqlParameter monthParameter = new SqlParameter("@month", SqlDbType.VarChar);
+            SqlParameter monthParameter = new SqlParameter("@month", SqlDbType.Int);
             SqlParameter yearParameter = new SqlParameter("@year", SqlDbType.Int);
             SqlParameter dobidoutParameter = new SqlParameter("@dob_id_out", SqlDbType.Int);
             
