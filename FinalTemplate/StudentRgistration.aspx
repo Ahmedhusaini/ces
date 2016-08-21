@@ -409,7 +409,7 @@
                                         </label>
                                         <!-- p.help-block Warning !-->
                                         <br />
-                                        <asp:DropDownList ID="DropDownList2" CssClass="form-control  form-input" placeholder="----Select----" runat="server">
+                                        <asp:DropDownList ID="DropDownList2" CssClass="form-control  form-input" runat="server">
                                             <asp:ListItem></asp:ListItem>
                                             <asp:ListItem>Karachi</asp:ListItem>
                                             <asp:ListItem>Lahore</asp:ListItem>
@@ -503,7 +503,7 @@
                                 <!-- p.help-block Warning !-->
                                 <br />
 
-                                <asp:DropDownList ID="Dropd" CssClass="form-control  form-input" placeholder="----Select----" runat="server" OnSelectedIndexChanged="Dropd_SelectedIndexChanged">
+                                <asp:DropDownList ID="Dropd" CssClass="form-control  form-input" runat="server" OnSelectedIndexChanged="Dropd_SelectedIndexChanged">
 
                                     <asp:ListItem>Primary</asp:ListItem>
                                     <asp:ListItem>Secondary</asp:ListItem>
