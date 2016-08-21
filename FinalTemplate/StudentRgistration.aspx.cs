@@ -25,7 +25,7 @@ namespace FinalTemplate
             //Convert.ToInt32(dob.ToString())
             try
             {
-                result = classStudent.studentregister(name.Text,lname.Text,contact1.Text,
+                 result = classStudent.studentregister(name.Text,lname.Text,contact1.Text,
                     guardian.Text, contact2.Text, radiobut.SelectedValue,dob.Text, nation.Text,
                     religion.Text, Convert.ToInt32(DropDownList2.SelectedValue),1,
                     address.Text, Convert.ToInt32(postal.Text), prevchool.Text, preclass.Text,
