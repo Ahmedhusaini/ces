@@ -131,9 +131,6 @@
                            minlength:1,
                            maxlength:2
                        },
-                    <%=Dropd.UniqueID%>:{
-                           required:true,
-                       },
                     <%=fileupload.UniqueID%>:{
                            required:true,
                            imageonly:true
@@ -169,9 +166,6 @@
                        },
                        <%=fileupload.UniqueID%>:{
                            required:"Please upload your photo"    
-                       },
-                       <%=Dropd.UniqueID%>:{
-                           required:"Selection is required"
                        },
                          
                        <%=contact2.UniqueID%>:{
@@ -494,22 +488,6 @@
                                 <br />
                                 <asp:TextBox ID="sname" CssClass="form-control  form-input" runat="server"></asp:TextBox>
                             </div>
-                            <div class="col-md-6">
-
-                                <label for="regname" class="control-label form-label">
-                                    Primary / Secondary <span class="highlight">*<br />
-                                    </span>
-                                </label>
-                                <!-- p.help-block Warning !-->
-                                <br />
-
-                                <asp:DropDownList ID="Dropd" CssClass="form-control  form-input" runat="server" OnSelectedIndexChanged="Dropd_SelectedIndexChanged">
-
-                                    <asp:ListItem>Primary</asp:ListItem>
-                                    <asp:ListItem>Secondary</asp:ListItem>
-                                </asp:DropDownList>
-                            </div>
-
                             <div class="col-md-6">
                                 <label for="regname" class="control-label form-label">
                                     Class <span class="highlight">*<br />

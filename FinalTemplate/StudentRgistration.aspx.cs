@@ -15,20 +15,18 @@ namespace FinalTemplate
             if (!IsPostBack)
             {
                Jfunctionstudents.BindDropDownList(DropDownList2, "city", "city_id", "select * from tbl_city");
-               //Jfunctionstudents.BindDropDownList(Dropd, "school_type", "school_type_id", "select * from tbl_school_type");
-               //Jfunctionstudents.BindDropDownList(dropclass, "class", "class_id", "select * from tbl_class_sec_info");
-               //Jfunctionstudents.BindDropDownList(dropsec, "section", "section_id", "select * from tbl_class_sec_info");
+
             }
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
             ClassStudentRegistration classStudent = new ClassStudentRegistration();
             string result = string.Empty;
-            //Convert.ToInt32(Dropd.SelectedValue) changes//,Convert.ToInt32(dob.ToString())
+            //Convert.ToInt32(dob.ToString())
             try
             {
                 result = classStudent.studentregister(name.Text,lname.Text,contact1.Text,
-                    guardian.Text, contact2.Text, radiobut.SelectedValue, nation.Text,
+                    guardian.Text, contact2.Text, radiobut.SelectedValue,dob.Text, nation.Text,
                     religion.Text, Convert.ToInt32(DropDownList2.SelectedValue),1,
                     address.Text, Convert.ToInt32(postal.Text), prevchool.Text, preclass.Text,
                     FileUpload1.FileName, sname.Text, Convert.ToInt32(classx.Text),
