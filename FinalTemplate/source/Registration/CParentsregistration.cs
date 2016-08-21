@@ -84,7 +84,7 @@ namespace FinalTemplate.source.Registration
             parentidoutParameter.Direction=ParameterDirection.Output;
             dobidParameter.Value = Convert.ToInt32(dobid)+1;
             dayParameter.Value = Convert.ToInt32(Jfunctionparents.GetSystemDate().Substring(2, 2));
-            monthParameter.Value =Convert.ToInt32(Jfunctionparents.GetSystemDate().Substring(0,1 ));
+            monthParameter.Value =Convert.ToInt32(Jfunctionparents.GetSystemDate().Substring(0,1));
             yearParameter.Value =Convert.ToInt32(Jfunctionparents.GetSystemDate().Substring(5, 4));
             dobidoutParameter.Direction=ParameterDirection.Output;
             locidParameter.Value = Convert.ToInt32(locationid) + 1;

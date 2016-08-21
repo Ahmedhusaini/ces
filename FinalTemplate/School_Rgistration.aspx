@@ -120,6 +120,14 @@
                              required:true
                          },
                         
+                          <%=txt_contact_primary.UniqueID%>:{
+                              required:true,
+                              digitsonly:true
+                          },
+                         <%=txt_contact_secondary.UniqueID%>:{
+                             required:true,
+                             digitsonly:true
+                         },
                          <%=txt_address.UniqueID%>:{
                              required:true
                          },
@@ -180,6 +188,12 @@
                              required:"Please enter Owner's name"
                          },
                          
+                          <%=txt_contact_primary.UniqueID%>:{
+                              required:"Please provide your contact number"
+                          },
+                            <%=txt_contact_secondary.UniqueID%>: {
+                                required:"Please provide your contact number"
+                            },
                          <%=txt_accountPin.UniqueID%>:{
                              minlength:"Pin must contain 6 digits",
                              maxlength:"Pin cannot exceed 10 digits"    
