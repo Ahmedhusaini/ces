@@ -92,8 +92,10 @@
 
                            },
                            <%=accountp.UniqueID%>: {
-                               required: true,
-                               digitsonly: true
+                               required:true,
+                               digitsonly:true,
+                               minlength:6,
+                               maxlength:10
                            },
                            <%=pass.UniqueID%>: {
                                required: true,
@@ -143,7 +145,7 @@
                              required:"Please provide your office address"
                          },
                         <%=contact2.UniqueID%>:{
-                            required:"Provide office contact number",
+                            required:"Please provide office contact number",
                             digitsonly:"Only digits"
                         },
                          <%=radiobut.UniqueID%>:{
@@ -171,7 +173,11 @@
                              required:"You must confirm your password",
                          
                          },
-                          <%=fileupload.UniqueID%>:{
+                        <%=accountp.UniqueID%>: {
+                            minlength:"Pin must contain 6 digits",
+                            maxlength:"Pin cannot exceed 10 digits"  
+                        },
+                      <%=fileupload.UniqueID%>:{
                               required:"Please upload your photo"    
                           },
                        <%=pemail.UniqueID%>:{

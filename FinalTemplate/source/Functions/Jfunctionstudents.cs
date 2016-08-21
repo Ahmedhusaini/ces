@@ -13,14 +13,13 @@ namespace FinalTemplate.source.Functions
     {
         public static string GetSystemDate()
         {
-            return Convert.ToString(System.DateTime.Now.ToString("{0:dd/MM/yyyy}"));
-           // return Convert.ToString(System.DateTime.Today.ToString("D"));
+           
+            return Convert.ToString(System.DateTime.Today.ToString("d"));
         }
 
         public static string GetSystemTime()
         {
-            return Convert.ToString(System.DateTime.Now.ToString("t"));
-            //return Convert.ToString(System.DateTime.Today.ToString("t"));
+            return Convert.ToString(System.DateTime.Today.ToString("t"));
         }
 
         public static void BindDropDownList(DropDownList ddl1, string displayField1, string valueField1, string query1)
