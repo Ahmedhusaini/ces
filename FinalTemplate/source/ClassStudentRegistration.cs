@@ -14,7 +14,7 @@ namespace FinalTemplate.source
              string gender, string nationality, string religion, int city_id, int country_id, string address, int postalcode,
              string previousschool, string last_class_attended, string photo, string schoolName, int class_id,
             int section_id, string username, int accountpin, string password, string primaryemail, string secondaryemail)
-        // after school name int school_type, befpre gender,int dob
+        //// after school name int school_type, befpre gender,int dob
         {
             string locationid = myDatabase.GetLastValueByColumnName("loc_id", "tbl_location");
             string GeneralId = myDatabase.GetLastValueByColumnName("General_Id", "tbl_general");
