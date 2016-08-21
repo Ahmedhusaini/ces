@@ -5,21 +5,21 @@ using System.Data.SqlClient;
 using System.Text;
 
 namespace FinalTemplate.source
-{ 
+{
     public class ClassStudentRegistration
     {
         private Database.Database myDatabase = new Database.Database("cesConnectionString2");
 
         public string studentregister(string firstname, string lastname, string phone, string guardian, string contact2,
              string gender, string nationality, string religion, int city_id, int country_id, string address, int postalcode,
-             string previousschool, string last_class_attended, string photo, string schoolName, int class_id, 
-            int section_id,string username,int accountpin, string password, string primaryemail, string secondaryemail)
+             string previousschool, string last_class_attended, string photo, string schoolName, int class_id,
+            int section_id, string username, int accountpin, string password, string primaryemail, string secondaryemail)
         // after school name int school_type, befpre gender,int dob
-        { 
+        {
             string locationid = myDatabase.GetLastValueByColumnName("loc_id", "tbl_location");
             string GeneralId = myDatabase.GetLastValueByColumnName("General_Id", "tbl_general");
             string tbl_Student_Reg = myDatabase.GetLastValueByColumnName("Std_id", "tbl_Student_Reg");
-            string dobid = myDatabase.GetLastValueByColumnName("dob_id", "tbl_dob"); 
+            string dobid = myDatabase.GetLastValueByColumnName("dob_id", "tbl_dob");
 
             myDatabase.CreateConnection();
             myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "sp_student_registr", true);
@@ -40,7 +40,7 @@ namespace FinalTemplate.source
             SqlParameter monthParameter = new SqlParameter("@month", SqlDbType.Int);
             SqlParameter yearParameter = new SqlParameter("@year", SqlDbType.Int);
             SqlParameter dobidoutParameter = new SqlParameter("@dob_id_out", SqlDbType.Int);
-            
+
             SqlParameter stdidParameter = new SqlParameter("@Std_id", SqlDbType.VarChar, 50);
             SqlParameter gurdianParameter = new SqlParameter("@Guardian_Name", SqlDbType.VarChar, 50);
             SqlParameter PreviousschoolParameter = new SqlParameter("@Previous_school", SqlDbType.VarChar, 50);
@@ -82,20 +82,20 @@ namespace FinalTemplate.source
             addressParameter.Value = address;
             generalidoutParameter.Direction = ParameterDirection.Output;
 
-            dobidParameter.Value = Convert.ToInt32(dobid) +1;
+            dobidParameter.Value = Convert.ToInt32(dobid) + 1;
             dayParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(2, 2));
             monthParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(0, 1));
             yearParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(5, 4));
             locidoutParameter.Direction = ParameterDirection.Output;
 
-            stdidParameter.Value = Generatestudentid(schoolName,username,class_id,section_id);
+            stdidParameter.Value = Generatestudentid(schoolName, username, class_id, section_id);
             gurdianParameter.Value = guardian;
             PreviousschoolParameter.Value = previousschool;
             lastclassattendedParameter.Value = last_class_attended;
             gurdiancontactParameter.Value = contact2;
             schoolidParameter.Value = (schoolName);
             stdidoutParameter.Direction = ParameterDirection.Output;
-            
+
             classsecinfoidParameter.Value = GenerateclasssecinfoID(class_id, section_id);
             classidParameter.Value = class_id;
             sectionidParameter.Value = section_id;
@@ -188,7 +188,7 @@ namespace FinalTemplate.source
                 myDatabase.obj_sqlcommand.Parameters.Clear();
                 myDatabase.CloseConnection();
             }
- }
+        }
 
         private string GenerateclasssecinfoID(int class_id, int section_id)
         {
@@ -206,32 +206,32 @@ namespace FinalTemplate.source
             id.Append(random.Next(3, 10));
             return id.ToString();
         }
-            
-            private string GenerateAuthorizedID(string Username, string AccountPin)
+
+        private string GenerateAuthorizedID(string Username, string AccountPin)
         {
             return Convert.ToString(Username.Substring(0, 3) + AccountPin.Substring(0, 3));
         }
-            
 
-     private string Generatestudentid(string SchoolName, string username,int class_id ,int section_id)
-     {
-         Random random = new Random();
 
-         StringBuilder id = new StringBuilder();
-         id.Append("G/");
-         id.Append(SchoolName.Substring(0, 3));
-         id.Append("/E/");
-         id.Append(username.Substring(0, 3));
-         id.Append("/N/");
-         id.Append(class_id);
-         id.Append("/");
-         id.Append(section_id);
-         id.Append("/");
-         id.Append(Jfunctionstudents.GetSystemDate());
-         id.Append("/");
-         id.Append(Jfunctionstudents.GetSystemTime());
-         id.Append(random.Next(3,10));
-         return id.ToString();
-     }
+        private string Generatestudentid(string SchoolName, string username, int class_id, int section_id)
+        {
+            Random random = new Random();
+
+            StringBuilder id = new StringBuilder();
+            id.Append("G/");
+            id.Append(SchoolName.Substring(0, 3));
+            id.Append("/E/");
+            id.Append(username.Substring(0, 3));
+            id.Append("/N/");
+            id.Append(class_id);
+            id.Append("/");
+            id.Append(section_id);
+            id.Append("/");
+            id.Append(Jfunctionstudents.GetSystemDate());
+            id.Append("/");
+            id.Append(Jfunctionstudents.GetSystemTime());
+            id.Append(random.Next(3, 10));
+            return id.ToString();
+        }
     }
-  }
+}
