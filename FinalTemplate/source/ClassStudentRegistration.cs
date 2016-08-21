@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Data.SqlClient;
+﻿using FinalTemplate.source.Functions;
+using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Text;
-using FinalTemplate.source.Functions;
-using FinalTemplate.source.Registration;
-using FinalTemplate.source;
-using System.Data.ProviderBase;
-using System.Web.UI.WebControls;
 
 namespace FinalTemplate.source
 { 
@@ -17,18 +10,16 @@ namespace FinalTemplate.source
     {
         private Database.Database myDatabase = new Database.Database("cesConnectionString2");
 
-        public string studentregister(string firstname, string lastname, string nationality, string gender,
-             string photo, string religion, string phone, string address, string guardian, string previousschool,
-             string last_class_attended, string schoolName, string contact2, int class_id,int section_id,
-              int country_id, int city_id, int postalcode, string username, string password, int accountpin,
-              string primaryemail, string secondaryemail)
-        
-            // after school name int school_type,
-        {
-            string dobid = myDatabase.GetLastValueByColumnName("dob_id", "tbl_dob");  
+        public string studentregister(string firstname, string lastname, string phone, string guardian, string contact2,
+             string gender, string nationality, string religion, int city_id, int country_id, string address, int postalcode,
+             string previousschool, string last_class_attended, string photo, string schoolName, int class_id, 
+            int section_id,string username,int accountpin, string password, string primaryemail, string secondaryemail)
+        // after school name int school_type, befpre gender,int dob
+        { 
             string locationid = myDatabase.GetLastValueByColumnName("loc_id", "tbl_location");
             string GeneralId = myDatabase.GetLastValueByColumnName("General_Id", "tbl_general");
             string tbl_Student_Reg = myDatabase.GetLastValueByColumnName("Std_id", "tbl_Student_Reg");
+            string dobid = myDatabase.GetLastValueByColumnName("dob_id", "tbl_dob"); 
 
             myDatabase.CreateConnection();
             myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "sp_student_registr", true);
@@ -92,8 +83,8 @@ namespace FinalTemplate.source
             generalidoutParameter.Direction = ParameterDirection.Output;
 
             dobidParameter.Value = Convert.ToInt32(dobid) +1;
-            dayParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(0, 1));
-            monthParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(2, 2));
+            dayParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(2, 2));
+            monthParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(0, 1));
             yearParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(5, 4));
             locidoutParameter.Direction = ParameterDirection.Output;
 
@@ -193,7 +184,6 @@ namespace FinalTemplate.source
             finally
             {
                 myDatabase.obj_sqlcommand.Dispose();
-                myDatabase.obj_sqlconnection.Close();
                 myDatabase.obj_sqlconnection.Dispose();
                 myDatabase.obj_sqlcommand.Parameters.Clear();
                 myDatabase.CloseConnection();
