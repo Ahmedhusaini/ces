@@ -8,6 +8,7 @@ namespace FinalTemplate.source.Registration
 {
     public class ClassSchoolRegistration
     {
+
         private Database.Database myDatabase = new Database.Database("cesConnectionString");
         public string RegisterSchool(int country_id, int city_id, int postalcode, string username, string password, int accountpin, string primaryemail, string secondaryemail, string contactPrimary, string contactSecondary, string schoolName, string ownerName, string foundedIn, string logo, int school_type_id, string campusName)
         {
@@ -157,6 +158,22 @@ namespace FinalTemplate.source.Registration
             id.Append("/");
             id.Append(random.Next(3, 10));
             return id.ToString();
+        }
+
+        public void SelectPackage(string packageName)
+        {
+            if (packageName == "Silver")
+            {
+
+            }
+            else if (packageName == "Gold")
+            {
+
+            }
+            else if (packageName == "Platinum")
+            {
+
+            }
         }
     }
 }
