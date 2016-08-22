@@ -103,7 +103,7 @@ namespace FinalTemplate.source
             secondaryemailParameter.Value=secondaryemail;
             usertypeidParameter.Value=1;
             logincountParameter.Value=0;
-            lastlogindateParameter = Convert.ToDateTime(JFunctions.GetSystemDate());
+            lastlogindateParameter.Value = Convert.ToDateTime(JFunctions.GetSystemDate());
             authorizedidoutParameter.Direction= ParameterDirection.Output;
 
             studentdatabase.obj_sqlcommand.Parameters.Add(General_IdParameter);
