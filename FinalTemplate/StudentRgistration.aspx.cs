@@ -26,7 +26,7 @@ namespace FinalTemplate
             try
             {
                  result = classStudent.studentregister(name.Text,lname.Text,contact1.Text,
-                    guardian.Text, contact2.Text, radiobut.SelectedValue,dob.Text, nation.Text,
+                    guardian.Text, contact2.Text, radiobut.SelectedValue,nation.Text,
                     religion.Text, Convert.ToInt32(DropDownList2.SelectedValue),1,address.Text,
                     Convert.ToInt32(postal.Text), prevchool.Text, preclass.Text,FileUpload1.FileName,
                     sname.Text, Convert.ToInt32(classx.Text),Convert.ToInt32(sec.Text), user.Text,
