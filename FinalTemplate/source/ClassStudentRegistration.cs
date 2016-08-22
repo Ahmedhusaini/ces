@@ -12,7 +12,7 @@ namespace FinalTemplate.source
         public string studentregister(string name,string lastname,string contactno,string gurdianname,string gurdiancontact,
                                 string gender,string nationality,string religion,int city,int country,string address,int postalcode,
                                 string prvschool,string lastclass,string image,string schoolname,string classname,string section,string username,
-                                string accountpin,string password,string primaryemail,string secondaryemail) 
+                                int accountpin,string password,string primaryemail,string secondaryemail) 
         {
             string locationid = studentdatabase.GetLastValueByColumnName("loc_id", "tbl_location");
             string dobid = studentdatabase.GetLastValueByColumnName("dob_id", "tbl_dob");

@@ -14,23 +14,19 @@ namespace FinalTemplate
         {
             if (!IsPostBack)
             {
-               Jfunctionstudents.BindDropDownList(DropDownList2, "city", "city_id", "select * from tbl_city");
-
+                JFunctions.BindDropDownList(DropDownList2, "city", "city_id", "select * from tbl_city");
             }
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
             ClassStudentRegistration classStudent = new ClassStudentRegistration();
             string result = string.Empty;
-            //Convert.ToInt32(dob.ToString())
             try
             {
-                 //result = classStudent.studentregister(name.Text,lname.Text,contact1.Text,
-                 //   guardian.Text, contact2.Text, radiobut.SelectedValue,dob.Text, nation.Text,
-                 //   religion.Text, Convert.ToInt32(DropDownList2.SelectedValue),1,address.Text,
-                 //   Convert.ToInt32(postal.Text), prevchool.Text, preclass.Text,FileUpload1.FileName,
-                 //   sname.Text, Convert.ToInt32(classx.Text),Convert.ToInt32(sec.Text), user.Text,
-                 //   Convert.ToInt32(accountp.Text), pass.Text,pemail.Text,semail.Text);
+                result = classStudent.studentregister(name.Text,lname.Text,contact1.Text,guardian.Text,contact2.Text,radiobut.SelectedValue,
+                                                      nation.Text,religion.Text,Convert.ToInt32(DropDownList2.SelectedValue),1,address.Text,
+                                                     Convert.ToInt32(postal.Text),prevchool.Text,preclass.Text,FileUpload1.FileName,sname.Text,
+                                                     classx.Text,sec.Text,user.Text,Convert.ToInt32(accountp.Text),pass.Text,pemail.Text,semail.Text);
 
                 if (result == "true")
                 {
