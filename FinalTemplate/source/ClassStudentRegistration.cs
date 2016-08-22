@@ -8,13 +8,13 @@ namespace FinalTemplate.source
 {
     public class ClassStudentRegistration
     {
-        private Database.Database myDatabase = new Database.Database("cesConnectionStringWithoutUsernamePassword");
+        private Database.Database myDatabase = new Database.Database("cesConnectionString2");
 
         public string studentregister(string firstname, string lastname, string phone, string guardian, string contact2,
-             string gender, string nationality, string religion, int city_id, int country_id, string address, int postalcode,
+             string gender,string dob, string nationality, string religion, int city_id, int country_id, string address, int postalcode,
              string previousschool, string last_class_attended, string photo, string schoolName, int class_id,
             int section_id, string username, int accountpin, string password, string primaryemail, string secondaryemail)
-        //// after school name int school_type, befpre gender,int dob
+        // , befpre gender,int dob
         {
             string locationid = myDatabase.GetLastValueByColumnName("loc_id", "tbl_location");
             string GeneralId = myDatabase.GetLastValueByColumnName("General_Id", "tbl_general");
@@ -83,9 +83,9 @@ namespace FinalTemplate.source
             generalidoutParameter.Direction = ParameterDirection.Output;
 
             dobidParameter.Value = Convert.ToInt32(dobid) + 1;
-            dayParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(2, 2));
-            monthParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(0, 1));
-            yearParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(5, 4));
+            dayParameter.Value = Convert.ToInt32(dob.Substring(2, 2));
+            monthParameter.Value = Convert.ToInt32(dob.Substring(0, 1));
+            yearParameter.Value = Convert.ToInt32(dob.Substring(5, 4));
             locidoutParameter.Direction = ParameterDirection.Output;
 
             stdidParameter.Value = Generatestudentid(schoolName, username, class_id, section_id);
