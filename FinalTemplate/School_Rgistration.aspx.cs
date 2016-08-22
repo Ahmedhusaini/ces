@@ -59,8 +59,8 @@ namespace FinalTemplate
 
             try
             {
-                result = this.hiddenFieild.Value.ToString();
-                if (result == "Gold" || result == "Silver" || result == "Platinum")
+                string selectedpackage = this.hiddenFieild.Value.ToString();
+                if (selectedpackage == "Gold" || selectedpackage == "Silver" || selectedpackage == "Platinum")
                 {
                     if (JFunctions.UploadSingleFile(fileupload, "images/registeredSchools/") == "true")
                     {
@@ -72,9 +72,16 @@ namespace FinalTemplate
                              txt_foundedIn.Text, fileupload.FileName, Convert.ToInt32(ddl_schooltype.SelectedValue),
                              txt_campusname.Text);
                         if (result == "true")
-                        {
-                            JFunctions.SendEmail(txt_primaryEmailAddress.Text, "CES - Registration", EmailBody());
-                            Response.Write("<script>alert('An email has been sent to your primary email address which contain basic information about your account. You will be redirected to home page.');</script>");
+                        {                                                        
+                            Package objPackage = new Package();
+                            objPackage.InitializePackageAttributes(selectedpackage,classSchool.myDatabase.GetLastValueByColumnName("school_id", "tbl_school"));
+                            if (objPackage.AssignPackage() == "true")
+                            {
+                                JFunctions.SendEmail(txt_primaryEmailAddress.Text, "CES - Registration", EmailBody());
+                                Response.Write("<script>alert('An email has been sent to your primary email address which contain basic information about your account. You will be redirected to home page.');</script>");
+                            }
+                            else
+                                Response.Write("Regisration completed successfully, but package assingment is not completed due to an error.");
                         }
                         else
                             Response.Write("not register");
