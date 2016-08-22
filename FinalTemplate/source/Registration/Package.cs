@@ -171,11 +171,15 @@ namespace FinalTemplate.source.Registration
             }
         }
 
-        public void AssignPackage()
+        public string AssignPackage()
         {
             string[] columns = { "package_id", "package_type_id", "online_admission", "teacher_profile", "post_job_vacancies", "emails", "attendance_for_staff", "attendance_for_students", "results", "fee_structure", "syllabus", "date_sheets", "events", "gallery", "report", "student_of_the_month", "assignment_homework", "sms", "email_accounts", "notifications", "comparison_of_schools", "school_rating", "school_public_profile", "school_intro_video", "active_users", "school_to_school_communication", "same_account_for_other_branch", "database_backup", "security_confidenctiality", "data_availability", "package_customization", "package_termination_report", "online_support", "data_filters", "admin_panel_type", "school_id" };
             object[] values = { PackageID, PackageTypeID, OnlineAdmission, TeacherProfile, PostJobVacancies, Emails, AttendanceForStaff, AttendanceForStudent, Results, FeesStructure, Syllabus, DateSheets, Events, Gallery, Reports, StudentOfTheMonth, AssignmentAndHomework, SMS, EmailAccounts, Notifications, ComparisonOfSchools, SchoolRating, SchoolPublicProfile, SchoolIntroductionVideo, ActiveUsers, SchoolToSchoolMessage, SameAccountForOtherBranch, DatabaseBackup, SecurityAndConfidentiality, DataAvailability, PackageCustomization, PackageTerminationReport, OnlineSupport, DataFilters, AdminPanelType, SchoolID };
-            myDatabase.InsertQuery("tbl_packages", columns, values);
+            int rowsAffected = myDatabase.InsertQuery("tbl_packages", columns, values);
+            if (rowsAffected > 0)
+                return "true";
+            else
+                return "false";
         }
     }
 }
