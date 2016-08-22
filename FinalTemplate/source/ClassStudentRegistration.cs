@@ -11,7 +11,7 @@ namespace FinalTemplate.source
         private Database.Database myDatabase = new Database.Database("cesConnectionString2");
 
         public string studentregister(string firstname, string lastname, string phone, string guardian, string contact2,
-             string gender,string dob, string nationality, string religion, int city_id, int country_id, string address, int postalcode,
+             string gender, string nationality, string religion, int city_id, int country_id, string address, int postalcode,
              string previousschool, string last_class_attended, string photo, string schoolName, int class_id,
             int section_id, string username, int accountpin, string password, string primaryemail, string secondaryemail)
         // , befpre gender,int dob
@@ -45,8 +45,8 @@ namespace FinalTemplate.source
             SqlParameter gurdianParameter = new SqlParameter("@Guardian_Name", SqlDbType.VarChar, 50);
             SqlParameter PreviousschoolParameter = new SqlParameter("@Previous_school", SqlDbType.VarChar, 50);
             SqlParameter lastclassattendedParameter = new SqlParameter("@last_class_attended", SqlDbType.VarChar, 10);
-            SqlParameter gurdiancontactParameter = new SqlParameter("@gurdian_contact", SqlDbType.VarChar, 50);
             SqlParameter schoolidParameter = new SqlParameter("@school_id", SqlDbType.VarChar, 50);
+            SqlParameter gurdiancontactParameter = new SqlParameter("@gurdian_contact", SqlDbType.VarChar, 50);
             SqlParameter stdidoutParameter = new SqlParameter("@Std_id_out", SqlDbType.VarChar, 50);
 
             SqlParameter classsecinfoidParameter = new SqlParameter("@class_sec_info_id", SqlDbType.Int);
@@ -80,20 +80,21 @@ namespace FinalTemplate.source
             religionParameter.Value = religion;
             phoneParameter.Value = phone;
             addressParameter.Value = address;
-            generalidoutParameter.Direction = ParameterDirection.Output;
+            generalidoutParameter.Direction = ParameterDirection.Output;  
 
             dobidParameter.Value = Convert.ToInt32(dobid) + 1;
-            dayParameter.Value = Convert.ToInt32(dob.Substring(2, 2));
-            monthParameter.Value = Convert.ToInt32(dob.Substring(0, 1));
-            yearParameter.Value = Convert.ToInt32(dob.Substring(5, 4));
-            locidoutParameter.Direction = ParameterDirection.Output;
+            dayParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(2, 2));
+            monthParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(0, 1));
+            yearParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(5, 4));
+            //yearParameter.Value = DateTime.Parse(dobid.Substring(5, 4));
+            dobidoutParameter.Direction = ParameterDirection.Output;
 
             stdidParameter.Value = Generatestudentid(schoolName, username, class_id, section_id);
             gurdianParameter.Value = guardian;
             PreviousschoolParameter.Value = previousschool;
             lastclassattendedParameter.Value = last_class_attended;
-            gurdiancontactParameter.Value = contact2;
             schoolidParameter.Value = (schoolName);
+            gurdiancontactParameter.Value = contact2;
             stdidoutParameter.Direction = ParameterDirection.Output;
 
             classsecinfoidParameter.Value = GenerateclasssecinfoID(class_id, section_id);
@@ -115,7 +116,7 @@ namespace FinalTemplate.source
             secondaryemailParameter.Value = secondaryemail;
             usertypeidParameter.Value = 1;
             logincountParameter.Value = 0;
-            lastlogindateParameter.Value = Convert.ToDateTime(Jfunctionstudents.GetSystemDate());
+            lastlogindateParameter.Value = Convert.ToDateTime(JFunctions.GetSystemDate());
             authorizedidoutParameter.Direction = ParameterDirection.Output;
 
             myDatabase.obj_sqlcommand.Parameters.Add(General_IdParameter);
@@ -132,14 +133,14 @@ namespace FinalTemplate.source
             myDatabase.obj_sqlcommand.Parameters.Add(dayParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(monthParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(yearParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(locidoutParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(dobidoutParameter);
 
             myDatabase.obj_sqlcommand.Parameters.Add(stdidParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(gurdianParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(PreviousschoolParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(lastclassattendedParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(gurdiancontactParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(schoolidParameter);
+            myDatabase.obj_sqlcommand.Parameters.Add(gurdiancontactParameter);
             myDatabase.obj_sqlcommand.Parameters.Add(stdidoutParameter);
 
             myDatabase.obj_sqlcommand.Parameters.Add(classsecinfoidParameter);
@@ -227,9 +228,9 @@ namespace FinalTemplate.source
             id.Append("/");
             id.Append(section_id);
             id.Append("/");
-            id.Append(Jfunctionstudents.GetSystemDate());
+            id.Append(JFunctions.GetSystemDate());
             id.Append("/");
-            id.Append(Jfunctionstudents.GetSystemTime());
+            id.Append(JFunctions.GetSystemTime());
             id.Append(random.Next(3, 10));
             return id.ToString();
         }
