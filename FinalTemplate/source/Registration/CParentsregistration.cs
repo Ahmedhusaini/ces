@@ -73,7 +73,7 @@ namespace FinalTemplate.source.Registration
             genderParameter.Value = gender;
             photoParameter.Value = photo;
             religionParameter.Value = religion;
-            phoneParameter.Value = photo;
+            phoneParameter.Value = phone;
             addressParameter.Value = address;
             officeaddressParameter.Value = officeaddress;
             officenoParameter.Value = officeno;
