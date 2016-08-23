@@ -107,7 +107,7 @@ namespace FinalTemplate.source.Registration
                 DateSheets = "unlimited";
                 Events = "8";
                 Gallery = "10 Pics";
-                Reports = "Admin & Teacher can view";
+                Reports = "Admin/Teacher can view";
                 StudentOfTheMonth = 1;
                 AssignmentAndHomework = 1;
                 SMS = 4000;
@@ -178,8 +178,8 @@ namespace FinalTemplate.source.Registration
             int rowsAffected = myDatabase.InsertQuery("tbl_packages", columns, values);
             if (rowsAffected > 0)
                 return "true";
-            else
-                return "false";
+
+            return "false";
         }
     }
 }
