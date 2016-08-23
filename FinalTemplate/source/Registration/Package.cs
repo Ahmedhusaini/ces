@@ -12,36 +12,36 @@ namespace FinalTemplate.source.Registration
         #region DatabaseAttributes
         public int PackageID { get; set; }
         public int PackageTypeID { get; set; }
-        public bool OnlineAdmission { get; set; }
-        public bool TeacherProfile { get; set; }
-        public bool PostJobVacancies { get; set; }
+        public int OnlineAdmission { get; set; }
+        public int TeacherProfile { get; set; }
+        public int PostJobVacancies { get; set; }
         public string Emails { get; set; }
         public string AttendanceForStaff { get; set; }
         public string AttendanceForStudent { get; set; }
-        public bool Results { get; set; }
-        public bool FeesStructure { get; set; }
+        public int Results { get; set; }
+        public int FeesStructure { get; set; }
         public string Syllabus { get; set; }
         public string DateSheets { get; set; }
         public string Events { get; set; }
         public string Gallery { get; set; }
         public string Reports { get; set; }
-        public bool StudentOfTheMonth { get; set; }
-        public bool AssignmentAndHomework { get; set; }
+        public int StudentOfTheMonth { get; set; }
+        public int AssignmentAndHomework { get; set; }
         public int SMS { get; set; }
         public int EmailAccounts { get; set; }
         public string Notifications { get; set; }
         public int ComparisonOfSchools { get; set; }
-        public bool SchoolRating { get; set; }
-        public bool SchoolPublicProfile { get; set; }
-        public bool SchoolIntroductionVideo { get; set; }
+        public int SchoolRating { get; set; }
+        public int SchoolPublicProfile { get; set; }
+        public int SchoolIntroductionVideo { get; set; }
         public string ActiveUsers { get; set; }
         public string SameAccountForOtherBranch { get; set; }
         public string SchoolToSchoolMessage { get; set; }
         public string DatabaseBackup { get; set; }
         public string SecurityAndConfidentiality { get; set; }
         public string DataAvailability { get; set; }
-        public bool PackageCustomization { get; set; }
-        public bool PackageTerminationReport { get; set; }
+        public int PackageCustomization { get; set; }
+        public int PackageTerminationReport { get; set; }
         public string OnlineSupport { get; set; }
         public string DataFilters { get; set; }
         public string AdminPanelType { get; set; }
@@ -56,36 +56,36 @@ namespace FinalTemplate.source.Registration
             {
                 PackageID = Convert.ToInt32(myDatabase.GetLastValueByColumnName("package_id", "tbl_packages")) + 1;
                 PackageTypeID = 1;
-                OnlineAdmission = true;
-                TeacherProfile = true;
-                PostJobVacancies = false;
+                OnlineAdmission = 1;
+                TeacherProfile = 1;
+                PostJobVacancies = 0;
                 Emails = "700";
                 AttendanceForStaff = "Manual";
                 AttendanceForStudent = "No";
-                Results = true;
-                FeesStructure = true;
+                Results = 1;
+                FeesStructure = 1;
                 Syllabus = "Yes - allow 1 change";
                 DateSheets = "unlimited";
                 Events = "3";
                 Gallery = "no";
                 Reports = "Admin can view";
-                StudentOfTheMonth = true;
-                AssignmentAndHomework = true;
+                StudentOfTheMonth = 1;
+                AssignmentAndHomework = 1;
                 SMS = 1500;
                 EmailAccounts = 5;
                 Notifications = "Email";
                 ComparisonOfSchools = 5;
-                SchoolRating = true;
-                SchoolPublicProfile = false;
-                SchoolIntroductionVideo = false;
+                SchoolRating = 1;
+                SchoolPublicProfile = 0;
+                SchoolIntroductionVideo = 0;
                 ActiveUsers = "No";
                 SchoolToSchoolMessage = "No";
                 SameAccountForOtherBranch = "Not Allowed";
                 DatabaseBackup = "One when package expires";
                 SecurityAndConfidentiality = "High";
                 DataAvailability = "High";
-                PackageCustomization = false;
-                PackageTerminationReport = true;
+                PackageCustomization = 0;
+                PackageTerminationReport = 1;
                 OnlineSupport = "Yes, by Email";
                 DataFilters = "No";
                 AdminPanelType = "Basic";
@@ -95,36 +95,36 @@ namespace FinalTemplate.source.Registration
             {
                 PackageID = Convert.ToInt32(myDatabase.GetLastValueByColumnName("package_id", "tbl_packages")) + 1;
                 PackageTypeID = 2;
-                OnlineAdmission = true;
-                TeacherProfile = true;
-                PostJobVacancies = true;
+                OnlineAdmission = 1;
+                TeacherProfile = 1;
+                PostJobVacancies = 1;
                 Emails = "1500";
                 AttendanceForStaff = "Manual";
                 AttendanceForStudent = "No";
-                Results = true;
-                FeesStructure = true;
+                Results = 1;
+                FeesStructure = 1;
                 Syllabus = "Yes - allow 3 change";
                 DateSheets = "unlimited";
                 Events = "8";
                 Gallery = "10 Pics";
                 Reports = "Admin & Teacher can view";
-                StudentOfTheMonth = true;
-                AssignmentAndHomework = true;
+                StudentOfTheMonth = 1;
+                AssignmentAndHomework = 1;
                 SMS = 4000;
                 EmailAccounts = 8;
                 Notifications = "Email and SMS";
                 ComparisonOfSchools = 15;
-                SchoolRating = true;
-                SchoolPublicProfile = true;
-                SchoolIntroductionVideo = false;
+                SchoolRating = 1;
+                SchoolPublicProfile = 1;
+                SchoolIntroductionVideo = 0;
                 ActiveUsers = "Yes";
                 SchoolToSchoolMessage = "3 messages by Email";
                 SameAccountForOtherBranch = "Not Allowed";
                 DatabaseBackup = "2 on demand";
                 SecurityAndConfidentiality = "High";
                 DataAvailability = "High";
-                PackageCustomization = false;
-                PackageTerminationReport = true;
+                PackageCustomization = 0;
+                PackageTerminationReport = 1;
                 OnlineSupport = "Yes, by Email/SMS";
                 DataFilters = "Basic";
                 AdminPanelType = "Medium";
@@ -134,36 +134,36 @@ namespace FinalTemplate.source.Registration
             {
                 PackageID = Convert.ToInt32(myDatabase.GetLastValueByColumnName("package_id", "tbl_packages")) + 1;
                 PackageTypeID = 3;
-                OnlineAdmission = true;
-                TeacherProfile = true;
-                PostJobVacancies = true;
+                OnlineAdmission = 1;
+                TeacherProfile = 1;
+                PostJobVacancies = 1;
                 Emails = "Unlimited";
                 AttendanceForStaff = "Manual/Biometric";
                 AttendanceForStudent = "Manual";
-                Results = true;
-                FeesStructure = true;
+                Results = 1;
+                FeesStructure = 1;
                 Syllabus = "Yes - unlimited changes";
                 DateSheets = "unlimited";
                 Events = "Unlimited";
                 Gallery = "30 Pics";
                 Reports = "Admin/Teacher can view & export";
-                StudentOfTheMonth = true;
-                AssignmentAndHomework = true;
+                StudentOfTheMonth = 1;
+                AssignmentAndHomework = 1;
                 SMS = 7000;
                 EmailAccounts = 12;
                 Notifications = "Email/SMS";
                 ComparisonOfSchools = 20;
-                SchoolRating = true;
-                SchoolPublicProfile = true;
-                SchoolIntroductionVideo = true;
+                SchoolRating = 1;
+                SchoolPublicProfile = 1;
+                SchoolIntroductionVideo = 1;
                 ActiveUsers = "Yes with identification";
                 SchoolToSchoolMessage = "10 by Email/SMS";
                 SameAccountForOtherBranch = "extra 4000 per branch";
                 DatabaseBackup = "Unlimited on demand";
                 SecurityAndConfidentiality = "High";
                 DataAvailability = "High";
-                PackageCustomization = true;
-                PackageTerminationReport = true;
+                PackageCustomization = 1;
+                PackageTerminationReport = 1;
                 OnlineSupport = "24/7";
                 DataFilters = "Advance";
                 AdminPanelType = "Advance";

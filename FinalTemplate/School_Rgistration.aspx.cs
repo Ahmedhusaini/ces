@@ -17,21 +17,7 @@ namespace FinalTemplate
             }
 
         }
-        protected void btn_goto_ViewSchoolDetails_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btn_goto_RegistrationDetails_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btn_gobackto_viewpackages_Click(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private string EmailBody()
         {
             StringBuilder stringBuilder = new StringBuilder();
