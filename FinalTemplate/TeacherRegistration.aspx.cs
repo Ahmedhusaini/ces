@@ -54,7 +54,7 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@postal_code", SqlDbType.Int).Value = postal.Text;
                 cmd.Parameters.AddWithValue("@city_id", SqlDbType.Int).Value = DropDownList2.SelectedValue;
                 cmd.Parameters.AddWithValue("@country_id", SqlDbType.Int).Value = DropDownList1.SelectedValue;
-                cmd.Parameters.AddWithValue("@photo", SqlDbType.VarChar).Value = photo.Text;
+                cmd.Parameters.AddWithValue("@photo", SqlDbType.VarChar).Value = fileupload.ValidateRequestMode;
                 cmd.Parameters.AddWithValue("@username", SqlDbType.VarChar).Value = user.Text;
                 cmd.Parameters.AddWithValue("@account_pin", SqlDbType.Int).Value = accountp.Text;
                 cmd.Parameters.AddWithValue("@password", SqlDbType.VarChar).Value = pass.Text;
@@ -70,11 +70,33 @@ namespace FinalTemplate
                 con.Close();
             }
 
+            string result = string.Empty;
+            //try
+            //{
+            //    result=(name.Text,lname.Text,contact1.Text,nic.Text, radiobut.SelectedValue,Convert.ToInt32(date.Substring(0,2)),Convert.ToInt32(date.Substring(0,2)),Convert.ToInt32(date.Substring(0,2))
+            //    ,nation.Text,religion.Text,address.Text,postal.Text,DropDownList2.SelectedValue, DropDownList1.SelectedValue,fileupload.ValidateRequestMode,
+            //     user.Text,accountp.Text,pass.Text,pemail.Text,semail.Text, DateTime.Now.ToString(""), DateTime.Now.ToString(""));
+            //}
+              if (result == "true")
+                {
+                    Response.Write("register");
+                }
+                else
+                {
+                    Response.Write("not register");
+                }
 
-            Label1.Text = "REGISTERED SUCCESSFULLY";
+            }
+            //catch (Exception ex)
+            //{
+
+            //    result = ex.ToString();
+            //    Response.Write(result);
+            //}
+
+            //Label1.Text = "REGISTERED SUCCESSFULLY";
 
         }
 
 
     }
-}
