@@ -17,7 +17,7 @@ namespace FinalTemplate
         {
 
             string date = dob.Text;
-            string a = ConfigurationManager.ConnectionStrings["cesConnectionStringWithoutUsernamePassword"].ConnectionString;
+            string a = ConfigurationManager.ConnectionStrings["abc"].ConnectionString;
             Database db = new Database("abc");
             int general_id = Convert.ToInt32(db.GetLastValueByColumnName("general_id", "tbl_general"));
             int dob_id = Convert.ToInt32(db.GetLastValueByColumnName("dob_id", "tbl_dob"));
@@ -45,9 +45,9 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@phone", SqlDbType.VarChar).Value = contact1.Text;
                 cmd.Parameters.AddWithValue("@cnic_no", SqlDbType.VarChar).Value = nic.Text;
                 cmd.Parameters.AddWithValue("@gender", SqlDbType.VarChar).Value = radiobut.SelectedValue;
-                cmd.Parameters.AddWithValue("@day", SqlDbType.Int).Value = Convert.ToInt32(date.Substring(0, 2));
-                cmd.Parameters.AddWithValue("@month", SqlDbType.Int).Value = Convert.ToInt32(date.Substring(0, 2));
-                cmd.Parameters.AddWithValue("@year", SqlDbType.Int).Value = Convert.ToInt32(date.Substring(0, 4));
+                cmd.Parameters.AddWithValue("@day", SqlDbType.Int).Value = Convert.ToInt32(date.Substring(0,2));
+                cmd.Parameters.AddWithValue("@month", SqlDbType.Int).Value = Convert.ToInt32(date.Substring(0,2));
+                cmd.Parameters.AddWithValue("@year", SqlDbType.Int).Value = Convert.ToInt32(date.Substring(0,4));
                 cmd.Parameters.AddWithValue("@nationality", SqlDbType.VarChar).Value = nation.Text;
                 cmd.Parameters.AddWithValue("@religion", SqlDbType.VarChar).Value = religion.Text;
                 cmd.Parameters.AddWithValue("@address", SqlDbType.VarChar).Value = address.Text;
