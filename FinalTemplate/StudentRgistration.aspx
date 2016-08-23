@@ -101,10 +101,10 @@
                          
                            
                        },
-                       <%=emaill.UniqueID%>:{
+<%--                       <%=emaill.UniqueID%>:{
                            required:true,
                            email:true
-                       },
+                       },--%>
                     <%=pemail.UniqueID%>:{
                            required:true,
                            email:true
@@ -121,18 +121,15 @@
                            required:true, 
                            romanonly:true
                        },
-                    <%=classtxt.UniqueID%>:{
+                    <%=classx.UniqueID%>:{
                            required:true,
                            romanonly:true
                        
                        },
-                    <%=section.UniqueID%>:{
+                    <%=sec.UniqueID%>:{
                            required:true,
                            minlength:1,
                            maxlength:2
-                       },
-                    <%=Dropd.UniqueID%>:{
-                           required:true,
                        },
                     <%=fileupload.UniqueID%>:{
                            required:true,
@@ -158,10 +155,10 @@
                        <%=sname.UniqueID%>:{
                            required:"Please mention your full name"
                        },
-                       <%=classtxt.UniqueID%>:{
+                       <%=classx.UniqueID%>:{
                            required:"Please mention your current Class"
                        },
-                       <%=section.UniqueID%>:{
+                       <%=sec.UniqueID%>:{
                            required:"Please mention your current Section",
                            minlenght:"minimum 1 character or maximum 2",
                            maxlength:"minimum 1 character or maximum 2"
@@ -169,9 +166,6 @@
                        },
                        <%=fileupload.UniqueID%>:{
                            required:"Please upload your photo"    
-                       },
-                       <%=Dropd.UniqueID%>:{
-                           required:"Selection is required"
                        },
                          
                        <%=contact2.UniqueID%>:{
@@ -209,9 +203,9 @@
                              required:"You must confirm your password",
                          
                          },
-                       <%=emaill.UniqueID%>:{
+<%--                       <%=emaill.UniqueID%>:{
                            required:"Please enter your an email"
-                       },
+                       },--%>
                        <%=pemail.UniqueID%>:{
                            required:"Please enter your an email"
                        },
@@ -315,7 +309,7 @@
                                         <asp:TextBox ID="lname" CssClass="form-control  form-input " runat="server"></asp:TextBox>
 
                                     </div>
-                                    <div class="col-md-6">
+<%--                                    <div class="col-md-6">
                                         <label for="regname" class="control-label form-label">
                                             Email <span class="highlight">*<br />
                                             </span>
@@ -324,7 +318,7 @@
                                         <br />
                                         <asp:TextBox ID="emaill" CausesValidation="true" CssClass="form-control  form-input" runat="server"></asp:TextBox>
 
-                                    </div>
+                                    </div>--%>
                                     <div class="col-md-6">
                                         <label for="regname" class="control-label form-label">
                                             Contact No <span class="highlight">*<br />
@@ -409,7 +403,7 @@
                                         </label>
                                         <!-- p.help-block Warning !-->
                                         <br />
-                                        <asp:DropDownList ID="DropDownList2" CssClass="form-control  form-input" placeholder="----Select----" runat="server">
+                                        <asp:DropDownList ID="DropDownList2" CssClass="form-control  form-input" runat="server">
                                             <asp:ListItem></asp:ListItem>
                                             <asp:ListItem>Karachi</asp:ListItem>
                                             <asp:ListItem>Lahore</asp:ListItem>
@@ -495,29 +489,14 @@
                                 <asp:TextBox ID="sname" CssClass="form-control  form-input" runat="server"></asp:TextBox>
                             </div>
                             <div class="col-md-6">
-
-                                <label for="regname" class="control-label form-label">
-                                    Primary / Secondary <span class="highlight">*<br />
-                                    </span>
-                                </label>
-                                <!-- p.help-block Warning !-->
-                                <br />
-
-                                <asp:DropDownList ID="Dropd" CssClass="form-control  form-input" placeholder="----Select----" runat="server">
-
-                                    <asp:ListItem>Primary</asp:ListItem>
-                                    <asp:ListItem>Secondary</asp:ListItem>
-                                </asp:DropDownList>
-                            </div>
-
-                            <div class="col-md-6">
                                 <label for="regname" class="control-label form-label">
                                     Class <span class="highlight">*<br />
                                     </span>
                                 </label>
                                 <!-- p.help-block Warning !-->
                                 <br />
-                                <asp:TextBox ID="classtxt" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+
+                                <asp:TextBox ID="classx" CssClass="form-control  form-input" runat="server"></asp:TextBox>
                             </div>
 
                             <div class="col-md-6">
@@ -528,7 +507,7 @@
                                 <!-- p.help-block Warning !-->
                                 <br />
                                 
-                                <asp:TextBox ID="section" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="sec" CssClass="form-control  form-input" runat="server"></asp:TextBox>
                             </div>
                             <div class="section pricing">
                                 <div class="container">

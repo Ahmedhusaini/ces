@@ -17,24 +17,11 @@ namespace FinalTemplate
             }
 
         }
-        protected void btn_goto_ViewSchoolDetails_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btn_goto_RegistrationDetails_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btn_gobackto_viewpackages_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private string EmailBody()
         {
             StringBuilder stringBuilder = new StringBuilder();
+
             stringBuilder.Clear();
             stringBuilder.Append("<h1>Welcome to Centeralized Education System - CES</h1>");
 
@@ -49,6 +36,13 @@ namespace FinalTemplate
             stringBuilder.Append(" <br> ");
             stringBuilder.Append("Password:");
             stringBuilder.Append(txt_password.Text);
+            stringBuilder.Append(" <br> ");
+            stringBuilder.Append("<h2>Package Details</h2>");
+            stringBuilder.Append("Package Name: ");
+            stringBuilder.Append(hiddenFieild.Value.ToString());
+            stringBuilder.Append(" <br> ");
+            stringBuilder.Append("<a href='https://" + "drive.google.com/open?id=0B1sWtpM3NwoqSFpCU1h1LXpWVlk'>Click here</a> to view all details about your selected package.");
+
             return stringBuilder.ToString();
         }
 
@@ -59,8 +53,8 @@ namespace FinalTemplate
 
             try
             {
-                result = this.hiddenFieild.Value.ToString();
-                if (result == "Gold" || result == "Silver" || result == "Platinum")
+                string selectedpackage = this.hiddenFieild.Value.ToString();
+                if (selectedpackage == "Gold" || selectedpackage == "Silver" || selectedpackage == "Platinum")
                 {
                     if (JFunctions.UploadSingleFile(fileupload, "images/registeredSchools/") == "true")
                     {
@@ -73,8 +67,15 @@ namespace FinalTemplate
                              txt_campusname.Text);
                         if (result == "true")
                         {
-                            JFunctions.SendEmail(txt_primaryEmailAddress.Text, "CES - Registration", EmailBody());
-                            Response.Write("<script>alert('An email has been sent to your primary email address which contain basic information about your account. You will be redirected to home page.');</script>");
+                            Package objPackage = new Package();
+                            objPackage.InitializePackageAttributes(selectedpackage, classSchool.myDatabase.GetLastValueByColumnName("school_id", "tbl_school"));
+                            if (objPackage.AssignPackage() == "true")
+                            {
+                                JFunctions.SendEmail(txt_primaryEmailAddress.Text, "CES - Registration", EmailBody());
+                                Response.Write("<script>alert('An email has been sent to your primary email address which contain basic information about your account. You will be redirected to home page.');</script>");
+                            }
+                            else
+                                Response.Write("Regisration completed successfully, but package assingment is not completed due to an error.");
                         }
                         else
                             Response.Write("not register");
