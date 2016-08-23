@@ -102,10 +102,10 @@
                            required:true,
                            email:true
                        },
-                    <%-- <%=fileupload.UniqueID%>:{
+                   <%=fileupload.UniqueID%>:{
                          required:true,
                          imageonly:true
-                     },--%>
+                     },
                     <%=dob.UniqueID%>: {
                         required:true
                     }
@@ -127,9 +127,9 @@
                         <%=radiobut.UniqueID%>:{
                             required:"Please select your Gender"
                         },
-                     <%--   <%=fileupload.UniqueID%>:{
+                       <%=fileupload.UniqueID%>:{
                             required:"Please upload your photo"    
-                        },--%>
+                        },
                      
                        <%=nation.UniqueID%>:{
                             required:"What's your nationality ?"
@@ -385,8 +385,8 @@
                                         </label>
                                         <!-- p.help-block Warning !-->
                                         <br />
-                                      <%--  <asp:FileUpload  ID="fileupload" runat="server"  CssClass="form-control  form-input"/>--%>
-                                         <asp:TextBox ID="photo" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                       <asp:FileUpload  ID="fileupload" runat="server"  CssClass="form-control  form-input"/>
+                                         
                                     </div>
                                     </div>
                                 </div>

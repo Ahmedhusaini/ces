@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FinalTemplate
-{
-
-
-    public partial class TeacherRegistration
-    {
-
+namespace FinalTemplate {
+    
+    
+    public partial class TeacherRegistration {
+        
         /// <summary>
         /// name control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox name;
-
+        
         /// <summary>
         /// lname control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox lname;
-
+        
         /// <summary>
         /// contact1 control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox contact1;
-
+        
         /// <summary>
         /// nic control.
         /// </summary>
@@ -49,7 +47,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox nic;
-
+        
         /// <summary>
         /// radiobut control.
         /// </summary>
@@ -58,7 +56,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList radiobut;
-
+        
         /// <summary>
         /// dob control.
         /// </summary>
@@ -67,7 +65,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox dob;
-
+        
         /// <summary>
         /// nation control.
         /// </summary>
@@ -76,7 +74,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox nation;
-
+        
         /// <summary>
         /// religion control.
         /// </summary>
@@ -85,7 +83,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox religion;
-
+        
         /// <summary>
         /// address control.
         /// </summary>
@@ -94,7 +92,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox address;
-
+        
         /// <summary>
         /// postal control.
         /// </summary>
@@ -103,7 +101,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox postal;
-
+        
         /// <summary>
         /// DropDownList2 control.
         /// </summary>
@@ -112,7 +110,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
-
+        
         /// <summary>
         /// SqlDataSource1 control.
         /// </summary>
@@ -121,7 +119,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
-
+        
         /// <summary>
         /// DropDownList1 control.
         /// </summary>
@@ -130,7 +128,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
-
+        
         /// <summary>
         /// SqlDataSource2 control.
         /// </summary>
@@ -139,16 +137,16 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
-
+        
         /// <summary>
-        /// photo control.
+        /// fileupload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox photo;
-
+        protected global::System.Web.UI.WebControls.FileUpload fileupload;
+        
         /// <summary>
         /// user control.
         /// </summary>
@@ -157,7 +155,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox user;
-
+        
         /// <summary>
         /// accountp control.
         /// </summary>
@@ -166,7 +164,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox accountp;
-
+        
         /// <summary>
         /// pass control.
         /// </summary>
@@ -175,7 +173,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox pass;
-
+        
         /// <summary>
         /// repass control.
         /// </summary>
@@ -184,7 +182,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox repass;
-
+        
         /// <summary>
         /// CompareValidator1 control.
         /// </summary>
@@ -193,7 +191,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
-
+        
         /// <summary>
         /// pemail control.
         /// </summary>
@@ -202,7 +200,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox pemail;
-
+        
         /// <summary>
         /// semail control.
         /// </summary>
@@ -211,7 +209,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox semail;
-
+        
         /// <summary>
         /// Button1 control.
         /// </summary>
@@ -220,7 +218,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
-
+        
         /// <summary>
         /// Label1 control.
         /// </summary>
