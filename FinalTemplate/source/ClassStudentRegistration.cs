@@ -10,14 +10,14 @@ namespace FinalTemplate.source
     {
         private Database.Database studentdatabase = new Database.Database("cesConnectionString2");
         public string studentregister(string name,string lastname,string contactno,string gurdianname,string gurdiancontact,
-                                string gender,string nationality,string religion,int city,int country,string address,int postalcode,
+                                string gender,string nationality,string religion,int country,int city,string address,int postalcode,
                                 string prvschool,string lastclass,string image,string schoolname,int classname,int section,string username,
                                 int accountpin,string password,string primaryemail,string secondaryemail) 
         {
             string locationid = studentdatabase.GetLastValueByColumnName("loc_id", "tbl_location");
+            string genaralid = studentdatabase.GetLastValueByColumnName("General_Id", "tbl_general");
             string dobid = studentdatabase.GetLastValueByColumnName("dob_id", "tbl_dob");
-            string generalid = studentdatabase.GetLastValueByColumnName("General_Id", "tbl_general");
-            string studentregid = studentdatabase.GetLastValueByColumnName("Std_id", "tbl_Student_Reg");
+            var studentregid = studentdatabase.GetLastValueByColumnName("Std_id", "tbl_Student_Reg");
             string classsectioninfo = studentdatabase.GetLastValueByColumnName("class_sec_info_id", "tbl_class_sec_info");
 
             studentdatabase.CreateConnection();
@@ -64,7 +64,7 @@ namespace FinalTemplate.source
             SqlParameter lastlogindateParameter = new SqlParameter("@last_login_date", SqlDbType.Date);
             SqlParameter authorizedidoutParameter = new SqlParameter("@authorized_id_out", SqlDbType.VarChar, 20);
 
-            General_IdParameter.Value = Convert.ToInt32(generalid)+1;
+            General_IdParameter.Value = Convert.ToInt32(genaralid)+1;
             firstnameParameter.Value=name;
             lastnameParameter.Value=lastname;
             NationalityParameter.Value=nationality;
@@ -75,9 +75,9 @@ namespace FinalTemplate.source
             addressParameter.Value=address;
             generalidoutParameter.Direction= ParameterDirection.Output;
             dobidParameter.Value= Convert.ToInt32(dobid)+1;
-            dayParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(2, 2));
-            monthParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(0, 1));
-            yearParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(5, 4));
+            dayParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(0, 2));
+            monthParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(0, 2));
+            yearParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(0, 4));
             dobidoutParameter.Direction= ParameterDirection.Output;
             stdidParameter.Value=Generatestudentid(schoolname, username,classname.ToString(),section.ToString());
             gurdianParameter.Value=gurdianname; 
