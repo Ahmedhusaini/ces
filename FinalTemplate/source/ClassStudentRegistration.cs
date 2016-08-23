@@ -10,14 +10,14 @@ namespace FinalTemplate.source
     {
         private Database.Database studentdatabase = new Database.Database("cesConnectionString2");
         public string studentregister(string name,string lastname,string contactno,string gurdianname,string gurdiancontact,
-                                string gender,string nationality,string religion,int city,int country,string address,int postalcode,
-                                string prvschool,string lastclass,string image,string schoolname,string classname,string section,string username,
+                                string gender,string nationality,string religion,int country,int city,string address,int postalcode,
+                                string prvschool,string lastclass,string image,string schoolname,int classname,int section,string username,
                                 int accountpin,string password,string primaryemail,string secondaryemail) 
         {
             string locationid = studentdatabase.GetLastValueByColumnName("loc_id", "tbl_location");
+            string genaralid = studentdatabase.GetLastValueByColumnName("General_Id", "tbl_general");
             string dobid = studentdatabase.GetLastValueByColumnName("dob_id", "tbl_dob");
-            string generalid = studentdatabase.GetLastValueByColumnName("General_Id", "tbl_general");
-            string studentregid = studentdatabase.GetLastValueByColumnName("Std_id", "tbl_Student_Reg");
+            var studentregid = studentdatabase.GetLastValueByColumnName("Std_id", "tbl_Student_Reg");
             string classsectioninfo = studentdatabase.GetLastValueByColumnName("class_sec_info_id", "tbl_class_sec_info");
 
             studentdatabase.CreateConnection();
@@ -62,9 +62,9 @@ namespace FinalTemplate.source
             SqlParameter usertypeidParameter = new SqlParameter("@usertype_id", SqlDbType.Int);
             SqlParameter logincountParameter = new SqlParameter("@login_count", SqlDbType.Int);
             SqlParameter lastlogindateParameter = new SqlParameter("@last_login_date", SqlDbType.Date);
-            SqlParameter authorizedidoutParameter = new SqlParameter("@authorized_id_out", SqlDbType.VarChar, 50);
+            SqlParameter authorizedidoutParameter = new SqlParameter("@authorized_id_out", SqlDbType.VarChar, 20);
 
-            General_IdParameter.Value = Convert.ToInt32(generalid)+1;
+            General_IdParameter.Value = Convert.ToInt32(genaralid)+1;
             firstnameParameter.Value=name;
             lastnameParameter.Value=lastname;
             NationalityParameter.Value=nationality;
@@ -75,12 +75,12 @@ namespace FinalTemplate.source
             addressParameter.Value=address;
             generalidoutParameter.Direction= ParameterDirection.Output;
             dobidParameter.Value= Convert.ToInt32(dobid)+1;
-            dayParameter.Value = Convert.ToInt32(JFunctions.GetSystemDate().Substring(2, 2));
-            monthParameter.Value =Convert.ToInt32(JFunctions.GetSystemDate().Substring(0,1));
-            yearParameter.Value =Convert.ToInt32(JFunctions.GetSystemDate().Substring(5, 4));
+            dayParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(0, 2));
+            monthParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(0, 2));
+            yearParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(0, 4));
             dobidoutParameter.Direction= ParameterDirection.Output;
-            stdidParameter.Value=Generatestudentid(schoolname, username,classname,section);
-            gurdianParameter.Value=gurdianname;
+            stdidParameter.Value=Generatestudentid(schoolname, username,classname.ToString(),section.ToString());
+            gurdianParameter.Value=gurdianname; 
             PreviousschoolParameter.Value=prvschool;
             lastclassattendedParameter.Value=lastclass;
             schoolidParameter.Value=schoolname;
@@ -101,9 +101,9 @@ namespace FinalTemplate.source
             accountpinParameter.Value=accountpin;
             primaryemailParameter.Value=primaryemail;
             secondaryemailParameter.Value=secondaryemail;
-            usertypeidParameter.Value=1;
+            usertypeidParameter.Value=4;
             logincountParameter.Value=0;
-            lastlogindateParameter.Value = Convert.ToDateTime(JFunctions.GetSystemDate());
+            lastlogindateParameter.Value = Convert.ToDateTime(Jfunctionstudents.GetSystemDate());
             authorizedidoutParameter.Direction= ParameterDirection.Output;
 
             studentdatabase.obj_sqlcommand.Parameters.Add(General_IdParameter);
@@ -180,7 +180,7 @@ namespace FinalTemplate.source
             return Convert.ToString(Username .Substring(0, 3) + AccountPin.Substring(0, 3));
         }
 
-        private string Generatestudentid(string name, string Lastname,string classname, string section)
+        private string Generatestudentid(string name, string lastname, string classname, string section)
         {
             Random random = new Random();
 
@@ -188,14 +188,15 @@ namespace FinalTemplate.source
             id.Append("C/");
             id.Append(name.Substring(0, 3));
             id.Append("/E/");
-            id.Append(Lastname.Substring(0, 3));
+            id.Append(lastname.Substring(0, 3));
             id.Append("/S/");
-            id.Append(classname.Substring(0, 3));
+            id.Append(Convert.ToInt32( classname.Substring(0, 3)));
             id.Append("/");
-            id.Append(section.Substring(0, 3));
-            id.Append(JFunctions.GetSystemDate());
+            id.Append(Convert.ToInt32(section.Substring(0, 3)));
             id.Append("/");
-            id.Append(JFunctions.GetSystemTime());
+            id.Append(Jfunctionstudents.GetSystemDate());
+            id.Append("/");
+            id.Append(Jfunctionstudents.GetSystemTime());
             id.Append("/");
             id.Append(random.Next(3, 10));
             return id.ToString();

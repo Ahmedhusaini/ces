@@ -185,7 +185,7 @@ namespace FinalTemplate.source.Database
                         if (Jvalidate.FilterBlackLIstKeywords(columnArray))
                         {
                             this.obj_sqlcommand.Parameters.AddWithValue("@" + ColumnNames[i].ToString(),
-                                Convert.ToInt32(Jvalidate.RemoveHtmlTags(ColumnValues[i].ToString())));
+                                Convert.ToBoolean(Jvalidate.RemoveHtmlTags(ColumnValues[i].ToString())));
                         }
                         else
                             break;
