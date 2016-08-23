@@ -470,7 +470,7 @@
                                         <!-- p.help-block Warning !-->
                                         <br />
                                         <asp:FileUpload ID="FileUpload1" runat="server" CssClass="form-control  form-input" />
-                                        <asp:FileUpload ID="fileupload" runat="server" CssClass="form-control  form-input" />
+                                        <asp:FileUpload ID="fileupload" runat="server" CssClass="form-control  form-input" Visible="False" />
 
                                     </div>
                                 </div>
