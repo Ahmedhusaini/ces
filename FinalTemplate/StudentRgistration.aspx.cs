@@ -14,7 +14,7 @@ namespace FinalTemplate
         {
             if (!IsPostBack)
             {
-                JFunctions.BindDropDownList(DropDownList2, "city", "city_id", "select * from tbl_city");
+                Jfunctionstudents.BindDropDownList(DropDownList2, "city", "city_id", "select * from tbl_city");
             }
         }
         protected void Button1_Click(object sender, EventArgs e)
@@ -24,7 +24,7 @@ namespace FinalTemplate
             try
             {
                 result = classStudent.studentregister(name.Text,lname.Text,contact1.Text,guardian.Text,contact2.Text,radiobut.SelectedValue,
-                                            nation.Text,religion.Text,Convert.ToInt32(DropDownList2.SelectedValue),1,address.Text,
+                                            nation.Text, religion.Text,1, Convert.ToInt32(DropDownList2.SelectedValue), address.Text,
                                             Convert.ToInt32(postal.Text),prevchool.Text,preclass.Text,FileUpload1.FileName,sname.Text,
                                             Convert.ToInt32(classx.Text),Convert.ToInt32(sec.Text),user.Text,Convert.ToInt32(accountp.Text),
                                             pass.Text,pemail.Text,semail.Text);
