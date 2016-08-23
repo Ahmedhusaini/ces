@@ -16,11 +16,12 @@ namespace FinalTemplate.source.Functions
         {
             return Convert.ToString(DateTime.Today.ToString("d"));
         }
+
         public static string GetSystemTime()
         {
             return Convert.ToString(System.DateTime.Today.ToString("t"));
         }
-        public static void BindDropDownList(DropDownList ddl2, string displayField1, string valueField1, string queryy)
+        public static void BindDropDownList(DropDownList ddl1, string displayField1, string valueField1, string queryy)
         {
             Database.Database mDatabase = new Database.Database("cesConnectionString3");
             mDatabase.CreateConnection();
@@ -28,10 +29,10 @@ namespace FinalTemplate.source.Functions
             try
             {
                 mDatabase.OpenConnection();
-                ddl2.DataSource = mDatabase.obj_sqlcommand.ExecuteReader();
-                ddl2.DataTextField = displayField1;
-                ddl2.DataValueField = valueField1;
-                ddl2.DataBind();
+                ddl1.DataSource = mDatabase.obj_sqlcommand.ExecuteReader();
+                ddl1.DataTextField = displayField1;
+                ddl1.DataValueField = valueField1;
+                ddl1.DataBind();
             }
             finally
             {

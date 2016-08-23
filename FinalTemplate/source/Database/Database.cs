@@ -178,6 +178,18 @@ namespace FinalTemplate.source.Database
                         else
                             break;
                     }
+
+                    else if (CurrentColumnType == "System.Boolean")
+                    {
+                        //if black listed keywords are filtered successfully. Then converting actual value to respective column type match as sql server database table
+                        if (Jvalidate.FilterBlackLIstKeywords(columnArray))
+                        {
+                            this.obj_sqlcommand.Parameters.AddWithValue("@" + ColumnNames[i].ToString(),
+                                Convert.ToBoolean(Jvalidate.RemoveHtmlTags(ColumnValues[i].ToString())));
+                        }
+                        else
+                            break;
+                    }
                     else if (CurrentColumnType == "System.Int32")
                     {
                         //if black listed keywords are filtered successfully. Then converting actual value to respective column type match as sql server database table

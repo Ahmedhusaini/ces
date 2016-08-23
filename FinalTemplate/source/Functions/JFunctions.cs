@@ -15,7 +15,7 @@ namespace FinalTemplate.source.Functions
 
         public static string GetSystemTime()
         {
-            return Convert.ToString(System.DateTime.Today.ToString("t"));
+            return Convert.ToString(System.DateTime.Today.ToString("HH:MM:ss"));
         }
         public static void SendEmail(string To, string Subject, string MessageBody)
         {

@@ -31,15 +31,6 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.TextBox lname;
         
         /// <summary>
-        /// emaill control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox emaill;
-        
-        /// <summary>
         /// contact1 control.
         /// </summary>
         /// <remarks>
@@ -184,31 +175,22 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.TextBox sname;
         
         /// <summary>
-        /// Dropd control.
+        /// classx control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Dropd;
+        protected global::System.Web.UI.WebControls.TextBox classx;
         
         /// <summary>
-        /// classtxt control.
+        /// sec control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox classtxt;
-        
-        /// <summary>
-        /// section control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox section;
+        protected global::System.Web.UI.WebControls.TextBox sec;
         
         /// <summary>
         /// user control.

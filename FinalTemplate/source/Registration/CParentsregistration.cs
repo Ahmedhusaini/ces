@@ -1,147 +1,147 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Data.SqlClient;
-using FinalTemplate.source.Functions;
-using System.Text;
+﻿using FinalTemplate.source.Functions;
+using System;
 using System.Data;
-using System.EnterpriseServices;
+using System.Data.SqlClient;
+using System.Text;
 
 namespace FinalTemplate.source.Registration
 {
-    public class CParents
+    public class CParentsregistraion
     {
         private Database.Database mdata = new Database.Database("cesConnectionString3");
 
-        public string Registerparents(int country_id, int city_id, int postalcode, int officeNo, string username, string postdesig, string officeaddress, string salary, string password, string address, string phone, int accountpin, string primaryemail, string nationality, string gender, string religion, string secondaryemail, string photo, string nicc, string firstname, string lastname, string designation)
+        public string Registerparents(string firstname, string lastname, string nationality, string gender, string photo,
+            string religion,string phone, string address, string officeaddress, string officeno, string cnicno,
+            string postdesignation, string salaryanum, int country_id, int city_id, int postalcode, string username,
+            string password, int accountpin, string primaryemail, string secondaryemail)
         {
-            String locationid = mdata.GetLastValueByColumnName("loc_id", "tbl_location");
-            String genaralid = mdata.GetLastValueByColumnName("General_Id", "tbl_general");
-            String dobid = mdata.GetLastValueByColumnName("dob_id", "tbl_dob");
+            string locationid = mdata.GetLastValueByColumnName("loc_id", "tbl_location");
+            string genaralid = mdata.GetLastValueByColumnName("General_Id", "tbl_general");
+            string dobid = mdata.GetLastValueByColumnName("dob_id", "tbl_dob");
+        
+
 
 
             mdata.CreateConnection();
             mdata.InitializeSQLCommandObject(mdata.GetCurrentConnection, "SP_PARENTREGISTRATIONN", true);
+            SqlParameter parentidParameter = new SqlParameter("@Parent_id ", SqlDbType.VarChar, 50);
+            SqlParameter generalidParameter = new SqlParameter("@general_id  ", SqlDbType.Int);
+            SqlParameter firstnameParameter = new SqlParameter("@firstname ", SqlDbType.VarChar, 50);
+            SqlParameter lastnameParameter = new SqlParameter("@lastname ", SqlDbType.VarChar,50);
+            SqlParameter nationalityParameter = new SqlParameter("@nationality ", SqlDbType.VarChar, 50);
+            SqlParameter genderParameter = new SqlParameter("@gender ", SqlDbType.VarChar,7);
+            SqlParameter photoParameter = new SqlParameter("@photo  ", SqlDbType.VarChar, 50);
+            SqlParameter religionParameter = new SqlParameter("@religion  ", SqlDbType.VarChar, 20);
+            SqlParameter phoneParameter = new SqlParameter("@phone   ", SqlDbType.VarChar, 50);
+            SqlParameter addressParameter = new SqlParameter("@address  ", SqlDbType.VarChar, 50);
+            SqlParameter officeaddressParameter = new SqlParameter("@office_address  ", SqlDbType.VarChar, 50);
+            SqlParameter officenoParameter = new SqlParameter("@Office_no ", SqlDbType.VarChar, 50);
+            SqlParameter cnicnoParameter = new SqlParameter("@CNIC_No   ", SqlDbType.VarChar, 20);
+            SqlParameter postdesignationParameter = new SqlParameter("@Post_Designation ", SqlDbType.VarChar, 50);
+            SqlParameter salaryanumParameter = new SqlParameter("@Salary_Anum    ", SqlDbType.VarChar, 20);
+            SqlParameter generalidoutParameter = new SqlParameter("@general_id_out ", SqlDbType.Int);
+            SqlParameter parentidoutParameter = new SqlParameter("@parent_id_out ", SqlDbType.VarChar,50);                  
+            SqlParameter dobidParameter = new SqlParameter("@dob_id ", SqlDbType.Int);
+            SqlParameter dayParameter = new SqlParameter("@day", SqlDbType.Int);
+            SqlParameter monthParameter = new SqlParameter("@month ", SqlDbType.Int);
+            SqlParameter yearParameter = new SqlParameter("@year", SqlDbType.Int);
+            SqlParameter dobidoutParameter = new SqlParameter("@dob_id_out ", SqlDbType.Int);
             SqlParameter locidParameter = new SqlParameter("@loc_id", SqlDbType.Int);
             SqlParameter countryidParameter = new SqlParameter("@country_id", SqlDbType.Int);
-            SqlParameter cityidparameter = new SqlParameter("@city_id", SqlDbType.Int);
-            SqlParameter postalcodeParameter = new SqlParameter("@postal_code", SqlDbType.Int);
-            SqlParameter locidoutParamter = new SqlParameter("@loc_id_out", SqlDbType.Int);
-            SqlParameter authorizedParameter = new SqlParameter("@authorized_id", SqlDbType.VarChar, 20);
-            SqlParameter usernameParameter = new SqlParameter("@username", SqlDbType.VarChar, 50);
+            SqlParameter cityidParameter = new SqlParameter("@city_id", SqlDbType.Int);
+            SqlParameter postalParameter = new SqlParameter("@postal_code", SqlDbType.Int);                 
+            SqlParameter locidoutidParameter = new SqlParameter("@loc_id_out ", SqlDbType.Int);
+            SqlParameter authorizedidParameter = new SqlParameter("@authorized_id ", SqlDbType.VarChar,20);
+            SqlParameter usernameParameter = new SqlParameter("@username", SqlDbType.VarChar,50);
             SqlParameter passwordParameter = new SqlParameter("@password", SqlDbType.VarChar, 50);
             SqlParameter accountpinParameter = new SqlParameter("@account_pin", SqlDbType.Int);
-            SqlParameter primaryParameter = new SqlParameter("@primary_email ", SqlDbType.VarChar, 50);
-            SqlParameter secondaryParameter = new SqlParameter("@secondary_email ", SqlDbType.VarChar, 50);
-            SqlParameter usertypeidParameter = new SqlParameter("@usertype_id", SqlDbType.Int);
+            SqlParameter primaryemailParameter = new SqlParameter("@primary_email", SqlDbType.VarChar, 50);
+            SqlParameter secondaryemailParameter = new SqlParameter("@secondary_email", SqlDbType.VarChar, 50);
+            SqlParameter usertypeParameter = new SqlParameter("@usertype_id", SqlDbType.Int);
             SqlParameter logincountParameter = new SqlParameter("@login_count", SqlDbType.Int);
-            SqlParameter lastlogindateParameter = new SqlParameter("@last_login_date", SqlDbType.Date);
-            SqlParameter authorizedioutParameter = new SqlParameter("@authorized_id_out", SqlDbType.VarChar, 20);
-            SqlParameter parentidParameter = new SqlParameter("@Parent_id", SqlDbType.VarChar, 50);
-            SqlParameter postdesignationParameter = new SqlParameter("@Post_Designation", SqlDbType.VarChar, 50);
-            SqlParameter cnicnoParameter = new SqlParameter("@CNIC_No", SqlDbType.VarChar, 20);
-            SqlParameter officeaddressParameter = new SqlParameter("@office_address", SqlDbType.VarChar, 50);
-            SqlParameter salaryParameter = new SqlParameter("@Salary_Anum ", SqlDbType.VarChar, 50);
-            SqlParameter officenoParameter = new SqlParameter("@Office_no ", SqlDbType.VarChar, 50);
-            //   SqlParameter studentidParameter = new SqlParameter("@std_id ", SqlDbType.VarChar, 50);
-            SqlParameter parentidoutParameter = new SqlParameter("@parent_id_out ", SqlDbType.VarChar, 50);
-            SqlParameter generalidParameter = new SqlParameter("@general_id ", SqlDbType.Int);
-            SqlParameter firstnameParameter = new SqlParameter("@firstname", SqlDbType.VarChar, 50);
-            SqlParameter lastnameParameter = new SqlParameter("@lastname", SqlDbType.VarChar, 50);
-            SqlParameter nationalityParameter = new SqlParameter("@nationality", SqlDbType.VarChar, 50);
-            SqlParameter genderParameter = new SqlParameter("@gender", SqlDbType.VarChar, 7);
-            SqlParameter photoParameter = new SqlParameter("@photo", SqlDbType.VarChar, 200);
-            SqlParameter religonParameter = new SqlParameter("@religion ", SqlDbType.VarChar, 20);
-            SqlParameter phoneParameter = new SqlParameter("@phone ", SqlDbType.VarChar, 50);
-            SqlParameter addressParameter = new SqlParameter("@address ", SqlDbType.VarChar, 50);
-            SqlParameter generalidoutParameter = new SqlParameter("@general_id_out ", SqlDbType.Int);
-            SqlParameter dobidParameter = new SqlParameter("@dob_id ", SqlDbType.Int);
-            SqlParameter dayParameter = new SqlParameter("@day ", SqlDbType.Int);
-            SqlParameter monthParameter = new SqlParameter("@month ", SqlDbType.Int);
-            SqlParameter yearParameter = new SqlParameter("@year ", SqlDbType.Int);
-            SqlParameter dobidoutParameter = new SqlParameter("@dob_id_out ", SqlDbType.Int);
+            SqlParameter lastloginParameter = new SqlParameter("@last_login_date", SqlDbType.Date);
+            SqlParameter authorizedidoutParameter = new SqlParameter("@authorized_id_out", SqlDbType.VarChar,20);
 
 
-            locidParameter.Value = Convert.ToInt32(locationid) + 1;
-            countryidParameter.Value = country_id;
-            cityidparameter.Value = city_id;
-            postalcodeParameter.Value = postalcode;
-            locidoutParamter.Direction = ParameterDirection.Output;
-            authorizedParameter.Value = GenerateAuthorizedID(username, accountpin.ToString());
-            usernameParameter.Value = username;
-            passwordParameter.Value = password;
-            accountpinParameter.Value = accountpin;
-            primaryParameter.Value = primaryemail;
-            secondaryParameter.Value = secondaryemail;
-            usertypeidParameter.Value = 1;
-            logincountParameter.Value = 0;
-            lastlogindateParameter.Value = Convert.ToDateTime(Jfunctionparents.GetSystemDate());
-            authorizedioutParameter.Direction = ParameterDirection.Output;
+
+
             parentidParameter.Value = GenerateParentID(firstname, lastname);
-            postdesignationParameter.Value = postdesig;
-            cnicnoParameter.Value = nicc;
-            officeaddressParameter.Value = officeaddress;
-            salaryParameter.Value = salary;
-            officenoParameter.Value = officeNo;
-            //  studentidParameter.Value = std_id;
-            parentidoutParameter.Direction = ParameterDirection.Output;
-            generalidParameter.Value = Convert.ToInt32(genaralid) + 1;
+            generalidParameter.Value = Convert.ToInt32(genaralid)+1 ;
             firstnameParameter.Value = firstname;
             lastnameParameter.Value = lastname;
             nationalityParameter.Value = nationality;
-            religonParameter.Value = religion;
+            genderParameter.Value = gender;
+            photoParameter.Value = photo;
+            religionParameter.Value = religion;
             phoneParameter.Value = phone;
             addressParameter.Value = address;
-            photoParameter.Value = photo;
-            genderParameter.Value = gender;
-            generalidoutParameter.Direction = ParameterDirection.Output;
-            dobidParameter.Value = Convert.ToInt32(dobid) + 1;
-            dayParameter.Value = Convert.ToInt32(Jfunctionparents.GetSystemDate().Substring(0, 1));
-            monthParameter.Value = Convert.ToInt32(Jfunctionparents.GetSystemDate().Substring(2, 2));
-            yearParameter.Value = Convert.ToInt32(Jfunctionparents.GetSystemDate().Substring(5, 4));
-            dobidoutParameter.Direction = ParameterDirection.Output;
+            officeaddressParameter.Value = officeaddress;
+            officenoParameter.Value = officeno;
+            cnicnoParameter.Value = cnicno;
+            postdesignationParameter.Value = postdesignation;
+            salaryanumParameter.Value = salaryanum;
+            generalidoutParameter.Direction= ParameterDirection.Output;
+            parentidoutParameter.Direction=ParameterDirection.Output;
+            dobidParameter.Value = Convert.ToInt32(dobid)+1;
+            dayParameter.Value = Convert.ToInt32(Jfunctionparents.GetSystemDate().Substring(2, 2));
+            monthParameter.Value =Convert.ToInt32(Jfunctionparents.GetSystemDate().Substring(0,1));
+            yearParameter.Value =Convert.ToInt32(Jfunctionparents.GetSystemDate().Substring(5, 4));
+            dobidoutParameter.Direction=ParameterDirection.Output;
+            locidParameter.Value = Convert.ToInt32(locationid) + 1;
+            countryidParameter.Value = country_id;
+            cityidParameter.Value = city_id;
+            postalParameter.Value = postalcode;
+            locidoutidParameter.Direction=ParameterDirection.Output;
+            authorizedidParameter.Value = GenerateAuthorizedID(username, accountpin.ToString());
+            usernameParameter.Value = username;
+            passwordParameter.Value = password;
+            accountpinParameter.Value = accountpin;
+            primaryemailParameter.Value = primaryemail;
+            secondaryemailParameter.Value = secondaryemail;
+            usertypeParameter.Value = 3;
+            logincountParameter.Value = 0;
+            lastloginParameter.Value = Convert.ToDateTime(JFunctions.GetSystemDate());
+            authorizedidoutParameter.Direction=ParameterDirection.Output;
 
-            ////////
-            mdata.obj_sqlcommand.Parameters.Add(locidParameter);
-            mdata.obj_sqlcommand.Parameters.Add(countryidParameter);
-            mdata.obj_sqlcommand.Parameters.Add(cityidparameter);
-            mdata.obj_sqlcommand.Parameters.Add(postalcodeParameter);
-            mdata.obj_sqlcommand.Parameters.Add(locidoutParamter);
-            mdata.obj_sqlcommand.Parameters.Add(authorizedParameter);
-            mdata.obj_sqlcommand.Parameters.Add(usernameParameter);
-            mdata.obj_sqlcommand.Parameters.Add(passwordParameter);
-            mdata.obj_sqlcommand.Parameters.Add(primaryParameter);
-            mdata.obj_sqlcommand.Parameters.Add(secondaryParameter);
-            mdata.obj_sqlcommand.Parameters.Add(accountpinParameter);
-            mdata.obj_sqlcommand.Parameters.Add(usertypeidParameter);
-            mdata.obj_sqlcommand.Parameters.Add(logincountParameter);
-            mdata.obj_sqlcommand.Parameters.Add(lastlogindateParameter);
-            mdata.obj_sqlcommand.Parameters.Add(authorizedioutParameter);
+
             mdata.obj_sqlcommand.Parameters.Add(parentidParameter);
-            mdata.obj_sqlcommand.Parameters.Add(postdesignationParameter);
-            mdata.obj_sqlcommand.Parameters.Add(cnicnoParameter);
-            mdata.obj_sqlcommand.Parameters.Add(officeaddressParameter);
-            mdata.obj_sqlcommand.Parameters.Add(salaryParameter);
-            mdata.obj_sqlcommand.Parameters.Add(officenoParameter);
-            //  mdata.obj_sqlcommand.Parameters.Add(studentidParameter);
-            mdata.obj_sqlcommand.Parameters.Add(parentidoutParameter);
             mdata.obj_sqlcommand.Parameters.Add(generalidParameter);
             mdata.obj_sqlcommand.Parameters.Add(firstnameParameter);
             mdata.obj_sqlcommand.Parameters.Add(lastnameParameter);
             mdata.obj_sqlcommand.Parameters.Add(nationalityParameter);
-            mdata.obj_sqlcommand.Parameters.Add(religonParameter);
             mdata.obj_sqlcommand.Parameters.Add(genderParameter);
             mdata.obj_sqlcommand.Parameters.Add(photoParameter);
+            mdata.obj_sqlcommand.Parameters.Add(religionParameter);
             mdata.obj_sqlcommand.Parameters.Add(phoneParameter);
             mdata.obj_sqlcommand.Parameters.Add(addressParameter);
+            mdata.obj_sqlcommand.Parameters.Add(officeaddressParameter);
+            mdata.obj_sqlcommand.Parameters.Add(officenoParameter);
+            mdata.obj_sqlcommand.Parameters.Add(cnicnoParameter);
+            mdata.obj_sqlcommand.Parameters.Add(postdesignationParameter);
+            mdata.obj_sqlcommand.Parameters.Add(salaryanumParameter);
             mdata.obj_sqlcommand.Parameters.Add(generalidoutParameter);
+            mdata.obj_sqlcommand.Parameters.Add(parentidoutParameter);
             mdata.obj_sqlcommand.Parameters.Add(dobidParameter);
             mdata.obj_sqlcommand.Parameters.Add(dayParameter);
             mdata.obj_sqlcommand.Parameters.Add(monthParameter);
             mdata.obj_sqlcommand.Parameters.Add(yearParameter);
             mdata.obj_sqlcommand.Parameters.Add(dobidoutParameter);
-
+            mdata.obj_sqlcommand.Parameters.Add(locidParameter);
+            mdata.obj_sqlcommand.Parameters.Add(countryidParameter);
+            mdata.obj_sqlcommand.Parameters.Add(cityidParameter);
+            mdata.obj_sqlcommand.Parameters.Add(postalParameter);
+            mdata.obj_sqlcommand.Parameters.Add(locidoutidParameter);
+            mdata.obj_sqlcommand.Parameters.Add(authorizedidParameter);
+            mdata.obj_sqlcommand.Parameters.Add(usernameParameter);
+            mdata.obj_sqlcommand.Parameters.Add(passwordParameter);
+            mdata.obj_sqlcommand.Parameters.Add(accountpinParameter);
+            mdata.obj_sqlcommand.Parameters.Add(primaryemailParameter);
+            mdata.obj_sqlcommand.Parameters.Add(secondaryemailParameter);
+            mdata.obj_sqlcommand.Parameters.Add(usertypeParameter);
+            mdata.obj_sqlcommand.Parameters.Add(logincountParameter);
+            mdata.obj_sqlcommand.Parameters.Add(lastloginParameter);
+            mdata.obj_sqlcommand.Parameters.Add(authorizedidoutParameter);
+     
 
             try
             {
@@ -175,6 +175,8 @@ namespace FinalTemplate.source.Registration
             return Convert.ToString(Username.Substring(0, 3) + AccountPin.Substring(0, 3));
         }
 
+      
+
         private string GenerateParentID(string Firstname, string Lastname)
         {
             Random random = new Random();
@@ -185,18 +187,15 @@ namespace FinalTemplate.source.Registration
             id.Append("/E/");
             id.Append(Lastname.Substring(0, 3));
             id.Append("/S/");
-            id.Append(Jfunctionparents.GetSystemDate());
+            id.Append(JFunctions.GetSystemDate());
             id.Append("/");
-            id.Append(Jfunctionparents.GetSystemDate());
+            id.Append(JFunctions.GetSystemTime());
             id.Append("/");
             id.Append(random.Next(3, 10));
             return id.ToString();
         }
 
 
-        public string Registerparents(int countryId, int cityId, int toInt32, int officeNo, string username, string postdesig, string officeaddress, string salary, string password, string address, string fileName, int accountpin, string primaryemail, string nationality, int gender, string religion, int secondaryemail, string selectedValue, string text, string firstname, string lastname, string designation)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

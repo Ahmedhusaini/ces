@@ -1,34 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Data.SqlClient;
+﻿using FinalTemplate.source.Functions;
+using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Text;
-using FinalTemplate.source.Functions;
-using FinalTemplate.source.Registration;
-using FinalTemplate.source;
-using System.Data.ProviderBase;
-using System.Web.UI.WebControls;
 
 namespace FinalTemplate.source
-{ 
+{
     public class ClassStudentRegistration
     {
-        private Database.Database myDatabase = new Database.Database("cesConnectionString2");
-
-        public string studentregister(string firstname, string lastname, string email, string phone, string guardian, string contact2,
-             string gender, string dob, string nationality, string religion, int city_id, int country_id, string address, int postalcode,
-             string previousschool, string last_class_attended, string photo, string schoolName,string school_type, int class_id, 
-            int section_id,string username,int accountpin,string repass, string password, string primaryemail, string secondaryemail)
-       
+        private Database.Database studentdatabase = new Database.Database("cesConnectionString2");
+        public string studentregister(string name,string lastname,string contactno,string gurdianname,string gurdiancontact,
+                                string gender,string nationality,string religion,int city,int country,string address,int postalcode,
+                                string prvschool,string lastclass,string image,string schoolname,int classname,int section,string username,
+                                int accountpin,string password,string primaryemail,string secondaryemail) 
         {
+            string locationid = studentdatabase.GetLastValueByColumnName("loc_id", "tbl_location");
+            string dobid = studentdatabase.GetLastValueByColumnName("dob_id", "tbl_dob");
+            string generalid = studentdatabase.GetLastValueByColumnName("General_Id", "tbl_general");
+            string studentregid = studentdatabase.GetLastValueByColumnName("Std_id", "tbl_Student_Reg");
+            string classsectioninfo = studentdatabase.GetLastValueByColumnName("class_sec_info_id", "tbl_class_sec_info");
 
-            string locationid = myDatabase.GetLastValueByColumnName("loc_id", "tbl_location");
-
-            myDatabase.CreateConnection();
-            myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "sp_student_registr", true);
-
+            studentdatabase.CreateConnection();
+            studentdatabase.InitializeSQLCommandObject(studentdatabase.GetCurrentConnection, "sp_student_register", true);
             SqlParameter General_IdParameter = new SqlParameter("@General_Id", SqlDbType.Int);
             SqlParameter firstnameParameter = new SqlParameter("@firstname", SqlDbType.VarChar, 50);
             SqlParameter lastnameParameter = new SqlParameter("@lastname", SqlDbType.VarChar, 50);
@@ -36,17 +29,20 @@ namespace FinalTemplate.source
             SqlParameter genderParameter = new SqlParameter("@Gender", SqlDbType.VarChar, 7);
             SqlParameter photoParameter = new SqlParameter("@photo", SqlDbType.VarChar, 50);
             SqlParameter religionParameter = new SqlParameter("@religion", SqlDbType.VarChar, 20);
-            SqlParameter phoneParameter = new SqlParameter("@phone", SqlDbType.VarChar, 20);
+            SqlParameter phoneParameter = new SqlParameter("@phone", SqlDbType.VarChar, 50);
             SqlParameter addressParameter = new SqlParameter("@address", SqlDbType.VarChar, 50);
             SqlParameter generalidoutParameter = new SqlParameter("@General_Id_out", SqlDbType.Int);
             SqlParameter dobidParameter = new SqlParameter("@dob_id", SqlDbType.Int);
             SqlParameter dayParameter = new SqlParameter("@day", SqlDbType.Int);
-            SqlParameter monthParameter = new SqlParameter("@month", SqlDbType.VarChar);
+            SqlParameter monthParameter = new SqlParameter("@month", SqlDbType.Int);
             SqlParameter yearParameter = new SqlParameter("@year", SqlDbType.Int);
             SqlParameter dobidoutParameter = new SqlParameter("@dob_id_out", SqlDbType.Int);
             SqlParameter stdidParameter = new SqlParameter("@Std_id", SqlDbType.VarChar, 50);
             SqlParameter gurdianParameter = new SqlParameter("@Guardian_Name", SqlDbType.VarChar, 50);
+            SqlParameter PreviousschoolParameter = new SqlParameter("@Previous_school", SqlDbType.VarChar, 50);
+            SqlParameter lastclassattendedParameter = new SqlParameter("@last_class_attended", SqlDbType.VarChar, 10);
             SqlParameter schoolidParameter = new SqlParameter("@school_id", SqlDbType.VarChar, 50);
+            SqlParameter gurdiancontactParameter = new SqlParameter("@gurdian_contact", SqlDbType.VarChar, 50);
             SqlParameter stdidoutParameter = new SqlParameter("@Std_id_out", SqlDbType.VarChar, 50);
             SqlParameter classsecinfoidParameter = new SqlParameter("@class_sec_info_id", SqlDbType.Int);
             SqlParameter classidParameter = new SqlParameter("@class_id", SqlDbType.Int);
@@ -57,10 +53,7 @@ namespace FinalTemplate.source
             SqlParameter cityidParameter = new SqlParameter("@city_id", SqlDbType.Int);
             SqlParameter postalcodeParameter = new SqlParameter("@postal_code", SqlDbType.Int);
             SqlParameter locidoutParameter = new SqlParameter("@loc_id_out", SqlDbType.Int);
-            //SqlParameter school_type_idParameter = new SqlParameter("@school_type_id", SqlDbType.Int);
-            //SqlParameter school_typeParameter = new SqlParameter("@school_type", SqlDbType.NChar, 10);
-            //SqlParameter schooltypeidoutParameter = new SqlParameter("@school_type_out", SqlDbType.Int);
-            SqlParameter authorizedidParameter = new SqlParameter("@authorized_id", SqlDbType.VarChar, 20);
+            SqlParameter authorizedidParameter = new SqlParameter("@authorized_id", SqlDbType.VarChar,20);
             SqlParameter usernameParameter = new SqlParameter("@username", SqlDbType.VarChar, 50);
             SqlParameter passwordParameter = new SqlParameter("@password", SqlDbType.VarChar, 50);
             SqlParameter accountpinParameter = new SqlParameter("@account_pin", SqlDbType.Int);
@@ -71,93 +64,95 @@ namespace FinalTemplate.source
             SqlParameter lastlogindateParameter = new SqlParameter("@last_login_date", SqlDbType.Date);
             SqlParameter authorizedidoutParameter = new SqlParameter("@authorized_id_out", SqlDbType.VarChar, 20);
 
-
-            firstnameParameter.Value = firstname;
-            lastnameParameter.Value = lastname;
-            NationalityParameter.Value = nationality;
-            genderParameter.Value = gender;
-            photoParameter.Value = photo;
-            religionParameter.Value = religion;
-            phoneParameter.Value = phone;
-            addressParameter.Value = address;
-            generalidoutParameter.Direction = ParameterDirection.Output;
-            dobidParameter.Value = Convert.ToInt32(dob) + 1;
-            locidoutParameter.Direction = ParameterDirection.Output;
-
-            stdidParameter.Value = Generatestudentid(schoolName,username,class_id,section_id);
-           
-            gurdianParameter.Value = guardian;
-            schoolidParameter.Value = (schoolName);
-            stdidoutParameter.Direction = ParameterDirection.Output;
-            classsecinfoidParameter.Value = GenerateclasssecinfoID(class_id, section_id);
-            classidParameter.Value = class_id;
-            sectionidParameter.Value = section_id;
-            classsecinfoidoutParameter.Direction = ParameterDirection.Output;
-            locidParameter.Value = Convert.ToInt32(locationid) + 1;
-            countryidParameter.Value = country_id;
-            cityidParameter.Value = city_id;
-            postalcodeParameter.Value = postalcode;
-            locidoutParameter.Direction = ParameterDirection.Output;
-            //school_typeParameter.Value = school_type;
-            //schooltypeidoutParameter.Direction = ParameterDirection.Output;
-            authorizedidParameter.Value = GenerateAuthorizedID(username, accountpin.ToString());
-            usernameParameter.Value = username;
-            passwordParameter.Value = password;
-            accountpinParameter.Value = accountpin;
-            primaryemailParameter.Value = primaryemail;
-            secondaryemailParameter.Value = secondaryemail;
-            usertypeidParameter.Value = 1;
-            logincountParameter.Value = 0;
+            General_IdParameter.Value = Convert.ToInt32(generalid)+1;
+            firstnameParameter.Value=name;
+            lastnameParameter.Value=lastname;
+            NationalityParameter.Value=nationality;
+            genderParameter.Value=gender;
+            photoParameter.Value=image;
+            religionParameter.Value=religion;
+            phoneParameter.Value=contactno;
+            addressParameter.Value=address;
+            generalidoutParameter.Direction= ParameterDirection.Output;
+            dobidParameter.Value= Convert.ToInt32(dobid)+1;
+            dayParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(2, 2));
+            monthParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(0, 1));
+            yearParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(5, 4));
+            dobidoutParameter.Direction= ParameterDirection.Output;
+            stdidParameter.Value=Generatestudentid(schoolname, username,classname.ToString(),section.ToString());
+            gurdianParameter.Value=gurdianname; 
+            PreviousschoolParameter.Value=prvschool;
+            lastclassattendedParameter.Value=lastclass;
+            schoolidParameter.Value=schoolname;
+            gurdiancontactParameter.Value=gurdiancontact;
+            stdidoutParameter.Direction= ParameterDirection.Output;
+            classsecinfoidParameter.Value = Convert.ToInt32(classsectioninfo) + 1;
+            classidParameter.Value=classname;
+            sectionidParameter.Value=section;
+            classsecinfoidoutParameter.Direction= ParameterDirection.Output;
+            locidParameter.Value=Convert.ToInt32(locationid) + 1;
+            countryidParameter.Value=country;
+            cityidParameter.Value=city;
+            postalcodeParameter.Value=postalcode;
+            locidoutParameter.Direction= ParameterDirection.Output;
+            authorizedidParameter.Value= GenerateAuthorizedID(username, accountpin.ToString());
+            usernameParameter.Value=username;
+            passwordParameter.Value=password;
+            accountpinParameter.Value=accountpin;
+            primaryemailParameter.Value=primaryemail;
+            secondaryemailParameter.Value=secondaryemail;
+            usertypeidParameter.Value=4;
+            logincountParameter.Value=0;
             lastlogindateParameter.Value = Convert.ToDateTime(Jfunctionstudents.GetSystemDate());
-            authorizedidoutParameter.Direction = ParameterDirection.Output;
+            authorizedidoutParameter.Direction= ParameterDirection.Output;
 
-            myDatabase.obj_sqlcommand.Parameters.Add(General_IdParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(firstnameParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(lastnameParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(NationalityParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(genderParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(phoneParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(religionParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(phoneParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(addressParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(generalidoutParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(dobidParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(dayParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(monthParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(yearParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(locidoutParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(stdidParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(gurdianParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(schoolidParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(stdidoutParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(classsecinfoidParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(classidParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(sectionidParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(classsecinfoidoutParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(locidParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(countryidParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(cityidParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(postalcodeParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(locidoutParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(schoolidParameter);
-            //myDatabase.obj_sqlcommand.Parameters.Add(school_typeParameter);
-            //myDatabase.obj_sqlcommand.Parameters.Add(schooltypeidoutParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(authorizedidParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(usernameParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(passwordParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(accountpinParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(primaryemailParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(secondaryemailParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(usertypeidParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(logincountParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(lastlogindateParameter);
-            myDatabase.obj_sqlcommand.Parameters.Add(authorizedidoutParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(General_IdParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(firstnameParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(lastnameParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(NationalityParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(genderParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(photoParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(religionParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(phoneParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(addressParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(generalidoutParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(dobidParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(dayParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(monthParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(yearParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(dobidoutParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(stdidParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(gurdianParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(PreviousschoolParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(lastclassattendedParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(schoolidParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(gurdiancontact);
+            studentdatabase.obj_sqlcommand.Parameters.Add(stdidoutParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(classsecinfoidParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(classidParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(sectionidParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(classsecinfoidoutParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(locidParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(countryidParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(cityidParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(postalcodeParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(locidoutParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(authorizedidParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(usernameParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(passwordParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(accountpinParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(primaryemailParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(secondaryemailParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(usertypeidParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(logincountParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(lastlogindateParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(authorizedidoutParameter);
 
             try
             {
-                myDatabase.OpenConnection();
+                studentdatabase.OpenConnection();
 
-                if (myDatabase.obj_sqlcommand.ExecuteNonQuery() > 0)
+                if (studentdatabase.obj_sqlcommand.ExecuteNonQuery() > 0)
                 {
                     return "true";
                 }
@@ -165,7 +160,6 @@ namespace FinalTemplate.source
                 {
                     return "false";
                 }
-
             }
             catch (Exception exception)
             {
@@ -174,69 +168,38 @@ namespace FinalTemplate.source
             }
             finally
             {
-                myDatabase.obj_sqlcommand.Dispose();
-                myDatabase.obj_sqlconnection.Close();
-                myDatabase.obj_sqlconnection.Dispose();
-                myDatabase.obj_sqlcommand.Parameters.Clear();
-                myDatabase.CloseConnection();
+                studentdatabase.obj_sqlcommand.Dispose();
+                studentdatabase.obj_sqlconnection.Dispose();
+                studentdatabase.obj_sqlcommand.Parameters.Clear();
+                studentdatabase.CloseConnection();
             }
- }
+        }
 
-        private string GenerateclasssecinfoID(int class_id, int section_id)
+        private string GenerateAuthorizedID(string Username, string AccountPin)
+        {
+            return Convert.ToString(Username .Substring(0, 3) + AccountPin.Substring(0, 3));
+        }
+
+        private string Generatestudentid(string name, string lastname, string classname, string section)
         {
             Random random = new Random();
 
             StringBuilder id = new StringBuilder();
             id.Append("C/");
-            id.Append(class_id);
+            id.Append(name.Substring(0, 3));
             id.Append("/E/");
-            id.Append(section_id);
+            id.Append(lastname.Substring(0, 3));
             id.Append("/S/");
-            id.Append(JFunctions.GetSystemDate());
+            id.Append(Convert.ToInt32( classname.Substring(0, 3)));
             id.Append("/");
-            id.Append(JFunctions.GetSystemTime());
-            id.Append(random.Next(3, 10));
-            return id.ToString();
-        }
-            
-            private string GenerateAuthorizedID(string Username, string AccountPin)
-        {
-            return Convert.ToString(Username.Substring(0, 3) + AccountPin.Substring(0, 3));
-        }
-            
-     private string GenerateSchoolID(string SchoolName, string OwnerName)
-        {
-            Random random = new Random();
-
-            StringBuilder id = new StringBuilder();
-            id.Append("C/");
-            id.Append(SchoolName.Substring(0, 3));
-            id.Append("/E/");
-            id.Append(OwnerName.Substring(0, 3));
-            id.Append("/S/");
+            id.Append(Convert.ToInt32(section.Substring(0, 3)));
+            id.Append("/");
             id.Append(Jfunctionstudents.GetSystemDate());
             id.Append("/");
             id.Append(Jfunctionstudents.GetSystemTime());
+            id.Append("/");
             id.Append(random.Next(3, 10));
             return id.ToString();
         }
-     private string Generatestudentid(string SchoolName, string username,int class_id ,int section_id)
-     {
-         Random random = new Random();
-
-         StringBuilder id = new StringBuilder();
-         id.Append("C/");
-         id.Append(SchoolName.Substring(0, 3));
-         id.Append("/E/");
-         id.Append(username.Substring(0, 3));
-         id.Append("/S/");
-         id.Append(username.Substring(0, 3));
-         id.Append("/S/");
-         id.Append(Jfunctionstudents.GetSystemDate());
-         id.Append("/");
-         id.Append(Jfunctionstudents.GetSystemTime());
-         id.Append(random.Next(3, 10));
-         return id.ToString();
-     }
     }
-  }
+}
