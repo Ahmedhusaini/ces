@@ -14,7 +14,7 @@ namespace FinalTemplate
         {
             if (!IsPostBack)
             {
-                JFunctions.BindDropDownList(DropDownList2, "city", "city_id", "select * from tbl_city");
+                Jfunctionstudents.BindDropDownList(DropDownList2, "city", "city_id", "select * from tbl_city");
             }
         }
         protected void Button1_Click(object sender, EventArgs e)
