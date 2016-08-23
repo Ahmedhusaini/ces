@@ -14,11 +14,12 @@ namespace FinalTemplate.source
                                 string prvschool,string lastclass,string image,string schoolname,int classname,int section,string username,
                                 int accountpin,string password,string primaryemail,string secondaryemail) 
         {
-            string locationid = studentdatabase.GetLastValueByColumnName("loc_id", "tbl_location");
-            string genaralid = studentdatabase.GetLastValueByColumnName("General_Id", "tbl_general");
-            string dobid = studentdatabase.GetLastValueByColumnName("dob_id", "tbl_dob");
-            var studentregid = studentdatabase.GetLastValueByColumnName("Std_id", "tbl_Student_Reg");
-            string classsectioninfo = studentdatabase.GetLastValueByColumnName("class_sec_info_id", "tbl_class_sec_info");
+            int dobid = Convert.ToInt32(studentdatabase.GetLastValueByColumnName("dob_id", "tbl_dob"));
+            int locationid = Convert.ToInt32(studentdatabase.GetLastValueByColumnName("loc_id", "tbl_location"));
+            int genaralid = Convert.ToInt32(studentdatabase.GetLastValueByColumnName("General_Id", "tbl_general"));
+            int classsectioninfo = Convert.ToInt32(studentdatabase.GetLastValueByColumnName("class_sec_info_id", "tbl_class_sec_info"));
+            var authenticationgid = Convert.ToInt32(studentdatabase.GetLastValueByColumnName("authorized_id", "tbl_authorized_users"));
+            var studentregid = Convert.ToInt32(studentdatabase.GetLastValueByColumnName("Std_id", "tbl_Student_Reg"));
 
             studentdatabase.CreateConnection();
             studentdatabase.InitializeSQLCommandObject(studentdatabase.GetCurrentConnection, "sp_student_register", true);
@@ -79,7 +80,7 @@ namespace FinalTemplate.source
             monthParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(0, 2));
             yearParameter.Value = Convert.ToInt32(Jfunctionstudents.GetSystemDate().Substring(0, 4));
             dobidoutParameter.Direction= ParameterDirection.Output;
-            stdidParameter.Value=Generatestudentid(schoolname, username,classname.ToString(),section.ToString());
+            stdidParameter.Value=Generatestudentid(schoolname, username,classname.ToString(),section.ToString())+1;
             gurdianParameter.Value=gurdianname; 
             PreviousschoolParameter.Value=prvschool;
             lastclassattendedParameter.Value=lastclass;
@@ -95,7 +96,7 @@ namespace FinalTemplate.source
             cityidParameter.Value=city;
             postalcodeParameter.Value=postalcode;
             locidoutParameter.Direction= ParameterDirection.Output;
-            authorizedidParameter.Value= GenerateAuthorizedID(username, accountpin.ToString());
+            authorizedidParameter.Value=Convert.ToInt32( GenerateAuthorizedID(username, accountpin.ToString()))+1;
             usernameParameter.Value=username;
             passwordParameter.Value=password;
             accountpinParameter.Value=accountpin;
