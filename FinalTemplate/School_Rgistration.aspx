@@ -120,11 +120,11 @@
                         
                           <%=txt_contact_primary.UniqueID%>:{
                               required:true,
-                              digitsonly:true
+                              phone:true
                           },
                          <%=txt_contact_secondary.UniqueID%>:{
                              required:true,
-                             digitsonly:true
+                             phone:true
                          },
                          <%=txt_address.UniqueID%>:{
                              required:true
@@ -187,10 +187,12 @@
                          },
                          
                           <%=txt_contact_primary.UniqueID%>:{
-                              required:"Please provide your contact number"
+                              required:"Please provide your contact number",
+                              digitsonly:"Only digits"
                           },
                             <%=txt_contact_secondary.UniqueID%>: {
-                                required:"Please provide your contact number"
+                                required:"Please provide your contact number",
+                                digitsonly:"Only digits"
                             },
                          <%=txt_accountPin.UniqueID%>:{
                              minlength:"Pin must contain 6 digits",
