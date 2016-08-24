@@ -79,7 +79,7 @@ namespace FinalTemplate.source
             monthParameter.Value = Convert.ToInt32(dob.Substring(0, 2));
             yearParameter.Value = Convert.ToInt32(dob.Substring(0, 4));
             dobidoutParameter.Direction= ParameterDirection.Output;
-            stdidParameter.Value=Convert.ToInt32(Generatestudentid(schoolname, username,classname.ToString(),section.ToString()))+1;
+            stdidParameter.Value=Convert.ToInt32(Generatestudentid(username,classname.ToString(),section.ToString()))+1;
             gurdianParameter.Value=gurdianname; 
             PreviousschoolParameter.Value=prvschool;
             lastclassattendedParameter.Value=lastclass;
@@ -180,24 +180,19 @@ namespace FinalTemplate.source
             return Convert.ToString(Username .Substring(0, 3) + AccountPin.Substring(0, 3));
         }
 
-        private string Generatestudentid(string name, string lastname, string classname, string section)
+        private string Generatestudentid(string lastname, string classname, string section)
         {
             Random random = new Random();
 
             StringBuilder id = new StringBuilder();
             id.Append("C/");
-            id.Append(name.Substring(0, 3));
+            id.Append(Convert.ToString(lastname.Substring(0, 3)));
             id.Append("/E/");
-            id.Append(lastname.Substring(0, 3));
+            id.Append((classname));
             id.Append("/S/");
-            id.Append(Convert.ToInt32( classname.Substring(0, 3)));
+            id.Append((section));
             id.Append("/");
-            id.Append(Convert.ToInt32(section.Substring(0, 3)));
-            id.Append("/");
-            id.Append(Jfunctionstudents.GetSystemDate());
-            id.Append("/");
-            id.Append(Jfunctionstudents.GetSystemTime());
-            id.Append("/");
+            id.Append(Jfunctionstudents.GetSystemDate().Substring(0, 3));
             id.Append(random.Next(3, 10));
             return id.ToString();
         }

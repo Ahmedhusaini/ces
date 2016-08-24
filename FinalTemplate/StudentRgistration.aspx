@@ -121,16 +121,6 @@
                            required:true, 
                            romanonly:true
                        },
-                    <%=classx.UniqueID%>:{
-                           required:true,
-                           romanonly:true
-                       
-                       },
-                    <%=sec.UniqueID%>:{
-                           required:true,
-                           minlength:1,
-                           maxlength:2
-                       },
                     <%=fileupload.UniqueID%>:{
                            required:true,
                            imageonly:true
@@ -154,15 +144,6 @@
                        },
                        <%=sname.UniqueID%>:{
                            required:"Please mention your full name"
-                       },
-                       <%=classx.UniqueID%>:{
-                           required:"Please mention your current Class"
-                       },
-                       <%=sec.UniqueID%>:{
-                           required:"Please mention your current Section",
-                           minlenght:"minimum 1 character or maximum 2",
-                           maxlength:"minimum 1 character or maximum 2"
-                        
                        },
                        <%=fileupload.UniqueID%>:{
                            required:"Please upload your photo"    
@@ -496,7 +477,16 @@
                                 <!-- p.help-block Warning !-->
                                 <br />
 
-                                <asp:TextBox ID="classx" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                        <asp:DropDownList ID="DropDownList3" CssClass="form-control  form-input" runat="server">
+                                            <asp:ListItem></asp:ListItem>
+                                            <asp:ListItem>Karachi</asp:ListItem>
+                                            <asp:ListItem>Lahore</asp:ListItem>
+                                            <asp:ListItem>Peshawar</asp:ListItem>
+                                            <asp:ListItem>Islamabad</asp:ListItem>
+                                            <asp:ListItem>Quetta</asp:ListItem>
+                                            <asp:ListItem>Hyderabad</asp:ListItem>
+                                        </asp:DropDownList>
+
                             </div>
 
                             <div class="col-md-6">
@@ -507,7 +497,16 @@
                                 <!-- p.help-block Warning !-->
                                 <br />
                                 
-                                <asp:TextBox ID="sec" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                        <asp:DropDownList ID="DropDownList4" CssClass="form-control  form-input" runat="server">
+                                            <asp:ListItem></asp:ListItem>
+                                            <asp:ListItem>Karachi</asp:ListItem>
+                                            <asp:ListItem>Lahore</asp:ListItem>
+                                            <asp:ListItem>Peshawar</asp:ListItem>
+                                            <asp:ListItem>Islamabad</asp:ListItem>
+                                            <asp:ListItem>Quetta</asp:ListItem>
+                                            <asp:ListItem>Hyderabad</asp:ListItem>
+                                        </asp:DropDownList>
+
                             </div>
                             <div class="section pricing">
                                 <div class="container">
