@@ -35,7 +35,7 @@
     }</script>
     <script>
         $(document).ready(function () {
-            $('.mainLogo').css({ 'height': '54px', 'width': '63px' });
+            $('.mainLogo').css({ 'height': '91px', 'width': '115px' });
             
         });
     </script>
