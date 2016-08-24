@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Web;
 using System.Web.UI.WebControls;
 using System.Net;
-using System.Net.Mail;
+using System.IO;
+using FinalTemplate.source.Database;
+using FinalTemplate.source;
 
 namespace FinalTemplate.source.Functions
 {
     public class Jfunctionstudents
     {
+        //Returns Date in dd/mm/yyyy format
         public static string GetSystemDate()
         {
             return Convert.ToString(DateTime.Today.ToString("d"));
