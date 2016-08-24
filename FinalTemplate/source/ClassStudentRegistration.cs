@@ -79,7 +79,7 @@ namespace FinalTemplate.source
             monthParameter.Value = Convert.ToInt32(dob.Substring(0, 2));
             yearParameter.Value = Convert.ToInt32(dob.Substring(0, 4));
             dobidoutParameter.Direction= ParameterDirection.Output;
-            stdidParameter.Value=Convert.ToInt32(Generatestudentid(username,classname.ToString(),section.ToString()))+1;
+            stdidParameter.Value=Generatestudentid(username,classname.ToString(),section.ToString());
             gurdianParameter.Value=gurdianname; 
             PreviousschoolParameter.Value=prvschool;
             lastclassattendedParameter.Value=lastclass;
