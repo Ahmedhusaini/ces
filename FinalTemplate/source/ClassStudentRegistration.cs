@@ -126,8 +126,8 @@ namespace FinalTemplate.source
             studentdatabase.obj_sqlcommand.Parameters.Add(PreviousschoolParameter);
             studentdatabase.obj_sqlcommand.Parameters.Add(lastclassattendedParameter);
             studentdatabase.obj_sqlcommand.Parameters.Add(schoolidParameter);
-            studentdatabase.obj_sqlcommand.Parameters.Add(gurdiancontact);
             studentdatabase.obj_sqlcommand.Parameters.Add(stdidoutParameter);
+            studentdatabase.obj_sqlcommand.Parameters.Add(gurdiancontact);
             studentdatabase.obj_sqlcommand.Parameters.Add(classsecinfoidParameter);
             studentdatabase.obj_sqlcommand.Parameters.Add(classidParameter);
             studentdatabase.obj_sqlcommand.Parameters.Add(sectionidParameter);
