@@ -18,9 +18,9 @@ namespace FinalTemplate.source
             string locationid = studentdatabase.GetLastValueByColumnName("loc_id", "tbl_location");
             string genaralid = studentdatabase.GetLastValueByColumnName("General_Id", "tbl_general");
             string classsectioninfo = studentdatabase.GetLastValueByColumnName("class_sec_info_id", "tbl_class_sec_info");
-            string studentregid = studentdatabase.GetLastValueByColumnName("Std_id", "tbl_Student_Reg");
+            string studentregid = studentdatabase.GetLastValueByColumnName("Std_id", "tbl_student_registeration");
             
-            studentdatabase.CreateConnection();
+            studentdatabase.CreateConnection();         
             studentdatabase.InitializeSQLCommandObject(studentdatabase.GetCurrentConnection, "sp_student_register", true);
             SqlParameter General_IdParameter = new SqlParameter("@General_Id", SqlDbType.Int);
             SqlParameter firstnameParameter = new SqlParameter("@firstname", SqlDbType.VarChar, 50);
@@ -42,7 +42,9 @@ namespace FinalTemplate.source
             SqlParameter PreviousschoolParameter = new SqlParameter("@Previous_school", SqlDbType.VarChar, 50);
             SqlParameter lastclassattendedParameter = new SqlParameter("@last_class_attended", SqlDbType.VarChar, 10);
             SqlParameter schoolidParameter = new SqlParameter("@school_id", SqlDbType.VarChar, 50);
+
             SqlParameter gurdiancontactParameter = new SqlParameter("@gurdian_contact", SqlDbType.VarChar, 50);
+
             SqlParameter stdidoutParameter = new SqlParameter("@Std_id_out", SqlDbType.VarChar, 50);
             SqlParameter classsecinfoidParameter = new SqlParameter("@class_sec_info_id", SqlDbType.Int);
             SqlParameter classidParameter = new SqlParameter("@class_id", SqlDbType.Int);
@@ -84,7 +86,7 @@ namespace FinalTemplate.source
             PreviousschoolParameter.Value=prvschool;
             lastclassattendedParameter.Value=lastclass;
             schoolidParameter.Value=schoolname;
-            gurdiancontactParameter.Value=gurdiancontact;
+            gurdiancontactParameter.Value = gurdiancontact;            
             stdidoutParameter.Direction= ParameterDirection.Output;
             classsecinfoidParameter.Value = Convert.ToInt32(classsectioninfo) ;
             classidParameter.Value=classname;
@@ -126,8 +128,8 @@ namespace FinalTemplate.source
             studentdatabase.obj_sqlcommand.Parameters.Add(PreviousschoolParameter);
             studentdatabase.obj_sqlcommand.Parameters.Add(lastclassattendedParameter);
             studentdatabase.obj_sqlcommand.Parameters.Add(schoolidParameter);
-            studentdatabase.obj_sqlcommand.Parameters.Add(stdidoutParameter);
             studentdatabase.obj_sqlcommand.Parameters.Add(gurdiancontact);
+            studentdatabase.obj_sqlcommand.Parameters.Add(stdidoutParameter);
             studentdatabase.obj_sqlcommand.Parameters.Add(classsecinfoidParameter);
             studentdatabase.obj_sqlcommand.Parameters.Add(classidParameter);
             studentdatabase.obj_sqlcommand.Parameters.Add(sectionidParameter);
