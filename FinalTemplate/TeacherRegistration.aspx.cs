@@ -45,9 +45,9 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@phone", SqlDbType.VarChar).Value = contact1.Text;
                 cmd.Parameters.AddWithValue("@cnic_no", SqlDbType.VarChar).Value = nic.Text;
                 cmd.Parameters.AddWithValue("@gender", SqlDbType.VarChar).Value = radiobut.SelectedValue;
-                cmd.Parameters.AddWithValue("@day", SqlDbType.Int).Value = Convert.ToInt32(date.Substring(0,2));
-                cmd.Parameters.AddWithValue("@month", SqlDbType.Int).Value = Convert.ToInt32(date.Substring(0,2));
-                cmd.Parameters.AddWithValue("@year", SqlDbType.Int).Value = Convert.ToInt32(date.Substring(0,4));
+                cmd.Parameters.AddWithValue("@day", SqlDbType.Int).Value = Convert.ToInt32(date.Substring(0, 2));
+                cmd.Parameters.AddWithValue("@month", SqlDbType.Int).Value = Convert.ToInt32(date.Substring(0, 2));
+                cmd.Parameters.AddWithValue("@year", SqlDbType.Int).Value = Convert.ToInt32(date.Substring(0, 4));
                 cmd.Parameters.AddWithValue("@nationality", SqlDbType.VarChar).Value = nation.Text;
                 cmd.Parameters.AddWithValue("@religion", SqlDbType.VarChar).Value = religion.Text;
                 cmd.Parameters.AddWithValue("@address", SqlDbType.VarChar).Value = address.Text;
@@ -71,32 +71,17 @@ namespace FinalTemplate
             }
 
             string result = string.Empty;
-            //try
-            //{
-            //    result=(name.Text,lname.Text,contact1.Text,nic.Text, radiobut.SelectedValue,Convert.ToInt32(date.Substring(0,2)),Convert.ToInt32(date.Substring(0,2)),Convert.ToInt32(date.Substring(0,2))
-            //    ,nation.Text,religion.Text,address.Text,postal.Text,DropDownList2.SelectedValue, DropDownList1.SelectedValue,fileupload.ValidateRequestMode,
-            //     user.Text,accountp.Text,pass.Text,pemail.Text,semail.Text, DateTime.Now.ToString(""), DateTime.Now.ToString(""));
-            //}
-              if (result == "true")
-                {
-                    Response.Write("register");
-                }
-                else
-                {
-                    Response.Write("not register");
-                }
-
+            try
+            {
+                Label1.Text = "REGISTRATION SUCCESSFULL";
             }
-            //catch (Exception ex)
-            //{
 
-            //    result = ex.ToString();
-            //    Response.Write(result);
-            //}
+            catch (Exception ex)
+            {
 
-            //Label1.Text = "REGISTERED SUCCESSFULLY";
+                Label1.Text = "REGISTRATION FAILED";
+            }
 
         }
-
-
     }
+}
