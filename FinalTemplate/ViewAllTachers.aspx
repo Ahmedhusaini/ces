@@ -28,7 +28,7 @@
         }
 
         function searchboxwidth() {
-            $('.form-input').css('width','500px');
+            $('.form-input').css('width','900px');
         }
     </script>
         
@@ -52,18 +52,8 @@
                     <div class="search-input">
                         <div class="container">
                             <div class="search-input-wrapper">
-                                <form><select class="form-select style-1 selectbox">
-                                    <option value="all">all categories</option>
-                                    <option value="languages">languages</option>
-                                    <option value="science">science</option>
-                                </select>
-                               <select class="form-select style-2 selectbox">
-                                    <option value="price">price</option>
-                                    <option value="datetime">datetime</option>
-                                    <option value="teacher">teacher</option>
-                                </select>
+                                <form>
                                 <asp:TextBox ID="txtSearch" runat="server" CssClass="form-input" placeholder="Type teacher name you want to search"></asp:TextBox>
-
                                 <button type="submit" class="form-submit btn btn-blue"><span>search now<i class="fa fa-search"></i></span></button>
                                 <div class="clearfix"></div>
                                 </form>
@@ -79,19 +69,22 @@
                             </div>
                             <div class="list-categories-content row">
                                 <div class="customs-row">
-                                    <div class="col-md-4 col-sm-6">
-                                        <div class="edugate-layout-3">
-                                            <div class="edugate-layout-3-wrapper"><a class="edugate-image"><img src="assets/images/cesThemeImages/teachers (1).jpg" alt="" class="img-responsive"/></a>
+                                <div class="col-md-4 col-sm-6">
+                                    <div class="edugate-layout-3">
+                                        <div class="edugate-layout-3-wrapper">
+                                            <a class="edugate-image">
+                                                <img src="assets/images/cesThemeImages/teachers (1).jpg" alt="" class="img-responsive" /></a>
 
-                                                <div class="edugate-content"><a href="#" class="title">language</a>
+                                            <div class="edugate-content">
+                                                <a href="#" class="title">language</a>
 
-                                                    <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-                                                    <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
-                                                    <button class="btn btn-green"><span>all course</span></button>
-                                                </div>
+                                                <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
+                                                <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
+                                                <button class="btn btn-green"><span>all course</span></button>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
                                     <div class="col-md-4 col-sm-6">
                                         <div class="edugate-layout-3">
                                             <div class="edugate-layout-3-wrapper"><a  class="edugate-image"><img  src="assets/images/cesThemeImages/teachers (2).jpg" alt="" class="img-responsive"/></a>
