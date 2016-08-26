@@ -38,14 +38,14 @@
                     <%=lname.UniqueID%>:{
                            required:true,
                            lettersonly:true
-                       },
+                       },//contact 1 to contack 2 banaya hai
                     <%=contact1.UniqueID%>:{
                            required:true,
                            phone:true
                        },
                    
                      
-                    <%=contact2.UniqueID%>:{
+                    <%=gurcontact.UniqueID%>:{
                            required:true,
                            phone:true
                        },
@@ -101,10 +101,6 @@
                          
                            
                        },
-<%--                       <%=emaill.UniqueID%>:{
-                           required:true,
-                           email:true
-                       },--%>
                     <%=pemail.UniqueID%>:{
                            required:true,
                            email:true
@@ -120,16 +116,6 @@
                     <%=preclass.UniqueID%>:{
                            required:true, 
                            romanonly:true
-                       },
-                    <%=classx.UniqueID%>:{
-                           required:true,
-                           romanonly:true
-                       
-                       },
-                    <%=sec.UniqueID%>:{
-                           required:true,
-                           minlength:1,
-                           maxlength:2
                        },
                     <%=fileupload.UniqueID%>:{
                            required:true,
@@ -155,20 +141,16 @@
                        <%=sname.UniqueID%>:{
                            required:"Please mention your full name"
                        },
-                       <%=classx.UniqueID%>:{
-                           required:"Please mention your current Class"
-                       },
-                       <%=sec.UniqueID%>:{
-                           required:"Please mention your current Section",
-                           minlenght:"minimum 1 character or maximum 2",
-                           maxlength:"minimum 1 character or maximum 2"
-                        
-                       },
                        <%=fileupload.UniqueID%>:{
                            required:"Please upload your photo"    
                        },
                          
-                       <%=contact2.UniqueID%>:{
+                       <%= contact1.UniqueID%>:{
+                           required:"Provide  contact number",
+                           digitsonly:"Only digits"
+                       },
+                         
+                       <%=gurcontact.UniqueID%>:{
                            required:"Provide  contact number",
                            digitsonly:"Only digits"
                        },
@@ -223,7 +205,7 @@
 
     </script>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="RegisterPlaceHolder1" runat="server">
+<asp:Content ID="Conten2" ContentPlaceHolderID="RegisterPlaceHolder1" runat="server">
 
     <link href="assets/css/mycss.css" rel="stylesheet" />
     <style>
@@ -309,16 +291,6 @@
                                         <asp:TextBox ID="lname" CssClass="form-control  form-input " runat="server"></asp:TextBox>
 
                                     </div>
-<%--                                    <div class="col-md-6">
-                                        <label for="regname" class="control-label form-label">
-                                            Email <span class="highlight">*<br />
-                                            </span>
-                                        </label>
-                                        <!-- p.help-block Warning !-->
-                                        <br />
-                                        <asp:TextBox ID="emaill" CausesValidation="true" CssClass="form-control  form-input" runat="server"></asp:TextBox>
-
-                                    </div>--%>
                                     <div class="col-md-6">
                                         <label for="regname" class="control-label form-label">
                                             Contact No <span class="highlight">*<br />
@@ -347,7 +319,7 @@
                                         </label>
                                         <!-- p.help-block Warning !-->
                                         <br />
-                                        <asp:TextBox ID="contact2" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="gurcontact" CssClass="form-control  form-input" runat="server"></asp:TextBox>
 
                                     </div>
                                     <div class="col-md-6">
@@ -496,7 +468,16 @@
                                 <!-- p.help-block Warning !-->
                                 <br />
 
-                                <asp:TextBox ID="classx" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                        <asp:DropDownList ID="DropDownList3" CssClass="form-control  form-input" runat="server">
+                                            <asp:ListItem></asp:ListItem>
+                                            <asp:ListItem>Karachi</asp:ListItem>
+                                            <asp:ListItem>Lahore</asp:ListItem>
+                                            <asp:ListItem>Peshawar</asp:ListItem>
+                                            <asp:ListItem>Islamabad</asp:ListItem>
+                                            <asp:ListItem>Quetta</asp:ListItem>
+                                            <asp:ListItem>Hyderabad</asp:ListItem>
+                                        </asp:DropDownList>
+
                             </div>
 
                             <div class="col-md-6">
@@ -507,7 +488,16 @@
                                 <!-- p.help-block Warning !-->
                                 <br />
                                 
-                                <asp:TextBox ID="sec" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                        <asp:DropDownList ID="DropDownList4" CssClass="form-control  form-input" runat="server">
+                                            <asp:ListItem></asp:ListItem>
+                                            <asp:ListItem>Karachi</asp:ListItem>
+                                            <asp:ListItem>Lahore</asp:ListItem>
+                                            <asp:ListItem>Peshawar</asp:ListItem>
+                                            <asp:ListItem>Islamabad</asp:ListItem>
+                                            <asp:ListItem>Quetta</asp:ListItem>
+                                            <asp:ListItem>Hyderabad</asp:ListItem>
+                                        </asp:DropDownList>
+
                             </div>
                             <div class="section pricing">
                                 <div class="container">
