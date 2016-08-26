@@ -246,6 +246,7 @@
     <Content Include="TeacherPanel.aspx" />
     <Content Include="Teacherprofile.aspx" />
     <Content Include="TeacherUpload.aspx" />
+    <Content Include="Teacher_timetable.aspx" />
     <Content Include="ViewAllTachers.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -424,6 +425,13 @@
     </Compile>
     <Compile Include="TeacherUpload.aspx.designer.cs">
       <DependentUpon>TeacherUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher_timetable.aspx.cs">
+      <DependentUpon>Teacher_timetable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teacher_timetable.aspx.designer.cs">
+      <DependentUpon>Teacher_timetable.aspx</DependentUpon>
     </Compile>
     <Compile Include="User.Master.cs">
       <DependentUpon>User.Master</DependentUpon>
