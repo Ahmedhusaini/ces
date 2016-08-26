@@ -2,10 +2,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="AdminHeadPlaceHolder" runat="server">
      <script src="assets/js/jquery-2.2.3.js"></script>
     <script type="text/javascript">
+        $(window).load(function() {
+            searchboxwidth();
+        });
         $(document).ready(function () {
             teacherwidth();
             samesizeimage();
             setbuttonlayout();
+          
         });
 
         function samesizeimage() {
@@ -21,6 +25,10 @@
                 'background-image': path,
                 'height': '450px'
             });
+        }
+
+        function searchboxwidth() {
+            $('.form-input').css('width','500px');
         }
     </script>
         
@@ -40,7 +48,29 @@
                         </div>
                     </div>
                 </div>
-                
+                <div class="section">
+                    <div class="search-input">
+                        <div class="container">
+                            <div class="search-input-wrapper">
+                                <form><select class="form-select style-1 selectbox">
+                                    <option value="all">all categories</option>
+                                    <option value="languages">languages</option>
+                                    <option value="science">science</option>
+                                </select>
+                               <select class="form-select style-2 selectbox">
+                                    <option value="price">price</option>
+                                    <option value="datetime">datetime</option>
+                                    <option value="teacher">teacher</option>
+                                </select>
+                                <asp:TextBox ID="txtSearch" runat="server" CssClass="form-input" placeholder="Type teacher name you want to search"></asp:TextBox>
+
+                                <button type="submit" class="form-submit btn btn-blue"><span>search now<i class="fa fa-search"></i></span></button>
+                                <div class="clearfix"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="section section-padding list-categories">
                     <div class="container">
                         <div class="list-categories-wrapper">
