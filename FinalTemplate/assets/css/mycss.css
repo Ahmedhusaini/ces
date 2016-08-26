@@ -196,3 +196,13 @@
 .top {
     z-index:999;
 }
+.allteacher {
+    background-image: url("../images/cesThemeImages/searchTeacher.jpg");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-position: top;
+    width: 100%;
+    height: 300px;
+    color: #fff;
+    text-align: center;
+}

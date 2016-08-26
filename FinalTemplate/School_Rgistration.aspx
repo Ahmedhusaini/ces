@@ -13,6 +13,7 @@
              ActivePackage();             
              AspButton();
              Validate();
+             alert('hi there');
          });
 
          var packageName = "";
