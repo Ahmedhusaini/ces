@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Web;
 using System.Web.UI.WebControls;
 using System.Net;
+using System.Net.Mail;
 using System.IO;
 using FinalTemplate.source.Database;
 using FinalTemplate.source;
@@ -20,6 +21,24 @@ namespace FinalTemplate.source.Functions
         public static string GetSystemTime()
         {
             return Convert.ToString(System.DateTime.Today.ToString("t"));
+        }
+
+        public static void SendEmail(string To, string Subject, string MessageBody)
+        {
+            string smtpUsername = "shahwaizhasan106@gmail.com";
+            using (MailMessage mailMessage = new MailMessage("shahwaizhasan106@gmail.com", To, Subject, MessageBody))
+            {
+                mailMessage.IsBodyHtml = true;
+                SmtpClient smtp = new SmtpClient();
+                smtp.Host = "smtp.gmail.com";
+                smtp.EnableSsl = true;
+                NetworkCredential networkCredential = new NetworkCredential(smtpUsername, "teuss106");
+                smtp.UseDefaultCredentials = true;
+                smtp.Credentials = networkCredential;
+                smtp.Port = 587;
+                smtp.Send(mailMessage);
+
+            }
         }
         public static void BindDropDownList(DropDownList ddl1, string displayField1, string valueField1, string queryy)
         {
