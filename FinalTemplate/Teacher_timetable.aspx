@@ -17,7 +17,31 @@
 
             </tr>
             <tr class="table-row">
-                <td class="left col-1"><a href="#"><span>1. HILAL QURESHI</span></a></td>
+                <td class="left col-1"><a href="#"><span>1. MONDAY</span></a></td>
+                <td class="col-2"><span>PHD CS</span></td>
+                <td class="col-3"><span>10-4-2010</span></td>
+                <td class="col-4"><span>abc</span></td>
+            </tr>
+               <tr class="table-row">
+                <td class="left col-1"><a href="#"><span>2. TUESDAY</span></a></td>
+                <td class="col-2"><span>PHD CS</span></td>
+                <td class="col-3"><span>10-4-2010</span></td>
+                <td class="col-4"><span>abc</span></td>
+            </tr>
+               <tr class="table-row">
+                <td class="left col-1"><a href="#"><span>3. WEDNESDAY</span></a></td>
+                <td class="col-2"><span>PHD CS</span></td>
+                <td class="col-3"><span>10-4-2010</span></td>
+                <td class="col-4"><span>abc</span></td>
+            </tr>
+               <tr class="table-row">
+                <td class="left col-1"><a href="#"><span>4. THURSDAY</span></a></td>
+                <td class="col-2"><span>PHD CS</span></td>
+                <td class="col-3"><span>10-4-2010</span></td>
+                <td class="col-4"><span>abc</span></td>
+            </tr>
+               <tr class="table-row">
+                <td class="left col-1"><a href="#"><span>5. FRIDAY</span></a></td>
                 <td class="col-2"><span>PHD CS</span></td>
                 <td class="col-3"><span>10-4-2010</span></td>
                 <td class="col-4"><span>abc</span></td>
