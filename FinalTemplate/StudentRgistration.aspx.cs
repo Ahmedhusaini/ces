@@ -37,7 +37,6 @@ namespace FinalTemplate
             stringBuilder.Append(" <br> ");
             stringBuilder.Append("Password:");
             stringBuilder.Append(pass.Text);
-            stringBuilder.Append(hiddenFieild.Value.ToString());
             return stringBuilder.ToString();
         }
 
@@ -55,6 +54,7 @@ namespace FinalTemplate
 
                 if (result == "true")
                 {
+                    JFunctions.SendEmail(pemail.Text, "CES - Registration", EmailBody());
                     Response.Write("Register Successfully Complete");
                 }
                 else
