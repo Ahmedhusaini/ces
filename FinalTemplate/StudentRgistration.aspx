@@ -38,7 +38,7 @@
                     <%=lname.UniqueID%>:{
                            required:true,
                            lettersonly:true
-                       },
+                       },//contact 1 to contack 2 banaya hai
                     <%=contact1.UniqueID%>:{
                            required:true,
                            phone:true
@@ -101,10 +101,6 @@
                          
                            
                        },
-<%--                       <%=emaill.UniqueID%>:{
-                           required:true,
-                           email:true
-                       },--%>
                     <%=pemail.UniqueID%>:{
                            required:true,
                            email:true
@@ -290,16 +286,6 @@
                                         <asp:TextBox ID="lname" CssClass="form-control  form-input " runat="server"></asp:TextBox>
 
                                     </div>
-<%--                                    <div class="col-md-6">
-                                        <label for="regname" class="control-label form-label">
-                                            Email <span class="highlight">*<br />
-                                            </span>
-                                        </label>
-                                        <!-- p.help-block Warning !-->
-                                        <br />
-                                        <asp:TextBox ID="emaill" CausesValidation="true" CssClass="form-control  form-input" runat="server"></asp:TextBox>
-
-                                    </div>--%>
                                     <div class="col-md-6">
                                         <label for="regname" class="control-label form-label">
                                             Contact No <span class="highlight">*<br />
