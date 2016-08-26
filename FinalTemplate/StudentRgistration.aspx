@@ -45,7 +45,7 @@
                        },
                    
                      
-                    <%=contact2.UniqueID%>:{
+                    <%=gurcontact.UniqueID%>:{
                            required:true,
                            phone:true
                        },
@@ -145,7 +145,12 @@
                            required:"Please upload your photo"    
                        },
                          
-                       <%=contact2.UniqueID%>:{
+                       <%= contact1.UniqueID%>:{
+                           required:"Provide  contact number",
+                           digitsonly:"Only digits"
+                       },
+                         
+                       <%=gurcontact.UniqueID%>:{
                            required:"Provide  contact number",
                            digitsonly:"Only digits"
                        },
@@ -200,7 +205,7 @@
 
     </script>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="RegisterPlaceHolder1" runat="server">
+<asp:Content ID="Conten2" ContentPlaceHolderID="RegisterPlaceHolder1" runat="server">
 
     <link href="assets/css/mycss.css" rel="stylesheet" />
     <style>
@@ -314,7 +319,7 @@
                                         </label>
                                         <!-- p.help-block Warning !-->
                                         <br />
-                                        <asp:TextBox ID="contact2" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="gurcontact" CssClass="form-control  form-input" runat="server"></asp:TextBox>
 
                                     </div>
                                     <div class="col-md-6">
