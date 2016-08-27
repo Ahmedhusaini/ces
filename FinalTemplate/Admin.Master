@@ -72,14 +72,14 @@
                         <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Teachers<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
                                 <li><a href="ViewAllTachers.aspx" class="link-page">View All</a></li>
-                                <li><a href="courses-detail.html" class="link-page">Make Teacher of the month</a></li>
+                                <li><a href="TeacherOfTheMonth.aspx" class="link-page">Make Teacher of the month</a></li>
+                                <li><a href="event-detail.html" class="link-page">Update Teacher information</a></li>
                                 <li><a href="events.html" class="link-page">Give and modify existing privileges</a></li>
-                                <li><a href="event-detail.html" class="link-page">Update Teacher information</a></li>                                
                             </ul>
                         </li>
                           <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Students<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                <li><a href="ViewAllTachers.aspx" class="link-page">View All</a></li>
+                                <li><a href="ViewAll Students.aspx" class="link-page">View All</a></li>
                                 <li><a href="courses-detail.html" class="link-page">Make Student of the month</a></li>
                                 <li><a href="event-detail.html" class="link-page">Update Student information</a></li>                                
                             </ul>
@@ -100,10 +100,8 @@
                         </li>
                         <li class="dropdown"><a href="javascript:void(0)" class="main-menu">News<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
+                                <li><a href="PostNews.aspx" class="link-page">post news</a></li>
                                 <li><a href="news.html" class="link-page">news list</a></li>
-                                <li><a href="news-grid.html" class="link-page">news grid</a></li>
-                                <li><a href="news-grid-nonsidebar.html" class="link-page">news grid nonsidebar</a></li>
-                                <li><a href="news-masonry.html" class="link-page">news masonry</a></li>
                                 <li><a href="news-detail.html" class="link-page">news detail</a></li>
                             </ul>
                         </li>  
@@ -248,10 +246,6 @@
     </div>
 </footer>
 
-<!-- LOADING-->
-<div class="body-2 loading">
-    <div class="dots-loader"></div>
-</div>
 <!-- JAVASCRIPT LIBS-->
 <script>if ((Cookies.get('color-skin') != undefined) && (Cookies.get('color-skin') != 'color-1')) {
     $('.logo .header-logo img').attr('src', 'assets/images/logo-' + Cookies.get('color-skin') + '.png');

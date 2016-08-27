@@ -60,31 +60,28 @@
   <ItemGroup>
     <Content Include="About_Us.aspx" />
     <Content Include="assets\images\calender.png" />
-    <Content Include="assets\images\cesThemeImages\131889836_81n.jpg" />
-    <Content Include="assets\images\cesThemeImages\814.jpg" />
-    <Content Include="assets\images\cesThemeImages\dd1.jpg" />
-    <Content Include="assets\images\cesThemeImages\hameeda.jpg" />
-    <Content Include="assets\images\cesThemeImages\image-0-compressed44.jpg" />
-    <Content Include="assets\images\cesThemeImages\MALALA-INSPIRATION-1024x694.jpg" />
-    <Content Include="assets\images\cesThemeImages\pakistani schools, pakistani teachers, online tutoring %281%29.jpg" />
-    <Content Include="assets\images\cesThemeImages\Pakistani-Girls-Selfie-picture-leaked-out-25.jpg" />
-    <Content Include="assets\images\cesThemeImages\pakistani-schools-pakistani-teachers-online-tutoring-8-750x346.jpg" />
-    <Content Include="assets\images\cesThemeImages\pakistan_school_girls_136501895513650189553300.jpg" />
+    <Content Include="assets\images\cesThemeImages\hps.jpg" />
+    <Content Include="assets\images\cesThemeImages\pakstudents.jpg" />
     <Content Include="assets\images\cesThemeImages\searchTeacher.jpg" />
+    <Content Include="assets\images\cesThemeImages\student %281%29.jpg" />
+    <Content Include="assets\images\cesThemeImages\student %282%29.jpg" />
+    <Content Include="assets\images\cesThemeImages\student %283%29.jpg" />
+    <Content Include="assets\images\cesThemeImages\student %284%29.jpg" />
+    <Content Include="assets\images\cesThemeImages\student %285%29.jpg" />
+    <Content Include="assets\images\cesThemeImages\student %286%29.jpg" />
+    <Content Include="assets\images\cesThemeImages\student %287%29.jpg" />
     <Content Include="assets\images\cesThemeImages\teachers %281%29.jpg" />
     <Content Include="assets\images\cesThemeImages\teachers %282%29.jpg" />
     <Content Include="assets\images\cesThemeImages\teachers %283%29.jpg" />
     <Content Include="assets\images\cesThemeImages\teachers %284%29.jpg" />
     <Content Include="assets\images\cesThemeImages\teachers %285%29.jpg" />
-    <Content Include="assets\images\cesThemeImages\WOE_42_pakistan_db3.jpg" />
-    <Content Include="assets\images\cesThemeImages\WOE_42_pakistan_db5.jpg" />
     <Content Include="assets\images\crissxcross.png" />
     <Content Include="assets\images\green-bg-img.jpg" />
     <Content Include="assets\images\registerschool_green.jpg" />
-    <Content Include="Contact_Us.aspx" />
     <Content Include="Logintype.aspx" />
     <Content Include="Our_Team.aspx" />
     <Content Include="parentpanel.aspx" />
+    <Content Include="PostNews.aspx" />
     <Content Include="School_Rgistration.aspx" />
     <Content Include="source\Jvalidation\blacklist_keywords.txt" />
     <Content Include="StudentRgistration.aspx" />
@@ -250,6 +247,7 @@
     <Content Include="Teacherprofile.aspx" />
     <Content Include="TeacherUpload.aspx" />
     <Content Include="Teacher_timetable.aspx" />
+    <Content Include="ViewAll Students.aspx" />
     <Content Include="ViewAllTachers.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -263,12 +261,12 @@
     <Compile Include="About_Us.aspx.designer.cs">
       <DependentUpon>About_Us.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Contact_Us.aspx.cs">
-      <DependentUpon>Contact_Us.aspx</DependentUpon>
+    <Compile Include="PostNews.aspx.cs">
+      <DependentUpon>PostNews.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Contact_Us.aspx.designer.cs">
-      <DependentUpon>Contact_Us.aspx</DependentUpon>
+    <Compile Include="PostNews.aspx.designer.cs">
+      <DependentUpon>PostNews.aspx</DependentUpon>
     </Compile>
     <Compile Include="Our_Team.aspx.cs">
       <DependentUpon>Our_Team.aspx</DependentUpon>
@@ -463,6 +461,13 @@
     </Compile>
     <Compile Include="User.Master.designer.cs">
       <DependentUpon>User.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAll Students.aspx.cs">
+      <DependentUpon>ViewAll Students.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewAll Students.aspx.designer.cs">
+      <DependentUpon>ViewAll Students.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewAllTachers.aspx.cs">
       <DependentUpon>ViewAllTachers.aspx</DependentUpon>
