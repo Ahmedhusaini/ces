@@ -17,7 +17,7 @@ namespace FinalTemplate
         {
 
             string date = dob.Text;
-            string a = ConfigurationManager.ConnectionStrings["cesConnectionStringWithoutUsernamePassword"].ConnectionString;
+            string a = ConfigurationManager.ConnectionStrings["abc"].ConnectionString;
             Database db = new Database("abc");
             int general_id = Convert.ToInt32(db.GetLastValueByColumnName("general_id", "tbl_general"));
             int dob_id = Convert.ToInt32(db.GetLastValueByColumnName("dob_id", "tbl_dob"));
@@ -54,7 +54,7 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@postal_code", SqlDbType.Int).Value = postal.Text;
                 cmd.Parameters.AddWithValue("@city_id", SqlDbType.Int).Value = DropDownList2.SelectedValue;
                 cmd.Parameters.AddWithValue("@country_id", SqlDbType.Int).Value = DropDownList1.SelectedValue;
-                cmd.Parameters.AddWithValue("@photo", SqlDbType.VarChar).Value = photo.Text;
+                cmd.Parameters.AddWithValue("@photo", SqlDbType.VarChar).Value = fileupload.ValidateRequestMode;
                 cmd.Parameters.AddWithValue("@username", SqlDbType.VarChar).Value = user.Text;
                 cmd.Parameters.AddWithValue("@account_pin", SqlDbType.Int).Value = accountp.Text;
                 cmd.Parameters.AddWithValue("@password", SqlDbType.VarChar).Value = pass.Text;
@@ -70,11 +70,18 @@ namespace FinalTemplate
                 con.Close();
             }
 
+            string result = string.Empty;
+            try
+            {
+                Label1.Text = "REGISTRATION SUCCESSFULL";
+            }
 
-            Label1.Text = "REGISTERED SUCCESSFULLY";
+            catch (Exception ex)
+            {
+
+                Label1.Text = "REGISTRATION FAILED";
+            }
 
         }
-
-
     }
 }

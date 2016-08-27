@@ -39,10 +39,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AjaxControlToolkit, Version=3.0.20820.28831, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>H:\Important Data\AjaxControlToolkit.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -62,12 +58,30 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="About_Us.aspx" />
     <Content Include="assets\images\calender.png" />
+    <Content Include="assets\images\cesThemeImages\hps.jpg" />
+    <Content Include="assets\images\cesThemeImages\pakstudents.jpg" />
+    <Content Include="assets\images\cesThemeImages\searchTeacher.jpg" />
+    <Content Include="assets\images\cesThemeImages\student %281%29.jpg" />
+    <Content Include="assets\images\cesThemeImages\student %282%29.jpg" />
+    <Content Include="assets\images\cesThemeImages\student %283%29.jpg" />
+    <Content Include="assets\images\cesThemeImages\student %284%29.jpg" />
+    <Content Include="assets\images\cesThemeImages\student %285%29.jpg" />
+    <Content Include="assets\images\cesThemeImages\student %286%29.jpg" />
+    <Content Include="assets\images\cesThemeImages\student %287%29.jpg" />
+    <Content Include="assets\images\cesThemeImages\teachers %281%29.jpg" />
+    <Content Include="assets\images\cesThemeImages\teachers %282%29.jpg" />
+    <Content Include="assets\images\cesThemeImages\teachers %283%29.jpg" />
+    <Content Include="assets\images\cesThemeImages\teachers %284%29.jpg" />
+    <Content Include="assets\images\cesThemeImages\teachers %285%29.jpg" />
     <Content Include="assets\images\crissxcross.png" />
     <Content Include="assets\images\green-bg-img.jpg" />
     <Content Include="assets\images\registerschool_green.jpg" />
     <Content Include="Logintype.aspx" />
+    <Content Include="pakstudents.jpg" />
     <Content Include="parentpanel.aspx" />
+    <Content Include="PostNews.aspx" />
     <Content Include="School_Rgistration.aspx" />
     <Content Include="source\Jvalidation\blacklist_keywords.txt" />
     <Content Include="StudentRgistration.aspx" />
@@ -227,15 +241,33 @@
     <Content Include="select_resistration_type.aspx" />
     <Content Include="studentpanel.aspx" />
     <Content Include="StudentProfile.aspx" />
+    <Content Include="TeacherOfTheMonth.aspx" />
     <Content Include="TeacherRegistration.aspx" />
     <Content Include="TeacherPanel.aspx" />
     <Content Include="Teacherprofile.aspx" />
     <Content Include="TeacherUpload.aspx" />
+    <Content Include="Teacher_timetable.aspx" />
+    <Content Include="ViewAll Students.aspx" />
+    <Content Include="ViewAllTachers.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About_Us.aspx.cs">
+      <DependentUpon>About_Us.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About_Us.aspx.designer.cs">
+      <DependentUpon>About_Us.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PostNews.aspx.cs">
+      <DependentUpon>PostNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostNews.aspx.designer.cs">
+      <DependentUpon>PostNews.aspx</DependentUpon>
+    </Compile>
     <Compile Include="source\Functions\Jfunctionparents.cs" />
     <Compile Include="source\Functions\Jfunctionstudents.cs" />
     <Compile Include="Logintype.aspx.cs">
@@ -367,6 +399,13 @@
     <Compile Include="StudentProfile.aspx.designer.cs">
       <DependentUpon>StudentProfile.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TeacherOfTheMonth.aspx.cs">
+      <DependentUpon>TeacherOfTheMonth.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeacherOfTheMonth.aspx.designer.cs">
+      <DependentUpon>TeacherOfTheMonth.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TeacherRegistration.aspx.cs">
       <DependentUpon>TeacherRegistration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -402,12 +441,33 @@
     <Compile Include="TeacherUpload.aspx.designer.cs">
       <DependentUpon>TeacherUpload.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Teacher_timetable.aspx.cs">
+      <DependentUpon>Teacher_timetable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teacher_timetable.aspx.designer.cs">
+      <DependentUpon>Teacher_timetable.aspx</DependentUpon>
+    </Compile>
     <Compile Include="User.Master.cs">
       <DependentUpon>User.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="User.Master.designer.cs">
       <DependentUpon>User.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAll Students.aspx.cs">
+      <DependentUpon>ViewAll Students.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewAll Students.aspx.designer.cs">
+      <DependentUpon>ViewAll Students.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAllTachers.aspx.cs">
+      <DependentUpon>ViewAllTachers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewAllTachers.aspx.designer.cs">
+      <DependentUpon>ViewAllTachers.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

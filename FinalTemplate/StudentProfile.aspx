@@ -11,6 +11,7 @@
                                         <div class="staff-info">
                                             <a href="#" class="staff-avatar">
                                             <img src="assets/images/people-avatar-4.jpg" alt="" class="img-responsive"/>
+                                                <asp:FileUpload ID="FileUpload1" runat="server" />
                                             </a>
                                             <a href="#" class="staff-name">barry join</a>
                                         </div>

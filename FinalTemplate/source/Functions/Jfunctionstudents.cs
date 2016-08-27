@@ -4,11 +4,15 @@ using System.Web;
 using System.Web.UI.WebControls;
 using System.Net;
 using System.Net.Mail;
+using System.IO;
+using FinalTemplate.source.Database;
+using FinalTemplate.source;
 
 namespace FinalTemplate.source.Functions
 {
     public class Jfunctionstudents
     {
+        //Returns Date in dd/mm/yyyy format
         public static string GetSystemDate()
         {
             return Convert.ToString(DateTime.Today.ToString("d"));
@@ -18,23 +22,41 @@ namespace FinalTemplate.source.Functions
         {
             return Convert.ToString(System.DateTime.Today.ToString("t"));
         }
+
+        public static void SendEmail(string To, string Subject, string MessageBody)
+        {
+            string smtpUsername = "shahwaizhasan106@gmail.com";
+            using (MailMessage mailMessage = new MailMessage("shahwaizhasan106@gmail.com", To, Subject, MessageBody))
+            {
+                mailMessage.IsBodyHtml = true;
+                SmtpClient smtp = new SmtpClient();
+                smtp.Host = "smtp.gmail.com";
+                smtp.EnableSsl = true;
+                NetworkCredential networkCredential = new NetworkCredential(smtpUsername, "teuss106");
+                smtp.UseDefaultCredentials = true;
+                smtp.Credentials = networkCredential;
+                smtp.Port = 587;
+                smtp.Send(mailMessage);
+
+            }
+        }
         public static void BindDropDownList(DropDownList ddl1, string displayField1, string valueField1, string queryy)
         {
-            Database.Database mDatabase = new Database.Database("cesConnectionString2");
-            mDatabase.CreateConnection();
-            mDatabase.InitializeSQLCommandObject(mDatabase.GetCurrentConnection, queryy);
+            Database.Database studentDatabase = new Database.Database("cesConnectionString2");
+            studentDatabase.CreateConnection();
+            studentDatabase.InitializeSQLCommandObject(studentDatabase.GetCurrentConnection, queryy);
             try
             {
-                mDatabase.OpenConnection();
-                ddl1.DataSource = mDatabase.obj_sqlcommand.ExecuteReader();
+                studentDatabase.OpenConnection();
+                ddl1.DataSource = studentDatabase.obj_sqlcommand.ExecuteReader();
                 ddl1.DataTextField = displayField1;
                 ddl1.DataValueField = valueField1;
                 ddl1.DataBind();
             }
             finally
             {
-                mDatabase.CloseConnection();
-                mDatabase.obj_sqlcommand.Dispose();
+                studentDatabase.CloseConnection();
+                studentDatabase.obj_sqlcommand.Dispose();
             }
         }
     }

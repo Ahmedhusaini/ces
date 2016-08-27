@@ -17,10 +17,11 @@ namespace FinalTemplate
             }
 
         }
-       
+
         private string EmailBody()
         {
             StringBuilder stringBuilder = new StringBuilder();
+
             stringBuilder.Clear();
             stringBuilder.Append("<h1>Welcome to Centeralized Education System - CES</h1>");
 
@@ -35,6 +36,13 @@ namespace FinalTemplate
             stringBuilder.Append(" <br> ");
             stringBuilder.Append("Password:");
             stringBuilder.Append(txt_password.Text);
+            stringBuilder.Append(" <br> ");
+            stringBuilder.Append("<h2>Package Details</h2>");
+            stringBuilder.Append("Package Name: ");
+            stringBuilder.Append(hiddenFieild.Value.ToString());
+            stringBuilder.Append(" <br> ");
+            stringBuilder.Append("<a href='https://" + "drive.google.com/open?id=0B1sWtpM3NwoqSFpCU1h1LXpWVlk'>Click here</a> to view all details about your selected package.");
+
             return stringBuilder.ToString();
         }
 
@@ -58,9 +66,9 @@ namespace FinalTemplate
                              txt_foundedIn.Text, fileupload.FileName, Convert.ToInt32(ddl_schooltype.SelectedValue),
                              txt_campusname.Text);
                         if (result == "true")
-                        {                                                        
+                        {
                             Package objPackage = new Package();
-                            objPackage.InitializePackageAttributes(selectedpackage,classSchool.myDatabase.GetLastValueByColumnName("school_id", "tbl_school"));
+                            objPackage.InitializePackageAttributes(selectedpackage, classSchool.myDatabase.GetLastValueByColumnName("school_id", "tbl_school"));
                             if (objPackage.AssignPackage() == "true")
                             {
                                 JFunctions.SendEmail(txt_primaryEmailAddress.Text, "CES - Registration", EmailBody());
