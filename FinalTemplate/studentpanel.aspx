@@ -44,7 +44,8 @@
                 <!--.page-title-content-->
 
                 <div class="slider-banner-wrapper">
-                    <h1 data-wow-delay="0.5s" class="sub-title wow fadeInUp"><asp:Label Text="Date" ID="lab1" runat="server">Datess</asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label Text="Time" ID="lab2" runat="server"></asp:Label></h1>
+                    <h1 data-wow-delay="0.5s" class="sub-title wow fadeInUp">
+                        <asp:Label Text="Date" ID="lab1" runat="server">Datess</asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label Text="Time" ID="lab2" runat="server"></asp:Label></h1>
                     <h2 class="captions">Student profile</h2>
                     <ol class="breadcrumb">
                         <li><a href="index.html">Home</a></li>
@@ -77,23 +78,20 @@
             <div class="container">
 
                 <div class="why-choose-us-wrapper">
-                    <asp:Label CssClass="title-2" runat="server"></asp:Label>
+                    <asp:Label ID="namelab" CssClass="title-2" runat="server"></asp:Label>
                     <p>CLASS-6 SECTION-B</p>
                     <div>
                         <asp:FileUpload ID="FileUpload1" runat="server" />
-                        <asp:Button ID="btnSave" Text="Save" runat="server" OnClick="btnSave_Click" />
-                    </div>
-                    <asp:Label ID="label" runat="server"></asp:Label>
+                        <asp:Button class="btn-green" BackColor="#86bc42" BorderColor="#86bc42" ID="btnSave" Text="Save" OnClick="btnSave_Click" runat="server" Height="30px" Width="70px"></asp:Button>
+                        <asp:Label ID="Label1" runat="server"></asp:Label>
+                   </div>
                 </div>
                 <div data-wow-delay="0.2s" data-wow-duration="1.2s" class="background-girl-1 wow fadeInDown">
-                    <%--<asp:Image runat="server" style="border-radius: 70%" Height="550px" Width="550px" />--%>
-
-                    <%-- <img src="assets/images/girl-1.png" alt="" class="img-responsive" style="border-radius: 70%; Height:350px; Width:550px"/>--%>
-                    <asp:Image ID="shah" CssClass="img-responsive" runat="server" Style="border-color:pink; border-radius: 60px;Height:350px; Width:300px" />
+                    <asp:Image ID="shah" CssClass="img-responsive" runat="server" Style="border-color: pink; border-radius: 60px; height: 350px; width: 300px" />
                 </div>
             </div>
         </div>
-    </div>
+    </div>  
     <%--                    <div class="section why-choose-us">
                     <div class="why-choose-us-wrapper-top">
                         <div class="container">
