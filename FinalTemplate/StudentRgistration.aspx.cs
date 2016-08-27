@@ -54,7 +54,7 @@ namespace FinalTemplate
 
                 if (result == "true")
                 {
-                    JFunctions.SendEmail(pemail.Text, "CES - Registration", EmailBody());
+                    Jfunctionstudents.SendEmail(pemail.Text, "CES - Registration", EmailBody());
                     Response.Write("Register Successfully Complete");
                 }
                 else
