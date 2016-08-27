@@ -21,9 +21,9 @@
 
                                         <p class="sub">COME TO</p>
 
-                                        <div class="detail"><p>99 Barnard St - Suite 111</p>
+                                        <div class="detail"><p>Sir Syed University of Enginerring &amp; Technology</p>
 
-                                            <p>United Kingdom</p></div>
+                                            <p>Karachi, Pakistan</p></div>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -31,9 +31,9 @@
 
                                         <p class="sub">CALL TO</p>
 
-                                        <div class="detail"><p>Local: 1-800-123-hello</p>
+                                        <div class="detail"><p>Local: 021-36330034-hello</p>
 
-                                            <p>Mobile: 1-800-123-hello</p></div>
+                                            <p>Mobile: 0332-22345645-hello</p></div>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -41,9 +41,9 @@
 
                                         <p class="sub">CONNECT TO</p>
 
-                                        <div class="detail"><p>hello@edugate.com</p>
+                                        <div class="detail"><p><a href="mailto:CES@gmail.com">ces@gmail.com</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
 
-                                            <p>www.edugate.com</p></div>
+                                            <p class="text-left">www.ces.edu.pk</p></div>
                                     </div>
                                 </div>
                             </div>
@@ -71,7 +71,7 @@
                                         <textarea id="TextArea1" rows="7" cols="131" Width="455px" Height="40px" style="textarea" runat="server" ></textarea ></div>
                                     </div>
                                 </div>
-                                <div class="contact-submit" style="margin-left: 360px">
+                                <div class="contact-submit" style="margin-left: 400px">
                                     <asp:Button ID="Button1" CssClass="btn btn-contact btn-green" runat="server" Text="SUBMIT" OnClick="Button1_Click" />
                                 </div>
                             </form>
