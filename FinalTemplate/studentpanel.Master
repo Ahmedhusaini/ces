@@ -49,7 +49,7 @@
                 </div>
                 <div class="col-md-2 logo-topbar info-text2"><a href="index.html"><img src="assets/images/logo-color-1.png" alt=""/></a></div>
                 <div class="col-md-5 topbar-right text-right info-text3">
-                    <div class="group-sign-in"><a href="#" class="login"></a><a href="register.html" class="register">Logout</a></div>
+                    <div class="group-sign-in"><a href="#" class="login"></a><a href="register.html" onclick="btn_logout_Click" class="register">Logout</a></div>
                 </div>
             </div>
         </div>

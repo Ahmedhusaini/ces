@@ -14,6 +14,8 @@ using System.Xml.Linq;
 using System.IO;
 using System.Data.Sql;
 using System.Data.SqlClient;
+using System.Text;
+using FinalTemplate.source.Functions;
 
 namespace FinalTemplate
 {
@@ -21,7 +23,21 @@ namespace FinalTemplate
     {
         SqlConnection con = new SqlConnection(@"Data Source=SHAHWAIZHASAN;Initial Catalog=ces;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
-        {            
+        {
+            lab1.Text = "DATE :" + System.DateTime.Now.ToShortDateString();   
+            lab2.Text = "TIME :" + System.DateTime.Now.ToLongTimeString();
+                
+            if (!IsPostBack)
+            {
+                if (Session["userid"] != null)
+                {
+                    label.Text = "Your User ID: " + Session["userid"].ToString();
+                }
+                else
+                {
+                    Response.Redirect("~/Default.aspx");
+                }
+            }
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
