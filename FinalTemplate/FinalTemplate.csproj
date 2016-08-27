@@ -79,7 +79,6 @@
     <Content Include="assets\images\green-bg-img.jpg" />
     <Content Include="assets\images\registerschool_green.jpg" />
     <Content Include="Logintype.aspx" />
-    <Content Include="pakstudents.jpg" />
     <Content Include="parentpanel.aspx" />
     <Content Include="PostNews.aspx" />
     <Content Include="School_Rgistration.aspx" />
