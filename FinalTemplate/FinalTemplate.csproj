@@ -83,6 +83,7 @@
     <Content Include="assets\images\registerschool_green.jpg" />
     <Content Include="Contact_Us.aspx" />
     <Content Include="Logintype.aspx" />
+    <Content Include="Our_Team.aspx" />
     <Content Include="parentpanel.aspx" />
     <Content Include="School_Rgistration.aspx" />
     <Content Include="source\Jvalidation\blacklist_keywords.txt" />
@@ -268,6 +269,13 @@
     </Compile>
     <Compile Include="Contact_Us.aspx.designer.cs">
       <DependentUpon>Contact_Us.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Our_Team.aspx.cs">
+      <DependentUpon>Our_Team.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Our_Team.aspx.designer.cs">
+      <DependentUpon>Our_Team.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\Functions\Jfunctionparents.cs" />
     <Compile Include="source\Functions\Jfunctionstudents.cs" />
