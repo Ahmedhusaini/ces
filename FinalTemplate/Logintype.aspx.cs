@@ -10,7 +10,7 @@ namespace FinalTemplate
         private string loginresult;
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
 
             lbl_error.Visible = false;
 
@@ -18,20 +18,20 @@ namespace FinalTemplate
             {
                 JFunctions.BindDropDownList(ddl_type, "usertype", "usertype_id", "select * from tbl_usertype");
                 ddl_type.Items.Insert(0, "--- Select User Type ---");
-                if (Session["userid"]!=null)
+                if (Session["userid"] != null)
                 {
                     Session.Remove("userid");
                     lbl_error.Text = "You are logged in, you need to go back to your logged in page by loggin in again.";
                     lbl_error.Visible = true;
-                    lbl_error.ForeColor = Color.Blue;                   
+                    lbl_error.ForeColor = Color.Blue;
                 }
             }
-            
+
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-            myLogin.valideUsername = "\'"+txt_username.Text+"\'";
-               myLogin.validePasswoerd = "\'" + txt_password.Text + "\'";
+            myLogin.valideUsername = "\'" + txt_username.Text + "\'";
+            myLogin.validePasswoerd = "\'" + txt_password.Text + "\'";
             loginresult = myLogin.UserLogin(myLogin.valideUsername, myLogin.validePasswoerd);
             if (ddl_type.SelectedIndex == 0)
             {
@@ -51,15 +51,29 @@ namespace FinalTemplate
                 {
                     if (loginresult == "true")
                     {
-                        if (ddl_type.SelectedIndex == 1)
+                        if (ddl_type.SelectedIndex == 1 || ddl_type.SelectedIndex == 2)
                         {
-                            Session["userid"] = myLogin.myDatabase.GetAuthorizedID(myLogin.valideUsername,myLogin.validePasswoerd);
+                            Session["userid"] = myLogin.myDatabase.GetAuthorizedID(myLogin.valideUsername, myLogin.validePasswoerd);
                             Response.Redirect("~/Admin.aspx");
 
                         }
-                        else if (ddl_type.SelectedIndex == 2)
+                        else if (ddl_type.SelectedIndex == 3)
                         {
-                            Response.Write("Sorry You are not logged in");
+                            Session["userid"] = myLogin.myDatabase.GetAuthorizedID(myLogin.valideUsername, myLogin.validePasswoerd);
+                            Response.Redirect("~/TeacherPanel.aspx");
+
+                        }
+                        else if (ddl_type.SelectedIndex == 4)
+                        {
+                            Session["userid"] = myLogin.myDatabase.GetAuthorizedID(myLogin.valideUsername, myLogin.validePasswoerd);
+                            Response.Redirect("~/studentpanel.aspx");
+
+                        }
+                        else if (ddl_type.SelectedIndex == 5)
+                        {
+                            Session["userid"] = myLogin.myDatabase.GetAuthorizedID(myLogin.valideUsername, myLogin.validePasswoerd);
+                            Response.Redirect("~/parentpanel.aspx");
+
                         }
                     }
                     else
