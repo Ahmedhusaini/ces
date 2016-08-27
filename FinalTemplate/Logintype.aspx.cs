@@ -31,7 +31,7 @@ namespace FinalTemplate
         protected void Button1_Click(object sender, EventArgs e)
         {
             myLogin.valideUsername = "\'"+txt_username.Text+"\'";
-            myLogin.validePasswoerd = "\'" + txt_password.Text + "\'";
+               myLogin.validePasswoerd = "\'" + txt_password.Text + "\'";
             loginresult = myLogin.UserLogin(myLogin.valideUsername, myLogin.validePasswoerd);
             if (ddl_type.SelectedIndex == 0)
             {
