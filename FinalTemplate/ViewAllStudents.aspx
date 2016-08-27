@@ -15,7 +15,6 @@
         function samesizeimage() {
             $('a img').css({ 'height': '200px', 'width': '300px' });
         }
-
         function setbuttonlayout() {
             $('button.btn.btn-green').css('padding-right', '115px');
         }
