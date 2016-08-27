@@ -17,7 +17,7 @@
         }
 
         function setbuttonlayout() {
-            $('button.btn.btn-green').css('padding-right','105px');
+            $('button.btn.btn-green').css('padding-right','115px');
         }
         function teacherwidth() {
             var path = "url(assets/images/cesThemeImages/searchTeacher.jpg)";
@@ -80,7 +80,7 @@
 
                                                 <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
                                                 <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
-                                                <button class="btn btn-green"><span>all course</span></button>
+                                                <button class="btn btn-green"><span>View Details</span></button>
                                             </div>
                                         </div>
                                     </div>
@@ -93,7 +93,7 @@
 
                                                     <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
                                                     <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
-                                                    <button class="btn btn-green"><span>all course</span></button>
+                                                    <button class="btn btn-green"><span>View Details</span></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -106,7 +106,7 @@
 
                                                     <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
                                                     <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
-                                                    <button class="btn btn-green"><span>all course</span></button>
+                                                    <button class="btn btn-green"><span>View Details</span></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -121,7 +121,7 @@
 
                                                     <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
                                                     <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
-                                                    <button class="btn btn-green"><span>all course</span></button>
+                                                    <button class="btn btn-green"><span>View Details</span></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -134,7 +134,7 @@
 
                                                     <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
                                                     <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
-                                                    <button class="btn btn-green"><span>all course</span></button>
+                                                    <button class="btn btn-green"><span>View Details</span></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -147,7 +147,7 @@
 
                                                     <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
                                                     <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
-                                                    <button class="btn btn-green"><span>all course</span></button>
+                                                    <button class="btn btn-green"><span>View Details</span></button>
                                                 </div>
                                             </div>
                                         </div>
