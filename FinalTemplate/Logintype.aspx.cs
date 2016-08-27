@@ -59,7 +59,7 @@ namespace FinalTemplate
                         }
                         else if (ddl_type.SelectedIndex == 2)
                         {
-                            Response.Write("nai hoga bhai ");
+                            Response.Write("Sorry You are not logged in");
                         }
                     }
                     else

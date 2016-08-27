@@ -189,13 +189,14 @@ namespace FinalTemplate.source
 
             StringBuilder id = new StringBuilder();
             id.Append("C/");
-            id.Append(Convert.ToString(lastname.Substring(0, 2)));
+            id.Append(Convert.ToString(lastname.Substring(0, 3)));
             id.Append("/E/");
             id.Append((classname));
             id.Append("/S/");
             id.Append((section));
             id.Append("/");
-            id.Append(Jfunctionstudents.GetSystemDate().Substring(0, 2));
+            id.Append(Jfunctionstudents.GetSystemDate().Substring(0, 3));
+            id.Append(random.Next(3, 10));
             return id.ToString();
         }
     }
