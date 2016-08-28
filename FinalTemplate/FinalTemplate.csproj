@@ -261,19 +261,19 @@
     <Compile Include="About_Us.aspx.designer.cs">
       <DependentUpon>About_Us.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PostNews.aspx.cs">
-      <DependentUpon>PostNews.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PostNews.aspx.designer.cs">
-      <DependentUpon>PostNews.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Our_Team.aspx.cs">
       <DependentUpon>Our_Team.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Our_Team.aspx.designer.cs">
       <DependentUpon>Our_Team.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PostNews.aspx.cs">
+      <DependentUpon>PostNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostNews.aspx.designer.cs">
+      <DependentUpon>PostNews.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\Functions\Jfunctionparents.cs" />
     <Compile Include="source\Functions\Jfunctionstudents.cs" />
