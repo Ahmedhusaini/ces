@@ -10,15 +10,15 @@
 namespace FinalTemplate {
     
     
-    public partial class About_Us {
+    public partial class ViewAllTachers {
         
         /// <summary>
-        /// our control.
+        /// txtSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button our;
+        protected global::System.Web.UI.WebControls.TextBox txtSearch;
     }
 }
