@@ -14,6 +14,8 @@ using System.Xml.Linq;
 using System.IO;
 using System.Data.Sql;
 using System.Data.SqlClient;
+using System.Text;
+using FinalTemplate.source.Functions;
 
 namespace FinalTemplate
 {
@@ -21,7 +23,22 @@ namespace FinalTemplate
     {
         SqlConnection con = new SqlConnection(@"Data Source=SHAHWAIZHASAN;Initial Catalog=ces;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
-        {            
+        {
+            lab1.Text = "DATE :" + System.DateTime.Now.ToShortDateString();   
+            lab2.Text = "TIME :" + System.DateTime.Now.ToLongTimeString();
+
+                
+            if (!IsPostBack)
+            {
+                if (Session["userid"] != null)
+                {
+                    namelab.Text = "Your User ID: " + Session["userid"].ToString();
+                }
+                else
+                {
+                    Response.Redirect("~/Default.aspx");
+                }
+            }
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
@@ -35,7 +52,7 @@ namespace FinalTemplate
                     string filepath = Server.MapPath(@"~\images\" + filename.ToString());
                     string fullfilepath = filepath + filename;
                     string extension = Path.GetExtension(filename);
-                    label.Text = filepath;
+                    Label1.Text = filepath;
                     int filesize = FileUpload1.PostedFile.ContentLength / 1024;
                     int i = 0;
                     if (extension == ".jpg" || extension == ".png")
@@ -47,7 +64,7 @@ namespace FinalTemplate
                         }
                         else
                         {
-                            label.Text = "Filesize Exceed 1MB.";
+                            Label1.Text = "Filesize Exceed 1MB.";
                         }
                     }
                     con.Open();
@@ -56,12 +73,12 @@ namespace FinalTemplate
                     shah.ImageUrl = @"~\images\"+FileUpload1.FileName;
                     cmd.ExecuteNonQuery();
                     con.Close();
-                    label.Text = "upload";
+                    Label1.Text = "upload";
                 }
             }
             catch (Exception ex)
             {
-                label.Text = (ex.Message);
+                Label1.Text = (ex.Message);
             }
         }
     }

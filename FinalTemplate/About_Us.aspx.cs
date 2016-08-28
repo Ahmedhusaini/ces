@@ -12,6 +12,11 @@ namespace FinalTemplate
         protected void Page_Load(object sender, EventArgs e)
         {
 
+           
+        }
+        protected void ourteam(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Our_Team.aspx");
         }
     }
 }
