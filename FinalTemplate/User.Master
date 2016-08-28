@@ -46,8 +46,8 @@
     <div class="header-topbar">
         <div class="container">
             <div class="topbar-left pull-left">
-                <div class="email"><a href="#"><i class="topbar-icon fa fa-envelope-o"></i><span>www.ces.edu.pk</span></a></div>
-                <div class="hotline"><a href="#"><i></i><span>| Reshaping Education into Digital World </span></a></div>
+                <div class="email"><a href="Default.aspx"><i class="topbar-icon fa fa-envelope-o"></i><span>www.ces.edu.pk</span></a></div>
+                <div class="hotline"><a href="javascript:void(0)"><i></i><span>| Reshaping Education into Digital World </span></a></div>
             </div>
             <div class="topbar-right pull-right">
                 <div class="socials"><a href="#" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" class="google"><i class="fa fa-google-plus"></i></a><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></div>
@@ -59,7 +59,7 @@
         <div class="container">
             <div class="header-main-wrapper">
                 <div class="navbar-heade">
-                    <div class="logo pull-left"><a href="index.html"><img class="mainLogo" src="assets/images/logo-color-1.png" alt=""/></a></div>
+                    <div class="logo pull-left"><a href="Default.aspx"><img class="mainLogo" src="assets/images/logo-color-1.png" alt=""/></a></div>
                     <button type="button" data-toggle="collapse" data-target=".navigation" class="navbar-toggle edugate-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
                 </div>
                 <nav class="navigation collapse navbar-collapse pull-right">
@@ -76,8 +76,8 @@
                             </li>
                       <li class="dropdown"><a href="javascript:void(0)" class="main-menu">News</a>
                             </li>
-                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu">About Us</a></li>
-                        <li><a href="contact.html" class="main-menu">Contact</a></li>
+                        <li class="dropdown"><a href="About_Us.aspx" class="main-menu">About Us</a></li>
+                        <li><a href="Contact_Us.aspx" class="main-menu">Contact</a></li>
                         <li class="button-search"><p class="main-menu"><i class="fa fa-search"></i></p></li>
                         <div class="nav-search hide">
                             <form><input type="text" placeholder="Search" class="searchbox"/>

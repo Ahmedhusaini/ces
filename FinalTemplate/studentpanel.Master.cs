@@ -11,6 +11,17 @@ namespace FinalTemplate
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+           
+        }
+        protected void btn_logout_Click(object sender, EventArgs e)
+        {
+            
+            Session.Clear();
+            Session.Remove("userid");
+            Session.Abandon();
+
+            System.Web.Security.FormsAuthentication.SignOut();
+            Response.Redirect("Default.aspx");
 
         }
     }

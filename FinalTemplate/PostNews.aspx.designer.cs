@@ -10,78 +10,60 @@
 namespace FinalTemplate {
     
     
-    public partial class studentpanel1 {
+    public partial class PostNews {
         
         /// <summary>
-        /// lab1 control.
+        /// txtNewsTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lab1;
+        protected global::System.Web.UI.WebControls.TextBox txtNewsTitle;
         
         /// <summary>
-        /// lab2 control.
+        /// ddlnewstype control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lab2;
+        protected global::System.Web.UI.WebControls.DropDownList ddlnewstype;
         
         /// <summary>
-        /// namelab control.
+        /// fileuploadnewsimage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label namelab;
+        protected global::System.Web.UI.WebControls.FileUpload fileuploadnewsimage;
         
         /// <summary>
-        /// lab3 control.
+        /// fileuploadnewsvideo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lab3;
+        protected global::System.Web.UI.WebControls.FileUpload fileuploadnewsvideo;
         
         /// <summary>
-        /// FileUpload1 control.
+        /// txtTags control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        protected global::System.Web.UI.WebControls.TextBox txtTags;
         
         /// <summary>
-        /// btnSave control.
+        /// txtNewsContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSave;
-        
-        /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
-        /// shah control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image shah;
+        protected global::System.Web.UI.WebControls.TextBox txtNewsContent;
     }
 }

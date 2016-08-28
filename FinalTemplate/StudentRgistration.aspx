@@ -38,7 +38,7 @@
                     <%=lname.UniqueID%>:{
                            required:true,
                            lettersonly:true
-                       },//contact 1 to contack 2 banaya hai
+                       },
                     <%=contact1.UniqueID%>:{
                            required:true,
                            phone:true
@@ -86,9 +86,8 @@
                            required:true,
                            digitsonly:true
                        },
-                    <%=sname.UniqueID%>:{
+                    <%=DropDownList5.UniqueID%>:{
                               required:true,
-                              lettersonly:true
                           },
                        <%=pass.UniqueID%>:{
                          required:true,
@@ -138,7 +137,7 @@
                        <%=guardian.UniqueID%>:{
                            required:"Please mention your guardian name"
                        },
-                       <%=sname.UniqueID%>:{
+                       <%=DropDownList5.UniqueID%>:{
                            required:"Please mention your full name"
                        },
                        <%=fileupload.UniqueID%>:{
@@ -458,7 +457,17 @@
                                 </label>
                                 <!-- p.help-block Warning !-->
                                 <br />
-                                <asp:TextBox ID="sname" CssClass="form-control  form-input" runat="server"></asp:TextBox>
+
+                                        <asp:DropDownList ID="DropDownList5" CssClass="form-control  form-input" runat="server">
+                                            <asp:ListItem></asp:ListItem>
+                                            <asp:ListItem>Karachi</asp:ListItem>
+                                            <asp:ListItem>Lahore</asp:ListItem>
+                                            <asp:ListItem>Peshawar</asp:ListItem>
+                                            <asp:ListItem>Islamabad</asp:ListItem>
+                                            <asp:ListItem>Quetta</asp:ListItem>
+                                            <asp:ListItem>Hyderabad</asp:ListItem>
+                                        </asp:DropDownList>
+
                             </div>
                             <div class="col-md-6">
                                 <label for="regname" class="control-label form-label">

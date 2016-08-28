@@ -28,8 +28,11 @@
                                             <span lang="EN">We are taking step ahead to revitalize this obsolete education system, reshaping it and introducing it into a new dimension of digital world.<o:p></o:p></span></p>
                                     </div>
                                     <div class="group-button">
-                                        <button class="btn btn-transition-2"><span>Our Team</span></button>
-                                        <button class="btn btn-green"><span>Testimonial</span></button>
+                                        <button type="submit" class="btn btn-register btn-green">
+                                            <span>
+                                                <asp:Button ID="our" OnClick="ourteam" runat="server" Text="Our Team" Style="background-color: transparent" BorderStyle="None"></asp:Button>
+                                            </span>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -39,7 +42,7 @@
     <div class="section section-padding edu-ab">
                     <div class="container">
                         <div class="edu-ab">
-                            <div class="group-title-index edu-ab-title"><h2 class="center-title">WITH <b>EDUGATE</b> WE</h2>
+                            <div class="group-title-index edu-ab-title"><h2 class="center-title">WITH <b>CES</b> WE</h2>
                                 <h4 class="top-title">Assist Schools In Managing In A Better And Friendly Way</h4>
                             </div>
                             <div class="edu-ab-content">
@@ -88,19 +91,19 @@
                                                 <li class="panel">
                                                     <div role="tab" id="item-3" class="col-item-1"><i class="fa fa-check-circle"></i><a href="#discuss" data-toggle="collapse" data-parent="#accordion" role="button" aria-expanded="true" aria-controls="lesson"><span>Upload &amp; Download</span> Assignments</a></div>
                                                     <div id="discuss" role="tabpanel" aria-labelledby="item-3" class="collapse">
-                                                        <div class="panel-body col-item-2">Le.</div>
+                                                        <div class="panel-body col-item-2">Our portal commence with the facility of uploading and downloading of assignment to both teachers and students respectively, a fine and effective approach for both and with great transparency & liberty from being bounded to be presented within school premises. Ready to be done at any time from any place..</div>
                                                     </div>
                                                 </li>
                                                 <li class="panel">
                                                     <div role="tab" id="item-4" class="col-item-1"><i class="fa fa-check-circle"></i><a href="#capability1" data-toggle="collapse" data-parent="#accordion" role="button" aria-expanded="true" aria-controls="lesson"><span>Data Sharing</span></a></div>
                                                     <div id="capability1" role="tabpanel" aria-labelledby="item-4" class="collapse">
-                                                        <div class="panel-body col-item-2">Lorem ipsum dolor sit amet, feugiat delicata liberavisse id cum, no quo maiorum intellegebat, liber regione eu sit. Mea cu case ludus integre.</div>
+                                                        <div class="panel-body col-item-2">Secure sharing of data within the school or among the campuses with complete sucrity such as conducting a local meeting of Faculty members or a meeting among the campuses Directors via mailing or using our SMS service.</div>
                                                     </div>
                                                 </li>
                                                 <li class="panel">
-                                                    <div role="tab" id="item-5" class="col-item-1"><i class="fa fa-check-circle"></i><a href="#capability2" data-toggle="collapse" data-parent="#accordion" role="button" aria-expanded="true" aria-controls="lesson"><span>Compatibitly</span></a></div>
+                                                    <div role="tab" id="item-5" class="col-item-1"><i class="fa fa-check-circle"></i><a href="#capability2" data-toggle="collapse" data-parent="#accordion" role="button" aria-expanded="true" aria-controls="lesson"><span>Compatibitly &amp; </span>Independancy</a></div>
                                                     <div id="capability2" role="tabpanel" aria-labelledby="item-5" class="collapse">
-                                                        <div class="panel-body col-item-2">Lorem ipsum dolor sit amet, feugiat delicata liberavisse id cum, no quo maiorum intellegebat, liber regione eu sit. Mea cu case ludus integre.                              </div>
+                                                        <div class="panel-body col-item-2">Compatible with all latest Web Browsers. Our Portal requires no High system requirments to run and completely independent of Operating System the computer using just you need an internet connection.</div>
                                                 </li>
                                             </ul>
                                         </div>
@@ -111,4 +114,5 @@
                         </div>
                     </div>
                 </div>
+    </span>
 </asp:Content>
