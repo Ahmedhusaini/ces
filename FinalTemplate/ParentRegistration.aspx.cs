@@ -35,7 +35,9 @@ namespace FinalTemplate
                     Convert.ToInt32(accountp.Text),pemail.Text,semail.Text);
                 if (result == "true")
                 {
-                    Response.Write("register");
+                   
+                    ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "tmp", "popup();", true);
+                    
                 }
                 else
                 {
