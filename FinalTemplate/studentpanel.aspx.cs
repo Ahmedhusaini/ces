@@ -26,6 +26,7 @@ namespace FinalTemplate
         {
             lab1.Text = "DATE :" + System.DateTime.Now.ToShortDateString();   
             lab2.Text = "TIME :" + System.DateTime.Now.ToLongTimeString();
+
                 
             if (!IsPostBack)
             {

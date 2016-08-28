@@ -45,7 +45,7 @@
 
                 <div class="slider-banner-wrapper">
                     <h1 data-wow-delay="0.5s" class="sub-title wow fadeInUp">
-                        <asp:Label Text="Date" ID="lab1" runat="server">Datess</asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label Text="Time" ID="lab2" runat="server"></asp:Label></h1>
+                        <asp:Label Text="Date" ID="lab1" runat="server"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label Text="Time" ID="lab2" runat="server"></asp:Label></h1>
                     <h2 class="captions">Student profile</h2>
                     <ol class="breadcrumb">
                         <li><a href="index.html">Home</a></li>
@@ -55,23 +55,6 @@
             </div>
         </div>
     </div>
-    <!--profile-->
-    <%--        
-                    <div class="container">
-            <div class="profile-teacher-wrapper" style="border:solid;color:#86bc42">
-                <div class="teacher-info">
-                    <div class="staff-item2 customize"><br />
-                                    <div class="staff-item-wrapper">
-                                        <div class="staff-info"><a href="#" class="staff-avatar">
-                                        <img src="assets/images/people-avatar-4.jpg" alt="" class="img-responsive"/></a>
-                                       <a href="#" class="staff-name"><b>KASHIF NOMAN</b></a><br />
-                                            <a href="#" class="heading-table">Class-3 Sec-B</a>
-                                        </div>
-                                    </div>
-                                </div>
-                </div>
-            </div>
-        </div>--%>
     <!-- WHY CHOOSE US-->
     <div class="section why-choose-us">
         <div class="why-choose-us-wrapper-top">
@@ -79,6 +62,7 @@
 
                 <div class="why-choose-us-wrapper">
                     <asp:Label ID="namelab" CssClass="title-2" runat="server"></asp:Label>
+                    <asp:Label ID="lab3" runat="server"></asp:Label>
                     <p>CLASS-6 SECTION-B</p>
                     <div>
                         <asp:FileUpload ID="FileUpload1" runat="server" />

@@ -15,7 +15,7 @@ namespace FinalTemplate
             {
                 if (Session["userid"] != null)
                 {
-                    Response.Redirect("~/Admin.aspx");
+                    Response.Redirect("~/Default.aspx");
                 }
             }
         }
