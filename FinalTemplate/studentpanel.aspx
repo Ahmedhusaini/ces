@@ -1,6 +1,27 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/studentpanel.Master" AutoEventWireup="true" CodeBehind="studentpanel.aspx.cs" Inherits="FinalTemplate.studentpanel1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+  <script src="assets/js/jquery-2.2.3.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            teacherwidth();
+            // samesizeimage();
+        });
+
+        //function samesizeimage() {
+        //    $('a img').css({ 'height': '200px', 'width': '300px' });
+        //}
+
+        function teacherwidth() {
+            var path = "url(assets/images/cesThemeImages/searchTeacher.jpg)";
+            $('.page-title').css({
+                'background-image': path,
+                'height':'350'
+            });
+        }
+
+    </script>
     <style type="text/css">
         #profile_pic_wrapper {
             position: relative;
@@ -38,11 +59,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!-- SLIDER BANNER-->
     <div class="section background-opacity page-title set-height-top">
-
         <div class="container">
             <div class="page-title-wrapper">
                 <!--.page-title-content-->
-
                 <div class="slider-banner-wrapper">
                     <h1 data-wow-delay="0.5s" class="sub-title wow fadeInUp">
                         <asp:Label Text="Date" ID="lab1" runat="server"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label Text="Time" ID="lab2" runat="server"></asp:Label></h1>
@@ -70,8 +89,8 @@
                         <asp:Label ID="Label1" runat="server"></asp:Label>
                    </div>
                 </div>
-                <div data-wow-delay="0.2s" data-wow-duration="1.2s" class="background-girl-1 wow fadeInDown">
-                    <asp:Image ID="shah" CssClass="img-responsive" runat="server" Style="border-color: pink; border-radius: 60px; height: 350px; width: 300px" />
+                <div data-wow-delay="0.2s" data-wow-duration="1.2s" class="background-girl-1 wow fadeInDown" style="color:transparent">
+                    <asp:Image ID="shah" CssClass="img-responsive" runat="server" Style="border-radius: 80px;color:transparent; height: 350px; width: 300px" />
                 </div>
             </div>
         </div>
