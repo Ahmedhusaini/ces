@@ -28,8 +28,11 @@
                                             <span lang="EN">We are taking step ahead to revitalize this obsolete education system, reshaping it and introducing it into a new dimension of digital world.<o:p></o:p></span></p>
                                     </div>
                                     <div class="group-button">
-                                        <button class="btn btn-transition-2" id="our" onclick="ourteam"><span>Our Team</span></button>
-                                        <button class="btn btn-green"><span>Testimonial</span></button>
+                                        <button type="submit" class="btn btn-register btn-green">
+                                            <span>
+                                                <asp:Button ID="our" OnClick="ourteam" runat="server" Text="Our Team" Style="background-color: transparent" BorderStyle="None"></asp:Button>
+                                            </span>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
