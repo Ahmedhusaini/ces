@@ -3,7 +3,41 @@
 
  <script src="assets/js/jquery-2.2.3.js"></script>   
     <script src="assets/js/jquery.validate.js"></script>
-       <script type="text/javascript">      
+   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.js" type="text/javascript"></script>
+<link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/themes/start/jquery-ui.css"
+    rel="stylesheet" type="text/css" />
+       <script type="text/javascript">
+
+
+           $(document).ready(function() {
+               popup();
+               validation();  
+           });
+           
+           
+           
+           function popup(){
+
+
+               $("#but").live("click", function() {
+                   $("#dialog").dialog({
+                       title: "Please Enter Your Child ID",
+                       width: 430,
+                       buttons: {
+                           Close: function() {
+
+                               $(this).dialog('close');
+                           },
+                           Submit: function() {
+                               $(this).dialog('submit');
+                           }
+                       }
+                   });
+                   return false;
+               });
+
+           }
 
 
            $.validator.addMethod("lettersonly", function (value, element) {
@@ -25,11 +59,13 @@
            $.validator.addMethod( "imageonly", function( value, element ) {
                return this.optional( element ) || /^([a-zA-Z0-9\s_\\.\-:])+(.png|.jpg|.gif)$/.test( value );
            }, ".jpeg ,.png, .gif format allow only " );  
-           $(document).ready(function () {
-              
-               $("#form1").validate({
-                   
-                   rules: {
+           
+
+               function validation() {
+
+
+                   $("#form1").validate({
+                       rules: {
                            <%=name.UniqueID%>: {
                                required: true,
                                lettersonly: true
@@ -53,7 +89,7 @@
                                lettersonly: true
 
                            },
-                          <%=salary.UniqueID%>: {
+                           <%=salary.UniqueID%>: {
                                required: true,
                                digitsonly: true
                            },
@@ -92,10 +128,10 @@
 
                            },
                            <%=accountp.UniqueID%>: {
-                               required:true,
-                               digitsonly:true,
-                               minlength:6,
-                               maxlength:10
+                               required: true,
+                               digitsonly: true,
+                               minlength: 6,
+                               maxlength: 10
                            },
                            <%=pass.UniqueID%>: {
                                required: true,
@@ -104,7 +140,7 @@
                            },
                            <%=repass.UniqueID%>: {
                                required: true,
-                               
+
 
                            },
                            <%=pemail.UniqueID%>: {
@@ -119,80 +155,81 @@
                                required: true,
                                imageonly: true
                            },
-                           <%=dob.UniqueID%>:{
-                               required:true
+                           <%=dob.UniqueID%>: {
+                               required: true
+                           }
+                       },
+
+                       messages: {
+                           <%=name.UniqueID%>: {
+                               required: "Please enter your name"
+
+                           },
+                           <%=lname.UniqueID%>: {
+                               required: "Please enter your last name"
+                           },
+                           <%=nic.UniqueID%>: {
+                               required: "Please enter your CNIC",
+                               digitsonly: " Invalid entry only numbers",
+                               minlength: "CNIC should have 13 character"
+                           },
+                           <%=salary.UniqueID%>: {
+                               required: "Please enter your salary",
+                               digitsonly: "Only digits"
+                           },
+                           <%=officeadd.UniqueID%>: {
+                               required: "Please provide your office address"
+                           },
+                           <%=contact2.UniqueID%>: {
+                               required: "Please provide office contact number",
+                               digitsonly: "Only digits"
+                           },
+                           <%=radiobut.UniqueID%>: {
+                               required: "Please select your Gender"
+                           },
+                           <%=nation.UniqueID%>: {
+                               required: "What's your nationality ?"
+                           },
+                           <%=religion.UniqueID%>: {
+                               required: "What's your religion ?",
+                               maxlength: "Can't exceed more then 8 character"
+                           },
+                           <%=address.UniqueID%>: {
+                               required: "Please enter your Home address"
+                           },
+                           <%=postal.UniqueID%>: {
+                               minlength: "Postal code must contain 5 digits",
+                               maxlength: "Postal code can't exceed more then 6 digits"
+                           },
+                           <%=pass.UniqueID%>: {
+                               required: "What is your password ?"
+
+                           },
+                           <%=repass.UniqueID%>: {
+                               required: "You must confirm your password",
+
+                           },
+                           <%=accountp.UniqueID%>: {
+                               minlength: "Pin must contain 6 digits",
+                               maxlength: "Pin cannot exceed 10 digits"
+                           },
+                           <%=fileupload.UniqueID%>: {
+                               required: "Please upload your photo"
+                           },
+                           <%=pemail.UniqueID%>: {
+                               required: "Please enter your an email"
+                           },
+                           <%=semail.UniqueID%>: {
+                               required: "Please enter your an email"
+                           },
+                           <%=dob.UniqueID%>: {
+                               required: "Please mention your correct Date of birth"
+                           }
+
                        }
-                   },
-
-                   messages: {
-                      <%=name.UniqueID%>: {
-                           required: "Please enter your name"
-
-                      },
-                       <%=lname.UniqueID%>:{
-                            required:"Please enter your last name"
-                       },
-                         <%=nic.UniqueID%>:{
-                             required:"Please enter your CNIC",
-                             digitsonly:" Invalid entry only numbers",
-                             minlength:"CNIC should have 13 character"
-                         },
-                         <%=salary.UniqueID%>:{
-                             required:"Please enter your salary",
-                             digitsonly:"Only digits"
-                         },
-                         <%=officeadd.UniqueID%>:{
-                             required:"Please provide your office address"
-                         },
-                        <%=contact2.UniqueID%>:{
-                            required:"Please provide office contact number",
-                            digitsonly:"Only digits"
-                        },
-                         <%=radiobut.UniqueID%>:{
-                            required:"Please select your Gender"
-                         },
-                        <%=nation.UniqueID%>:{
-                            required:"What's your nationality ?"
-                        },
-                       <%=religion.UniqueID%>:{
-                           required:"What's your religion ?",
-                           maxlength:"Can't exceed more then 8 character"
-                       },
-                        <%=address.UniqueID%>:{
-                            required:"Please enter your Home address"
-                        },
-                          <%=postal.UniqueID%>:   {
-                              minlength:"Postal code must contain 5 digits",
-                                 maxlength:"Postal code can't exceed more then 6 digits"
-                          },
-                         <%=pass.UniqueID%>:{
-                             required:"What is your password ?"
-
-                         },
-                         <%=repass.UniqueID%>:{
-                             required:"You must confirm your password",
-                         
-                         },
-                        <%=accountp.UniqueID%>: {
-                            minlength:"Pin must contain 6 digits",
-                            maxlength:"Pin cannot exceed 10 digits"  
-                        },
-                      <%=fileupload.UniqueID%>:{
-                              required:"Please upload your photo"    
-                          },
-                       <%=pemail.UniqueID%>:{
-                          required:"Please enter your an email"
-                       },
-                         <%=semail.UniqueID%>:{
-                            required:"Please enter your an email"
-                         },
-                         <%=dob.UniqueID%>:{
-                             required:"Please mention your correct Date of birth"
-                         }
-                        
-                   }
-               });
-           });
+                   });
+               }
+          
 
     </script> 
 </asp:Content>
@@ -525,11 +562,15 @@
                                   
                                 </div>
                                                     <div class="register-submit">
-                            <button type="submit"   class="btn btn-register btn-green">
+                            <button type="submit" id="but"  class="btn btn-register btn-green">
                                 <span>
-                                    <asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click1" /></span></button>
+                                    <asp:Button ID="Button1" runat="server"  Text="Submit" Style="background-color: transparent" BorderStyle="None"  /></span></button>
                      </div> 
-                            </div>                            
+                            <div id="dialog" style="display: none" align="center">
+                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    </div>
+                            
+                                                </div>                            
                         </div>
                     </div>
 
