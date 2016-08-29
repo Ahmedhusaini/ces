@@ -48,10 +48,7 @@
                                             <div class="outer-container">
                                                 <div class="inner-container">                                                   
                                                     <div class="table-body">
-                                                        <asp:GridView runat="server" ID="gridview_profile" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
-                                                           
-                                                          
-                                                        </asp:GridView>
+                                                        <!--here put the gridview to display teacher record------>
                                                     </div>
                                                 </div>
                                             </div>
