@@ -2,50 +2,33 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="TeacherHeadPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="TeacherPlaceHolder1" runat="server">
-    <div class="table-body">
-        <table class="edu-table-responsive table-hover">
-            <tr class="heading-content">
-              <td class="left heading-content" colspan="1">DAYS</td>             
-              <td class="left heading-content" colspan="1">PERIOD 1</td>
-              <td class="left heading-content" colspan="1">PERIOD 2</td>
-              <td class="left heading-content" colspan="1">PERIOD 3</td>
-              <td class="left heading-content" colspan="1">PERIOD 4</td> 
-              <td class="left heading-content" colspan="1">PERIOD 5</td>
-              <td class="left heading-content" colspan="1">PERIOD 6</td>
-              <td class="left heading-content" colspan="1">PERIOD 7</td>
-              <td class="left heading-content" colspan="1">PERIOD 8</td>
 
-            </tr>
-            <tr class="table-row">
-                <td class="left col-1"><a href="#"><span>1. MONDAY</span></a></td>
-                <td class="col-2"><span>PHD CS</span></td>
-                <td class="col-3"><span>10-4-2010</span></td>
-                <td class="col-4"><span>abc</span></td>
-            </tr>
-               <tr class="table-row">
-                <td class="left col-1"><a href="#"><span>2. TUESDAY</span></a></td>
-                <td class="col-2"><span>PHD CS</span></td>
-                <td class="col-3"><span>10-4-2010</span></td>
-                <td class="col-4"><span>abc</span></td>
-            </tr>
-               <tr class="table-row">
-                <td class="left col-1"><a href="#"><span>3. WEDNESDAY</span></a></td>
-                <td class="col-2"><span>PHD CS</span></td>
-                <td class="col-3"><span>10-4-2010</span></td>
-                <td class="col-4"><span>abc</span></td>
-            </tr>
-               <tr class="table-row">
-                <td class="left col-1"><a href="#"><span>4. THURSDAY</span></a></td>
-                <td class="col-2"><span>PHD CS</span></td>
-                <td class="col-3"><span>10-4-2010</span></td>
-                <td class="col-4"><span>abc</span></td>
-            </tr>
-               <tr class="table-row">
-                <td class="left col-1"><a href="#"><span>5. FRIDAY</span></a></td>
-                <td class="col-2"><span>PHD CS</span></td>
-                <td class="col-3"><span>10-4-2010</span></td>
-                <td class="col-4"><span>abc</span></td>
-            </tr>
-        </table>
+    <div class="table-body">
+        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        <asp:Button ID="Button1" runat="server" Text="Button" />
+
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataSourceID="SqlDataSource1" GridLines="Horizontal" Width="387px">
+            <Columns>
+                <asp:BoundField DataField="username" HeaderText="username" SortExpression="username" />
+                <asp:BoundField DataField="day" HeaderText="day" SortExpression="day" />
+                <asp:BoundField DataField="subject_name" HeaderText="subject_name" SortExpression="subject_name" />
+                <asp:BoundField DataField="start_time" HeaderText="start_time" SortExpression="start_time" />
+                <asp:BoundField DataField="end_time" HeaderText="end_time" SortExpression="end_time" />
+            </Columns>
+            <FooterStyle BackColor="White" ForeColor="#333333" />
+            <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="White" ForeColor="#333333" />
+            <SelectedRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
+            <SortedAscendingCellStyle BackColor="#F7F7F7" />
+            <SortedAscendingHeaderStyle BackColor="#487575" />
+            <SortedDescendingCellStyle BackColor="#E5E5E5" />
+            <SortedDescendingHeaderStyle BackColor="#275353" />
+        </asp:GridView>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [username], [day], [subject_name], [start_time], [end_time] FROM [timetable] WHERE ([username] = @username)">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="TextBox1" Name="username" PropertyName="Text" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
     </div>
 </asp:Content>

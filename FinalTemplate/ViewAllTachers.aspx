@@ -9,7 +9,7 @@
             teacherwidth();
             samesizeimage();
             setbuttonlayout();
-          
+            searchboxwidth();
         });
 
         function samesizeimage() {
