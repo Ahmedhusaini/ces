@@ -10,6 +10,7 @@ namespace FinalTemplate.source.Registration
     {
 
         public Database.Database myDatabase = new Database.Database("cesConnectionString");
+        Random random = new Random();
         public string RegisterSchool(int country_id, int city_id, int postalcode, string username, string password, int accountpin, string primaryemail, string secondaryemail, string contactPrimary, string contactSecondary, string schoolName, string ownerName, string foundedIn, string logo, int school_type_id, string campusName)
         {
             string locationid = myDatabase.GetLastValueByColumnName("loc_id", "tbl_location");
@@ -129,6 +130,8 @@ namespace FinalTemplate.source.Registration
         private string GenerateCampusID(string schoolName)
         {
             StringBuilder builder = new StringBuilder();
+
+            builder.Append(random.Next(1, 5000).ToString());
             builder.Append(schoolName.Substring(0, 5));
             builder.Append("/CES/");
             builder.Append(JFunctions.GetSystemDate());
@@ -139,15 +142,16 @@ namespace FinalTemplate.source.Registration
 
         private string GenerateAuthorizedID(string Username, string AccountPin)
         {
-            return Convert.ToString(Username.Substring(0, 3) + AccountPin.Substring(0, 3));
+            return Convert.ToString(random.Next(1, 500) + Username.Substring(0, 3) + AccountPin.Substring(0, 3));
         }
 
         private string GenerateSchoolID(string SchoolName, string OwnerName)
         {
-            Random random = new Random();
+
 
             StringBuilder id = new StringBuilder();
-            id.Append("C/");
+            id.Append(random.Next(3, 10));
+            id.Append("/C/");
             id.Append(SchoolName.Substring(0, 3));
             id.Append("/E/");
             id.Append(OwnerName.Substring(0, 3));
