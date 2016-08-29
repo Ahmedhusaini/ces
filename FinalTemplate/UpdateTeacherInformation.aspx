@@ -39,15 +39,23 @@
                     <div class="container">
                         <div class="intro-edu-wrapper">
                             <div class="row">
-                                <div class="col-md-5"><img src="assets/images/people-avatar-8.png" alt="" class="intro-image fadeInLeft animated wow"/></div>
-                                <div class="col-md-7">
+                                <div class="col-md-4"><img src="assets/images/people-avatar-8.png" alt="" class="intro-image fadeInLeft animated wow"/></div>
+                                <div class="col-md-8">
                                     <div class="intro-title">WHAT IS <b>EDUGATE</b> ?</div>
-                                    <div class="intro-content"><p>Aliquam pulvinar pellentesque purus, nec condimentum nibh. Aenean dapibus iaculis odio id vestibulum. Nam at justo ante. Aenean hendrerit gravida ligula, id lacinia sapien tristique eget. In elit ipsum, vestibulum eu pulvinar sed.</p>
-
-                                        <p>Maecenas eros mi, lacinia eu ultricies vel, elementum et justo. Ut at tortor a odio vestibulum suscipit non sit amet dolor. Morbi molestie magna nec metus facilisis, at iaculis mi adipiscing. Praesent ac diam velit. Curabitur lacinia tristique velit ut laoreet. Nam pretium id risus vitae fermentum. Aenean eu euismod justo. Aliquam sodales tortor elit, non luctus felis tristique sit amet.</p></div>
-                                    <div class="group-button">
-                                        <button class="btn btn-transition-2"><span>purchase theme</span></button>
-                                        <button class="btn btn-green"><span>start learn now</span></button>
+                                    <div class="course-syllabus">
+                                        <div class="course-syllabus-title underline">Courses syllabus</div>
+                                        <div class="course-table">
+                                            <div class="outer-container">
+                                                <div class="inner-container">                                                   
+                                                    <div class="table-body">
+                                                        <asp:GridView runat="server" ID="gridview_profile" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
+                                                           
+                                                          
+                                                        </asp:GridView>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

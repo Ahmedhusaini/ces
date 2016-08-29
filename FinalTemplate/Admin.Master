@@ -73,7 +73,7 @@
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
                                 <li><a href="ViewAllTachers.aspx" class="link-page">View All</a></li>
                                 <li><a href="TeacherOfTheMonth.aspx" class="link-page">Make Teacher of the month</a></li>
-                                <li><a href="event-detail.html" class="link-page">Update Teacher information</a></li>
+                                <li><a href="UpdateTeacherInformation.aspx" class="link-page">Update Teacher information</a></li>
                                 <li><a href="events.html" class="link-page">Give and modify existing privileges</a></li>
                             </ul>
                         </li>
