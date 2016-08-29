@@ -241,6 +241,7 @@
     <Content Include="select_resistration_type.aspx" />
     <Content Include="studentpanel.aspx" />
     <Content Include="StudentProfile.aspx" />
+    <Content Include="StudentUpdateProfile.aspx" />
     <Content Include="TeacherOfTheMonth.aspx" />
     <Content Include="TeacherRegistration.aspx" />
     <Content Include="TeacherPanel.aspx" />
@@ -405,6 +406,13 @@
     </Compile>
     <Compile Include="StudentProfile.aspx.designer.cs">
       <DependentUpon>StudentProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentUpdateProfile.aspx.cs">
+      <DependentUpon>StudentUpdateProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentUpdateProfile.aspx.designer.cs">
+      <DependentUpon>StudentUpdateProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="TeacherOfTheMonth.aspx.cs">
       <DependentUpon>TeacherOfTheMonth.aspx</DependentUpon>
