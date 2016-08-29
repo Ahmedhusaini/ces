@@ -92,10 +92,10 @@
                         </li>
                         <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Schedules<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                <li><a href="categories.html" class="link-page">View Class Timetable</a></li>
-                                <li><a href="categories.html" class="link-page">Manage Class Timetable</a></li>
-                                <li><a href="categories.html" class="link-page">View Teacher Timetable</a></li>
-                                <li><a href="categories.html" class="link-page">Manage Teacher Timetable</a></li>
+                                <li><a href="Teacher_timetable.aspx" class="link-page">View Class Timetable</a></li>
+                                <li><a href="Teacher_timetable.aspx" class="link-page">Manage Class Timetable</a></li>
+                                <li><a href="Teacher_timetable.aspx" class="link-page">View Teacher Timetable</a></li>
+                                <li><a href="Teacher_timetable.aspx" class="link-page">Manage Teacher Timetable</a></li>
                                 <li><a href="about-us.html" class="link-page">Syllabus</a></li>
                                 <li><a href="categories.html" class="link-page">Date Sheet</a></li>
                                 <li><a href="categories.html" class="link-page">Mark Sheet</a></li>
