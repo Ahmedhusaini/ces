@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using FinalTemplate.source.Functions;
+using System;
 
 namespace FinalTemplate
 {
@@ -16,15 +12,16 @@ namespace FinalTemplate
                 if (Session["userid"] != null)
                 {
                     lbl_schoolid.Text = "Your User ID: " + Session["userid"].ToString();
+                    CurrentUser user = new CurrentUser();
+                    //user.GetAuthorizedDetails(Session["user_id"].ToString());
                 }
                 else
                 {
                     Response.Redirect("~/Default.aspx");
                 }
             }
-            
         }
-        protected void btn_logout_Click(object sender,EventArgs e)
+        protected void btn_logout_Click(object sender, EventArgs e)
         {
             Session.Remove("userid");
             bool sessiongone = (Session["userid"] == null);

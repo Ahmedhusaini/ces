@@ -12,6 +12,7 @@
         public int UserTypeID { get; set; }
         public string UserType { get; set; }
         public int LoginCount { get; set; }
+        public int AccountPin { get; set; }
         public string GeneralID { get; set; }
         public string LastLoginDate { get; set; }
         public string FirstName { get; set; }
@@ -23,5 +24,15 @@
         public string Religion { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
+
+        public void GetAuthorizedDetails(string _authorizedid)
+        {
+            string[] columns = { "username", "password", "account_pin", "primary_email", "secondary_email", "usertype_id", "login_count", "last_login_date" };
+            string[] where = { "authorized_id" };
+            string[] whereOperator = { "=" };
+            string[] wherevalue = { _authorizedid };
+            // string[,] result = myDatabase.SelectQuery("tbl_authorized_users", columns, where, whereOperator, wherevalue);
+
+        }
     }
 }
