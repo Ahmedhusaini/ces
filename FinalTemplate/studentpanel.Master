@@ -45,12 +45,13 @@
             <div class="row">
                 <div class="col-md-5 topbar-left text-left info-text1">
 <%--                    <div class="email"><a href="#"><i class="topbar-icon fa fa-envelope-o"></i><span>info@ces.com</span></a></div>--%>
-                    <div class="email"><a href="Default.aspx"><i class="topbar-icon fa fa-envelope-o"></i><span>www.ces.edu.pk</span></a></div>
+                    <div class="email"><a href="Contact_Us.aspx" ><i class="topbar-icon fa fa-envelope-o"></i><span>www.ces.edu.pk</span></a></div>
                      <div class="hotline"><a href="javascript:void(0)"><i></i><span>| Reshaping Education into Digital World </span></a></div>
                 </div>
                 <div class="col-md-2 logo-topbar info-text2"><a href="index.html"><img src="assets/images/logo-color-1.png" alt=""/></a></div>
                 <div class="col-md-5 topbar-right text-right info-text3">
-                    <div class="group-sign-in"><a href="#" class="login"></a><a href="#" onclick="btn_logout_Click" class="register">Logout</a></div>
+                    <div class="hotline"><a href="StudentUpdateProfile.aspx"><span>Update your Password </span></a></div>
+                    <div class="email"><a href="#" class="login"></a><a href="#" onclick="btn_logout_Click" class="register">| Logout</a></div>
                 </div>
             </div>
         </div>
