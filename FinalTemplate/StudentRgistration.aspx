@@ -28,8 +28,7 @@
                     && /\d/.test(value) // has a digit
             },"please only Lowercase and must have digits ");
           
-            $("#form1").validate({
-                   
+            $("#form1").validate({                   
                 rules: {
                     <%=name.UniqueID%>:{
                         required: true,
@@ -43,8 +42,6 @@
                            required:true,
                            phone:true
                        },
-                   
-                     
                     <%=gurcontact.UniqueID%>:{
                            required:true,
                            phone:true

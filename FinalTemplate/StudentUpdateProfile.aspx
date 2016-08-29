@@ -10,45 +10,44 @@
         $.validator.addMethod("lettersonly", function (value, element) {
             return this.optional(element) || /^[a-z]+$/i.test(value);
         }, "Letters only please");
-        $.validator.addMethod("phone", function (phone_number, element) {
-            phone_number = phone_number.replace(/\s+/g, "");
-            return this.optional(element) || phone_number.length > 9 &&
-                phone_number.match(/^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/);
-        }, "Please specify a valid phone number with+92");
         $(document).ready(function () {
-            $('#name').validate({
+            $('#form1').validate({
                 rules: {
-                    name: {
+                    <%=txt_username1.UniqueID%>: {
                         required: true,
                         lettersonly: true
                     },
-                    lname: {
+                    <%=change_password.UniqueID%>: {
                         required: true,
-                        lettersonly: true
                     },
-                    contact1: {
-                        required: true,
-                        contact1: true
-                    }
+                     <%=txt_password.UniqueID%>: {
+                         required: true,
+                     },
+                     <%=conform_password.UniqueID%>: {
+                         required: true,
+                     },
                 },
 
                 messages: {
-                    name: {
+                    <%=txt_username1.UniqueID%>: {
                         required: "Please enter your name"
 
                     },
-                    lname:
-                        {
-                            required: "Please enter your last name"
-                        },
+                    <%=change_password.UniqueID%>:{
+                        required:"Please enter Password"
+                    },
+                        <%=txt_password.UniqueID%>: {
+                            required: "Please enter Password"
+                    },
+                    <%=conform_password.UniqueID%>:{
+                        required:"Please enter Password"
+                    },
                 }
             });
         });
-
         $(document).ready(function () {
             $('.rlp').removeClass("rlp");
             $('.register-form').css('margin-left', '25%');
-            centerform();
             centerText( <%=txt_username1.ClientID%>);
             centerText( <%=change_password.ClientID%>);
             centerText( <%=txt_password.ClientID%>);
@@ -56,7 +55,6 @@
             centerText( <%=conform_password.ClientID%>);
                removeBackToTop();
            });
-
            function centerform() {
                var windowHeight = $(window).height();
                var formheight = $('div.register-wrappe').height();
@@ -83,6 +81,19 @@
             padding-bottom: 26px;
             opacity: 0.95;
         }
+         label.error {
+            color: red;
+            display: inline-flexbox;
+            display: block;
+        }
+
+        input.error {
+            border: 1px solid red;
+            float: none;
+            color: red;
+            padding-left: .3em;
+            vertical-align: top;
+        }
     </style>
     <div class="page-register rlp">
         <div class="container">
@@ -100,7 +111,7 @@
                                     </span>
                                 </label>
                                 <!--p.help-block Warning !-->
-                                <asp:TextBox ID="txt_username1" runat="server" CssClass="form-control  form-input" Height="16px" placeholder="User name" Width="331px"></asp:TextBox>
+                                <asp:TextBox ID="txt_username1" runat="server" CssClass="form-control  form-input" Height="35px" placeholder="User name" Width="331px"></asp:TextBox>
                             </div>
                             <div style="padding-left: 131px">
                                 <label for="regname" class="control-label form-label">
@@ -109,16 +120,16 @@
                                 </label>
                                 <!-- p.help-block Warning !-->
                                 <br />
-                                <asp:TextBox ID="change_password" CssClass="form-control  form-input " placeholder="Password " Width="331px" runat="server" TextMode="Password" Height="16px"></asp:TextBox>
+                                <asp:TextBox ID="change_password" CssClass="form-control  form-input " placeholder="****" Width="331px" runat="server" TextMode="Password" Height="35px"></asp:TextBox>
                              </div>
                             <div style="padding-left: 131px">
                                 <label for="regname" class="control-label form-label">
-                                    Password <span class="highlight">*<br />
+                                    New Password <span class="highlight">*<br />
                                     </span>
                                 </label>
                                 <!-- p.help-block Warning !-->
                                 <br />
-                                <asp:TextBox ID="txt_password" CssClass="form-control  form-input " placeholder="Password " Width="331px" runat="server" TextMode="Password" Height="16px"></asp:TextBox>
+                                <asp:TextBox ID="txt_password" CssClass="form-control  form-input " placeholder="****" Width="331px" runat="server" TextMode="Password" Height="35px"></asp:TextBox>
                              </div>
                             <div style="padding-left: 131px">
                                 <label for="regname" class="control-label form-label">
@@ -127,8 +138,9 @@
                                 </label>
                                 <!-- p.help-block Warning !-->
                                 <br />
-                                <asp:TextBox ID="conform_password" CssClass="form-control  form-input " placeholder="Password " Width="331px" runat="server" TextMode="Password" Height="16px"></asp:TextBox>
-                             </div>
+                                <asp:TextBox ID="conform_password" CssClass="form-control  form-input " placeholder="****" Width="331px" runat="server" TextMode="Password" Height="35px"></asp:TextBox>
+                            <asp:CompareValidator ID="CompareValidator1" ControlToCompare="txt_password" ControlToValidate="conform_password" CssClass=" input.error" ForeColor="#ff0000" ErrorMessage="Your password does not match" runat="server" Display="Dynamic"></asp:CompareValidator> 
+                            </div>
                         </div>
                         <div class="register-submit">
                             <button type="submit" class="btn btn-register btn-green">
