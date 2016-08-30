@@ -107,6 +107,14 @@
                         <div class="register-form bg-w-form rlp-form">
                             <div style="padding-left: 131px">
                                 <label for="regname" class="control-label form-label">
+                                    Email <span class="highlight"> *<br />
+                                    </span>
+                                </label>
+                                <!--p.help-block Warning !-->
+                                <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control  form-input" Height="35px" placeholder="User name" Width="331px"></asp:TextBox>
+                            </div>
+                            <div style="padding-left: 131px">
+                                <label for="regname" class="control-label form-label">
                                     User Name <span class="highlight"> *<br />
                                     </span>
                                 </label>
