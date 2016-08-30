@@ -1,4 +1,9 @@
-﻿namespace FinalTemplate.source.Functions
+﻿using System;
+using System.Data;
+using System.Data.SqlClient;
+using System.Web;
+
+namespace FinalTemplate.source.Functions
 {
     public class CurrentUser
     {
@@ -27,12 +32,51 @@
 
         public void GetAuthorizedDetails(string _authorizedid)
         {
-            string[] columns = { "username", "password", "account_pin", "primary_email", "secondary_email", "usertype_id", "login_count", "last_login_date" };
-            string[] where = { "authorized_id" };
-            string[] whereOperator = { "=" };
-            string[] wherevalue = { _authorizedid };
-            string[] wheremultipleoperator = { "" };
-            string[,] result = myDatabase.SelectQuery("tbl_authorized_users", columns, where, whereOperator, wherevalue, wheremultipleoperator);
+            myDatabase.CreateConnection();
+            myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "sp_GetAuthorizedDetailsByAuthorizedID", true);
+            try
+            {
+                myDatabase.OpenConnection();
+                SqlParameter p_authorizedID = new SqlParameter("@authorized_id", SqlDbType.VarChar, 20);
+                //myDatabase.obj_sqlparameter = new SqlParameter[1];
+                //myDatabase.obj_sqlparameter[0].ParameterName = "@authorized_id";
+                //myDatabase.obj_sqlparameter[0].SqlDbType = SqlDbType.VarChar;
+                //myDatabase.obj_sqlparameter[0].Size = 20;
+                //myDatabase.obj_sqlparameter[0].Value = _authorizedid;
+                p_authorizedID.Value = _authorizedid;
+                myDatabase.obj_sqlcommand.Parameters.Add(p_authorizedID);
+                myDatabase.obj_reader = myDatabase.obj_sqlcommand.ExecuteReader();
+                if (myDatabase.obj_reader.HasRows)
+                {
+                    int totalRows = myDatabase.obj_reader.RecordsAffected;
+                    while (myDatabase.obj_reader.Read())
+                    {
+                        AuthorizedID = myDatabase.obj_reader["authorized_id"].ToString();
+                        Username = myDatabase.obj_reader["username"].ToString();
+                        Password = myDatabase.obj_reader["password"].ToString();
+                        AccountPin = Convert.ToInt32(myDatabase.obj_reader["account_pin"]);
+                        PrimaryEmailAddress = myDatabase.obj_reader["primary_email"].ToString();
+                        SecondaryEmailAddress = myDatabase.obj_reader["secondary_email"].ToString();
+                        UserTypeID = Convert.ToInt32(myDatabase.obj_reader["usertype_id"]);
+                        LoginCount = Convert.ToInt32(myDatabase.obj_reader["login_count"]);
+                        LastLoginDate = myDatabase.obj_reader["last_login_date"].ToString();
+                    }
+                }
+                else
+                {
+                    HttpContext.Current.Response.Write("No record found on this authorized id");
+                }
+            }
+            catch (Exception ex)
+            {
+                HttpContext.Current.Response.Write(ex.ToString());
+            }
+            finally
+            {
+                myDatabase.CloseConnection();
+                myDatabase.obj_reader.Close();
+
+            }
         }
     }
 }
