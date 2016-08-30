@@ -13,7 +13,7 @@ namespace FinalTemplate
                 {
                     lbl_schoolid.Text = "Your User ID: " + Session["userid"].ToString();
                     CurrentUser user = new CurrentUser();
-                    //user.GetAuthorizedDetails(Session["user_id"].ToString());
+                    user.GetAuthorizedDetails(Session["user_id"].ToString());
                 }
                 else
                 {
