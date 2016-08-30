@@ -17,6 +17,12 @@ namespace FinalTemplate
         protected void Page_Load(object sender, EventArgs e)
         {
            lbl_error.Visible =false;
+           Session.Remove("userid");
+           bool sessiongone = (Session["userid"] == null);
+           //if (sessiongone)
+           //{
+           //    Response.Redirect("~/Default.aspx");
+           //}
         }
 
         protected void Button1_Click(object sender, EventArgs e)

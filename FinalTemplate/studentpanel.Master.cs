@@ -15,13 +15,18 @@ namespace FinalTemplate
         }
         protected void btn_logout_Click(object sender, EventArgs e)
         {
-            
-            Session.Clear();
             Session.Remove("userid");
-            Session.Abandon();
+            bool sessiongone = (Session["userid"] == null);
+            if (sessiongone)
+            {
+                Response.Redirect("~/Default.aspx");
+            }
 
-            System.Web.Security.FormsAuthentication.SignOut();
-            Response.Redirect("Default.aspx");
+            //Session.Clear();
+            //Session.Remove("userid");
+            //Session.Abandon();
+            //System.Web.Security.FormsAuthentication.SignOut();
+            //Response.Redirect("Default.aspx");
 
         }
     }

@@ -8,8 +8,11 @@
                             <div class="teacher-info">
                                 <div class="staff-item2 customize">
                                     <div class="staff-item-wrapper">
-                                        <div class="staff-info"><a href="#" class="staff-avatar"><img src="assets/images/people-avatar-4.jpg" alt="" class="img-responsive">
-                                          
+                                        <div class="staff-info"><a href="#" class="staff-avatar"><%--<img src="assets/images/people-avatar-4.jpg" alt="" class="img-responsive"/>--%>
+                                            <asp:Button ID="Button1" runat="server" Text="UPLOAD" OnClick="Button1_Click" />
+                                            <asp:FileUpload ID="FileUpload1" runat="server" />
+                                            <asp:Label ID="Label1"  runat="server"  Text="Lbl_status" ></asp:Label>
+
                                                                 </a><a href="#" class="staff-name">barry join</a></div>
                                     </div>
                                    </div>
