@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Web;
 using System.Web.UI.WebControls;
-using System.Net;
-using System.Net.Mail;
-using System.IO;
-using FinalTemplate.source.Database;
-using FinalTemplate.source;
 
 namespace FinalTemplate.source.Functions
 {
@@ -42,7 +35,7 @@ namespace FinalTemplate.source.Functions
         //}
         public static void BindDropDownList(DropDownList ddl1, string displayField1, string valueField1, string queryy)
         {
-            Database.Database studentDatabase = new Database.Database("cesConnectionString2");
+            Database.Database studentDatabase = new Database.Database("cesConnectionString");
             studentDatabase.CreateConnection();
             studentDatabase.InitializeSQLCommandObject(studentDatabase.GetCurrentConnection, queryy);
             try
