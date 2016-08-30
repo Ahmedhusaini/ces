@@ -2,6 +2,7 @@
 using System.Web.UI.WebControls;
 using System.Net;
 using System.Net.Mail;
+using FinalTemplate.source.Registration;
 
 namespace FinalTemplate.source.Functions
 {
