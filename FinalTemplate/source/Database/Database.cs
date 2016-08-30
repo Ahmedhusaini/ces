@@ -401,7 +401,7 @@ namespace FinalTemplate.source.Database
             return finalResult;
 
         }
-        public string[,] SelectQuery(string TableName, string[] Columns,string[] whereColumn,string[] whereOperator,string[] whereValue,string[] multipleWhereClauseOperator)
+        public string[,] SelectQuery(string TableName, string[] Columns, string[] whereColumn, string[] whereOperator, string[] whereValue, string[] multipleWhereClauseOperator)
         {
 
             int columnCount = 0;
@@ -432,9 +432,9 @@ namespace FinalTemplate.source.Database
                     }
                     else
                     {
-                        Query.Append(" " + whereColumn[i] + " " + whereOperator[i] + " " + whereValue[i] + multipleWhereClauseOperator[i] +" ");
+                        Query.Append(" " + whereColumn[i] + " " + whereOperator[i] + " " + whereValue[i] + multipleWhereClauseOperator[i] + " ");
                     }
-                }                
+                }
             }
 
             CreateConnection();
@@ -551,11 +551,11 @@ namespace FinalTemplate.source.Database
         #endregion
         #endregion
         #region TableQueries
-        public string GetAuthorizedID(string username,string password)
+        public string GetAuthorizedID(string username, string password)
         {
-            string returnvalue= string.Empty;
-            string[] username_array={username};
-            string[] password_array={password};
+            string returnvalue = string.Empty;
+            string[] username_array = { username };
+            string[] password_array = { password };
             if (Jvalidate.FilterBlackLIstKeywords(username_array) && Jvalidate.FilterBlackLIstKeywords(password_array))
             {
                 Query.Clear();
@@ -591,8 +591,8 @@ namespace FinalTemplate.source.Database
                     Query.Clear();
                 }
             }
-                return returnvalue.ToString();
-            
+            return returnvalue.ToString();
+
         }
         //insecure method
         public string GetLastValueByColumnName(string columnName, string tableName)

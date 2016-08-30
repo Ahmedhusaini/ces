@@ -107,6 +107,14 @@
                         <div class="register-form bg-w-form rlp-form">
                             <div style="padding-left: 131px">
                                 <label for="regname" class="control-label form-label">
+                                    Email <span class="highlight"> *<br />
+                                    </span>
+                                </label>
+                                <!--p.help-block Warning !-->
+                                <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control  form-input" Height="35px" placeholder="User name" Width="331px"></asp:TextBox>
+                            </div>
+                            <div style="padding-left: 131px">
+                                <label for="regname" class="control-label form-label">
                                     User Name <span class="highlight"> *<br />
                                     </span>
                                 </label>
@@ -145,7 +153,8 @@
                         <div class="register-submit">
                             <button type="submit" class="btn btn-register btn-green">
                                 <span>
-                                    <asp:Button ID="Button1" runat="server" Text="Update" Style="background-color: transparent" BorderStyle="None" /></span></button>
+                                    <asp:Button ID="Button1" runat="server" Text="Update" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>
+                            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                         </div>
                     </asp:Panel>
                 </div>

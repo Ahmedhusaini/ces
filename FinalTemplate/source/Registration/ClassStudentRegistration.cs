@@ -8,19 +8,19 @@ namespace FinalTemplate.source
 {
     public class ClassStudentRegistration
     {
-        private Database.Database studentdatabase = new Database.Database("cesConnectionString2");
-        public string studentregister(string name,string lastname,string contactno,string gurdianname,string gurdiancontact,
+        private Database.Database studentdatabase = new Database.Database("cesConnectionString");
+        public string studentregister(string name, string lastname, string contactno, string gurdianname, string gurdiancontact,
                                 string gender, string dob, string nationality, string religion, int country, int city, string address, int postalcode,
-                                string prvschool,string lastclass,string image,string schoolname,int classname,int section,string username,
-                                int accountpin,string password,string primaryemail,string secondaryemail) 
+                                string prvschool, string lastclass, string image, string schoolname, int classname, int section, string username,
+                                int accountpin, string password, string primaryemail, string secondaryemail)
         {
             string dobid = studentdatabase.GetLastValueByColumnName("dob_id", "tbl_dob");
             string locationid = studentdatabase.GetLastValueByColumnName("loc_id", "tbl_location");
             string genaralid = studentdatabase.GetLastValueByColumnName("General_Id", "tbl_general");
             string classsectioninfo = studentdatabase.GetLastValueByColumnName("class_sec_info_id", "tbl_class_sec_info");
             string studentregid = studentdatabase.GetLastValueByColumnName("Std_id", "tbl_student_registeration");
-            
-            studentdatabase.CreateConnection();         
+
+            studentdatabase.CreateConnection();
             studentdatabase.InitializeSQLCommandObject(studentdatabase.GetCurrentConnection, "sp_student_register", true);
 
             SqlParameter General_IdParameter = new SqlParameter("@General_Id", SqlDbType.Int);
@@ -56,7 +56,7 @@ namespace FinalTemplate.source
             SqlParameter cityidParameter = new SqlParameter("@city_id", SqlDbType.Int);
             SqlParameter postalcodeParameter = new SqlParameter("@postal_code", SqlDbType.Int);
             SqlParameter locidoutParameter = new SqlParameter("@loc_id_out", SqlDbType.Int);
-            SqlParameter authorizedidParameter = new SqlParameter("@authorized_id", SqlDbType.VarChar,20);
+            SqlParameter authorizedidParameter = new SqlParameter("@authorized_id", SqlDbType.VarChar, 20);
             SqlParameter usernameParameter = new SqlParameter("@username", SqlDbType.VarChar, 50);
             SqlParameter passwordParameter = new SqlParameter("@password", SqlDbType.VarChar, 50);
             SqlParameter accountpinParameter = new SqlParameter("@account_pin", SqlDbType.Int);
@@ -67,47 +67,47 @@ namespace FinalTemplate.source
             SqlParameter lastlogindateParameter = new SqlParameter("@last_login_date", SqlDbType.Date);
             SqlParameter authorizedidoutParameter = new SqlParameter("@authorized_id_out", SqlDbType.VarChar, 20);
 
-            General_IdParameter.Value = Convert.ToInt32(genaralid)+1;
-            firstnameParameter.Value=name;
-            lastnameParameter.Value=lastname;
-            NationalityParameter.Value=nationality;
-            genderParameter.Value=gender;
-            photoParameter.Value=image;
-            religionParameter.Value=religion;
-            phoneParameter.Value=contactno;
-            addressParameter.Value=address;
-            generalidoutParameter.Direction= ParameterDirection.Output;
-            dobidParameter.Value= Convert.ToInt32(dobid)+1;
+            General_IdParameter.Value = Convert.ToInt32(genaralid) + 1;
+            firstnameParameter.Value = name;
+            lastnameParameter.Value = lastname;
+            NationalityParameter.Value = nationality;
+            genderParameter.Value = gender;
+            photoParameter.Value = image;
+            religionParameter.Value = religion;
+            phoneParameter.Value = contactno;
+            addressParameter.Value = address;
+            generalidoutParameter.Direction = ParameterDirection.Output;
+            dobidParameter.Value = Convert.ToInt32(dobid) + 1;
             dayParameter.Value = Convert.ToInt32(dob.Substring(2, 2));
             monthParameter.Value = Convert.ToInt32(dob.Substring(0, 1));
             yearParameter.Value = Convert.ToInt32(dob.Substring(0, 4));
-            dobidoutParameter.Direction= ParameterDirection.Output;
-            stdidParameter.Value=Generatestudentid(username,classname.ToString(),section.ToString());
-            gurdianParameter.Value=gurdianname; 
-            PreviousschoolParameter.Value=prvschool;
-            lastclassattendedParameter.Value=lastclass; 
-            schoolidParameter.Value=schoolname;
-            gurdiancontactParameter.Value = gurdiancontact;            
-            stdidoutParameter.Direction= ParameterDirection.Output;
-            classsecinfoidParameter.Value = Convert.ToInt32(classsectioninfo)+1 ;
-            classidParameter.Value=classname;
-            sectionidParameter.Value=section;
-            classsecinfoidoutParameter.Direction= ParameterDirection.Output;
-            locidParameter.Value=Convert.ToInt32(locationid) + 1;
-            countryidParameter.Value=country;
-            cityidParameter.Value=city;
-            postalcodeParameter.Value=postalcode;
-            locidoutParameter.Direction= ParameterDirection.Output;
-            authorizedidParameter.Value=GenerateAuthorizedID(username, accountpin.ToString());
-            usernameParameter.Value=username;
-            passwordParameter.Value=password;
-            accountpinParameter.Value=accountpin;
-            primaryemailParameter.Value=primaryemail;
-            secondaryemailParameter.Value=secondaryemail;
-            usertypeidParameter.Value=4;
-            logincountParameter.Value=0;
+            dobidoutParameter.Direction = ParameterDirection.Output;
+            stdidParameter.Value = Generatestudentid(username, classname.ToString(), section.ToString());
+            gurdianParameter.Value = gurdianname;
+            PreviousschoolParameter.Value = prvschool;
+            lastclassattendedParameter.Value = lastclass;
+            schoolidParameter.Value = schoolname;
+            gurdiancontactParameter.Value = gurdiancontact;
+            stdidoutParameter.Direction = ParameterDirection.Output;
+            classsecinfoidParameter.Value = Convert.ToInt32(classsectioninfo) + 1;
+            classidParameter.Value = classname;
+            sectionidParameter.Value = section;
+            classsecinfoidoutParameter.Direction = ParameterDirection.Output;
+            locidParameter.Value = Convert.ToInt32(locationid) + 1;
+            countryidParameter.Value = country;
+            cityidParameter.Value = city;
+            postalcodeParameter.Value = postalcode;
+            locidoutParameter.Direction = ParameterDirection.Output;
+            authorizedidParameter.Value = GenerateAuthorizedID(username, accountpin.ToString());
+            usernameParameter.Value = username;
+            passwordParameter.Value = password;
+            accountpinParameter.Value = accountpin;
+            primaryemailParameter.Value = primaryemail;
+            secondaryemailParameter.Value = secondaryemail;
+            usertypeidParameter.Value = 4;
+            logincountParameter.Value = 0;
             lastlogindateParameter.Value = Convert.ToDateTime(Jfunctionstudents.GetSystemDate());
-            authorizedidoutParameter.Direction= ParameterDirection.Output;
+            authorizedidoutParameter.Direction = ParameterDirection.Output;
 
             studentdatabase.obj_sqlcommand.Parameters.Add(General_IdParameter);
             studentdatabase.obj_sqlcommand.Parameters.Add(firstnameParameter);
@@ -180,7 +180,7 @@ namespace FinalTemplate.source
 
         private string GenerateAuthorizedID(string Username, string AccountPin)
         {
-            return Convert.ToString(Username .Substring(0, 3) + AccountPin.Substring(0, 3));
+            return Convert.ToString(Username.Substring(0, 3) + AccountPin.Substring(0, 3));
         }
 
         private string Generatestudentid(string lastname, string classname, string section)
