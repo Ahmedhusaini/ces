@@ -2,6 +2,7 @@
 using FinalTemplate.source.Functions;
 using System;
 using System.Text;
+using FinalTemplate.source.Registration;
 
 
 namespace FinalTemplate

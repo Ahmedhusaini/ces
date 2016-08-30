@@ -307,7 +307,7 @@
     <Compile Include="School_Rgistration.aspx.designer.cs">
       <DependentUpon>School_Rgistration.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\ClassStudentRegistration.cs" />
+    <Compile Include="source\Registration\ClassStudentRegistration.cs" />
     <Compile Include="source\Database\Database.cs" />
     <Compile Include="source\Functions\CurrentUser.cs" />
     <Compile Include="source\Functions\JFunctions.cs" />

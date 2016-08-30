@@ -2,8 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="RegisterHeadPlaceHolder" runat="server">
 
  <script src="assets/js/jquery-2.2.3.js"></script>   
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="assets/js/jquery.validate.js"></script>
-  <%-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>--%>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.js" type="text/javascript">
     
 </script>
@@ -15,7 +15,8 @@
            $(document).ready(function() {
               
                validation();
-             
+               popup();
+
 
            });
            
@@ -23,9 +24,15 @@
            
            function popup(){    
               
-                   $("#dialog").dialog({
-                       title: "Please Enter Your Child ID",
+               $("#dialog").dialog({
+
+                   title: "Please Enter Your Child ID",
+                   draggable:false,
+                   resizable:false,
+                   modal:true,
                        width: 430,
+                       height: 200,
+                    
                        buttons: {
                            Close: function() {
 
@@ -566,8 +573,9 @@
                                 <span>
                                     <asp:Button ID="Button1" runat="server"  Text="Submit" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click1"  /></span></button>
                      </div> 
-                            <div id="dialog" style="display: none" align="center">
-                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                            <div id="dialog" style="display: none" align="center" >
+                             
+                      Student ID:  <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
                     </div>
                             
                                                 </div>                            
