@@ -19,7 +19,8 @@ namespace FinalTemplate
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=JAHANGEER;Initial Catalog=ces;Persist Security Info=True;User ID=sa;Password=159abbasi789");
+            string confstu = ConfigurationManager.ConnectionStrings["cesConnectionString2"].ConnectionString;
+            SqlConnection con = new SqlConnection("confstu");
             SqlDataAdapter sda = new SqlDataAdapter("select username,password from tbl_authorized_users where username='" + txt_username1.Text + "' and password='" + change_password.Text + "'", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
