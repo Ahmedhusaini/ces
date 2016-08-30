@@ -1,16 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
-using FinalTemplate.source.Functions;
-using System.Drawing;
-using System.Configuration;
-using System.Net.Mail;
-using System.Net;
 
 namespace FinalTemplate
 {
@@ -29,12 +19,7 @@ namespace FinalTemplate
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            sendtodb();
-        }
-        public void sendtodb()
-        {
-            string confstu = ConfigurationManager.ConnectionStrings["cesConnectionString2"].ConnectionString;
-            SqlConnection con = new SqlConnection(confstu);
+            SqlConnection con = new SqlConnection(@"Data Source=JAHANGEER;Initial Catalog=ces;Persist Security Info=True;User ID=sa;Password=159abbasi789");
             SqlDataAdapter sda = new SqlDataAdapter("select username,password from tbl_authorized_users where username='" + txt_username1.Text + "' and password='" + change_password.Text + "'", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
@@ -45,10 +30,9 @@ namespace FinalTemplate
                     con.Open();
                     SqlCommand cmd = new SqlCommand("update tbl_authorized_users set password='" + txt_password.Text + "' where password='" + change_password.Text + "' and username='" + txt_username1.Text + "'", con);
                     cmd.ExecuteNonQuery();
-                  //  sendmail();
+                    con.Close();
                     Label1.Text = "Successfully";
                     Label1.ForeColor = System.Drawing.Color.DarkRed;
-                    con.Close(); 
                 }
                 else
                 {
@@ -59,27 +43,26 @@ namespace FinalTemplate
             {
                 Label1.Text = "check your password";
             }
+            //try 
+            //{
+            //    if (txt_username1.Text == "" || txt_username1.Text == string.Empty)
+            //    {
+            //        lbl_error.Visible = true;
+            //        lbl_error.Text = "username fields can not be null or empty.";
+            //        lbl_error.ForeColor = System.Drawing.Color.DarkRed;
+            //    }
+            //    else if (change_password.Text == "" || change_password.Text == string.Empty || txt_password.Text == "" || txt_password.Text == string.Empty || conform_password.Text == "" || conform_password.Text == string.Empty)
+            //    {
+            //        lbl_error.Visible = true;
+            //        lbl_error.Text = "username fields can not be null or empty.";
+            //        lbl_error.ForeColor = System.Drawing.Color.DarkRed;
+            //    }
+
+            //}
+            //catch (Exception exp)
+            //{
+            //    Response.Write(exp.Message); 
+            //}
         }
-
-        //public void sendmail()
-        //{
-        //    MailMessage mmsg = new MailMessage();
-        //    string useractivation = "http://shahwaizhasan106/StudentUpdateProfile.aspx?email=" + TextBox1.Text;
-
-        //    mmsg.From = new MailAddress("shahwaizhasan106@gmail.com");
-        //    mmsg.To.Add(TextBox1.Text);
-        //    mmsg.Subject = "Activation";
-        //    mmsg.IsBodyHtml = true;
-        //    SmtpClient client = new SmtpClient();
-        //    client.Host = "smpt.gmail.com";
-        //    mmsg.Body = "hi" + txt_username1.Text + "</br>this is</br><a href='" + useractivation+"'> click here</a>";
-        //    client.EnableSsl = true;
-
-        //    NetworkCredential networkCredential = new NetworkCredential("shahwaizhasan106@gmail.com", "teuss106");
-        //    client.UseDefaultCredentials = true;
-        //    client.Credentials = networkCredential;
-        //    client.Port = 587;
-        //    client.Send(mmsg);
-        //}
     }
 }

@@ -31,8 +31,8 @@
             string[] where = { "authorized_id" };
             string[] whereOperator = { "=" };
             string[] wherevalue = { _authorizedid };
-            // string[,] result = myDatabase.SelectQuery("tbl_authorized_users", columns, where, whereOperator, wherevalue);
-
+            string[] wheremultipleoperator = { "" };
+            string[,] result = myDatabase.SelectQuery("tbl_authorized_users", columns, where, whereOperator, wherevalue, wheremultipleoperator);
         }
     }
 }
