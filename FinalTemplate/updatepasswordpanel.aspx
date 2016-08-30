@@ -8,9 +8,9 @@
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <script type="text/javascript">
         
-        $.validator.addMethod("lettersonly", function (value, element) {
-            return this.optional(element) || /^[a-z]+$/i.test(value);
-        }, "Letters only please");
+        $.validator.addMethod( "lettersonly", function( value, element ) {
+            return this.optional( element ) || /^[a-z\s]+$/i.test( value );
+        }, "Letters only please" );
         $(document).ready(function () {
             $('#form1').validate({
                 
