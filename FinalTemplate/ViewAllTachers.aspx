@@ -69,7 +69,7 @@
                             </div>
                             <div class="list-categories-content row">
                                 <div class="customs-row">
-                                <div class="col-md-4 col-sm-6">
+                                    <div class="col-md-4 col-sm-6">
                                     <div class="edugate-layout-3">
                                         <div class="edugate-layout-3-wrapper">
                                             <a class="edugate-image">
@@ -111,8 +111,87 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-md-4 col-sm-6">
+                                        <div class="edugate-layout-3">
+                                            <div class="edugate-layout-3-wrapper"><a  class="edugate-image"><img  src="assets/images/cesThemeImages/teachers (4).jpg" alt="" class="img-responsive"/></a>
+
+                                                <div class="edugate-content"><a href="#" class="title">photography</a>
+
+                                                    <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
+                                                    <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
+                                                    <button class="btn btn-green"><span>View Details</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6">
+                                        <div class="edugate-layout-3">
+                                            <div class="edugate-layout-3-wrapper"><a  class="edugate-image"><img  src="assets/images/cesThemeImages/teachers (5).jpg" alt="" class="img-responsive"/></a>
+
+                                                <div class="edugate-content"><a href="#" class="title">business</a>
+
+                                                    <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
+                                                    <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
+                                                    <button class="btn btn-green"><span>View Details</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6">
+                                        <div class="edugate-layout-3">
+                                            <div class="edugate-layout-3-wrapper"><a  class="edugate-image"><img  src="assets/images/cesThemeImages/teachers (2).jpg" alt="" class="img-responsive"/></a>
+
+                                                <div class="edugate-content"><a href="#" class="title">communication</a>
+
+                                                    <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
+                                                    <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
+                                                    <button class="btn btn-green"><span>View Details</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                      <div class="col-md-4 col-sm-6">
+                                    <div class="edugate-layout-3">
+                                        <div class="edugate-layout-3-wrapper">
+                                            <a class="edugate-image">
+                                                <img src="assets/images/cesThemeImages/teachers (1).jpg" alt="" class="img-responsive" /></a>
+
+                                            <div class="edugate-content">
+                                                <a href="#" class="title">language</a>
+
+                                                <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
+                                                <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
+                                                <button class="btn btn-green"><span>View Details</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="customs-row">
+                                    <div class="col-md-4 col-sm-6">
+                                        <div class="edugate-layout-3">
+                                            <div class="edugate-layout-3-wrapper"><a  class="edugate-image"><img  src="assets/images/cesThemeImages/teachers (2).jpg" alt="" class="img-responsive"/></a>
+
+                                                <div class="edugate-content"><a href="#" class="title">software</a>
+
+                                                    <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
+                                                    <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
+                                                    <button class="btn btn-green"><span>View Details</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6">
+                                        <div class="edugate-layout-3">
+                                            <div class="edugate-layout-3-wrapper"><a  class="edugate-image"><img  src="assets/images/cesThemeImages/teachers (3).jpg" alt="" class="img-responsive"/></a>
+
+                                                <div class="edugate-content"><a href="#" class="title">social media</a>
+
+                                                    <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
+                                                    <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
+                                                    <button class="btn btn-green"><span>View Details</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="col-md-4 col-sm-6">
                                         <div class="edugate-layout-3">
                                             <div class="edugate-layout-3-wrapper"><a  class="edugate-image"><img  src="assets/images/cesThemeImages/teachers (4).jpg" alt="" class="img-responsive"/></a>
@@ -153,6 +232,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
