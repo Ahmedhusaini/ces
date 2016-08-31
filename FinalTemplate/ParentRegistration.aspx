@@ -47,7 +47,7 @@
                    std.Std_id = $('#txtid').val();
 
                    $.ajax({
-                       url: 'Studentidservice.asmx/Savestudentid',
+                       url: 'source/WebService/Studentidservice.asmx/Savestudentid',
                        method: 'post',
                        contentType: 'application/json; charset=utf-8',
                        data: '{studentid :' + JSON.stringify(std) + '}',
