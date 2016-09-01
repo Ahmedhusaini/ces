@@ -50,7 +50,7 @@
                 </div>
                 <div class="col-md-2 logo-topbar info-text2"><a href="index.html"><img src="assets/images/logo-color-1.png" alt=""/></a></div>
                 <div class="col-md-5 topbar-right text-right info-text3">
-                    <div class="hotline"><a href="StudentUpdateProfile.aspx"><span>Update your Password </span></a></div>
+                    <div class="hotline"><a href="updatepasswordpanel.aspx"><span>Update your Password </span></a></div>
                     <div class="email"><a href="#" class="login"></a><a href="#" onclick="btn_logout_Click" class="register">| Logout</a></div>
                 </div>
             </div>
