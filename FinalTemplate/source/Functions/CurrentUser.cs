@@ -7,33 +7,33 @@ namespace FinalTemplate.source.Functions
 {
     public class CurrentUser
     {
-        private Database.Database myDatabase = new Database.Database("cesConnectionString");
+        static private Database.Database myDatabase = new Database.Database("cesConnectionString");
         //tbl_authorized_users columns
-        public string AuthorizedID { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public int AccountPin { get; set; }
-        public string PrimaryEmailAddress { get; set; }
-        public string SecondaryEmailAddress { get; set; }
-        public int UserTypeID { get; set; }
-        public int LoginCount { get; set; }
-        public string LastLoginDate { get; set; }
+        static public string AuthorizedID { get; set; }
+        static public string Username { get; set; }
+        static public string Password { get; set; }
+        static public int AccountPin { get; set; }
+        static public string PrimaryEmailAddress { get; set; }
+        static public string SecondaryEmailAddress { get; set; }
+        static public int UserTypeID { get; set; }
+        static public int LoginCount { get; set; }
+        static public string LastLoginDate { get; set; }
 
         //personal details
-        public string UserType { get; set; }
-        public int GeneralID { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public int DateOfBirthID { get; set; }
-        public string Nationality { get; set; }
-        public string Gender { get; set; }
-        public string Photo { get; set; }
-        public string Religion { get; set; }
-        public string Phone { get; set; }
-        public string Address { get; set; }
-        public int LocationID { get; set; }
+        static public string UserType { get; set; }
+        static public int GeneralID { get; set; }
+        static public string FirstName { get; set; }
+        static public string LastName { get; set; }
+        static public int DateOfBirthID { get; set; }
+        static public string Nationality { get; set; }
+        static public string Gender { get; set; }
+        static public string Photo { get; set; }
+        static public string Religion { get; set; }
+        static public string Phone { get; set; }
+        static public string Address { get; set; }
+        static public int LocationID { get; set; }
 
-        public void GetAuthorizedDetails(string _authorizedid)
+        static public void GetAuthorizedDetails(string _authorizedid)
         {
             myDatabase.CreateConnection();
             myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "sp_GetAuthorizedDetailsByAuthorizedID", true);
@@ -77,7 +77,7 @@ namespace FinalTemplate.source.Functions
             }
         }
 
-        public void GetPersonalDetails(int _generalid)
+        static public void GetPersonalDetails(int _generalid)
         {
             //teacher,student,parent,principal mein general id hai
             myDatabase.CreateConnection();
