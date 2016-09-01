@@ -11,7 +11,7 @@
         $.validator.addMethod( "lettersonly", function( value, element ) {
             return this.optional( element ) || /^[a-z\s]+$/i.test( value );
         }, "Letters only please" );
-        $(document).ready(function () {
+        function validation() {
             $('#form1').validate({
                 
                 rules: {
@@ -28,10 +28,6 @@
                     <%=conformpassword.UniqueID%>: {
                         required: true,
                     },
-                     <%=a.UniqueID%>: {
-                         required: true,
-                         lettersonly: true
-                     },
                 },
 
                 messages: {
@@ -48,12 +44,10 @@
                     <%=conformpassword.UniqueID%>:{
                         required:"Please enter Password"
                     },
-                      <%=a.UniqueID%>:{
-                          required:"Please enter Password"
-                      },
                 }
             });
-        });
+        }
+       
         $(document).ready(function () {
             $('.rlp').removeClass("rlp");
             $('.register-form').css('margin-left', '25%');
@@ -61,15 +55,10 @@
             centerText( <%=changepassword.ClientID%>);
             centerText( <%=newpassword.ClientID%>);
             centerText( <%=conformpassword.ClientID%>);
-            centerText( <%=a.ClientID%>);
             removeBackToTop();
+            validation();
         });
-        function centerform() {
-            var windowHeight = $(window).height();
-            var formheight = $('div.register-wrappe').height();
-            var newheight = windowHeight - formheight;
-            $('div.register-wrappe').css('padding-top', newheight + " px");
-        }
+
 
         function centerText(control) {
             $(control).css('text-align', 'center');
@@ -103,12 +92,12 @@
     </style>
                     <div class="page-login rlp">
                         <div class="container">
+
                             <div class="register-wrapper rlp-wrapper reg-sk" style="opacity: 0.98;">
                                 <div class="register-table rlp-table">
                                     <div class="register-title rlp-title">Update Your CES Password</div>
                                     <asp:Panel ID="Panel1" runat="server">
                                         <div class="register-form bg-w-form rlp-form">
-                                            <asp:TextBox ID="a" CssClass="form-control form-input" runat="server"></asp:TextBox>
                                             <div style="padding-left: 131px">
                                                 <label for="regname" class="control-label form-label">
                                                     User Name <span class="highlight">*<br />

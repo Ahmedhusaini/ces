@@ -8,9 +8,9 @@ namespace FinalTemplate.source.Registration
 {
     public class CParentsregistraion
     {
-        private Database.Database mdata = new Database.Database("cesConnectionString");
+        private Database.Database mdata = new Database.Database("cesConnectionString3");
 
-        public string Registerparents(string firstname, string lastname, string nationality, string gender, string photo,
+        public string Registerparents(string firstname, string lastname, string nationality, string gender,string dob, string photo,
             string religion, string phone, string address, string officeaddress, string officeno, string cnicno,
             string postdesignation, string salaryanum, int country_id, int city_id, int postalcode, string username,
             string password, int accountpin, string primaryemail, string secondaryemail)
@@ -18,9 +18,6 @@ namespace FinalTemplate.source.Registration
             string locationid = mdata.GetLastValueByColumnName("loc_id", "tbl_location");
             string genaralid = mdata.GetLastValueByColumnName("General_Id", "tbl_general");
             string dobid = mdata.GetLastValueByColumnName("dob_id", "tbl_dob");
-
-
-
 
             mdata.CreateConnection();
             mdata.InitializeSQLCommandObject(mdata.GetCurrentConnection, "SP_PARENTREGISTRATIONN", true);
@@ -83,9 +80,9 @@ namespace FinalTemplate.source.Registration
             generalidoutParameter.Direction = ParameterDirection.Output;
             parentidoutParameter.Direction = ParameterDirection.Output;
             dobidParameter.Value = Convert.ToInt32(dobid) + 1;
-            dayParameter.Value = Convert.ToInt32(Jfunctionparents.GetSystemDate().Substring(2, 2));
-            monthParameter.Value = Convert.ToInt32(Jfunctionparents.GetSystemDate().Substring(0, 1));
-            yearParameter.Value = Convert.ToInt32(Jfunctionparents.GetSystemDate().Substring(5, 4));
+            dayParameter.Value = Convert.ToInt32(dob.Substring(2, 2));
+            monthParameter.Value = Convert.ToInt32(dob.Substring(0, 1));
+            yearParameter.Value = Convert.ToInt32(dob.Substring(0, 4));
             dobidoutParameter.Direction = ParameterDirection.Output;
             locidParameter.Value = Convert.ToInt32(locationid) + 1;
             countryidParameter.Value = country_id;
