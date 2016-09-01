@@ -327,7 +327,6 @@
     <Compile Include="source\Registration\ClassSchoolRegistration.cs" />
     <Compile Include="source\Registration\CParentsregistration.cs" />
     <Compile Include="source\Registration\Package.cs" />
-    <Compile Include="studentid.cs" />
     <Compile Include="source\WebServices\Studentidservice.asmx.cs">
       <DependentUpon>Studentidservice.asmx</DependentUpon>
       <SubType>Component</SubType>
