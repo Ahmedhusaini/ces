@@ -196,3 +196,6 @@
 .top {
     z-index:999;
 }
+.alignfix {
+    padding-left: 20px;
+}

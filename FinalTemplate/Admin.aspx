@@ -10,10 +10,13 @@
             $('.item-course').css("height", "280px");
             $('#scrollLogo').css({ 'height': '54px', 'width': '63px' });
             $('#mainLogo').css({ 'height': '90px', 'width': '105px' });
-            $('img[class=img-responsive]').css({'width':'350px','height':'450px','border-radius':'50%'});
+            $('div img[alt=TeacherOfTheMonth]').css({ 'width': '350px', 'height': '450px', 'border-radius': '50%' });
+            $('div.staff-info a img[alt=teachers]').css({ 'height': '150px', 'width': '150px' });
+            $('.best-staff-wrapper').mouseenter(function () {
+                 $('a img').css({ 'height': '150px', 'width': '150px','transition':'3s'});
+            });
         });
     </script> 
-    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="AdminContentPlaceHolder" runat="server">
     <!-- SLIDER BANNER-->
@@ -113,7 +116,7 @@
                             <table class="edu-table-responsive">
                                 <thead>
                                     <tr class="heading-table">
-                                        <th class="col-1">Teacher ID</th>
+                                        <th class="col-3">Teacher ID</th>
                                         <th class="col-2">Teacher Name</th>
                                         <th class="col-3">Make Teacher Of the Month</th>
                                     </tr>
@@ -124,43 +127,43 @@
                             <table class="edu-table-responsive table-hover">
                                 <tbody>
                                     <tr class="table-row">
-                                        <td class="col-1"><span>ED1</span></td>
+                                        <td class="col-3"><span>ED1</span></td>
                                         <td class="col-2"><a href="courses-detail.html">Sport Exercise Sciences</a></td>
                                         <td class="col-3"><span>
                                             <asp:Button ID="btn1" Text="Okay" runat="server" /><asp:Button ID="btn2" Text="Reject" runat="server" /></span></td>
                                     </tr>
                                     <tr class="table-row">
-                                        <td class="col-1"><span>ED1</span></td>
+                                        <td class="col-3"><span>ED1</span></td>
                                         <td class="col-2"><a href="courses-detail.html">Learning Website Optimization With Bootstrap</a></td>
                                         <td class="col-3"><span>
                                             <asp:Button ID="Button1" Text="Okay" runat="server" /><asp:Button ID="Button2" Text="Reject" runat="server" /></span></td>
                                     </tr>
                                     <tr class="table-row">
-                                        <td class="col-1"><span>ED1</span></td>
+                                        <td class="col-3"><span>ED1</span></td>
                                         <td class="col-2"><a href="courses-detail.html">Skeching Custom Item Prize Design</a></td>
                                         <td class="col-3"><span>
                                             <asp:Button ID="Button3" Text="Okay" runat="server" /><asp:Button ID="Button4" Text="Reject" runat="server" /></span></td>
                                     </tr>
                                     <tr class="table-row">
-                                        <td class="col-1"><span>ED1</span></td>
+                                        <td class="col-3"><span>ED1</span></td>
                                         <td class="col-2"><a href="courses-detail.html">Learning Website Optimization With Bootstrap</a></td>
                                         <td class="col-3"><span>
                                             <asp:Button ID="Button5" Text="Okay" runat="server" /><asp:Button ID="Button6" Text="Reject" runat="server" /></span></td>
                                     </tr>
                                     <tr class="table-row">
-                                        <td class="col-1"><span>ED1</span></td>
+                                        <td class="col-3"><span>ED1</span></td>
                                         <td class="col-2"><a href="courses-detail.html">Learning Viral Web Design Projects</a></td>
                                         <td class="col-3"><span>
                                             <asp:Button ID="Button7" Text="Okay" runat="server" /><asp:Button ID="Button8" Text="Reject" runat="server" /></span></td>
                                     </tr>
                                     <tr class="table-row">
-                                        <td class="col-1"><span>ED1</span></td>
+                                        <td class="col-3"><span>ED1</span></td>
                                         <td class="col-2"><a href="courses-detail.html">Email Marketing Strategy With MailChimp</a></td>
                                         <td class="col-3"><span>
                                             <asp:Button ID="Button9" Text="Okay" runat="server" /><asp:Button ID="Button10" Text="Reject" runat="server" /></span></td>
                                     </tr>
                                     <tr class="table-row">
-                                        <td class="col-1"><span>ED1</span></td>
+                                        <td class="col-3"><span>ED1</span></td>
                                         <td class="col-2"><a href="courses-detail.html">Social Media Network & Marketing</a></td>
                                         <td class="col-3"><span>
                                             <asp:Button ID="Button11" Text="Okay" runat="server" /><asp:Button ID="Button12" Text="Reject" runat="server" /></span></td>
@@ -221,6 +224,7 @@
             </div>
         </div>
     </div>
+    
     <!-- WHY CHOOSE US-->
     <div class="section why-choose-us">
         <div class="why-choose-us-wrapper-top">
@@ -232,9 +236,10 @@
                     <button onclick="window.location.href='categories.html'" class="btn btn-green-2"><span>View Complete Profile</span></button>
                 </div>
                 <div data-wow-delay="0.2s" data-wow-duration="1.2s" class="background-girl-1 wow fadeInUp">
-                    <img src="assets/images/girl-1.png" alt="" class="img-responsive" /></div>
+                    <img src="assets/images/girl-1.png" alt="TeacherOfTheMonth" class="img-responsive" /></div>
             </div>
         </div>
+        
         <div class="why-choose-us-wrapper-bottom background-opacity">
             <div class="container">
                 <div data-wow-delay="0.4s" data-wow-duration="1s" class="row why-choose-us-wrapper wow zoomIn">
@@ -274,10 +279,10 @@
                         <div class="staff-item-wrapper">
                             <div class="staff-info">
                                 <a href="#" class="staff-avatar">
-                                    <img src="assets/images/people-avatar-2.jpg" alt="" class="img-responsive" /></a><a href="#" class="staff-name">Alex trevor</a>
+                                    <img src="assets/images/cesThemeImages/teachers (1).jpg" alt="teachers" class="img-responsive" /></a><a href="#" class="staff-name">Zaheer Abro</a>
 
                                 <div class="staff-job">head teacher</div>
-                                <div class="staff-desctiption">Nam libelo tempore, cum soluta nobis est eligendi optio cumque nilhi impedil quo minus end maximie fade posimus the end.</div>
+                                <div class="staff-desctiption"><a href="#">Send Email</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#" >Send SMS</a></div>
                             </div>
                         </div>
                         <div class="staff-socials"><a href="#" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" class="google"><i class="fa fa-google-plus"></i></a><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></div>
@@ -286,10 +291,10 @@
                         <div class="staff-item-wrapper">
                             <div class="staff-info">
                                 <a href="#" class="staff-avatar">
-                                    <img src="assets/images/people-avatar-3.jpg" alt="" class="img-responsive" /></a><a href="#" class="staff-name">lana simth</a>
+                                    <img src="assets/images/cesThemeImages/teachers (2).jpg" alt="teachers" class="img-responsive" /></a><a href="#" class="staff-name">Saeen Soomro</a>
 
                                 <div class="staff-job">vice head teacher</div>
-                                <div class="staff-desctiption">Nam libelo tempore, cum soluta nobis est eligendi optio cumque nilhi impedil quo minus end maximie fade posimus the end.</div>
+                                <div class="staff-desctiption"><a href="#" >Send Email</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" >Send SMS</a></div>
                             </div>
                         </div>
                         <div class="staff-socials"><a href="#" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" class="google"><i class="fa fa-google-plus"></i></a><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></div>
@@ -298,10 +303,10 @@
                         <div class="staff-item-wrapper">
                             <div class="staff-info">
                                 <a href="#" class="staff-avatar">
-                                    <img src="assets/images/people-avatar-4.jpg" alt="" class="img-responsive" /></a><a href="#" class="staff-name">barry join</a>
+                                    <img src="assets/images/cesThemeImages/teachers (3).jpg" alt="teachers" class="img-responsive" /></a><a href="#" class="staff-name">barry join</a>
 
                                 <div class="staff-job">advisory professor</div>
-                                <div class="staff-desctiption">Nam libelo tempore, cum soluta nobis est eligendi optio cumque nilhi impedil quo minus end maximie fade posimus the end.</div>
+                                <div class="staff-desctiption"><a href="#" >Send Email</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" >Send SMS</a></div>
                             </div>
                         </div>
                         <div class="staff-socials"><a href="#" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" class="google"><i class="fa fa-google-plus"></i></a><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></div>
@@ -310,10 +315,10 @@
                         <div class="staff-item-wrapper">
                             <div class="staff-info">
                                 <a href="#" class="staff-avatar">
-                                    <img src="assets/images/people-avatar-5.jpg" alt="" class="img-responsive" /></a><a href="#" class="staff-name">Ven Tomarme</a>
+                                    <img src="assets/images/cesThemeImages/teachers (4).jpg" alt="teachers" class="img-responsive" /></a><a href="#" class="staff-name">Ven Tomarme</a>
 
                                 <div class="staff-job">Design teacher</div>
-                                <div class="staff-desctiption">Nam libelo tempore, cum soluta nobis est eligendi optio cumque nilhi impedil quo minus end maximie fade posimus the end.</div>
+                                <div class="staff-desctiption"><a href="#" >Send Email</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" >Send SMS</a></div>
                             </div>
                         </div>
                         <div class="staff-socials"><a href="#" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" class="google"><i class="fa fa-google-plus"></i></a><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></div>
