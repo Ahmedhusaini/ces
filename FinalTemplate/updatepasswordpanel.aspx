@@ -90,11 +90,11 @@
             vertical-align: top;
         }
     </style>
-                    <div class="page-login rlp">
+                    <div class="page-login rlp" >
                         <div class="container">
 
                             <div class="register-wrapper rlp-wrapper reg-sk" style="opacity: 0.98;">
-                                <div class="register-table rlp-table">
+                                <div class="register-table rlp-table" style="box-shadow:5px 5px 50px 5px">
                                     <div class="register-title rlp-title">Update Your CES Password</div>
                                     <asp:Panel ID="Panel1" runat="server">
                                         <div class="register-form bg-w-form rlp-form">

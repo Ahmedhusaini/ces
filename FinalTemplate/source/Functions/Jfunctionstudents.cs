@@ -28,7 +28,7 @@ namespace FinalTemplate.source.Functions
                 SmtpClient smtp = new SmtpClient();
                 smtp.Host = "smtp.gmail.com";
                 smtp.EnableSsl = true;
-                NetworkCredential networkCredential = new NetworkCredential(smtpUsername, "teuss106");
+                NetworkCredential networkCredential = new NetworkCredential(smtpUsername, "uombhdylobfcwnjp");
                 smtp.UseDefaultCredentials = true;
                 smtp.Credentials = networkCredential;
                 smtp.Port = 587;
