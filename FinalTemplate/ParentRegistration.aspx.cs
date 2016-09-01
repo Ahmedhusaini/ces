@@ -49,14 +49,17 @@ namespace FinalTemplate
 
             try
             {
-                result = classparent.Registerparents(name.Text, lname.Text, nation.Text, radiobut.SelectedValue, fileupload.FileName, religion.Text, contact1.Text, address.Text, officeadd.Text,
-                    contact2.Text,nic.Text,post.Text,salary.Text,1,Convert.ToInt32(DropDownList2.SelectedValue),Convert.ToInt32(postal.Text),user.Text,pass.Text,
+                result = classparent.Registerparents(name.Text, lname.Text, nation.Text, radiobut.SelectedValue, dob.Text,
+                    fileupload.FileName, religion.Text, contact1.Text, address.Text, officeadd.Text,
+                    contact2.Text,nic.Text,post.Text,salary.Text,1,Convert.ToInt32(DropDownList2.SelectedValue),
+                    Convert.ToInt32(postal.Text),user.Text,pass.Text,
                     Convert.ToInt32(accountp.Text),pemail.Text,semail.Text);
                 if (result == "true")
                 {
                     //JFunctions.SendEmail(pemail.Text, "CES - Registration", EmailBody());
                    
-                    ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "tmp", "popup();", true);
+                    //ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "tmp", "popup();", true);
+                    Response.Write("Rigister");
                     
                 }
                 else
