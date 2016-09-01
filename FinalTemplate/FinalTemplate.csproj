@@ -248,7 +248,6 @@
     <Content Include="Default.aspx" />
     <Content Include="news_description.aspx" />
     <Content Include="ParentRegistration.aspx" />
-    <Content Include="sample.aspx" />
     <Content Include="select_resistration_type.aspx" />
     <Content Include="studentpanel.aspx" />
     <Content Include="StudentProfile.aspx" />
@@ -387,13 +386,6 @@
     </Compile>
     <Compile Include="Register.Master.designer.cs">
       <DependentUpon>Register.Master</DependentUpon>
-    </Compile>
-    <Compile Include="sample.aspx.cs">
-      <DependentUpon>sample.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="sample.aspx.designer.cs">
-      <DependentUpon>sample.aspx</DependentUpon>
     </Compile>
     <Compile Include="select_resistration_type.aspx.cs">
       <DependentUpon>select_resistration_type.aspx</DependentUpon>
