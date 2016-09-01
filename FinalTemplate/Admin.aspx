@@ -195,22 +195,22 @@
                                         <div class="col-sm-3">
                                             <div class="progress-bar-number">
                                                 <div data-from="0" data-to="45" data-speed="1000" class="num">0</div>
-                                                <p class="name-inner">teachers</p></div>
+                                                <p class="name-inner">Registered Teachers</p></div>
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="progress-bar-number">
                                                 <div data-from="0" data-to="56" data-speed="1000" class="num">0</div>
-                                                <p class="name-inner">courses</p></div>
+                                                <p class="name-inner">Offered Courses</p></div>
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="progress-bar-number">
                                                 <div data-from="0" data-to="165" data-speed="1000" class="num">0</div>
-                                                <p class="name-inner">members</p></div>
+                                                <p class="name-inner">Registered Students</p></div>
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="progress-bar-number">
                                                 <div data-from="0" data-to="15" data-speed="1000" class="num">0</div>
-                                                <p class="name-inner">Countries</p></div>
+                                                <p class="name-inner">Total Registered Users</p></div>
                                         </div>
                                     </div>
                                 </div>
@@ -320,28 +320,20 @@
                     <div class="container">
                         <div class="group-title-index"><h4 class="top-title">latest news</h4>
 
-                            <h2 class="center-title">all about edugate updates</h2>
+                            <h2 class="center-title">Last news you have updated on the portal</h2>
 
                             <div class="bottom-title"><i class="bottom-icon icon-a-01-01"></i></div>
                         </div>
                         <div class="latest-news-wrapper">
                             <div class="edugate-layout-1">
                                 <div class="edugate-image"><img src="assets/images/news/news-1.jpg" alt="" class="img-responsive"/></div>
-                                <div class="edugate-content"><a href="news-detail.html" class="title">Effective researching method</a>
+                                <div class="edugate-content"><a href="news-detail.html" class="title">New Year Function</a>
 
                                     <div class="info">
                                         <div class="author item"><a href="#">By Admin</a></div>
                                         <div class="date-time item"><a href="#">17 sep 2015</a></div>
                                     </div>
-                                    <div class="info-more">
-                                        <div class="view item"><i class="fa fa-user"></i>
-
-                                            <p> 56</p></div>
-                                        <div class="comment item"><i class="fa fa-comment"></i>
-
-                                            <p> 239</p></div>
-                                    </div>
-                                    <div class="description">Dalmatian hello amazing the rmore flung as thanks a manta dealt to under emu some the and one baldbe dear sobbingly save and spitefully less Dalmatian hello amazing the rmore flung as thanks a manta dealt to under emu some the and one baldbe dear sobbingly save and spitefully Dalmatian hello amazing the...</div>
+                                    <div class="description">All Students from all classes are invited to attend the event. It is for every student and they can bring their friends and loved ones too. All Students from all classes are invited to attend the event. It is for every student and they can bring their friends and loved ones too.</div>
                                     <button onclick="window.location.href='news-detail.html'" class="btn btn-green"><span>learn now</span></button>
                                 </div>
                             </div>                                                 
