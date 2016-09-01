@@ -2,6 +2,7 @@
 using FinalTemplate.source.Functions;
 using System;
 using System.Text;
+using FinalTemplate.source.Registration;
 
 
 namespace FinalTemplate
@@ -51,7 +52,7 @@ namespace FinalTemplate
 
                 if (result == "true")
                 {
-                   // Jfunctionstudents.SendEmail(pemail.Text, "CES - Registration", EmailBody());
+                   Jfunctionstudents.SendEmail(pemail.Text, "CES - Registration", EmailBody());
                     Response.Write("Register Successfully Complete");
                 }
                 else

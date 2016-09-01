@@ -40,6 +40,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Recaptcha">
+      <HintPath>C:\Users\shahwaiz\Downloads\recaptcha-dotnet-1.0.5.0-binary\Recaptcha.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -78,12 +81,20 @@
     <Content Include="assets\images\crissxcross.png" />
     <Content Include="assets\images\green-bg-img.jpg" />
     <Content Include="assets\images\registerschool_green.jpg" />
+    <Content Include="assets\images\team member\Ahmed.jpg" />
+    <Content Include="assets\images\team member\jahangeer.jpg" />
+    <Content Include="assets\images\team member\sid.jpg" />
+    <Content Include="assets\images\team member\sidd.jpg" />
+    <Content Include="assets\images\team member\siddique.jpg" />
+    <Content Include="assets\images\team member\shaheryar.jpg" />
+    <Content Include="assets\images\team member\shahwaiz.jpg" />
     <Content Include="Logintype.aspx" />
     <Content Include="Our_Team.aspx" />
     <Content Include="parentpanel.aspx" />
     <Content Include="PostNews.aspx" />
     <Content Include="School_Rgistration.aspx" />
     <Content Include="source\Jvalidation\blacklist_keywords.txt" />
+    <Content Include="source\WebServices\Studentidservice.asmx" />
     <Content Include="StudentRgistration.aspx" />
     <Content Include="Admin.aspx" />
     <Content Include="assets\css\mycss.css" />
@@ -248,6 +259,7 @@
     <Content Include="Teacherprofile.aspx" />
     <Content Include="TeacherUpload.aspx" />
     <Content Include="Teacher_timetable.aspx" />
+    <Content Include="updatepasswordpanel.aspx" />
     <Content Include="UpdateTeacherInformation.aspx" />
     <Content Include="ViewAllStudents.aspx" />
     <Content Include="ViewAllTachers.aspx" />
@@ -307,7 +319,7 @@
     <Compile Include="School_Rgistration.aspx.designer.cs">
       <DependentUpon>School_Rgistration.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\ClassStudentRegistration.cs" />
+    <Compile Include="source\Registration\ClassStudentRegistration.cs" />
     <Compile Include="source\Database\Database.cs" />
     <Compile Include="source\Functions\CurrentUser.cs" />
     <Compile Include="source\Functions\JFunctions.cs" />
@@ -316,6 +328,11 @@
     <Compile Include="source\Registration\ClassSchoolRegistration.cs" />
     <Compile Include="source\Registration\CParentsregistration.cs" />
     <Compile Include="source\Registration\Package.cs" />
+    <Compile Include="studentid.cs" />
+    <Compile Include="source\WebServices\Studentidservice.asmx.cs">
+      <DependentUpon>Studentidservice.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="StudentRgistration.aspx.cs">
       <DependentUpon>StudentRgistration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -464,6 +481,20 @@
     <Compile Include="Teacher_timetable.aspx.designer.cs">
       <DependentUpon>Teacher_timetable.aspx</DependentUpon>
     </Compile>
+    <Compile Include="updatepasswordpanel.aspx.cs">
+      <DependentUpon>updatepasswordpanel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="updatepasswordpanel.aspx.designer.cs">
+      <DependentUpon>updatepasswordpanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="updatepasswordpanel.Master.cs">
+      <DependentUpon>updatepasswordpanel.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="updatepasswordpanel.Master.designer.cs">
+      <DependentUpon>updatepasswordpanel.Master</DependentUpon>
+    </Compile>
     <Compile Include="UpdateTeacherInformation.aspx.cs">
       <DependentUpon>UpdateTeacherInformation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -516,6 +547,7 @@
     <Fakes Include="assets\Fakes\AjaxControlToolkit.fakes" />
     <Content Include="assets\cesFiles\Packages.pdf" />
     <Content Include="parentpanel.Master" />
+    <Content Include="updatepasswordpanel.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,12 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Register.Master" AutoEventWireup="true" CodeBehind="StudentUpdateProfile.aspx.cs" Inherits="FinalTemplate.StudentUpdateProfile" %>
+﻿<%@ Page  Title="" Language="C#" MasterPageFile="~/Register.Master" AutoEventWireup="true" CodeBehind="StudentUpdateProfile.aspx.cs" Inherits="FinalTemplate.StudentUpdateProfile" %>
+<%@ Register TagPrefix="recaptcha" Namespace="Recaptcha" Assembly="Recaptcha" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="RegisterHeadPlaceHolder" runat="server">
     <script src="assets/js/jquery-2.2.3.js"></script>
-
     <script src="assets/js/jquery.validate.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <script type="text/javascript">
-
-
         $.validator.addMethod("lettersonly", function (value, element) {
             return this.optional(element) || /^[a-z]+$/i.test(value);
         }, "Letters only please");
@@ -100,11 +99,16 @@
             <div class="register-wrapper rlp-wrapper reg-sk" style="opacity: 0.9;">
                 <div class="register-table rlp-table">
                     <div class="register-title rlp-title">Update Your Profile</div>
-                    <div id="divinvisible" class="register-title rlp-title">
-                        <asp:Label runat="server" ID="lbl_error">error message</asp:Label>
-                    </div>
                     <asp:Panel ID="Panel1" runat="server">
                         <div class="register-form bg-w-form rlp-form">
+                            <div style="padding-left: 131px">
+                                <label for="regname" class="control-label form-label">
+                                    Email <span class="highlight"> *<br />
+                                    </span>
+                                </label>
+                                <!--p.help-block Warning !-->
+                                <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control  form-input" Height="35px" placeholder="User name" Width="331px"></asp:TextBox>
+                            </div>
                             <div style="padding-left: 131px">
                                 <label for="regname" class="control-label form-label">
                                     User Name <span class="highlight"> *<br />
@@ -139,13 +143,27 @@
                                 <!-- p.help-block Warning !-->
                                 <br />
                                 <asp:TextBox ID="conform_password" CssClass="form-control  form-input " placeholder="****" Width="331px" runat="server" TextMode="Password" Height="35px"></asp:TextBox>
-                            <asp:CompareValidator ID="CompareValidator1" ControlToCompare="txt_password" ControlToValidate="conform_password" CssClass=" input.error" ForeColor="#ff0000" ErrorMessage="Your password does not match" runat="server" Display="Dynamic"></asp:CompareValidator> 
+                                <asp:CompareValidator ID="CompareValidator1" ControlToCompare="txt_password" ControlToValidate="conform_password" CssClass=" input.error" ForeColor="#ff0000" ErrorMessage="Your password does not match" runat="server" Display="Dynamic"></asp:CompareValidator>
                             </div>
+
+                            <div style="padding-left: 131px">
+                                <label for="regname" class="control-label form-label">
+                                    Conform Password <span class="highlight">*<br />
+                                    </span>
+                                </label>
+                                <!-- p.help-block Warning !-->
+                                <br />
+
+                                <recaptcha:RecaptchaControl D="recaptcha" runat="server" PublicKey="6LeB3SgTAAAAAHJYmC1_0bVytnFzfX4S5b_-cy2g"
+                                    PrivateKey="6LeB3SgTAAAAAGAAMNc2nhBvJZcxvIyM83WyvHy5" />
+                            </div>
+
                         </div>
                         <div class="register-submit">
                             <button type="submit" class="btn btn-register btn-green">
                                 <span>
-                                    <asp:Button ID="Button1" runat="server" Text="Update" Style="background-color: transparent" BorderStyle="None" /></span></button>
+                                    <asp:Button ID="Button1" runat="server" Text="Update" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>
+                            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                         </div>
                     </asp:Panel>
                 </div>
