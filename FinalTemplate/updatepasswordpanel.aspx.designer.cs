@@ -22,6 +22,15 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
+        /// email control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox email;
+        
+        /// <summary>
         /// username control.
         /// </summary>
         /// <remarks>

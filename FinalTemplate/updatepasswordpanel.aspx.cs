@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Net.Mail;
 using System.Net;
+using System.Text;
 
 namespace FinalTemplate
 {
@@ -22,7 +23,7 @@ namespace FinalTemplate
         protected void Button1_Click(object sender, EventArgs e)
         {
             sendtodb();
-                    }
+        }
         public void sendtodb()
         {
             if (Page.IsValid)
@@ -39,9 +40,10 @@ namespace FinalTemplate
                         con.Open();
                         SqlCommand cmd = new SqlCommand("update tbl_authorized_users set password='" + newpassword.Text + "' where password='" + changepassword.Text + "' and username='" + username.Text + "'", con);
                         cmd.ExecuteNonQuery();
-                        con.Close();
                         Label1.Visible =true;
-                     //   sendmail();
+                        sendmail();
+                        message();
+                        con.Close();
                         Label1.Text = "Successfully";
                         Label1.ForeColor = System.Drawing.Color.DarkRed;
                     }
@@ -57,24 +59,34 @@ namespace FinalTemplate
             }
         }
 
-        //public void sendmail()
-        //{
-        //    MailMessage mmsg = new MailMessage();
-        //    SmtpClient client = new SmtpClient();
-        //    client.Host = "smpt.gmail.com";
-        //    client.Port = 587;
+        public void message()
+        {
 
-        //    string useractivation = "http://shahwaizhasan106/StudentUpdateProfile.aspx?email=" + username.Text;
+            StringBuilder builder = new StringBuilder();
+            builder.Append("Thanks for Upadte Your Password </br>");
+            builder.Append(changepassword.Text);
+            builder.Append(newpassword.Text);
 
-        //    mmsg.From = new MailAddress("shahwaizhasan106@gmail.com");
-        //    mmsg.To.Add("shahwaizhasan106@gmail.com");
-        //    mmsg.Subject = "Activation";
-        //    mmsg.Body = "hi" + username.Text + "</br>this is</br><a href='" + useractivation + "'> click here</a>";
-        //    mmsg.IsBodyHtml = true;
-        //    client.EnableSsl = true;
-        //    client.UseDefaultCredentials = true;
-        //    client.Credentials = new NetworkCredential("shahwaizhasan106@gmail.com", "uombhdylobfcwnjp");
-        //    client.Send(mmsg);
-        //}
+        }
+
+        public void sendmail()
+        {
+            MailMessage mmsg = new MailMessage();
+            SmtpClient client = new SmtpClient();
+            client.Host = "smtp.gmail.com";
+            client.Port = 587;
+
+            string useractivation = "http://shahwaizhasan106/StudentUpdateProfile.aspx?email=" + username.Text;
+
+            mmsg.From = new MailAddress("shahwaizhasan106@gmail.com");
+            mmsg.To.Add(email.Text);
+            mmsg.Subject = "Activation";
+            mmsg.Body = "HELLOW  " + username.Text + "</br> This is check your password</br>";
+            mmsg.IsBodyHtml = true;
+            client.EnableSsl = true;
+            client.UseDefaultCredentials = true;
+            client.Credentials = new NetworkCredential("shahwaizhasan106@gmail.com", "uombhdylobfcwnjp");
+            client.Send(mmsg);
+        }
     }
 }
