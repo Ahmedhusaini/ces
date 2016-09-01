@@ -17,7 +17,7 @@
             var path = "url(assets/images/cesThemeImages/searchTeacher.jpg)";
             $('.page-title').css({
                 'background-image': path,
-                'height':'350'
+                'height':'350px'
             });
         }
 

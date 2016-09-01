@@ -34,8 +34,7 @@
                 </div>
    <div class="container teacher-course-wrapper" style="width:1220px">
         <div class="group-title-index edu-ab-title"><h2 class="center-title">Check<b> your student</b> time table</h2>
-            <p clas&nbsp;&nbsp;&nbsp;
-            </p>
+           
                 <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" Width="415px" DataSourceID="SqlDataSource3">
                     <Columns>
                         <asp:BoundField DataField="school_name" HeaderText="school_name" SortExpression="school_name" />
@@ -55,7 +54,7 @@
       
         <!-- CHOOSE COURSES-->
     <br />
-                        <div class="group-title-index"><h4 class="top-title">Your Childerns class="group-title-index"><h4 class="top-title">Your Childerns</h4>
+                        <div class="group-title-index"><h4 class="top-title">Your Childerns class="group-title-index"></h4><h4 class="top-title">Your Childerns</h4>
 
                             <h2 class="center-title">check profile of your student&nbsp;&nbsp;&nbsp;&nbsp; </h2>
 
