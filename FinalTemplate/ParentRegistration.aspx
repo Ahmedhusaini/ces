@@ -32,7 +32,8 @@
 
                        buttons: {
 
-                           'Submit':sstudentid,
+                           'Submit':
+                           {},  
                            Close: function() {
 
                                $(this).dialog('close');
@@ -50,7 +51,7 @@
                        url: 'source/WebService/Studentidservice.asmx/Savestudentid',
                        method: 'post',
                        contentType: 'application/json; charset=utf-8',
-                       data: '{studentid :' + JSON.stringify(std) + '}',
+                       data: '{studentid :' + JSON.stringify(std) + '}'
                         //success: function(response) {
                         //    alert("student has been added ");
                         //    window.location.reload();
