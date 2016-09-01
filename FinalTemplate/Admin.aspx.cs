@@ -15,12 +15,10 @@ namespace FinalTemplate
                     {
                         lbl_schoolid.Text = "Your User ID: " + Session["userid"].ToString();
                         CurrentUser user = new CurrentUser();
-                        var userid = Session["userid"].ToString();
                         user.GetAuthorizedDetails(Session["userid"].ToString());
                     }
                     catch (Exception ex)
                     {
-
                         Response.Write(ex.ToString());
                     }
 

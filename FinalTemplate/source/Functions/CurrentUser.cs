@@ -8,27 +8,30 @@ namespace FinalTemplate.source.Functions
     public class CurrentUser
     {
         private Database.Database myDatabase = new Database.Database("cesConnectionString");
-
+        //tbl_authorized_users columns
         public string AuthorizedID { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+        public int AccountPin { get; set; }
         public string PrimaryEmailAddress { get; set; }
         public string SecondaryEmailAddress { get; set; }
         public int UserTypeID { get; set; }
-        public string UserType { get; set; }
         public int LoginCount { get; set; }
-        public int AccountPin { get; set; }
-        public string GeneralID { get; set; }
         public string LastLoginDate { get; set; }
+
+        //personal details
+        public string UserType { get; set; }
+        public int GeneralID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string DateOfBirth { get; set; }
+        public int DateOfBirthID { get; set; }
         public string Nationality { get; set; }
         public string Gender { get; set; }
         public string Photo { get; set; }
         public string Religion { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
+        public int LocationID { get; set; }
 
         public void GetAuthorizedDetails(string _authorizedid)
         {
@@ -38,11 +41,6 @@ namespace FinalTemplate.source.Functions
             {
                 myDatabase.OpenConnection();
                 SqlParameter p_authorizedID = new SqlParameter("@authorized_id", SqlDbType.VarChar, 20);
-                //myDatabase.obj_sqlparameter = new SqlParameter[1];
-                //myDatabase.obj_sqlparameter[0].ParameterName = "@authorized_id";
-                //myDatabase.obj_sqlparameter[0].SqlDbType = SqlDbType.VarChar;
-                //myDatabase.obj_sqlparameter[0].Size = 20;
-                //myDatabase.obj_sqlparameter[0].Value = _authorizedid;
                 p_authorizedID.Value = _authorizedid;
                 myDatabase.obj_sqlcommand.Parameters.Add(p_authorizedID);
                 myDatabase.obj_reader = myDatabase.obj_sqlcommand.ExecuteReader();
@@ -76,6 +74,50 @@ namespace FinalTemplate.source.Functions
                 myDatabase.CloseConnection();
                 myDatabase.obj_reader.Close();
 
+            }
+        }
+
+        public void GetPersonalDetails(int _generalid)
+        {
+            //teacher,student,parent,principal mein general id hai
+            myDatabase.CreateConnection();
+            myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "sp_GetGeneralDetailsByGeneralID", true);
+            SqlParameter p_generalid = new SqlParameter("@generalid", SqlDbType.Int);
+            p_generalid.Value = _generalid;
+            myDatabase.obj_sqlcommand.Parameters.Add(p_generalid);
+            try
+            {
+                myDatabase.obj_reader = myDatabase.obj_sqlcommand.ExecuteReader();
+                if (myDatabase.obj_reader.HasRows)
+                {
+                    while (myDatabase.obj_reader.Read())
+                    {
+                        GeneralID = Convert.ToInt32(myDatabase.obj_reader["General_Id"]);
+                        FirstName = myDatabase.obj_reader["firstname"].ToString();
+                        LastName = myDatabase.obj_reader["lastname"].ToString();
+                        DateOfBirthID = Convert.ToInt32(myDatabase.obj_reader["dob_id"]);
+                        Nationality = myDatabase.obj_reader["Nationality"].ToString();
+                        Gender = myDatabase.obj_reader["Gender"].ToString();
+                        Photo = myDatabase.obj_reader["photo"].ToString();
+                        Religion = myDatabase.obj_reader["religion"].ToString();
+                        Phone = myDatabase.obj_reader["phone"].ToString();
+                        Address = myDatabase.obj_reader["address"].ToString();
+                        LocationID = Convert.ToInt32(myDatabase.obj_reader["loc_id"]);
+                    }
+                }
+                else
+                {
+                    HttpContext.Current.Response.Write("No record found by current general id");
+                }
+            }
+            catch (Exception exception)
+            {
+                HttpContext.Current.Response.Write(exception.ToString());
+            }
+            finally
+            {
+                myDatabase.CloseConnection();
+                myDatabase.obj_sqlcommand.Parameters.Clear();
             }
         }
     }
