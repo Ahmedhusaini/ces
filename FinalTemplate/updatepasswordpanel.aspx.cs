@@ -2,6 +2,8 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Net.Mail;
+using System.Net;
 
 namespace FinalTemplate
 {
@@ -19,6 +21,10 @@ namespace FinalTemplate
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
+            sendtodb();
+                    }
+        public void sendtodb()
+        {
             if (Page.IsValid)
             {
                 string confstu = ConfigurationManager.ConnectionStrings["cesConnectionString2"].ConnectionString;
@@ -35,6 +41,7 @@ namespace FinalTemplate
                         cmd.ExecuteNonQuery();
                         con.Close();
                         Label1.Visible =true;
+                     //   sendmail();
                         Label1.Text = "Successfully";
                         Label1.ForeColor = System.Drawing.Color.DarkRed;
                     }
@@ -49,5 +56,25 @@ namespace FinalTemplate
                 Label1.Text = "UnSuccessfull";
             }
         }
+
+        //public void sendmail()
+        //{
+        //    MailMessage mmsg = new MailMessage();
+        //    SmtpClient client = new SmtpClient();
+        //    client.Host = "smpt.gmail.com";
+        //    client.Port = 587;
+
+        //    string useractivation = "http://shahwaizhasan106/StudentUpdateProfile.aspx?email=" + username.Text;
+
+        //    mmsg.From = new MailAddress("shahwaizhasan106@gmail.com");
+        //    mmsg.To.Add("shahwaizhasan106@gmail.com");
+        //    mmsg.Subject = "Activation";
+        //    mmsg.Body = "hi" + username.Text + "</br>this is</br><a href='" + useractivation + "'> click here</a>";
+        //    mmsg.IsBodyHtml = true;
+        //    client.EnableSsl = true;
+        //    client.UseDefaultCredentials = true;
+        //    client.Credentials = new NetworkCredential("shahwaizhasan106@gmail.com", "uombhdylobfcwnjp");
+        //    client.Send(mmsg);
+        //}
     }
 }
