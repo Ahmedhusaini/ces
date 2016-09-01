@@ -2,8 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="RegisterHeadPlaceHolder" runat="server">
 
  <script src="assets/js/jquery-2.2.3.js"></script>   
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="assets/js/jquery.validate.js"></script>
-  <%-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>--%>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.js" type="text/javascript">
     
 </script>
@@ -15,28 +15,51 @@
            $(document).ready(function() {
               
                validation();
-             
+               //popup();
 
-           });
-           
-           
-           
-           function popup(){    
-              
-                   $("#dialog").dialog({
+
+           });           
+           function popup() {
+
+               $("#dialog")
+                   .dialog({
                        title: "Please Enter Your Child ID",
+                       draggable: false,
+                       resizable: false,
+                       modal: true,
                        width: 430,
+                       height: 200,
+
                        buttons: {
+
+                           'Submit':sstudentid,
                            Close: function() {
 
                                $(this).dialog('close');
                            },
-                           Submit: function() {
-                               $(this).dialog('submit');
-                           }
+                          
                        }
                    });
-                   return false;
+               return false;
+
+               function sstudentid() {
+                   var std = {};
+                   std.Std_id = $('#txtid').val();
+
+                   $.ajax({
+                       url: 'Studentidservice.asmx/Savestudentid',
+                       method: 'post',
+                       contentType: 'application/json; charset=utf-8',
+                       data: '{studentid :' + JSON.stringify(std) + '}',
+                        //success: function(response) {
+                        //    alert("student has been added ");
+                        //    window.location.reload();
+                        //}
+                   });
+                   
+
+               }
+
            }
 
 
@@ -566,8 +589,16 @@
                                 <span>
                                     <asp:Button ID="Button1" runat="server"  Text="Submit" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click1"  /></span></button>
                      </div> 
-                            <div id="dialog" style="display: none" align="center">
-                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                            <div id="dialog" style="display: none" align="center" >
+                             
+                      <table>
+                          <tr>
+                              <td>Student's ID</td>
+                          </tr>
+                          <tr>
+                              <td> <input type="text" id="txtid"/></td>
+                          </tr>
+                      </table>
                     </div>
                             
                                                 </div>                            

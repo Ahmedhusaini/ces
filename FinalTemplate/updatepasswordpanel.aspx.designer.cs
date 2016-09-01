@@ -10,7 +10,7 @@
 namespace FinalTemplate {
     
     
-    public partial class StudentUpdateProfile {
+    public partial class updatepasswordpanel1 {
         
         /// <summary>
         /// Panel1 control.
@@ -22,49 +22,40 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
-        /// TextBox1 control.
+        /// username control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox username;
         
         /// <summary>
-        /// txt_username1 control.
+        /// changepassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_username1;
+        protected global::System.Web.UI.WebControls.TextBox changepassword;
         
         /// <summary>
-        /// change_password control.
+        /// newpassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox change_password;
+        protected global::System.Web.UI.WebControls.TextBox newpassword;
         
         /// <summary>
-        /// txt_password control.
+        /// conformpassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_password;
-        
-        /// <summary>
-        /// conform_password control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox conform_password;
+        protected global::System.Web.UI.WebControls.TextBox conformpassword;
         
         /// <summary>
         /// CompareValidator1 control.

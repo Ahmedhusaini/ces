@@ -21,24 +21,24 @@ namespace FinalTemplate.source.Functions
 
         public static void SendEmail(string To, string Subject, string MessageBody)
         {
-            //string smtpUsername = "shahwaizhasan106@gmail.com";
-            //using (MailMessage mailMessage = new MailMessage("shahwaizhasan106@gmail.com", To, Subject, MessageBody))
-            //{
-            //    mailMessage.IsBodyHtml = true;
-            //    SmtpClient smtp = new SmtpClient();
-            //    smtp.Host = "smtp.gmail.com";
-            //    smtp.EnableSsl = true;
-            //    NetworkCredential networkCredential = new NetworkCredential(smtpUsername, "teuss106");
-            //    smtp.UseDefaultCredentials = true;
-            //    smtp.Credentials = networkCredential;
-            //    smtp.Port = 587;
-            //    smtp.Send(mailMessage);
+            string smtpUsername = "shahwaizhasan106@gmail.com";
+            using (MailMessage mailMessage = new MailMessage("shahwaizhasan106@gmail.com", To, Subject, MessageBody))
+            {
+                mailMessage.IsBodyHtml = true;
+                SmtpClient smtp = new SmtpClient();
+                smtp.Host = "smtp.gmail.com";
+                smtp.EnableSsl = true;
+                NetworkCredential networkCredential = new NetworkCredential(smtpUsername, "teuss106");
+                smtp.UseDefaultCredentials = true;
+                smtp.Credentials = networkCredential;
+                smtp.Port = 587;
+                smtp.Send(mailMessage);
 
-            //}
+            }
         }
         public static void BindDropDownList(DropDownList ddl1, string displayField1, string valueField1, string queryy)
         {
-            Database.Database studentDatabase = new Database.Database("cesConnectionString");
+            Database.Database studentDatabase = new Database.Database("cesConnectionString2");
             studentDatabase.CreateConnection();
             studentDatabase.InitializeSQLCommandObject(studentDatabase.GetCurrentConnection, queryy);
             try
