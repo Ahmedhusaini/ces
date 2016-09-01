@@ -15,35 +15,51 @@
            $(document).ready(function() {
               
                validation();
-               popup();
+               //popup();
 
 
-           });
-           
-           
-           
-           function popup(){    
-              
-               $("#dialog").dialog({
+           });           
+           function popup() {
 
-                   title: "Please Enter Your Child ID",
-                   draggable:false,
-                   resizable:false,
-                   modal:true,
+               $("#dialog")
+                   .dialog({
+                       title: "Please Enter Your Child ID",
+                       draggable: false,
+                       resizable: false,
+                       modal: true,
                        width: 430,
                        height: 200,
-                    
+
                        buttons: {
+
+                           'Submit':sstudentid,
                            Close: function() {
 
                                $(this).dialog('close');
                            },
-                           Submit: function() {
-                               $(this).dialog('submit');
-                           }
+                          
                        }
                    });
-                   return false;
+               return false;
+
+               function sstudentid() {
+                   var std = {};
+                   std.Std_id = $('#txtid').val();
+
+                   $.ajax({
+                       url: 'Studentidservice.asmx/Savestudentid',
+                       method: 'post',
+                       contentType: 'application/json; charset=utf-8',
+                       data: '{studentid :' + JSON.stringify(std) + '}',
+                        //success: function(response) {
+                        //    alert("student has been added ");
+                        //    window.location.reload();
+                        //}
+                   });
+                   
+
+               }
+
            }
 
 
@@ -575,7 +591,14 @@
                      </div> 
                             <div id="dialog" style="display: none" align="center" >
                              
-                      Student ID:  <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                      <table>
+                          <tr>
+                              <td>Student's ID</td>
+                          </tr>
+                          <tr>
+                              <td> <input type="text" id="txtid"/></td>
+                          </tr>
+                      </table>
                     </div>
                             
                                                 </div>                            
