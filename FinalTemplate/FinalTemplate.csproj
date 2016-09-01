@@ -81,6 +81,13 @@
     <Content Include="assets\images\crissxcross.png" />
     <Content Include="assets\images\green-bg-img.jpg" />
     <Content Include="assets\images\registerschool_green.jpg" />
+    <Content Include="assets\images\team member\Ahmed.jpg" />
+    <Content Include="assets\images\team member\jahangeer.jpg" />
+    <Content Include="assets\images\team member\sid.jpg" />
+    <Content Include="assets\images\team member\sidd.jpg" />
+    <Content Include="assets\images\team member\siddique.jpg" />
+    <Content Include="assets\images\team member\shaheryar.jpg" />
+    <Content Include="assets\images\team member\shahwaiz.jpg" />
     <Content Include="Logintype.aspx" />
     <Content Include="Our_Team.aspx" />
     <Content Include="parentpanel.aspx" />
