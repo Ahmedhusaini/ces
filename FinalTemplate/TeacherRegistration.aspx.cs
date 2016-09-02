@@ -23,7 +23,6 @@ namespace FinalTemplate
             int dob_id = Convert.ToInt32(db.GetLastValueByColumnName("dob_id", "tbl_dob"));
             int loc_id = Convert.ToInt32(db.GetLastValueByColumnName("loc_id", "tbl_location"));
             int teacher_id = Convert.ToInt32(db.GetLastValueByColumnName("teacher_id", "tbl_teacher"));
-            var school_id = Convert.ToString(db.GetLastValueByColumnName("school_id", "tbl_school"));
             var authorized_id = Convert.ToString(db.GetLastValueByColumnName("authorized_id", "tbl_authorized_users"));
             using (SqlConnection con = new SqlConnection(a))
             {
@@ -38,8 +37,6 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@loc_id_out", SqlDbType.Int).Direction = ParameterDirection.Output;
                 cmd.Parameters.AddWithValue("@teacher_id", SqlDbType.Int).Value = teacher_id + 1;
                 cmd.Parameters.AddWithValue("@teacher_id_out", SqlDbType.Int).Direction = ParameterDirection.Output;
-                cmd.Parameters.AddWithValue("@school_id", SqlDbType.VarChar).Value = school_id + 1;
-                cmd.Parameters.AddWithValue("@school_id_out", SqlDbType.VarChar).Direction = ParameterDirection.Output;
                 cmd.Parameters.AddWithValue("@authorized_id", SqlDbType.VarChar).Value = authorized_id + 1;
                 cmd.Parameters.AddWithValue("@authorized_id_out", SqlDbType.VarChar).Direction = ParameterDirection.Output;
 
@@ -67,8 +64,7 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@last_login_date", SqlDbType.Date).Value = DateTime.Now.ToString("");
                 cmd.Parameters.AddWithValue("@usertype_id", SqlDbType.Int).Value = 3;
                 cmd.Parameters.AddWithValue("@date_of_join", SqlDbType.Date).Value = DateTime.Now.ToString("");
-
-
+              
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
