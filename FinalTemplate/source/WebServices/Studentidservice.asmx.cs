@@ -22,26 +22,26 @@ namespace FinalTemplate
     public class Studentidservice : System.Web.Services.WebService
     {
 
-        [WebMethod]
-        [ScriptMethod]
-        public void Savestudentid(studentid studentid)
-        {
-            string cs = ConfigurationManager.ConnectionStrings["cesConnectionString3"].ConnectionString;
-            using (SqlConnection con = new SqlConnection(cs))
-            {
-                SqlCommand cmd = new SqlCommand("spinsertstudent",con);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+        //[WebMethod]
+        //[ScriptMethod]
+        //public void Savestudentid(studentid studentid)
+        //{
+        //    string cs = ConfigurationManager.ConnectionStrings["cesConnectionString3"].ConnectionString;
+        //    using (SqlConnection con = new SqlConnection(cs))
+        //    {
+        //        SqlCommand cmd = new SqlCommand("spinsertstudent",con);
+        //        cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                SqlParameter parameterstudentidParameter = new SqlParameter()
-                {
-                    ParameterName = "@Std_id",
-                    Value = studentid.Std_id
-                };
-                cmd.Parameters.Add(parameterstudentidParameter);
-                con.Open();
-                cmd.ExecuteNonQuery();
+        //        SqlParameter parameterstudentidParameter = new SqlParameter()
+        //        {
+        //            ParameterName = "@Std_id",
+        //            Value = studentid.Std_id
+        //        };
+        //        cmd.Parameters.Add(parameterstudentidParameter);
+        //        con.Open();
+        //        cmd.ExecuteNonQuery();
 
-            }
-        }
+        //    }
+        //}
     }
 }
