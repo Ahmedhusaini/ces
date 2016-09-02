@@ -94,7 +94,6 @@
     <Content Include="PostNews.aspx" />
     <Content Include="School_Rgistration.aspx" />
     <Content Include="source\Jvalidation\blacklist_keywords.txt" />
-    <Content Include="source\WebServices\Studentidservice.asmx" />
     <Content Include="StudentRgistration.aspx" />
     <Content Include="Admin.aspx" />
     <Content Include="assets\css\mycss.css" />
@@ -326,10 +325,6 @@
     <Compile Include="source\Registration\ClassSchoolRegistration.cs" />
     <Compile Include="source\Registration\CParentsregistration.cs" />
     <Compile Include="source\Registration\Package.cs" />
-    <Compile Include="source\WebServices\Studentidservice.asmx.cs">
-      <DependentUpon>Studentidservice.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="StudentRgistration.aspx.cs">
       <DependentUpon>StudentRgistration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -541,6 +536,7 @@
   <ItemGroup>
     <Folder Include="files\" />
     <Folder Include="images\registeredSchools\" />
+    <Folder Include="source\WebServices\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

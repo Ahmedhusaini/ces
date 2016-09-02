@@ -21,8 +21,7 @@
            });           
            function popup() {
 
-               $("#dialog")
-                   .dialog({
+               $("#dialog").dialog({
                        title: "Please Enter Your Child ID",
                        draggable: false,
                        resizable: false,
@@ -30,38 +29,19 @@
                        width: 430,
                        height: 200,
 
-                       buttons: {
+                       //buttons: {
 
-                           'Submit':
-                           {},  
-                           Close: function() {
+                       //    'Submit':
+                       //    {},  
+                       //    Close: function() {
 
-                               $(this).dialog('close');
-                           },
+                       //        $(this).dialog('close');
+                       //    },
                           
-                       }
+                       //}
                    });
                return false;
-
-               function sstudentid() {
-                   var std = {};
-                   std.Std_id = $('#txtid').val();
-
-                   $.ajax({
-                       url: 'source/WebService/Studentidservice.asmx/Savestudentid',
-                       method: 'post',
-                       contentType: 'application/json; charset=utf-8',
-                       data: '{studentid :' + JSON.stringify(std) + '}'
-                        //success: function(response) {
-                        //    alert("student has been added ");
-                        //    window.location.reload();
-                        //}
-                   });
-                   
-
                }
-
-           }
 
 
            $.validator.addMethod("lettersonly", function (value, element) {
@@ -590,16 +570,21 @@
                                 <span>
                                     <asp:Button ID="Button1" runat="server"  Text="Submit" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click1"  /></span></button>
                      </div> 
-                            <div id="dialog" style="display: none" align="center" >
+                            <div id="dialog" style="display: none"  align="center" >
                              
                       <table>
                           <tr>
                               <td>Student's ID</td>
                           </tr>
                           <tr>
-                              <td> <input type="text" id="txtid"/></td>
+                              <td>
+                                  <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox> </td>
+                          </tr>
+                           <tr>
+                              <td> <asp:Button ID="Button2" runat="server" Text="Button" OnClick="Button2_Click" /></td>
                           </tr>
                       </table>
+
                     </div>
                             
                                                 </div>                            
