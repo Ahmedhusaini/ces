@@ -40,6 +40,10 @@ namespace FinalTemplate
                 }
             }
         }
+        public void clas()
+    {
+        cl.Text = "hellow shahwaioz";
+    }
 
         protected void btnSave_Click(object sender, EventArgs e)
         {

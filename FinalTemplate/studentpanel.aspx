@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/studentpanel.Master" AutoEventWireup="true" CodeBehind="studentpanel.aspx.cs" Inherits="FinalTemplate.studentpanel1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-  <script src="assets/js/jquery-2.2.3.js"></script>
+    <script src="assets/js/jquery-2.2.3.js"></script>
     <script type="text/javascript">
 
         $(document).ready(function () {
@@ -17,7 +17,7 @@
             var path = "url(assets/images/cesThemeImages/searchTeacher.jpg)";
             $('.page-title').css({
                 'background-image': path,
-                'height':'350px'
+                'height': '350px'
             });
         }
 
@@ -83,18 +83,20 @@
                     <asp:Label ID="namelab" CssClass="title-2" runat="server"></asp:Label>
                     <asp:Label ID="lab3" runat="server"></asp:Label>
                     <p>CLASS-6 SECTION-B</p>
+                    <asp:Label ID="cl" runat="server"></asp:Label>
+                    <asp:Button Text="click" OnClick="clas" runat="server" />
                     <div>
                         <asp:FileUpload ID="FileUpload1" runat="server" />
                         <asp:Button class="btn-green" BackColor="#86bc42" BorderColor="#86bc42" ID="btnSave" Text="Save" OnClick="btnSave_Click" runat="server" Height="30px" Width="70px"></asp:Button>
                         <asp:Label ID="Label1" runat="server"></asp:Label>
-                   </div>
+                    </div>
                 </div>
-                <div data-wow-delay="0.2s" data-wow-duration="1.2s" class="background-girl-1 wow fadeInDown" style="color:transparent">
-                    <asp:Image ID="shah" CssClass="img-responsive" runat="server" Style="border-radius: 80px;color:transparent; height: 350px; width: 300px" />
+                <div data-wow-delay="0.2s" data-wow-duration="1.2s" class="background-girl-1 wow fadeInDown" style="color: transparent">
+                    <asp:Image ID="shah" CssClass="img-responsive" runat="server" Style="border-radius: 80px; color: transparent; height: 350px; width: 300px" />
                 </div>
             </div>
         </div>
-    </div>  
+    </div>
     <%--                    <div class="section why-choose-us">
                     <div class="why-choose-us-wrapper-top">
                         <div class="container">
@@ -145,7 +147,6 @@
                     <div class="icon-course"><i class="icons-img icon-globe"></i></div>
                     <div class="info-course">
                         <a href="#" class="name-course">Results</a>
-
                         <div class="info">view results of Your exams. You can also check feedback regarding any result posted by Teachers & parents.</div>
                     </div>
                 </div>
@@ -164,7 +165,6 @@
                     <div class="icon-course"><i class="icons-img icon-chat_bubbles"></i></div>
                     <div class="info-course">
                         <a href="#" class="name-course">Communication</a>
-
                         <div class="info">Make some interaction to Teacher and ask some queries. Click to check what is available now.</div>
                     </div>
                 </div>
@@ -190,18 +190,6 @@
                             <div role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" class="progress-bar skill-2"></div>
                         </div>
                     </div>
-                    <%--<div class="col-md-6 skill-level">
-                                    <div class="skill-name">Assignment</div>
-                                    <div class="progress">
-                                        <div role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" class="progress-bar skill-3"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 skill-level">
-                                    <div class="skill-name">Fee Payment</div>
-                                    <div class="progress">
-                                        <div role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" class="progress-bar skill-4"></div>
-                                    </div>
-                            </div>--%>
                 </div>
             </div>
         </div>
