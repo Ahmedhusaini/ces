@@ -4,8 +4,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="TeacherPlaceHolder1" runat="server">
 
     <div class="table-body">
-        <asp:TextBox ID="TextBox1" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
-        <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
+        <asp:TextBox ID="TextBox1" CssClass="form-control  form-input" runat="server" OnTextChanged="TextBox1_TextChanged" Width="540px"></asp:TextBox>
+           <button type="submit"  class="btn btn-register btn-green">
+        <asp:Button ID="Button1" runat="server" Text="SEARCH" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></button>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="timetable">
             <Columns>
                 <asp:BoundField DataField="username" HeaderText="username" SortExpression="username" />
