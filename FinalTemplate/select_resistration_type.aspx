@@ -21,7 +21,7 @@
                                 </div>
                                        <div class="col-md-4" style="left:-295px;top:310px;">
                                     <div class="method-item" style="  border-radius: 57px;">
-                                       <button  class="btn btn-green" style="width:200px;height:190px; border-radius: 57px;" formaction="TeacherRegistration.aspx"><span><h2 class="heading-content">TEACHER</h2></span></button>
+                                       <button  class="btn btn-green" style="width:200px;height:190px; border-radius: 57px;" formaction="home.aspx"><span><h2 class="heading-content">TEACHER</h2></span></button>
                                     </div>
                                 </div>
                                        <div class="col-md-4" style="top:17px;">

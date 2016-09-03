@@ -1,6 +1,8 @@
 ﻿using FinalTemplate.source.Functions;
 using FinalTemplate.source.Registration;
 using System;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Text;
 using System.Web.UI;
 
@@ -8,8 +10,10 @@ namespace FinalTemplate
 {
     public partial class Parent_Registration : System.Web.UI.Page
     {
+       
         protected void Page_Load(object sender, EventArgs e)
         {
+           
             if (!IsPostBack)
             {
                  Jfunctionparents.BindDropDownList(DropDownList2, "city", "city_id", "select * from tbl_city");
@@ -57,7 +61,7 @@ namespace FinalTemplate
                 if (result == "true")
                 {
                     //JFunctions.SendEmail(pemail.Text, "CES - Registration", EmailBody());
-                   
+
                     //ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "tmp", "popup();", true);
                     Response.Write("Register");
                     
@@ -74,6 +78,13 @@ namespace FinalTemplate
                 result = ex.ToString();
                 Response.Write(result);
             }
+
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            
+           
 
         }
     }

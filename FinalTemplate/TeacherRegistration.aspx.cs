@@ -1,8 +1,8 @@
-﻿using FinalTemplate.source.Database;
-using System;
-using System.Configuration;
-using System.Data;
+﻿using System;
 using System.Data.SqlClient;
+using System.Data;
+using System.Configuration;
+using FinalTemplate.source.Database;
 
 namespace FinalTemplate
 {

@@ -10,6 +10,7 @@
             samesizeimage();
             setbuttonlayout();
             searchboxwidth();
+            searchTeacher();
         });
 
         function samesizeimage() {
@@ -28,6 +29,10 @@
         }
         function searchboxwidth() {
             $('.form-input').css('width','900px');
+        }
+
+        function searchTeacher() {
+            
         }
     </script>
         

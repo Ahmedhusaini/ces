@@ -388,17 +388,6 @@
                                        <asp:FileUpload  ID="fileupload" runat="server"  CssClass="form-control  form-input"/>
                                          
                                     </div>
-                                    <div class="col-md-6">
-                                        <label for="regname" class="control-label form-label">
-                                        School  <span class="highlight">*<br />
-                                        <asp:DropDownList ID="DropDownList3"  CssClass="form-control" runat="server" DataSourceID="SqlDataSource3" DataTextField="school_name" DataValueField="school_name">
-                                        </asp:DropDownList>
-                                        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [school_name] FROM [tbl_school]"></asp:SqlDataSource>
-                                        </span>
-                                          
-                                    </label>
-
-                                    </div>
                                     </div>
                                 </div>
                             </div>
