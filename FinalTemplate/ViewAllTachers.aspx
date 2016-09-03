@@ -26,7 +26,6 @@
                 'height': '450px'
             });
         }
-
         function searchboxwidth() {
             $('.form-input').css('width','900px');
         }
