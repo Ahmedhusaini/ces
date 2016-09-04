@@ -14,6 +14,7 @@
             
             $('#btnsubmit').click(function (e) {
                 e.preventDefault();
+                removechilddivs();
                 var SearchKeyValue = $('#<%=txtSearch.ClientID%>').val();
                 $.ajax({
                     url: 'source/WebServices/GetAllTeachers.asmx/GetAllTeachersByFirstName',
@@ -53,7 +54,6 @@
         }
 
         function searchTeacher() {
-
             var SearchKeyValue = $('#<%=txtSearch.ClientID%>').val();
             $.ajax({
                 url: 'source/WebServices/GetAllTeachers.asmx/GetAllTeachersByFirstName',
