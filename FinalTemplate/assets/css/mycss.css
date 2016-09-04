@@ -196,3 +196,6 @@
 .top {
     z-index:999;
 }
+.btnRightPadding {
+    padding-right: 135px;
+}
