@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web;
+using System.Web.Script.Serialization;
 using System.Web.Services;
 namespace FinalTemplate.source.WebServices
 {
@@ -18,12 +19,13 @@ namespace FinalTemplate.source.WebServices
 
 
         [WebMethod]
-        public List<TeacherSearch> GetAllTeachersByFirstName(string _name)
+        public void GetAllTeachersByFirstName(string SearchKey)
         {
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
             List<TeacherSearch> listteacherSearches = new List<TeacherSearch>();
             myDatabase.CreateConnection();
             myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "sp_SearchTeacherByFirstName", true);
-            myDatabase.obj_sqlcommand.Parameters.AddWithValue("@TeacherName", _name);
+            myDatabase.obj_sqlcommand.Parameters.AddWithValue("@TeacherName", SearchKey);
             try
             {
                 myDatabase.OpenConnection();
@@ -54,10 +56,51 @@ namespace FinalTemplate.source.WebServices
                 myDatabase.CloseConnection();
                 myDatabase.obj_reader.Dispose();
             }
+            ;
+            //serializer.Serialize(listteacherSearches)
+            HttpContext.Current.Response.Write(serializer.Serialize(listteacherSearches));
 
-            return listteacherSearches;
         }
+        [WebMethod]
+        public void GetAllTeacherRecords()
+        {
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            List<TeacherSearch> listteacherSearches = new List<TeacherSearch>();
+            myDatabase.CreateConnection();
+            myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "sp_GetAllTeachers", true);
 
+            try
+            {
+                myDatabase.OpenConnection();
+                myDatabase.obj_reader = myDatabase.obj_sqlcommand.ExecuteReader();
+                if (myDatabase.obj_reader.HasRows)
+                {
+                    while (myDatabase.obj_reader.Read())
+                    {
+                        TeacherSearch teacherSearch = new TeacherSearch();
+                        teacherSearch.FirstName = myDatabase.obj_reader["firstname"].ToString();
+                        teacherSearch.LastName = myDatabase.obj_reader["lastname"].ToString();
+                        teacherSearch.Photo = myDatabase.obj_reader["photo"].ToString();
+                        teacherSearch.DateOfJoin = myDatabase.obj_reader["date_of_join"].ToString();
+                        teacherSearch.CNIC = myDatabase.obj_reader["cnic_no"].ToString();
+                        listteacherSearches.Add(teacherSearch);
+                    }
+                }
+                else
+                    HttpContext.Current.Response.Write("No teacher record found.");
+
+            }
+            catch (Exception exception)
+            {
+                HttpContext.Current.Response.Write(exception.ToString());
+            }
+            finally
+            {
+                myDatabase.CloseConnection();
+                myDatabase.obj_reader.Dispose();
+            }
+            HttpContext.Current.Response.Write(serializer.Serialize(listteacherSearches));
+        }
     }
 
     public class TeacherSearch

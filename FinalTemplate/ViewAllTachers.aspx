@@ -10,7 +10,12 @@
             samesizeimage();
             setbuttonlayout();
             searchboxwidth();
-            searchTeacher();
+            removechilddivs();
+            $('#btnsubmit').click(function () {
+              
+               
+                
+            });
         });
 
         function samesizeimage() {
@@ -30,9 +35,49 @@
         function searchboxwidth() {
             $('.form-input').css('width','900px');
         }
+        
+        function search() {
+            var SearchdKey = $('# <%=txtSearch.ClientID%>').val();
+           $.ajax({
+               url: 'GetAllTeachers.asmx/GetAllTeacherRecords',
+               method: 'post',
+               datatype: 'json',
+               success: function(data) {
+                   var jqueryXml = $(data);
+                   jqueryXml.each(function (data) {
+                       alert(data);
+                       //appendteacher("imsges/teachers/" + data.Photo, data.FirstName, data.LastName, data.CNIC, data.DateOfBirth);
+                   });
+               }
+               ,
+               error: function(error) {
+                   alert(error);
+               }
 
-        function searchTeacher() {
+           });
+        }
+        function appendteacher(imagepath,firstname,lastname,cnic,dateofjoin) {
             
+            var parentdiv = $('div[class=customs-row]');
+            parentdiv.append(' <div class="col-md-4 col-sm-6">');
+            parentdiv.append(' <div class="edugate-layout-3">');
+            parentdiv.append(' <div class="edugate-layout-3-wrapper">');
+            parentdiv.append('<a class="edugate-image">');
+            parentdiv.append('<img src="images/teachers/' + imagepath + '" alt="" class="img-responsive" /></a>');
+            parentdiv.append('<div class="edugate-content">');
+            parentdiv.append('<a href="#" class="title">' + firstname + ' ' + lastname + '</a>');
+            parentdiv.append('<ul>');
+            parentdiv.append('<li>CNIC Number: <b>' + cnic + '</b></li>');
+            parentdiv.append('<li>Date Of Join: <b>' + dateofjoin + '</b></li>');
+            parentdiv.append('</ul>');
+            parentdiv.append('</div>');
+            parentdiv.append('<div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>');
+            parentdiv.append('<button class="btn btn-green"><span>View Details</span></button>');
+            parentdiv.append('</div></div></div></div>');
+
+        }
+        function removechilddivs() {
+            $('div[class=customs-row]').empty();
         }
     </script>
         
@@ -58,7 +103,7 @@
                             <div class="search-input-wrapper">
                                 <form>
                                 <asp:TextBox ID="txtSearch" runat="server" CssClass="form-input" placeholder="Type teacher name you want to search"></asp:TextBox>
-                                <button type="submit" class="form-submit btn btn-blue"><span>search now<i class="fa fa-search"></i></span></button>
+                                <button type="submit" id="btnsubmit" class="form-submit btn btn-blue"><span>search now<i class="fa fa-search"></i></span></button>
                                 <div class="clearfix"></div>
                                 </form>
                             </div>
@@ -82,159 +127,19 @@
                                             <div class="edugate-content">
                                                 <a href="#" class="title">language</a>
 
-                                                <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
+                                                <div class="description">
+                                                    <ul>
+                                                        <li>CNIC Number: <b>13245-1234567-1</b></li>
+                                                        <li>AuthorizedID: <b>teacher123</b></li>
+                                                        <li>Date Of Join: <b>2016-02-08</b></li>
+                                                    </ul>
+                                                </div>
                                                 <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
-                                                <button class="btn btn-green"><span>View Details</span></button>
+                                                <button  class="btn btn-green"><span>View Details</span></button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                    <div class="col-md-4 col-sm-6">
-                                        <div class="edugate-layout-3">
-                                            <div class="edugate-layout-3-wrapper"><a  class="edugate-image"><img  src="assets/images/cesThemeImages/teachers (2).jpg" alt="" class="img-responsive"/></a>
-
-                                                <div class="edugate-content"><a href="#" class="title">software</a>
-
-                                                    <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-                                                    <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
-                                                    <button class="btn btn-green"><span>View Details</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 col-sm-6">
-                                        <div class="edugate-layout-3">
-                                            <div class="edugate-layout-3-wrapper"><a  class="edugate-image"><img  src="assets/images/cesThemeImages/teachers (3).jpg" alt="" class="img-responsive"/></a>
-
-                                                <div class="edugate-content"><a href="#" class="title">social media</a>
-
-                                                    <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-                                                    <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
-                                                    <button class="btn btn-green"><span>View Details</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 col-sm-6">
-                                        <div class="edugate-layout-3">
-                                            <div class="edugate-layout-3-wrapper"><a  class="edugate-image"><img  src="assets/images/cesThemeImages/teachers (4).jpg" alt="" class="img-responsive"/></a>
-
-                                                <div class="edugate-content"><a href="#" class="title">photography</a>
-
-                                                    <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-                                                    <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
-                                                    <button class="btn btn-green"><span>View Details</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 col-sm-6">
-                                        <div class="edugate-layout-3">
-                                            <div class="edugate-layout-3-wrapper"><a  class="edugate-image"><img  src="assets/images/cesThemeImages/teachers (5).jpg" alt="" class="img-responsive"/></a>
-
-                                                <div class="edugate-content"><a href="#" class="title">business</a>
-
-                                                    <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-                                                    <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
-                                                    <button class="btn btn-green"><span>View Details</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 col-sm-6">
-                                        <div class="edugate-layout-3">
-                                            <div class="edugate-layout-3-wrapper"><a  class="edugate-image"><img  src="assets/images/cesThemeImages/teachers (2).jpg" alt="" class="img-responsive"/></a>
-
-                                                <div class="edugate-content"><a href="#" class="title">communication</a>
-
-                                                    <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-                                                    <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
-                                                    <button class="btn btn-green"><span>View Details</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                      <div class="col-md-4 col-sm-6">
-                                    <div class="edugate-layout-3">
-                                        <div class="edugate-layout-3-wrapper">
-                                            <a class="edugate-image">
-                                                <img src="assets/images/cesThemeImages/teachers (1).jpg" alt="" class="img-responsive" /></a>
-
-                                            <div class="edugate-content">
-                                                <a href="#" class="title">language</a>
-
-                                                <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-                                                <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
-                                                <button class="btn btn-green"><span>View Details</span></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                    <div class="col-md-4 col-sm-6">
-                                        <div class="edugate-layout-3">
-                                            <div class="edugate-layout-3-wrapper"><a  class="edugate-image"><img  src="assets/images/cesThemeImages/teachers (2).jpg" alt="" class="img-responsive"/></a>
-
-                                                <div class="edugate-content"><a href="#" class="title">software</a>
-
-                                                    <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-                                                    <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
-                                                    <button class="btn btn-green"><span>View Details</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 col-sm-6">
-                                        <div class="edugate-layout-3">
-                                            <div class="edugate-layout-3-wrapper"><a  class="edugate-image"><img  src="assets/images/cesThemeImages/teachers (3).jpg" alt="" class="img-responsive"/></a>
-
-                                                <div class="edugate-content"><a href="#" class="title">social media</a>
-
-                                                    <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-                                                    <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
-                                                    <button class="btn btn-green"><span>View Details</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 col-sm-6">
-                                        <div class="edugate-layout-3">
-                                            <div class="edugate-layout-3-wrapper"><a  class="edugate-image"><img  src="assets/images/cesThemeImages/teachers (4).jpg" alt="" class="img-responsive"/></a>
-
-                                                <div class="edugate-content"><a href="#" class="title">photography</a>
-
-                                                    <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-                                                    <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
-                                                    <button class="btn btn-green"><span>View Details</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 col-sm-6">
-                                        <div class="edugate-layout-3">
-                                            <div class="edugate-layout-3-wrapper"><a  class="edugate-image"><img  src="assets/images/cesThemeImages/teachers (5).jpg" alt="" class="img-responsive"/></a>
-
-                                                <div class="edugate-content"><a href="#" class="title">business</a>
-
-                                                    <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-                                                    <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
-                                                    <button class="btn btn-green"><span>View Details</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 col-sm-6">
-                                        <div class="edugate-layout-3">
-                                            <div class="edugate-layout-3-wrapper"><a  class="edugate-image"><img  src="assets/images/cesThemeImages/teachers (2).jpg" alt="" class="img-responsive"/></a>
-
-                                                <div class="edugate-content"><a href="#" class="title">communication</a>
-
-                                                    <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-                                                    <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
-                                                    <button class="btn btn-green"><span>View Details</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                                 
                             </div>

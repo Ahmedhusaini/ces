@@ -88,6 +88,11 @@
     <Content Include="assets\images\team member\siddique.jpg" />
     <Content Include="assets\images\team member\shaheryar.jpg" />
     <Content Include="assets\images\team member\shahwaiz.jpg" />
+    <Content Include="images\teachers\teachers %281%29.jpg" />
+    <Content Include="images\teachers\teachers %282%29.jpg" />
+    <Content Include="images\teachers\teachers %283%29.jpg" />
+    <Content Include="images\teachers\teachers %284%29.jpg" />
+    <Content Include="images\teachers\teachers %285%29.jpg" />
     <Content Include="Logintype.aspx" />
     <Content Include="Our_Team.aspx" />
     <Content Include="parentpanel.aspx" />
