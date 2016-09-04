@@ -4,17 +4,33 @@
     <script type="text/javascript">
         $(window).load(function() {
             searchboxwidth();
+           
         });
         $(document).ready(function () {
             teacherwidth();
             samesizeimage();
             setbuttonlayout();
             searchboxwidth();
-            removechilddivs();
-            $('#btnsubmit').click(function () {
-              
-               
-                
+            
+            $('#btnsubmit').click(function (e) {
+                e.preventDefault();
+                var SearchKeyValue = $('#<%=txtSearch.ClientID%>').val();
+                $.ajax({
+                    url: 'source/WebServices/GetAllTeachers.asmx/GetAllTeachersByFirstName',
+                    method: 'post',
+                    data: { SearchKey: SearchKeyValue },
+                    datatype: 'json',
+                    success: function (data) {
+                        var arrData = $.parseJSON(data);
+                        $.each(arrData, function (i, v) {
+                            var parentdiv = $('div.customs-row');
+                            parentdiv.append('<div class="col-md-4 col-sm-6"><div class="edugate-layout-3"><div class="edugate-layout-3-wrapper"><a class="edugate-image"><img src="images/teachers/' + v.Photo + '" alt="" class="img-responsive" /></a><div class="edugate-content"><a href="#" class="title">' + v.FirstName + ' ' + v.LastName + '</a><ul><li>CNIC Number: <b>' + v.CNIC + '</b></li><li>Date Of Join: <b>' + v.DateOfJoin + '</b></li></ul></div><div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div><button class="btn btn-green"><span>View Details</span></button></div></div></div></div>');
+                        });
+                    },
+                    error: function (error) {
+                        alert("Error: " + error);
+                    }
+                });
             });
         });
 
@@ -35,47 +51,28 @@
         function searchboxwidth() {
             $('.form-input').css('width','900px');
         }
+
+        function searchTeacher() {
+
+            var SearchKeyValue = $('#<%=txtSearch.ClientID%>').val();
+            $.ajax({
+                url: 'source/WebServices/GetAllTeachers.asmx/GetAllTeachersByFirstName',
+                method: 'post',
+                data: { SearchKey: SearchKeyValue },
+                datatype: 'json',
+                success: function (data) {
+                    var arrData = $.parseJSON(data);
+                    $.each(arrData, function (i, v) {
+                        var parentdiv = $('div.customs-row');
+                        parentdiv.append('<div class="col-md-4 col-sm-6"><div class="edugate-layout-3"><div class="edugate-layout-3-wrapper"><a class="edugate-image"><img src="images/teachers/' + v.Photo + '" alt="" class="img-responsive" /></a><div class="edugate-content"><a href="#" class="title">' + v.FirstName + ' ' + v.LastName + '</a><ul>li>CNIC Number: <b>' + v.CNIC + '</b></li><li>Date Of Join: <b>' + v.DateOfJoin + '</b></li></ul></div><div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div><button class="btn btn-green"><span>View Details</span></button></div></div></div></div>');
+                    });
+                },
+                error: function (error) {
+                    alert("Error: " + error);
+                }
+            });
+        }
         
-        function search() {
-            var SearchdKey = $('# <%=txtSearch.ClientID%>').val();
-           $.ajax({
-               url: 'GetAllTeachers.asmx/GetAllTeacherRecords',
-               method: 'post',
-               datatype: 'json',
-               success: function(data) {
-                   var jqueryXml = $(data);
-                   jqueryXml.each(function (data) {
-                       alert(data);
-                       //appendteacher("imsges/teachers/" + data.Photo, data.FirstName, data.LastName, data.CNIC, data.DateOfBirth);
-                   });
-               }
-               ,
-               error: function(error) {
-                   alert(error);
-               }
-
-           });
-        }
-        function appendteacher(imagepath,firstname,lastname,cnic,dateofjoin) {
-            
-            var parentdiv = $('div[class=customs-row]');
-            parentdiv.append(' <div class="col-md-4 col-sm-6">');
-            parentdiv.append(' <div class="edugate-layout-3">');
-            parentdiv.append(' <div class="edugate-layout-3-wrapper">');
-            parentdiv.append('<a class="edugate-image">');
-            parentdiv.append('<img src="images/teachers/' + imagepath + '" alt="" class="img-responsive" /></a>');
-            parentdiv.append('<div class="edugate-content">');
-            parentdiv.append('<a href="#" class="title">' + firstname + ' ' + lastname + '</a>');
-            parentdiv.append('<ul>');
-            parentdiv.append('<li>CNIC Number: <b>' + cnic + '</b></li>');
-            parentdiv.append('<li>Date Of Join: <b>' + dateofjoin + '</b></li>');
-            parentdiv.append('</ul>');
-            parentdiv.append('</div>');
-            parentdiv.append('<div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>');
-            parentdiv.append('<button class="btn btn-green"><span>View Details</span></button>');
-            parentdiv.append('</div></div></div></div>');
-
-        }
         function removechilddivs() {
             $('div[class=customs-row]').empty();
         }
@@ -118,7 +115,7 @@
                             </div>
                             <div class="list-categories-content row">
                                 <div class="customs-row">
-                                    <div class="col-md-4 col-sm-6">
+                                  <!---  <div class="col-md-4 col-sm-6">
                                     <div class="edugate-layout-3">
                                         <div class="edugate-layout-3-wrapper">
                                             <a class="edugate-image">
@@ -139,7 +136,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>----->
                                 </div>
                                 
                             </div>

@@ -43,7 +43,6 @@ namespace FinalTemplate.source.Database
                     return _connectionString;
                 else
                     return string.Empty;
-
             }
             //When you want to set the connection string set block is called.
             set
