@@ -10,7 +10,7 @@
         <asp:GridView ID="GridView1" class="edu-table-responsive"  runat="server" AutoGenerateColumns="False" DataSourceID="timetable" CellPadding="4" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" />
             <Columns >
-                <asp:BoundField DataField="username" HeaderText="Username" SortExpression="username" />
+                <asp:BoundField DataField="username" HeaderText="Teacher" SortExpression="username" />
                 <asp:BoundField DataField="day" HeaderText="Day" SortExpression="day" />
                 <asp:BoundField DataField="school_name" HeaderText="School Name" SortExpression="school_name" />
                 <asp:BoundField DataField="class" HeaderText="Class" SortExpression="class" />
