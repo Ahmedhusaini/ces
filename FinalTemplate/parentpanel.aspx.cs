@@ -7,56 +7,46 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using FinalTemplate.source.Functions;
 
 namespace FinalTemplate
 {
     public partial class parentpanel1 : System.Web.UI.Page
     {
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["cesConnectionString3"].ConnectionString);
+       
         protected void Page_Load(object sender, EventArgs e)
         {
+            lab1.Text = "Date: " + System.DateTime.Now.ToShortDateString();
+            lab2.Text = "Time: "+System.DateTime.Now.ToShortTimeString();
+              
             if (!IsPostBack)
             {
-               
-              
-                
-                //searchbox.Visible = true; // show button
-                //GridView1.Visible = false;    // hide grid
 
+                if (Session["userid"] != null)
+                {
+                    username.Text = "Your User ID: " + Session["userid"].ToString();
+                    CurrentUser.GetAuthorizedDetails(Session["userid"].ToString());
+
+                    
+
+                }
+                else
+                {
+                    Response.Redirect("~/Default.aspx");
+                }
             }
 
         }
 
-        protected void Unnamed1_SelectedIndexChanged1(object sender, EventArgs e)
-        {
-
-        }
-
+    
         protected void Button1_Click1(object sender, EventArgs e)
         {
 
-
-
-            string str = "select firstname tbl_general where '"+searchbox.Text+"'";
-            SqlCommand cmd = new SqlCommand(str, con);
-            cmd.Parameters.Add("@search", SqlDbType.NVarChar).Value = searchbox.Text;
-            con.Open();
-            cmd.ExecuteNonQuery();
-            SqlDataAdapter da = new SqlDataAdapter();
-            da.SelectCommand = cmd;
-            DataSet ds = new DataSet();
-            da.Fill(ds, "firstname");
-            GridView3.DataSource = ds;
-            GridView3.DataBind();
-            con.Close();
-
-
         }
 
-        protected void searchbox_TextChanged(object sender, EventArgs e)
-        {
-                
-
+      protected void Button2_Click(object sender, EventArgs e)
+      {
+          
         }
 
      
