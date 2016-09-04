@@ -31,6 +31,24 @@ namespace FinalTemplate {
         protected global::System.Web.UI.HtmlControls.HtmlLink colorskins;
         
         /// <summary>
+        /// fname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label fname;
+        
+        /// <summary>
+        /// lname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lname;
+        
+        /// <summary>
         /// form1 control.
         /// </summary>
         /// <remarks>

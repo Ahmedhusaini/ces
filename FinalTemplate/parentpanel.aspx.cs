@@ -26,8 +26,20 @@ namespace FinalTemplate
                 {
                     username.Text = "Your User ID: " + Session["userid"].ToString();
                     CurrentUser.GetAuthorizedDetails(Session["userid"].ToString());
+                    CurrentUser.username(Session["userid"].ToString());
 
-                    
+                    Label lbl = (Label) this.Master.FindControl("fname");
+                    if (lbl != null)
+                    {
+                        lbl.Text = CurrentUser.FirstName;
+                    }
+                    Label lbll = (Label)this.Master.FindControl("lname");
+                    if (lbll != null)
+                    {
+                        lbll.Text = CurrentUser.FirstName;
+                    }
+
+
 
                 }
                 else
