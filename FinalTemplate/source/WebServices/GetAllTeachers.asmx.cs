@@ -28,6 +28,9 @@ namespace FinalTemplate.source.WebServices
             myDatabase.obj_sqlcommand.Parameters.AddWithValue("@TeacherName", SearchKey);
             try
             {
+                DateTime actualDate;
+                DateTime date = new DateTime();
+                string dateformat = "dd/mm/yyyy";
                 myDatabase.OpenConnection();
                 myDatabase.obj_reader = myDatabase.obj_sqlcommand.ExecuteReader();
                 if (myDatabase.obj_reader.HasRows)
@@ -38,8 +41,12 @@ namespace FinalTemplate.source.WebServices
                         teacherSearch.FirstName = myDatabase.obj_reader["firstname"].ToString();
                         teacherSearch.LastName = myDatabase.obj_reader["lastname"].ToString();
                         teacherSearch.Photo = myDatabase.obj_reader["photo"].ToString();
-                        teacherSearch.DateOfJoin = myDatabase.obj_reader["date_of_join"].ToString();
+                        actualDate = Convert.ToDateTime(myDatabase.obj_reader["date_of_join"]);
+                        teacherSearch.DateOfJoin = actualDate.ToString("D");
                         teacherSearch.CNIC = myDatabase.obj_reader["cnic_no"].ToString();
+                        teacherSearch.GeneralID = Convert.ToInt32(myDatabase.obj_reader["General_Id"]);
+                        teacherSearch.TeacherID = Convert.ToInt32(myDatabase.obj_reader["teacher_id"]);
+                        teacherSearch.AuthorizedID = myDatabase.obj_reader["authorized_id"].ToString();
                         listteacherSearches.Add(teacherSearch);
                     }
 
@@ -59,46 +66,6 @@ namespace FinalTemplate.source.WebServices
             }
             HttpContext.Current.Response.Write(serializer.Serialize(listteacherSearches));
 
-        }
-        [WebMethod]
-        public void GetAllTeacherRecords()
-        {
-            JavaScriptSerializer serializer = new JavaScriptSerializer();
-            List<TeacherSearch> listteacherSearches = new List<TeacherSearch>();
-            myDatabase.CreateConnection();
-            myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "sp_GetAllTeachers", true);
-
-            try
-            {
-                myDatabase.OpenConnection();
-                myDatabase.obj_reader = myDatabase.obj_sqlcommand.ExecuteReader();
-                if (myDatabase.obj_reader.HasRows)
-                {
-                    while (myDatabase.obj_reader.Read())
-                    {
-                        TeacherSearch teacherSearch = new TeacherSearch();
-                        teacherSearch.FirstName = myDatabase.obj_reader["firstname"].ToString();
-                        teacherSearch.LastName = myDatabase.obj_reader["lastname"].ToString();
-                        teacherSearch.Photo = myDatabase.obj_reader["photo"].ToString();
-                        teacherSearch.DateOfJoin = myDatabase.obj_reader["date_of_join"].ToString();
-                        teacherSearch.CNIC = myDatabase.obj_reader["cnic_no"].ToString();
-                        listteacherSearches.Add(teacherSearch);
-                    }
-                }
-                else
-                    HttpContext.Current.Response.Write("No teacher record found.");
-
-            }
-            catch (Exception exception)
-            {
-                HttpContext.Current.Response.Write(exception.ToString());
-            }
-            finally
-            {
-                myDatabase.CloseConnection();
-                myDatabase.obj_reader.Dispose();
-            }
-            HttpContext.Current.Response.Write(serializer.Serialize(listteacherSearches));
         }
     }
 
@@ -109,5 +76,8 @@ namespace FinalTemplate.source.WebServices
         public string Photo { get; set; }
         public string CNIC { get; set; }
         public string DateOfJoin { get; set; }
+        public int GeneralID { get; set; }
+        public int TeacherID { get; set; }
+        public string AuthorizedID { get; set; }
     }
 }

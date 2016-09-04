@@ -196,6 +196,7 @@
 .top {
     z-index:999;
 }
-.btnRightPadding {
-    padding-right: 135px;
+.imgTeacher {
+    height: 200px;
+    width: 300px;
 }

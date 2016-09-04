@@ -25,7 +25,7 @@
                         var arrData = $.parseJSON(data);
                         $.each(arrData, function (i, v) {
                             var parentdiv = $('div.customs-row');
-                            parentdiv.append('<div class="col-md-4 col-sm-6"><div class="edugate-layout-3"><div class="edugate-layout-3-wrapper"><a class="edugate-image"><img src="images/teachers/' + v.Photo + '" alt="" class="img-responsive" /></a><div class="edugate-content"><a href="#" class="title">' + v.FirstName + ' ' + v.LastName + '</a><ul><li> CNIC Number: <b>' + v.CNIC + '</b></li><li>Date Of Join: <b>' + v.DateOfJoin + '</b></li></ul></div><br><br><br><button class="btn btn-green" style="padding-right:115px;"><span>View Details</span></button></div></div></div></div>');
+                            parentdiv.append('<div class="col-md-4 col-sm-6"><div class="edugate-layout-3"><div class="edugate-layout-3-wrapper"><a class="edugate-image"><img class="imgTeacher" src="images/teachers/' + v.Photo + '" alt="" class="img-responsive" /></a><div class="edugate-content"><a href="#" class="title">' + v.FirstName + ' ' + v.LastName + '</a><ul><li> CNIC Number: <b>' + v.CNIC + '</b></li><li>General Teacher ID: <b>' + v.GeneralID + '</b></li><li>Teacher Authorized ID: <b>' + v.AuthorizedID + '</b></li><li>Date Of Join: <b>' + v.DateOfJoin + '</b></li></ul></div><br><br><br><button class="btn btn-green" style="padding-right:115px;margin-left:80px;"><span>View Details</span></button></div></div></div></div>');
                         });
                     },
                     error: function (error) {
@@ -64,7 +64,7 @@
                     var arrData = $.parseJSON(data);
                     $.each(arrData, function (i, v) {
                         var parentdiv = $('div.customs-row');
-                        parentdiv.append('<div class="col-md-4 col-sm-6"><div class="edugate-layout-3"><div class="edugate-layout-3-wrapper"><a class="edugate-image"><img src="images/teachers/' + v.Photo + '" alt="" class="img-responsive" /></a><div class="edugate-content"><a href="#" class="title">' + v.FirstName + ' ' + v.LastName + '</a><ul><li>CNIC Number: <b>' + v.CNIC + '</b></li><li>Date Of Join: <b>' + v.DateOfJoin + '</b></li></ul></div><br><br><br><button class="btn btn-green"style="padding-right:115px;"><span>View Details</span></button></div></div></div></div>');
+                        parentdiv.append('<div class="col-md-4 col-sm-6"><div class="edugate-layout-3"><div class="edugate-layout-3-wrapper"><a class="edugate-image"><img class="imgTeacher" src="images/teachers/' + v.Photo + '" alt="" class="img-responsive" /></a><div class="edugate-content"><a href="#" class="title">' + v.FirstName + ' ' + v.LastName + '</a><ul><li>CNIC Number: <b>' + v.CNIC + '</b></li><li>General Teacher ID: <b>' + v.GeneralID + '</b></li><li>Teacher Authorized ID: <b>' + v.AuthorizedID + '</b></li><li>Date Of Join: <b>' + v.DateOfJoin + '</b></li></ul></div><br><br><br><button class="btn btn-green"style="padding-right:115px;margin-left:80px;"><span>View Details</span></button></div></div></div></div>');
                     });
                 },
                 error: function (error) {
