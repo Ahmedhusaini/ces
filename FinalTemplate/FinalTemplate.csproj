@@ -88,12 +88,18 @@
     <Content Include="assets\images\team member\siddique.jpg" />
     <Content Include="assets\images\team member\shaheryar.jpg" />
     <Content Include="assets\images\team member\shahwaiz.jpg" />
+    <Content Include="images\teachers\teachers %281%29.jpg" />
+    <Content Include="images\teachers\teachers %282%29.jpg" />
+    <Content Include="images\teachers\teachers %283%29.jpg" />
+    <Content Include="images\teachers\teachers %284%29.jpg" />
+    <Content Include="images\teachers\teachers %285%29.jpg" />
     <Content Include="Logintype.aspx" />
     <Content Include="Our_Team.aspx" />
     <Content Include="parentpanel.aspx" />
     <Content Include="PostNews.aspx" />
     <Content Include="School_Rgistration.aspx" />
     <Content Include="source\Jvalidation\blacklist_keywords.txt" />
+    <Content Include="source\WebServices\GetAllTeachers.asmx" />
     <Content Include="StudentRgistration.aspx" />
     <Content Include="Admin.aspx" />
     <Content Include="assets\css\mycss.css" />
@@ -325,6 +331,10 @@
     <Compile Include="source\Registration\ClassSchoolRegistration.cs" />
     <Compile Include="source\Registration\CParentsregistration.cs" />
     <Compile Include="source\Registration\Package.cs" />
+    <Compile Include="source\WebServices\GetAllTeachers.asmx.cs">
+      <DependentUpon>GetAllTeachers.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="StudentRgistration.aspx.cs">
       <DependentUpon>StudentRgistration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -536,7 +546,6 @@
   <ItemGroup>
     <Folder Include="files\" />
     <Folder Include="images\registeredSchools\" />
-    <Folder Include="source\WebServices\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

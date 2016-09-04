@@ -4,28 +4,33 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="TeacherPlaceHolder1" runat="server">
 
     <div class="table-body">
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-        <asp:Button ID="Button1" runat="server" Text="Button" />
-
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataSourceID="SqlDataSource1" GridLines="Horizontal" Width="387px">
-            <Columns>
-                <asp:BoundField DataField="username" HeaderText="username" SortExpression="username" />
-                <asp:BoundField DataField="day" HeaderText="day" SortExpression="day" />
-                <asp:BoundField DataField="subject_name" HeaderText="subject_name" SortExpression="subject_name" />
-                <asp:BoundField DataField="start_time" HeaderText="start_time" SortExpression="start_time" />
-                <asp:BoundField DataField="end_time" HeaderText="end_time" SortExpression="end_time" />
+        <asp:TextBox ID="TextBox1" CssClass="form-control  form-input" runat="server" OnTextChanged="TextBox1_TextChanged" Width="540px"></asp:TextBox>
+           <button type="submit"  class="btn btn-register btn-green">
+        <asp:Button ID="Button1" runat="server" Text="SEARCH" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></button>
+        <asp:GridView ID="GridView1" class="edu-table-responsive"  runat="server" AutoGenerateColumns="False" DataSourceID="timetable" CellPadding="4" ForeColor="#333333" GridLines="None">
+            <AlternatingRowStyle BackColor="White" />
+            <Columns >
+                <asp:BoundField DataField="username" HeaderText="Teacher" SortExpression="username" />
+                <asp:BoundField DataField="day" HeaderText="Day" SortExpression="day" />
+                <asp:BoundField DataField="school_name" HeaderText="School Name" SortExpression="school_name" />
+                <asp:BoundField DataField="class" HeaderText="Class" SortExpression="class" />
+                <asp:BoundField DataField="section" HeaderText="Section" SortExpression="section" />
+                <asp:BoundField DataField="subject" HeaderText="Subject" SortExpression="subject" />
+                <asp:BoundField DataField="starting_time" HeaderText="Starting Time" SortExpression="starting_time" />
+                <asp:BoundField DataField="ending_time" HeaderText="Ending Time" SortExpression="ending_time" />
             </Columns>
-            <FooterStyle BackColor="White" ForeColor="#333333" />
-            <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
-            <RowStyle BackColor="White" ForeColor="#333333" />
-            <SelectedRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
-            <SortedAscendingCellStyle BackColor="#F7F7F7" />
-            <SortedAscendingHeaderStyle BackColor="#487575" />
-            <SortedDescendingCellStyle BackColor="#E5E5E5" />
-            <SortedDescendingHeaderStyle BackColor="#275353" />
+            <EditRowStyle BackColor="#7C6F57" />
+            <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="#E3EAEB" />
+            <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+            <SortedAscendingCellStyle BackColor="#F8FAFA" />
+            <SortedAscendingHeaderStyle BackColor="#246B61" />
+            <SortedDescendingCellStyle BackColor="#D4DFE1" />
+            <SortedDescendingHeaderStyle BackColor="#15524A" />
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [username], [day], [subject_name], [start_time], [end_time] FROM [timetable] WHERE ([username] = @username)">
+        <asp:SqlDataSource ID="timetable" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [username], [day], [school_name], [class], [section], [subject], [starting_time], [ending_time] FROM [Teacher_timetable] WHERE ([username] = @username)">
             <SelectParameters>
                 <asp:ControlParameter ControlID="TextBox1" Name="username" PropertyName="Text" Type="String" />
             </SelectParameters>
