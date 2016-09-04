@@ -42,6 +42,7 @@ namespace FinalTemplate.source.WebServices
                         teacherSearch.CNIC = myDatabase.obj_reader["cnic_no"].ToString();
                         listteacherSearches.Add(teacherSearch);
                     }
+
                 }
                 else
                     HttpContext.Current.Response.Write("No teacher record found.");
@@ -56,8 +57,6 @@ namespace FinalTemplate.source.WebServices
                 myDatabase.CloseConnection();
                 myDatabase.obj_reader.Dispose();
             }
-            ;
-            //serializer.Serialize(listteacherSearches)
             HttpContext.Current.Response.Write(serializer.Serialize(listteacherSearches));
 
         }
