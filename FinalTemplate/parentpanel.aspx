@@ -2,26 +2,31 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<div class="section background-opacity page-title set-height-top">
+        <div class="container">
+            <div class="page-title-wrapper">
+                <!--.page-title-content-->
+                <div class="slider-banner-wrapper">
+                    <h1 data-wow-delay="0.5s" class="sub-title wow fadeInUp">
+                        <asp:Label Text="Date: " ID="lab1" runat="server" Font-Size="Large"></asp:Label>&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;<asp:Label Text="Time:" ID="lab2" runat="server" Font-Size="Large"></asp:Label></h1>
+                    <h2 class="captions">Parent's profile</h2>
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active"><a href="#">Profile</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
            <div class="section">
                     <div class="search-input">
                         <div class="container">
                             <div class="search-input-wrapper">
                                 <form>
-                                    x<asp:DropDownList ID="DropDownList1" CssClass="form-select style-2 selectbox" runat="server" DataSourceID="SqlDataSource1" DataTextField="school_name" DataValueField="school_id" AppendDataBoundItems="True" AutoPostBack="True" >
-                                        <asp:ListItem>School</asp:ListItem>
-                                    </asp:DropDownList>
-                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="SELECT [school_id], [school_name] FROM [tbl_school]"></asp:SqlDataSource>
-                                    <asp:DropDownList ID="DropDownList2"  CssClass="form-select style-2 selectbox" runat="server" DataSourceID="SqlDataSource2" DataTextField="class" DataValueField="Class_id" AppendDataBoundItems="True" AutoPostBack="True">
-                                   <asp:ListItem>Class</asp:ListItem>
-                                         </asp:DropDownList>
-
-                                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="SELECT [Class_id], [class] FROM [tbl_class]"></asp:SqlDataSource>
-                                    <asp:DropDownList ID="DropDownList3" CssClass="form-select style-2 selectbox" runat="server" DataSourceID="SqlDataSource4" DataTextField="section" DataValueField="section" AppendDataBoundItems="True" AutoPostBack="True">
-                                    <asp:ListItem>Section</asp:ListItem>
-                                         </asp:DropDownList>
-                                    <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="SELECT * FROM [tbl_section]"></asp:SqlDataSource>
-                                    <asp:TextBox ID="searchbox" placeholder="Enter the Student Name" CssClass="form-input" runat="server" OnTextChanged="searchbox_TextChanged"></asp:TextBox>
-                                &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                                &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<br />
+                                    <br />
+                                    &ensp;<asp:Label ID="username" runat="server" Font-Size="Larger"></asp:Label>
+                                    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
                                   &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
                                      &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&nbsp;
                                        <button type="submit" class="form-submit btn btn-blue" style="margin-top: 6px; float: none"><span><asp:Button ID="Button1" runat="server" BorderStyle="None" style="background-color: Transparent" Text="Search" OnClick="Button1_Click1" />
@@ -33,20 +38,17 @@
                     </div>
                 </div>
    <div class="container teacher-course-wrapper" style="width:1220px">
-        <div class="group-title-index edu-ab-title"><h2 class="center-title">Check<b> your student</b> time table</h2>
+        <div class="group-title-index edu-ab-title"><h2 class="center-title">
+            <asp:GridView ID="GridView1" runat="server">
+            </asp:GridView>
+            </h2>
            
-                <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" Width="415px" DataSourceID="SqlDataSource3">
-                    <Columns>
-                        <asp:BoundField DataField="school_name" HeaderText="school_name" SortExpression="school_name" />
-                        <asp:BoundField DataField="class" HeaderText="class" SortExpression="class" />
-                        <asp:BoundField DataField="section" HeaderText="section" SortExpression="section" />
-                        <asp:BoundField DataField="firstname" HeaderText="firstname" SortExpression="firstname" />
-                    </Columns>
-                </asp:GridView>
-                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="SELECT tbl_school.school_name, tbl_class.class, tbl_section.section, tbl_general.firstname FROM tbl_school INNER JOIN tbl_Student_Reg ON tbl_school.school_id = tbl_Student_Reg.school_id INNER JOIN tbl_class_sec_info ON tbl_Student_Reg.class_sec_info_id = tbl_class_sec_info.class_sec_info_id INNER JOIN tbl_section ON tbl_class_sec_info.section_id = tbl_section.Section_id INNER JOIN tbl_class ON tbl_class_sec_info.class_id = tbl_class.Class_id INNER JOIN tbl_general ON tbl_Student_Reg.General_Id = tbl_general.General_Id"></asp:SqlDataSource>
                 <%--<asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="SELECT tbl_Student_Reg.Std_id, tbl_class.class, tbl_section.section, tbl_school.school_name, tbl_general.firstname FROM tbl_class INNER JOIN tbl_class_sec_info ON tbl_class.Class_id = tbl_class_sec_info.class_id INNER JOIN tbl_Student_Reg ON tbl_class_sec_info.class_sec_info_id = tbl_Student_Reg.class_sec_info_id INNER JOIN tbl_general ON tbl_Student_Reg.General_Id = tbl_general.General_Id INNER JOIN tbl_school ON tbl_Student_Reg.school_id = tbl_school.school_id INNER JOIN tbl_section ON tbl_class_sec_info.section_id = tbl_section.Section_id"></asp:SqlDataSource>--%>
             </div>
                        <div class="course-table" style="border-style: none; border-width: inherit; border-color: #FFFFFF">
+                          
+                           <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Button" />
+                           <asp:Label ID="get" runat="server"></asp:Label>
                           
        </div>
                                     </div>

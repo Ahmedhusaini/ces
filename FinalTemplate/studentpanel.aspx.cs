@@ -24,10 +24,10 @@ namespace FinalTemplate
         SqlConnection con = new SqlConnection(@"Data Source=SHAHWAIZHASAN;Initial Catalog=ces;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
-            lab1.Text = "DATE :" + System.DateTime.Now.ToShortDateString();   
+            lab1.Text = "DATE :" + System.DateTime.Now.ToShortDateString();
             lab2.Text = "TIME :" + System.DateTime.Now.ToLongTimeString();
 
-                
+
             if (!IsPostBack)
             {
                 if (Session["userid"] != null)
@@ -40,11 +40,6 @@ namespace FinalTemplate
                 }
             }
         }
-        public void clas()
-    {
-        cl.Text = "hellow shahwaioz";
-    }
-
         protected void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -74,7 +69,7 @@ namespace FinalTemplate
                     con.Open();
                     string path = @"~\images\" + filename.ToString();
                     SqlCommand cmd = new SqlCommand("update tbl_general set photo='" + path + "' where General_Id=1", con);
-                    shah.ImageUrl = @"~\images\"+FileUpload1.FileName;
+                    shah.ImageUrl = @"~\images\" + FileUpload1.FileName;
                     cmd.ExecuteNonQuery();
                     con.Close();
                     Label1.Text = "upload";
@@ -84,6 +79,11 @@ namespace FinalTemplate
             {
                 Label1.Text = (ex.Message);
             }
+        }
+
+        protected void clas(object sender, EventArgs e)
+        {
+            
         }
     }
 }
