@@ -19,13 +19,14 @@ namespace FinalTemplate.source.WebServices
 
 
         [WebMethod]
-        public void GetAllTeachersByFirstName(string SearchKey)
+        public void GetAllTeachersByFirstName(string SearchKey, string _schoolid)
         {
             JavaScriptSerializer serializer = new JavaScriptSerializer();
             List<TeacherSearch> listteacherSearches = new List<TeacherSearch>();
             myDatabase.CreateConnection();
             myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "sp_SearchTeacherByFirstName", true);
             myDatabase.obj_sqlcommand.Parameters.AddWithValue("@TeacherName", SearchKey);
+            myDatabase.obj_sqlcommand.Parameters.AddWithValue("@SchoolID", _schoolid);
             try
             {
                 DateTime actualDate;
