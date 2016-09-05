@@ -14,6 +14,7 @@
                                                 <asp:FileUpload ID="FileUpload1" runat="server" />
                                             </a>
                                             <a href="#" class="staff-name">barry join</a>
+                                            <br />
                                         </div>
                                     </div>
                                   </div>
@@ -78,12 +79,25 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                    <div>
+                                        <asp:GridView runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
+                                            <Columns>
+                                                <asp:BoundField DataField="username" HeaderText="username" SortExpression="username" />
+                                                <asp:BoundField DataField="Previous_school" HeaderText="Previous_school" SortExpression="Previous_school" />
+                                                <asp:BoundField DataField="school_name" HeaderText="school_name" SortExpression="school_name" />
+                                            </Columns>
+                                        </asp:GridView>
+                                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="SELECT [username], [Previous_school], [school_name] FROM [View_1]"></asp:SqlDataSource>
+                                    </div>
                                         </div>
 
                                 </div>
                             </div>                      
                         </div>
                     </div>
+             
+
+    <br />
              
 
 </asp:Content>
