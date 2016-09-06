@@ -43,7 +43,7 @@
     <asp:GridView ID="GridView1" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataSourceID="student_attendance" GridLines="Horizontal">
         <Columns>
             <asp:BoundField DataField="Std_id" HeaderText="Student Id" SortExpression="Std_id" />
-            <asp:BoundField DataField="username" HeaderText="Student Nmae" SortExpression="username" />
+            <asp:BoundField DataField="username" HeaderText="Student Name" SortExpression="username" />
             <asp:BoundField DataField="remarks" HeaderText="Remarks" SortExpression="remarks" />
         </Columns>
         <FooterStyle BackColor="White" ForeColor="#333333" />
