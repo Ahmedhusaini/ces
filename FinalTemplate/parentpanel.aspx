@@ -18,37 +18,58 @@
             </div>
         </div>
     </div>
-           <div class="section">
-                    <div class="search-input">
-                        <div class="container">
-                            <div class="search-input-wrapper">
-                                <form>
-                                &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<br />
-                                    <br />
-                                    &ensp;<asp:Label ID="username" runat="server" Font-Size="Larger"></asp:Label>
-                                    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                                  &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                                     &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&nbsp;
-                                       <button type="submit" class="form-submit btn btn-blue" style="margin-top: 6px; float: none"><span><asp:Button ID="Button1" runat="server" BorderStyle="None" style="background-color: Transparent" Text="Search" OnClick="Button1_Click1" />
-                                        <i class="fa fa-search"></i></span></button>
-                                    <div class="clearfix"></div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="col-md-9">
+    <div class="news-page-wrapper">
+           <div class="edugate-layout-1">
+                                        <div class="edugate-image"><img src="assets/images/news/news-1.jpg" alt="" class="img-responsive"/></div>
+                                        <div class="edugate-content"><a href="news-detail.html" class="title">
+                                                <asp:Label ID="headlbl" runat="server" Font-size="18"  ></asp:Label></a>&nbsp;&nbsp;
+                                            <a href="news-detail.html" class="title"> 
+                                                 <asp:Label ID="headll" runat="server" Font-size="18"  ></asp:Label></a>
+                                            <div class="info">
+                                                <div class="author item"><a href="#">Gender: </a>&nbsp&nbsp;&nbsp;&nbsp; <asp:Label ID="gender" Font-size="13" runat="server"></asp:Label> </div>
+                     
+                                            </div>
+                                            <div class="info">
+                                                <div class="author item"><a href="#">Contact NO: </a> &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="phone" Font-size="13" runat="server"></asp:Label></div>
+                     
+                                            </div>
+                                            <div class="info">
+                                                <div class="author item"><a href="#">Address: </a>&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="address" Font-size="13" runat="server"></asp:Label></div>
+                     
+                                            </div>
+                                            <div class="info">
+                                                <div class="author item"><a href="#">Email ID: </a>&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="pemail" Font-size="13" runat="server"></asp:Label></div>
+                     
+                                            </div>
+                                            <div class="info">
+                                                <div class="author item"><a href="#">Authorized ID : </a>&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="atype" Font-size="13" runat="server"></asp:Label></div>
+                     
+                                            </div>
+                                            <div class="info-more">
+                                                <div class="view item"><i class="fa fa-user"></i>
+
+                                                    <p> 56</p></div>
+                                                <div class="comment item"><i class="fa fa-comment"></i>
+
+                                                    <p> 239</p></div>
+                                            </div>
+                                            <div class="description">Dalmatian hello amazing the rmore flung as thanks a manta dealt to under emu some the and one baldbe dear sobbingly save and spitefully less.</div>
+                                          <%-- <button class="btn btn-green"><span>read more</span></button>--%>
+                                        </div>
+                                    </div>
+        </div>
+        </div>
+    
    <div class="container teacher-course-wrapper" style="width:1220px">
         <div class="group-title-index edu-ab-title"><h2 class="center-title">
-            <asp:GridView ID="GridView1" runat="server">
-            </asp:GridView>
-            </h2>
+            &nbsp;</h2>
            
                 <%--<asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="SELECT tbl_Student_Reg.Std_id, tbl_class.class, tbl_section.section, tbl_school.school_name, tbl_general.firstname FROM tbl_class INNER JOIN tbl_class_sec_info ON tbl_class.Class_id = tbl_class_sec_info.class_id INNER JOIN tbl_Student_Reg ON tbl_class_sec_info.class_sec_info_id = tbl_Student_Reg.class_sec_info_id INNER JOIN tbl_general ON tbl_Student_Reg.General_Id = tbl_general.General_Id INNER JOIN tbl_school ON tbl_Student_Reg.school_id = tbl_school.school_id INNER JOIN tbl_section ON tbl_class_sec_info.section_id = tbl_section.Section_id"></asp:SqlDataSource>--%>
             </div>
                        <div class="course-table" style="border-style: none; border-width: inherit; border-color: #FFFFFF">
                           
-                           <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Button" />
-                           <asp:Label ID="get" runat="server"></asp:Label>
+                        
                           
        </div>
                                     </div>
@@ -56,7 +77,7 @@
       
         <!-- CHOOSE COURSES-->
     <br />
-                        <div class="group-title-index"><h4 class="top-title">Your Childerns class="group-title-index"></h4><h4 class="top-title">Your Childerns</h4>
+                        <div class="group-title-index"><h4 class="top-title">Your Childerns </h4><h4 class="top-title">Your Childerns</h4>
 
                             <h2 class="center-title">check profile of your student&nbsp;&nbsp;&nbsp;&nbsp; </h2>
 

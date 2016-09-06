@@ -7,62 +7,74 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Runtime.CompilerServices;
+using FinalTemplate.source.Database;
 using FinalTemplate.source.Functions;
 
 namespace FinalTemplate
 {
     public partial class parentpanel1 : System.Web.UI.Page
     {
-       
+        private Database myDatabase = new Database("cesConnectionString3");
         protected void Page_Load(object sender, EventArgs e)
         {
-            lab1.Text = "Date: " + System.DateTime.Now.ToShortDateString();
-            lab2.Text = "Time: "+System.DateTime.Now.ToShortTimeString();
-              
-            if (!IsPostBack)
+            lab1.Text = "Date :" + System.DateTime.Now.ToShortDateString();
+            lab2.Text = "Time :" + System.DateTime.Now.ToShortTimeString();
+
+            if (Session["userid"] != null)
             {
 
-                if (Session["userid"] != null)
+                string[] col = { "General_Id" };
+                string[] colwhere = {"authorized_id"};
+                string[] whereoperator = {"="};
+                
+                string[] multiwhere = {""};
+                
+                CurrentUser.GetAuthorizedDetails(Session["userid"].ToString());
+                string[] whereoperatorvale = { "'" + CurrentUser.AuthorizedID + "'" };
+                string[,] parentid = myDatabase.SelectQuery("tbl_Parents",col,colwhere,whereoperator,whereoperatorvale,multiwhere );
+                CurrentUser.GetPersonalDetails(Convert.ToInt32(parentid[0, 0]));
+               
+              
+                Label lbl = (Label) this.Master.FindControl("fname");
+                if (lbl!=null)
                 {
-                    username.Text = "Your User ID: " + Session["userid"].ToString();
-                    CurrentUser.GetAuthorizedDetails(Session["userid"].ToString());
-                    CurrentUser.username(Session["userid"].ToString());
-
-                    Label lbl = (Label) this.Master.FindControl("fname");
-                    if (lbl != null)
-                    {
-                        lbl.Text = CurrentUser.FirstName;
-                    }
-                    Label lbll = (Label)this.Master.FindControl("lname");
-                    if (lbll != null)
-                    {
-                        lbll.Text = CurrentUser.FirstName;
-                    }
-
-
-
+                    lbl.Text = CurrentUser.FirstName + " " + CurrentUser.LastName;
                 }
-                else
-                {
-                    Response.Redirect("~/Default.aspx");
-                }
+
+                headlbl.Text = CurrentUser.FirstName;
+                headll.Text = CurrentUser.LastName;
+                gender.Text = CurrentUser.Gender;
+                phone.Text = CurrentUser.Phone;
+                address.Text = CurrentUser.Address;
+                pemail.Text = CurrentUser.PrimaryEmailAddress;
+                atype.Text= CurrentUser.AuthorizedID;
+
             }
+
+            else
+            {
+                Response.Redirect("~/Default.aspx");
+            }
+           
+            }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
 
         }
 
-    
         protected void Button1_Click1(object sender, EventArgs e)
         {
 
         }
 
-      protected void Button2_Click(object sender, EventArgs e)
-      {
-          
         }
+
+    
+       
 
      
 
         
     }
-}

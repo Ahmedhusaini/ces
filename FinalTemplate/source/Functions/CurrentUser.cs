@@ -34,42 +34,7 @@ namespace FinalTemplate.source.Functions
         static public int LocationID { get; set; }
 
 
-        static public void username(string _authorizedid)
-        {
-            myDatabase.CreateConnection();
-            myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "sp_selectusername", true);
-            try
-            {
-                myDatabase.OpenConnection();
-                SqlParameter p_authorizedID = new SqlParameter("@authorized_id", SqlDbType.VarChar, 20);
-                p_authorizedID.Value = _authorizedid;
-                myDatabase.obj_sqlcommand.Parameters.Add(p_authorizedID);
-                myDatabase.obj_reader = myDatabase.obj_sqlcommand.ExecuteReader();
-                if (myDatabase.obj_reader.HasRows)
-                {
-                    int totalRows = myDatabase.obj_reader.RecordsAffected;
-                    while (myDatabase.obj_reader.Read())
-                    {
-                        FirstName = myDatabase.obj_reader["firstname"].ToString();
-                        LastName = myDatabase.obj_reader["lastname"].ToString();
-                    }
-                }
-                else
-                {
-                    HttpContext.Current.Response.Write("No record found on this authorized id");
-                }
-            }
-            catch (Exception ex)
-            {
-                HttpContext.Current.Response.Write(ex.ToString());
-            }
-            finally
-            {
-                myDatabase.CloseConnection();
-                myDatabase.obj_reader.Close();
-
-            }
-        }
+       
         
 
         static public void GetAuthorizedDetails(string _authorizedid)
@@ -126,6 +91,7 @@ namespace FinalTemplate.source.Functions
             myDatabase.obj_sqlcommand.Parameters.Add(p_generalid);
             try
             {
+                myDatabase.OpenConnection();
                 myDatabase.obj_reader = myDatabase.obj_sqlcommand.ExecuteReader();
                 if (myDatabase.obj_reader.HasRows)
                 {
