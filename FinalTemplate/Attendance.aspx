@@ -8,25 +8,12 @@
                               
                                    
                                      <asp:DropDownList ID="DropDownList1" runat="server" CssClass="sbHolder" DataSourceID="class_DataSource" DataTextField="class" DataValueField="class">
-                                        <asp:ListItem>Class 1</asp:ListItem>
-                                        <asp:ListItem>Class 2</asp:ListItem>
-                                        <asp:ListItem>Class 3</asp:ListItem>
-                                        <asp:ListItem>Class 4</asp:ListItem>
-                                        <asp:ListItem>Class 5</asp:ListItem>
-                                        <asp:ListItem>Class 6</asp:ListItem>
-                                        <asp:ListItem>Class 7</asp:ListItem>
-                                        <asp:ListItem>Class 8</asp:ListItem>
-                                        <asp:ListItem>Class 9</asp:ListItem>
-                                        <asp:ListItem>Class 10</asp:ListItem>
+                                      
                                     </asp:DropDownList>                                                             
                                      <asp:SqlDataSource ID="class_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [class] FROM [tbl_class]"></asp:SqlDataSource>
                               <div >
                                  <asp:DropDownList ID="DropDownList2" runat="server" CssClass="sbHolder" DataSourceID="sec_DataSource" DataTextField="section" DataValueField="section">
-                                        <asp:ListItem>A</asp:ListItem>
-                                        <asp:ListItem>B</asp:ListItem>
-                                        <asp:ListItem>C</asp:ListItem>
-                                        <asp:ListItem>D</asp:ListItem>
-                                        <asp:ListItem>E</asp:ListItem>
+                                       
                                     </asp:DropDownList>
 
                                   <asp:SqlDataSource ID="sec_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [section] FROM [tbl_section]"></asp:SqlDataSource>
