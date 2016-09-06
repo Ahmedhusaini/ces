@@ -48,9 +48,9 @@ namespace FinalTemplate.source.WebServices
                         teacherSearch.GeneralID = Convert.ToInt32(myDatabase.obj_reader["General_Id"]);
                         teacherSearch.TeacherID = Convert.ToInt32(myDatabase.obj_reader["teacher_id"]);
                         teacherSearch.AuthorizedID = myDatabase.obj_reader["authorized_id"].ToString();
+                        teacherSearch.SchoolID = myDatabase.obj_reader["school_id"].ToString();
                         listteacherSearches.Add(teacherSearch);
                     }
-
                 }
                 else
                     HttpContext.Current.Response.Write("No teacher record found.");
@@ -68,6 +68,46 @@ namespace FinalTemplate.source.WebServices
             HttpContext.Current.Response.Write(serializer.Serialize(listteacherSearches));
 
         }
+        [WebMethod]
+        public void TeacherOFTheMonth(string schoolid)
+        {
+            List<AllTeachers> teacherList = new List<AllTeachers>();
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            myDatabase.CreateConnection();
+            myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "select teacher_id,firstname,lastname,school_id from view_ViewAllTeachers where school_id='" + schoolid + "'");
+            try
+            {
+                myDatabase.OpenConnection();
+                myDatabase.obj_reader = myDatabase.obj_sqlcommand.ExecuteReader();
+                while (myDatabase.obj_reader.Read())
+                {
+                    AllTeachers teacher = new AllTeachers();
+                    teacher.TeacherID = Convert.ToInt32(myDatabase.obj_reader["teacher_id"]);
+                    teacher.FirstName = myDatabase.obj_reader["firstname"].ToString();
+                    teacher.LastName = myDatabase.obj_reader["lastname"].ToString();
+                    teacher.SchoolID = myDatabase.obj_reader["school_id"].ToString();
+                    teacherList.Add(teacher);
+                }
+            }
+            catch (Exception ex)
+            {
+                HttpContext.Current.Response.Write(ex.ToString());
+            }
+            finally
+            {
+                myDatabase.CloseConnection();
+                myDatabase.obj_reader.Dispose();
+            }
+            HttpContext.Current.Response.Write(serializer.Serialize(teacherList));
+        }
+    }
+
+    public class AllTeachers
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string SchoolID { get; set; }
+        public int TeacherID { get; set; }
     }
 
     public class TeacherSearch
@@ -79,6 +119,7 @@ namespace FinalTemplate.source.WebServices
         public string DateOfJoin { get; set; }
         public int GeneralID { get; set; }
         public int TeacherID { get; set; }
+        public string SchoolID { get; set; }
         public string AuthorizedID { get; set; }
     }
 }
