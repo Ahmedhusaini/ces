@@ -94,6 +94,7 @@
     <Content Include="images\teachers\teachers %284%29.jpg" />
     <Content Include="images\teachers\teachers %285%29.jpg" />
     <Content Include="Logintype.aspx" />
+    <Content Include="mark_studentAttendance.aspx" />
     <Content Include="Our_Team.aspx" />
     <Content Include="parentpanel.aspx" />
     <Content Include="PostNews.aspx" />
@@ -277,6 +278,13 @@
     </Compile>
     <Compile Include="About_Us.aspx.designer.cs">
       <DependentUpon>About_Us.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mark_studentAttendance.aspx.cs">
+      <DependentUpon>mark_studentAttendance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mark_studentAttendance.aspx.designer.cs">
+      <DependentUpon>mark_studentAttendance.aspx</DependentUpon>
     </Compile>
     <Compile Include="Our_Team.aspx.cs">
       <DependentUpon>Our_Team.aspx</DependentUpon>

@@ -87,7 +87,7 @@
                         <li class="dropdown"><a href="Admin.aspx" class="main-menu">Attendance<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
                                 <li><a href="Attendance.aspx" class="link-page">Mark Attendance</a></li>
-                                <li><a href="Attendance.aspx" class="link-page">View Attendance</a></li>
+                                <li><a href="View_Attendance.aspx" class="link-page">View Attendance</a></li>
                             </ul>
                         </li>
                         <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Schedules<span class="fa fa-angle-down icons-dropdown"></span></a>
