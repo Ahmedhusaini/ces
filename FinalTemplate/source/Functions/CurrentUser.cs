@@ -7,7 +7,7 @@ namespace FinalTemplate.source.Functions
 {
     public class CurrentUser
     {
-        static private Database.Database myDatabase = new Database.Database("cesConnectionString3");
+        static private Database.Database myDatabase = new Database.Database("cesConnectionString");
         //tbl_authorized_users columns
         static public string AuthorizedID { get; set; }
         static public string Username { get; set; }
@@ -70,7 +70,7 @@ namespace FinalTemplate.source.Functions
 
             }
         }
-        
+
 
         static public void GetAuthorizedDetails(string _authorizedid)
         {

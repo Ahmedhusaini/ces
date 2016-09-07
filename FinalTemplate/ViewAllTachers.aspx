@@ -16,16 +16,17 @@
                 e.preventDefault();
                 removechilddivs();
                 var SearchKeyValue = $('#<%=txtSearch.ClientID%>').val();
+                var schoolid = $('#schoolIDvalue').val();
                 $.ajax({
                     url: 'source/WebServices/GetAllTeachers.asmx/GetAllTeachersByFirstName',
                     method: 'post',
-                    data: { SearchKey: SearchKeyValue },
+                    data: {SearchKey: SearchKeyValue,_schoolid: schoolid },
                     datatype: 'json',
                     success: function (data) {
                         var arrData = $.parseJSON(data);
                         $.each(arrData, function (i, v) {
                             var parentdiv = $('div.customs-row');
-                            parentdiv.append('<div class="col-md-4 col-sm-6"><div class="edugate-layout-3"><div class="edugate-layout-3-wrapper"><a class="edugate-image"><img src="images/teachers/' + v.Photo + '" alt="" class="img-responsive" /></a><div class="edugate-content"><a href="#" class="title">' + v.FirstName + ' ' + v.LastName + '</a><ul><li> CNIC Number: <b>' + v.CNIC + '</b></li><li>Date Of Join: <b>' + v.DateOfJoin + '</b></li></ul></div><br><br><br><button class="btn btn-green" style="padding-right:115px;"><span>View Details</span></button></div></div></div></div>');
+                            parentdiv.append('<div class="col-md-4 col-sm-6"><div class="edugate-layout-3"><div class="edugate-layout-3-wrapper"><a class="edugate-image"><img class="imgTeacher" src="images/teachers/' + v.Photo + '" alt="" class="img-responsive" /></a><div class="edugate-content"><a href="#" class="title">' + v.FirstName + ' ' + v.LastName + '</a><ul><li> CNIC Number: <b>' + v.CNIC + '</b></li><li>General Teacher ID: <b>' + v.GeneralID + '</b></li><li>Teacher Authorized ID: <b>' + v.AuthorizedID + '</b></li><li>Date Of Join: <b>' + v.DateOfJoin + '</b></li></ul></div><br><br><br><button class="btn btn-green" style="padding-right:115px;margin-left:80px;"><span>View Details</span></button></div></div></div></div>');
                         });
                     },
                     error: function (error) {
@@ -55,16 +56,17 @@
 
         function searchTeacher() {
             var SearchKeyValue = $('#<%=txtSearch.ClientID%>').val();
+            var schoolid = $('#schoolIDvalue').val();
             $.ajax({
                 url: 'source/WebServices/GetAllTeachers.asmx/GetAllTeachersByFirstName',
                 method: 'post',
-                data: { SearchKey: SearchKeyValue },
+                data: { SearchKey: SearchKeyValue, _schoolid: schoolid },
                 datatype: 'json',
                 success: function (data) {
                     var arrData = $.parseJSON(data);
                     $.each(arrData, function (i, v) {
                         var parentdiv = $('div.customs-row');
-                        parentdiv.append('<div class="col-md-4 col-sm-6"><div class="edugate-layout-3"><div class="edugate-layout-3-wrapper"><a class="edugate-image"><img src="images/teachers/' + v.Photo + '" alt="" class="img-responsive" /></a><div class="edugate-content"><a href="#" class="title">' + v.FirstName + ' ' + v.LastName + '</a><ul><li>CNIC Number: <b>' + v.CNIC + '</b></li><li>Date Of Join: <b>' + v.DateOfJoin + '</b></li></ul></div><br><br><br><button class="btn btn-green"style="padding-right:115px;"><span>View Details</span></button></div></div></div></div>');
+                        parentdiv.append('<div class="col-md-4 col-sm-6"><div class="edugate-layout-3"><div class="edugate-layout-3-wrapper"><a class="edugate-image"><img class="imgTeacher" src="images/teachers/' + v.Photo + '" alt="" class="img-responsive" /></a><div class="edugate-content"><a href="#" class="title">' + v.FirstName + ' ' + v.LastName + '</a><ul><li>CNIC Number: <b>' + v.CNIC + '</b></li><li>General Teacher ID: <b>' + v.GeneralID + '</b></li><li>Teacher Authorized ID: <b>' + v.AuthorizedID + '</b></li><li>Date Of Join: <b>' + v.DateOfJoin + '</b></li></ul></div><br><br><br><button class="btn btn-green"style="padding-right:115px;margin-left:80px;"><span>View Details</span></button></div></div></div></div>');
                     });
                 },
                 error: function (error) {
@@ -101,6 +103,7 @@
                                 <form>
                                 <asp:TextBox ID="txtSearch" runat="server" CssClass="form-input" placeholder="Type teacher name you want to search"></asp:TextBox>
                                 <button type="submit" id="btnsubmit" class="form-submit btn btn-blue"><span>search now<i class="fa fa-search"></i></span></button>
+                                    <input id="schoolIDvalue" type="hidden" value="<%= school_id %>"/>
                                 <div class="clearfix"></div>
                                 </form>
                             </div>

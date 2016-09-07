@@ -3,6 +3,7 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
+using System.Web;
 
 namespace FinalTemplate.source.Registration
 {
@@ -164,20 +165,37 @@ namespace FinalTemplate.source.Registration
             return id.ToString();
         }
 
-        public void SelectPackage(string packageName)
+        public string GetSchoolIDByAuthorizedID(string _authorizedID)
         {
-            if (packageName == "Silver")
+            string schoolID = string.Empty;
+            myDatabase.CreateConnection();
+            myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "select tbl_school.school_id from tbl_school where authorized_id='" + _authorizedID + "'");
+            try
             {
-
+                myDatabase.OpenConnection();
+                myDatabase.obj_reader = myDatabase.obj_sqlcommand.ExecuteReader();
+                if (myDatabase.obj_reader.HasRows)
+                {
+                    while (myDatabase.obj_reader.Read())
+                    {
+                        schoolID = myDatabase.obj_reader["school_id"].ToString();
+                    }
+                }
+                else
+                {
+                    HttpContext.Current.Response.Write("No school id found");
+                }
             }
-            else if (packageName == "Gold")
+            catch (Exception exception)
             {
-
+                HttpContext.Current.Response.Write(exception.ToString());
             }
-            else if (packageName == "Platinum")
+            finally
             {
-
+                myDatabase.CloseConnection();
+                myDatabase.obj_reader.Dispose();
             }
+            return schoolID;
         }
     }
 }
