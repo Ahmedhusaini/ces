@@ -249,7 +249,7 @@
     <Content Include="assets\libs\selectbox\js\jquery.selectbox-0.2.min.js" />
     <Content Include="assets\libs\smooth-scroll\jquery-smoothscroll.js" />
     <Content Include="assets\libs\wow-js\wow.min.js" />
-    <Content Include="Attendance.aspx" />
+    <Content Include="View_Attendance.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="news_description.aspx" />
     <Content Include="ParentRegistration.aspx" />
@@ -356,12 +356,12 @@
     <Compile Include="Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
-    <Compile Include="Attendance.aspx.cs">
-      <DependentUpon>Attendance.aspx</DependentUpon>
+    <Compile Include="View_Attendance.aspx.cs">
+      <DependentUpon>View_Attendance.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Attendance.aspx.designer.cs">
-      <DependentUpon>Attendance.aspx</DependentUpon>
+    <Compile Include="View_Attendance.aspx.designer.cs">
+      <DependentUpon>View_Attendance.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
