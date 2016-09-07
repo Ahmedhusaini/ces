@@ -83,8 +83,7 @@
                     <asp:Label ID="namelab" CssClass="title-2" runat="server"></asp:Label>
                     <asp:Label ID="lab3" runat="server"></asp:Label>
                     <p>CLASS-6 SECTION-B</p>
-                    <asp:Label ID="cl" runat="server"></asp:Label>
-                    <asp:Button Text="click" OnClick="clas" runat="server" />
+                    <asp:Label ID="cl" runat="server" Text="new"></asp:Label>
                     <div>
                         <asp:FileUpload ID="FileUpload1" runat="server" />
                         <asp:Button class="btn-green" BackColor="#86bc42" BorderColor="#86bc42" ID="btnSave" Text="Save" OnClick="btnSave_Click" runat="server" Height="30px" Width="70px"></asp:Button>
@@ -198,88 +197,46 @@
     <div class="section teacher-course section-padding">
         <div class="container teacher-course-wrapper" style="width: 1220px">
             <div class="underline">TIME TABLE</div>
-            <div class="course-table">
-                <div class="outer-container">
-                    <div class="inner-container">
-                        <div class="table-header">
-                            <table class="edu-table-responsive">
-                                <thead>
-                                    <tr class="heading-table">
-                                        <th class="col-1">ID</th>
-                                        <th class="col-3">MONDAY</th>
-                                        <th class="col-3">TUESDAY</th>
-                                        <th class="col-3">WEDNESDAY</th>
-                                        <th class="col-3">THURSDAY</th>
-                                        <th class="col-3">FRIDAY</th>
-                                    </tr>
-                                </thead>
-                            </table>
-                        </div>
-                        <div class="table-body">
-                            <table class="edu-table-responsive table-hover">
-                                <tbody>
-                                    <tr class="table-row">
-                                        <td class="col-1"><span>P1</span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                    </tr>
-                                    <tr class="table-row">
-                                        <td class="col-1"><span>P2</span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                    </tr>
-                                    <tr class="table-row">
-                                        <td class="col-1"><span>P3</span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                    </tr>
-                                    <tr class="table-row">
-                                        <td class="col-1"><span>P4</span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                    </tr>
-                                    <tr class="table-row">
-                                        <td class="col-1"><span>P5</span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                    </tr>
-                                    <tr class="table-row">
-                                        <td class="col-1"><span>P6</span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                    </tr>
-                                    <tr class="table-row">
-                                        <td class="col-1"><span>P7</span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                        <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                    </div>
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-top-wrapper">
+                    <div class="footer-top-left">
+                        <asp:TextBox ID="TextBox1" placeholder="enter your teacher name" CssClass="form-control  form-input" Height="40px" Width="600px" runat="server">
+                        </asp:TextBox>
+                    </div>
+                    <div class="footer-top-right">
+                        <button onclick="window.location.href='contact.html'" class="btn btn-blue btn-bold"><span>Search</span></button>
                     </div>
                 </div>
             </div>
         </div>
+        <br />
+        
+        <asp:GridView ID="GridView1" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#86bc42" GridLines="None">
+            <AlternatingRowStyle BackColor="White" />
+            <Columns>
+                <asp:BoundField DataField="day" HeaderText="day" SortExpression="day" />
+                <asp:BoundField DataField="starting_time" HeaderText="Starting Time" SortExpression="starting_time" />
+                <asp:BoundField DataField="ending_time" HeaderText="Ending Time" SortExpression="ending_time" />
+                <asp:BoundField DataField="subject" HeaderText="Subject" SortExpression="subject" />
+                <asp:BoundField DataField="username" HeaderText="Teacher" SortExpression="username" />
+            </Columns>
+            <EditRowStyle BackColor="#7C6F57" />
+            <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#737373" Font-Bold="True" ForeColor="#86bc42" />
+            <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="#E3EAEB" />
+            <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+            <SortedAscendingCellStyle BackColor="#F8FAFA" />
+            <SortedAscendingHeaderStyle BackColor="#246B61" />
+            <SortedDescendingCellStyle BackColor="#D4DFE1" />
+            <SortedDescendingHeaderStyle BackColor="#15524A" />
+        </asp:GridView>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="SELECT [day], [starting_time], [ending_time], [subject], [username] FROM [student_timetable] WHERE ([username] = @username)">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="TextBox1" Name="username" PropertyName="Text" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
     </div>
 </asp:Content>
