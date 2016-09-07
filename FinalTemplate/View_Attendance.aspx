@@ -37,7 +37,8 @@
                                                     <div class="table-body">
                                                             <asp:GridView ID="GridView1" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataSourceID="student_attendance" GridLines="Horizontal" DataKeyNames="std_attend_id">
         <Columns>
-            <asp:BoundField DataField="std_attend_id" HeaderText="Serial No" SortExpression="std_attend_id" ReadOnly="True" />
+            <asp:BoundField DataField="std_attend_id" HeaderText="ID" SortExpression="std_attend_id" ReadOnly="True" />
+            <asp:BoundField DataField="username" HeaderText="Student Name" SortExpression="username" />
             <asp:BoundField DataField="remarks" HeaderText="Remarks" SortExpression="remarks" />
         </Columns>
         <FooterStyle BackColor="White" ForeColor="#333333" />
@@ -51,7 +52,12 @@
         <SortedDescendingHeaderStyle BackColor="#275353" />
     </asp:GridView>                     
                    
-    <asp:SqlDataSource ID="student_attendance" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [std_attend_id], [remarks] FROM [tbl_student_attendance]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="student_attendance" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [std_attend_id], [username], [remarks] FROM [Studentattendance] WHERE (([class] = @class) AND ([section] = @section))">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="DropDownList1" Name="class" PropertyName="SelectedValue" Type="String" />
+            <asp:ControlParameter ControlID="DropDownList2" Name="section" PropertyName="SelectedValue" Type="String" />
+        </SelectParameters>
+                                                            </asp:SqlDataSource>
                                                       
                                                     </div>
                                                 
