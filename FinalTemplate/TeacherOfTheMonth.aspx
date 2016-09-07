@@ -16,8 +16,7 @@
                  url: 'source/WebServices/GetAllTeachers.asmx/TeacherOFTheMonth',
                  method:'post',
                  data: { schoolid: schoolidvalue },
-                 dataType: 'json',
-                 
+                 dataType: 'json',                 
                  success: function (data) {
                      var obj = JSON.stringify(data);
                      var actualArray = $.parseJSON(obj);
@@ -30,10 +29,7 @@
                      alert("Error" + data);
                  }
              });
-         }
-         function initializedButton() {
-             $('input[type=checkbox]').bootstrapToggle();
-         }
+         }        
          function EmptyTable() {
              $('tbody').empty();
          }

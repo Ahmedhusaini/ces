@@ -16,8 +16,6 @@ namespace FinalTemplate.source.WebServices
     public class GetAllTeachers : System.Web.Services.WebService
     {
         private Database.Database myDatabase = new Database.Database("cesConnectionString");
-
-
         [WebMethod]
         public void GetAllTeachersByFirstName(string SearchKey, string _schoolid)
         {
