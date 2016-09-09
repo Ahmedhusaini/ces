@@ -20,12 +20,9 @@ namespace FinalTemplate
                     {
                         Response.Write(ex.ToString());
                     }
-
                 }
                 else
-                {
                     Response.Redirect("~/Default.aspx");
-                }
             }
         }
         protected void btn_logout_Click(object sender, EventArgs e)
