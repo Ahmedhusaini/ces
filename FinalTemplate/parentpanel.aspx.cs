@@ -49,6 +49,7 @@ namespace FinalTemplate
                 address.Text = CurrentUser.Address;
                 pemail.Text = CurrentUser.PrimaryEmailAddress;
                 atype.Text= CurrentUser.AuthorizedID;
+                
 
             }
 

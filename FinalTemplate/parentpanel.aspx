@@ -54,7 +54,7 @@
 
                                                     <p> 239</p></div>
                                             </div>
-                                            <div class="description">Dalmatian hello amazing the rmore flung as thanks a manta dealt to under emu some the and one baldbe dear sobbingly save and spitefully less.</div>
+                                            <div class="description"></div>
                                           <%-- <button class="btn btn-green"><span>read more</span></button>--%>
                                         </div>
                                     </div>

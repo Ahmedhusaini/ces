@@ -62,8 +62,8 @@ namespace FinalTemplate
                 {
                     //JFunctions.SendEmail(pemail.Text, "CES - Registration", EmailBody());
 
-                    //ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "tmp", "popup();", true);
-                    Response.Write("Register");
+                    ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "tmp", "popup();", true);
+                    //Response.Write("Register");
                     
                 }
                 else
