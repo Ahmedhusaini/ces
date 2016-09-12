@@ -21,7 +21,7 @@
     <div class="col-md-9">
     <div class="news-page-wrapper">
            <div class="edugate-layout-1">
-                                        <div class="edugate-image"><img src="assets/images/news/news-1.jpg" alt="" class="img-responsive"/></div>
+                                        <div class="edugate-image"><asp:Image ID="Image1" runat="server"  /></div>
                                         <div class="edugate-content"><a href="news-detail.html" class="title">
                                                 <asp:Label ID="headlbl" runat="server" Font-size="18"  ></asp:Label></a>&nbsp;&nbsp;
                                             <a href="news-detail.html" class="title"> 
@@ -77,7 +77,7 @@
       
         <!-- CHOOSE COURSES-->
     <br />
-                        <div class="group-title-index"><h4 class="top-title">Your Childerns </h4><h4 class="top-title">Your Childerns</h4>
+                        <div class="group-title-index"><h4 class="top-title">Your Childerns </h4>
 
                             <h2 class="center-title">check profile of your student&nbsp;&nbsp;&nbsp;&nbsp; </h2>
 
@@ -88,9 +88,11 @@
                         <div class="item-course">
                             <div class="item-course-wrapper">
                                 <div class="icon-course"><i class="icons-img fa fa-male"></i></div>
-                                <div class="info-course"><a href="#" class="name-course">ahmed hussaini</a>
+                                <div class="info-course"><a href="#" class="name-course">
+                                    <asp:Label ID="stdid" runat="server" ></asp:Label></a>
 
-                                    <div class="info">check them out</div>
+                                    <div class="info">
+                                        <asp:Label ID="name" runat="server"></asp:Label></div>
                                 </div>
                             </div>
                         </div>
