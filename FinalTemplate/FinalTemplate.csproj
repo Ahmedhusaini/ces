@@ -101,6 +101,7 @@
     <Content Include="School_Rgistration.aspx" />
     <Content Include="source\Jvalidation\blacklist_keywords.txt" />
     <Content Include="source\WebServices\GetAllTeachers.asmx" />
+    <Content Include="source\WebServices\Student.asmx" />
     <Content Include="StudentRgistration.aspx" />
     <Content Include="Admin.aspx" />
     <Content Include="assets\css\mycss.css" />
@@ -341,6 +342,10 @@
     <Compile Include="source\Registration\Package.cs" />
     <Compile Include="source\WebServices\GetAllTeachers.asmx.cs">
       <DependentUpon>GetAllTeachers.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="source\WebServices\Student.asmx.cs">
+      <DependentUpon>Student.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="StudentRgistration.aspx.cs">
