@@ -46,14 +46,7 @@
                                                 <div class="author item"><a href="#">Authorized ID : </a>&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="atype" Font-size="13" runat="server"></asp:Label></div>
                      
                                             </div>
-                                            <div class="info-more">
-                                                <div class="view item"><i class="fa fa-user"></i>
-
-                                                    <p> 56</p></div>
-                                                <div class="comment item"><i class="fa fa-comment"></i>
-
-                                                    <p> 239</p></div>
-                                            </div>
+                                           
                                             <div class="description"></div>
                                           <%-- <button class="btn btn-green"><span>read more</span></button>--%>
                                         </div>
@@ -79,32 +72,56 @@
     <br />
                         <div class="group-title-index"><h4 class="top-title">Your Childerns </h4>
 
-                            <h2 class="center-title">check profile of your student&nbsp;&nbsp;&nbsp;&nbsp; </h2>
+                            <h2 class="center-title">check profile of your Child&nbsp;&nbsp;&nbsp;&nbsp; </h2>
 
                             <div class="bottom-title"><i class="bottom-icon icon-a-1-01-01"></i></div>
                         </div>
               <div class="section choose-course-3">
                     <div class="choose-course-3-wrapper row">
-                        <div class="item-course">
+                        <div class="item-course" style="    width: 800px;" >
                             <div class="item-course-wrapper">
                                 <div class="icon-course"><i class="icons-img fa fa-male"></i></div>
-                                <div class="info-course"><a href="#" class="name-course">
-                                    <asp:Label ID="stdid" runat="server" ></asp:Label></a>
+                                
+                                <div class="icon-course"><a href="#" class="name-course">
 
+                                &nbsp; &nbsp; &nbsp; <asp:Label ID="Name" runat="server" Font-Size="18" ></asp:Label></a>
+
+                                     <div class="info">
+                                   &nbsp; &nbsp; &nbsp;      Guardian Name :&nbsp; <asp:Label ID="gname" runat="server" Font-Size="15"></asp:Label></div>
                                     <div class="info">
-                                        <asp:Label ID="name" runat="server"></asp:Label></div>
+                                   &nbsp; &nbsp; &nbsp;      Gender :&nbsp; <asp:Label ID="cgender" runat="server" Font-Size="15"></asp:Label></div>
+                                   
                                 </div>
+                                <br/>
+                               
+                                 <div class="info">
+                                &nbsp; &nbsp; &nbsp;       School :&nbsp; <asp:Label ID="school" Text="dsada" runat="server" Font-Size="15"></asp:Label></div>
+                                 <div class="info">
+                             &nbsp; &nbsp; &nbsp;       Type : &nbsp;<asp:Label ID="stype" Text="dsada" runat="server" Font-Size="15"></asp:Label></div>
+                            
+                                 
+                                <div class="icon-course"></div>
+                                     <br/>
+                                    
+                                     <div class="info">
+                                   &nbsp; &nbsp; &nbsp;      Class :&nbsp; <asp:Label ID="classsss" runat="server" Font-Size="15"></asp:Label></div>
+                                    <div class="info">
+                                   &nbsp; &nbsp; &nbsp;      Section :&nbsp; <asp:Label ID="section" runat="server" Font-Size="15"></asp:Label></div>
+                                   
+                                
+                                
+                                    
                             </div>
                         </div>
-                       <div class="item-course">
+                       <div class="item-course"  style="display:none">
                             <div class="item-course-wrapper">
                                 <div class="icon-course"><i class="icons-img fa fa-check"></i></div>
                                 <a href="#" class="info-course">
-                                    <div class="name-course">jahangeer ahmed</div>
+                                   
                                     <div class="info">check them out</div>
                                 </a></div>
                         </div>
-                        <div class="item-course">
+                        <div class="item-course" style="display:none">
                             <div class="item-course-wrapper">
                                 <div class="icon-course"><i class="icons-img fa fa-male"></i></div>
                                 <div class="info-course"><a href="#" class="name-course">siddique</a>
