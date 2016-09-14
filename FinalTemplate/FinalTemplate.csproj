@@ -94,7 +94,6 @@
     <Content Include="images\teachers\teachers %284%29.jpg" />
     <Content Include="images\teachers\teachers %285%29.jpg" />
     <Content Include="Logintype.aspx" />
-    <Content Include="mark_studentAttendance.aspx" />
     <Content Include="Our_Team.aspx" />
     <Content Include="parentpanel.aspx" />
     <Content Include="PostNews.aspx" />
@@ -251,7 +250,6 @@
     <Content Include="assets\libs\selectbox\js\jquery.selectbox-0.2.min.js" />
     <Content Include="assets\libs\smooth-scroll\jquery-smoothscroll.js" />
     <Content Include="assets\libs\wow-js\wow.min.js" />
-    <Content Include="View_Attendance.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="news_description.aspx" />
     <Content Include="ParentRegistration.aspx" />
@@ -279,13 +277,6 @@
     </Compile>
     <Compile Include="About_Us.aspx.designer.cs">
       <DependentUpon>About_Us.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="mark_studentAttendance.aspx.cs">
-      <DependentUpon>mark_studentAttendance.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="mark_studentAttendance.aspx.designer.cs">
-      <DependentUpon>mark_studentAttendance.aspx</DependentUpon>
     </Compile>
     <Compile Include="Our_Team.aspx.cs">
       <DependentUpon>Our_Team.aspx</DependentUpon>
@@ -331,6 +322,7 @@
     <Compile Include="School_Rgistration.aspx.designer.cs">
       <DependentUpon>School_Rgistration.aspx</DependentUpon>
     </Compile>
+    <Compile Include="source\Functions\Parents.cs" />
     <Compile Include="source\Registration\ClassStudentRegistration.cs" />
     <Compile Include="source\Database\Database.cs" />
     <Compile Include="source\Functions\CurrentUser.cs" />
@@ -368,13 +360,6 @@
     </Compile>
     <Compile Include="Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
-    </Compile>
-    <Compile Include="View_Attendance.aspx.cs">
-      <DependentUpon>View_Attendance.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View_Attendance.aspx.designer.cs">
-      <DependentUpon>View_Attendance.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

@@ -29,16 +29,16 @@
                        width: 430,
                        height: 200,
 
-                       //buttons: {
+                       buttons: {
 
-                       //    'Submit':
-                       //    {},  
-                       //    Close: function() {
+                           Submit:
+                           {},  
+                           Close: function() {
 
-                       //        $(this).dialog('close');
-                       //    },
+                               $(this).dialog('close');
+                           },
                           
-                       //}
+                       }
                    });
                return false;
                }
@@ -581,7 +581,7 @@
                                   <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox> </td>
                           </tr>
                            <tr>
-                              <td> <asp:Button ID="Button2" runat="server" Text="Button" OnClick="Button2_Click" /></td>
+                              <%--<td> <asp:Button ID="Button2" runat="server" Text="Button" OnClick="Button2_Click" /></td>--%>
                           </tr>
                       </table>
 

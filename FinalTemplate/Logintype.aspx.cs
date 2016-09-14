@@ -57,7 +57,7 @@ namespace FinalTemplate
                             Response.Redirect("~/Admin.aspx");
 
                         }
-                        else if (ddl_type.SelectedIndex == 3)
+                        else if (ddl_type.SelectedIndex == 5)
                         {
                             Session["userid"] = myLogin.myDatabase.GetAuthorizedID(myLogin.valideUsername, myLogin.validePasswoerd);
                             Response.Redirect("~/TeacherPanel.aspx");
@@ -69,7 +69,7 @@ namespace FinalTemplate
                             Response.Redirect("~/studentpanel.aspx");
 
                         }
-                        else if (ddl_type.SelectedIndex == 5)
+                        else if (ddl_type.SelectedIndex == 3)
                         {
                             Session["userid"] = myLogin.myDatabase.GetAuthorizedID(myLogin.valideUsername, myLogin.validePasswoerd);
                             Response.Redirect("~/parentpanel.aspx");
