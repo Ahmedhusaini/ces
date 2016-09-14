@@ -9,9 +9,55 @@
             teacherwidth();
             samesizeimage();
             setbuttonlayout();
-
+            removechilddivs();
+            GetAllStudents();
+            $('#btnsubmit').click(function (e) {
+                e.preventDefault();
+                removechilddivs();
+                
+                var school_id = $('#hiddenschoolid').val();
+                var studentname = $('#<%=txtSearch.ClientID%>').val();
+                $.ajax({
+                    url: 'source/WebServices/Student.asmx/GetAllStudentsBySchoolID',
+                    method: 'post',
+                    data: { _school_id: school_id, studentfirstname: studentname },
+                    datatype: 'json',
+                    success: function (data) {
+                        var jsonarray = $.parseJSON(data);
+                        $.each(jsonarray, function (i, v) {
+                            var parentDiv = $('div.customs-row');
+                            parentDiv.append('<div class="col-md-4 col-sm-6"> <div class="edugate-layout-3"><div class="edugate-layout-3-wrapper">  <a class="edugate-image"> <img src="assets/images/cesThemeImages/' + v.photo + '" alt="" class="img-responsive" /></a> <div class="edugate-content">  <a href="#" class="title">' + v.FirstName + ' ' + v.LastName + '</a>  <ul> <li>First Name:' + v.FirstName + '</li><li>Last Name:' + v.LastName + '</li><li>Email: ' + v.PrimaryEmail + '</li><li>' + v.Phone + '</li><li>Gender: ' + v.Gender + '</li><li>Address: ' + v.Address + '</li><li>School ID: ' + v.SchoolID + '</li><li>Authorized ID: ' + v.AuthorizedID + '</li><li>General ID: ' + v.GeneralID + '</li></ul> <button class="btn btn-green "style="padding-right:115px;"><span>View Details</span></button> </div></div></div></div>');
+                        });
+                    },
+                    error: function (data) {
+                        alert('Error' + data);
+                    }
+                });
+            });
         });
-
+        function GetAllStudents() {
+            var school_id = $('#hiddenschoolid').val();
+            var studentname = $('#<%=txtSearch.ClientID%>').val();
+            $.ajax({
+                url: 'source/WebServices/Student.asmx/GetAllStudentsBySchoolID',
+                method: 'post',
+                data: { _school_id: school_id, studentfirstname: studentname },
+                datatype: 'json',
+                success: function (data) {                   
+                    var jsonarray = $.parseJSON(data);
+                    $.each(jsonarray, function (i, v) {                       
+                        var parentDiv = $('div.customs-row');
+                        parentDiv.append('<div class="col-md-4 col-sm-6"> <div class="edugate-layout-3"><div class="edugate-layout-3-wrapper">  <a class="edugate-image"> <img src="assets/images/cesThemeImages/' + v.photo + '" alt="" class="img-responsive" /></a> <div class="edugate-content">  <a href="#" class="title">' + v.FirstName + ' ' + v.LastName + '</a>  <ul> <li>First Name:' + v.FirstName + '</li><li>Last Name:' + v.LastName + '</li><li>Email: ' + v.PrimaryEmail + '</li><li>' + v.Phone + '</li><li>Gender: ' + v.Gender + '</li><li>Address: ' + v.Address + '</li><li>School ID: ' + v.SchoolID + '</li><li>Authorized ID: ' + v.AuthorizedID + '</li><li>General ID: ' + v.GeneralID + '</li></ul> <button class="btn btn-green "style="padding-right:115px;"><span>View Details</span></button> </div></div></div></div>');
+                    });
+                },
+                error: function (data) {
+                    alert('Error'+data);
+                }
+            });
+        }
+        function removechilddivs() {
+            $('div[class=customs-row]').empty();
+        }
         function samesizeimage() {
             $('a img').css({ 'height': '200px', 'width': '300px' });
         }
@@ -51,7 +97,7 @@
                             <div class="search-input-wrapper">
                                 <form>
                                 <asp:TextBox ID="txtSearch" runat="server" CssClass="form-input" placeholder="Type student name you want to search"></asp:TextBox>
-                                <button type="submit" class="form-submit btn btn-blue"><span>search now<i class="fa fa-search"></i></span></button>
+                                <button id="btnsubmit" type="submit" class="form-submit btn btn-blue"><span>search now<i class="fa fa-search"></i></span></button>
                                 <div class="clearfix"></div>
                                 </form>
                             </div>
@@ -65,91 +111,37 @@
                                 <div class="result-output"><p class="result-count">Showing total<strong>12</strong> student records</p></div>
                             </div>
                             <div class="list-categories-content row">
+                                <input type="hidden" id="hiddenschoolid" value="<%=schoolid %>" />
                                 <div class="customs-row">
-                                <div class="col-md-4 col-sm-6">
+                                    
+                                  <div class="col-md-4 col-sm-6">
                                     <div class="edugate-layout-3">
                                         <div class="edugate-layout-3-wrapper">
                                             <a class="edugate-image">
                                                 <img src="assets/images/cesThemeImages/student (1).jpg" alt="" class="img-responsive" /></a>
 
                                             <div class="edugate-content">
-                                                <a href="#" class="title">language</a>
+                                                <a href="#" class="title">Student Name</a>
 
-                                                <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-                                                <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
+                                                <div class="description">
+                                                    <ul>
+                                                        <li>FirstName</li>
+                                                        <li>Last Name</li>
+                                                        <li>Gender</li>
+                                                        <li>Email</li>
+                                                        <li>Address</li>                                                        
+                                                    </ul>
+
+                                                </div>                                                
                                                 <button class="btn btn-green"><span>View Details</span></button>
                                             </div>
                                         </div>
                                     </div>
+                                </div>   
+                                    
+                                                                
                                 </div>
-                                    <div class="col-md-4 col-sm-6">
-                                        <div class="edugate-layout-3">
-                                            <div class="edugate-layout-3-wrapper"><a  class="edugate-image"><img  src="assets/images/cesThemeImages/student (2).jpg" alt="" class="img-responsive"/></a>
-
-                                                <div class="edugate-content"><a href="#" class="title">software</a>
-
-                                                    <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-                                                    <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
-                                                    <button class="btn btn-green"><span>View Details</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 col-sm-6">
-                                        <div class="edugate-layout-3">
-                                            <div class="edugate-layout-3-wrapper"><a  class="edugate-image"><img  src="assets/images/cesThemeImages/student (3).jpg" alt="" class="img-responsive"/></a>
-
-                                                <div class="edugate-content"><a href="#" class="title">social media</a>
-
-                                                    <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-                                                    <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
-                                                    <button class="btn btn-green"><span>View Details</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="customs-row">
-                                    <div class="col-md-4 col-sm-6">
-                                        <div class="edugate-layout-3">
-                                            <div class="edugate-layout-3-wrapper"><a  class="edugate-image"><img  src="assets/images/cesThemeImages/student (4).jpg" alt="" class="img-responsive"/></a>
-
-                                                <div class="edugate-content"><a href="#" class="title">photography</a>
-
-                                                    <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-                                                    <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
-                                                    <button class="btn btn-green"><span>View Details</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 col-sm-6">
-                                        <div class="edugate-layout-3">
-                                            <div class="edugate-layout-3-wrapper"><a  class="edugate-image"><img  src="assets/images/cesThemeImages/student (5).jpg" alt="" class="img-responsive"/></a>
-
-                                                <div class="edugate-content"><a href="#" class="title">business</a>
-
-                                                    <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-                                                    <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
-                                                    <button class="btn btn-green"><span>View Details</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 col-sm-6">
-                                        <div class="edugate-layout-3">
-                                            <div class="edugate-layout-3-wrapper"><a  class="edugate-image"><img  src="assets/images/cesThemeImages/student (6).jpg" alt="" class="img-responsive"/></a>
-
-                                                <div class="edugate-content"><a href="#" class="title">communication</a>
-
-                                                    <div class="description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-                                                    <div class="total-courses"><i class="fa fa-list"></i><a href="#">total courses 92</a></div>
-                                                    <button class="btn btn-green"><span>View Details</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>

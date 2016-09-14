@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Web;
 using System.Web.Script.Serialization;
 using System.Web.Services;
+using FinalTemplate.source.Registration;
 namespace FinalTemplate.source.WebServices
 {
     /// <summary>
     /// Summary description for GetAllTeachers
     /// </summary>
-    [WebService(Namespace = "http://tempuri.org/")]
+    [WebService(Namespace = "http://ces.edu.pk/getallteachers")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
@@ -16,6 +17,7 @@ namespace FinalTemplate.source.WebServices
     public class GetAllTeachers : System.Web.Services.WebService
     {
         private Database.Database myDatabase = new Database.Database("cesConnectionString");
+        private ClassSchoolRegistration objSchool = new ClassSchoolRegistration();
         [WebMethod]
         public void GetAllTeachersByFirstName(string SearchKey, string _schoolid)
         {
@@ -98,8 +100,9 @@ namespace FinalTemplate.source.WebServices
             }
             HttpContext.Current.Response.Write(serializer.Serialize(teacherList));
         }
+        
     }
-
+   
     public class AllTeachers
     {
         public string FirstName { get; set; }

@@ -29,7 +29,7 @@
                      alert("Error" + data);
                  }
              });
-         }        
+         }
          function EmptyTable() {
              $('tbody').empty();
          }
@@ -44,25 +44,7 @@
      </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="AdminContentPlaceHolder" runat="server">
-    <div class="section intro-edu">
-        <div class="container">
-            <div class="intro-edu-wrapper">
-                <div class="row">
-                    <div class="col-md-5">
-                        <img src="assets/images/cesThemeImages/teachers (2).jpg" alt="" class="intro-image fadeInLeft animated wow" />
-                    </div>
-                    <div class="col-md-7">
-                        <div class="intro-title">Teacher of the Month  <b>Leader</b></div>
-                        <div class="intro-content">
-                            <p>Aliquam pulvinar pellentesque purus, nec condimentum nibh. Aenean dapibus iaculis odio id vestibulum. Nam at justo ante. Aenean hendrerit gravida ligula, id lacinia sapien tristique eget. In elit ipsum, vestibulum eu pulvinar sed.</p>
-
-                            <p>Maecenas eros mi, lacinia eu ultricies vel, elementum et justo. Ut at tortor a odio vestibulum suscipit non sit amet dolor. Morbi molestie magna nec metus facilisis, at iaculis mi adipiscing. Praesent ac diam velit. Curabitur lacinia tristique velit ut laoreet. Nam pretium id risus vitae fermentum. Aenean eu euismod justo. Aliquam sodales tortor elit, non luctus felis tristique sit amet.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+   
     <!----Teacher list---->
     <div class="section teacher-course section-padding">
                     <div class="container teacher-course-wrapper">
@@ -95,6 +77,9 @@
                                             </tbody>
                                         </table>
                                     </div>
+                                    <div class="teacherofthemonth">
+                                    <asp:TextBox ID="txt_teacherid" runat="server" placeholder="Enter Teacher ID for Teacher of the month" Width="515px"></asp:TextBox><asp:Button ID="Button1" runat="server" Text="Make teacher of the month" OnClick="Button1_Click" />
+                                        </div>
                                 </div>
                             </div>
                         </div>
