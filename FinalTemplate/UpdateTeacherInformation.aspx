@@ -10,9 +10,47 @@
             teacherwidth();
             samesizeimage();
             setbuttonlayout();
-
+            formfieldswidths();
+            rowbg();
+            
         });
-
+        function SelectedDivAnimation(aspControl) {
+            $(aspControl).on('focus', function () {
+                $(this).css({ 'background-color': 'rgb(108, 208, 91)', 'transition': '2s', 'border-color': 'green', 'color': 'white','height':'40px' });
+            });
+            $(aspControl).on('focusout', function () {
+                $(this).css({ 'background-color': 'white', 'transition': '2s', 'border-color': 'white', 'color': 'black','height':'30px' });
+            });
+        }
+        function rowbg() {
+            $('.table-row').css('background-color', '#90a1ae');
+            $('.heading-table').css('background-color', 'rgb(61, 154, 45)');
+            $('span').css('color','white');
+        } 
+        function formfieldswidths() {
+            $('#<%=txtFirstName.ClientID%>').css({'width': '100%','border-radius':'5px','height':'30px'});
+            $('#<%=txtLastName.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
+            $('#<%=txtDateOfBirth.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
+            $('#<%=ddlNationality.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
+            $('#<%=rbtnMale.ClientID%>').css({ 'width': '20%', 'border-radius': '5px'});
+            $('#<%=rbtnFemale.ClientID%>').css({ 'width': '20%', 'border-radius': '5px'});
+            $('#<%=fuPhoto.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
+            $('#<%=txtReligion.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
+            $('#<%=txtPhone.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
+            $('#<%=txtAddress.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
+            $('#<%=ddlCountry.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
+            $('#<%=ddlCity.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
+            $('#<%=txtPostalCode.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
+            $('#<%=txtUsername.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
+            $('#<%=txtPrimaryEmail.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
+            $('#<%=ddlUserType.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
+            $('#<%=txtLoginCount.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
+            $('#<%=txtlastLoginDate.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
+            $('#<%=txtDateOfJoin.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
+            $('#<%=txtCNIC.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
+            $('#<%=txtSchoolID.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
+            $('#<%=txtTeacherIDToPopulateDetails.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
+        }
         function samesizeimage() {
             $('a img').css({ 'height': '200px', 'width': '300px' });
         }
@@ -35,28 +73,195 @@
         
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="AdminContentPlaceHolder" runat="server">
-    <div class="section intro-edu">
-                    <div class="container">
-                        <div class="intro-edu-wrapper">
-                            <div class="row">
-                                <div class="col-md-4"><img src="assets/images/people-avatar-8.png" alt="" class="intro-image fadeInLeft animated wow"/></div>
-                                <div class="col-md-8">
-                                    <div class="intro-title">WHAT IS <b>EDUGATE</b> ?</div>
-                                    <div class="course-syllabus">
-                                        <div class="course-syllabus-title underline">Courses syllabus</div>
-                                        <div class="course-table">
-                                            <div class="outer-container">
-                                                <div class="inner-container">                                                   
-                                                    <div class="table-body">
-                                                        <!--here put the gridview to display teacher record------>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+    <div class="section section-padding top-courses">
+        <div class="container">
+            <div class="group-title-index">
+                <h2 class="center-title">Update Teacher Information</h2>
+                <div class="bottom-title"><i class="bottom-icon icon-icon-04"></i></div>
+                <div class="container teacher-course-wrapper">
+                    <div class="inner-container">
+                        <div class="table-header">
+                            <table class="edu-table-responsive">
+                                <thead>
+                                    <tr class="heading-table">
+                                        <th class="col-3">Insert teacher id to populate his/her all details</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="table-body">
+                            <table class="edu-table-responsive table-hover">
+                                <tbody>
+                                    <tr class="table-row">
+                                        <td class="col-3"><span>Teacher ID</span></td>
+                                        <td class="col-2"><asp:TextBox runat="server" CssClass="roundborder" ID="txtTeacherIDToPopulateDetails"></asp:TextBox></td>
+                                        <td class="col-3"><span>
+                                            <asp:Button ID="btnPopulateDetails"  Text="Populate Details" runat="server" ForeColor="Black" OnClick="btnPopulateDetails_Click" /></span></td>
+                                    </tr>
+                                   
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="inner-container">
+                        <div class="table-header">
+                            <table class="edu-table-responsive">
+                                <thead>
+                                    <tr class="heading-table">
+                                        <th class="col-3">Personal Information</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="table-body">
+                            <table class="edu-table-responsive table-hover">
+                                <tbody>
+                                    <tr class="table-row">
+                                        <td class="col-3"><span>First Name</span></td>
+                                        <td class="col-2"><asp:TextBox runat="server" ID="txtFirstName"></asp:TextBox></td>
+                                        <td class="col-3"><span>
+                                            <asp:Button ID="btn1" Text="Update" runat="server" ForeColor="Black" /></span></td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="col-3"><span>Last Name</span></td>
+                                        <td class="col-2"><asp:TextBox runat="server" ID="txtLastName"></asp:TextBox></td>
+                                        <td class="col-3"><span>
+                                            <asp:Button ID="Button1" Text="Update" runat="server" ForeColor="Black" /></span></td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="col-3"><span>Date Of Birth</span></td>
+                                        <td class="col-2"><asp:TextBox runat="server" ID="txtDateOfBirth" type="date"></asp:TextBox></td>
+                                        <td class="col-3"><span>
+                                            <asp:Button ID="Button2" Text="Update" runat="server" ForeColor="Black" /></span></td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="col-3"><span>Nationality</span></td>
+                                        <td class="col-2"><asp:DropDownList runat="server" ID="ddlNationality"><asp:ListItem>Pakistan</asp:ListItem></asp:DropDownList></td>
+                                        <td class="col-3"><span>
+                                            <asp:Button ID="Button3" Text="Update" runat="server" ForeColor="Black" /></span></td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="col-3"><span>Gender</span></td>
+                                        <td class="col-2"><asp:RadioButton runat="server" ID="rbtnMale" Text="Male" GroupName="gender" /><asp:RadioButton runat="server" ID="rbtnFemale" Text="Female" GroupName="gender" /></td>
+                                        <td class="col-3"><span>
+                                            <asp:Button ID="Button4" Text="Update" runat="server" ForeColor="Black"/></span></td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="col-3"><span>Photo</span></td>
+                                        <td class="col-2"><asp:FileUpload runat="server" ID="fuPhoto" /></td>
+                                        <td class="col-3"><span>
+                                            <asp:Button ID="Button5" Text="Update" runat="server" ForeColor="Black" /></span></td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="col-3"><span>Religion</span></td>
+                                        <td class="col-2"><asp:TextBox runat="server" ID="txtReligion"></asp:TextBox></td>
+                                        <td class="col-3"><span>
+                                            <asp:Button ID="Button6" Text="Update" runat="server" ForeColor="Black" /></span></td>
+                                    </tr>
+
+                                    <tr class="table-row">
+                                        <td class="col-3"><span>Phone</span></td>
+                                        <td class="col-2"><asp:TextBox runat="server" ID="txtPhone"></asp:TextBox></td>
+                                        <td class="col-3"><span>
+                                            <asp:Button ID="Button7" Text="Update" runat="server" ForeColor="Black" /></span></td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="col-3"><span>Address</span></td>
+                                        <td class="col-2"><asp:TextBox runat="server" ID="txtAddress"></asp:TextBox></td>
+                                        <td class="col-3"><span>
+                                            <asp:Button ID="Button8" Text="Update" runat="server" ForeColor="Black" /></span></td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="col-3"><span>Country</span></td>
+                                        <td class="col-2"><asp:DropDownList runat="server" ID="ddlCountry"><asp:ListItem>Pakistan</asp:ListItem></asp:DropDownList></td>
+                                        <td class="col-3"><span>
+                                            <asp:Button ID="Button9" Text="Update" runat="server" ForeColor="Black"/></span></td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="col-3"><span>City</span></td>
+                                        <td class="col-2"><asp:DropDownList runat="server" ID="ddlCity"><asp:ListItem>Karachi</asp:ListItem></asp:DropDownList></td>
+                                        <td class="col-3"><span>
+                                            <asp:Button ID="Button10" Text="Update" runat="server" ForeColor="Black" /></span></td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="col-3"><span>Postal Code</span></td>
+                                        <td class="col-2"><asp:TextBox runat="server" ID="txtPostalCode"></asp:TextBox></td>
+                                        <td class="col-3"><span>
+                                            <asp:Button ID="Button11" Text="Update" runat="server" ForeColor="Black" /></span></td>
+                                    </tr>
+                                     <tr class="table-row">
+                                        <td class="col-3"><span>Date Of Join</span></td>
+                                        <td class="col-2"><asp:TextBox runat="server" ID="txtDateOfJoin" type="date"></asp:TextBox></td>
+                                        <td class="col-3"><span>
+                                            <asp:Button ID="Button19" Text="Update" runat="server" ForeColor="Black"/></span></td>
+                                    </tr>
+                                     <tr class="table-row">
+                                        <td class="col-3"><span>CNIC</span></td>
+                                        <td class="col-2"><asp:TextBox runat="server" ID="txtCNIC"></asp:TextBox></td>
+                                        <td class="col-3"><span>
+                                            <asp:Button ID="Button20" Text="Update" runat="server" ForeColor="Black" /></span></td>
+                                    </tr>
+                                     <tr class="table-row">
+                                        <td class="col-3"><span>School ID</span></td>
+                                        <td class="col-2"><asp:TextBox runat="server" ID="txtSchoolID"></asp:TextBox></td>
+                                        <td class="col-3"><span>
+                                            <asp:Button ID="Button21" Text="Update" runat="server" ForeColor="Black" /></span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="inner-container">
+                        <div class="table-header">
+                            <table class="edu-table-responsive">
+                                <thead>
+                                    <tr class="heading-table">
+                                        <th class="col-3">Authentication Information</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="table-body">
+                            <table class="edu-table-responsive table-hover">
+                                <tbody>
+                                    <tr class="table-row">
+                                        <td class="col-3"><span>Username</span></td>
+                                        <td class="col-2"><asp:TextBox runat="server" ID="txtUsername"></asp:TextBox></td>
+                                        <td class="col-3"><span>
+                                            <asp:Button ID="Button12" Text="Update" runat="server" ForeColor="Black"/></span></td>
+                                    </tr>
+                                    
+                                    <tr class="table-row">
+                                        <td class="col-3"><span>Primary Email Address</span></td>
+                                        <td class="col-2"><asp:TextBox runat="server" ID="txtPrimaryEmail" TextMode="Email"></asp:TextBox></td>
+                                        <td class="col-3"><span>
+                                            <asp:Button ID="Button15" Text="Update" runat="server" ForeColor="Black"/></span></td>
+                                    </tr>
+                                    
+                                    <tr class="table-row">
+                                        <td class="col-3"><span>User Type</span></td>
+                                        <td class="col-2"><asp:DropDownList runat="server" ID="ddlUserType"><asp:ListItem>Teacher</asp:ListItem></asp:DropDownList></td>
+                                        <td class="col-3"><span>
+                                            <asp:Button ID="Button17" Text="Update" runat="server" ForeColor="Black"/></span></td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="col-3"><span>Login Count</span></td>
+                                        <td class="col-2"><asp:TextBox runat="server" ID="txtLoginCount"></asp:TextBox></td>
+                                        <td class="col-3"></td>
+                                    </tr>
+
+                                    <tr class="table-row">
+                                        <td class="col-3"><span>Last Login Date</span></td>
+                                        <td class="col-2"><asp:TextBox runat="server" ID="txtlastLoginDate"></asp:TextBox></td>
+                                        <td class="col-3"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
+            </div>
+
+        </div>
+    </div>
 </asp:Content>

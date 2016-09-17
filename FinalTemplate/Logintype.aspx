@@ -141,7 +141,9 @@
                         <div class="register-submit">
                             <button type="submit" class="btn btn-register btn-green">
                                 <span>
-                                    <asp:Button ID="Button1" runat="server" Text="Sign In" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>
+                                    <asp:Button ID="Button1" runat="server" Text="Sign In" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span>
+
+                            </button>
                      </div>          
                  </asp:Panel>                
                     </div>            

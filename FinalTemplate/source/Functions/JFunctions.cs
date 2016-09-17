@@ -62,7 +62,7 @@ namespace FinalTemplate.source.Functions
         }
         public static void BindDropDownList(DropDownList ddl, string displayField, string valueField, string query)
         {
-            Database.Database myDatabase = new Database.Database("cesConnectionString3");
+            Database.Database myDatabase = new Database.Database("cesConnectionString");
             myDatabase.CreateConnection();
             myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, query);
             try
