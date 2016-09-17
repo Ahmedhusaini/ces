@@ -20,7 +20,7 @@
     </div>
     <div class="col-md-9">
     <div class="news-page-wrapper">
-           <div class="edugate-layout-1">
+           <div class="edugate-layout-1" style="    background-color: rgba(144, 161, 174, 0.63)">
                                         <div class="edugate-image"><asp:Image ID="Image1" runat="server"  /></div>
                                         <div class="edugate-content"><a href="news-detail.html" class="title">
                                                 <asp:Label ID="headlbl" runat="server" Font-size="18"  ></asp:Label></a>&nbsp;&nbsp;
@@ -78,7 +78,7 @@
                         </div>
               <div class="section choose-course-3">
                     <div class="choose-course-3-wrapper row">
-                        <div class="item-course" style="    width: 800px;" >
+                        <div class="item-course" style="    width: 800px;     border-radius: 57px; background-color: rgba(144, 161, 174, 0.63)" >
                             <div class="item-course-wrapper">
                                 <div class="icon-course"><i class="icons-img fa fa-male"></i></div>
                                 
@@ -106,20 +106,25 @@
                                      <div class="info">
                                    &nbsp; &nbsp; &nbsp;      Class :&nbsp; <asp:Label ID="classsss" runat="server" Font-Size="15"></asp:Label></div>
                                     <div class="info">
-                                   &nbsp; &nbsp; &nbsp;      Section :&nbsp; <asp:Label ID="section" runat="server" Font-Size="15"></asp:Label></div>
+                                   &nbsp; &nbsp; &nbsp;      Section :&nbsp; <asp:Label ID="section" runat="server" Font-Size="15"></asp:Label></div>                                                           
+                                
                                    
-                                
-                                
-                                    
                             </div>
                         </div>
-                       <div class="item-course"  style="display:none">
+                       <div class="item-course" >
                             <div class="item-course-wrapper">
-                                <div class="icon-course"><i class="icons-img fa fa-check"></i></div>
-                                <a href="#" class="info-course">
+                               <div class="icon-course"><i class="icons-img fa fa-male"></i></div>
+                                
+                                <div class="icon-course"><a href="#" class="name-course">
+
+                                &nbsp; &nbsp; &nbsp; <asp:Label ID="name2" runat="server" Font-Size="18"  ClientIDMode="Predictable" ></asp:Label></a>
+
+                                     <div class="info">
+                                   &nbsp; &nbsp; &nbsp;      Guardian Name :&nbsp; <asp:Label ID="gname2" runat="server" Font-Size="15"></asp:Label></div>
+                                    <div class="info">
+                                   &nbsp; &nbsp; &nbsp;      Gender :&nbsp; <asp:Label ID="gender2" runat="server" Font-Size="15"></asp:Label></div>
                                    
-                                    <div class="info">check them out</div>
-                                </a></div>
+                                </div>
                         </div>
                         <div class="item-course" style="display:none">
                             <div class="item-course-wrapper">
