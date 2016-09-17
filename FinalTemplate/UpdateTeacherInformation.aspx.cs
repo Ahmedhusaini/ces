@@ -15,6 +15,9 @@ namespace FinalTemplate
         {
             rbtnFemale.Checked = false;
             rbtnMale.Checked = false;
+            txtlastLoginDate.Enabled = false;
+            txtLoginCount.Enabled = false;
+
             if (!IsPostBack)
             {
              //   objTeacher.PopulateTeacherProfileInformationByID(Convert.ToInt32(txtTeacherIDToPopulateDetails.Text));
@@ -63,6 +66,18 @@ namespace FinalTemplate
         {
             txtFirstName.Text = "";
             txtLastName.Text = "";
+            txtDateOfBirth.Text = "";
+            rbtnFemale.Checked = false;
+            rbtnMale.Checked = false;
+            txtReligion.Text = "";
+            txtPhone.Text = "";
+            txtPostalCode.Text = "";
+            txtCNIC.Text = "";
+            txtSchoolID.Text = "";
+            txtUsername.Text = "";
+            txtPrimaryEmail.Text = "";
+            txtLoginCount.Text = "";
+            txtlastLoginDate.Text = "";
         }
     }
 }
