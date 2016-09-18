@@ -130,24 +130,6 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.Button Button4;
         
         /// <summary>
-        /// fuPhoto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fuPhoto;
-        
-        /// <summary>
-        /// Button5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button5;
-        
-        /// <summary>
         /// txtReligion control.
         /// </summary>
         /// <remarks>
@@ -353,15 +335,6 @@ namespace FinalTemplate {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlUserType;
-        
-        /// <summary>
-        /// Button17 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button17;
         
         /// <summary>
         /// txtLoginCount control.

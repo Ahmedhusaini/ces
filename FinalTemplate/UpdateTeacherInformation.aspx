@@ -34,7 +34,6 @@
             $('#<%=ddlNationality.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
             $('#<%=rbtnMale.ClientID%>').css({ 'width': '20%', 'border-radius': '5px'});
             $('#<%=rbtnFemale.ClientID%>').css({ 'width': '20%', 'border-radius': '5px'});
-            $('#<%=fuPhoto.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
             $('#<%=txtReligion.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
             $('#<%=txtPhone.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
             $('#<%=txtAddress.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
@@ -130,13 +129,13 @@
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>Date Of Birth</span></td>
-                                        <td class="col-2"><asp:TextBox runat="server" ID="txtDateOfBirth" type="date"></asp:TextBox></td>
+                                        <td class="col-2"><asp:TextBox runat="server" ID="txtDateOfBirth" placeholder="mm/dd/yyyy"></asp:TextBox></td>
                                         <td class="col-3"><span>
                                             <asp:Button ID="Button2" Text="Update" runat="server" ForeColor="Black" /></span></td>
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>Nationality</span></td>
-                                        <td class="col-2"><asp:DropDownList runat="server" ID="ddlNationality"><asp:ListItem>Pakistan</asp:ListItem></asp:DropDownList></td>
+                                        <td class="col-2"><asp:DropDownList Enabled="false" runat="server" ID="ddlNationality"><asp:ListItem>Pakistan</asp:ListItem></asp:DropDownList></td>
                                         <td class="col-3"><span>
                                             <asp:Button ID="Button3" Text="Update" runat="server" ForeColor="Black" /></span></td>
                                     </tr>
@@ -146,12 +145,7 @@
                                         <td class="col-3"><span>
                                             <asp:Button ID="Button4" Text="Update" runat="server" ForeColor="Black"/></span></td>
                                     </tr>
-                                    <tr class="table-row">
-                                        <td class="col-3"><span>Photo</span></td>
-                                        <td class="col-2"><asp:FileUpload runat="server" ID="fuPhoto" /></td>
-                                        <td class="col-3"><span>
-                                            <asp:Button ID="Button5" Text="Update" runat="server" ForeColor="Black" /></span></td>
-                                    </tr>
+                                    
                                     <tr class="table-row">
                                         <td class="col-3"><span>Religion</span></td>
                                         <td class="col-2"><asp:TextBox runat="server" ID="txtReligion"></asp:TextBox></td>
@@ -179,7 +173,8 @@
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>City</span></td>
-                                        <td class="col-2"><asp:DropDownList runat="server" ID="ddlCity"><asp:ListItem>Karachi</asp:ListItem></asp:DropDownList></td>
+                                        <td class="col-2"><asp:DropDownList runat="server" ID="ddlCity"><asp:ListItem>Karachi</asp:ListItem></asp:DropDownList>
+                                        </td>
                                         <td class="col-3"><span>
                                             <asp:Button ID="Button10" Text="Update" runat="server" ForeColor="Black" /></span></td>
                                     </tr>
@@ -191,7 +186,7 @@
                                     </tr>
                                      <tr class="table-row">
                                         <td class="col-3"><span>Date Of Join</span></td>
-                                        <td class="col-2"><asp:TextBox runat="server" ID="txtDateOfJoin" type="date"></asp:TextBox></td>
+                                        <td class="col-2"><asp:TextBox runat="server" ID="txtDateOfJoin" placeholder="mm/dd/yyyy"></asp:TextBox></td>
                                         <td class="col-3"><span>
                                             <asp:Button ID="Button19" Text="Update" runat="server" ForeColor="Black"/></span></td>
                                     </tr>
@@ -203,7 +198,7 @@
                                     </tr>
                                      <tr class="table-row">
                                         <td class="col-3"><span>School ID</span></td>
-                                        <td class="col-2"><asp:TextBox runat="server" ID="txtSchoolID"></asp:TextBox></td>
+                                        <td class="col-2"><asp:TextBox Enabled="false" runat="server" ID="txtSchoolID"></asp:TextBox></td>
                                         <td class="col-3"><span>
                                             <asp:Button ID="Button21" Text="Update" runat="server" ForeColor="Black" /></span></td>
                                     </tr>
@@ -240,9 +235,8 @@
                                     
                                     <tr class="table-row">
                                         <td class="col-3"><span>User Type</span></td>
-                                        <td class="col-2"><asp:DropDownList runat="server" ID="ddlUserType"><asp:ListItem>Teacher</asp:ListItem></asp:DropDownList></td>
-                                        <td class="col-3"><span>
-                                            <asp:Button ID="Button17" Text="Update" runat="server" ForeColor="Black"/></span></td>
+                                        <td class="col-2"><asp:DropDownList Enabled="false" runat="server" ID="ddlUserType"><asp:ListItem>Teacher</asp:ListItem></asp:DropDownList></td>
+                                        <td class="col-3"></td>
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>Login Count</span></td>
