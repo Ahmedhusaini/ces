@@ -266,6 +266,7 @@
     <Content Include="UpdateTeacherInformation.aspx" />
     <Content Include="ViewAllStudents.aspx" />
     <Content Include="ViewAllTachers.aspx" />
+    <Content Include="View_Attendance.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -508,6 +509,13 @@
     </Compile>
     <Compile Include="ViewAllTachers.aspx.designer.cs">
       <DependentUpon>ViewAllTachers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View_Attendance.aspx.cs">
+      <DependentUpon>View_Attendance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View_Attendance.aspx.designer.cs">
+      <DependentUpon>View_Attendance.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

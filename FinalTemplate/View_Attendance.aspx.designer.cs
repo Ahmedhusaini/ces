@@ -10,7 +10,7 @@
 namespace FinalTemplate {
     
     
-    public partial class Attendance {
+    public partial class view_attendance {
         
         /// <summary>
         /// DropDownList1 control.

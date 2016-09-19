@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher.Master" AutoEventWireup="true" CodeBehind="View_Attendance.aspx.cs" Inherits="FinalTemplate.Attendance" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher.Master" AutoEventWireup="true" CodeBehind="view_attendance.aspx.cs" Inherits="FinalTemplate.view_attendance" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TeacherHeadPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="TeacherPlaceHolder1" runat="server">
-    <div class="search-input">
+        <div class="search-input">
                         <div class="container">
                             <div class="search-input-wrapper">
                               
@@ -65,10 +65,5 @@
                         </div>
                     </div>
                 </div>
-              <div class="container">
-                        <div class="group-button">    
-                            <button class="btn btn-transition-2"><span>Submit</span></button>
-                            <button class="btn btn-transition-2"><span>Clear</span></button>
-                                    </div>
-                    </div>
+
 </asp:Content>

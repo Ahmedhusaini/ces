@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace FinalTemplate
 {
-    public partial class Attendance : System.Web.UI.Page
-    {
-        protected void Page_Load(object sender, EventArgs e)
-        {
+	public partial class view_attendance : System.Web.UI.Page
+	{
+		protected void Page_Load(object sender, EventArgs e)
+		{
 
-        }
-    }
+		}
+	}
 }
