@@ -94,6 +94,7 @@
     <Content Include="images\teachers\teachers %284%29.jpg" />
     <Content Include="images\teachers\teachers %285%29.jpg" />
     <Content Include="Logintype.aspx" />
+    <Content Include="Mark_attendance.aspx" />
     <Content Include="Our_Team.aspx" />
     <Content Include="parentpanel.aspx" />
     <Content Include="PostNews.aspx" />
@@ -266,6 +267,7 @@
     <Content Include="UpdateTeacherInformation.aspx" />
     <Content Include="ViewAllStudents.aspx" />
     <Content Include="ViewAllTachers.aspx" />
+    <Content Include="View_Attendance.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -277,6 +279,13 @@
     </Compile>
     <Compile Include="About_Us.aspx.designer.cs">
       <DependentUpon>About_Us.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mark_attendance.aspx.cs">
+      <DependentUpon>Mark_attendance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mark_attendance.aspx.designer.cs">
+      <DependentUpon>Mark_attendance.aspx</DependentUpon>
     </Compile>
     <Compile Include="Our_Team.aspx.cs">
       <DependentUpon>Our_Team.aspx</DependentUpon>
@@ -508,6 +517,13 @@
     </Compile>
     <Compile Include="ViewAllTachers.aspx.designer.cs">
       <DependentUpon>ViewAllTachers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View_Attendance.aspx.cs">
+      <DependentUpon>View_Attendance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View_Attendance.aspx.designer.cs">
+      <DependentUpon>View_Attendance.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
