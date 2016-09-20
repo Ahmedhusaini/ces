@@ -1,5 +1,28 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/parentpanel.Master" AutoEventWireup="true" CodeBehind="parentpanel.aspx.cs" Inherits="FinalTemplate.parentpanel1" EnableEventValidation="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+
+     <script src="assets/js/jquery-2.2.3.js"></script>  
+
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+
+            $('#<%=DropDownList1.ClientID%>').css('display', 'none'),
+
+            $('.table-row').css(' text-align', 'inherit')
+          
+        });
+
+
+
+
+
+    </script>
+    <style type="text/css">
+       .header { text-align:inherit; }
+   </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <div class="section background-opacity page-title set-height-top">
@@ -20,7 +43,7 @@
     </div>
     <div class="col-md-9">
     <div class="news-page-wrapper">
-           <div class="edugate-layout-1" style="    background-color: rgba(144, 161, 174, 0.63)">
+           <div id="detail" class="edugate-layout-1" style="    background-color: rgba(144, 161, 174, 0.63)">
                                         <div class="edugate-image"><asp:Image ID="Image1" runat="server"  /></div>
                                         <div class="edugate-content"><a href="news-detail.html" class="title">
                                                 <asp:Label ID="headlbl" runat="server" Font-size="18"  ></asp:Label></a>&nbsp;&nbsp;
@@ -58,7 +81,6 @@
         <div class="group-title-index edu-ab-title"><h2 class="center-title">
             &nbsp;</h2>
            
-                <%--<asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="SELECT tbl_Student_Reg.Std_id, tbl_class.class, tbl_section.section, tbl_school.school_name, tbl_general.firstname FROM tbl_class INNER JOIN tbl_class_sec_info ON tbl_class.Class_id = tbl_class_sec_info.class_id INNER JOIN tbl_Student_Reg ON tbl_class_sec_info.class_sec_info_id = tbl_Student_Reg.class_sec_info_id INNER JOIN tbl_general ON tbl_Student_Reg.General_Id = tbl_general.General_Id INNER JOIN tbl_school ON tbl_Student_Reg.school_id = tbl_school.school_id INNER JOIN tbl_section ON tbl_class_sec_info.section_id = tbl_section.Section_id"></asp:SqlDataSource>--%>
             </div>
                        <div class="course-table" style="border-style: none; border-width: inherit; border-color: #FFFFFF">
                           
@@ -74,11 +96,53 @@
 
                             <h2 class="center-title">check profile of your Child&nbsp;&nbsp;&nbsp;&nbsp; </h2>
 
-                            <div class="bottom-title"><i class="bottom-icon icon-a-1-01-01"></i></div>
+                            <div class="bottom-title">
+                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="GetParentid" SelectCommandType="StoredProcedure">
+                                    <SelectParameters>
+                                        <asp:SessionParameter Name="authorized_id" SessionField="userid" Type="String" />
+                                    </SelectParameters>
+                                </asp:SqlDataSource>
+                                <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Parent_ID" DataValueField="Parent_ID">
+                                </asp:DropDownList>
+                                <i class="bottom-icon icon-a-1-01-01"></i>
+                                <br />
+                                <br />
+                                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="spchild" SelectCommandType="StoredProcedure">
+                                    <SelectParameters>
+                                        <asp:ControlParameter ControlID="DropDownList1" Name="Parent_ID" PropertyName="SelectedValue" Type="String" />
+                                    </SelectParameters>
+                                </asp:SqlDataSource>
+                                <asp:GridView ID="GridView1" runat="server"  AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" Width="1277px" Height="278px" HorizontalAlign="Center">
+                                    <AlternatingRowStyle BackColor="White" />
+                                    <Columns>
+                                        <asp:BoundField DataField="firstname"  HeaderText="Firstname" SortExpression="firstname" />
+                                        <asp:BoundField DataField="lastname" HeaderText="Lastname" SortExpression="lastname" />
+                                        <asp:BoundField DataField="Gender" HeaderText="Gender" SortExpression="Gender" />
+                                        <asp:BoundField DataField="Guardian_Name" HeaderText="Guardian Name" SortExpression="Guardian_Name" />
+                                        <asp:BoundField DataField="school_name" HeaderText="School" SortExpression="school_name" />
+                                        <asp:BoundField DataField="school_type" HeaderText="School Type" SortExpression="school_type" />
+                                        <asp:BoundField DataField="class" HeaderText="Class" SortExpression="class" />
+                                        <asp:BoundField DataField="section" HeaderText="Section" SortExpression="section" />
+                                        <asp:HyperLinkField Text="view" />
+                                    </Columns>
+                                    <EditRowStyle BackColor="#7C6F57" />
+                                    <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                    <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                                    <RowStyle BackColor="#E3EAEB" />
+                                    <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                                    <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                                    <SortedAscendingHeaderStyle BackColor="#246B61" />
+                                    <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                                    <SortedDescendingHeaderStyle BackColor="#15524A" />
+                                </asp:GridView>
+                                <br />
+                            </div>
                         </div>
               <div class="section choose-course-3">
                     <div class="choose-course-3-wrapper row">
-                        <div class="item-course" style="    width: 800px;     border-radius: 57px; background-color: rgba(144, 161, 174, 0.63)" >
+
+                        <div class="item-course"  style=" width: 800px;   display:none  " >
                             <div class="item-course-wrapper">
                                 <div class="icon-course"><i class="icons-img fa fa-male"></i></div>
                                 
@@ -111,10 +175,10 @@
                                    
                             </div>
                         </div>
-                       <div class="item-course" >
+                       <div class="item-course" style=" display:none" >
                             <div class="item-course-wrapper">
                                <div class="icon-course"><i class="icons-img fa fa-male"></i></div>
-                                
+                              <%--  
                                 <div class="icon-course"><a href="#" class="name-course">
 
                                 &nbsp; &nbsp; &nbsp; <asp:Label ID="name2" runat="server" Font-Size="18"  ClientIDMode="Predictable" ></asp:Label></a>
@@ -124,7 +188,7 @@
                                     <div class="info">
                                    &nbsp; &nbsp; &nbsp;      Gender :&nbsp; <asp:Label ID="gender2" runat="server" Font-Size="15"></asp:Label></div>
                                    
-                                </div>
+                                </div>--%>
                         </div>
                         <div class="item-course" style="display:none">
                             <div class="item-course-wrapper">
