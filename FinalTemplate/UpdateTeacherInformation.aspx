@@ -48,6 +48,10 @@
             $('#<%=txtDateOfJoin.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
             $('#<%=txtCNIC.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
             $('#<%=txtSchoolID.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
+            $('#<%=txtGenealID.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
+            $('#<%=txtDOBId.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
+            $('#<%=txtLocationID.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
+            $('#<%=txtTeacherID.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
             $('#<%=txtTeacherIDToPopulateDetails.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
         }
         function samesizeimage() {

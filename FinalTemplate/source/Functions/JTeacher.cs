@@ -157,7 +157,7 @@ namespace FinalTemplate.source.Functions
             p_loc_id.Value = _locationid;
             p_day.Value = Convert.ToInt32(_dateofbirth.Substring(0, 2));
             p_month.Value = Convert.ToInt32(_dateofbirth.Substring(3, 2));
-            p_year.Value = Convert.ToInt32(_dateofbirth.Substring(_dateofbirth.Length - 4, 4));
+            p_year.Value = Convert.ToInt32(_dateofbirth.Substring(_dateofbirth.Length - 4, 4));            
             p_teacher_id.Value = _teacherid;
             p_dateofjoin.Value = formatedDateofJoin;
             p_city_id.Value = _city_id;
