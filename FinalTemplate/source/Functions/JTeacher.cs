@@ -120,9 +120,9 @@ namespace FinalTemplate.source.Functions
 
             return returnvalue;
         }
-        public string UpdateTeacherInformation(int _generalid,int _dobid,int _locationid,int _teacherid,string _firstname, string _lastname, string _nationality, string _gender, string _photo, string _religion, string _phone, string _address, string _dateofjoin, string _dateofbirth, int _city_id, int _postal_code)
+        public string UpdateTeacherInformation(int _generalid,int _dobid,int _locationid,int _teacherid,string _firstname, string _lastname, string _nationality, string _gender, string _religion, string _phone, string _address, string _dateofjoin, string _dateofbirth, int _city_id, int _postal_code)
         {
-            //string formatedDateofBirth = Convert.ToDateTime(_dateofbirth).ToString("d");
+           //string formatedDateofBirth = Convert.ToDateTime(_dateofbirth).ToString("d");
             string formatedDateofJoin = Convert.ToDateTime(_dateofjoin).ToString("d");
             string returnvalue = string.Empty;
             mydb.CreateConnection();

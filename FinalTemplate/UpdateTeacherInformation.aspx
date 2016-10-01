@@ -254,24 +254,24 @@
                                 <tbody>
                                     <tr class="table-row">
                                         <td class="col-3"><span>General Details ID</span></td>
-                                        <td class="col-2"><asp:TextBox runat="server" ID="txtGenealID" Enabled="false"></asp:TextBox></td>
+                                        <td class="col-2"><asp:TextBox runat="server" ID="txtGenealID" ReadOnly="true"></asp:TextBox></td>
                                         <td class="col-3"></td>
                                     </tr>
                                     
                                     <tr class="table-row">
                                         <td class="col-3"><span>Location ID</span></td>
-                                        <td class="col-2"><asp:TextBox runat="server" ID="txtLocationID" Enabled="false" ></asp:TextBox></td>
+                                        <td class="col-2"><asp:TextBox runat="server" ID="txtLocationID" ReadOnly="true" ></asp:TextBox></td>
                                         <td class="col-3"></td>
                                     </tr>
                                     
                                     <tr class="table-row">
                                         <td class="col-3"><span>Date Of Birth ID</span></td>
-                                        <td class="col-2"><asp:TextBox runat="server" ID="txtDOBId" Enabled="false" ></asp:TextBox></td>
+                                        <td class="col-2"><asp:TextBox runat="server" ID="txtDOBId" ReadOnly="true" ></asp:TextBox></td>
                                         <td class="col-3"></td>
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>Teacher ID</span></td>
-                                        <td class="col-2"><asp:TextBox Enabled="false" runat="server" ID="txtTeacherID"></asp:TextBox></td>
+                                        <td class="col-2"><asp:TextBox ReadOnly="true" runat="server" ID="txtTeacherID"></asp:TextBox></td>
                                         <td class="col-3"></td>
                                     </tr>
                                      <tr class="table-row">

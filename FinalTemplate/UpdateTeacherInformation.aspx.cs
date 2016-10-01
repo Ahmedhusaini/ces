@@ -94,7 +94,7 @@ namespace FinalTemplate
         protected void Button21_Click(object sender, EventArgs e)
         {
             string gender = string.Empty;
-            //JTeacher objteacher = new JTeacher();
+            
             string[] AssumedBlackListKeyWords = { txtFirstName.Text, txtLastName.Text, txtDateOfBirth.Text, txtReligion.Text, txtPhone.Text, txtAddress.Text, txtPostalCode.Text, txtCNIC.Text, txtDateOfJoin.Text };
             if (Jvalidate.FilterBlackLIstKeywords(AssumedBlackListKeyWords))
             {
@@ -102,7 +102,7 @@ namespace FinalTemplate
                     gender = "male";
                 else
                     gender = "female";
-                string result = objTeacher.UpdateTeacherInformation(Convert.ToInt32( txtGenealID.Text),Convert.ToInt32( txtDateOfBirth.Text),Convert.ToInt32( txtLocationID.Text),Convert.ToInt32(txtTeacherID.Text),txtFirstName.Text, txtLastName.Text, ddlNationality.SelectedItem.ToString(), gender, objTeacher.Photo, txtReligion.Text, txtPhone.Text, txtAddress.Text, txtDateOfJoin.Text, txtDateOfBirth.Text, Convert.ToInt32(ddlCity.SelectedValue), Convert.ToInt32(txtPostalCode.Text));
+                string result = objTeacher.UpdateTeacherInformation(Convert.ToInt32(txtGenealID.Text), Convert.ToInt32(txtDOBId.Text), Convert.ToInt32(txtLocationID.Text), Convert.ToInt32(txtTeacherID.Text), txtFirstName.Text, txtLastName.Text, ddlNationality.SelectedItem.ToString(), gender, txtReligion.Text, txtPhone.Text, txtAddress.Text, txtDateOfJoin.Text, txtDateOfBirth.Text,Convert.ToInt32( ddlCity.SelectedValue), Convert.ToInt32(txtPostalCode.Text));
                 if (result == "true")
                     Response.Write("<script>alert('Record Successfully updated');</script>");
                 else
