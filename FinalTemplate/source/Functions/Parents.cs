@@ -12,6 +12,8 @@ namespace FinalTemplate.source.Functions
 
         static public string std_id { get; set; }
 
+        static public string parentschild { get; set; }
+
         static public string authorized { get; set; }
 
         static public string Firstname { get; set; }
@@ -26,15 +28,15 @@ namespace FinalTemplate.source.Functions
         static public string section { get; set; }
       
 
-        static public void GetChildDetails(string _authorizedid)
+        static public void GetChildDetails(string parentsid)
         {
             mydatabse.CreateConnection();
             mydatabse.InitializeSQLCommandObject(mydatabse.GetCurrentConnection, "parents_child", true);
             try
             {
                 mydatabse.OpenConnection();
-                SqlParameter p_authrizedID = new SqlParameter("@authorized_id", SqlDbType.VarChar, 20);
-                p_authrizedID.Value = _authorizedid;
+                SqlParameter p_authrizedID = new SqlParameter("@Parents_id ", SqlDbType.VarChar, 50);
+                p_authrizedID.Value = parentsid;
                 mydatabse.obj_sqlcommand.Parameters.Add(p_authrizedID);
                 mydatabse.obj_reader = mydatabse.obj_sqlcommand.ExecuteReader();
                 if (mydatabse.obj_reader.HasRows)
@@ -70,7 +72,7 @@ namespace FinalTemplate.source.Functions
             try
             {
                 mydatabse.OpenConnection();
-                SqlParameter childern = new SqlParameter("@Std_id", SqlDbType.VarChar, 50);
+                SqlParameter childern = new SqlParameter("@Parent_ID ", SqlDbType.VarChar, 50);
                 childern.Value = child;
                 mydatabse.obj_sqlcommand.Parameters.Add(childern);
                 mydatabse.obj_reader = mydatabse.obj_sqlcommand.ExecuteReader();
@@ -107,6 +109,46 @@ namespace FinalTemplate.source.Functions
                 mydatabse.obj_reader.Close();
             }
         }
+
+
+
+        static public void GetParentsID(string autho)
+        {
+            mydatabse.CreateConnection();
+            mydatabse.InitializeSQLCommandObject(mydatabse.GetCurrentConnection, "GetParentid", true);
+            try
+            {
+                mydatabse.OpenConnection();
+                SqlParameter p_autho = new SqlParameter("@authorized_id", SqlDbType.VarChar, 20);
+                p_autho.Value = autho;
+                mydatabse.obj_sqlcommand.Parameters.Add(p_autho);
+                mydatabse.obj_reader = mydatabse.obj_sqlcommand.ExecuteReader();
+                if (mydatabse.obj_reader.HasRows)
+                {
+                    int totalRows = mydatabse.obj_reader.RecordsAffected;
+                    while (mydatabse.obj_reader.Read())
+                    {
+                        parentschild = mydatabse.obj_reader["Parent_ID"].ToString();
+
+                    }
+
+                }
+                else
+                {
+                    HttpContext.Current.Response.Write("No records");
+                }
+            }
+            catch (Exception ex)
+            {
+                HttpContext.Current.Response.Write(ex.ToString());
+            }
+            finally
+            {
+                mydatabse.CloseConnection();
+                mydatabse.obj_reader.Close();
+            }
+        }
+
        
 
         
