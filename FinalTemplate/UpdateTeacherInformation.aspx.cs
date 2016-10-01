@@ -52,6 +52,10 @@ namespace FinalTemplate
             txtPrimaryEmail.Text = objTeacher.PrimaryEmail;
             txtLoginCount.Text = objTeacher.LoginCount.ToString();
             txtlastLoginDate.Text = objTeacher.LastLoginDate;
+            txtGenealID.Text = objTeacher.GeneralID.ToString();
+            txtDOBId.Text = objTeacher.DOBID.ToString();
+            txtLocationID.Text = objTeacher.LocationID.ToString();
+            txtTeacherID.Text = objTeacher.TeacherID.ToString();
         }
         protected void btnPopulateDetails_Click(object sender, EventArgs e)
         {
@@ -81,6 +85,10 @@ namespace FinalTemplate
             txtPrimaryEmail.Text = "";
             txtLoginCount.Text = "";
             txtlastLoginDate.Text = "";
+            txtGenealID.Text = "";
+            txtDateOfBirth.Text = "";
+            txtLocationID.Text = "";
+            txtTeacherID.Text = "";
         }
 
         protected void Button21_Click(object sender, EventArgs e)
@@ -94,7 +102,7 @@ namespace FinalTemplate
                     gender = "male";
                 else
                     gender = "female";
-                string result = objTeacher.UpdateTeacherInformation(objTeacher.GeneralID,objTeacher.DOBID,objTeacher.LocationID,objTeacher.TeacherID,txtFirstName.Text, txtLastName.Text, ddlNationality.SelectedItem.ToString(), gender, objTeacher.Photo, txtReligion.Text, txtPhone.Text, txtAddress.Text, txtDateOfJoin.Text, txtDateOfBirth.Text, Convert.ToInt32(ddlCity.SelectedValue), Convert.ToInt32(txtPostalCode.Text));
+                string result = objTeacher.UpdateTeacherInformation(Convert.ToInt32( txtGenealID.Text),Convert.ToInt32( txtDateOfBirth.Text),Convert.ToInt32( txtLocationID.Text),Convert.ToInt32(txtTeacherID.Text),txtFirstName.Text, txtLastName.Text, ddlNationality.SelectedItem.ToString(), gender, objTeacher.Photo, txtReligion.Text, txtPhone.Text, txtAddress.Text, txtDateOfJoin.Text, txtDateOfBirth.Text, Convert.ToInt32(ddlCity.SelectedValue), Convert.ToInt32(txtPostalCode.Text));
                 if (result == "true")
                     Response.Write("<script>alert('Record Successfully updated');</script>");
                 else

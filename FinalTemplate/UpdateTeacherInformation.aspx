@@ -233,7 +233,48 @@
                                         <td class="col-2"><asp:TextBox runat="server" Enabled="false" ID="txtlastLoginDate"></asp:TextBox></td>
                                         <td class="col-3"></td>
                                     </tr>
+                                   
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                     <div class="inner-container">
+                        <div class="table-header">
+                            <table class="edu-table-responsive">
+                                <thead>
+                                    <tr class="heading-table">
+                                        <th class="col-3">Unique Information</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="table-body">
+                            <table class="edu-table-responsive table-hover">
+                                <tbody>
                                     <tr class="table-row">
+                                        <td class="col-3"><span>General Details ID</span></td>
+                                        <td class="col-2"><asp:TextBox runat="server" ID="txtGenealID" Enabled="false"></asp:TextBox></td>
+                                        <td class="col-3"></td>
+                                    </tr>
+                                    
+                                    <tr class="table-row">
+                                        <td class="col-3"><span>Location ID</span></td>
+                                        <td class="col-2"><asp:TextBox runat="server" ID="txtLocationID" Enabled="false" ></asp:TextBox></td>
+                                        <td class="col-3"></td>
+                                    </tr>
+                                    
+                                    <tr class="table-row">
+                                        <td class="col-3"><span>Date Of Birth ID</span></td>
+                                        <td class="col-2"><asp:TextBox runat="server" ID="txtDOBId" Enabled="false" ></asp:TextBox></td>
+                                        <td class="col-3"></td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="col-3"><span>Teacher ID</span></td>
+                                        <td class="col-2"><asp:TextBox Enabled="false" runat="server" ID="txtTeacherID"></asp:TextBox></td>
+                                        <td class="col-3"></td>
+                                    </tr>
+                                     <tr class="table-row">
                                         <td class="col-3"></td>
                                         <td class="col-3"><span>
                                             <asp:Button ID="Button21" Text="Update Information" runat="server" ForeColor="Black" OnClick="Button21_Click" /></span></td>
