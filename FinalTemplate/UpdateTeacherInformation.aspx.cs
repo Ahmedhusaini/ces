@@ -29,7 +29,6 @@ namespace FinalTemplate
             DateTime dateofjoin = Convert.ToDateTime(objTeacher.DateOfJoin);
             txtFirstName.Text = objTeacher.FirstName;
             txtLastName.Text = objTeacher.LastName;
-
             if ((dateofbirth.Substring(1, 1) == "/" && dateofbirth.Substring(3, 1) == "/"))
                 txtDateOfBirth.Text = "0" + dateofbirth.Substring(0, 1) + "/0" + dateofbirth.Substring(2, 1) + "/" + dateofbirth.Substring(dateofbirth.Length - 4, 4);
             if ((dateofbirth.Substring(2, 1) == "/" && dateofbirth.Substring(4, 1) == "/"))

@@ -131,7 +131,7 @@
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>Date Of Birth</span></td>
-                                        <td class="col-2"><asp:TextBox runat="server" ID="txtDateOfBirth" placeholder="mm/dd/yyyy"></asp:TextBox></td>
+                                        <td class="col-2"><asp:TextBox runat="server" ID="txtDateOfBirth"  placeholder="mm/dd/yyyy"></asp:TextBox></td>
                                        <td class="col-3"></td>
                                     </tr>
                                     <tr class="table-row">
