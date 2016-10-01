@@ -12,28 +12,28 @@
             setbuttonlayout();
             formfieldswidths();
             rowbg();
-            
+
         });
         function SelectedDivAnimation(aspControl) {
             $(aspControl).on('focus', function () {
-                $(this).css({ 'background-color': 'rgb(108, 208, 91)', 'transition': '2s', 'border-color': 'green', 'color': 'white','height':'40px' });
+                $(this).css({ 'background-color': 'rgb(108, 208, 91)', 'transition': '2s', 'border-color': 'green', 'color': 'white', 'height': '40px' });
             });
             $(aspControl).on('focusout', function () {
-                $(this).css({ 'background-color': 'white', 'transition': '2s', 'border-color': 'white', 'color': 'black','height':'30px' });
+                $(this).css({ 'background-color': 'white', 'transition': '2s', 'border-color': 'white', 'color': 'black', 'height': '30px' });
             });
         }
         function rowbg() {
             $('.table-row').css('background-color', '#90a1ae');
             $('.heading-table').css('background-color', 'rgb(61, 154, 45)');
-            $('span').css('color','white');
-        } 
+            $('span').css('color', 'white');
+        }
         function formfieldswidths() {
-            $('#<%=txtFirstName.ClientID%>').css({'width': '100%','border-radius':'5px','height':'30px'});
+            $('#<%=txtFirstName.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
             $('#<%=txtLastName.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
             $('#<%=txtDateOfBirth.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
             $('#<%=ddlNationality.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
-            $('#<%=rbtnMale.ClientID%>').css({ 'width': '20%', 'border-radius': '5px'});
-            $('#<%=rbtnFemale.ClientID%>').css({ 'width': '20%', 'border-radius': '5px'});
+            $('#<%=rbtnMale.ClientID%>').css({ 'width': '20%', 'border-radius': '5px' });
+            $('#<%=rbtnFemale.ClientID%>').css({ 'width': '20%', 'border-radius': '5px' });
             $('#<%=txtReligion.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
             $('#<%=txtPhone.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
             $('#<%=txtAddress.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
