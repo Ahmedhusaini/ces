@@ -118,89 +118,75 @@
                                     <tr class="table-row">
                                         <td class="col-3"><span>First Name</span></td>
                                         <td class="col-2"><asp:TextBox runat="server" ID="txtFirstName"></asp:TextBox></td>
-                                        <td class="col-3"><span>
-                                            <asp:Button ID="btn1" Text="Update" runat="server" ForeColor="Black" /></span></td>
+                                       <td class="col-3"></td>
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>Last Name</span></td>
                                         <td class="col-2"><asp:TextBox runat="server" ID="txtLastName"></asp:TextBox></td>
-                                        <td class="col-3"><span>
-                                            <asp:Button ID="Button1" Text="Update" runat="server" ForeColor="Black" /></span></td>
+                                       <td class="col-3"></td>
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>Date Of Birth</span></td>
                                         <td class="col-2"><asp:TextBox runat="server" ID="txtDateOfBirth" placeholder="mm/dd/yyyy"></asp:TextBox></td>
-                                        <td class="col-3"><span>
-                                            <asp:Button ID="Button2" Text="Update" runat="server" ForeColor="Black" /></span></td>
+                                       <td class="col-3"></td>
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>Nationality</span></td>
                                         <td class="col-2"><asp:DropDownList Enabled="false" runat="server" ID="ddlNationality"><asp:ListItem>Pakistan</asp:ListItem></asp:DropDownList></td>
-                                        <td class="col-3"><span>
-                                            <asp:Button ID="Button3" Text="Update" runat="server" ForeColor="Black" /></span></td>
+                                       <td class="col-3"></td>
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>Gender</span></td>
                                         <td class="col-2"><asp:RadioButton runat="server" ID="rbtnMale" Text="Male" GroupName="gender" /><asp:RadioButton runat="server" ID="rbtnFemale" Text="Female" GroupName="gender" /></td>
-                                        <td class="col-3"><span>
-                                            <asp:Button ID="Button4" Text="Update" runat="server" ForeColor="Black"/></span></td>
+                                       <td class="col-3"></td>
                                     </tr>
                                     
                                     <tr class="table-row">
                                         <td class="col-3"><span>Religion</span></td>
                                         <td class="col-2"><asp:TextBox runat="server" ID="txtReligion"></asp:TextBox></td>
-                                        <td class="col-3"><span>
-                                            <asp:Button ID="Button6" Text="Update" runat="server" ForeColor="Black" /></span></td>
+                                       <td class="col-3"></td>
                                     </tr>
 
                                     <tr class="table-row">
                                         <td class="col-3"><span>Phone</span></td>
                                         <td class="col-2"><asp:TextBox runat="server" ID="txtPhone"></asp:TextBox></td>
-                                        <td class="col-3"><span>
-                                            <asp:Button ID="Button7" Text="Update" runat="server" ForeColor="Black" /></span></td>
+                                       <td class="col-3"></td>
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>Address</span></td>
                                         <td class="col-2"><asp:TextBox runat="server" ID="txtAddress"></asp:TextBox></td>
-                                        <td class="col-3"><span>
-                                            <asp:Button ID="Button8" Text="Update" runat="server" ForeColor="Black" /></span></td>
+                                       <td class="col-3"></td>
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>Country</span></td>
                                         <td class="col-2"><asp:DropDownList runat="server" ID="ddlCountry"><asp:ListItem>Pakistan</asp:ListItem></asp:DropDownList></td>
-                                        <td class="col-3"><span>
-                                            <asp:Button ID="Button9" Text="Update" runat="server" ForeColor="Black"/></span></td>
+                                       <td class="col-3"></td>
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>City</span></td>
                                         <td class="col-2"><asp:DropDownList runat="server" ID="ddlCity"><asp:ListItem>Karachi</asp:ListItem></asp:DropDownList>
                                         </td>
-                                        <td class="col-3"><span>
-                                            <asp:Button ID="Button10" Text="Update" runat="server" ForeColor="Black" /></span></td>
+                                       <td class="col-3"></td>
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>Postal Code</span></td>
                                         <td class="col-2"><asp:TextBox runat="server" ID="txtPostalCode"></asp:TextBox></td>
-                                        <td class="col-3"><span>
-                                            <asp:Button ID="Button11" Text="Update" runat="server" ForeColor="Black" /></span></td>
+                                       <td class="col-3"></td>
                                     </tr>
                                      <tr class="table-row">
                                         <td class="col-3"><span>Date Of Join</span></td>
                                         <td class="col-2"><asp:TextBox runat="server" ID="txtDateOfJoin" placeholder="mm/dd/yyyy"></asp:TextBox></td>
-                                        <td class="col-3"><span>
-                                            <asp:Button ID="Button19" Text="Update" runat="server" ForeColor="Black"/></span></td>
+                                       <td class="col-3"></td>
                                     </tr>
                                      <tr class="table-row">
                                         <td class="col-3"><span>CNIC</span></td>
-                                        <td class="col-2"><asp:TextBox runat="server" ID="txtCNIC"></asp:TextBox></td>
-                                        <td class="col-3"><span>
-                                            <asp:Button ID="Button20" Text="Update" runat="server" ForeColor="Black" /></span></td>
+                                        <td class="col-2"><asp:TextBox runat="server" Enabled="false" ID="txtCNIC"></asp:TextBox></td>
+                                       <td class="col-3"></td>
                                     </tr>
                                      <tr class="table-row">
                                         <td class="col-3"><span>School ID</span></td>
                                         <td class="col-2"><asp:TextBox Enabled="false" runat="server" ID="txtSchoolID"></asp:TextBox></td>
-                                        <td class="col-3"><span>
-                                            <asp:Button ID="Button21" Text="Update" runat="server" ForeColor="Black" /></span></td>
+                                        <td class="col-3"></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -221,16 +207,14 @@
                                 <tbody>
                                     <tr class="table-row">
                                         <td class="col-3"><span>Username</span></td>
-                                        <td class="col-2"><asp:TextBox runat="server" ID="txtUsername"></asp:TextBox></td>
-                                        <td class="col-3"><span>
-                                            <asp:Button ID="Button12" Text="Update" runat="server" ForeColor="Black"/></span></td>
+                                        <td class="col-2"><asp:TextBox runat="server" ID="txtUsername" Enabled="false"></asp:TextBox></td>
+                                        <td class="col-3"></td>
                                     </tr>
                                     
                                     <tr class="table-row">
                                         <td class="col-3"><span>Primary Email Address</span></td>
-                                        <td class="col-2"><asp:TextBox runat="server" ID="txtPrimaryEmail" TextMode="Email"></asp:TextBox></td>
-                                        <td class="col-3"><span>
-                                            <asp:Button ID="Button15" Text="Update" runat="server" ForeColor="Black"/></span></td>
+                                        <td class="col-2"><asp:TextBox runat="server" ID="txtPrimaryEmail" Enabled="false" TextMode="Email"></asp:TextBox></td>
+                                        <td class="col-3"></td>
                                     </tr>
                                     
                                     <tr class="table-row">
@@ -240,15 +224,22 @@
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>Login Count</span></td>
-                                        <td class="col-2"><asp:TextBox runat="server" ID="txtLoginCount"></asp:TextBox></td>
+                                        <td class="col-2"><asp:TextBox Enabled="false" runat="server" ID="txtLoginCount"></asp:TextBox></td>
                                         <td class="col-3"></td>
                                     </tr>
 
                                     <tr class="table-row">
                                         <td class="col-3"><span>Last Login Date</span></td>
-                                        <td class="col-2"><asp:TextBox runat="server" ID="txtlastLoginDate"></asp:TextBox></td>
+                                        <td class="col-2"><asp:TextBox runat="server" Enabled="false" ID="txtlastLoginDate"></asp:TextBox></td>
                                         <td class="col-3"></td>
                                     </tr>
+                                    <tr class="table-row">
+                                        <td class="col-3"></td>
+                                        <td class="col-3"><span>
+                                            <asp:Button ID="Button21" Text="Update Information" runat="server" ForeColor="Black" OnClick="Button21_Click" /></span></td>
+                                        <td class="col-3"></td>
+                                    </tr>
+                                    
                                 </tbody>
                             </table>
                         </div>

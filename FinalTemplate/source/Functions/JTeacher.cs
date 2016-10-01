@@ -5,6 +5,9 @@ using System.Web;
 using FinalTemplate.source.Database;
 using FinalTemplate.source.Validation;
 using FinalTemplate.source.Functions;
+using System.Data;
+using System.Data.SqlClient;
+
 namespace FinalTemplate.source.Functions
 {
     public class JTeacher
@@ -117,6 +120,89 @@ namespace FinalTemplate.source.Functions
             
             return returnvalue;
         }
+        public string UpdateTeacherInformation(string _firstname,string _lastname,string _nationality,string _gender,string _photo,string _religion,string _phone,string _address,string _dateofjoin,string _dateofbirth,int city_id,int postal_code)
+        {
+            string formatedDateofBirth =Convert.ToDateTime( _dateofbirth ).ToString("d");
+            string formatedDateofJoin = Convert.ToDateTime(_dateofjoin).ToString("d");
+            string returnvalue = string.Empty;
+            mydb.CreateConnection();
+            mydb.InitializeSQLCommandObject(mydb.GetCurrentConnection, "spUpdateTeacherInformationByAdmin",true);
+            SqlParameter p_general_id = new SqlParameter("@general_id", SqlDbType.Int);
+            SqlParameter P_firstname = new SqlParameter("@firstname",SqlDbType.VarChar,50);
+            SqlParameter p_lastname = new SqlParameter("@lastname", SqlDbType.VarChar, 50);
+            SqlParameter p_dob_id = new SqlParameter("@dob_id", SqlDbType.Int);
+            SqlParameter p_nationality = new SqlParameter("@nationality", SqlDbType.VarChar, 15);
+            SqlParameter p_gender = new SqlParameter("@gender",SqlDbType.VarChar,15);
+            SqlParameter p_photo = new SqlParameter("@photo",SqlDbType.VarChar,50);
+            SqlParameter p_religion = new SqlParameter("@religion",SqlDbType.VarChar,20);
+            SqlParameter p_phone = new SqlParameter("@phone",SqlDbType.VarChar,50);
+            SqlParameter p_address = new SqlParameter("@address",SqlDbType.VarChar,50);
+            SqlParameter p_loc_id = new SqlParameter("@loc_id",SqlDbType.Int);
+            SqlParameter p_day = new SqlParameter("@day", SqlDbType.Int);
+            SqlParameter p_month = new SqlParameter("@month",SqlDbType.Int);
+            SqlParameter p_year = new SqlParameter("@year",SqlDbType.Int);
+            SqlParameter p_teacher_id = new SqlParameter("@teacher_id",SqlDbType.Int);
+            SqlParameter p_authorized_id = new SqlParameter("@authorized_id",SqlDbType.VarChar,20);
+            SqlParameter p_dateofjoin = new SqlParameter("@dateofjoin",SqlDbType.Date);
+            SqlParameter p_city_id = new SqlParameter("@city_id",SqlDbType.Int);
+            SqlParameter P_postal_code = new SqlParameter("@postal_code",SqlDbType.Int);
+            
+            p_general_id.Value = this.GeneralID;
+            P_firstname.Value = _firstname;
+            p_lastname.Value = _lastname;
+            p_dob_id.Value = this.DOBID;
+            p_nationality.Value = _nationality;
+            p_gender.Value = _gender;
+            p_photo.Value = _phone;
+            p_religion.Value = _religion;
+            p_phone.Value = _phone;
+            p_address.Value = _address;
+            p_loc_id.Value = this.LocationID;
+            p_day.Value = Convert.ToInt32( formatedDateofBirth.Substring(0,2));
+            p_month.Value = Convert.ToInt32(formatedDateofBirth.Substring(3, 2));
+            p_year.Value = Convert.ToInt32(formatedDateofBirth.Substring(formatedDateofBirth.Length - 4, 4));
+            p_teacher_id.Value = this.TeacherID;
+            p_authorized_id.Value = this.AuthorizeID;
+            p_dateofjoin.Value = formatedDateofJoin;
+            p_city_id.Value = p_city_id;
+            P_postal_code.Value = P_postal_code;
 
+            mydb.obj_sqlcommand.Parameters.Add(p_general_id);
+            mydb.obj_sqlcommand.Parameters.Add(P_firstname);
+            mydb.obj_sqlcommand.Parameters.Add(p_lastname);
+            mydb.obj_sqlcommand.Parameters.Add(p_dob_id);
+            mydb.obj_sqlcommand.Parameters.Add(p_nationality);
+            mydb.obj_sqlcommand.Parameters.Add(p_gender);
+            mydb.obj_sqlcommand.Parameters.Add(p_photo);
+            mydb.obj_sqlcommand.Parameters.Add(p_religion);
+            mydb.obj_sqlcommand.Parameters.Add(p_address);
+            mydb.obj_sqlcommand.Parameters.Add(p_loc_id);
+            mydb.obj_sqlcommand.Parameters.Add(p_day);
+            mydb.obj_sqlcommand.Parameters.Add(p_month);
+            mydb.obj_sqlcommand.Parameters.Add(p_year);
+            mydb.obj_sqlcommand.Parameters.Add(p_teacher_id);
+            mydb.obj_sqlcommand.Parameters.Add(p_authorized_id);
+            mydb.obj_sqlcommand.Parameters.Add(p_dateofjoin);
+            mydb.obj_sqlcommand.Parameters.Add(p_city_id);
+            mydb.obj_sqlcommand.Parameters.Add(P_postal_code);
+            try
+            {
+                mydb.OpenConnection();
+                if (mydb.obj_sqlcommand.ExecuteNonQuery() > 0)
+                    returnvalue = "true";
+                else
+                    returnvalue = "false";
+            }
+            catch (Exception ex)
+            {
+                HttpContext.Current.Response.Write(ex.ToString());
+            }
+            finally
+            {
+                mydb.CloseConnection();
+                mydb.obj_sqlcommand.Dispose();
+            }
+            return returnvalue;
+        }
     }
 }
