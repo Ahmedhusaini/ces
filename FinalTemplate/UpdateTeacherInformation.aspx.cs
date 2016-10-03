@@ -17,7 +17,11 @@ namespace FinalTemplate
         {
             rbtnFemale.Checked = false;
             rbtnMale.Checked = false;
-
+            if (!string.IsNullOrWhiteSpace(Request.QueryString["IAC"]))
+                txtTeacherIDToPopulateDetails.Text=Request.QueryString["IAC"];
+                
+            
+            
             JFunctions.BindDropDownList(ddlCity, "city", "city_id", "select * from tbl_city");
             JFunctions.BindDropDownList(ddlCountry, "country", "country_id", "select * from tbl_country");
         }
