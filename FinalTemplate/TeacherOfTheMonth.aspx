@@ -22,7 +22,7 @@
                      var actualArray = $.parseJSON(obj);
                      $.each(actualArray, function(i,v) {
                             var div = $('tbody');
-                           div.append('<tr class="table-row"><td class="col-1"><span>'+v.TeacherID+'</span></td><td class="col-2"><a href="courses-detail.html">'+v.FirstName + ' '+v.LastName +'</a></td><td class="col-3"><span><input  type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></span></td></tr>');
+                           div.append('<tr class="table-row"><td class="col-1"><span>'+v.TeacherID+'</span></td><td class="col-2"><a href="courses-detail.html">'+v.FirstName + ' '+v.LastName +'</a></td></tr>');
                      });
                  },
                  error: function(data) {
@@ -58,7 +58,7 @@
                                             <tr class="heading-table">
                                                 <th class="col-1">Teacher ID</th>
                                                 <th class="col-2">Teacher Name</th>
-                                                <th class="col-3">Make Teacher Of the Month</th>
+
                                             </tr>
                                             </thead>
                                         </table>
