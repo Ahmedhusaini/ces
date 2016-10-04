@@ -88,6 +88,7 @@
     <Content Include="assets\images\team member\siddique.jpg" />
     <Content Include="assets\images\team member\shaheryar.jpg" />
     <Content Include="assets\images\team member\shahwaiz.jpg" />
+    <Content Include="Date_sheet.aspx" />
     <Content Include="images\teachers\teachers %281%29.jpg" />
     <Content Include="images\teachers\teachers %282%29.jpg" />
     <Content Include="images\teachers\teachers %283%29.jpg" />
@@ -95,6 +96,7 @@
     <Content Include="images\teachers\teachers %285%29.jpg" />
     <Content Include="Logintype.aspx" />
     <Content Include="Mark_attendance.aspx" />
+    <Content Include="Mark_sheet.aspx" />
     <Content Include="Our_Team.aspx" />
     <Content Include="parentpanel.aspx" />
     <Content Include="PostNews.aspx" />
@@ -257,6 +259,7 @@
     <Content Include="select_resistration_type.aspx" />
     <Content Include="studentpanel.aspx" />
     <Content Include="StudentProfile.aspx" />
+    <Content Include="Syllabus.aspx" />
     <Content Include="TeacherOfTheMonth.aspx" />
     <Content Include="TeacherRegistration.aspx" />
     <Content Include="TeacherPanel.aspx" />
@@ -280,12 +283,24 @@
     <Compile Include="About_Us.aspx.designer.cs">
       <DependentUpon>About_Us.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Date_sheet.aspx.cs">
+      <DependentUpon>Date_sheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Date_sheet.aspx.designer.cs">
+      <DependentUpon>Date_sheet.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Mark_attendance.aspx.cs">
       <DependentUpon>Mark_attendance.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mark_attendance.aspx.designer.cs">
       <DependentUpon>Mark_attendance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mark_sheet.aspx.cs">
+      <DependentUpon>Mark_sheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mark_sheet.aspx.designer.cs">
+      <DependentUpon>Mark_sheet.aspx</DependentUpon>
     </Compile>
     <Compile Include="Our_Team.aspx.cs">
       <DependentUpon>Our_Team.aspx</DependentUpon>
@@ -429,6 +444,12 @@
     </Compile>
     <Compile Include="StudentProfile.aspx.designer.cs">
       <DependentUpon>StudentProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Syllabus.aspx.cs">
+      <DependentUpon>Syllabus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Syllabus.aspx.designer.cs">
+      <DependentUpon>Syllabus.aspx</DependentUpon>
     </Compile>
     <Compile Include="TeacherOfTheMonth.aspx.cs">
       <DependentUpon>TeacherOfTheMonth.aspx</DependentUpon>

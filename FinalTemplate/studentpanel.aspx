@@ -194,16 +194,20 @@
         </div>
     </div>
     <%--timetable--%>
-    <div class="section teacher-course section-padding">
-        <div class="container teacher-course-wrapper" style="width: 1220px">
+    <br />
+        <div class="container teacher-course-wrapper">
             <div class="underline">TIME TABLE</div>
-                    </div>
+         </div>
         <div class="footer-top">
             <div class="container">
                 <div class="footer-top-wrapper">
                     <div class="footer-top-left">
-                        <asp:TextBox ID="TextBox1" placeholder="enter your teacher name" CssClass="form-control  form-input" Height="40px" Width="600px" runat="server">
-                        </asp:TextBox>
+                     <%--   <asp:TextBox ID="TextBox1" placeholder="enter your teacher name" CssClass="form-control  form-input" Height="40px" Width="600px" runat="server">
+                        </asp:TextBox>--%>
+                        <asp:DropDownList ID="DropDownList1" Width="70px" runat="server" CssClass="form-control  form-input" DataSourceID="SqlDataSource2" DataTextField="class" DataValueField="class"></asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="SELECT [class] FROM [tbl_class]"></asp:SqlDataSource>
+                        <asp:DropDownList ID="DropDownList2" Width="70px" runat="server" CssClass="form-control  form-input" DataSourceID="SqlDataSource3" DataTextField="section" DataValueField="section"></asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="SELECT [section] FROM [tbl_section]"></asp:SqlDataSource>
                     </div>
                     <div class="footer-top-right">
                         <button onclick="window.location.href='contact.html'" class="btn btn-blue btn-bold"><span>Search</span></button>
@@ -213,14 +217,13 @@
         </div>
         <br />
         
-        <asp:GridView ID="GridView1" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#86bc42" GridLines="None">
+        <asp:GridView ID="GridView1" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#86BC42" GridLines="None">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="day" HeaderText="day" SortExpression="day" />
-                <asp:BoundField DataField="starting_time" HeaderText="Starting Time" SortExpression="starting_time" />
-                <asp:BoundField DataField="ending_time" HeaderText="Ending Time" SortExpression="ending_time" />
-                <asp:BoundField DataField="subject" HeaderText="Subject" SortExpression="subject" />
-                <asp:BoundField DataField="username" HeaderText="Teacher" SortExpression="username" />
+                <asp:BoundField DataField="subject" HeaderText="subject" SortExpression="subject" />
+                <asp:BoundField DataField="starting_time" HeaderText="starting_time" SortExpression="starting_time" />
+                <asp:BoundField DataField="ending_time" HeaderText="ending_time" SortExpression="ending_time" />
             </Columns>
             <EditRowStyle BackColor="#7C6F57" />
             <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -233,10 +236,11 @@
             <SortedDescendingCellStyle BackColor="#D4DFE1" />
             <SortedDescendingHeaderStyle BackColor="#15524A" />
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="SELECT [day], [starting_time], [ending_time], [subject], [username] FROM [student_timetable] WHERE ([username] = @username)">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="SELECT [day], [subject], [starting_time], [ending_time] FROM [View_Student_timetable] WHERE (([class] = @class) AND ([section] = @section))">
             <SelectParameters>
-                <asp:ControlParameter ControlID="TextBox1" Name="username" PropertyName="Text" Type="String" />
+                <asp:ControlParameter ControlID="DropDownList1" Name="class" PropertyName="SelectedValue" Type="String" />
+                <asp:ControlParameter ControlID="DropDownList2" Name="section" PropertyName="SelectedValue" Type="String" />
             </SelectParameters>
-        </asp:SqlDataSource>
-    </div>
+        </asp:SqlDataSource><br />
+
 </asp:Content>
