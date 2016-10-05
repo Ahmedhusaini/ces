@@ -11,7 +11,18 @@ namespace FinalTemplate
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //if (!IsPostBack)
+            //{
+            //    if (Session["userid"] != null)
+            //    {
+            //       // namelab.Text = "Your User ID: " + Session["userid"].ToString();
+            //        Response.Redirect("Syllabus.aspx");
+            //    }
+            //    else
+            //    {
+            //        Response.Redirect("~/Default.aspx");
+            //    }
+            //}
         }
     }
 }

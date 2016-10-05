@@ -195,52 +195,59 @@
     </div>
     <%--timetable--%>
     <br />
-        <div class="container teacher-course-wrapper">
-            <div class="underline">TIME TABLE</div>
-         </div>
-        <div class="footer-top">
-            <div class="container">
-                <div class="footer-top-wrapper">
-                    <div class="footer-top-left">
-                     <%--   <asp:TextBox ID="TextBox1" placeholder="enter your teacher name" CssClass="form-control  form-input" Height="40px" Width="600px" runat="server">
-                        </asp:TextBox>--%>
-                        <asp:DropDownList ID="DropDownList1" Width="70px" runat="server" CssClass="form-control  form-input" DataSourceID="SqlDataSource2" DataTextField="class" DataValueField="class"></asp:DropDownList>
-                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="SELECT [class] FROM [tbl_class]"></asp:SqlDataSource>
-                        <asp:DropDownList ID="DropDownList2" Width="70px" runat="server" CssClass="form-control  form-input" DataSourceID="SqlDataSource3" DataTextField="section" DataValueField="section"></asp:DropDownList>
-                        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="SELECT [section] FROM [tbl_section]"></asp:SqlDataSource>
-                    </div>
-                    <div class="footer-top-right">
-                        <button onclick="window.location.href='contact.html'" class="btn btn-blue btn-bold"><span>Search</span></button>
-                    </div>
+      <%--   <asp:TextBox ID="TextBox1" placeholder="enter your teacher name" CssClass="form-control  form-input" Height="40px" Width="600px" runat="server">
+       </asp:TextBox>--%>
+    <div class="container teacher-course-wrapper">
+        <div class="underline">TIME TABLE</div>
+    </div>
+    <div class="search-input">
+        <div class="container">
+            <div class="search-input-wrapper">
+                <asp:DropDownList ID="DropDownList1" runat="server" CssClass="sbHolder" DataSourceID="class_DataSource" DataTextField="class" DataValueField="class">
+                </asp:DropDownList>
+                <asp:SqlDataSource ID="class_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="SELECT [class] FROM [tbl_class]"></asp:SqlDataSource>
+                <div>
+                    <asp:DropDownList ID="DropDownList2" runat="server" CssClass="sbHolder" DataSourceID="sec_DataSource" DataTextField="section" DataValueField="section">
+                    </asp:DropDownList>
+                    <asp:SqlDataSource ID="sec_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="SELECT [section] FROM [tbl_section]"></asp:SqlDataSource>
                 </div>
+                <div>
+                    <asp:DropDownList ID="DropDownList3" CssClass="sbHolder" runat="server" DataSourceID="SqlDataSource2" DataTextField="school_name" DataValueField="school_name"></asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="SELECT [school_name] FROM [tbl_school]"></asp:SqlDataSource>
+                </div>
+                <div> </div>
+                <button type="submit" class="form-submit btn btn-blue"><span>Search</span></button>
+                <div class="clearfix"></div>
             </div>
         </div>
-        <br />
-        
-        <asp:GridView ID="GridView1" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#86BC42" GridLines="None">
-            <AlternatingRowStyle BackColor="White" />
-            <Columns>
-                <asp:BoundField DataField="day" HeaderText="day" SortExpression="day" />
-                <asp:BoundField DataField="subject" HeaderText="subject" SortExpression="subject" />
-                <asp:BoundField DataField="starting_time" HeaderText="starting_time" SortExpression="starting_time" />
-                <asp:BoundField DataField="ending_time" HeaderText="ending_time" SortExpression="ending_time" />
-            </Columns>
-            <EditRowStyle BackColor="#7C6F57" />
-            <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-            <HeaderStyle BackColor="#737373" Font-Bold="True" ForeColor="#86bc42" />
-            <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-            <RowStyle BackColor="#E3EAEB" />
-            <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-            <SortedAscendingCellStyle BackColor="#F8FAFA" />
-            <SortedAscendingHeaderStyle BackColor="#246B61" />
-            <SortedDescendingCellStyle BackColor="#D4DFE1" />
-            <SortedDescendingHeaderStyle BackColor="#15524A" />
-        </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="SELECT [day], [subject], [starting_time], [ending_time] FROM [View_Student_timetable] WHERE (([class] = @class) AND ([section] = @section))">
-            <SelectParameters>
-                <asp:ControlParameter ControlID="DropDownList1" Name="class" PropertyName="SelectedValue" Type="String" />
-                <asp:ControlParameter ControlID="DropDownList2" Name="section" PropertyName="SelectedValue" Type="String" />
-            </SelectParameters>
-        </asp:SqlDataSource><br />
+    </div> 
+    <br />
+
+    <asp:GridView ID="GridView1" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#86BC42" GridLines="None">
+        <AlternatingRowStyle BackColor="White" />
+        <Columns>
+            <asp:BoundField DataField="day" HeaderText="day" SortExpression="day" />
+            <asp:BoundField DataField="subject" HeaderText="subject" SortExpression="subject" />
+            <asp:BoundField DataField="starting_time" HeaderText="starting_time" SortExpression="starting_time" />
+            <asp:BoundField DataField="ending_time" HeaderText="ending_time" SortExpression="ending_time" />
+        </Columns>
+        <EditRowStyle BackColor="#7C6F57" />
+        <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#737373" Font-Bold="True" ForeColor="#86bc42" />
+        <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="#E3EAEB" />
+        <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+        <SortedAscendingCellStyle BackColor="#F8FAFA" />
+        <SortedAscendingHeaderStyle BackColor="#246B61" />
+        <SortedDescendingCellStyle BackColor="#D4DFE1" />
+        <SortedDescendingHeaderStyle BackColor="#15524A" />
+    </asp:GridView>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="SELECT [day], [subject], [starting_time], [ending_time] FROM [View_Student_timetable] WHERE (([class] = @class) AND ([section] = @section))">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="DropDownList1" Name="class" PropertyName="SelectedValue" Type="String" />
+            <asp:ControlParameter ControlID="DropDownList2" Name="section" PropertyName="SelectedValue" Type="String" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+    <br />
 
 </asp:Content>
