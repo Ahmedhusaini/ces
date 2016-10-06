@@ -1,4 +1,4 @@
-﻿;\<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="studentpanel.master.cs" Inherits="FinalTemplate.studentpanel" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="studentpanel.master.cs" Inherits="FinalTemplate.studentpanel" %>
 
 <!DOCTYPE html>
 
@@ -45,7 +45,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-5 topbar-left text-left info-text1">
-                        <%--<div class="email"><a href="#"><i class="topbar-icon fa fa-envelope-o"></i><span>info@ces.com</span></a></div>--%>
+                        <%--                    <div class="email"><a href="#"><i class="topbar-icon fa fa-envelope-o"></i><span>info@ces.com</span></a></div>--%>
                         <div class="email"><a href="Contact_Us.aspx"><i class="topbar-icon fa fa-envelope-o"></i><span>www.ces.edu.pk</span></a></div>
                         <div class="hotline"><a href="javascript:void(0)"><i></i><span>| Reshaping Education into Digital World </span></a></div>
                     </div>
@@ -54,11 +54,10 @@
                             <img src="assets/images/logo-color-1.png" alt="" /></a>
                     </div>
                     <div class="col-md-5 topbar-right text-right info-text3">
-                        <div class="hotline">
-                            <a href="updatepasswordpanel.aspx"><span>Update your Password </span></a>
-                        </div>
+                        <div class="hotline"><a href="updatepasswordpanel.aspx"><span>Update your Password </span></a></div>
                         <div class="email">
-                             <div class="email"><a onserverclick="btn_logout_Click" runat="server">| Logout</a></div>                            
+                            <a href="#" class="login"></a>
+                            <a onserverclick="btn_logout_Click" runat="server">| Logout</a> 
                         </div>
                     </div>
                 </div>
