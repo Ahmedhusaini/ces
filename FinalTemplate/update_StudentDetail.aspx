@@ -1,13 +1,16 @@
-﻿<%@ Page Title="Date Sheet" Language="C#" MasterPageFile="~/updatepasswordpanel.Master" AutoEventWireup="true" CodeBehind="Date_sheet.aspx.cs" Inherits="FinalTemplate.Date_sheet" %>
+﻿<%@ Page Title="Update Detail" Language="C#" MasterPageFile="~/updatepasswordpanel.Master" AutoEventWireup="true" CodeBehind="update_StudentDetail.aspx.cs" Inherits="FinalTemplate.update_StudentDetail" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="icon" href="assets/images/logo/logo-carousel-6.png" />
+ <link rel="icon" href="assets/images/logo/logo-carousel-6.png" />
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- LIBRARY FONT-->
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400italic,700,900,300" />
     <link type="text/css" rel="stylesheet" href="assets/font/font-icon/font-awesome-4.4.0/css/font-awesome.css" />
     <link type="text/css" rel="stylesheet" href="assets/font/font-icon/font-svg/css/Glyphter.css" />
+
     <!-- LIBRARY CSS-->
     <link type="text/css" rel="stylesheet" href="assets/css/color-1.css" />
     <link href="assets/css/mycss.css" rel="stylesheet" />
@@ -29,9 +32,10 @@
     $('#colorskins').attr('href', 'assets/css/color-1.css');
 }</script>
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <header>
-        <div class="header-main homepage-03">
+    <div class="header-main homepage-03">
             <div class="container">
                 <div class="header-main-wrapper">
                     <div class="navbar-header">
@@ -73,35 +77,18 @@
                                     <input type="text" placeholder="Search" class="searchbox" />
                                     <button type="submit" class="searchbutton fa fa-search"></button>
                                 </form>
-                            </div>
+                            </div>                            
                         </ul>
                     </nav>
                 </div>
             </div>
         </div>
-    </header>
+</header>
     <div class="section background-opacity page-title set-height-top">
         <div class="container">
             <div class="page-title-wrapper">
                 <!--.page-title-content-->
-                <h2 class="captions">Date Sheet</h2>
-            </div>
-        </div>
-    </div>
-    <br />
-    <div class="search-input">
-        <div class="container">
-            <div class="search-input-wrapper">
-                <div>
-                    <asp:TextBox ID="TextBox2" placeholder="Enter Your ID" CssClass="sbHolder" runat="server">
-                    </asp:TextBox>
-                </div>
-                <div>
-                    <asp:TextBox ID="TextBox1" placeholder="enter your teacher name" CssClass="form-control  form-input" Height="40px" Width="600px" runat="server">
-                    </asp:TextBox>
-                </div>
-                <button type="submit" class="form-submit btn btn-blue"><span>Check</span></button>
-                <div class="clearfix"></div>
+                <h2 class="captions">Update Detail</h2>
             </div>
         </div>
     </div>

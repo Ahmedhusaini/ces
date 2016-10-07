@@ -6,7 +6,6 @@
 <head runat="server">
     <link rel="icon" href="assets/images/logo/logo-carousel-6.png" />
     <title>Student Profile</title>
-
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -44,20 +43,20 @@
         <div class="header-topbar homepage-03">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-5 topbar-left text-left info-text1">
-                        <%--                    <div class="email"><a href="#"><i class="topbar-icon fa fa-envelope-o"></i><span>info@ces.com</span></a></div>--%>
+                    <div class="col-md-5 topbar-left text-left info-text1">                       
                         <div class="email"><a href="Contact_Us.aspx"><i class="topbar-icon fa fa-envelope-o"></i><span>www.ces.edu.pk</span></a></div>
                         <div class="hotline"><a href="javascript:void(0)"><i></i><span>| Reshaping Education into Digital World </span></a></div>
                     </div>
                     <div class="col-md-2 logo-topbar info-text2">
                         <a href="index.html">
-                            <img src="assets/images/logo-color-1.png" alt="" /></a>
+                            <img src="assets/images/logo-color-1.png" alt="" />
+                        </a>
                     </div>
                     <div class="col-md-5 topbar-right text-right info-text3">
                         <div class="hotline"><a href="updatepasswordpanel.aspx"><span>Update your Password </span></a></div>
                         <div class="email">
                             <a href="#" class="login"></a>
-                            <a onserverclick="btn_logout_Click" runat="server">| Logout</a> 
+                            <a onserverclick="btn_logout_Click" runat="server">| Logout</a>
                         </div>
                     </div>
                 </div>
@@ -94,6 +93,7 @@
                             </li>
                             <li class="dropdown"><a href="Admin.aspx" class="main-menu">Attendance</a></li>
                             <li class="dropdown"><a href="#" class="main-menu">News</a></li>
+                            <li class="dropdown"><a href="#" class="main-menu">Update Detail</a></li>
                             <li><a href="Contact_Us.aspx" class="main-menu">Contact</a></li>
                             <li class="button-search">
                                 <p class="main-menu"><i class="fa fa-search"></i></p>
@@ -104,7 +104,7 @@
                                     <input type="text" placeholder="Search" class="searchbox" />
                                     <button type="submit" class="searchbutton fa fa-search"></button>
                                 </form>
-                            </div>
+                            </div>                            
                         </ul>
                     </nav>
                 </div>
