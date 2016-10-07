@@ -1,94 +1,130 @@
 ﻿<%@ Page Title="Update Detail" Language="C#" MasterPageFile="~/updatepasswordpanel.Master" AutoEventWireup="true" CodeBehind="update_StudentDetail.aspx.cs" Inherits="FinalTemplate.update_StudentDetail" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
- <link rel="icon" href="assets/images/logo/logo-carousel-6.png" />
+    <script src="assets/js/jquery-2.2.3.js"></script>
+    <script src="assets/js/jquery.validate.js"></script>
+    <script type="text/javascript">
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        $.validator.addMethod("lettersonly", function (value, element) {
+            return this.optional(element) || /^[a-z\s]+$/i.test(value);
+        }, "Letters only please");
 
-    <!-- LIBRARY FONT-->
-    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400italic,700,900,300" />
-    <link type="text/css" rel="stylesheet" href="assets/font/font-icon/font-awesome-4.4.0/css/font-awesome.css" />
-    <link type="text/css" rel="stylesheet" href="assets/font/font-icon/font-svg/css/Glyphter.css" />
+        $(document).ready(function () {
+            $('.rlp').removeClass("rlp");
+            $('.register-form').css('margin-left', '25%');
+            centerText( <%=username.ClientID%>);
+            centerText( <%=changepassword.ClientID%>);
+            centerText( <%=newpassword.ClientID%>);
+            centerText( <%=conformpassword.ClientID%>);
+            removeBackToTop();
+            validation();
+        });
 
-    <!-- LIBRARY CSS-->
-    <link type="text/css" rel="stylesheet" href="assets/css/color-1.css" />
-    <link href="assets/css/mycss.css" rel="stylesheet" />
-    <link type="text/css" rel="stylesheet" href="assets/libs/animate/animate.css" />
-    <link type="text/css" rel="stylesheet" href="assets/libs/bootstrap-3.3.5/css/bootstrap.css" />
-    <link type="text/css" rel="stylesheet" href="assets/libs/owl-carousel-2.0/assets/owl.carousel.css" />
-    <link type="text/css" rel="stylesheet" href="assets/libs/selectbox/css/jquery.selectbox.css" />
-    <link type="text/css" rel="stylesheet" href="assets/libs/fancybox/css/jquery.fancybox.css" />
-    <link type="text/css" rel="stylesheet" href="assets/libs/fancybox/css/jquery.fancybox-buttons.css" />
-    <link type="text/css" rel="stylesheet" href="assets/libs/media-element/build/mediaelementplayer.min.css" />
-    <!-- STYLE CSS    -->
-    <!--link(type="text/css", rel='stylesheet', href='assets/css/color-1.css', id="color-skins")-->
-    <link type="text/css" rel="stylesheet" href="#" id="colorskins" />
-    <script src="assets/libs/jquery/jquery-2.1.4.min.js"></script>
-    <script src="assets/libs/js-cookie/js.cookie.js"></script>
-    <script>if ((Cookies.get('colorskin') != undefined) && (Cookies.get('colorskin') != 'color-1')) {
-    $('#colorskins').attr('href', 'assets/css/' + Cookies.get('colorskin') + '.css');
-} else if ((Cookies.get('colorskin') == undefined) || (Cookies.get('colorskin') == 'color-1')) {
-    $('#colorskins').attr('href', 'assets/css/color-1.css');
-}</script>
+
+        function centerText(control) {
+            $(control).css({ 'text-align': 'center'});
+        }
+        function removeBackToTop() {
+            $('#back-top').css('display', 'none');
+        }
+    </script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <header>
-    <div class="header-main homepage-03">
-            <div class="container">
-                <div class="header-main-wrapper">
-                    <div class="navbar-header">
-                        <div class="logo pull-left">
-                            <a href="index.html" class="header-logo">
-                                <img src="assets/images/logo-color-1.png" alt="" /></a>
-                        </div>
-                        <button type="button" data-toggle="collapse" data-target=".navigation" class="navbar-toggle edugate-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-                    </div>
-                    <nav class="navigation collapse navbar-collapse">
-                        <ul class="nav-links nav navbar-nav">
 
-                            <li class="dropdown active"><a href="studentpanel.aspx" class="main-menu">Home</a></li>
-                            <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Schedules<span class="fa fa-angle-down icons-dropdown"></span></a>
-                                <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                    <li><a href="Syllabus.aspx" class="link-page">Syllabus</a></li>
-                                    <li><a href="Date_sheet.aspx" class="link-page">Date Sheet</a></li>
-                                    <li><a href="Mark_sheet.aspx" class="link-page">Mark Sheet</a></li>
-                                </ul>
-                            </li>
+    <style>
+        .reg-sk {
+            padding-top: 26px;
+            padding-bottom: 26px;
+            opacity: 0.95;
+        }
 
-                            <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Download<span class="fa fa-angle-down icons-dropdown"></span></a>
-                                <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                    <li><a href="news.html" class="link-page">Download Lectures</a></li>
-                                    <li><a href="news-grid.html" class="link-page">Download Homework</a></li>
-                                    <li><a href="news-grid-nonsidebar.html" class="link-page">Download Assignments</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="Admin.aspx" class="main-menu">Attendance</a></li>
-                            <li class="dropdown"><a href="#" class="main-menu">News</a></li>
-                            <li class="dropdown"><a href="#" class="main-menu">Update Detail</a></li>
-                            <li><a href="Contact_Us.aspx" class="main-menu">Contact</a></li>
-                            <li class="button-search">
-                                <p class="main-menu"><i class="fa fa-search"></i></p>
-                            </li>
+        label.error {
+            color: red;
+            display: inline-flexbox;
+            display: block;
+        }
 
-                            <div class="nav-search hide">
-                                <form>
-                                    <input type="text" placeholder="Search" class="searchbox" />
-                                    <button type="submit" class="searchbutton fa fa-search"></button>
-                                </form>
-                            </div>                            
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-</header>
+        input.error {
+            border: 1px solid red;
+            float: none;
+            color: red;
+            padding-left: .3em;
+            vertical-align: top;
+        }
+    </style>
+
     <div class="section background-opacity page-title set-height-top">
         <div class="container">
             <div class="page-title-wrapper">
                 <!--.page-title-content-->
-                <h2 class="captions">Update Detail</h2>
+                <h2 class="captions">Update Details</h2>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="page-login rlp">
+        <div class="container">
+            <div class="register-wrapper rlp-wrapper reg-sk" style="opacity: 0.98;">
+                <div class="register-table rlp-table" style="box-shadow: 5px 5px 50px 5px; background-color: #EEFBFD;">
+                    <h2 class="center-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Update Student Detail</h2>
+                    <hr style="border:solid;border-width:1px" />
+                    <asp:Panel ID="Panel1" runat="server">
+                        <div class="register-form bg-w-form rlp-form">
+                            <div style="padding-left: 131px">
+                                <label for="regname" class="control-label form-label">
+                                    Email <span class="highlight">*<br />
+                                    </span>
+                                </label>
+                                <!--p.help-block Warning !-->
+                                <asp:TextBox ID="email" runat="server" CssClass="form-control form-input" Height="35px" placeholder="User name" Width="331px"></asp:TextBox>
+                            </div>
+                            <div style="padding-left: 131px">
+                                <label for="regname" class="control-label form-label">
+                                    User Name <span class="highlight">*<br />
+                                    </span>
+                                </label>
+                                <!--p.help-block Warning !-->
+                                <asp:TextBox ID="username" runat="server" CssClass="form-control form-input" Height="35px" placeholder="User name" Width="331px"></asp:TextBox>
+                            </div>
+                            <div style="padding-left: 131px">
+                                <label for="regname" class="control-label form-label">
+                                    Password <span class="highlight">*<br />
+                                    </span>
+                                </label>
+                                <!-- p.help-block Warning !-->
+                                <br />
+                                <asp:TextBox ID="changepassword" CssClass="form-control  form-input " placeholder="password" Width="331px" runat="server" TextMode="Password" Height="35px"></asp:TextBox>
+                            </div>
+                            <div style="padding-left: 131px">
+                                <label for="regname" class="control-label form-label">
+                                    New Password <span class="highlight">*<br />
+                                    </span>
+                                </label>
+                                <!-- p.help-block Warning !-->
+                                <br />
+                                <asp:TextBox ID="newpassword" CssClass="form-control  form-input " placeholder="password" Width="331px" runat="server" TextMode="Password" Height="35px"></asp:TextBox>
+                            </div>
+                            <div style="padding-left: 131px">
+                                <label for="regname" class="control-label form-label">
+                                    Conform Password <span class="highlight">*<br />
+                                    </span>
+                                </label>
+                                <!-- p.help-block Warning !-->
+                                <br />
+                                <asp:TextBox ID="conformpassword" CssClass="form-control  form-input " placeholder="password" Width="331px" runat="server" TextMode="Password" Height="35px"></asp:TextBox>
+                                <asp:CompareValidator ID="CompareValidator1" ControlToCompare="newpassword" ControlToValidate="conformpassword" CssClass=" input.error" ForeColor="#ff0000" ErrorMessage="Your password does not match" runat="server" Display="Dynamic"></asp:CompareValidator>
+                            </div>
+
+                        </div>
+                        <div class="register-submit">
+                            <button type="submit" class="btn btn-register btn-green">
+                                <span>
+                                    <asp:Button ID="Button1" runat="server" Text="Update" Style="background-color: transparent" BorderStyle="None" /></span></button>
+                            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                        </div>
+                    </asp:Panel>
+                </div>
             </div>
         </div>
     </div>

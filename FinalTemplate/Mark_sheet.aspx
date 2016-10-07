@@ -30,56 +30,7 @@
 }</script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <header>
-    <div class="header-main homepage-03">
-            <div class="container">
-                <div class="header-main-wrapper">
-                    <div class="navbar-header">
-                        <div class="logo pull-left">
-                            <a href="index.html" class="header-logo">
-                                <img src="assets/images/logo-color-1.png" alt="" /></a>
-                        </div>
-                        <button type="button" data-toggle="collapse" data-target=".navigation" class="navbar-toggle edugate-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-                    </div>
-                    <nav class="navigation collapse navbar-collapse">
-                        <ul class="nav-links nav navbar-nav">
-
-                            <li class="dropdown active"><a href="studentpanel.aspx" class="main-menu">Home</a></li>
-                            <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Schedules<span class="fa fa-angle-down icons-dropdown"></span></a>
-                                <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                    <li><a href="Syllabus.aspx" class="link-page">Syllabus</a></li>
-                                    <li><a href="Date_sheet.aspx" class="link-page">Date Sheet</a></li>
-                                    <li><a href="Mark_sheet.aspx" class="link-page">Mark Sheet</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Download<span class="fa fa-angle-down icons-dropdown"></span></a>
-                                <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                    <li><a href="news.html" class="link-page">Download Lectures</a></li>
-                                    <li><a href="news-grid.html" class="link-page">Download Homework</a></li>
-                                    <li><a href="news-grid-nonsidebar.html" class="link-page">Download Assignments</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="Admin.aspx" class="main-menu">Attendance</a></li>
-                            <li class="dropdown"><a href="#" class="main-menu">News</a></li>
-                            <li class="dropdown"><a href="#" class="main-menu">Update Detail</a></li>
-                            <li><a href="Contact_Us.aspx" class="main-menu">Contact</a></li>
-                            <li class="button-search">
-                                <p class="main-menu"><i class="fa fa-search"></i></p>
-                            </li>
-
-                            <div class="nav-search hide">
-                                <form>
-                                    <input type="text" placeholder="Search" class="searchbox" />
-                                    <button type="submit" class="searchbutton fa fa-search"></button>
-                                </form>
-                            </div>                            
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-</header>
+    
     <div class="section background-opacity page-title set-height-top">
         <div class="container">
             <div class="page-title-wrapper">
@@ -97,7 +48,7 @@
                     </asp:TextBox>
                 </div>
                 <div>
-                    <asp:TextBox ID="TextBox1" placeholder="enter your teacher name" CssClass="form-control  form-input" Height="40px" Width="600px" runat="server">
+                    <asp:TextBox ID="TextBox1" placeholder="enter your teacher name" CssClass="sbHolder form-control" Width="600px" runat="server">
                     </asp:TextBox>
                 </div>
                 <button type="submit" class="form-submit btn btn-blue"><span>Check</span></button>
