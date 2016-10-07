@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About_Us.aspx" />
+    <Content Include="assets\css\toggleSwitch.css" />
     <Content Include="assets\images\calender.png" />
     <Content Include="assets\images\cesThemeImages\hps.jpg" />
     <Content Include="assets\images\cesThemeImages\pakstudents.jpg" />
@@ -261,6 +262,7 @@
     <Content Include="StudentProfile.aspx" />
     <Content Include="Syllabus.aspx" />
     <Content Include="TeacherOfTheMonth.aspx" />
+    <Content Include="TeacherPrivileges.aspx" />
     <Content Include="TeacherRegistration.aspx" />
     <Content Include="TeacherPanel.aspx" />
     <Content Include="Teacherprofile.aspx" />
@@ -461,6 +463,13 @@
     </Compile>
     <Compile Include="TeacherOfTheMonth.aspx.designer.cs">
       <DependentUpon>TeacherOfTheMonth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherPrivileges.aspx.cs">
+      <DependentUpon>TeacherPrivileges.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeacherPrivileges.aspx.designer.cs">
+      <DependentUpon>TeacherPrivileges.aspx</DependentUpon>
     </Compile>
     <Compile Include="TeacherRegistration.aspx.cs">
       <DependentUpon>TeacherRegistration.aspx</DependentUpon>
