@@ -40,7 +40,7 @@ namespace FinalTemplate
             if ((dateofbirth.Substring(2, 1) == "/" && dateofbirth.Substring(5, 1) == "/"))
                 txtDateOfBirth.Text = dateofbirth.Substring(0, 2) + "/" + dateofbirth.Substring(3, 2) + "/" + dateofbirth.Substring(dateofbirth.Length - 4, 4);
 
-            if (txtGeneralID.Text.ToLower() == "male")
+            if (objStudent.Gender.ToLower() == "male")
                 rbtnMale.Checked = true;
             else
                 rbtnFemale.Checked = true;
