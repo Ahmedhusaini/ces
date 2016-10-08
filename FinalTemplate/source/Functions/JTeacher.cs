@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using FinalTemplate.source.Database;
-using FinalTemplate.source.Validation;
-using FinalTemplate.source.Functions;
+﻿using FinalTemplate.source.Validation;
+using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Web;
 
 namespace FinalTemplate.source.Functions
 {
@@ -120,9 +116,8 @@ namespace FinalTemplate.source.Functions
 
             return returnvalue;
         }
-        public string UpdateTeacherInformation(int _generalid,int _dobid,int _locationid,int _teacherid,string _firstname, string _lastname, string _nationality, string _gender, string _religion, string _phone, string _address, string _dateofjoin, string _dateofbirth, int _city_id, int _postal_code)
+        public string UpdateTeacherInformation(int _generalid, int _dobid, int _locationid, int _teacherid, string _firstname, string _lastname, string _nationality, string _gender, string _religion, string _phone, string _address, string _dateofjoin, string _dateofbirth, int _city_id, int _postal_code)
         {
-           //string formatedDateofBirth = Convert.ToDateTime(_dateofbirth).ToString("d");
             string formatedDateofJoin = Convert.ToDateTime(_dateofjoin).ToString("d");
             string returnvalue = string.Empty;
             mydb.CreateConnection();
@@ -146,18 +141,18 @@ namespace FinalTemplate.source.Functions
             SqlParameter P_postal_code = new SqlParameter("@postal_code", SqlDbType.Int);
 
             p_general_id.Value = _generalid;
-            P_firstname.Value = _firstname;
-            p_lastname.Value = _lastname;
+            P_firstname.Value = _firstname.Trim();
+            p_lastname.Value = _lastname.Trim();
             p_dob_id.Value = _dobid;
-            p_nationality.Value = _nationality;
+            p_nationality.Value = _nationality.Trim();
             p_gender.Value = _gender;
-            p_religion.Value = _religion;
-            p_phone.Value = _phone;
-            p_address.Value = _address;
+            p_religion.Value = _religion.Trim();
+            p_phone.Value = _phone.Trim();
+            p_address.Value = _address.Trim();
             p_loc_id.Value = _locationid;
             p_day.Value = Convert.ToInt32(_dateofbirth.Substring(0, 2));
             p_month.Value = Convert.ToInt32(_dateofbirth.Substring(3, 2));
-            p_year.Value = Convert.ToInt32(_dateofbirth.Substring(_dateofbirth.Length - 4, 4));            
+            p_year.Value = Convert.ToInt32(_dateofbirth.Substring(_dateofbirth.Length - 4, 4));
             p_teacher_id.Value = _teacherid;
             p_dateofjoin.Value = formatedDateofJoin;
             p_city_id.Value = _city_id;

@@ -14,6 +14,10 @@ namespace FinalTemplate
             JFunctions.BindDropDownList(ddlCity, "city", "city_id", "select * from tbl_city");
             JFunctions.BindDropDownList(ddlClass, "class", "Class_id", "select * from tbl_class");
             JFunctions.BindDropDownList(ddlSection, "section", "Section_id", "select * from tbl_section");
+
+            if (!string.IsNullOrWhiteSpace(Request.QueryString["SIAC"]))
+                txtStudentIDForGettingInformation.Text = Request.QueryString["SIAC"];
+
         }
 
         protected void btnGetStudentInformation_Click(object sender, EventArgs e)

@@ -22,10 +22,11 @@
                 $(this).css({ 'background-color': 'white', 'transition': '2s', 'border-color': 'white', 'color': 'black', 'height': '30px' });
             });
         }
+
         function rowbg() {
-            $('.table-row').css('background-color', '#90a1ae');
+            $('.table-row').css('background-color', '#fafafa');
             $('.heading-table').css('background-color', 'rgb(61, 154, 45)');
-            $('span').css('color', 'white');
+            $('span').css('color', 'black');
         }
         function formfieldswidths() {
             $('#<%=txtFirstName.ClientID%>').css({ 'width': '100%', 'border-radius': '5px', 'height': '30px' });
@@ -141,7 +142,7 @@
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>Gender</span></td>
-                                        <td class="col-2"><asp:RadioButton runat="server" ID="rbtnMale" Text="Male" GroupName="gender" /><asp:RadioButton runat="server" ID="rbtnFemale" Text="Female" GroupName="gender" /></td>
+                                        <td class="col-2"><asp:RadioButton runat="server" ID="rbtnMale" Text="Male" GroupName="gender"  /><asp:RadioButton runat="server" ID="rbtnFemale" Text="Female" GroupName="gender"/></td>
                                        <td class="col-3"></td>
                                     </tr>
                                     
@@ -168,7 +169,7 @@
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>City</span></td>
-                                        <td class="col-2"><asp:DropDownList runat="server" ID="ddlCity"><asp:ListItem>Karachi</asp:ListItem></asp:DropDownList>
+                                        <td class="col-2"><asp:DropDownList runat="server" ID="ddlCity" OnSelectedIndexChanged="ddlCity_SelectedIndexChanged"><asp:ListItem>Karachi</asp:ListItem></asp:DropDownList>
                                         </td>
                                        <td class="col-3"></td>
                                     </tr>
@@ -184,12 +185,12 @@
                                     </tr>
                                      <tr class="table-row">
                                         <td class="col-3"><span>CNIC</span></td>
-                                        <td class="col-2"><asp:TextBox runat="server" Enabled="false" ID="txtCNIC"></asp:TextBox></td>
+                                        <td class="col-2"><asp:TextBox runat="server" ReadOnly="True" ID="txtCNIC"></asp:TextBox></td>
                                        <td class="col-3"></td>
                                     </tr>
                                      <tr class="table-row">
                                         <td class="col-3"><span>School ID</span></td>
-                                        <td class="col-2"><asp:TextBox Enabled="false" runat="server" ID="txtSchoolID"></asp:TextBox></td>
+                                        <td class="col-2"><asp:TextBox ReadOnly="True" runat="server" ID="txtSchoolID"></asp:TextBox></td>
                                         <td class="col-3"></td>
                                     </tr>
                                 </tbody>
@@ -211,30 +212,30 @@
                                 <tbody>
                                     <tr class="table-row">
                                         <td class="col-3"><span>Username</span></td>
-                                        <td class="col-2"><asp:TextBox runat="server" ID="txtUsername" Enabled="false"></asp:TextBox></td>
+                                        <td class="col-2"><asp:TextBox runat="server" ID="txtUsername" ReadOnly="True"></asp:TextBox></td>
                                         <td class="col-3"></td>
                                     </tr>
                                     
                                     <tr class="table-row">
                                         <td class="col-3"><span>Primary Email Address</span></td>
-                                        <td class="col-2"><asp:TextBox runat="server" ID="txtPrimaryEmail" Enabled="false" TextMode="Email"></asp:TextBox></td>
+                                        <td class="col-2"><asp:TextBox runat="server" ID="txtPrimaryEmail" ReadOnly="True" TextMode="Email"></asp:TextBox></td>
                                         <td class="col-3"></td>
                                     </tr>
                                     
                                     <tr class="table-row">
                                         <td class="col-3"><span>User Type</span></td>
-                                        <td class="col-2"><asp:DropDownList Enabled="false" runat="server" ID="ddlUserType"><asp:ListItem>Teacher</asp:ListItem></asp:DropDownList></td>
+                                        <td class="col-2"><asp:DropDownList ReadOnly="True" runat="server" ID="ddlUserType"><asp:ListItem>Teacher</asp:ListItem></asp:DropDownList></td>
                                         <td class="col-3"></td>
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>Login Count</span></td>
-                                        <td class="col-2"><asp:TextBox Enabled="false" runat="server" ID="txtLoginCount"></asp:TextBox></td>
+                                        <td class="col-2"><asp:TextBox ReadOnly="True" runat="server" ID="txtLoginCount"></asp:TextBox></td>
                                         <td class="col-3"></td>
                                     </tr>
 
                                     <tr class="table-row">
                                         <td class="col-3"><span>Last Login Date</span></td>
-                                        <td class="col-2"><asp:TextBox runat="server" Enabled="false" ID="txtlastLoginDate"></asp:TextBox></td>
+                                        <td class="col-2"><asp:TextBox runat="server" ReadOnly="True" ID="txtlastLoginDate"></asp:TextBox></td>
                                         <td class="col-3"></td>
                                     </tr>
                                    
