@@ -15,9 +15,12 @@ namespace FinalTemplate
                 txtTeacherIDToPopulateDetails.Text = Request.QueryString["IAC"];
 
 
+            if (!IsPostBack)
+            {
+                JFunctions.BindDropDownList(ddlCity, "city", "city_id", "select * from tbl_city");
+                JFunctions.BindDropDownList(ddlCountry, "country", "country_id", "select * from tbl_country");
+            }
 
-            JFunctions.BindDropDownList(ddlCity, "city", "city_id", "select * from tbl_city");
-            JFunctions.BindDropDownList(ddlCountry, "country", "country_id", "select * from tbl_country");
         }
 
 
@@ -45,7 +48,7 @@ namespace FinalTemplate
             txtReligion.Text = objTeacher.Religion;
             txtPhone.Text = objTeacher.Phone;
             txtAddress.Text = objTeacher.Address;
-
+            ddlCity.ClearSelection();
             ddlCity.Items.FindByValue(objTeacher.CityID.ToString()).Selected = true;
             txtPostalCode.Text = objTeacher.PostalCode.ToString();
             txtDateOfJoin.Text = dateofjoin.ToString("d");
@@ -102,26 +105,12 @@ namespace FinalTemplate
                 else
                     gender = "female";
 
-                string result = objTeacher.UpdateTeacherInformation(Convert.ToInt32(txtGenealID.Text), Convert.ToInt32(txtDOBId.Text), Convert.ToInt32(txtLocationID.Text), Convert.ToInt32(txtTeacherID.Text), txtFirstName.Text, txtLastName.Text, ddlNationality.SelectedItem.ToString(), gender, txtReligion.Text, txtPhone.Text, txtAddress.Text, txtDateOfJoin.Text, txtDateOfBirth.Text, cityID, Convert.ToInt32(txtPostalCode.Text));
+                string result = objTeacher.UpdateTeacherInformation(Convert.ToInt32(txtGenealID.Text), Convert.ToInt32(txtDOBId.Text), Convert.ToInt32(txtLocationID.Text), Convert.ToInt32(txtTeacherID.Text), txtFirstName.Text, txtLastName.Text, ddlNationality.SelectedItem.ToString(), gender, txtReligion.Text, txtPhone.Text, txtAddress.Text, txtDateOfJoin.Text, txtDateOfBirth.Text, Convert.ToInt32(ddlCity.SelectedValue), Convert.ToInt32(txtPostalCode.Text));
                 if (result == "true")
                     Response.Write("<script>alert('Record Successfully updated');</script>");
                 else
                     Response.Write("<script>alert('Error occured during updation of data, the new information is rolled back to previous inforamtion and nothing is udpated.');</script>");
             }
         }
-        protected void ddlCity_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cityID = Convert.ToInt32(ddlCity.SelectedValue);
-        }
-
-        //protected void rbtnMale_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    gender = "male";
-        //}
-
-        //protected void rbtnFemale_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    gender = "female";
-        //}
     }
 }

@@ -169,7 +169,7 @@
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>City</span></td>
-                                        <td class="col-2"><asp:DropDownList runat="server" ID="ddlCity" OnSelectedIndexChanged="ddlCity_SelectedIndexChanged"><asp:ListItem>Karachi</asp:ListItem></asp:DropDownList>
+                                        <td class="col-2"><asp:DropDownList runat="server" ID="ddlCity" ></asp:DropDownList>
                                         </td>
                                        <td class="col-3"></td>
                                     </tr>
