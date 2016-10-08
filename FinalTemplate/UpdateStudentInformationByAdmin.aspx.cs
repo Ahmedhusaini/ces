@@ -62,6 +62,32 @@ namespace FinalTemplate
             txtStudentID.Text = objStudent.StudentID;
             txtClassSectionInformationID.Text = objStudent.ClassSectionInformationID.ToString();
             txtDateOfBirthID.Text = objStudent.DOBID.ToString();
+            txtLocationID.Text = objStudent.LocationID.ToString();
+        }
+
+        protected void btnUpdateStudentInformation_Click(object sender, EventArgs e)
+        {
+            string genderUpdated = string.Empty;
+            if (rbtnMale.Checked == true && rbtnFemale.Checked == false)
+                genderUpdated = rbtnMale.Text;
+            else
+                genderUpdated = rbtnFemale.Text;
+
+            string result = objStudent.UpdateStudentInformation(Convert.ToInt32(txtDateOfBirthID.Text), txtDateOfBirth.Text,
+                Convert.ToInt32(txtLocationID.Text), Convert.ToInt32(ddlCity.SelectedValue), Convert.ToInt32(txtPostalCode.Text),
+                Convert.ToInt32(txtClassSectionInformationID.Text), Convert.ToInt32(ddlClass.SelectedValue),
+                Convert.ToInt32(ddlSection.SelectedValue), txtStudentID.Text, txtGuardianName.Text,
+                txtPreviousSchool.Text, txtLastClassAttended.Text, txtGuardianContact.Text, txtFirstName.Text,
+                txtLastName.Text, txtNationality.Text, txtReligion.Text, txtPhone.Text, genderUpdated, txtAddress.Text,
+                Convert.ToInt32(txtGeneralID.Text));
+            if (result == "true")
+            {
+                HttpContext.Current.Response.Write("<script>alert('Record has been updated successfully.');</script>");
+            }
+            else
+            {
+                HttpContext.Current.Response.Write("<script>alert('An error occured during updating information. All changes are now properly rollback.');</script>");
+            }
         }
     }
 }
