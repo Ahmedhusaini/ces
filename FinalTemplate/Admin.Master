@@ -75,7 +75,7 @@
                                 <li><a href="ViewAllTachers.aspx" class="link-page">View All</a></li>
                                 <li><a href="TeacherOfTheMonth.aspx" class="link-page">Make Teacher of the month</a></li>
                                 <li><a href="UpdateTeacherInformation.aspx" class="link-page">Update Teacher information</a></li>
-                                <li><a href="events.html" class="link-page">Give and modify existing privileges</a></li>
+                                <li><a href="TeacherPrivileges.aspx" class="link-page">Give and modify existing privileges</a></li>
                             </ul>
                         </li>
                           <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Students<span class="fa fa-angle-down icons-dropdown"></span></a>

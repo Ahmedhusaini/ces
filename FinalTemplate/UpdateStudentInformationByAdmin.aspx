@@ -88,7 +88,7 @@
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>Gender</span></td>
-                                        <td class="col-2"><asp:RadioButton runat="server" ID="rbtnMale" Text="Male"/><asp:RadioButton runat="server" ID="rbtnFemale" Text="Female"/></td>
+                                        <td class="col-2"><asp:RadioButton runat="server" GroupName="gender" ID="rbtnMale" Text="Male" OnCheckedChanged="rbtnMale_CheckedChanged"/><asp:RadioButton runat="server" GroupName="gender" ID="rbtnFemale" Text="Female" OnCheckedChanged="rbtnFemale_CheckedChanged"/></td>
                                         <td class="col-3"></td>
 
                                     </tr>

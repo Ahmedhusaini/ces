@@ -7,13 +7,16 @@ namespace FinalTemplate
     public partial class UpdateStudentInformationByAdmin : System.Web.UI.Page
     {
         private JStudent objStudent = new JStudent();
+        private string genderUpdated = string.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
-            rbtnMale.Checked = false;
-            rbtnFemale.Checked = false;
-            JFunctions.BindDropDownList(ddlCity, "city", "city_id", "select * from tbl_city");
-            JFunctions.BindDropDownList(ddlClass, "class", "Class_id", "select * from tbl_class");
-            JFunctions.BindDropDownList(ddlSection, "section", "Section_id", "select * from tbl_section");
+            if (!IsPostBack)
+            {
+                JFunctions.BindDropDownList(ddlCity, "city", "city_id", "select * from tbl_city");
+                JFunctions.BindDropDownList(ddlClass, "class", "Class_id", "select * from tbl_class");
+                JFunctions.BindDropDownList(ddlSection, "section", "Section_id", "select * from tbl_section");
+            }
+
 
             if (!string.IsNullOrWhiteSpace(Request.QueryString["SIAC"]))
                 txtStudentIDForGettingInformation.Text = Request.QueryString["SIAC"];
@@ -54,8 +57,11 @@ namespace FinalTemplate
             txtPhone.Text = objStudent.Phone;
             txtAddress.Text = objStudent.Address;
             txtPostalCode.Text = objStudent.PostalCode.ToString();
+            ddlClass.ClearSelection();
             ddlClass.Items.FindByValue(objStudent.ClassID.ToString()).Selected = true;
+            ddlSection.ClearSelection();
             ddlSection.Items.FindByValue(objStudent.SectionID.ToString()).Selected = true;
+            ddlCity.ClearSelection();
             ddlCity.Items.FindByValue(objStudent.CityID.ToString()).Selected = true;
             txtGuardianName.Text = objStudent.GuardianName;
             txtGuardianContact.Text = objStudent.GuardianContact;
@@ -71,11 +77,10 @@ namespace FinalTemplate
 
         protected void btnUpdateStudentInformation_Click(object sender, EventArgs e)
         {
-            string genderUpdated = string.Empty;
             if (rbtnMale.Checked == true && rbtnFemale.Checked == false)
-                genderUpdated = rbtnMale.Text;
+                genderUpdated = "male";
             else
-                genderUpdated = rbtnFemale.Text;
+                genderUpdated = "female";
 
             string result = objStudent.UpdateStudentInformation(Convert.ToInt32(txtDateOfBirthID.Text), txtDateOfBirth.Text,
                 Convert.ToInt32(txtLocationID.Text), Convert.ToInt32(ddlCity.SelectedValue), Convert.ToInt32(txtPostalCode.Text),
@@ -91,6 +96,22 @@ namespace FinalTemplate
             else
             {
                 HttpContext.Current.Response.Write("<script>alert('An error occured during updating information. All changes are now properly rollback.');</script>");
+            }
+        }
+
+        protected void rbtnMale_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnMale.Checked == true && rbtnFemale.Checked == false)
+            {
+                genderUpdated = "male";
+            }
+        }
+
+        protected void rbtnFemale_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnFemale.Checked == true && rbtnMale.Checked == false)
+            {
+                genderUpdated = "female";
             }
         }
     }
