@@ -53,5 +53,18 @@
             </div>
         </div>
     </div>
+    <asp:FileUpload ID="FileUpload1" runat="server" />
+    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
     <br />
+&nbsp;<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="assignment_id">
+        <Columns>
+            <asp:TemplateField HeaderText="documents">
+                <ItemTemplate>
+                    <asp:LinkButton ID="LinkButton1" OnClick="opendoc" runat="server" Text='<%# Eval("Name") %>'></asp:LinkButton>
+                </ItemTemplate>
+            </asp:TemplateField>
+        </Columns>
+    </asp:GridView>
+    <br />
+
 </asp:Content>
