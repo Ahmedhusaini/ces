@@ -269,6 +269,7 @@
     <Content Include="TeacherUpload.aspx" />
     <Content Include="Teacher_timetable.aspx" />
     <Content Include="updatepasswordpanel.aspx" />
+    <Content Include="UpdateStudentInformationByAdmin.aspx" />
     <Content Include="UpdateTeacherInformation.aspx" />
     <Content Include="ViewAllStudents.aspx" />
     <Content Include="ViewAllTachers.aspx" />
@@ -287,6 +288,7 @@
     </Compile>
     <Compile Include="Date_sheet.aspx.cs">
       <DependentUpon>Date_sheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Date_sheet.aspx.designer.cs">
       <DependentUpon>Date_sheet.aspx</DependentUpon>
@@ -300,6 +302,7 @@
     </Compile>
     <Compile Include="Mark_sheet.aspx.cs">
       <DependentUpon>Mark_sheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mark_sheet.aspx.designer.cs">
       <DependentUpon>Mark_sheet.aspx</DependentUpon>
@@ -349,6 +352,7 @@
       <DependentUpon>School_Rgistration.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\Functions\JSchool.cs" />
+    <Compile Include="source\Functions\JStudent.cs" />
     <Compile Include="source\Functions\JTeacher.cs" />
     <Compile Include="source\Functions\Parents.cs" />
     <Compile Include="source\Functions\Privileges.cs" />
@@ -449,6 +453,7 @@
     </Compile>
     <Compile Include="Syllabus.aspx.cs">
       <DependentUpon>Syllabus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Syllabus.aspx.designer.cs">
       <DependentUpon>Syllabus.aspx</DependentUpon>
@@ -522,6 +527,13 @@
     </Compile>
     <Compile Include="updatepasswordpanel.Master.designer.cs">
       <DependentUpon>updatepasswordpanel.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateStudentInformationByAdmin.aspx.cs">
+      <DependentUpon>UpdateStudentInformationByAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateStudentInformationByAdmin.aspx.designer.cs">
+      <DependentUpon>UpdateStudentInformationByAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="UpdateTeacherInformation.aspx.cs">
       <DependentUpon>UpdateTeacherInformation.aspx</DependentUpon>

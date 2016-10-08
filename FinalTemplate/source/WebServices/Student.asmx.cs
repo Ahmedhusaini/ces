@@ -1,10 +1,8 @@
-﻿using System;
+﻿using FinalTemplate.source.Registration;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
-using System.Web.Services;
-using FinalTemplate.source.Registration;
 using System.Web.Script.Serialization;
+using System.Web.Services;
 
 namespace FinalTemplate.source.WebServices
 {
@@ -20,7 +18,7 @@ namespace FinalTemplate.source.WebServices
     {
         private ClassSchoolRegistration objSchool = new ClassSchoolRegistration();
         [WebMethod]
-        public void GetAllStudentsBySchoolID(string _school_id,string studentfirstname)
+        public void GetAllStudentsBySchoolID(string _school_id, string studentfirstname)
         {
             JavaScriptSerializer serializer = new JavaScriptSerializer();
             List<FoundStudents> liststudents = new List<FoundStudents>();
@@ -45,6 +43,7 @@ namespace FinalTemplate.source.WebServices
                         student.AuthorizedID = objSchool.myDatabase.obj_reader["authorized_id"].ToString();
                         student.GeneralID = objSchool.myDatabase.obj_reader["General_ID"].ToString();
                         student.Phone = objSchool.myDatabase.obj_reader["phone"].ToString();
+                        student.StudentID = objSchool.myDatabase.obj_reader["Std_id"].ToString();
                         liststudents.Add(student);
                     }
                 }
@@ -58,7 +57,7 @@ namespace FinalTemplate.source.WebServices
                 objSchool.myDatabase.obj_sqlcommand.Dispose();
             }
             HttpContext.Current.Response.Write(serializer.Serialize(liststudents));
-        }       
+        }
     }
     public class FoundStudents
     {
@@ -72,5 +71,6 @@ namespace FinalTemplate.source.WebServices
         public string SchoolID { get; set; }
         public string AuthorizedID { get; set; }
         public string GeneralID { get; set; }
+        public string StudentID { get; set; }
     }
 }
