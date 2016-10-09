@@ -1,4 +1,5 @@
 ﻿using FinalTemplate.source.Registration;
+using System;
 using System.Collections.Generic;
 using System.Web;
 using System.Web.Script.Serialization;
@@ -57,6 +58,44 @@ namespace FinalTemplate.source.WebServices
                 objSchool.myDatabase.obj_sqlcommand.Dispose();
             }
             HttpContext.Current.Response.Write(serializer.Serialize(liststudents));
+        }
+        [WebMethod]
+        public void GetStudents(string _schoolID)
+        {
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            List<FoundStudents> studentList = new List<FoundStudents>();
+            objSchool.myDatabase.CreateConnection();
+            objSchool.myDatabase.InitializeSQLCommandObject(objSchool.myDatabase.GetCurrentConnection, "select * from View_StudentGeneralInformation where school_id = '" + _schoolID + "'");
+            try
+            {
+                objSchool.myDatabase.OpenConnection();
+                objSchool.myDatabase.obj_reader = objSchool.myDatabase.obj_sqlcommand.ExecuteReader();
+                if (objSchool.myDatabase.obj_reader.HasRows)
+                {
+                    while (objSchool.myDatabase.obj_reader.Read())
+                    {
+                        FoundStudents objstuStudents = new FoundStudents();
+                        objstuStudents.StudentID = objSchool.myDatabase.obj_reader["Std_id"].ToString();
+                        objstuStudents.FirstName = objSchool.myDatabase.obj_reader["firstname"].ToString();
+                        objstuStudents.LastName = objSchool.myDatabase.obj_reader["lastname"].ToString();
+                        studentList.Add(objstuStudents);
+                    }
+                }
+                else
+                {
+                    HttpContext.Current.Response.Write("No Record Found");
+                }
+            }
+            catch (Exception exception)
+            {
+                HttpContext.Current.Response.Write(exception.ToString());
+            }
+            finally
+            {
+                objSchool.myDatabase.CloseConnection();
+                objSchool.myDatabase.obj_reader.Dispose();
+            }
+            HttpContext.Current.Response.Write(serializer.Serialize(studentList));
         }
     }
     public class FoundStudents
