@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using FinalTemplate.source.Functions;
+using System;
 
 namespace FinalTemplate
 {
@@ -13,5 +9,16 @@ namespace FinalTemplate
         {
 
         }
+
+        protected void btnMakeStudentOfTheMonth_Click(object sender, EventArgs e)
+        {
+            JStudent student = new JStudent();
+            if (student.StudentOfTheMonth(txtstudentofthemonth.Text) == true)
+                Response.Write("<script>alert('Record successfully updated.')</script>");
+            else
+                Response.Write("<script>alert('Error occur during updating information.')</script>");
+        }
+
+
     }
 }

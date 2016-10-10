@@ -208,5 +208,53 @@ namespace FinalTemplate.source.Functions
             }
             return returnValue;
         }
+        private bool IsAvailable()
+        {
+            string[] columns = { "school_id" };
+            string[] wherecolumn = { "school_id" };
+            string[] whereoperator = { "=" };
+            string[] wherevalue = { "'" + JSchool.SchoolID + "'" };
+            string[] wheremultipleoperation = { "" };
+            var result = jstudentDatabase.SelectQuery("tbl_student_of_the_month", columns, wherecolumn, whereoperator, wherevalue, wheremultipleoperation);
+            if (result.Length == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool StudentOfTheMonth(string _studentID)
+        {
+            if (IsAvailable())
+            {
+                string[] columns = { "school_id", "Std_id" };
+                object[] values = { JSchool.SchoolID, _studentID };
+                jstudentDatabase.InsertQuery("tbl_student_of_the_month", columns, values);
+                return true;
+            }
+            else
+            {
+                jstudentDatabase.CreateConnection();
+                jstudentDatabase.InitializeSQLCommandObject(jstudentDatabase.GetCurrentConnection, "UPDATE [dbo].[tbl_student_of_the_month] SET [Std_id] = @StudentID WHERE school_id=@schoolID;");
+                jstudentDatabase.obj_sqlcommand.Parameters.AddWithValue("@StudentID", _studentID);
+                jstudentDatabase.obj_sqlcommand.Parameters.AddWithValue("@schoolID", JSchool.SchoolID);
+                try
+                {
+                    jstudentDatabase.OpenConnection();
+                    if (jstudentDatabase.obj_sqlcommand.ExecuteNonQuery() > 0)
+                        return true;
+                    else
+                        return false;
+                }
+                finally
+                {
+                    jstudentDatabase.CloseConnection();
+                    jstudentDatabase.obj_sqlcommand.Dispose();
+                }
+            }
+
+        }
     }
 }
