@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="TeacherHeadPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="TeacherPlaceHolder1" runat="server">
-        <div class="search-input">
+         <div class="search-input">
                         <div class="container">
                             <div class="search-input-wrapper">
                               
@@ -26,5 +26,55 @@
                             </div>
                         </div>
                     </div>  
+                                                  
+
+                   
+    <div class="section attendance">
+                    <div class="container">
+                        <div class="attendance-logo-wrapper">
+                            <div class="attendance-logo-content">
+           
+                                                    <div class="table-body">
+                                                            <asp:GridView ID="GridView1" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataSourceID="student_attendance" GridLines="Horizontal" DataKeyNames="std_attend_id">
+        <Columns>
+            <asp:BoundField DataField="std_attend_id" HeaderText="ID" SortExpression="std_attend_id" ReadOnly="True" />
+            <asp:BoundField DataField="username" HeaderText="Student Name" SortExpression="username" />
+             <asp:TemplateField>
+                                <ItemTemplate>
+                                    <asp:DropDownList ID="DropDownList4" runat="server">
+                                        <asp:ListItem>Present</asp:ListItem>
+                                        <asp:ListItem>Absent</asp:ListItem>
+                                        <asp:ListItem>Leave</asp:ListItem>
+                                    </asp:DropDownList>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+        </Columns>
+        <FooterStyle BackColor="White" ForeColor="#333333" />
+        <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="White" ForeColor="#333333" />
+        <SelectedRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
+        <SortedAscendingCellStyle BackColor="#F7F7F7" />
+        <SortedAscendingHeaderStyle BackColor="#487575" />
+        <SortedDescendingCellStyle BackColor="#E5E5E5" />
+        <SortedDescendingHeaderStyle BackColor="#275353" />
+    </asp:GridView>                     
+                   
+    <asp:SqlDataSource ID="student_attendance" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [std_attend_id], [username], [remarks] FROM [Studentattendance] WHERE (([class] = @class) AND ([section] = @section))">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="DropDownList1" Name="class" PropertyName="SelectedValue" Type="String" />
+            <asp:ControlParameter ControlID="DropDownList2" Name="section" PropertyName="SelectedValue" Type="String" />
+        </SelectParameters>
+                           </asp:SqlDataSource>
+                   
+                            <button type="submit"   class="btn btn-register btn-green">
+                                <span>
+                                    <asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>    
+                                               
+                                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
     </asp:Content>
