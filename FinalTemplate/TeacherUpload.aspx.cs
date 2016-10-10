@@ -1,17 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Diagnostics.Eventing.Reader;
-using System.Drawing;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Data;
 using System.Data.SqlClient;
-using System.IO;
 using System.Configuration;
 using FinalTemplate.source.Database;
+using System.IO;
+
 
 
 namespace FinalTemplate
@@ -39,15 +33,16 @@ namespace FinalTemplate
                     Database db = new Database("abc");
                     using (SqlConnection con = new SqlConnection(a))
                     {
-                        SqlCommand cmd = new SqlCommand();
-                        cmd.CommandText = "INSERT INTO Table_1(name,type,data) VALUES (@name,@type,@data)";
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("INSERT INTO Table_1(name,type,data) VALUES (@name,@type,@data)",con);
+                      
                         cmd.Parameters.AddWithValue("@name", filename);
                         cmd.Parameters.AddWithValue("@type", filetype);
                         cmd.Parameters.AddWithValue("@size", filesize);
-                        cmd.Connection = con;
-                        con.Open();
+
                         cmd.ExecuteNonQuery();
                         con.Close();
+
                         Label1.ForeColor = System.Drawing.Color.Green;
                         Label1.Text = "Sucessfully Uploaded";
                     }
