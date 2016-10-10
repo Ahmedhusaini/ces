@@ -4,8 +4,51 @@
     <script src="assets/js/jquery-2.2.3.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#back-top').remove();
+            var status;
+            $('#tablebody').empty();
+            RemoveBackButton();
+            $('#<%=btnGetPrivileges.ClientID%>').click(function (e) {
+                e.preventDefault();
+                $('#tablebody').empty();
+                GetTeacherPrivileges();
+            });
         });
+
+        function CheckStatus(controlid) {
+            $(controlid).on('click', function () {
+                if ($(controlid).css('display') == 'block') {
+                    $(this).css('display', 'none');
+                    return true;
+                } else {
+                    $(this).css('display', 'block');
+                    return false;
+                }
+            });
+        }
+        function RemoveBackButton() {
+            $('#back-top').remove();
+        }
+
+        function GetTeacherPrivileges() {
+            var teacherid = $('#<%=txtTeacherIDToPopulatePrivileges.ClientID%>').val();
+            $.ajax({
+                url: 'source/WebServices/GetAllTeachers.asmx/GetPrivileges',
+                method: 'post',
+                data: { _teacherID: teacherid},
+                datatype: 'json',
+                success: function (data) {
+                    var obj = JSON.stringify(data);
+                    var arrayjson = $.parseJSON(obj);
+                    var actualarray = $.parseJSON(arrayjson);
+                    $.each(actualarray, function (i, v) {
+                        $('#tablebody').append('<tr class="table-row"> <td class="col-3"><span>Events</span></td><td class="col-2"><a href="courses-detail.html">is this teacher eligible to making events?</a></td><td class="col-3"><label class="switch centerbuttion "><input id="check_event" class="switch-input" type="checkbox" /><span class="switch-label" data-on="Yes" data-off="No"></span><span class="switch-handle"></span></label></td></tr><tr class="table-row">  <td class="col-3"><span>Attendance</span></td><td class="col-2"><a href="courses-detail.html">Do you want this teacher can mark attendance?</a></td><td class="col-3"><label class="switch centerbuttion "><input id="check_attendance" class="switch-input" type="checkbox" /><span class="switch-label" data-on="Yes" data-off="NO"></span><span class="switch-handle"></span></label></td></tr><tr class="table-row"><td class="col-3"><span>Homework</span></td><td class="col-2"><a href="courses-detail.html">Teacher will be able to upload homework with their respective classes.</a></td><td class="col-3"><label class="switch centerbuttion "><input id="check_homework" class="switch-input" type="checkbox" /><span class="switch-label" data-on="Yes" data-off="NO"></span><span class="switch-handle"></span></label></td></tr><tr class="table-row"><td class="col-3"><span>Reports</span></td><td class="col-2"><a href="courses-detail.html">Do you want this teacher to generate reports?</a></td><td class="col-3"><label class="switch centerbuttion "><input id="check_reports" class="switch-input" type="checkbox" /><span class="switch-label" data-on="Yes" data-off="NO"></span><span class="switch-handle"></span></label></td></tr><tr class="table-row"><td class="col-3"><span>Timetable</span></td><td class="col-2"><a href="courses-detail.html">Can this teacher make time table(s)?</a></td><td class="col-3"><label class="switch centerbuttion "><input id="check_timetable" class="switch-input" type="checkbox" /><span class="switch-label" data-on="Yes" data-off="NO"></span><span class="switch-handle"></span></label></td></tr><tr class="table-row"><td class="col-3"><span>Datesheet</span></td><td class="col-2"><a href="courses-detail.html">Can this teacher make Date Sheet(s)?</a></td><td class="col-3"><label class="switch centerbuttion "><input id="check_datesheets" class="switch-input" type="checkbox" /><span class="switch-label" data-on="Yes" data-off="NO"></span><span class="switch-handle"></span></label></td></tr>');
+                    });
+                },
+                error: function (error) {
+                    alert("Error: " + error);
+                }
+            });
+        }
     </script>
 
 </asp:Content>
@@ -57,13 +100,13 @@
                         </div>
                         <div class="table-body">
                             <table class="edu-table-responsive table-hover">
-                                <tbody>
-                                    <tr class="table-row">
-                                        <td class="col-3"><span>Event</span></td>
+                                <tbody id="tablebody">
+                                 <!----   <tr class="table-row">
+                                        <td class="col-3"><span>Events</span></td>
                                         <td class="col-2"><a href="courses-detail.html">is this teacher eligible to making events?</a></td>
                                         <td class="col-3">
                                             <label class="switch centerbuttion ">
-                                                <input class="switch-input" type="checkbox" />
+                                                <input id="check_event" class="switch-input" type="checkbox" />
                                                 <span class="switch-label" data-on="Yes" data-off="No"></span>
                                                 <span class="switch-handle"></span>
                                             </label>
@@ -75,7 +118,7 @@
                                         <td class="col-2"><a href="courses-detail.html">Do you want this teacher can mark attendance?</a></td>
                                         <td class="col-3">
                                             <label class="switch centerbuttion ">
-                                                <input class="switch-input" type="checkbox" />
+                                                <input id="check_attendance" class="switch-input" type="checkbox" />
                                                 <span class="switch-label" data-on="Yes" data-off="NO"></span>
                                                 <span class="switch-handle"></span>
                                             </label>
@@ -83,11 +126,11 @@
 
                                     </tr>
                                     <tr class="table-row">
-                                        <td class="col-3"><span>Home Work</span></td>
+                                        <td class="col-3"><span>Homework</span></td>
                                         <td class="col-2"><a href="courses-detail.html">Teacher will be able to upload homework with their respective classes.</a></td>
                                         <td class="col-3">
                                             <label class="switch centerbuttion ">
-                                                <input class="switch-input" type="checkbox" />
+                                                <input id="check_homework" class="switch-input" type="checkbox" />
                                                 <span class="switch-label" data-on="Yes" data-off="NO"></span>
                                                 <span class="switch-handle"></span>
                                             </label>
@@ -99,7 +142,7 @@
                                         <td class="col-2"><a href="courses-detail.html">Do you want this teacher to generate reports?</a></td>
                                         <td class="col-3">
                                             <label class="switch centerbuttion ">
-                                                <input class="switch-input" type="checkbox" />
+                                                <input id="check_reports" class="switch-input" type="checkbox" />
                                                 <span class="switch-label" data-on="Yes" data-off="NO"></span>
                                                 <span class="switch-handle"></span>
                                             </label>
@@ -107,11 +150,11 @@
 
                                     </tr>
                                     <tr class="table-row">
-                                        <td class="col-3"><span>Time Table(s)</span></td>
+                                        <td class="col-3"><span>Timetable</span></td>
                                         <td class="col-2"><a href="courses-detail.html">Can this teacher make time table(s)?</a></td>
                                         <td class="col-3">
                                             <label class="switch centerbuttion ">
-                                                <input class="switch-input" type="checkbox" />
+                                                <input id="check_timetable" class="switch-input" type="checkbox" />
                                                 <span class="switch-label" data-on="Yes" data-off="NO"></span>
                                                 <span class="switch-handle"></span>
                                             </label>
@@ -119,17 +162,17 @@
 
                                     </tr>
                                     <tr class="table-row">
-                                        <td class="col-3"><span>Date Sheet(s)</span></td>
+                                        <td class="col-3"><span>Datesheet</span></td>
                                         <td class="col-2"><a href="courses-detail.html">Can this teacher make Date Sheet(s)?</a></td>
                                         <td class="col-3">
                                             <label class="switch centerbuttion ">
-                                                <input class="switch-input" type="checkbox" />
+                                                <input id="check_datesheets" class="switch-input" type="checkbox" />
                                                 <span class="switch-label" data-on="Yes" data-off="NO"></span>
                                                 <span class="switch-handle"></span>
                                             </label>
                                         </td>
 
-                                    </tr>
+                                    </tr>--->
                                 </tbody>
                             </table>
                         </div>

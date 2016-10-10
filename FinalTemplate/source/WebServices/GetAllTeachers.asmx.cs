@@ -1,9 +1,9 @@
-﻿using System;
+﻿using FinalTemplate.source.Registration;
+using System;
 using System.Collections.Generic;
 using System.Web;
 using System.Web.Script.Serialization;
 using System.Web.Services;
-using FinalTemplate.source.Registration;
 namespace FinalTemplate.source.WebServices
 {
     /// <summary>
@@ -100,9 +100,65 @@ namespace FinalTemplate.source.WebServices
             }
             HttpContext.Current.Response.Write(serializer.Serialize(teacherList));
         }
-        
+        [WebMethod]
+        public void GetPrivileges(int _teacherID)
+        {
+            List<Privileges> privilegesesList = new List<Privileges>();
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            myDatabase.CreateConnection();
+            myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "spGetTeacherPrivileges", true);
+            myDatabase.obj_sqlcommand.Parameters.AddWithValue("@teacher_id", _teacherID);
+            try
+            {
+                myDatabase.OpenConnection();
+                myDatabase.obj_reader = myDatabase.obj_sqlcommand.ExecuteReader();
+                if (myDatabase.obj_reader.HasRows)
+                {
+                    while (myDatabase.obj_reader.Read())
+                    {
+                        Privileges privilege = new Privileges
+                        {
+                            PrivilegeID = Convert.ToInt32(myDatabase.obj_reader["privileges_id"]),
+                            TeacherID = Convert.ToInt32(myDatabase.obj_reader["teacher_id"]),
+                            Event = Convert.ToBoolean(myDatabase.obj_reader["event"]),
+                            Attendance = Convert.ToBoolean(myDatabase.obj_reader["attendence"]),
+                            Homework = Convert.ToBoolean(myDatabase.obj_reader["homework"]),
+                            Reports = Convert.ToBoolean(myDatabase.obj_reader["reports"]),
+                            TimeTable = Convert.ToBoolean(myDatabase.obj_reader["timetable"]),
+                            DateSheet = Convert.ToBoolean(myDatabase.obj_reader["datesheets"])
+                        };
+                        privilegesesList.Add(privilege);
+                    }
+                }
+
+            }
+            catch (Exception exception)
+            {
+                HttpContext.Current.Response.Write(exception.ToString());
+            }
+            finally
+            {
+                myDatabase.CloseConnection();
+                myDatabase.obj_reader.Close();
+                myDatabase.obj_reader.Dispose();
+            }
+            HttpContext.Current.Response.Write(serializer.Serialize(privilegesesList));
+        }
+
     }
-   
+
+    public class Privileges
+    {
+        public int PrivilegeID { get; set; }
+        public int TeacherID { get; set; }
+        public bool Event { get; set; }
+        public bool Attendance { get; set; }
+        public bool Homework { get; set; }
+        public bool Reports { get; set; }
+        public bool TimeTable { get; set; }
+        public bool DateSheet { get; set; }
+    }
+
     public class AllTeachers
     {
         public string FirstName { get; set; }
@@ -123,4 +179,5 @@ namespace FinalTemplate.source.WebServices
         public string SchoolID { get; set; }
         public string AuthorizedID { get; set; }
     }
+
 }
