@@ -7,7 +7,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using  System.IO;
+using System.Data;
+using System.Data.SqlClient;
+using System.IO;
+using System.Configuration;
+using FinalTemplate.source.Database;
 
 
 namespace FinalTemplate
@@ -23,43 +27,47 @@ namespace FinalTemplate
         {
             if (FileUpload1.HasFile)
             {
-                FileUpload1.PostedFile.SaveAs(Server.MapPath("/files/") + FileUpload1.FileName);
-            }
-            DataTable d = new DataTable();
-            d.Columns.Add("FILE", typeof(string));
-            d.Columns.Add("SIZE", typeof(string));
-            d.Columns.Add("EXTENSION", typeof(string));
-            foreach (string files in Directory.GetFiles(Server.MapPath("/files/")) )
-            {
-                FileInfo f=new FileInfo(files);
-                d.Rows.Add(f.Name, f.Length, f.Extension);
-            }
-            GridView1.DataSource = d;
-            GridView1.DataBind();
-        }
+                try
+                {
+                    string filename = Path.GetFileName(FileUpload1.PostedFile.FileName);
+                    Stream strm = FileUpload1.PostedFile.InputStream;
+                    BinaryReader br = new BinaryReader(strm);
+                    Byte[] filesize=br.ReadBytes((int)strm.Length);
+                    string filetype=FileUpload1.PostedFile.ContentType;
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            if (e.CommandName == "Download")
-            {
-             
-                Response.Clear();
-                Response.ContentType = "application/octect-stream";
-                Response.AppendHeader("content-disposition", "filename=" + e.CommandArgument);
-                Response.TransmitFile(Server.MapPath("/files/") + e.CommandArgument);
-                Response.End(); 
-                }          
-           
+                    string a = ConfigurationManager.ConnectionStrings["abc"].ConnectionString;
+                    Database db = new Database("abc");
+                    using (SqlConnection con = new SqlConnection(a))
+                    {
+                        SqlCommand cmd = new SqlCommand();
+                        cmd.CommandText = "INSERT INTO Table_1(name,type,data) VALUES (@name,@type,@data)";
+                        cmd.Parameters.AddWithValue("@name", filename);
+                        cmd.Parameters.AddWithValue("@type", filetype);
+                        cmd.Parameters.AddWithValue("@size", filesize);
+                        cmd.Connection = con;
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        Label1.ForeColor = System.Drawing.Color.Green;
+                        Label1.Text = "Sucessfully Uploaded";
+                    }
+                 
+                }
+                catch
+                {
+                    Label1.ForeColor=System.Drawing.Color.Red;
+                    Label1.Text="Uploading failed..!!";
+                }
+                
+            }
             else
             {
-                Label1.ForeColor=System.Drawing.Color.Red;
-                Label1.Text = "FILE NOT FOUND";
+                  Label1.ForeColor=System.Drawing.Color.Red;
+                    Label1.Text="Please select the file";
             }
+         
         }
-       }    
+
     }
+}    
+    
