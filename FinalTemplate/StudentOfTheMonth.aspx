@@ -1,52 +1,31 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="TeacherOfTheMonth.aspx.cs" Inherits="FinalTemplate.TeacherOfTheMonth" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="StudentOfTheMonth.aspx.cs" Inherits="FinalTemplate.StudentOfTheMonth" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="AdminHeadPlaceHolder" runat="server">
      <script src="assets/js/jquery-2.2.3.js"></script> 
-     <script type="text/javascript">
-         $(document).ready(function() {
-             buttonFix();
-             profileimageresolution();
-             GetAllTeachers();
-         });
+    <script type="text/javascript">
+        $(document).ready(function () {
+            buttonFix();
+            profileimageresolution();
+        });
 
-         function GetAllTeachers() {
-             var schoolidvalue = $('#inputschoolid').val();
-             
-             $.ajax({
-                 url: 'source/WebServices/GetAllTeachers.asmx/TeacherOFTheMonth',
-                 method:'post',
-                 data: { schoolid: schoolidvalue },
-                 dataType: 'json',                 
-                 success: function (data) {
-                     var obj = JSON.stringify(data);
-                     var actualArray = $.parseJSON(obj);
-                     $.each(actualArray, function(i,v) {
-                            var div = $('tbody');
-                           div.append('<tr class="table-row"><td class="col-1"><span>'+v.TeacherID+'</span></td><td class="col-2"><a href="courses-detail.html">'+v.FirstName + ' '+v.LastName +'</a></td></tr>');
-                     });
-                 },
-                 error: function(data) {
-                     alert("Error" + data);
-                 }
-             });
-         }
-         function EmptyTable() {
-             $('tbody').empty();
-         }
-         function buttonFix() {
-             $('button.btn.btn-transition-2').css('width', '175px');
-             $('button.btn.btn-green').css('width', '175px');
-         }
+        function GetAllStudents() {
+            
+        }
 
-         function profileimageresolution() {
-             $('div.col-md-5 img').css({'height':'500px','width':'450px','border-radius':'15px'});
-         }
-     </script>
+        function EmptyTable() {
+            $('tbody').empty();
+        }
+        function buttonFix() {
+            $('button.btn.btn-transition-2').css('width', '175px');
+            $('button.btn.btn-green').css('width', '175px');
+        }
+
+        function profileimageresolution() {
+            $('div.col-md-5 img').css({ 'height': '500px', 'width': '450px', 'border-radius': '15px' });
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="AdminContentPlaceHolder" runat="server">
-   
-    <!----Teacher list---->
-    <div class="section teacher-course section-padding">
+      <div class="section teacher-course section-padding">
                     <div class="container teacher-course-wrapper">
                         <div class="underline">Teacher list</div>
                         <div class="course-table">

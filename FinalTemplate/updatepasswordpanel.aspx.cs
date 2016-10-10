@@ -12,13 +12,8 @@ namespace FinalTemplate
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Label1.Visible = false;
             Session.Remove("userid");
             bool sessiongone = (Session["userid"] == null);
-            //if (sessiongone)
-            //{
-            //    Response.Redirect("~/Default.aspx");
-            //}
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -45,7 +40,7 @@ namespace FinalTemplate
                         message();
                         con.Close();
                         Label1.Text = "Successfully";
-                        Label1.ForeColor = System.Drawing.Color.DarkRed;
+                        Label1.ForeColor = System.Drawing.Color.DarkRed;                 
                     }
                 }
                 else

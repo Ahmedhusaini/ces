@@ -41,7 +41,7 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Recaptcha">
-      <HintPath>C:\Users\shahwaiz\Downloads\recaptcha-dotnet-1.0.5.0-binary\Recaptcha.dll</HintPath>
+      <HintPath>..\..\git\FinalTemplate\bin\Recaptcha.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About_Us.aspx" />
+    <Content Include="assets\css\toggleSwitch.css" />
     <Content Include="assets\images\calender.png" />
     <Content Include="assets\images\cesThemeImages\hps.jpg" />
     <Content Include="assets\images\cesThemeImages\pakstudents.jpg" />
@@ -88,6 +89,7 @@
     <Content Include="assets\images\team member\siddique.jpg" />
     <Content Include="assets\images\team member\shaheryar.jpg" />
     <Content Include="assets\images\team member\shahwaiz.jpg" />
+    <Content Include="Date_sheet.aspx" />
     <Content Include="images\teachers\teachers %281%29.jpg" />
     <Content Include="images\teachers\teachers %282%29.jpg" />
     <Content Include="images\teachers\teachers %283%29.jpg" />
@@ -95,6 +97,7 @@
     <Content Include="images\teachers\teachers %285%29.jpg" />
     <Content Include="Logintype.aspx" />
     <Content Include="Mark_attendance.aspx" />
+    <Content Include="Mark_sheet.aspx" />
     <Content Include="Our_Team.aspx" />
     <Content Include="parentpanel.aspx" />
     <Content Include="PostNews.aspx" />
@@ -102,6 +105,7 @@
     <Content Include="source\Jvalidation\blacklist_keywords.txt" />
     <Content Include="source\WebServices\GetAllTeachers.asmx" />
     <Content Include="source\WebServices\Student.asmx" />
+    <Content Include="StudentOfTheMonth.aspx" />
     <Content Include="StudentRgistration.aspx" />
     <Content Include="Admin.aspx" />
     <Content Include="assets\css\mycss.css" />
@@ -257,13 +261,16 @@
     <Content Include="select_resistration_type.aspx" />
     <Content Include="studentpanel.aspx" />
     <Content Include="StudentProfile.aspx" />
+    <Content Include="Syllabus.aspx" />
     <Content Include="TeacherOfTheMonth.aspx" />
+    <Content Include="TeacherPrivileges.aspx" />
     <Content Include="TeacherRegistration.aspx" />
     <Content Include="TeacherPanel.aspx" />
     <Content Include="Teacherprofile.aspx" />
     <Content Include="TeacherUpload.aspx" />
     <Content Include="Teacher_timetable.aspx" />
     <Content Include="updatepasswordpanel.aspx" />
+    <Content Include="UpdateStudentInformationByAdmin.aspx" />
     <Content Include="UpdateTeacherInformation.aspx" />
     <Content Include="ViewAllStudents.aspx" />
     <Content Include="ViewAllTachers.aspx" />
@@ -280,12 +287,26 @@
     <Compile Include="About_Us.aspx.designer.cs">
       <DependentUpon>About_Us.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Date_sheet.aspx.cs">
+      <DependentUpon>Date_sheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Date_sheet.aspx.designer.cs">
+      <DependentUpon>Date_sheet.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Mark_attendance.aspx.cs">
       <DependentUpon>Mark_attendance.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mark_attendance.aspx.designer.cs">
       <DependentUpon>Mark_attendance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mark_sheet.aspx.cs">
+      <DependentUpon>Mark_sheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mark_sheet.aspx.designer.cs">
+      <DependentUpon>Mark_sheet.aspx</DependentUpon>
     </Compile>
     <Compile Include="Our_Team.aspx.cs">
       <DependentUpon>Our_Team.aspx</DependentUpon>
@@ -331,7 +352,11 @@
     <Compile Include="School_Rgistration.aspx.designer.cs">
       <DependentUpon>School_Rgistration.aspx</DependentUpon>
     </Compile>
+    <Compile Include="source\Functions\JSchool.cs" />
+    <Compile Include="source\Functions\JStudent.cs" />
+    <Compile Include="source\Functions\JTeacher.cs" />
     <Compile Include="source\Functions\Parents.cs" />
+    <Compile Include="source\Functions\Privileges.cs" />
     <Compile Include="source\Registration\ClassStudentRegistration.cs" />
     <Compile Include="source\Database\Database.cs" />
     <Compile Include="source\Functions\CurrentUser.cs" />
@@ -348,6 +373,13 @@
     <Compile Include="source\WebServices\Student.asmx.cs">
       <DependentUpon>Student.asmx</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="StudentOfTheMonth.aspx.cs">
+      <DependentUpon>StudentOfTheMonth.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentOfTheMonth.aspx.designer.cs">
+      <DependentUpon>StudentOfTheMonth.aspx</DependentUpon>
     </Compile>
     <Compile Include="StudentRgistration.aspx.cs">
       <DependentUpon>StudentRgistration.aspx</DependentUpon>
@@ -427,12 +459,26 @@
     <Compile Include="StudentProfile.aspx.designer.cs">
       <DependentUpon>StudentProfile.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Syllabus.aspx.cs">
+      <DependentUpon>Syllabus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Syllabus.aspx.designer.cs">
+      <DependentUpon>Syllabus.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TeacherOfTheMonth.aspx.cs">
       <DependentUpon>TeacherOfTheMonth.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="TeacherOfTheMonth.aspx.designer.cs">
       <DependentUpon>TeacherOfTheMonth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherPrivileges.aspx.cs">
+      <DependentUpon>TeacherPrivileges.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeacherPrivileges.aspx.designer.cs">
+      <DependentUpon>TeacherPrivileges.aspx</DependentUpon>
     </Compile>
     <Compile Include="TeacherRegistration.aspx.cs">
       <DependentUpon>TeacherRegistration.aspx</DependentUpon>
@@ -489,6 +535,13 @@
     </Compile>
     <Compile Include="updatepasswordpanel.Master.designer.cs">
       <DependentUpon>updatepasswordpanel.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateStudentInformationByAdmin.aspx.cs">
+      <DependentUpon>UpdateStudentInformationByAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateStudentInformationByAdmin.aspx.designer.cs">
+      <DependentUpon>UpdateStudentInformationByAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="UpdateTeacherInformation.aspx.cs">
       <DependentUpon>UpdateTeacherInformation.aspx</DependentUpon>
@@ -560,6 +613,9 @@
   <ItemGroup>
     <Folder Include="files\" />
     <Folder Include="images\registeredSchools\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

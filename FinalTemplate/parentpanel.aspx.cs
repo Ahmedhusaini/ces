@@ -21,6 +21,7 @@ namespace FinalTemplate
             lab1.Text = "Date :" + System.DateTime.Now.ToShortDateString();
             lab2.Text = "Time :" + System.DateTime.Now.ToShortTimeString();
 
+           
             
             if (Session["userid"] != null)
             {
@@ -57,27 +58,33 @@ namespace FinalTemplate
 
 
                 Parents.GetParentsID(Session["userid"].ToString());
+                 
 
-                Parents.childern(Parents.parentschild);
 
-                Name.Text = Parents.Firstname + " " + Parents.Lastname;
-                gname.Text = Parents.Guardianname;
-                cgender.Text = Parents.Gender;
-                school.Text = Parents.Schoolname;
-                stype.Text = Parents.schooltype;
-                classsss.Text = Parents.sclass;
-                section.Text = Parents.section;
+               Parents.childern(Parents.parentschild);
+
+                
+          
+              
+
+                //Name.Text = Parents.Firstname + " " + Parents.Lastname;
+                //gname.Text = Parents.Guardianname;
+                //cgender.Text = Parents.Gender;
+                //school.Text = Parents.Schoolname;
+                //stype.Text = Parents.schooltype;
+                //classsss.Text = Parents.sclass;
+                //section.Text = Parents.section;
 
 
 
 
              
-                name2.Text = Parents.Firstname + " " + Parents.Lastname;
-                gender2.Text = Parents.Gender;
+                //name2.Text = Parents.Firstname + " " + Parents.Lastname;
+                //gender2.Text = Parents.Gender;
 
-               
-               
+
                 
+               //DropDownList1.Enabled = false;
                 
 
 

@@ -172,11 +172,11 @@
                             </table>
                         </div>
                     </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-
-        </div>
-    </div>
     <!-- PROGRESS BARS-->
     <div class="section progress-bars section-padding">
         <div class="container">
