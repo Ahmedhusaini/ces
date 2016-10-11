@@ -5,7 +5,8 @@
     <script type="text/javascript">
         $(document).ready(function () {
             var status;
-             $('#tablebody').empty();  
+            $('#tablebody').empty();
+            $('.heading-table').css('background-color', '#c50d0d');
             RemoveBackButton();
             $('#<%=btnGetPrivileges.ClientID%>').click(function (e) {
                 e.preventDefault();
