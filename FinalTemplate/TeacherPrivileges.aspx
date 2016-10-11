@@ -4,7 +4,7 @@
     <script src="assets/js/jquery-2.2.3.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            var status;
+            
             $('#tablebody').empty();
             $('.heading-table').css('background-color', '#c50d0d');
             RemoveBackButton();
@@ -13,22 +13,32 @@
                 $('#tablebody').empty();
                 GetTeacherPrivileges();
             });
-
         });
-
-        function CheckStatus(controlid) {
-            $(controlid).on('click', function () {
-                if ($(controlid).css('display') == 'block') {
-                    $(this).css('display', 'none');
-                    return true;
-                } else {
-                    $(this).css('display', 'block');
-                    return false;
-                }
-            });
-        }
         function RemoveBackButton() {
             $('#back-top').remove();
+        }
+
+        function columnvalue(controlid) {
+            if ($(controlid).css('display') == 'block') {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function UpdatePrivilege(column,value) {
+            var teacherid = $('#<%=txtTeacherIDToPopulatePrivileges.ClientID%>').val();
+            $.ajax({
+                url: 'source/WebServices/GetAllTeachers.asmx/UpdatePrivileges',
+                data: { _columnName:column, _value: value, _teacherid:teacherid},
+                dataType: 'json',
+                dataContent: 'application/json; charset=utf-8',
+                success: function (data) {
+                    
+                },
+                error: function(data) {
+                    alert('Error' + data);
+                }
+            });
         }
 
         function GetTeacherPrivileges() {
@@ -54,7 +64,7 @@
                             $('#check_event').trigger('click');
                         }
                         if (attendance == 1) {
-                            $('#check_attendance').trigger('click');
+                            $('#check_attendence').trigger('click');
                         }
                         if (homework == 1) {
                             $('#check_homework').trigger('click');
@@ -139,7 +149,7 @@
                                         <td class="col-2"><a href="#">Do you want this teacher can mark attendance?</a></td>
                                         <td class="col-3">
                                             <label class="switch centerbuttion ">
-                                                <input id="check_attendance" class="switch-input" type="checkbox" /><span class="switch-label" data-on="Yes" data-off="NO"></span><span class="switch-handle"></span></label></td>
+                                                <input id="check_attendence" class="switch-input" type="checkbox" /><span class="switch-label" data-on="Yes" data-off="NO"></span><span class="switch-handle"></span></label></td>
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>Homework</span></td>

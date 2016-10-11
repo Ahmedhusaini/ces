@@ -145,12 +145,12 @@ namespace FinalTemplate.source.WebServices
             HttpContext.Current.Response.Write(serializer.Serialize(privilegesesList));
         }
         [WebMethod]
-        public void UpdatePrivileges(string _columnName, byte _value, int _privilegeid)
+        public void UpdatePrivileges(string _columnName, byte _value, int _teacherid)
         {
             JavaScriptSerializer objserializer = new JavaScriptSerializer();
             myDatabase.CreateConnection();
-            myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "update tbl_privileges set " + _columnName + " = @val where privileges_id = @prid");
-            myDatabase.obj_sqlcommand.Parameters.AddWithValue("@prid", _privilegeid);
+            myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "update tbl_privileges set " + _columnName + " = @val where teacher_id = @tid");
+            myDatabase.obj_sqlcommand.Parameters.AddWithValue("@tid", _teacherid);
             myDatabase.obj_sqlcommand.Parameters.AddWithValue("@val", Convert.ToByte(_value));
             try
             {
