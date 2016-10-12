@@ -20,11 +20,13 @@
         }
 
         function columnvalue(controlid) {
-            if ($(controlid).css('display') == 'block') {
-                return true;
-            } else if ($(controlid).css('display') == 'none') {
-                return false;
-            }
+            
+                if ($(controlid).css('display') == 'block') {
+                    return true;
+                } else if ($(controlid).css('display') == 'none') {
+                    return false;
+                }
+            
         }
         function UpdatePrivilege(column,value) {
             var teacherid = $('#<%=txtTeacherIDToPopulatePrivileges.ClientID%>').val();
@@ -51,6 +53,7 @@
                 data: { _teacherID: teacherid},
                 datatype: 'json',
                 success: function (data) {
+                    
                     var obj = JSON.stringify(data);
                     var arrayjson = $.parseJSON(obj);
                     var actualarray = $.parseJSON(arrayjson);
@@ -64,29 +67,39 @@
                         var datesheet = v.DateSheet;
                         if (event == 1) {
                             $('#check_event').trigger('click');
+                            $('#check_event').data('clicked',true);
                         }
                         if (attendance == 1) {
                             $('#check_attendance').trigger('click');
+                            $('#check_attendance').data('clicked', true);
                         }
                         if (homework == 1) {
                             $('#check_homework').trigger('click');
+                            $('#check_homework').data('clicked', true);
                         }
                         if (reports == 1) {
                             $('#check_reports').trigger('click');
+                            $('#check_reports').data('clicked', true);
                         }
                         if (timetable == 1) {
                             $('#check_timetable').trigger('click');
+                            $('#check_timetable').data('clicked', true);
                         }
                         if (datesheet == 1) {
                             $('#check_datesheets').trigger('click');
+                            $('#check_datesheets').data('clicked', true);
                         }
                         $('#check_event').bind({
                             click: function () {
-                                //alert(columnvalue('#check_event'));
-                                var privilegevalue = columnvalue('#check_event');
-                                if (privilegevalue) {
-                                    UpdatePrivilege('event', 1);
-                                    $('#check_event').css('display','none');
+                                var status = columnvalue('#check_event');
+                                if (status) {
+                                    if ($('#check_event').data('clicked')) {
+                                        $('#check_event').data('clicked', false);
+                                        UpdatePrivilege('event', 0);
+                                    } else {
+                                        $('#check_event').data('clicked', true);
+                                        UpdatePrivilege('event',1);
+                                    }
                                 } else {
                                     UpdatePrivilege('event', 0);
                                     $('#check_event').css('display', 'block');
@@ -96,39 +109,49 @@
                         });
                         $('#check_attendance').bind({
                             click: function () {
-                                //alert(columnvalue('#check_attendance'));
-                                var privilegevalue = columnvalue('#check_attendance');
-                                if (privilegevalue) {
-                                    UpdatePrivilege('attendence', 1);
-                                    $('#check_attendance').css('display', 'none');
+                                var flag = columnvalue('#check_attendance');
+                                if (flag) {
+                                    if ($('#check_attendance').data('clicked')) {
+                                        $('#check_attendance').data('clicked', false);
+                                        UpdatePrivilege('attendence', 0);
+                                    } else {
+                                        $('#check_attendance').data('clicked', true);
+                                        UpdatePrivilege('attendence', 1);
+                                    }
                                 } else {
                                     UpdatePrivilege('attendence', 0);
                                     $('#check_attendance').css('display', 'block');
                                 }
-
                             }
                         });
                         $('#check_homework').bind({
                             click: function () {
-                                //alert(columnvalue('#check_homework'));
-                                var privilegevalue = columnvalue('#check_homework');
-                                if (privilegevalue) {
-                                    UpdatePrivilege('homework', 1);
-                                    $('#check_homework').css('display', 'none');
+                                var flag = columnvalue('#check_homework');
+                                if (flag) {
+                                    if ($('#check_homework').data('clicked')) {
+                                        $('#check_homework').data('clicked', false);
+                                        UpdatePrivilege('homework', 0);
+                                    } else {
+                                        $('#check_homework').data('clicked', true);
+                                        UpdatePrivilege('homework', 1);
+                                    }
                                 } else {
                                     UpdatePrivilege('homework', 0);
                                     $('#check_homework').css('display', 'block');
                                 }
-
                             }
                         });
                         $('#check_reports').bind({
                             click: function () {
-                                //alert(columnvalue('#check_reports'));
-                                var privilegevalue = columnvalue('#check_reports');
-                                if (privilegevalue) {
-                                    UpdatePrivilege('reports', 1);
-                                    $('#check_reports').css('display', 'none');
+                                var flag = columnvalue('#check_reports');
+                                if (flag) {
+                                    if ($('#check_reports').data('clicked')) {
+                                        $('#check_reports').data('clicked', false);
+                                        UpdatePrivilege('reports', 0);
+                                    } else {
+                                        $('#check_reports').data('clicked', true);
+                                        UpdatePrivilege('reports', 1);
+                                    }
                                 } else {
                                     UpdatePrivilege('reports', 0);
                                     $('#check_reports').css('display', 'block');
@@ -138,11 +161,15 @@
                         });
                         $('#check_timetable').bind({
                             click: function () {
-                                //alert(columnvalue('#check_timetable'));
-                                var privilegevalue = columnvalue('#check_timetable');
-                                if (privilegevalue) {
-                                    UpdatePrivilege('timetable', 1);
-                                    $('#check_timetable').css('display', 'none');
+                                var flag = columnvalue('#check_timetable');
+                                if (flag) {
+                                    if ($('#check_timetable').data('clicked')) {
+                                        $('#check_timetable').data('clicked', false);
+                                        UpdatePrivilege('timetable', 0);
+                                    } else {
+                                        $('#check_timetable').data('clicked', true);
+                                        UpdatePrivilege('timetable', 1);
+                                    }
                                 } else {
                                     UpdatePrivilege('timetable', 0);
                                     $('#check_timetable').css('display', 'block');
@@ -152,19 +179,24 @@
                         });
                         $('#check_datesheets').bind({
                             click: function () {
-                                //alert(columnvalue('#check_datesheets'));
-                                var privilegevalue = columnvalue('#check_datesheets');
-                                if (privilegevalue) {
-                                    UpdatePrivilege('datesheets', 1);
-                                    $('#check_datesheets').css('display', 'none');
+                                var flag = columnvalue('#check_datesheets');
+                                if (flag) {
+                                    if ($('#check_datesheets').data('clicked')) {
+                                        $('#check_datesheets').data('clicked', false);
+                                        UpdatePrivilege('datesheets', 0);
+                                    } else {
+                                        $('#check_datesheets').data('clicked', true);
+                                        UpdatePrivilege('datesheets', 1);
+                                    }
+
                                 } else {
                                     UpdatePrivilege('datesheets', 0);
                                     $('#check_datesheets').css('display', 'block');
                                 }
-
                             }
                         });
                     });
+                    $(window).href.reload();
                 },
                 error: function (error) {
                     alert("Teacher ID require to get privileges details.");
