@@ -6,7 +6,6 @@
 <head runat="server">
     <link rel="icon" href="assets/images/logo/logo-carousel-6.png" />
     <title>Student Profile</title>
-
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -44,16 +43,21 @@
         <div class="header-topbar homepage-03">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-5 topbar-left text-left info-text1">
-                        <%--                    <div class="email"><a href="#"><i class="topbar-icon fa fa-envelope-o"></i><span>info@ces.com</span></a></div>--%>
+                    <div class="col-md-5 topbar-left text-left info-text1">                       
                         <div class="email"><a href="Contact_Us.aspx"><i class="topbar-icon fa fa-envelope-o"></i><span>www.ces.edu.pk</span></a></div>
                         <div class="hotline"><a href="javascript:void(0)"><i></i><span>| Reshaping Education into Digital World </span></a></div>
                     </div>
-                    <div class="col-md-2 logo-topbar info-text2"><a href="index.html">
-                        <img src="assets/images/logo-color-1.png" alt="" /></a></div>
+                    <div class="col-md-2 logo-topbar info-text2">
+                        <a href="index.html">
+                            <img src="assets/images/logo-color-1.png" alt="" />
+                        </a>
+                    </div>
                     <div class="col-md-5 topbar-right text-right info-text3">
                         <div class="hotline"><a href="updatepasswordpanel.aspx"><span>Update your Password </span></a></div>
-                        <div class="email"><a href="#" class="login"></a><a href="#" onclick="btn_logout_Click" class="register">| Logout</a></div>
+                        <div class="email">
+                            <a href="#" class="login"></a>
+                            <a onserverclick="btn_logout_Click" runat="server">| Logout</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -62,19 +66,20 @@
             <div class="container">
                 <div class="header-main-wrapper">
                     <div class="navbar-header">
-                        <div class="logo pull-left"><a href="index.html" class="header-logo">
-                            <img src="assets/images/logo-color-1.png" alt="" /></a></div>
+                        <div class="logo pull-left">
+                            <a href="index.html" class="header-logo">
+                                <img src="assets/images/logo-color-1.png" alt="" /></a>
+                        </div>
                         <button type="button" data-toggle="collapse" data-target=".navigation" class="navbar-toggle edugate-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
                     </div>
                     <nav class="navigation collapse navbar-collapse">
                         <ul class="nav-links nav navbar-nav">
-
-                            <li class="dropdown active"><a href="studentpanel.aspx" class="main-menu">Home</a></li>
+                            <li class="dropdown active"><a href="javascript:void(0)" class="main-menu">Home</a></li>
                             <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Schedules<span class="fa fa-angle-down icons-dropdown"></span></a>
                                 <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                    <li><a href="about-us.html" class="link-page">Syllabus</a></li>
-                                    <li><a href="categories.html" class="link-page">Date Sheet</a></li>
-                                    <li><a href="categories.html" class="link-page">Mark Sheet</a></li>
+                                    <li><a href="Syllabus.aspx" class="link-page">Syllabus</a></li>
+                                    <li><a href="Date_sheet.aspx" class="link-page">Date Sheet</a></li>
+                                    <li><a href="Mark_sheet.aspx" class="link-page">Mark Sheet</a></li>
                                 </ul>
                             </li>
 
@@ -87,6 +92,7 @@
                             </li>
                             <li class="dropdown"><a href="Admin.aspx" class="main-menu">Attendance</a></li>
                             <li class="dropdown"><a href="#" class="main-menu">News</a></li>
+                            <li class="dropdown"><a href="update_StudentDetail.aspx" class="main-menu">Update Detail</a></li>
                             <li><a href="Contact_Us.aspx" class="main-menu">Contact</a></li>
                             <li class="button-search">
                                 <p class="main-menu"><i class="fa fa-search"></i></p>
@@ -97,7 +103,7 @@
                                     <input type="text" placeholder="Search" class="searchbox" />
                                     <button type="submit" class="searchbutton fa fa-search"></button>
                                 </form>
-                            </div>
+                            </div>                            
                         </ul>
                     </nav>
                 </div>
@@ -135,7 +141,7 @@
                                     <div class="title-widget">CES</div>
                                     <div class="content-widget">
                                         <p>CES is Pakistan's only web portal that combines the educational institutes all over the pakistan to enhance the quality of education and support the future by securing the education quality and make it easier for everyone to approach to best and modern education.</p>
-                                        
+
                                     </div>
                                 </div>
                             </div>

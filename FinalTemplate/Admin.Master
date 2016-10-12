@@ -16,7 +16,7 @@
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400italic,700,900,300"/>
     <link type="text/css" rel="stylesheet" href="assets/font/font-icon/font-awesome-4.4.0/css/font-awesome.css"/>
     <link type="text/css" rel="stylesheet" href="assets/font/font-icon/font-svg/css/Glyphter.css"/>
-    
+    <link href="assets/css/mycss.css" rel="stylesheet" />
     <!-- LIBRARY CSS-->
     <link href="assets/css/mycss.css" rel="stylesheet" />
     <link type="text/css" rel="stylesheet" href="assets/libs/animate/animate.css"/>
@@ -75,14 +75,14 @@
                                 <li><a href="ViewAllTachers.aspx" class="link-page">View All</a></li>
                                 <li><a href="TeacherOfTheMonth.aspx" class="link-page">Make Teacher of the month</a></li>
                                 <li><a href="UpdateTeacherInformation.aspx" class="link-page">Update Teacher information</a></li>
-                                <li><a href="events.html" class="link-page">Give and modify existing privileges</a></li>
+                                <li><a href="TeacherPrivileges.aspx" class="link-page">Give and modify existing privileges</a></li>
                             </ul>
                         </li>
                           <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Students<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
                                 <li><a href="ViewAllStudents.aspx" class="link-page">View All</a></li>
-                                <li><a href="courses-detail.html" class="link-page">Make Student of the month</a></li>
-                                <li><a href="event-detail.html" class="link-page">Update Student information</a></li>                                
+                                <li><a href="StudentOfTheMonth.aspx" class="link-page">Make Student of the month</a></li>
+                                <li><a href="UpdateStudentInformationByAdmin.aspx" class="link-page">Update Student information</a></li>                                
                             </ul>
                         </li>
                         <li class="dropdown"><a href="javascript:void(0)" class="main-menu">gallery<span class="fa fa-angle-down icons-dropdown"></span></a>
