@@ -72,7 +72,7 @@
                         </li>
                          <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Schedules<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                <li><a href="about-us.html" class="link-page">Syllabus</a></li>
+                                <li><a href="about-us.html" class="link-page">Time Table</a></li>
                                 <li><a href="categories.html" class="link-page">Date Sheet</a></li>
                                 <li><a href="categories.html" class="link-page">Mark Sheet</a></li>
                             </ul>

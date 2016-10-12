@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/parentpanel.Master" AutoEventWireup="true" CodeBehind="parentpanel.aspx.cs" Inherits="FinalTemplate.parentpanel1" EnableEventValidation="false" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/parentmainpanel.Master" AutoEventWireup="true" CodeBehind="parentpanel.aspx.cs" Inherits="FinalTemplate.parentpanel1" EnableEventValidation="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
 
@@ -112,7 +112,7 @@
                                         <asp:ControlParameter ControlID="DropDownList1" Name="Parent_ID" PropertyName="SelectedValue" Type="String" />
                                     </SelectParameters>
                                 </asp:SqlDataSource>
-                                <asp:GridView ID="GridView1" runat="server"  AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" Width="1277px" Height="278px" HorizontalAlign="Center">
+                                <asp:GridView ID="GridView1" class="edu-table-responsive"  Width="1220px" runat="server"  AutoGenerateColumns="False"  CellPadding="5" ForeColor="#86bc42" GridLines="None"  DataSourceID="SqlDataSource2" >
                                     <AlternatingRowStyle BackColor="White" />
                                     <Columns>
                                         <asp:BoundField DataField="firstname"  HeaderText="Firstname" SortExpression="firstname" />
@@ -123,11 +123,15 @@
                                         <asp:BoundField DataField="school_type" HeaderText="School Type" SortExpression="school_type" />
                                         <asp:BoundField DataField="class" HeaderText="Class" SortExpression="class" />
                                         <asp:BoundField DataField="section" HeaderText="Section" SortExpression="section" />
-                                        <asp:HyperLinkField Text="view" />
+                                        <asp:TemplateField>
+                                            <ItemTemplate>
+                                                <asp:LinkButton ID="LinkButton1" OnClick="linkbutton" Text='<%#Eval("Firstname")%>'  runat="server">Link</asp:LinkButton>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
                                     </Columns>
-                                    <EditRowStyle BackColor="#7C6F57" />
+                                                          <EditRowStyle BackColor="#7C6F57" />
                                     <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                    <HeaderStyle BackColor="#737373" Font-Bold="True" ForeColor="#86bc42" />
                                     <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
                                     <RowStyle BackColor="#E3EAEB" />
                                     <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
