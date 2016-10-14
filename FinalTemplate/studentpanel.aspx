@@ -7,19 +7,24 @@
         $(document).ready(function () {
             teacherwidth();
             // samesizeimage();
+
+            $('#<%=DropDownList1.ClientID%>').css('display', 'none'),
+                 $('#<%=DropDownList2.ClientID%>').css('display', 'none'),
+              $('#<%=DropDownList4.ClientID%>').css('display', 'none')
         });
 
-        //function samesizeimage() {
-        //    $('a img').css({ 'height': '200px', 'width': '300px' });
-        //}
+ //function samesizeimage() {
+ //    $('a img').css({ 'height': '200px', 'width': '300px' });
+ //}
 
-        function teacherwidth() {
-            var path = "url(assets/images/cesThemeImages/searchTeacher.jpg)";
-            $('.page-title').css({
-                'background-image': path,
-                'height': '350px'
-            });
-        }
+
+ function teacherwidth() {
+     var path = "url(assets/images/cesThemeImages/searchTeacher.jpg)";
+     $('.page-title').css({
+         'background-image': path,
+         'height': '350px'
+     });
+ }
 
     </script>
     <style type="text/css">
@@ -65,7 +70,7 @@
                 <div class="slider-banner-wrapper">
                     <h1 data-wow-delay="0.5s" class="sub-title wow fadeInUp">
                         <asp:Label Text="Date" ID="lab1" runat="server"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label Text="Time" ID="lab2" runat="server"></asp:Label></h1>
-                    <h2 class="captions">Student profile</h2>
+                    <asp:Label ID="Label2" class="captions" runat="server"></asp:Label>
                     <ol class="breadcrumb">
                         <li><a href="index.html">Home</a></li>
                         <li class="active"><a href="#">Profile</a></li>
@@ -80,39 +85,28 @@
             <div class="container">
 
                 <div class="why-choose-us-wrapper">
-                    <asp:Label ID="namelab" CssClass="title-2" runat="server"></asp:Label>
-                    <asp:Label ID="lab3" runat="server"></asp:Label>
-                    <p>CLASS-6 SECTION-B</p>
-                    <asp:Label ID="cl" runat="server" Text="new"></asp:Label>
-                    <div>
-                        <asp:FileUpload ID="FileUpload1" runat="server" />
-                        <asp:Button class="btn-green" BackColor="#86bc42" BorderColor="#86bc42" ID="btnSave" Text="Save" OnClick="btnSave_Click" runat="server" Height="30px" Width="70px"></asp:Button>
-                        <asp:Label ID="Label1" runat="server"></asp:Label>
-                    </div>
+                    <label class="title-2">Your Authorized ID : </label>
+              &nbsp;<asp:Label ID="namelab" CssClass="title-2" ForeColor="#86BC42" runat="server"></asp:Label>
+                    <asp:Label ID="lab3" runat="server" Visible="False"></asp:Label>
+                    <asp:Label ID="Label3" runat="server" Visible="false"></asp:Label>
+                    <br />
+                    <label class="rlp-title" >CLASS :  </label>
+                    <asp:Label ID="Label4" CssClass="title-2" runat="server" ForeColor="#86BC42"></asp:Label>
+                    <label class="title-404">SECTION : </label>
+                    <asp:Label ID="Label5" CssClass="title-2" runat="server" ForeColor="#86BC42"></asp:Label>
+
+                    <h4 runat="server" style="color: #A8CF78">Change Profile Picture</h4>
+                    <asp:FileUpload ID="FileUpload1" runat="server" />
+                    <asp:Button class="btn-green" BackColor="#86bc42" BorderColor="#86bc42" ID="btnSave" Text="Save" OnClick="btnSave_Click" runat="server" Height="30px" Width="70px"></asp:Button>
+                    <asp:Label ID="Label1" runat="server"></asp:Label>
+
                 </div>
                 <div data-wow-delay="0.2s" data-wow-duration="1.2s" class="background-girl-1 wow fadeInDown" style="color: transparent">
-                    <asp:Image ID="shah" CssClass="img-responsive" runat="server" Style="border-radius: 80px; color: transparent; height: 350px; width: 300px" />
+                    <asp:Image ID="shah" CssClass="img-responsive" runat="server" Style="border-radius: 100px; color: transparent; height: 320px; width: 270px" />
                 </div>
             </div>
         </div>
     </div>
-    <%--                    <div class="section why-choose-us">
-                    <div class="why-choose-us-wrapper-top">
-                        <div class="container">
-                            <div class="why-choose-us-wrapper"><h2 class="title-2">Name of the Student</h2>
-
-                                <p>CLASS-9 SECTION-B</p>
-                                <button class="btn btn-green-2" formaction="StudentProfile.aspx">
-                                    <span>View Complete Profile</span>
-
-                                </button>
-                            </div>
-                            <div data-wow-delay="0.2s" data-wow-duration="1.2s" class="background-girl-1 wow fadeInDown">
-                                <img src="assets/images/edit.jpg" alt="" class="img-responsive" style="border-radius:70%"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>--%>
     <!-- WHY CHOOSE US-->
     <div class="section why-choose-us">
         <div class="why-choose-us-wrapper<%-- bottom background-opacity--%>">
@@ -194,36 +188,43 @@
         </div>
     </div>
     <%--timetable--%>
-    <br />
-      <%--   <asp:TextBox ID="TextBox1" placeholder="enter your teacher name" CssClass="form-control  form-input" Height="40px" Width="600px" runat="server">
-       </asp:TextBox>--%>
-    <div class="container teacher-course-wrapper">
-        <div class="underline">TIME TABLE</div>
-    </div>
     <div class="search-input">
         <div class="container">
-            <div class="search-input-wrapper">
-                <asp:DropDownList ID="DropDownList1" runat="server" CssClass="sbHolder" DataSourceID="class_DataSource" DataTextField="class" DataValueField="class">
-                </asp:DropDownList>
-                <asp:SqlDataSource ID="class_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="SELECT [class] FROM [tbl_class]"></asp:SqlDataSource>
-                <div>
-                    <asp:DropDownList ID="DropDownList2" runat="server" CssClass="sbHolder" DataSourceID="sec_DataSource" DataTextField="section" DataValueField="section">
-                    </asp:DropDownList>
-                    <asp:SqlDataSource ID="sec_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="SELECT [section] FROM [tbl_section]"></asp:SqlDataSource>
-                </div>
-                <div>
-                    <asp:DropDownList ID="DropDownList3" CssClass="sbHolder" runat="server" DataSourceID="SqlDataSource2" DataTextField="school_name" DataValueField="school_name"></asp:DropDownList>
-                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="SELECT [school_name] FROM [tbl_school]"></asp:SqlDataSource>
-                </div>
-                <div> </div>
-                <button type="submit" class="form-submit btn btn-blue"><span>Search</span></button>
-                <div class="clearfix"></div>
+            <%--  <div class="search-input-wrapper">--%>
+
+            <div class="underline" style="height: 20px; text-align: center;">
+                <h1 style="color: white;">TIME TABLE</h1>
             </div>
+            <asp:DropDownList ID="DropDownList1" runat="server" CssClass="sbHolder" DataSourceID="SqlDataSource3" DataTextField="section" DataValueField="section">
+            </asp:DropDownList>
+            <div>
+                <asp:DropDownList ID="DropDownList2" runat="server" CssClass="sbHolder" DataSourceID="SqlDataSource3" DataTextField="school_name" DataValueField="school_name">
+                </asp:DropDownList>
+            </div>
+            <div>
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="sp_chileTimetable" SelectCommandType="StoredProcedure">
+                    <SelectParameters>
+                        <asp:ControlParameter ControlID="DropDownList1" Name="section" PropertyName="SelectedValue" Type="String" />
+                        <asp:ControlParameter ControlID="DropDownList4" Name="class" PropertyName="SelectedValue" Type="String" />
+                        <asp:ControlParameter ControlID="DropDownList2" Name="school_name" PropertyName="SelectedValue" Type="String" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
+
+                <asp:DropDownList ID="DropDownList4" runat="server" CssClass="sbHolder" DataSourceID="SqlDataSource3" DataTextField="class" DataValueField="class">
+                </asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="sp_getstudent_class_section" SelectCommandType="StoredProcedure">
+                    <SelectParameters>
+                        <asp:ControlParameter ControlID="Label3" Name="std_id" PropertyName="Text" Type="String" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
+            </div>
+            <%--<button type="submit" class="form-submit btn btn-blue"><span>Search</span></button>--%>
         </div>
-    </div> 
+    </div>
+    <%-- </div>--%>
     <br />
 
-    <asp:GridView ID="GridView1" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#86BC42" GridLines="None">
+    <asp:GridView ID="GridView1" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#86BC42" GridLines="None">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:BoundField DataField="day" HeaderText="day" SortExpression="day" />

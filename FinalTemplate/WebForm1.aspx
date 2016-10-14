@@ -1,9 +1,13 @@
-﻿<%@ Page Title="Mark Sheet" Language="C#" MasterPageFile="~/updatepasswordpanel.Master" AutoEventWireup="true" CodeBehind="Mark_sheet.aspx.cs" Inherits="FinalTemplate.Mark_sheet" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="FinalTemplate.WebForm1" %>
 
 <%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-         <link rel="icon" href="assets/images/logo/logo-carousel-6.png" />
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+      <link rel="icon" href="assets/images/logo/logo-carousel-6.png" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- LIBRARY FONT-->
@@ -30,27 +34,37 @@
 } else if ((Cookies.get('colorskin') == undefined) || (Cookies.get('colorskin') == 'color-1')) {
     $('#colorskins').attr('href', 'assets/css/color-1.css');
 }</script>
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
-    <div class="section background-opacity page-title set-height-top">
+</head>
+<body>
+<div class="section background-opacity page-title set-height-top">
         <div class="container">
             <div class="page-title-wrapper">
                 <!--.page-title-content-->
-                <h2 class="captions">Mark Sheet</h2>
+                <h2 class="captions">Date Sheet</h2>
             </div>
         </div>
     </div>
-    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-    <div>
-    <rsweb:ReportViewer ID="ReportViewer1" runat="server" BackColor="#86BC42" Height="500px" Width="100%" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt">
-        <LocalReport ReportPath="Report1.rdlc">
-            <DataSources>
-                <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSet1" />
-            </DataSources>
-        </LocalReport>
-        </rsweb:ReportViewer>
-        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetData" TypeName="FinalTemplate.DataSet1TableAdapters.assignmentTableAdapter"></asp:ObjectDataSource>
-    </div>
-        <br />
-</asp:Content>
+    <br />
+    <form runat="server">
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="236px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="100%">
+            <LocalReport ReportPath="Report1.rdlc">
+                <DataSources>
+                    <rsweb:ReportDataSource DataSourceId="ObjectDataSource2" Name="DataSet1" />
+                </DataSources>
+            </LocalReport>
+            </rsweb:ReportViewer>
+            <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" DeleteMethod="Delete" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="FinalTemplate.DataSet1TableAdapters.assignmentTableAdapter" UpdateMethod="Update">
+                <DeleteParameters>
+                    <asp:Parameter Name="Original_assignment_id" Type="Int32" />
+                </DeleteParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="teacher_name" Type="String" />
+                    <asp:Parameter Name="assignment" Type="Object" />
+                    <asp:Parameter Name="Original_assignment_id" Type="Int32" />
+                </UpdateParameters>
+            </asp:ObjectDataSource>
+            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetData" TypeName="FinalTemplate.DataSet1TableAdapters.assignmentTableAdapter"></asp:ObjectDataSource>
+    </form>
+</body>
+</html>

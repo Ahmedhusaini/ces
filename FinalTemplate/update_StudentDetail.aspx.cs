@@ -20,34 +20,36 @@ namespace FinalTemplate
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string ab=Session["userid"].ToString();
+            string ab = Session["userid"].ToString();
             //try
-            string g =  source.Functions.CurrentUser.GeneralID.ToString();
-                       //{
-                string update = ConfigurationManager.ConnectionStrings["cesConnectionString2"].ConnectionString;
-                SqlConnection connection = new SqlConnection(update);
-                SqlDataAdapter adp = new SqlDataAdapter("select authorized_id from tbl_authorized_users where authorized_id='" +stdid.Text + "'", connection);
-                DataTable dt = new DataTable();
-                adp.Fill(dt);
-                if (dt.Rows.Count.ToString() == "1")
+            int g = Convert.ToInt32(source.Functions.CurrentUser.GeneralID.ToString());
+            //{
+            string update = ConfigurationManager.ConnectionStrings["cesConnectionString2"].ConnectionString;
+            SqlConnection connection = new SqlConnection(update);
+            SqlDataAdapter adp = new SqlDataAdapter("select authorized_id from tbl_authorized_users where authorized_id='" + stdid.Text + "'", connection);
+            DataTable dt = new DataTable();
+            adp.Fill(dt);
+            if (dt.Rows.Count.ToString() == "1")
+            {
+                if (stdid.Text == ab)
                 {
-                    if (stdid.Text == ab)
-                    {
-                        connection.Open();
-                        SqlCommand command = connection.CreateCommand();
-                        command.CommandText =("update tbl_general set firstname='" + name.Text + "', lastname='" + lastname.Text + "' , phone='" + contact.Text + "',Nationality='" + nationality.Text + "', religion='" + religion.Text + "',address='" + address.Text + "' where General_id='g'");
-                        // , dob_id='" + dateofbirth.Text + "' not adding value
-                        command.ExecuteNonQuery();
-                        command.CommandText =("update tbl_location set postal_code='" + postalcode.Text + "'");
-                        command.ExecuteNonQuery();
-                        command.CommandText = ("update tbl_authorized_users set username='" + username.Text + "'");
-                        command.ExecuteNonQuery();
-                        Label1.Visible = true;
-                        connection.Close();
-                        Label1.Text = "Successfully Update";
-                        Label1.ForeColor = System.Drawing.Color.DarkRed;
-                    }
+                    connection.Open();
+                    SqlCommand command = connection.CreateCommand();
+                    //command.CommandText =("update tbl_general set firstname='" + name.Text + "', lastname='" + lastname.Text + "' , phone='" + contact.Text + "',Nationality='" + nationality.Text + "', religion='" + religion.Text + "',address='" + address.Text + "' where General_id='g'");
+                    //// , dob_id='" + dateofbirth.Text + "' not adding value
+                    //command.ExecuteNonQuery();
+                    //command.CommandText =("update tbl_location set postal_code='" + postalcode.Text + "'");
+                    //command.ExecuteNonQuery();
+                    command.CommandText = ("update tbl_general set firstname='" + name.Text + "' where General_id='g'");
+                    command.ExecuteNonQuery();
+                    //command.CommandText = ("update tbl_authorized_users set username='" + username.Text + "' where authorized_id='"+stdid.Text+"'");
+                    //command.ExecuteNonQuery();
+                    Label1.Visible = true;
+                    connection.Close();
+                    Label1.Text = "Successfully Update";
+                    Label1.ForeColor = System.Drawing.Color.DarkRed;
                 }
+            }
             //}
             //catch (Exception ex)
             //{

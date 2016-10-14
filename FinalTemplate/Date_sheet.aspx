@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="Date Sheet" Language="C#" MasterPageFile="~/updatepasswordpanel.Master" AutoEventWireup="true" CodeBehind="Date_sheet.aspx.cs" Inherits="FinalTemplate.Date_sheet" %>
 
+<%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="icon" href="assets/images/logo/logo-carousel-6.png" />
     <meta charset="utf-8" />
@@ -39,32 +41,16 @@
         </div>
     </div>
     <br />
-    <div class="search-input">
-        <div class="container">
-            <div class="search-input-wrapper">
-                    <asp:TextBox ID="TextBox2" placeholder="Enter Your ID" CssClass="sbHolder" runat="server">
-                    </asp:TextBox>
-                <div>
-                    <asp:TextBox ID="TextBox1" placeholder="enter your teacher name" CssClass="sbHolder form-control" Width="600px" runat="server">
-                    </asp:TextBox>
-                </div>
-                <button type="submit" class="form-submit btn btn-blue"><span>Check</span></button>
-                <div class="clearfix"></div>
-            </div>
-        </div>
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <div>
+        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="100%" Font-Names="Verdana" Font-Size="8pt" Height="500px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" BackColor="#86BC42" ShowPageNavigationControls="False" ShowZoomControl="False">
+            <LocalReport ReportPath="Report2.rdlc">
+                <DataSources>
+                    <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSet1" />
+                </DataSources>
+            </LocalReport>
+        </rsweb:ReportViewer>
+        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetData1" TypeName="FinalTemplate.DataSet1TableAdapters.View_Student_timetableTableAdapter"></asp:ObjectDataSource>
     </div>
-    <asp:FileUpload ID="FileUpload1" runat="server" />
-    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
     <br />
-&nbsp;<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="assignment_id">
-        <Columns>
-            <asp:TemplateField HeaderText="documents">
-                <ItemTemplate>
-                    <asp:LinkButton ID="LinkButton1" OnClick="opendoc" runat="server" Text='<%# Eval("Name") %>'></asp:LinkButton>
-                </ItemTemplate>
-            </asp:TemplateField>
-        </Columns>
-    </asp:GridView>
-    <br />
-
 </asp:Content>
