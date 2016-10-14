@@ -21,7 +21,17 @@
             centerText( <%=religion.ClientID%>);
             centerText( <%=address.ClientID%>);
             centerText( <%=postalcode.ClientID%>);
+            centerText( <%=gurdianname.ClientID%>);
+            centerText( <%=gurdiancontact.ClientID%>);
+            centerText( <%=previousschool.ClientID%>);
+            centerText( <%=lastclassattend.ClientID%>);
+            centerText( <%=postalcode.ClientID%>);
             centerText( <%=username.ClientID%>);
+            centerText( <%=primaryemail.ClientID%>); 
+            centerText( <%=generalid.ClientID%>);
+            centerText( <%=dobid.ClientID%>);
+            centerText( <%=authorizeid.ClientID%>);
+            centerText( <%=locationid.ClientID%>);
             removeBackToTop();
             validation();
         });
@@ -78,29 +88,24 @@
                     <asp:Panel ID="Panel1" runat="server">
                         <div class="register-form bg-w-form rlp-form">
                             <div style="padding-left: 131px">
-                               <br />
+                                <br />
                                 <!--p.help-block Warning !-->
-                                <asp:TextBox ID="stdid" runat="server" CssClass="form-control form-input" Height="35px" placeholder="Enter Your ID" Width="331px"></asp:TextBox>
+                                <asp:TextBox ID="stdid" runat="server" CssClass="form-control form-input" Height="35px" placeholder="Enter Your Student ID" Width="331px"></asp:TextBox>
                             </div>
                             <div style="padding-left: 131px">
                                 <br />
                                 <!--p.help-block Warning !-->
-                                <asp:TextBox ID="name" runat="server" CssClass="form-control form-input" Height="35px" placeholder="Enter Name" Width="331px"></asp:TextBox>
+                                <asp:TextBox ID="name" runat="server" CssClass="form-control form-input" Height="35px" placeholder="Enter First name" Width="331px"></asp:TextBox>
                             </div>
                             <div style="padding-left: 131px">
                                 <br />
                                 <!--p.help-block Warning !-->
-                                <asp:TextBox ID="lastname" runat="server" CssClass="form-control form-input" Height="35px" placeholder="Enter Last Name" Width="331px"></asp:TextBox>
+                                <asp:TextBox ID="lastname" runat="server" CssClass="form-control form-input" Height="35px" placeholder="Enter Last name" Width="331px"></asp:TextBox>
                             </div>
                             <div style="padding-left: 131px">
                                 <br />
                                 <!-- p.help-block Warning !-->
-                                <asp:TextBox ID="contact" CssClass="form-control  form-input " placeholder="Enter Contact No" Width="331px" runat="server" Height="35px"></asp:TextBox>
-                            </div>
-                            <div style="padding-left: 131px">
-                                <br />
-                                <!-- p.help-block Warning !-->
-                                <asp:TextBox ID="dateofbirth" CssClass="form-control  form-input " placeholder="Enter Date Of Birth" Width="331px" runat="server" Height="35px"></asp:TextBox>
+                                <asp:TextBox ID="contact" CssClass="form-control  form-input " placeholder="Enter Contact no" Width="331px" runat="server" Height="35px"></asp:TextBox>
                             </div>
                             <div style="padding-left: 131px">
                                 <br />
@@ -120,12 +125,62 @@
                             <div style="padding-left: 131px">
                                 <br />
                                 <!-- p.help-block Warning !-->
-                                <asp:TextBox ID="postalcode" CssClass="form-control  form-input " placeholder="Enter Postal Code" Width="331px" runat="server" Height="35px"></asp:TextBox>                             
+                                <asp:TextBox ID="dateofbirth" CssClass="form-control  form-input " type="date" placeholder="Enter Date Of Birth" Width="331px" runat="server" Height="35px"></asp:TextBox>
+                            </div>
+                            <div style="padding-left: 131px">
+                                <br />
+                                <!--p.help-block Warning !-->
+                                <asp:TextBox ID="gurdianname" runat="server" CssClass="form-control form-input" Height="35px" placeholder="Enter Parent name" Width="331px"></asp:TextBox>
+                            </div>
+                            <div style="padding-left: 131px">
+                                <br />
+                                <!--p.help-block Warning !-->
+                                <asp:TextBox ID="gurdiancontact" runat="server" CssClass="form-control form-input" Height="35px" placeholder="Enter Parent Contact" Width="331px"></asp:TextBox>
+                            </div>
+                            <div style="padding-left: 131px">
+                                <br />
+                                <!--p.help-block Warning !-->
+                                <asp:TextBox ID="previousschool" runat="server" CssClass="form-control form-input" Height="35px" placeholder="Enter Previous school" Width="331px"></asp:TextBox>
+                            </div>
+                            <div style="padding-left: 131px">
+                                <br />
+                                <!--p.help-block Warning !-->
+                                <asp:TextBox ID="lastclassattend" runat="server" CssClass="form-control form-input" Height="35px" placeholder="Enter Last class attend" Width="331px"></asp:TextBox>
+                            </div>
+                            <div style="padding-left: 131px">
+                                <br />
+                                <!-- p.help-block Warning !-->
+                                <asp:TextBox ID="postalcode" CssClass="form-control  form-input " placeholder="Enter Postal Code" Width="331px" runat="server" Height="35px"></asp:TextBox>
                             </div>
                             <div style="padding-left: 131px">
                                 <br />
                                 <!--p.help-block Warning !-->
                                 <asp:TextBox ID="username" runat="server" CssClass="form-control form-input" Height="35px" placeholder="Enter USER NAME" Width="331px"></asp:TextBox>
+                            </div>
+                            <div style="padding-left: 131px">
+                                <br />
+                                <!--p.help-block Warning !-->
+                                <asp:TextBox ID="primaryemail" runat="server" CssClass="form-control form-input" Height="35px" placeholder="Enter Email" Width="331px"></asp:TextBox>
+                            </div>
+                            <div style="padding-left: 131px">
+                                <br />
+                                <!--p.help-block Warning !-->
+                                <asp:TextBox ID="generalid" runat="server" CssClass="form-control form-input" Height="35px" placeholder="General id" Width="331px"></asp:TextBox>
+                            </div>
+                            <div style="padding-left: 131px">
+                                <br />
+                                <!--p.help-block Warning !-->
+                                <asp:TextBox ID="dobid" runat="server" CssClass="form-control form-input" Height="35px" placeholder="dob id" Width="331px"></asp:TextBox>
+                            </div>
+                            <div style="padding-left: 131px">
+                                <br />
+                                <!--p.help-block Warning !-->
+                                <asp:TextBox ID="locationid" runat="server" CssClass="form-control form-input" Height="35px" placeholder="Location id" Width="331px"></asp:TextBox>
+                            </div>
+                            <div style="padding-left: 131px">
+                                <br />
+                                <!--p.help-block Warning !-->
+                                <asp:TextBox ID="authorizeid" runat="server" CssClass="form-control form-input" Height="35px" placeholder="General id" Width="331px"></asp:TextBox>
                             </div>
                         </div>
                         <div class="register-submit">
