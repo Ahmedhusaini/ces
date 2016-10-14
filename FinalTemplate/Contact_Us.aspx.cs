@@ -13,7 +13,7 @@ namespace FinalTemplate
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
@@ -26,30 +26,35 @@ namespace FinalTemplate
 
         }
 
+        
+
         protected void Button1_Click(object sender, EventArgs e)
         {
-            try
+           try
             {
-                SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
-                client.EnableSsl = true;
-                client.Timeout = 10000;
-                client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                client.UseDefaultCredentials = false;
-                client.Credentials = new NetworkCredential("shaikhsiddique101@gmail.com", "atiradeonhddevill");
-                MailMessage msg = new MailMessage();
-                msg.From = new MailAddress("shaikhsiddique101@gmail.com");
-                msg.To.Add(TextBox1.Text);
-                msg.Subject = TextBox2.Text;
-                msg.Body = TextArea1.InnerText;
-                client.Send(msg);
-                Response.Write("mail Send");
+                 SmtpClient client=new SmtpClient ("smtp.gmail.com",587);
+                 client.EnableSsl=true;
+                 client.Timeout=10000;
+                 client.DeliveryMethod=SmtpDeliveryMethod.Network;
+                 client.UseDefaultCredentials=false;
+                 client.Credentials = new NetworkCredential("jahangeer.ahmed11@gmail.com", "dovocgsfopxjqjko");
+                 MailMessage msg = new MailMessage();
+                 msg.From = new MailAddress("jahangeer.ahmed11@gmail.com");
+                 msg.Subject=(TextBox1.Text);
+                 msg.To.Add(TextBox2.Text);  
+                 msg.Subject=(DropDownList1.SelectedValue);
+                 msg.Body = TextBox3.Text;
+                 client.Send(msg);
+                 Response.Write("mail Send");
 
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 Response.Write(ex.Message);
             }
-
+                
+            }
         }
     }
-}
+
+

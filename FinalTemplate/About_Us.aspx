@@ -28,8 +28,11 @@
                                             <span lang="EN">We are taking step ahead to revitalize this obsolete education system, reshaping it and introducing it into a new dimension of digital world.<o:p></o:p></span></p>
                                     </div>
                                     <div class="group-button">
-                                        <button class="btn btn-transition-2"><span>Our Team</span></button>
-                                        <button class="btn btn-green"><span>Testimonial</span></button>
+                                        <button type="submit" class="btn btn-register btn-green">
+                                            <span>
+                                                <asp:Button ID="our" OnClick="ourteam" runat="server" Text="Our Team" Style="background-color: transparent" BorderStyle="None"></asp:Button>
+                                            </span>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -46,7 +49,7 @@
                                 <ul class="list-unstyled list-inline">
                                     <li>
                                         <div class="circle-icon"><i class="fa fa-wifi fa-2x"></i></div>
-                                        <span>Secure Online Attendence                <li>
+                                        <span>Secure Online Attendence  </span><li>
                                         <div class="circle-icon fa-2x"><i class="fa fa-search"></i></div>
                                         <span>Easy Online Vacancies From Multiple Schools</span></li>
                                     <li>
@@ -101,6 +104,7 @@
                                                     <div role="tab" id="item-5" class="col-item-1"><i class="fa fa-check-circle"></i><a href="#capability2" data-toggle="collapse" data-parent="#accordion" role="button" aria-expanded="true" aria-controls="lesson"><span>Compatibitly &amp; </span>Independancy</a></div>
                                                     <div id="capability2" role="tabpanel" aria-labelledby="item-5" class="collapse">
                                                         <div class="panel-body col-item-2">Compatible with all latest Web Browsers. Our Portal requires no High system requirments to run and completely independent of Operating System the computer using just you need an internet connection.</div>
+                                                    </div>
                                                 </li>
                                             </ul>
                                         </div>
@@ -111,5 +115,5 @@
                         </div>
                     </div>
                 </div>
-    </span>
+
 </asp:Content>

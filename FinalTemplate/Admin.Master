@@ -16,7 +16,7 @@
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400italic,700,900,300"/>
     <link type="text/css" rel="stylesheet" href="assets/font/font-icon/font-awesome-4.4.0/css/font-awesome.css"/>
     <link type="text/css" rel="stylesheet" href="assets/font/font-icon/font-svg/css/Glyphter.css"/>
-    
+    <link href="assets/css/mycss.css" rel="stylesheet" />
     <!-- LIBRARY CSS-->
     <link href="assets/css/mycss.css" rel="stylesheet" />
     <link type="text/css" rel="stylesheet" href="assets/libs/animate/animate.css"/>
@@ -26,6 +26,7 @@
     <link type="text/css" rel="stylesheet" href="assets/libs/fancybox/css/jquery.fancybox.css"/>
     <link type="text/css" rel="stylesheet" href="assets/libs/fancybox/css/jquery.fancybox-buttons.css"/>
     <link type="text/css" rel="stylesheet" href="assets/libs/media-element/build/mediaelementplayer.min.css"/>
+    
     <!-- STYLE CSS    --><!--link(type="text/css", rel='stylesheet', href='assets/css/color-1.css', id="color-skins")-->
     <link type="text/css" rel="stylesheet" href="#" id="colorskins"/>
     <script src="assets/libs/jquery/jquery-2.1.4.min.js"></script>
@@ -68,18 +69,18 @@
                 </div>
                 <nav class="navigation collapse navbar-collapse">
                     <ul class="nav-links nav navbar-nav">
-                        <li class="dropdown active"><a href="javascript:void(0)" class="main-menu">Home</a></li>
+                        <li class="dropdown active"><a href="Admin.aspx" class="main-menu">Home</a></li>
                         <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Teachers<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
                                 <li><a href="ViewAllTachers.aspx" class="link-page">View All</a></li>
                                 <li><a href="TeacherOfTheMonth.aspx" class="link-page">Make Teacher of the month</a></li>
-                                <li><a href="event-detail.html" class="link-page">Update Teacher information</a></li>
+                                <li><a href="UpdateTeacherInformation.aspx" class="link-page">Update Teacher information</a></li>
                                 <li><a href="events.html" class="link-page">Give and modify existing privileges</a></li>
                             </ul>
                         </li>
                           <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Students<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                <li><a href="ViewAll Students.aspx" class="link-page">View All</a></li>
+                                <li><a href="ViewAllStudents.aspx" class="link-page">View All</a></li>
                                 <li><a href="courses-detail.html" class="link-page">Make Student of the month</a></li>
                                 <li><a href="event-detail.html" class="link-page">Update Student information</a></li>                                
                             </ul>

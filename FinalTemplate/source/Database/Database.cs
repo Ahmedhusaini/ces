@@ -43,7 +43,6 @@ namespace FinalTemplate.source.Database
                     return _connectionString;
                 else
                     return string.Empty;
-
             }
             //When you want to set the connection string set block is called.
             set
@@ -73,14 +72,14 @@ namespace FinalTemplate.source.Database
         {
             obj_sqlcommand = new SqlCommand();
             obj_sqlcommand.Connection = GetCurrentConnection;
-            obj_sqlcommand.CommandType = CommandType.Text;
+            obj_sqlcommand.CommandType = CommandType.Text;            
             obj_sqlcommand.CommandText = CommandText;
         }
         public void InitializeSQLCommandObject(SqlConnection sqlConectioConnection, string CommandText, bool isSP)
         {
             obj_sqlcommand = new SqlCommand();
             obj_sqlcommand.Connection = GetCurrentConnection;
-            obj_sqlcommand.CommandType = CommandType.StoredProcedure;
+            obj_sqlcommand.CommandType = CommandType.StoredProcedure;            
             obj_sqlcommand.CommandText = CommandText;
         }
         #endregion
@@ -224,6 +223,7 @@ namespace FinalTemplate.source.Database
         {
             int RowsAffacted = 0;
             #region Creating update query
+            Query.Clear();
             Query.Append("update ");
             Query.Append(TableName);
             Query.Append(" set ");
@@ -358,6 +358,7 @@ namespace FinalTemplate.source.Database
             int columnCount = 0;
             string[,] finalResult = { { }, { } };
             string CountQuery = "select count(*) from " + TableName;
+            Query.Clear();
             Query.Append("Select ");
             for (int i = 0; i < Columns.Length; i++)
             {
@@ -381,15 +382,20 @@ namespace FinalTemplate.source.Database
                 finalResult = new string[Convert.ToInt32(rowCount), columnCount];
                 this.obj_sqlcommand.CommandText = Query.ToString();
                 this.obj_reader = this.obj_sqlcommand.ExecuteReader();
-                while (obj_reader.Read())
+                if (this.obj_reader.HasRows)
                 {
-
-                    for (int i = 0; i < columnCount; i++)
+                    while (obj_reader.Read())
                     {
-                        finalResult[lastValue, i] = obj_reader[i].ToString();
+
+                        for (int i = 0; i < columnCount; i++)
+                        {
+                            finalResult[lastValue, i] = obj_reader[i].ToString();
+                        }
+                        lastValue++;
                     }
-                    lastValue++;
                 }
+                else
+                    finalResult[0, 0] = "null";
             }
             finally
             {
@@ -401,12 +407,13 @@ namespace FinalTemplate.source.Database
             return finalResult;
 
         }
-        public string[,] SelectQuery(string TableName, string[] Columns,string[] whereColumn,string[] whereOperator,string[] whereValue,string[] multipleWhereClauseOperator)
+        public string[,] SelectQuery(string TableName, string[] Columns, string[] whereColumn, string[] whereOperator, string[] whereValue, string[] multipleWhereClauseOperator)
         {
 
             int columnCount = 0;
             string[,] finalResult = { { }, { } };
             string CountQuery = "select count(*) from " + TableName;
+            Query.Clear();
             Query.Append("Select ");
             for (int i = 0; i < Columns.Length; i++)
             {
@@ -432,9 +439,9 @@ namespace FinalTemplate.source.Database
                     }
                     else
                     {
-                        Query.Append(" " + whereColumn[i] + " " + whereOperator[i] + " " + whereValue[i] + multipleWhereClauseOperator[i] +" ");
+                        Query.Append(" " + whereColumn[i] + " " + whereOperator[i] + " " + whereValue[i] + multipleWhereClauseOperator[i] + " ");
                     }
-                }                
+                }
             }
 
             CreateConnection();
@@ -551,11 +558,11 @@ namespace FinalTemplate.source.Database
         #endregion
         #endregion
         #region TableQueries
-        public string GetAuthorizedID(string username,string password)
+        public string GetAuthorizedID(string username, string password)
         {
-            string returnvalue= string.Empty;
-            string[] username_array={username};
-            string[] password_array={password};
+            string returnvalue = string.Empty;
+            string[] username_array = { username };
+            string[] password_array = { password };
             if (Jvalidate.FilterBlackLIstKeywords(username_array) && Jvalidate.FilterBlackLIstKeywords(password_array))
             {
                 Query.Clear();
@@ -591,8 +598,8 @@ namespace FinalTemplate.source.Database
                     Query.Clear();
                 }
             }
-                return returnvalue.ToString();
-            
+            return returnvalue.ToString();
+
         }
         //insecure method
         public string GetLastValueByColumnName(string columnName, string tableName)

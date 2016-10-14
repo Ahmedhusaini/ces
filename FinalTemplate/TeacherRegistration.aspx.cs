@@ -23,7 +23,7 @@ namespace FinalTemplate
             int dob_id = Convert.ToInt32(db.GetLastValueByColumnName("dob_id", "tbl_dob"));
             int loc_id = Convert.ToInt32(db.GetLastValueByColumnName("loc_id", "tbl_location"));
             int teacher_id = Convert.ToInt32(db.GetLastValueByColumnName("teacher_id", "tbl_teacher"));
-            var authorized_id = Convert.ToInt32(db.GetLastValueByColumnName("authorized_id", "tbl_authorized_users"));
+            var authorized_id = Convert.ToString(db.GetLastValueByColumnName("authorized_id", "tbl_authorized_users"));
             using (SqlConnection con = new SqlConnection(a))
             {
                 con.Open();
@@ -64,7 +64,7 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@last_login_date", SqlDbType.Date).Value = DateTime.Now.ToString("");
                 cmd.Parameters.AddWithValue("@usertype_id", SqlDbType.Int).Value = 3;
                 cmd.Parameters.AddWithValue("@date_of_join", SqlDbType.Date).Value = DateTime.Now.ToString("");
-
+                cmd.Parameters.AddWithValue("@school_id", SqlDbType.VarChar).Value = DropDownList3.SelectedValue;
 
                 cmd.ExecuteNonQuery();
                 con.Close();

@@ -1,53 +1,90 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/parentpanel.Master" AutoEventWireup="true" CodeBehind="parentpanel.aspx.cs" Inherits="FinalTemplate.parentpanel1" EnableEventValidation="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+
+     <script src="assets/js/jquery-2.2.3.js"></script>  
+
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+
+            $('#<%=DropDownList1.ClientID%>').css('display', 'none'),
+
+            $('.table-row').css(' text-align', 'inherit')
+          
+        });
+
+
+
+
+
+    </script>
+    <style type="text/css">
+       .header { text-align:inherit; }
+   </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-           <div class="section">
-                    <div class="search-input">
-                        <div class="container">
-                            <div class="search-input-wrapper">
-                                <form>
-                                    x<asp:DropDownList ID="DropDownList1" CssClass="form-select style-2 selectbox" runat="server" DataSourceID="SqlDataSource1" DataTextField="school_name" DataValueField="school_id" AppendDataBoundItems="True" AutoPostBack="True" >
-                                        <asp:ListItem>School</asp:ListItem>
-                                    </asp:DropDownList>
-                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="SELECT [school_id], [school_name] FROM [tbl_school]"></asp:SqlDataSource>
-                                    <asp:DropDownList ID="DropDownList2"  CssClass="form-select style-2 selectbox" runat="server" DataSourceID="SqlDataSource2" DataTextField="class" DataValueField="Class_id" AppendDataBoundItems="True" AutoPostBack="True">
-                                   <asp:ListItem>Class</asp:ListItem>
-                                         </asp:DropDownList>
-
-                                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="SELECT [Class_id], [class] FROM [tbl_class]"></asp:SqlDataSource>
-                                    <asp:DropDownList ID="DropDownList3" CssClass="form-select style-2 selectbox" runat="server" DataSourceID="SqlDataSource4" DataTextField="section" DataValueField="section" AppendDataBoundItems="True" AutoPostBack="True">
-                                    <asp:ListItem>Section</asp:ListItem>
-                                         </asp:DropDownList>
-                                    <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="SELECT * FROM [tbl_section]"></asp:SqlDataSource>
-                                    <asp:TextBox ID="searchbox" placeholder="Enter the Student Name" CssClass="form-input" runat="server" OnTextChanged="searchbox_TextChanged"></asp:TextBox>
-                                &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                                  &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                                     &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&nbsp;
-                                       <button type="submit" class="form-submit btn btn-blue" style="margin-top: 6px; float: none"><span><asp:Button ID="Button1" runat="server" BorderStyle="None" style="background-color: Transparent" Text="Search" OnClick="Button1_Click1" />
-                                        <i class="fa fa-search"></i></span></button>
-                                    <div class="clearfix"></div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+<div class="section background-opacity page-title set-height-top">
+        <div class="container">
+            <div class="page-title-wrapper">
+                <!--.page-title-content-->
+                <div class="slider-banner-wrapper">
+                    <h1 data-wow-delay="0.5s" class="sub-title wow fadeInUp">
+                        <asp:Label Text="Date: " ID="lab1" runat="server" Font-Size="Large"></asp:Label>&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;<asp:Label Text="Time:" ID="lab2" runat="server" Font-Size="Large"></asp:Label></h1>
+                    <h2 class="captions">Parent's profile</h2>
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active"><a href="#">Profile</a></li>
+                    </ol>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9">
+    <div class="news-page-wrapper">
+           <div id="detail" class="edugate-layout-1" style="    background-color: rgba(144, 161, 174, 0.63)">
+                                        <div class="edugate-image"><asp:Image ID="Image1" runat="server"  /></div>
+                                        <div class="edugate-content"><a href="news-detail.html" class="title">
+                                                <asp:Label ID="headlbl" runat="server" Font-size="18"  ></asp:Label></a>&nbsp;&nbsp;
+                                            <a href="news-detail.html" class="title"> 
+                                                 <asp:Label ID="headll" runat="server" Font-size="18"  ></asp:Label></a>
+                                            <div class="info">
+                                                <div class="author item"><a href="#">Gender: </a>&nbsp&nbsp;&nbsp;&nbsp; <asp:Label ID="gender" Font-size="13" runat="server"></asp:Label> </div>
+                     
+                                            </div>
+                                            <div class="info">
+                                                <div class="author item"><a href="#">Contact NO: </a> &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="phone" Font-size="13" runat="server"></asp:Label></div>
+                     
+                                            </div>
+                                            <div class="info">
+                                                <div class="author item"><a href="#">Address: </a>&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="address" Font-size="13" runat="server"></asp:Label></div>
+                     
+                                            </div>
+                                            <div class="info">
+                                                <div class="author item"><a href="#">Email ID: </a>&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="pemail" Font-size="13" runat="server"></asp:Label></div>
+                     
+                                            </div>
+                                            <div class="info">
+                                                <div class="author item"><a href="#">Authorized ID : </a>&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="atype" Font-size="13" runat="server"></asp:Label></div>
+                     
+                                            </div>
+                                           
+                                            <div class="description"></div>
+                                          <%-- <button class="btn btn-green"><span>read more</span></button>--%>
+                                        </div>
+                                    </div>
+        </div>
+        </div>
+    
    <div class="container teacher-course-wrapper" style="width:1220px">
-        <div class="group-title-index edu-ab-title"><h2 class="center-title">Check<b> your student</b> time table</h2>
-            <p clas&nbsp;&nbsp;&nbsp;
-            </p>
-                <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" Width="415px" DataSourceID="SqlDataSource3">
-                    <Columns>
-                        <asp:BoundField DataField="school_name" HeaderText="school_name" SortExpression="school_name" />
-                        <asp:BoundField DataField="class" HeaderText="class" SortExpression="class" />
-                        <asp:BoundField DataField="section" HeaderText="section" SortExpression="section" />
-                        <asp:BoundField DataField="firstname" HeaderText="firstname" SortExpression="firstname" />
-                    </Columns>
-                </asp:GridView>
-                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="SELECT tbl_school.school_name, tbl_class.class, tbl_section.section, tbl_general.firstname FROM tbl_school INNER JOIN tbl_Student_Reg ON tbl_school.school_id = tbl_Student_Reg.school_id INNER JOIN tbl_class_sec_info ON tbl_Student_Reg.class_sec_info_id = tbl_class_sec_info.class_sec_info_id INNER JOIN tbl_section ON tbl_class_sec_info.section_id = tbl_section.Section_id INNER JOIN tbl_class ON tbl_class_sec_info.class_id = tbl_class.Class_id INNER JOIN tbl_general ON tbl_Student_Reg.General_Id = tbl_general.General_Id"></asp:SqlDataSource>
-                <%--<asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="SELECT tbl_Student_Reg.Std_id, tbl_class.class, tbl_section.section, tbl_school.school_name, tbl_general.firstname FROM tbl_class INNER JOIN tbl_class_sec_info ON tbl_class.Class_id = tbl_class_sec_info.class_id INNER JOIN tbl_Student_Reg ON tbl_class_sec_info.class_sec_info_id = tbl_Student_Reg.class_sec_info_id INNER JOIN tbl_general ON tbl_Student_Reg.General_Id = tbl_general.General_Id INNER JOIN tbl_school ON tbl_Student_Reg.school_id = tbl_school.school_id INNER JOIN tbl_section ON tbl_class_sec_info.section_id = tbl_section.Section_id"></asp:SqlDataSource>--%>
+        <div class="group-title-index edu-ab-title"><h2 class="center-title">
+            &nbsp;</h2>
+           
             </div>
                        <div class="course-table" style="border-style: none; border-width: inherit; border-color: #FFFFFF">
+                          
+                        
                           
        </div>
                                     </div>
@@ -55,32 +92,105 @@
       
         <!-- CHOOSE COURSES-->
     <br />
-                        <div class="group-title-index"><h4 class="top-title">Your Childerns class="group-title-index"><h4 class="top-title">Your Childerns</h4>
+                        <div class="group-title-index"><h4 class="top-title">Your Childerns </h4>
 
-                            <h2 class="center-title">check profile of your student&nbsp;&nbsp;&nbsp;&nbsp; </h2>
+                            <h2 class="center-title">check profile of your Child&nbsp;&nbsp;&nbsp;&nbsp; </h2>
 
-                            <div class="bottom-title"><i class="bottom-icon icon-a-1-01-01"></i></div>
+                            <div class="bottom-title">
+                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="GetParentid" SelectCommandType="StoredProcedure">
+                                    <SelectParameters>
+                                        <asp:SessionParameter Name="authorized_id" SessionField="userid" Type="String" />
+                                    </SelectParameters>
+                                </asp:SqlDataSource>
+                                <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Parent_ID" DataValueField="Parent_ID">
+                                </asp:DropDownList>
+                                <i class="bottom-icon icon-a-1-01-01"></i>
+                                <br />
+                                <br />
+                                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="spchild" SelectCommandType="StoredProcedure">
+                                    <SelectParameters>
+                                        <asp:ControlParameter ControlID="DropDownList1" Name="Parent_ID" PropertyName="SelectedValue" Type="String" />
+                                    </SelectParameters>
+                                </asp:SqlDataSource>
+                                <asp:GridView ID="GridView1" runat="server"  AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" Width="1277px" Height="278px" HorizontalAlign="Center">
+                                    <AlternatingRowStyle BackColor="White" />
+                                    <Columns>
+                                        <asp:BoundField DataField="firstname"  HeaderText="Firstname" SortExpression="firstname" />
+                                        <asp:BoundField DataField="lastname" HeaderText="Lastname" SortExpression="lastname" />
+                                        <asp:BoundField DataField="Gender" HeaderText="Gender" SortExpression="Gender" />
+                                        <asp:BoundField DataField="Guardian_Name" HeaderText="Guardian Name" SortExpression="Guardian_Name" />
+                                        <asp:BoundField DataField="school_name" HeaderText="School" SortExpression="school_name" />
+                                        <asp:BoundField DataField="school_type" HeaderText="School Type" SortExpression="school_type" />
+                                        <asp:BoundField DataField="class" HeaderText="Class" SortExpression="class" />
+                                        <asp:BoundField DataField="section" HeaderText="Section" SortExpression="section" />
+                                        <asp:HyperLinkField Text="view" />
+                                    </Columns>
+                                    <EditRowStyle BackColor="#7C6F57" />
+                                    <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                    <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                                    <RowStyle BackColor="#E3EAEB" />
+                                    <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                                    <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                                    <SortedAscendingHeaderStyle BackColor="#246B61" />
+                                    <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                                    <SortedDescendingHeaderStyle BackColor="#15524A" />
+                                </asp:GridView>
+                                <br />
+                            </div>
                         </div>
               <div class="section choose-course-3">
                     <div class="choose-course-3-wrapper row">
-                        <div class="item-course">
+
+                        <div class="item-course"  style=" width: 800px;   display:none  " >
                             <div class="item-course-wrapper">
                                 <div class="icon-course"><i class="icons-img fa fa-male"></i></div>
-                                <div class="info-course"><a href="#" class="name-course">ahmed hussaini</a>
+                                
+                                <div class="icon-course"><a href="#" class="name-course">
 
-                                    <div class="info">check them out</div>
+                                &nbsp; &nbsp; &nbsp; <asp:Label ID="Name" runat="server" Font-Size="18" ></asp:Label></a>
+
+                                     <div class="info">
+                                   &nbsp; &nbsp; &nbsp;      Guardian Name :&nbsp; <asp:Label ID="gname" runat="server" Font-Size="15"></asp:Label></div>
+                                    <div class="info">
+                                   &nbsp; &nbsp; &nbsp;      Gender :&nbsp; <asp:Label ID="cgender" runat="server" Font-Size="15"></asp:Label></div>
+                                   
                                 </div>
+                                <br/>
+                               
+                                 <div class="info">
+                                &nbsp; &nbsp; &nbsp;       School :&nbsp; <asp:Label ID="school" Text="dsada" runat="server" Font-Size="15"></asp:Label></div>
+                                 <div class="info">
+                             &nbsp; &nbsp; &nbsp;       Type : &nbsp;<asp:Label ID="stype" Text="dsada" runat="server" Font-Size="15"></asp:Label></div>
+                            
+                                 
+                                <div class="icon-course"></div>
+                                     <br/>
+                                    
+                                     <div class="info">
+                                   &nbsp; &nbsp; &nbsp;      Class :&nbsp; <asp:Label ID="classsss" runat="server" Font-Size="15"></asp:Label></div>
+                                    <div class="info">
+                                   &nbsp; &nbsp; &nbsp;      Section :&nbsp; <asp:Label ID="section" runat="server" Font-Size="15"></asp:Label></div>                                                           
+                                
+                                   
                             </div>
                         </div>
-                       <div class="item-course">
+                       <div class="item-course" style=" display:none" >
                             <div class="item-course-wrapper">
-                                <div class="icon-course"><i class="icons-img fa fa-check"></i></div>
-                                <a href="#" class="info-course">
-                                    <div class="name-course">jahangeer ahmed</div>
-                                    <div class="info">check them out</div>
-                                </a></div>
+                               <div class="icon-course"><i class="icons-img fa fa-male"></i></div>
+                              <%--  
+                                <div class="icon-course"><a href="#" class="name-course">
+
+                                &nbsp; &nbsp; &nbsp; <asp:Label ID="name2" runat="server" Font-Size="18"  ClientIDMode="Predictable" ></asp:Label></a>
+
+                                     <div class="info">
+                                   &nbsp; &nbsp; &nbsp;      Guardian Name :&nbsp; <asp:Label ID="gname2" runat="server" Font-Size="15"></asp:Label></div>
+                                    <div class="info">
+                                   &nbsp; &nbsp; &nbsp;      Gender :&nbsp; <asp:Label ID="gender2" runat="server" Font-Size="15"></asp:Label></div>
+                                   
+                                </div>--%>
                         </div>
-                        <div class="item-course">
+                        <div class="item-course" style="display:none">
                             <div class="item-course-wrapper">
                                 <div class="icon-course"><i class="icons-img fa fa-male"></i></div>
                                 <div class="info-course"><a href="#" class="name-course">siddique</a>

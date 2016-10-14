@@ -3,6 +3,7 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
+using System.Web;
 
 namespace FinalTemplate.source.Registration
 {
@@ -10,6 +11,7 @@ namespace FinalTemplate.source.Registration
     {
 
         public Database.Database myDatabase = new Database.Database("cesConnectionString");
+        Random random = new Random();
         public string RegisterSchool(int country_id, int city_id, int postalcode, string username, string password, int accountpin, string primaryemail, string secondaryemail, string contactPrimary, string contactSecondary, string schoolName, string ownerName, string foundedIn, string logo, int school_type_id, string campusName)
         {
             string locationid = myDatabase.GetLastValueByColumnName("loc_id", "tbl_location");
@@ -129,6 +131,8 @@ namespace FinalTemplate.source.Registration
         private string GenerateCampusID(string schoolName)
         {
             StringBuilder builder = new StringBuilder();
+
+            builder.Append(random.Next(1, 5000).ToString());
             builder.Append(schoolName.Substring(0, 5));
             builder.Append("/CES/");
             builder.Append(JFunctions.GetSystemDate());
@@ -139,15 +143,16 @@ namespace FinalTemplate.source.Registration
 
         private string GenerateAuthorizedID(string Username, string AccountPin)
         {
-            return Convert.ToString(Username.Substring(0, 3) + AccountPin.Substring(0, 3));
+            return Convert.ToString(random.Next(1, 500) + Username.Substring(0, 3) + AccountPin.Substring(0, 3));
         }
 
         private string GenerateSchoolID(string SchoolName, string OwnerName)
         {
-            Random random = new Random();
+
 
             StringBuilder id = new StringBuilder();
-            id.Append("C/");
+            id.Append(random.Next(3, 10));
+            id.Append("/C/");
             id.Append(SchoolName.Substring(0, 3));
             id.Append("/E/");
             id.Append(OwnerName.Substring(0, 3));
@@ -160,20 +165,37 @@ namespace FinalTemplate.source.Registration
             return id.ToString();
         }
 
-        public void SelectPackage(string packageName)
+        public string GetSchoolIDByAuthorizedID(string _authorizedID)
         {
-            if (packageName == "Silver")
+            string schoolID = string.Empty;
+            myDatabase.CreateConnection();
+            myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "select tbl_school.school_id from tbl_school where authorized_id='" + _authorizedID + "'");
+            try
             {
-
+                myDatabase.OpenConnection();
+                myDatabase.obj_reader = myDatabase.obj_sqlcommand.ExecuteReader();
+                if (myDatabase.obj_reader.HasRows)
+                {
+                    while (myDatabase.obj_reader.Read())
+                    {
+                        schoolID = myDatabase.obj_reader["school_id"].ToString();
+                    }
+                }
+                else
+                {
+                    HttpContext.Current.Response.Write("No school id found");
+                }
             }
-            else if (packageName == "Gold")
+            catch (Exception exception)
             {
-
+                HttpContext.Current.Response.Write(exception.ToString());
             }
-            else if (packageName == "Platinum")
+            finally
             {
-
+                myDatabase.CloseConnection();
+                myDatabase.obj_reader.Dispose();
             }
+            return schoolID;
         }
     }
 }

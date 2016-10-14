@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Web;
 using System.Web.UI.WebControls;
 using System.Net;
 using System.Net.Mail;
-using System.IO;
-using FinalTemplate.source.Database;
-using FinalTemplate.source;
+using FinalTemplate.source.Registration;
 
 namespace FinalTemplate.source.Functions
 {
@@ -32,7 +28,7 @@ namespace FinalTemplate.source.Functions
                 SmtpClient smtp = new SmtpClient();
                 smtp.Host = "smtp.gmail.com";
                 smtp.EnableSsl = true;
-                NetworkCredential networkCredential = new NetworkCredential(smtpUsername, "teuss106");
+                NetworkCredential networkCredential = new NetworkCredential(smtpUsername, "uombhdylobfcwnjp");
                 smtp.UseDefaultCredentials = true;
                 smtp.Credentials = networkCredential;
                 smtp.Port = 587;

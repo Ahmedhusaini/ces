@@ -28,8 +28,7 @@
                     && /\d/.test(value) // has a digit
             },"please only Lowercase and must have digits ");
           
-            $("#form1").validate({
-                   
+            $("#form1").validate({                   
                 rules: {
                     <%=name.UniqueID%>:{
                         required: true,
@@ -43,8 +42,6 @@
                            required:true,
                            phone:true
                        },
-                   
-                     
                     <%=gurcontact.UniqueID%>:{
                            required:true,
                            phone:true
@@ -458,15 +455,15 @@
                                 <!-- p.help-block Warning !-->
                                 <br />
 
-                                        <asp:DropDownList ID="DropDownList5" CssClass="form-control  form-input" runat="server">
-                                            <asp:ListItem></asp:ListItem>
-                                            <asp:ListItem>Karachi</asp:ListItem>
-                                            <asp:ListItem>Lahore</asp:ListItem>
-                                            <asp:ListItem>Peshawar</asp:ListItem>
-                                            <asp:ListItem>Islamabad</asp:ListItem>
-                                            <asp:ListItem>Quetta</asp:ListItem>
-                                            <asp:ListItem>Hyderabad</asp:ListItem>
-                                        </asp:DropDownList>
+                                <asp:DropDownList ID="DropDownList5" CssClass="form-control  form-input" runat="server">
+                                    <asp:ListItem></asp:ListItem>
+                                    <asp:ListItem>Karachi</asp:ListItem>
+                                    <asp:ListItem>Lahore</asp:ListItem>
+                                    <asp:ListItem>Peshawar</asp:ListItem>
+                                    <asp:ListItem>Islamabad</asp:ListItem>
+                                    <asp:ListItem>Quetta</asp:ListItem>
+                                    <asp:ListItem>Hyderabad</asp:ListItem>
+                                </asp:DropDownList>
 
                             </div>
                             <div class="col-md-6">
@@ -477,15 +474,15 @@
                                 <!-- p.help-block Warning !-->
                                 <br />
 
-                                        <asp:DropDownList ID="DropDownList3" CssClass="form-control  form-input" runat="server">
-                                            <asp:ListItem></asp:ListItem>
-                                            <asp:ListItem>Karachi</asp:ListItem>
-                                            <asp:ListItem>Lahore</asp:ListItem>
-                                            <asp:ListItem>Peshawar</asp:ListItem>
-                                            <asp:ListItem>Islamabad</asp:ListItem>
-                                            <asp:ListItem>Quetta</asp:ListItem>
-                                            <asp:ListItem>Hyderabad</asp:ListItem>
-                                        </asp:DropDownList>
+                                <asp:DropDownList ID="DropDownList3" CssClass="form-control  form-input" runat="server">
+                                    <asp:ListItem></asp:ListItem>
+                                    <asp:ListItem>Karachi</asp:ListItem>
+                                    <asp:ListItem>Lahore</asp:ListItem>
+                                    <asp:ListItem>Peshawar</asp:ListItem>
+                                    <asp:ListItem>Islamabad</asp:ListItem>
+                                    <asp:ListItem>Quetta</asp:ListItem>
+                                    <asp:ListItem>Hyderabad</asp:ListItem>
+                                </asp:DropDownList>
 
                             </div>
 
@@ -496,16 +493,16 @@
                                 </label>
                                 <!-- p.help-block Warning !-->
                                 <br />
-                                
-                                        <asp:DropDownList ID="DropDownList4" CssClass="form-control  form-input" runat="server">
-                                            <asp:ListItem></asp:ListItem>
-                                            <asp:ListItem>Karachi</asp:ListItem>
-                                            <asp:ListItem>Lahore</asp:ListItem>
-                                            <asp:ListItem>Peshawar</asp:ListItem>
-                                            <asp:ListItem>Islamabad</asp:ListItem>
-                                            <asp:ListItem>Quetta</asp:ListItem>
-                                            <asp:ListItem>Hyderabad</asp:ListItem>
-                                        </asp:DropDownList>
+
+                                <asp:DropDownList ID="DropDownList4" CssClass="form-control  form-input" runat="server">
+                                    <asp:ListItem></asp:ListItem>
+                                    <asp:ListItem>Karachi</asp:ListItem>
+                                    <asp:ListItem>Lahore</asp:ListItem>
+                                    <asp:ListItem>Peshawar</asp:ListItem>
+                                    <asp:ListItem>Islamabad</asp:ListItem>
+                                    <asp:ListItem>Quetta</asp:ListItem>
+                                    <asp:ListItem>Hyderabad</asp:ListItem>
+                                </asp:DropDownList>
 
                             </div>
                             <div class="section pricing">
@@ -601,4 +598,6 @@
 
             </div>
         </div>
+        </div>
+        
 </asp:Content>

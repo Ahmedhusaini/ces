@@ -17,6 +17,7 @@ namespace FinalTemplate.source.Functions
         {
             return Convert.ToString(System.DateTime.Today.ToString("HH:MM:ss"));
         }
+        
         public static void SendEmail(string To, string Subject, string MessageBody)
         {
             string smtpUsername = "jahangeer.ahmed11@gmail.com";

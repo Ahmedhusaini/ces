@@ -125,23 +125,23 @@
     height: auto;
     width: 100%;
     border: 1px solid #000;
-    -webkit-animation: animate_bg 5s;
-    animation: animate_bg 5s;
+    -webkit-animation: animate_bg 20s;
+    animation: animate_bg 20s;
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
 }
 
 @keyframes animate_bg {
-    0%   {background:#2876e2;}
-    10%  {background:#5aeed3;}
-    20%  {background:#903fc7;}
-    30%  {background:#ff4c99;}
-    50%  {background:#96f56a;}
-    60%  {background:#f7dd61;}
-    70%  {background:#0d98ba;}
+    10%   {background:#6f8190;}
+    /*10%  {background:#e2cf00;}
+    20%  {background:#90a1ae;}
+    30%  {background:#242c42;}*/
+    50%  {background:#90a1ae;}
+    /*60%  {background:#6493cc;}
+    70%  {background:#a36fde;}
     80%  {background:#6699cc;}
-    90%  {background:#688bae;}
-    100% {background:#eb9c9c;}
+    90%  {background:#f7c68b;}*/
+    100% {background:#242c42;}
 }
 #set {
 }
@@ -195,4 +195,17 @@
 }
 .top {
     z-index:999;
+}
+.imgTeacher {
+    height: 200px;
+    width: 300px;
+}
+.btnRightPadding {
+    padding-right: 135px;
+}
+.teacherofthemonth {
+ width:100%;
+}
+.roundborder {
+    border-radius:5px;
 }

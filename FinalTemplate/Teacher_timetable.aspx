@@ -2,50 +2,38 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="TeacherHeadPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="TeacherPlaceHolder1" runat="server">
-    <div class="table-body">
-        <table class="edu-table-responsive table-hover">
-            <tr class="heading-content">
-              <td class="left heading-content" colspan="1">DAYS</td>             
-              <td class="left heading-content" colspan="1">PERIOD 1</td>
-              <td class="left heading-content" colspan="1">PERIOD 2</td>
-              <td class="left heading-content" colspan="1">PERIOD 3</td>
-              <td class="left heading-content" colspan="1">PERIOD 4</td> 
-              <td class="left heading-content" colspan="1">PERIOD 5</td>
-              <td class="left heading-content" colspan="1">PERIOD 6</td>
-              <td class="left heading-content" colspan="1">PERIOD 7</td>
-              <td class="left heading-content" colspan="1">PERIOD 8</td>
 
-            </tr>
-            <tr class="table-row">
-                <td class="left col-1"><a href="#"><span>1. MONDAY</span></a></td>
-                <td class="col-2"><span>PHD CS</span></td>
-                <td class="col-3"><span>10-4-2010</span></td>
-                <td class="col-4"><span>abc</span></td>
-            </tr>
-               <tr class="table-row">
-                <td class="left col-1"><a href="#"><span>2. TUESDAY</span></a></td>
-                <td class="col-2"><span>PHD CS</span></td>
-                <td class="col-3"><span>10-4-2010</span></td>
-                <td class="col-4"><span>abc</span></td>
-            </tr>
-               <tr class="table-row">
-                <td class="left col-1"><a href="#"><span>3. WEDNESDAY</span></a></td>
-                <td class="col-2"><span>PHD CS</span></td>
-                <td class="col-3"><span>10-4-2010</span></td>
-                <td class="col-4"><span>abc</span></td>
-            </tr>
-               <tr class="table-row">
-                <td class="left col-1"><a href="#"><span>4. THURSDAY</span></a></td>
-                <td class="col-2"><span>PHD CS</span></td>
-                <td class="col-3"><span>10-4-2010</span></td>
-                <td class="col-4"><span>abc</span></td>
-            </tr>
-               <tr class="table-row">
-                <td class="left col-1"><a href="#"><span>5. FRIDAY</span></a></td>
-                <td class="col-2"><span>PHD CS</span></td>
-                <td class="col-3"><span>10-4-2010</span></td>
-                <td class="col-4"><span>abc</span></td>
-            </tr>
-        </table>
+    <div class="table-body">
+        <asp:TextBox ID="TextBox1" CssClass="form-control  form-input" runat="server" OnTextChanged="TextBox1_TextChanged" Width="540px"></asp:TextBox>
+           <button type="submit"  class="btn btn-register btn-green">
+        <asp:Button ID="Button1" runat="server" Text="SEARCH" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></button>
+        <asp:GridView ID="GridView1" class="edu-table-responsive"  runat="server" AutoGenerateColumns="False" DataSourceID="timetable" CellPadding="4" ForeColor="#333333" GridLines="None">
+            <AlternatingRowStyle BackColor="White" />
+            <Columns >
+                <asp:BoundField DataField="username" HeaderText="Teacher" SortExpression="username" />
+                <asp:BoundField DataField="day" HeaderText="Day" SortExpression="day" />
+                <asp:BoundField DataField="school_name" HeaderText="School Name" SortExpression="school_name" />
+                <asp:BoundField DataField="class" HeaderText="Class" SortExpression="class" />
+                <asp:BoundField DataField="section" HeaderText="Section" SortExpression="section" />
+                <asp:BoundField DataField="subject" HeaderText="Subject" SortExpression="subject" />
+                <asp:BoundField DataField="starting_time" HeaderText="Starting Time" SortExpression="starting_time" />
+                <asp:BoundField DataField="ending_time" HeaderText="Ending Time" SortExpression="ending_time" />
+            </Columns>
+            <EditRowStyle BackColor="#7C6F57" />
+            <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="#E3EAEB" />
+            <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+            <SortedAscendingCellStyle BackColor="#F8FAFA" />
+            <SortedAscendingHeaderStyle BackColor="#246B61" />
+            <SortedDescendingCellStyle BackColor="#D4DFE1" />
+            <SortedDescendingHeaderStyle BackColor="#15524A" />
+        </asp:GridView>
+        <asp:SqlDataSource ID="timetable" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [username], [day], [school_name], [class], [section], [subject], [starting_time], [ending_time] FROM [Teacher_timetable] WHERE ([username] = @username)">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="TextBox1" Name="username" PropertyName="Text" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
     </div>
 </asp:Content>

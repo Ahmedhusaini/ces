@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Web;
 using System.Web.UI.WebControls;
-using System.Net;
-using System.IO;
-using FinalTemplate.source.Database;
-using FinalTemplate.source;
 
 namespace FinalTemplate.source.Functions
 {
