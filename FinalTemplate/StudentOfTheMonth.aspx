@@ -14,21 +14,21 @@
                 method: 'post',
                 data: { _schoolID: jquerySchoolID },
                 dataType: 'json',
-                success: function (data) {
+                success: function(data) {
                     var table = $('tbody');
                     var jsonString = JSON.stringify(data);
                     var jsonArray = $.parseJSON(jsonString);
-                    $.each(jsonArray, function (i, v) {
+                    $.each(jsonArray, function(i, v) {
                         table.append('<tr class="table-row"><td class="col-1"><span>' + v.StudentID + '</span></td><td class="col-2"><a href="#">' + v.FirstName + ' ' + v.LastName + '</a></td></tr>');
                     });
-
+                    
                 },
-                error: function (data) {
-                    alert("Error: " + data);
+                error: function(data) {
+                    alert("Error: "+data);
                 }
             });
         }
-
+        
         function EmptyTable() {
             $('tbody').empty();
         }
