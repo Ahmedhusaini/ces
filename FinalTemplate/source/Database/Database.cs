@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Web;
 
 namespace FinalTemplate.source.Database
 {
@@ -72,14 +73,14 @@ namespace FinalTemplate.source.Database
         {
             obj_sqlcommand = new SqlCommand();
             obj_sqlcommand.Connection = GetCurrentConnection;
-            obj_sqlcommand.CommandType = CommandType.Text;            
+            obj_sqlcommand.CommandType = CommandType.Text;
             obj_sqlcommand.CommandText = CommandText;
         }
         public void InitializeSQLCommandObject(SqlConnection sqlConectioConnection, string CommandText, bool isSP)
         {
             obj_sqlcommand = new SqlCommand();
             obj_sqlcommand.Connection = GetCurrentConnection;
-            obj_sqlcommand.CommandType = CommandType.StoredProcedure;            
+            obj_sqlcommand.CommandType = CommandType.StoredProcedure;
             obj_sqlcommand.CommandText = CommandText;
         }
         #endregion
@@ -456,16 +457,24 @@ namespace FinalTemplate.source.Database
                 finalResult = new string[Convert.ToInt32(rowCount), columnCount];
                 this.obj_sqlcommand.CommandText = Query.ToString();
                 this.obj_reader = this.obj_sqlcommand.ExecuteReader();
-                while (obj_reader.Read())
+                if (obj_reader.HasRows)
                 {
-
-                    for (int i = 0; i < columnCount; i++)
+                    while (obj_reader.Read())
                     {
-                        finalResult[lastValue, i] = obj_reader[i].ToString();
+
+                        for (int i = 0; i < columnCount; i++)
+                        {
+                            finalResult[lastValue, i] = obj_reader[i].ToString();
+                        }
+                        lastValue++;
                     }
-                    lastValue++;
                 }
 
+
+            }
+            catch (Exception exception)
+            {
+                HttpContext.Current.Response.Write(exception.ToString());
             }
             finally
             {
