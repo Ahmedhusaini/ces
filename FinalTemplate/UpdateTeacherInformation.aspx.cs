@@ -1,37 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Data;
-using FinalTemplate.source.Functions;
+﻿using FinalTemplate.source.Functions;
 using FinalTemplate.source.Validation;
+using System;
 
 namespace FinalTemplate
 {
     public partial class UpdateTeacherInformation : System.Web.UI.Page
     {
         private JTeacher objTeacher = new JTeacher();
+        private string gender = string.Empty;
+        private int cityID = 1;
         protected void Page_Load(object sender, EventArgs e)
         {
-            rbtnFemale.Checked = false;
-            rbtnMale.Checked = false;
             if (!string.IsNullOrWhiteSpace(Request.QueryString["IAC"]))
-                txtTeacherIDToPopulateDetails.Text=Request.QueryString["IAC"];
-                
-            
-            
-            JFunctions.BindDropDownList(ddlCity, "city", "city_id", "select * from tbl_city");
-            JFunctions.BindDropDownList(ddlCountry, "country", "country_id", "select * from tbl_country");
+                txtTeacherIDToPopulateDetails.Text = Request.QueryString["IAC"];
+
+
+            if (!IsPostBack)
+            {
+                JFunctions.BindDropDownList(ddlCity, "city", "city_id", "select * from tbl_city");
+                JFunctions.BindDropDownList(ddlCountry, "country", "country_id", "select * from tbl_country");
+            }
+
         }
 
 
         private void ShowDataToForm()
         {
-            string dateofbirth = Convert.ToString(objTeacher.Day + "/" + objTeacher.Month+ "/" + objTeacher.Year);
+            string dateofbirth = Convert.ToString(objTeacher.Day + "/" + objTeacher.Month + "/" + objTeacher.Year);
             DateTime dateofjoin = Convert.ToDateTime(objTeacher.DateOfJoin);
-            txtFirstName.Text = objTeacher.FirstName;
+            txtFirstName.Text = objTeacher.FirstName.Trim();
             txtLastName.Text = objTeacher.LastName;
             if ((dateofbirth.Substring(1, 1) == "/" && dateofbirth.Substring(3, 1) == "/"))
                 txtDateOfBirth.Text = "0" + dateofbirth.Substring(0, 1) + "/0" + dateofbirth.Substring(2, 1) + "/" + dateofbirth.Substring(dateofbirth.Length - 4, 4);
@@ -41,8 +38,8 @@ namespace FinalTemplate
                 txtDateOfBirth.Text = "0" + dateofbirth.Substring(0, 1) + "/" + dateofbirth.Substring(2, 1) + "/" + dateofbirth.Substring(dateofbirth.Length - 4, 4);
             if ((dateofbirth.Substring(2, 1) == "/" && dateofbirth.Substring(5, 1) == "/"))
                 txtDateOfBirth.Text = dateofbirth.Substring(0, 2) + "/" + dateofbirth.Substring(3, 2) + "/" + dateofbirth.Substring(dateofbirth.Length - 4, 4);
-            
-            ddlNationality.SelectedIndex = 0;            
+
+            ddlNationality.SelectedIndex = 0;
             if (objTeacher.Gender.ToLower() == "male")
                 rbtnMale.Checked = true;
             else
@@ -51,7 +48,7 @@ namespace FinalTemplate
             txtReligion.Text = objTeacher.Religion;
             txtPhone.Text = objTeacher.Phone;
             txtAddress.Text = objTeacher.Address;
-
+            ddlCity.ClearSelection();
             ddlCity.Items.FindByValue(objTeacher.CityID.ToString()).Selected = true;
             txtPostalCode.Text = objTeacher.PostalCode.ToString();
             txtDateOfJoin.Text = dateofjoin.ToString("d");
@@ -83,8 +80,6 @@ namespace FinalTemplate
             txtFirstName.Text = "";
             txtLastName.Text = "";
             txtDateOfBirth.Text = "";
-            rbtnFemale.Checked = false;
-            rbtnMale.Checked = false;
             txtReligion.Text = "";
             txtPhone.Text = "";
             txtPostalCode.Text = "";
@@ -102,8 +97,6 @@ namespace FinalTemplate
 
         protected void Button21_Click(object sender, EventArgs e)
         {
-            string gender = string.Empty;
-            
             string[] AssumedBlackListKeyWords = { txtFirstName.Text, txtLastName.Text, txtDateOfBirth.Text, txtReligion.Text, txtPhone.Text, txtAddress.Text, txtPostalCode.Text, txtCNIC.Text, txtDateOfJoin.Text };
             if (Jvalidate.FilterBlackLIstKeywords(AssumedBlackListKeyWords))
             {
@@ -111,7 +104,8 @@ namespace FinalTemplate
                     gender = "male";
                 else
                     gender = "female";
-                string result = objTeacher.UpdateTeacherInformation(Convert.ToInt32(txtGenealID.Text), Convert.ToInt32(txtDOBId.Text), Convert.ToInt32(txtLocationID.Text), Convert.ToInt32(txtTeacherID.Text), txtFirstName.Text, txtLastName.Text, ddlNationality.SelectedItem.ToString(), gender, txtReligion.Text, txtPhone.Text, txtAddress.Text, txtDateOfJoin.Text, txtDateOfBirth.Text,Convert.ToInt32( ddlCity.SelectedValue), Convert.ToInt32(txtPostalCode.Text));
+
+                string result = objTeacher.UpdateTeacherInformation(Convert.ToInt32(txtGenealID.Text), Convert.ToInt32(txtDOBId.Text), Convert.ToInt32(txtLocationID.Text), Convert.ToInt32(txtTeacherID.Text), txtFirstName.Text, txtLastName.Text, ddlNationality.SelectedItem.ToString(), gender, txtReligion.Text, txtPhone.Text, txtAddress.Text, txtDateOfJoin.Text, txtDateOfBirth.Text, Convert.ToInt32(ddlCity.SelectedValue), Convert.ToInt32(txtPostalCode.Text));
                 if (result == "true")
                     Response.Write("<script>alert('Record Successfully updated');</script>");
                 else

@@ -195,44 +195,30 @@
                                     <tr class="table-row">
                                         <td class="col-3"><span>General ID</span></td>
                                         <td class="col-2"><asp:TextBox runat="server" ID="txtGeneralID" ReadOnly="True" CssClass="fullWidth"></asp:TextBox></td>
-                                        <td class="col-3"></td>
-
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>Authorized ID</span></td>
                                         <td class="col-2"><asp:TextBox runat="server" ID="txtAuthorizedID" ReadOnly="True" CssClass="fullWidth"></asp:TextBox></td>
-                                        <td class="col-3"></td>
-
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>Student ID</span></td>
                                         <td class="col-2"><asp:TextBox runat="server" ID="txtStudentID" ReadOnly="True" CssClass="fullWidth"></asp:TextBox></td>
-                                        <td class="col-3"></td>
-
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>Class Section Information ID</span></td>
                                         <td class="col-2"><asp:TextBox runat="server" ID="txtClassSectionInformationID" ReadOnly="true" CssClass="fullWidth"></asp:TextBox></td>
-                                        <td class="col-3"></td>
-
                                     </tr>
                                      <tr class="table-row">
                                         <td class="col-3"><span>Location ID</span></td>
                                         <td class="col-2"><asp:TextBox runat="server" ID="txtLocationID" ReadOnly="true" CssClass="fullWidth"></asp:TextBox></td>
-                                        <td class="col-3"></td>
-
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>Date Of Birth ID</span></td>
                                         <td class="col-2"><asp:TextBox runat="server" ID="txtDateOfBirthID" ReadOnly="True" CssClass="fullWidth"></asp:TextBox></td>
-                                        <td class="col-3"></td>
-
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"></td>
                                         <td class="col-2"><asp:Button runat="server" ID="btnUpdateStudentInformation" Text="Update Student Information" OnClick="btnUpdateStudentInformation_Click"/></td>
-                                        <td class="col-3"></td>
-
                                     </tr>
                                 </tbody>
                             </table>

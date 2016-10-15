@@ -63,6 +63,38 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About_Us.aspx" />
+    <Content Include="AddEvent.aspx" />
+    <Content Include="assets\AddEventDatePicker\assets\css\bootstrap-theme.css" />
+    <Content Include="assets\AddEventDatePicker\assets\css\bootstrap-theme.min.css" />
+    <Content Include="assets\AddEventDatePicker\assets\css\bootstrap.css" />
+    <Content Include="assets\AddEventDatePicker\assets\css\bootstrap.min.css" />
+    <Content Include="assets\AddEventDatePicker\assets\css\github.min.css" />
+    <Content Include="assets\AddEventDatePicker\assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\AddEventDatePicker\assets\images\screenshot-1.png" />
+    <Content Include="assets\AddEventDatePicker\assets\js\bootstrap.js" />
+    <Content Include="assets\AddEventDatePicker\assets\js\bootstrap.min.js" />
+    <Content Include="assets\AddEventDatePicker\assets\js\highlight.min.js" />
+    <Content Include="assets\AddEventDatePicker\assets\js\html5shiv.js" />
+    <Content Include="assets\AddEventDatePicker\assets\js\jquery.js" />
+    <Content Include="assets\AddEventDatePicker\assets\js\jquery.min.js" />
+    <Content Include="assets\AddEventDatePicker\assets\js\respond.min.js" />
+    <Content Include="assets\AddEventDatePicker\dist\bootstrap-clockpicker.css" />
+    <Content Include="assets\AddEventDatePicker\dist\bootstrap-clockpicker.js" />
+    <Content Include="assets\AddEventDatePicker\dist\bootstrap-clockpicker.min.css" />
+    <Content Include="assets\AddEventDatePicker\dist\bootstrap-clockpicker.min.js" />
+    <Content Include="assets\AddEventDatePicker\dist\jquery-clockpicker.css" />
+    <Content Include="assets\AddEventDatePicker\dist\jquery-clockpicker.js" />
+    <Content Include="assets\AddEventDatePicker\dist\jquery-clockpicker.min.css" />
+    <Content Include="assets\AddEventDatePicker\dist\jquery-clockpicker.min.js" />
+    <Content Include="assets\AddEventDatePicker\src\clockpicker.css" />
+    <Content Include="assets\AddEventDatePicker\src\clockpicker.js" />
+    <Content Include="assets\AddEventDatePicker\src\standalone.css" />
+    <Content Include="assets\AddEventDatePicker\test\all.html" />
+    <Content Include="assets\AddEventDatePicker\test\assets\qunit-1.14.0.css" />
+    <Content Include="assets\AddEventDatePicker\test\assets\qunit-1.14.0.js" />
+    <Content Include="assets\AddEventDatePicker\test\assets\utils.js" />
+    <Content Include="assets\AddEventDatePicker\test\suites\basic.js" />
+    <Content Include="assets\AddEventDatePicker\test\suites\data-api.js" />
     <Content Include="assets\css\toggleSwitch.css" />
     <Content Include="assets\images\calender.png" />
     <Content Include="assets\images\cesThemeImages\hps.jpg" />
@@ -290,6 +322,13 @@
     </Compile>
     <Compile Include="About_Us.aspx.designer.cs">
       <DependentUpon>About_Us.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEvent.aspx.cs">
+      <DependentUpon>AddEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEvent.aspx.designer.cs">
+      <DependentUpon>AddEvent.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact_Us.aspx.cs">
       <DependentUpon>Contact_Us.aspx</DependentUpon>
@@ -637,6 +676,11 @@
     <Content Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Content>
+    <Content Include="assets\AddEventDatePicker\assets\css\bootstrap-theme.css.map" />
+    <Content Include="assets\AddEventDatePicker\assets\css\bootstrap.css.map" />
+    <Content Include="assets\AddEventDatePicker\assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\AddEventDatePicker\assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\AddEventDatePicker\assets\fonts\glyphicons-halflings-regular.woff" />
     <None Include="DataSet1.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
