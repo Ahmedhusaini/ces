@@ -1,10 +1,9 @@
-﻿using System;
+﻿using FinalTemplate.source.Registration;
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
-using System.Web.Services;
-using FinalTemplate.source.Registration;
 using System.Web.Script.Serialization;
+using System.Web.Services;
 
 namespace FinalTemplate.source.WebServices
 {
@@ -20,7 +19,7 @@ namespace FinalTemplate.source.WebServices
     {
         private ClassSchoolRegistration objSchool = new ClassSchoolRegistration();
         [WebMethod]
-        public void GetAllStudentsBySchoolID(string _school_id,string studentfirstname)
+        public void GetAllStudentsBySchoolID(string _school_id, string studentfirstname)
         {
             JavaScriptSerializer serializer = new JavaScriptSerializer();
             List<FoundStudents> liststudents = new List<FoundStudents>();
@@ -45,6 +44,7 @@ namespace FinalTemplate.source.WebServices
                         student.AuthorizedID = objSchool.myDatabase.obj_reader["authorized_id"].ToString();
                         student.GeneralID = objSchool.myDatabase.obj_reader["General_ID"].ToString();
                         student.Phone = objSchool.myDatabase.obj_reader["phone"].ToString();
+                        student.StudentID = objSchool.myDatabase.obj_reader["Std_id"].ToString();
                         liststudents.Add(student);
                     }
                 }
@@ -58,7 +58,45 @@ namespace FinalTemplate.source.WebServices
                 objSchool.myDatabase.obj_sqlcommand.Dispose();
             }
             HttpContext.Current.Response.Write(serializer.Serialize(liststudents));
-        }       
+        }
+        [WebMethod]
+        public void GetStudents(string _schoolID)
+        {
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            List<FoundStudents> studentList = new List<FoundStudents>();
+            objSchool.myDatabase.CreateConnection();
+            objSchool.myDatabase.InitializeSQLCommandObject(objSchool.myDatabase.GetCurrentConnection, "select * from View_StudentGeneralInformation where school_id = '" + _schoolID + "'");
+            try
+            {
+                objSchool.myDatabase.OpenConnection();
+                objSchool.myDatabase.obj_reader = objSchool.myDatabase.obj_sqlcommand.ExecuteReader();
+                if (objSchool.myDatabase.obj_reader.HasRows)
+                {
+                    while (objSchool.myDatabase.obj_reader.Read())
+                    {
+                        FoundStudents objstuStudents = new FoundStudents();
+                        objstuStudents.StudentID = objSchool.myDatabase.obj_reader["Std_id"].ToString();
+                        objstuStudents.FirstName = objSchool.myDatabase.obj_reader["firstname"].ToString();
+                        objstuStudents.LastName = objSchool.myDatabase.obj_reader["lastname"].ToString();
+                        studentList.Add(objstuStudents);
+                    }
+                }
+                else
+                {
+                    HttpContext.Current.Response.Write("No Record Found");
+                }
+            }
+            catch (Exception exception)
+            {
+                HttpContext.Current.Response.Write(exception.ToString());
+            }
+            finally
+            {
+                objSchool.myDatabase.CloseConnection();
+                objSchool.myDatabase.obj_reader.Dispose();
+            }
+            HttpContext.Current.Response.Write(serializer.Serialize(studentList));
+        }
     }
     public class FoundStudents
     {
@@ -72,5 +110,6 @@ namespace FinalTemplate.source.WebServices
         public string SchoolID { get; set; }
         public string AuthorizedID { get; set; }
         public string GeneralID { get; set; }
+        public string StudentID { get; set; }
     }
 }

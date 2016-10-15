@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FinalTemplate {
-    
-    
-    public partial class StudentOfTheMonth {
-        
+namespace FinalTemplate
+{
+
+
+    public partial class StudentOfTheMonth
+    {
+
         /// <summary>
         /// txtstudentofthemonth control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace FinalTemplate {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtstudentofthemonth;
-        
+
         /// <summary>
         /// btnMakeStudentOfTheMonth control.
         /// </summary>
