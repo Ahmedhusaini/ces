@@ -90,6 +90,7 @@
     <Content Include="assets\images\team member\siddique.jpg" />
     <Content Include="assets\images\team member\shaheryar.jpg" />
     <Content Include="assets\images\team member\shahwaiz.jpg" />
+    <Content Include="Contact_Us.aspx" />
     <Content Include="Date_sheet.aspx" />
     <Content Include="images\teachers\teachers %281%29.jpg" />
     <Content Include="images\teachers\teachers %282%29.jpg" />
@@ -287,6 +288,13 @@
     </Compile>
     <Compile Include="About_Us.aspx.designer.cs">
       <DependentUpon>About_Us.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact_Us.aspx.cs">
+      <DependentUpon>Contact_Us.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact_Us.aspx.designer.cs">
+      <DependentUpon>Contact_Us.aspx</DependentUpon>
     </Compile>
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>

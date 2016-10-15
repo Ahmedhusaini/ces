@@ -58,15 +58,6 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.TextBox contact;
         
         /// <summary>
-        /// dateofbirth control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox dateofbirth;
-        
-        /// <summary>
         /// nationality control.
         /// </summary>
         /// <remarks>
@@ -94,6 +85,51 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.TextBox address;
         
         /// <summary>
+        /// dateofbirth control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox dateofbirth;
+        
+        /// <summary>
+        /// gurdianname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox gurdianname;
+        
+        /// <summary>
+        /// gurdiancontact control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox gurdiancontact;
+        
+        /// <summary>
+        /// previousschool control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox previousschool;
+        
+        /// <summary>
+        /// lastclassattend control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox lastclassattend;
+        
+        /// <summary>
         /// postalcode control.
         /// </summary>
         /// <remarks>
@@ -110,6 +146,51 @@ namespace FinalTemplate {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox username;
+        
+        /// <summary>
+        /// primaryemail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox primaryemail;
+        
+        /// <summary>
+        /// generalid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox generalid;
+        
+        /// <summary>
+        /// dobid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox dobid;
+        
+        /// <summary>
+        /// locationid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox locationid;
+        
+        /// <summary>
+        /// authorizeid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox authorizeid;
         
         /// <summary>
         /// Button1 control.
