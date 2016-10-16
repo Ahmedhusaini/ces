@@ -25,6 +25,7 @@
                                     <SortedDescendingCellStyle BackColor="#E5E5E5" />
                                     <SortedDescendingHeaderStyle BackColor="#275353" />
                                 </asp:GridView>
+    
                                                                          
                                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [Std_id] FROM [tbl_student_attendance]"></asp:SqlDataSource>
                                                                          

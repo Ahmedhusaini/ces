@@ -15,7 +15,11 @@ namespace FinalTemplate
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-
+            if (!IsPostBack)
+            {
+                GridView1.DataSource = GetData("SELECT std_id,remarks FROM tbl_student_attendance");
+                GridView1.DataBind();
+            }
 		}
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -55,13 +59,12 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@std_attend_id_out", SqlDbType.Int).Direction = ParameterDirection.Output;
                 cmd.Parameters.AddWithValue("@date", SqlDbType.VarChar).Value = DateTime.Now.ToString("");
                 cmd.Parameters.AddWithValue("@time", SqlDbType.VarChar).Value = DateTime.Now.ToString("");
-
-
-
-                // cmd.Parameters.AddWithValue("@remarks", SqlDbType.VarChar).Value = DropDownList4.SelectedValue;
+                cmd.Parameters.AddWithValue("@remarks", SqlDbType.VarChar).Value = DropDownList1.SelectedValue;
 
                 cmd.ExecuteNonQuery();
                 con.Close();
+       
+     
             }
         }
 	}
