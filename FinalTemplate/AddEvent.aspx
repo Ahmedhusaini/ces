@@ -52,7 +52,7 @@
 	    }
 
 	    function SetControlWith(controlid) {
-	        $(controlid).css('width','150%');
+	        $(controlid).css('width','100%');
 	    }
 	</script>	
 </asp:Content>
@@ -90,6 +90,11 @@
 									<tr class="table-row">
 										<td class="col-3"><span>Event Place</span></td>
 										<td class="col-9"><asp:TextBox runat="server" ID="txtEventPlace" CssClass="fullWidth"></asp:TextBox></td>
+										 <td class="col-3"></td>
+									</tr>
+                                    <tr class="table-row">
+										<td class="col-3"><span>Picture</span></td>
+										<td class="col-9"><asp:FileUpload runat="server" ID="fuPicture" CssClass="fullWidth"/></td>
 										 <td class="col-3"></td>
 									</tr>
 									<tr class="table-row">
@@ -133,12 +138,15 @@
 									</tr>
 									<tr class="table-row">
 										<td class="col-3"><span>Tags</span></td>
-										<td class="col-9"><asp:TextBox runat="server" ID="txtTags" CssClass="fullWidth"></asp:TextBox></td>
+										<td class="col-9">
+										    <asp:TextBox runat="server" ID="txtTags" CssClass="fullWidth"></asp:TextBox>
+                                            Separate each tag with comma " , " and add as upto 5 tags. This will help you to search this event easily.
+										</td>
 										 <td class="col-3"></td>
 									</tr>
 									 <tr class="table-row">
 										<td class="col-3"></td>
-										<td class="col-2"><asp:Button runat="server" ID="btnAddEvent" Text="Add Event"/></td>
+										<td class="col-2"><asp:Button runat="server" ID="btnAddEvent" Text="Add Event" OnClick="btnAddEvent_Click"/></td>
 										 <td class="col-3"></td>
 									</tr>
 								</tbody>

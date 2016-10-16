@@ -12,5 +12,17 @@ namespace FinalTemplate
                 JFunctions.BindDropDownList(ddlEventType, "event_type", "event_type_id", "select * from tbl_event_type;");
             }
         }
+
+        protected void btnAddEvent_Click(object sender, EventArgs e)
+        {
+            JSchool objSchool = new JSchool();
+            int result = objSchool.AddEvent(txtEventTitle.Text, txtEventDescription.Text, txtEventPlace.Text,
+                Convert.ToInt32(ddlEventType.SelectedValue), txtStartTime.Text, txtEndTime.Text, txtStartDate.Text,
+                txtEndDate.Text, JSchool.SchoolID, fuPicture.FileName);
+            if (result > 0)
+            {
+                Response.Write("<script>alert('Event added successfully.');</script>");
+            }
+        }
     }
 }
