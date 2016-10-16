@@ -29,7 +29,7 @@ namespace FinalTemplate
             var school_id = Convert.ToString(db.GetLastValueByColumnName("school_id", "tbl_Student_Reg"));
             var guardian_contact = Convert.ToString(db.GetLastValueByColumnName("guardian_contact ", "tbl_Student_Reg"));
 
-            using (SqlConnection con =new SqlConnection(a))
+            using (SqlConnection con = new SqlConnection(a))
             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand("std_attendance", con);
@@ -54,10 +54,11 @@ namespace FinalTemplate
 
 
 
-               // cmd.Parameters.AddWithValue("@remarks", SqlDbType.VarChar).Value = DropDownList4.SelectedValue;
+                // cmd.Parameters.AddWithValue("@remarks", SqlDbType.VarChar).Value = DropDownList4.SelectedValue;
 
                 cmd.ExecuteNonQuery();
                 con.Close();
+            }
         }
 	}
 }
