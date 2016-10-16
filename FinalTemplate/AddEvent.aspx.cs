@@ -15,8 +15,8 @@ namespace FinalTemplate
 
         protected void btnAddEvent_Click(object sender, EventArgs e)
         {
-            JSchool objSchool = new JSchool();
-            int result = objSchool.AddEvent(txtEventTitle.Text, txtEventDescription.Text, txtEventPlace.Text,
+            SchoolRelatedFunction objSchoolRelatedFunction = new SchoolRelatedFunction();
+            int result = objSchoolRelatedFunction.AddEvents(txtEventTitle.Text, txtEventDescription.Text, txtEventPlace.Text,
                 Convert.ToInt32(ddlEventType.SelectedValue), txtStartTime.Text, txtEndTime.Text, txtStartDate.Text,
                 txtEndDate.Text, JSchool.SchoolID, fuPicture.FileName);
             if (result > 0)

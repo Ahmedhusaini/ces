@@ -1,22 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using FinalTemplate.source.Database;
+using System;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace FinalTemplate
 {
-	public partial class mark_attendance : System.Web.UI.Page
-	{
-		protected void Page_Load(object sender, EventArgs e)
-		{
+    public partial class mark_attendance : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
 
-		}
+        }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-             string a = ConfigurationManager.ConnectionStrings["abc"].ConnectionString;
+            string a = ConfigurationManager.ConnectionStrings["abc"].ConnectionString;
             Database db = new Database("abc");
             int std_attend_id = Convert.ToInt32(db.GetLastValueByColumnName("std_attend_id", "tbl_student_attendance"));
             var std_id = Convert.ToString(db.GetLastValueByColumnName("std_id", "tbl_Student_Reg"));
@@ -60,5 +59,5 @@ namespace FinalTemplate
                 con.Close();
             }
         }
-	}
+    }
 }
