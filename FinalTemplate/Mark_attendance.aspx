@@ -34,7 +34,7 @@
                                                                          
                                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [Std_id], [remarks] FROM [tbl_student_attendance]"></asp:SqlDataSource>
                                                                          
-                                    <button type="submit" class="form-submit btn btn-blue"><span>Search</span></button>
+                                    <button type="submit" class="form-submit btn btn-blue"><span><asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>
                                     <div class="clearfix"></div>
                                
                             </div>
