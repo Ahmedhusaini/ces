@@ -13,14 +13,9 @@ namespace FinalTemplate
 {
 	public partial class mark_attendance : System.Web.UI.Page
 	{
-		protected void Page_Load(object sender, EventArgs e)
-		{
-            if (!IsPostBack)
-            {
-                GridView1.DataSource = GetData("SELECT std_id,remarks FROM tbl_student_attendance");
-                GridView1.DataBind();
-            }
-		}
+        protected void Page_Load(object sender, EventArgs e)
+        {
+        }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
