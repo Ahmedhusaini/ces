@@ -10,10 +10,34 @@
         $(document).ready(function () {
             teacherwidth();
             samesizeimage();
+            removechilddivs();
             setbuttonlayout();
             searchboxwidth();
-           
+            SearchEvent();
         });
+
+        function SearchEvent() {
+            var school_id = $('#schoolIDvalue').val();
+            $.ajax({
+                url: 'source/WebServices/Events.asmx/GetAllEvents',
+                method: 'post',
+                data: { _schoolID: school_id },
+                dataType: 'json',
+                success: function(data) {
+                    var obj = JSON.stringify(data);
+                    var array = $.parseJSON(obj);
+                    alert(array);
+                    $.each(array, function(i,v) {
+                        var parentDiv = $('div.customs-row');
+                        parentDiv.append('<div class="col-md-4 col-sm-6"> <div class="edugate-layout-3"><div class="edugate-layout-3-wrapper">  <a class="edugate-image"> <img src="images/Events/' + v.Picture + '" alt="" class="img-responsive" /></a> <div class="edugate-content">  <a href="#" class="title">Event ID:' + v.EventID + '</a>  <ul> <li>Event Title:' + v.Title + '</li><li>Description:' + v.Description + '</li><li>Place: ' + v.Place + '</li><li>Event Creator ID: ' + v.EventCreatorID + '</li><button class="btn btn-green "style="padding-right:115px;"><span><a href="#">View Details</a></span></button> </div></div></div></div>');
+                        samesizeimage();
+                    });
+                },
+                error: function(data) {
+                    alert('Error: ' + data);
+                }
+            });
+        }
 
         function samesizeimage() {
             $('a img').css({ 'height': '200px', 'width': '300px' });

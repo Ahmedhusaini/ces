@@ -115,6 +115,10 @@
     <Content Include="assets\images\cesThemeImages\teachers %284%29.jpg" />
     <Content Include="assets\images\cesThemeImages\teachers %285%29.jpg" />
     <Content Include="assets\images\crissxcross.png" />
+    <Content Include="images\Events\bicycle-1280x720.jpg" />
+    <Content Include="images\Events\code.png" />
+    <Content Include="images\Events\codemap.png" />
+    <Content Include="images\Events\evetns.jpg" />
     <Content Include="assets\images\green-bg-img.jpg" />
     <Content Include="assets\images\registerschool_green.jpg" />
     <Content Include="assets\images\team member\Ahmed.jpg" />
