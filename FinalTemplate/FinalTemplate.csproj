@@ -64,6 +64,7 @@
   <ItemGroup>
     <Content Include="About_Us.aspx" />
     <Content Include="AddEvent.aspx" />
+    <Content Include="AllEvents.aspx" />
     <Content Include="assets\AddEventDatePicker\assets\css\bootstrap-theme.css" />
     <Content Include="assets\AddEventDatePicker\assets\css\bootstrap-theme.min.css" />
     <Content Include="assets\AddEventDatePicker\assets\css\bootstrap.css" />
@@ -97,6 +98,7 @@
     <Content Include="assets\AddEventDatePicker\test\suites\data-api.js" />
     <Content Include="assets\css\toggleSwitch.css" />
     <Content Include="assets\images\calender.png" />
+    <Content Include="assets\images\cesThemeImages\evetns.jpg" />
     <Content Include="assets\images\cesThemeImages\hps.jpg" />
     <Content Include="assets\images\cesThemeImages\pakstudents.jpg" />
     <Content Include="assets\images\cesThemeImages\searchTeacher.jpg" />
@@ -137,6 +139,7 @@
     <Content Include="PostNews.aspx" />
     <Content Include="School_Rgistration.aspx" />
     <Content Include="source\Jvalidation\blacklist_keywords.txt" />
+    <Content Include="source\WebServices\Events.asmx" />
     <Content Include="source\WebServices\GetAllTeachers.asmx" />
     <Content Include="source\WebServices\Student.asmx" />
     <Content Include="StudentOfTheMonth.aspx" />
@@ -330,6 +333,13 @@
     <Compile Include="AddEvent.aspx.designer.cs">
       <DependentUpon>AddEvent.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AllEvents.aspx.cs">
+      <DependentUpon>AllEvents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllEvents.aspx.designer.cs">
+      <DependentUpon>AllEvents.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact_Us.aspx.cs">
       <DependentUpon>Contact_Us.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -423,6 +433,10 @@
     <Compile Include="source\Registration\ClassSchoolRegistration.cs" />
     <Compile Include="source\Registration\CParentsregistration.cs" />
     <Compile Include="source\Registration\Package.cs" />
+    <Compile Include="source\WebServices\Events.asmx.cs">
+      <DependentUpon>Events.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="source\WebServices\GetAllTeachers.asmx.cs">
       <DependentUpon>GetAllTeachers.asmx</DependentUpon>
       <SubType>Component</SubType>
