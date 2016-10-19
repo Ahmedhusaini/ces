@@ -35,88 +35,88 @@
                         lettersonly: true
                     },
                     <%=lname.UniqueID%>:{
-                           required:true,
-                           lettersonly:true
-                       },
+                        required:true,
+                        lettersonly:true
+                    },
                     <%=contact1.UniqueID%>:{
-                           required:true,
-                           phone:true
-                       },
+                        required:true,
+                        phone:true
+                    },
                     <%=gurcontact.UniqueID%>:{
-                           required:true,
-                           phone:true
-                       },
+                        required:true,
+                        phone:true
+                    },
                     <%=radiobut.UniqueID%>:{
-                           required:true
+                        required:true
                          
-                       },
+                    },
                     <%=guardian.UniqueID%>:{
-                           required:true,
-                           lettersonly:true
+                        required:true,
+                        lettersonly:true
 
-                       },
+                    },
 
                     <%=nation.UniqueID%>:{
-                           required:true,
-                           lettersonly:true
-                       },
+                        required:true,
+                        lettersonly:true
+                    },
                     <%=religion.UniqueID%>:{
-                           required:true,
-                           lettersonly:true,
-                           maxlength:8
-                       },
+                        required:true,
+                        lettersonly:true,
+                        maxlength:8
+                    },
                     <%=address.UniqueID%>:{
-                           required:true
+                        required:true
 
-                       },
+                    },
                     <%=postal.UniqueID%>:{
-                           required:true,
-                           digitsonly:true,
-                           minlength:5,
-                           maxlength:6
-                       },
+                        required:true,
+                        digitsonly:true,
+                        minlength:5,
+                        maxlength:6
+                    },
                     <%=user.UniqueID%>:{
-                           required:true
+                        required:true
                        
-                       },
+                    },
                     <%=accountp.UniqueID%>:{
-                           required:true,
-                           digitsonly:true
-                       },
+                        required:true,
+                        digitsonly:true
+                    },
                     <%=DropDownList5.UniqueID%>:{
-                              required:true,
-                          },
-                       <%=pass.UniqueID%>:{
-                         required:true,
-                         pwcheck:true
+                        required:true,
+                    },
+                    <%=pass.UniqueID%>:{
+                           required:true,
+                           pwcheck:true
 
-                        },
+                       },
                        
                     <%=repass.UniqueID%>:{
-                           required:true,
+                        required:true,
                          
                            
-                       },
+                    },
                     <%=pemail.UniqueID%>:{
-                           required:true,
-                           email:true
-                       },
+                        required:true,
+                        email:true
+                    },
                     <%=semail.UniqueID%>:{
-                           required:true,
-                           email:true
-                       },
+                        required:true,
+                        email:true
+                    },
                     <%=prevchool.UniqueID%>:{
-                           required:true,
-                           lettersonly:true
-                       },
+                        required:true,
+                        lettersonly:true
+                    },
                     <%=preclass.UniqueID%>:{
-                           required:true, 
-                           romanonly:true
-                       },
+                        required:true, 
+                        romanonly:true
+                    },
                     <%=fileupload.UniqueID%>:{
-                           required:true,
-                           imageonly:true
-                       },
+                        required:true,
+                        imageonly:true
+                    },
                     <%=dob.UniqueID%>: {
                         required:true
                        
@@ -125,77 +125,77 @@
 
                 messages: {
                     <%=name.UniqueID%>: {
-                           required: "Please enter your name"
+                        required: "Please enter your name"
 
-                       },
-                       <%=lname.UniqueID%>:{
+                    },
+                    <%=lname.UniqueID%>:{
                            required:"Please enter your last name"
                        },
-                       <%=guardian.UniqueID%>:{
+                    <%=guardian.UniqueID%>:{
                            required:"Please mention your guardian name"
                        },
-                       <%=DropDownList5.UniqueID%>:{
+                    <%=DropDownList5.UniqueID%>:{
                            required:"Please mention your full name"
                        },
-                       <%=fileupload.UniqueID%>:{
+                    <%=fileupload.UniqueID%>:{
                            required:"Please upload your photo"    
                        },
                          
-                       <%= contact1.UniqueID%>:{
+                    <%= contact1.UniqueID%>:{
                            required:"Provide  contact number",
                            digitsonly:"Only digits"
                        },
                          
-                       <%=gurcontact.UniqueID%>:{
+                    <%=gurcontact.UniqueID%>:{
                            required:"Provide  contact number",
                            digitsonly:"Only digits"
                        },
-                       <%=radiobut.UniqueID%>:{
+                    <%=radiobut.UniqueID%>:{
                            required:"Please select your Gender"
                        },
-                       <%=nation.UniqueID%>:{
+                    <%=nation.UniqueID%>:{
                            required:"What's your nationality ?"
                        },
-                       <%=religion.UniqueID%>:{
+                    <%=religion.UniqueID%>:{
                            required:"What's your religion ?",
                            maxlength:"Can't exceed more then 8 character"
                        },
-                       <%=address.UniqueID%>:{
+                    <%=address.UniqueID%>:{
                            required:"Please enter your Home address"
                        },
-                       <%=postal.UniqueID%>:   {
+                    <%=postal.UniqueID%>:   {
                            minlength:"Postal code must contain 5 digits",
                            maxlength:"Postal code can't exceed more then 6 digits"
                        },
-                       <%=prevchool.UniqueID%>:{
+                    <%=prevchool.UniqueID%>:{
                            required:"Please mention your previous school name"
                        },
-                       <%=preclass.UniqueID%>:{
+                    <%=preclass.UniqueID%>:{
                            required:"Please mention last class attended"
                        },
-                        <%=pass.UniqueID%>:{
-                             required:"What is your password ?"
+                    <%=pass.UniqueID%>:{
+                            required:"What is your password ?"
 
-                         },
-                     <%=repass.UniqueID%>:{
-                             required:"You must confirm your password",
+                        },
+                    <%=repass.UniqueID%>:{
+                         required:"You must confirm your password",
                          
-                         },
-<%--                       <%=emaill.UniqueID%>:{
+                     },
+                    <%--                       <%=emaill.UniqueID%>:{
                            required:"Please enter your an email"
                        },--%>
                        <%=pemail.UniqueID%>:{
                            required:"Please enter your an email"
                        },
-                       <%=semail.UniqueID%>:{
+                    <%=semail.UniqueID%>:{
                            required:"Please enter your an email"
                        },
-                       <%=dob.UniqueID%>: {
+                    <%=dob.UniqueID%>: {
                            required:"Please mention your correct Date of Birth"
                        
                        }
                         
-                   }
+                }
             });
         });
 
@@ -285,7 +285,6 @@
                                         <!-- p.help-block Warning !-->
                                         <br />
                                         <asp:TextBox ID="lname" CssClass="form-control  form-input " runat="server"></asp:TextBox>
-
                                     </div>
                                     <div class="col-md-6">
                                         <label for="regname" class="control-label form-label">
@@ -295,7 +294,6 @@
                                         <!-- p.help-block Warning !-->
                                         <br />
                                         <asp:TextBox ID="contact1" CssClass="form-control  form-input" runat="server"></asp:TextBox>
-
                                     </div>
                                     <div class="col-md-6">
                                         <label for="regname" class="control-label form-label">
@@ -305,8 +303,6 @@
                                         <!-- p.help-block Warning !-->
                                         <br />
                                         <asp:TextBox ID="guardian" CssClass="form-control  form-input" runat="server"></asp:TextBox>
-
-
                                     </div>
                                     <div class="col-md-6">
                                         <label for="regname" class="control-label form-label">
@@ -579,10 +575,7 @@
                                             <br />
                                             <asp:TextBox ID="semail" CssClass="form-control  form-input" runat="server"></asp:TextBox>
                                         </div>
-
-
                                     </div>
-
                                 </div>
                                 <div class="register-submit">
                                     <button type="submit" class="btn btn-register btn-green">
@@ -592,12 +585,9 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-
-
             </div>
         </div>
-        </div>
-        
+    </div>
+
 </asp:Content>

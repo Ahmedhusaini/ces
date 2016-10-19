@@ -12,7 +12,7 @@
         $(document).ready(function () {
             $('.rlp').removeClass("rlp");
             $('.register-form').css('margin-left', '25%');
-            centerText( <%=stdid.ClientID%>);
+<%--            centerText( <%=stdid.ClientID%>);
             centerText( <%=name.ClientID%>);
             centerText( <%=lastname.ClientID%>);
             centerText( <%=contact.ClientID%>);
@@ -20,25 +20,23 @@
             centerText( <%=nationality.ClientID%>);
             centerText( <%=religion.ClientID%>);
             centerText( <%=address.ClientID%>);
-            centerText( <%=postalcode.ClientID%>);
             centerText( <%=gurdianname.ClientID%>);
             centerText( <%=gurdiancontact.ClientID%>);
             centerText( <%=previousschool.ClientID%>);
             centerText( <%=lastclassattend.ClientID%>);
             centerText( <%=postalcode.ClientID%>);
             centerText( <%=username.ClientID%>);
-            centerText( <%=primaryemail.ClientID%>); 
+            centerText( <%=primaryemail.ClientID%>);
             centerText( <%=generalid.ClientID%>);
             centerText( <%=dobid.ClientID%>);
-            centerText( <%=authorizeid.ClientID%>);
-            centerText( <%=locationid.ClientID%>);
+            centerText( <%=authorizedid.ClientID%>);
+            centerText( <%=locationid.ClientID%>);--%>
             removeBackToTop();
             validation();
         });
 
-
         function centerText(control) {
-            $(control).css({ 'text-align': 'center' });
+            (control).css({ 'text-align': 'center' });
         }
         function removeBackToTop() {
             $('#back-top').css('display', 'none');
@@ -79,120 +77,218 @@
         </div>
     </div>
     <br />
-    <div class="page-login rlp">
-        <div class="container">
-            <div class="register-wrapper rlp-wrapper reg-sk" style="opacity: 0.98;">
-                <div class="register-table rlp-table" style="box-shadow: 5px 5px 50px 5px; background-color: #C4EF98;">
-                    <h2 class="center-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Update Student Detail</h2>
-                    <hr style="border: solid; border-width: 1px" />
-                    <asp:Panel ID="Panel1" runat="server">
-                        <div class="register-form bg-w-form rlp-form">
-                            <div style="padding-left: 131px">
-                                <br />
-                                <!--p.help-block Warning !-->
-                                <asp:TextBox ID="stdid" runat="server" CssClass="form-control form-input" Height="35px" placeholder="Enter Your Student ID" Width="331px"></asp:TextBox>
-                            </div>
-                            <div style="padding-left: 131px">
-                                <br />
-                                <!--p.help-block Warning !-->
-                                <asp:TextBox ID="name" runat="server" CssClass="form-control form-input" Height="35px" placeholder="Enter First name" Width="331px"></asp:TextBox>
-                            </div>
-                            <div style="padding-left: 131px">
-                                <br />
-                                <!--p.help-block Warning !-->
-                                <asp:TextBox ID="lastname" runat="server" CssClass="form-control form-input" Height="35px" placeholder="Enter Last name" Width="331px"></asp:TextBox>
-                            </div>
-                            <div style="padding-left: 131px">
-                                <br />
-                                <!-- p.help-block Warning !-->
-                                <asp:TextBox ID="contact" CssClass="form-control  form-input " placeholder="Enter Contact no" Width="331px" runat="server" Height="35px"></asp:TextBox>
-                            </div>
-                            <div style="padding-left: 131px">
-                                <br />
-                                <!--p.help-block Warning !-->
-                                <asp:TextBox ID="nationality" runat="server" CssClass="form-control form-input" Height="35px" placeholder="Enter Nationality" Width="331px"></asp:TextBox>
-                            </div>
-                            <div style="padding-left: 131px">
-                                <br />
-                                <!--p.help-block Warning !-->
-                                <asp:TextBox ID="religion" runat="server" CssClass="form-control form-input" Height="35px" placeholder="Enter Religion" Width="331px"></asp:TextBox>
-                            </div>
-                            <div style="padding-left: 131px">
-                                <br />
-                                <!-- p.help-block Warning !-->
-                                <asp:TextBox ID="address" CssClass="form-control  form-input " placeholder="Enter Address" Width="331px" runat="server" Height="35px"></asp:TextBox>
-                            </div>
-                            <div style="padding-left: 131px">
-                                <br />
-                                <!-- p.help-block Warning !-->
-                                <asp:TextBox ID="dateofbirth" CssClass="form-control  form-input " type="date" placeholder="Enter Date Of Birth" Width="331px" runat="server" Height="35px"></asp:TextBox>
-                            </div>
-                            <div style="padding-left: 131px">
-                                <br />
-                                <!--p.help-block Warning !-->
-                                <asp:TextBox ID="gurdianname" runat="server" CssClass="form-control form-input" Height="35px" placeholder="Enter Parent name" Width="331px"></asp:TextBox>
-                            </div>
-                            <div style="padding-left: 131px">
-                                <br />
-                                <!--p.help-block Warning !-->
-                                <asp:TextBox ID="gurdiancontact" runat="server" CssClass="form-control form-input" Height="35px" placeholder="Enter Parent Contact" Width="331px"></asp:TextBox>
-                            </div>
-                            <div style="padding-left: 131px">
-                                <br />
-                                <!--p.help-block Warning !-->
-                                <asp:TextBox ID="previousschool" runat="server" CssClass="form-control form-input" Height="35px" placeholder="Enter Previous school" Width="331px"></asp:TextBox>
-                            </div>
-                            <div style="padding-left: 131px">
-                                <br />
-                                <!--p.help-block Warning !-->
-                                <asp:TextBox ID="lastclassattend" runat="server" CssClass="form-control form-input" Height="35px" placeholder="Enter Last class attend" Width="331px"></asp:TextBox>
-                            </div>
-                            <div style="padding-left: 131px">
-                                <br />
-                                <!-- p.help-block Warning !-->
-                                <asp:TextBox ID="postalcode" CssClass="form-control  form-input " placeholder="Enter Postal Code" Width="331px" runat="server" Height="35px"></asp:TextBox>
-                            </div>
-                            <div style="padding-left: 131px">
-                                <br />
-                                <!--p.help-block Warning !-->
-                                <asp:TextBox ID="username" runat="server" CssClass="form-control form-input" Height="35px" placeholder="Enter USER NAME" Width="331px"></asp:TextBox>
-                            </div>
-                            <div style="padding-left: 131px">
-                                <br />
-                                <!--p.help-block Warning !-->
-                                <asp:TextBox ID="primaryemail" runat="server" CssClass="form-control form-input" Height="35px" placeholder="Enter Email" Width="331px"></asp:TextBox>
-                            </div>
-                            <div style="padding-left: 131px">
-                                <br />
-                                <!--p.help-block Warning !-->
-                                <asp:TextBox ID="generalid" runat="server" CssClass="form-control form-input" Height="35px" placeholder="General id" Width="331px"></asp:TextBox>
-                            </div>
-                            <div style="padding-left: 131px">
-                                <br />
-                                <!--p.help-block Warning !-->
-                                <asp:TextBox ID="dobid" runat="server" CssClass="form-control form-input" Height="35px" placeholder="dob id" Width="331px"></asp:TextBox>
-                            </div>
-                            <div style="padding-left: 131px">
-                                <br />
-                                <!--p.help-block Warning !-->
-                                <asp:TextBox ID="locationid" runat="server" CssClass="form-control form-input" Height="35px" placeholder="Location id" Width="331px"></asp:TextBox>
-                            </div>
-                            <div style="padding-left: 131px">
-                                <br />
-                                <!--p.help-block Warning !-->
-                                <asp:TextBox ID="authorizeid" runat="server" CssClass="form-control form-input" Height="35px" placeholder="General id" Width="331px"></asp:TextBox>
-                            </div>
+
+    <div class="container">
+        <div class="register-wrapper rlp-wrapper reg-sk" style="opacity: 0.98;">
+            <div class="register-table rlp-table" style="box-shadow: 5px 5px 50px 5px; background-color: #C8E1AE;">
+                <div class="group-title-index">
+                    <h2 class="center-title">Update Student Details</h2>
+                    <div class="bottom-title"><i class="bottom-icon icon-icon-04"></i>
+               </div>
+                    <div class="inner-container">
+                        <div class="table-body">
+                            <table class="edu-table-responsive table-hover">
+                                <tbody>
+                                    <tr class="table-row" style="background-color: transparent;">
+                                        <td class="col-3"><span style="color:black;font-weight:bolder">Student ID</span></td>
+                                        <td class="col-2">
+                                            <asp:TextBox runat="server" Width="200px" ID="stdtxtid" ReadOnly="True"></asp:TextBox></td>
+                                        <td class="col-3"><span></span></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="register-submit">
-                            <button type="submit" class="btn btn-register btn-green">
-                                <span>
-                                    <asp:Button ID="Button1" runat="server" Text=" Update" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>
-                            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                    </div>
+                    <div class="inner-container">
+                        <div class="table-header">
+                            <table class="edu-table-responsive">
+                                <thead>
+                                    <tr class="heading-table" style="background-color: #88BD46;">
+                                        <th class="col-3">Personal Information</th>
+                                    </tr>
+                                </thead>
+                            </table>
                         </div>
-                    </asp:Panel>
+                        <div class="table-body">
+                            <table class="edu-table-responsive table-hover">
+                                <tbody>
+                                    <tr class="table-row" style="background-color: transparent;">
+                                        <td class="col-3"><span style="color:black;font-weight:bolder">First Name</span></td>
+                                        <td class="col-2">
+                                            <asp:TextBox runat="server" Width="200px" ID="txtFirstName"></asp:TextBox></td>
+                                        <td class="col-3"></td>
+                                    </tr>
+                                    <tr class="table-row" style="background-color: transparent;">
+                                        <td class="col-3"><span style="color:black;font-weight:bolder">Last Name</span></td>
+                                        <td class="col-2">
+                                            <asp:TextBox runat="server" Width="200px" ID="txtLastName"></asp:TextBox></td>
+                                        <td class="col-3"></td>
+                                    </tr>
+                                    <tr class="table-row" style="background-color: transparent;">
+                                        <td class="col-3"><span style="color:black;font-weight:bolder">Date Of Birth</span></td>
+                                        <td class="col-2">
+                                            <asp:TextBox runat="server" ID="txtDateOfBirth" Width="200px"></asp:TextBox></td>
+                                        <td class="col-3"></td>
+                                    </tr>
+                                    <tr class="table-row" style="background-color: transparent;">
+                                        <td class="col-3"><span style="color:black;font-weight:bolder">Nationality</span></td>
+                                        <td class="col-2">
+                                            <asp:DropDownList Enabled="false" Width="200px" BackColor="White" CssClass="sbHolder" runat="server" ID="ddlNationality">
+                                                <asp:ListItem>Pakistan</asp:ListItem>
+                                            </asp:DropDownList></td>
+                                        <td class="col-3"></td>
+                                    </tr>
+                                    <tr class="table-row" style="background-color: transparent;">
+                                        <td class="col-3"><span style="color:black;font-weight:bolder">Gender</span></td>
+                                        <td class="col-2">
+                                            <asp:RadioButton runat="server" ID="rbtnMale" Text="Male" GroupName="gender" />&nbsp;&nbsp;
+                                        <asp:RadioButton runat="server" ID="rbtnFemale" Text="Female" GroupName="gender" /></td>
+                                        <td class="col-3"></td>
+                                    </tr>
+
+                                    <tr class="table-row" style="background-color: transparent;">
+                                        <td class="col-3"><span style="color:black;font-weight:bolder">Religion</span></td>
+                                        <td class="col-2">
+                                            <asp:TextBox runat="server" Width="200px" ID="txtReligion"></asp:TextBox></td>
+                                        <td class="col-3"></td>
+                                    </tr>
+
+                                    <tr class="table-row" style="background-color: transparent;">
+                                        <td class="col-3"><span style="color:black;font-weight:bolder">Phone</span></td>
+                                        <td class="col-2">
+                                            <asp:TextBox runat="server" Width="200px" ID="txtPhone"></asp:TextBox></td>
+                                        <td class="col-3"></td>
+                                    </tr>
+                                    <tr class="table-row" style="background-color: transparent;">
+                                        <td class="col-3"><span style="color:black;font-weight:bolder">Address</span></td>
+                                        <td class="form-input">
+                                            <asp:TextBox runat="server" Width="200px" ID="addresstxt"></asp:TextBox></td>
+                                        <td class="col-3"></td>
+                                    </tr>
+                                    <tr class="table-row" style="background-color: transparent;">
+                                        <td class="col-3" style="color:black;font-weight:bolder">Guardian Name</td>
+                                        <td class="col-2">
+                                            <asp:TextBox ID="gurdiannaametxt" Width="200px" runat="server"></asp:TextBox>
+                                        </td>
+                                        <td class="col-3"></td>
+                                    </tr>
+                                    <tr class="table-row" style="background-color: transparent;">
+                                        <td class="col-3" style="color:black;font-weight:bolder">Guardian Contact</td>
+                                        <td class="col-2">
+                                            <asp:TextBox ID="gurdiancontacttxt" Width="200px" runat="server"></asp:TextBox>
+                                        </td>
+                                        <td class="col-3"></td>
+                                    </tr>
+                                    <tr class="table-row" style="background-color: transparent;">
+                                        <td class="col-3" style="color:black;font-weight:bolder">Previous school</td>
+                                        <td class="col-2">
+                                            <asp:TextBox runat="server" Width="200px" ID="preschooltxt"></asp:TextBox></td>
+                                        <td class="col-3"></td>
+                                    </tr>
+                                    <tr class="table-row" style="background-color: transparent;">
+                                        <td class="col-3" style="color:black;font-weight:bolder">last class attended</td>
+                                        <td class="col-2">
+                                            <asp:TextBox runat="server" Width="200px" ID="lastclasstxt"></asp:TextBox></td>
+                                        <td class="col-3"></td>
+                                    </tr>
+                                    <tr class="table-row" style="background-color: transparent;">
+                                        <td class="col-3" style="color:black;font-weight:bolder">City</td>
+                                        <td class="col-2">
+                                            <asp:DropDownList runat="server" CssClass="sbHolder" BackColor="White" Width="200px" ID="ddlCity">
+                                                <asp:ListItem>Karachi</asp:ListItem>
+                                            </asp:DropDownList>
+                                        </td>
+                                        <td class="col-3"></td>
+                                    </tr>
+                                    <tr class="table-row" style="background-color: transparent;">
+                                        <td class="col-3" style="color:black;font-weight:bolder">Postal Code</td>
+                                        <td class="col-2">
+                                            <asp:TextBox ID="postalcodetxt" Width="200px" runat="server"></asp:TextBox>
+                                        </td>
+                                        <td class="col-3"></td>
+                                    </tr>
+                                    <tr class="table-row" style="background-color: transparent;">
+                                        <td class="col-3" style="color:black;font-weight:bolder">Username</td>
+                                        <td class="col-2">
+                                            <asp:TextBox ID="usernametxt" Width="200px" runat="server"></asp:TextBox>
+                                        </td>
+                                        <td class="col-3"></td>
+                                    </tr>
+                                    <tr class="table-row" style="background-color: transparent;">
+                                        <td class="col-3" style="color:black;font-weight:bolder">Primary Email</td>
+                                        <td class="col-2">
+                                            <asp:TextBox ID="pemailtxt" Width="200px" runat="server"></asp:TextBox>
+                                        </td>
+                                        <td class="col-3"></td>
+                                    </tr>
+                                    <tr class="table-row" style="background-color: transparent;">
+                                        <td class="col-3" style="color:black;font-weight:bolder">Secondary Email</td>
+                                        <td class="col-2">
+                                            <asp:TextBox ID="semailtxt" Width="200px" runat="server"></asp:TextBox>
+                                        </td>
+                                        <td class="col-3"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="inner-container">
+                        <div class="table-header">
+                            <table class="edu-table-responsive">
+                                <thead>
+                                    <tr class="heading-table" style="background-color: #88BD46;">
+                                        <th class="col-3" >Unique Information</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="table-body">
+                            <table class="edu-table-responsive table-hover">
+                                <tbody>
+                                    <tr class="table-row" style="background-color: transparent;">
+                                        <td class="col-3"><span style="color:black;font-weight:bolder">General Details ID</span></td>
+                                        <td class="col-2">
+                                            <asp:TextBox runat="server" Width="200px" ID="txtGenealID" ReadOnly="true"></asp:TextBox></td>
+                                        <td class="col-3"></td>
+                                    </tr>
+
+                                    <tr class="table-row" style="background-color: transparent;">
+                                        <td class="col-3"><span style="color:black;font-weight:bolder">Location ID</span></td>
+                                        <td class="col-2">
+                                            <asp:TextBox runat="server" Width="200px" ID="txtLocationID" ReadOnly="true"></asp:TextBox></td>
+                                        <td class="col-3"></td>
+                                    </tr>
+
+                                    <tr class="table-row" style="background-color: transparent;">
+                                        <td class="col-3"><span style="color:black;font-weight:bolder">Date Of Birth ID</span></td>
+                                        <td class="col-2">
+                                            <asp:TextBox runat="server" Width="200px" ID="txtDOBId" ReadOnly="true"></asp:TextBox></td>
+                                        <td class="col-3"></td>
+                                    </tr>
+                                    <tr class="table-row" style="background-color: transparent;">
+                                        <td class="col-3"><span style="color:black;font-weight:bolder">Authorized ID</span></td>
+                                        <td class="col-2">
+                                            <asp:TextBox ReadOnly="true" runat="server" Width="200px" ID="authorizedidtxt"></asp:TextBox></td>
+                                        <td class="col-3"></td>
+                                    </tr>
+                                    <tr class="table-row" style="background-color: transparent;">
+                                        <td class="col-3"></td>
+                                        <td class="col-3"><span>
+                                            <div class="register-submit">
+                                                <button type="submit" class="btn btn-register btn-green">
+                                                    <span>
+                                                        <asp:Button ID="Button1" runat="server" Text=" Update" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>
+                                                <asp:Label ID="Label1" runat="server"></asp:Label>
+                                            </div>
+                                        </span></td>
+                                        <td class="col-3"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <br />
 </asp:Content>
