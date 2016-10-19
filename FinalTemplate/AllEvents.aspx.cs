@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using FinalTemplate.source.Functions;
+using System;
 
 namespace FinalTemplate
 {
@@ -12,6 +8,13 @@ namespace FinalTemplate
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (!IsPostBack)
+            {
+                JFunctions.BindDropDownList(ddlEventType, "event_type", "event_type_id", "select * from tbl_event_type");
+
+            }
         }
+
+
     }
 }

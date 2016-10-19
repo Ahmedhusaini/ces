@@ -1,20 +1,38 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="AllEvents.aspx.cs" Inherits="FinalTemplate.AllEvents" %>
 <%@ Import Namespace="FinalTemplate.source.Functions" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="AdminHeadPlaceHolder" runat="server">
+   
       <script src="assets/js/jquery-2.2.3.js"></script>
     <script type="text/javascript">
         $(window).load(function () {
+            SetMainLogo();
             searchboxwidth();
-
         });
         $(document).ready(function () {
             teacherwidth();
             samesizeimage();
             removechilddivs();
             setbuttonlayout();
-            searchboxwidth();
             SearchEvent();
+            SetMainLogo();
+            SetCSSAfterPostBack();
         });
+        var prm = Sys.WebForms.pageRequestManager.getInstance();
+        prm.add_endRequest(function() {
+            SetCSSAfterPostBack();
+        });
+
+        function SetCSSAfterPostBack() {
+            $('#<%=ddlEventType.ClientID%>').addClass('form-select style-1 selectbox');
+           
+        }
+
+        function SetMainLogo() {
+            $('.mainLogo').css({
+                'height': '90px',
+                'width': '105px'
+            });
+        }
 
         function SearchEvent() {
             var school_id = $('#schoolIDvalue').val();
@@ -26,7 +44,6 @@
                 success: function(data) {
                     var obj = JSON.stringify(data);
                     var array = $.parseJSON(obj);
-                    alert(array);
                     $.each(array, function(i,v) {
                         var parentDiv = $('div.customs-row');
                         parentDiv.append('<div class="col-md-4 col-sm-6"> <div class="edugate-layout-3"><div class="edugate-layout-3-wrapper">  <a class="edugate-image"> <img src="images/Events/' + v.Picture + '" alt="" class="img-responsive" /></a> <div class="edugate-content">  <a href="#" class="title">Event ID:' + v.EventID + '</a>  <ul> <li>Event Title:' + v.Title + '</li><li>Description:' + v.Description + '</li><li>Place: ' + v.Place + '</li><li>Event Creator ID: ' + v.EventCreatorID + '</li><button class="btn btn-green "style="padding-right:115px;"><span><a href="#">View Details</a></span></button> </div></div></div></div>');
@@ -55,7 +72,7 @@
             });
         }
         function searchboxwidth() {
-            $('.form-input').css('width', '900px');
+            $('.form-input').css('width', '366px');
         }
 
        
@@ -81,17 +98,21 @@
                 <div class="section">
                     <div class="search-input">
                         <div class="container">
-                            <div class="search-input-wrapper">
-                                <form>
-                                <asp:TextBox ID="txtEventSearch" runat="server" CssClass="form-input" placeholder="Type event title/tag"></asp:TextBox>
-                                <button type="submit" id="btnEventSearch" class="form-submit btn btn-blue"><span>Search Now<i class="fa fa-search"></i></span></button>
-                                    <input id="schoolIDvalue" type="hidden" value="<%= JSchool.SchoolID%>"/>
-                                <div class="clearfix"></div>
-                                </form>
-                            </div>
+                    <div class="search-input-wrapper">
+                        <form>  
+                                
+                                <asp:DropDownList CssClass="form-select style-1 selectbox" runat="server" ID="ddlEventType" />
+                               
+                            
+                            <input type="text" placeholder="Enter key words" class="form-input" />
+                            <button type="submit" class="form-submit btn btn-blue"><span>search now<i class="fa fa-search"></i></span></button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
                         </div>
                     </div>
                 </div>
+               <input id="schoolIDvalue" type="hidden" value="<%= JSchool.SchoolID%>"/> 
                 <div class="section section-padding list-categories">
                     <div class="container">
                         <div class="list-categories-wrapper">
