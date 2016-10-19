@@ -28,17 +28,12 @@
                                     <SortedDescendingCellStyle BackColor="#E5E5E5" />
                                     <SortedDescendingHeaderStyle BackColor="#275353" />
                                 </asp:GridView>
-<%--    <asp:DropDownList ID="DropDownList1" runat="server">
-        <asp:ListItem>Present</asp:ListItem>
-        <asp:ListItem>Absent</asp:ListItem>
-        <asp:ListItem>Leave</asp:ListItem>
-                                                                </asp:DropDownList>--%>
+
     
                                                                          
                                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [Std_id] FROM [tbl_student_attendance]"></asp:SqlDataSource>
                                                                          
-                                    <button type="submit" class="form-submit btn btn-blue"><span>
-                                        <asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>
+                                  
         <div class="search-input">
                         <div class="container">
 
