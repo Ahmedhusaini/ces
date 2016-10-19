@@ -16,7 +16,7 @@ namespace FinalTemplate
 
             if (!IsPostBack)
             {
-                JFunctions.BindDropDownList(ddl_type, "usertype", "usertype_id", "select * from tbl_usertype");
+                 Jfunctionparents.BindDropDownList(ddl_type, "usertype", "usertype_id", "select * from tbl_usertype");
                 ddl_type.Items.Insert(0, "--- Select User Type ---");
                 if (Session["userid"] != null)
                 {
@@ -57,7 +57,7 @@ namespace FinalTemplate
                             Response.Redirect("~/Admin.aspx");
 
                         }
-                        else if (ddl_type.SelectedIndex == 5)
+                        else if (ddl_type.SelectedIndex == 3)
                         {
                             Session["userid"] = myLogin.myDatabase.GetAuthorizedID(myLogin.valideUsername, myLogin.validePasswoerd);
                             Response.Redirect("~/TeacherPanel.aspx");
@@ -69,7 +69,7 @@ namespace FinalTemplate
                             Response.Redirect("~/studentpanel.aspx");
 
                         }
-                        else if (ddl_type.SelectedIndex == 3)
+                        else if (ddl_type.SelectedIndex == 5)
                         {
                             Session["userid"] = myLogin.myDatabase.GetAuthorizedID(myLogin.valideUsername, myLogin.validePasswoerd);
                             Response.Redirect("~/parentpanel.aspx");

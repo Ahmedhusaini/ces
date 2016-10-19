@@ -140,6 +140,7 @@
     <Content Include="Mark_sheet.aspx" />
     <Content Include="Our_Team.aspx" />
     <Content Include="parentpanel.aspx" />
+    <Content Include="Parents_view_child.aspx" />
     <Content Include="PostNews.aspx" />
     <Content Include="School_Rgistration.aspx" />
     <Content Include="source\Jvalidation\blacklist_keywords.txt" />
@@ -383,6 +384,20 @@
     </Compile>
     <Compile Include="Our_Team.aspx.designer.cs">
       <DependentUpon>Our_Team.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="parentsviewchild.Master.cs">
+      <DependentUpon>parentsviewchild.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="parentsviewchild.Master.designer.cs">
+      <DependentUpon>parentsviewchild.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Parents_view_child.aspx.cs">
+      <DependentUpon>Parents_view_child.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parents_view_child.aspx.designer.cs">
+      <DependentUpon>Parents_view_child.aspx</DependentUpon>
     </Compile>
     <Compile Include="PostNews.aspx.cs">
       <DependentUpon>PostNews.aspx</DependentUpon>
@@ -707,6 +722,7 @@
     <Content Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Content>
+    <Content Include="parentsviewchild.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
