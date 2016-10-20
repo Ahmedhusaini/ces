@@ -390,7 +390,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <label for="regname" class="control-label form-label">
-                                            SCHOOL TYPE<span class="highlight">*<br />
+                                            SELECT SCHOOL NAME<span class="highlight">*<br />
                                             </span>
                                         </label>
                                         <!-- p.help-block Warning !-->
@@ -399,7 +399,30 @@
                                          
                                         <asp:SqlDataSource ID="schooltype" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [school_name], [school_id] FROM [tbl_school]"></asp:SqlDataSource>
                                          
+                                        <br />
+                                         
                                     </div>
+                                     <div class="col-md-6">
+                                    <label for="regname" class="control-label form-label">
+                                        Select Class  <span class="highlight">*<br />
+                                        </span>
+                                    </label>
+                                         <asp:DropDownList ID="DropDownList4" CssClass="form-control" runat="server" DataSourceID="class" DataTextField="class" DataValueField="class"></asp:DropDownList>
+                              
+                                  
+                                         <asp:SqlDataSource ID="class" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT * FROM [tbl_class]"></asp:SqlDataSource>
+                              
+                                  
+                            </div>
+                                     <div class="col-md-6">
+                                    <label for="regname" class="control-label form-label">
+                                        Select Section<span class="highlight">*<br />
+                                        </span>
+                                    </label>
+                                         <br />
+                                         <asp:DropDownList ID="DropDownList5" CssClass="form-control" runat="server" DataSourceID="section" DataTextField="section" DataValueField="section"></asp:DropDownList>
+                                         <asp:SqlDataSource ID="section" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT * FROM [tbl_section]"></asp:SqlDataSource>
+                            </div>
                                     </div>
                                 </div>
                             </div>
@@ -477,7 +500,7 @@
                                 <span>
                                     <asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>
                      </div>
-                             <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                             <asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
 
                             </div>                            
                         </div>                           
