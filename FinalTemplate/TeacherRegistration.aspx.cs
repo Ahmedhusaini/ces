@@ -48,8 +48,8 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@phone", SqlDbType.VarChar).Value = contact1.Text;
                 cmd.Parameters.AddWithValue("@cnic_no", SqlDbType.VarChar).Value = nic.Text;
                 cmd.Parameters.AddWithValue("@gender", SqlDbType.VarChar).Value = radiobut.SelectedValue;
-                cmd.Parameters.AddWithValue("@day", SqlDbType.Int).Value = Convert.ToInt32(date.Substring(0, 2));
-                cmd.Parameters.AddWithValue("@month", SqlDbType.Int).Value = Convert.ToInt32(date.Substring(0, 2));
+                cmd.Parameters.AddWithValue("@day", SqlDbType.Int).Value = Convert.ToInt32(date.Substring(2, 2));
+                cmd.Parameters.AddWithValue("@month", SqlDbType.Int).Value = Convert.ToInt32(date.Substring(0, 1));
                 cmd.Parameters.AddWithValue("@year", SqlDbType.Int).Value = Convert.ToInt32(date.Substring(0, 4));
                 cmd.Parameters.AddWithValue("@nationality", SqlDbType.VarChar).Value = nation.Text;
                 cmd.Parameters.AddWithValue("@religion", SqlDbType.VarChar).Value = religion.Text;
@@ -69,7 +69,7 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@date_of_join", SqlDbType.Date).Value = DateTime.Now.ToString("");
                 cmd.Parameters.AddWithValue("@school_id", SqlDbType.VarChar).Value = DropDownList3.SelectedValue;
                 cmd.Parameters.AddWithValue("@class_id", SqlDbType.Int).Value = DropDownList4.SelectedValue;
-                cmd.Parameters.AddWithValue("@section_id", SqlDbType.Int).Value = DropDownList5.SelectedValue;
+                cmd.Parameters.AddWithValue("@section_id", SqlDbType.Int).Value =DropDownList5.SelectedValue;
 
                 cmd.ExecuteNonQuery();
                 con.Close();

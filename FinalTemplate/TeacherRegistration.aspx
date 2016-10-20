@@ -407,11 +407,10 @@
                                         Select Class  <span class="highlight">*<br />
                                         </span>
                                     </label>
-                                         <asp:DropDownList ID="DropDownList4" CssClass="form-control" runat="server" DataSourceID="class" DataTextField="class" DataValueField="class"></asp:DropDownList>
-                              
+                                       
+                                         <asp:DropDownList ID="DropDownList4" CssClass="form-control" runat="server" DataSourceID="class" DataTextField="class" DataValueField="class_id"></asp:DropDownList>
                                   
                                          <asp:SqlDataSource ID="class" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT * FROM [tbl_class]"></asp:SqlDataSource>
-                              
                                   
                             </div>
                                      <div class="col-md-6">
@@ -420,7 +419,7 @@
                                         </span>
                                     </label>
                                          <br />
-                                         <asp:DropDownList ID="DropDownList5" CssClass="form-control" runat="server" DataSourceID="section" DataTextField="section" DataValueField="section"></asp:DropDownList>
+                                         <asp:DropDownList ID="DropDownList5" CssClass="form-control" runat="server" DataSourceID="section" DataTextField="section" DataValueField="section_id"></asp:DropDownList>
                                          <asp:SqlDataSource ID="section" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT * FROM [tbl_section]"></asp:SqlDataSource>
                             </div>
                                     </div>
