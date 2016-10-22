@@ -44,7 +44,7 @@ namespace FinalTemplate.source.Functions
             return school_id;
         }
 
-        public int AddEvent(string _title, string _description, string _place, int _eventTypeID, string _startingTime, string _endingTime, string _startingDate, string _endingDate, string _creatorID, string _picture)
+        public int AddEvent(string _title, string _description, string _place, int _eventTypeID, string _startingTime, string _endingTime, string _startingDate, string _endingDate, string _creatorID, string _picture, string _tags)
         {
             string[] blacklist = { _title, _description, _place, _picture };
 
@@ -66,7 +66,7 @@ namespace FinalTemplate.source.Functions
                 SqlParameter p_schoolID = new SqlParameter("@schoolID", SqlDbType.Int);
                 SqlParameter p_eventCreatorID = new SqlParameter("@eventCreatorID", SqlDbType.Int);
                 SqlParameter p_eventPicture = new SqlParameter("@eventPicture", SqlDbType.Int);
-
+                SqlParameter p_eventTags = new SqlParameter("@eventTags", SqlDbType.VarChar, 50);
                 p_eventid.Value = eventid + 1;
                 p_title.Value = _title;
                 p_description.Value = _description;
@@ -79,6 +79,7 @@ namespace FinalTemplate.source.Functions
                 p_schoolID.Value = SchoolID;
                 p_eventCreatorID.Value = _creatorID;
                 p_eventPicture.Value = _picture;
+                p_eventTags.Value = _tags;
 
                 mydb.obj_sqlcommand.Parameters.Add(p_eventid);
                 mydb.obj_sqlcommand.Parameters.Add(p_title);
@@ -92,6 +93,7 @@ namespace FinalTemplate.source.Functions
                 mydb.obj_sqlcommand.Parameters.Add(p_schoolID);
                 mydb.obj_sqlcommand.Parameters.Add(p_eventCreatorID);
                 mydb.obj_sqlcommand.Parameters.Add(p_eventPicture);
+                mydb.obj_sqlcommand.Parameters.Add(p_eventTags);
                 try
                 {
                     mydb.OpenConnection();

@@ -18,7 +18,7 @@ namespace FinalTemplate
             JSchool objSchool = new JSchool();
             int result = objSchool.AddEvent(txtEventTitle.Text, txtEventDescription.Text, txtEventPlace.Text,
                 Convert.ToInt32(ddlEventType.SelectedValue), txtStartTime.Text, txtEndTime.Text, txtStartDate.Text,
-                txtEndDate.Text, JSchool.SchoolID, fuPicture.FileName);
+                txtEndDate.Text, JSchool.SchoolID, fuPicture.FileName, txtTags.Text);
             if (result > 0)
             {
                 Response.Write("<script>alert('Event added successfully.');</script>");
