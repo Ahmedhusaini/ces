@@ -93,7 +93,7 @@
                             <li class="dropdown"><a href="Admin.aspx" class="main-menu">Attendance</a></li>
                             <li class="dropdown"><a href="#" class="main-menu">News</a></li>
                             <li class="dropdown"><a href="update_StudentDetail.aspx" class="main-menu">Update Detail</a></li>
-                            <li><a href="Contact_Us.aspx" class="main-menu">Contact</a></li>
+                            <li><a href="ContactUs_Student.aspx" class="main-menu">Contact</a></li>
                             <li class="button-search">
                                 <p class="main-menu"><i class="fa fa-search"></i></p>
                             </li>
