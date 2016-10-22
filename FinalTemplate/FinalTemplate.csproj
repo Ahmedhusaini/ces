@@ -115,6 +115,7 @@
     <Content Include="assets\images\cesThemeImages\teachers %284%29.jpg" />
     <Content Include="assets\images\cesThemeImages\teachers %285%29.jpg" />
     <Content Include="assets\images\crissxcross.png" />
+    <Content Include="ContactUs_Student.aspx" />
     <Content Include="images\Events\bicycle-1280x720.jpg" />
     <Content Include="images\Events\code.png" />
     <Content Include="images\Events\codemap.png" />
@@ -344,6 +345,13 @@
     <Compile Include="AllEvents.aspx.designer.cs">
       <DependentUpon>AllEvents.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ContactUs_Student.aspx.cs">
+      <DependentUpon>ContactUs_Student.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUs_Student.aspx.designer.cs">
+      <DependentUpon>ContactUs_Student.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact_Us.aspx.cs">
       <DependentUpon>Contact_Us.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -363,6 +371,7 @@
     <Compile Include="Date_sheet.aspx.designer.cs">
       <DependentUpon>Date_sheet.aspx</DependentUpon>
     </Compile>
+    <Compile Include="JStudent.cs" />
     <Compile Include="Mark_attendance.aspx.cs">
       <DependentUpon>Mark_attendance.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -422,11 +431,11 @@
       <DependentUpon>School_Rgistration.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\Functions\JSchool.cs" />
-    <Compile Include="source\Functions\JStudent.cs" />
     <Compile Include="source\Functions\JTeacher.cs" />
     <Compile Include="source\Functions\Parents.cs" />
     <Compile Include="source\Functions\Privileges.cs" />
     <Compile Include="source\Functions\student.cs" />
+    <Compile Include="source\Functions\StudentUpdate.cs" />
     <Compile Include="source\Registration\ClassStudentRegistration.cs" />
     <Compile Include="source\Database\Database.cs" />
     <Compile Include="source\Functions\CurrentUser.cs" />
