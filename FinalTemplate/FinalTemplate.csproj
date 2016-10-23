@@ -140,7 +140,6 @@
     <Content Include="Mark_sheet.aspx" />
     <Content Include="Our_Team.aspx" />
     <Content Include="parentpanel.aspx" />
-    <Content Include="parent_view_child.aspx" />
     <Content Include="PostNews.aspx" />
     <Content Include="School_Rgistration.aspx" />
     <Content Include="source\Jvalidation\blacklist_keywords.txt" />
@@ -311,7 +310,6 @@
     <Content Include="Teacherprofile.aspx" />
     <Content Include="TeacherUpload.aspx" />
     <Content Include="Teacher_timetable.aspx" />
-    <Content Include="UpdateParentInformation.aspx" />
     <Content Include="updatepasswordpanel.aspx" />
     <Content Include="UpdateStudentInformationByAdmin.aspx" />
     <Content Include="UpdateTeacherInformation.aspx" />
@@ -393,13 +391,6 @@
     </Compile>
     <Compile Include="parentchildpanel.Master.designer.cs">
       <DependentUpon>parentchildpanel.Master</DependentUpon>
-    </Compile>
-    <Compile Include="parent_view_child.aspx.cs">
-      <DependentUpon>parent_view_child.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="parent_view_child.aspx.designer.cs">
-      <DependentUpon>parent_view_child.aspx</DependentUpon>
     </Compile>
     <Compile Include="PostNews.aspx.cs">
       <DependentUpon>PostNews.aspx</DependentUpon>
@@ -612,13 +603,6 @@
     </Compile>
     <Compile Include="Teacher_timetable.aspx.designer.cs">
       <DependentUpon>Teacher_timetable.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UpdateParentInformation.aspx.cs">
-      <DependentUpon>UpdateParentInformation.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UpdateParentInformation.aspx.designer.cs">
-      <DependentUpon>UpdateParentInformation.aspx</DependentUpon>
     </Compile>
     <Compile Include="updatepasswordpanel.aspx.cs">
       <DependentUpon>updatepasswordpanel.aspx</DependentUpon>

@@ -24,6 +24,7 @@ namespace FinalTemplate
             int loc_id = Convert.ToInt32(db.GetLastValueByColumnName("loc_id", "tbl_location"));
             int teacher_id = Convert.ToInt32(db.GetLastValueByColumnName("teacher_id", "tbl_teacher"));
             var authorized_id = Convert.ToString(db.GetLastValueByColumnName("authorized_id", "tbl_authorized_users"));
+            int class_sec_info_id = Convert.ToInt32(db.GetLastValueByColumnName("class_sec_info_id", "tbl_class_sec_info"));
             using (SqlConnection con = new SqlConnection(a))
             {
                 con.Open();
@@ -39,6 +40,8 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@teacher_id_out", SqlDbType.Int).Direction = ParameterDirection.Output;
                 cmd.Parameters.AddWithValue("@authorized_id", SqlDbType.VarChar).Value = authorized_id + 1;
                 cmd.Parameters.AddWithValue("@authorized_id_out", SqlDbType.VarChar).Direction = ParameterDirection.Output;
+                cmd.Parameters.AddWithValue("@class_sec_info_id", SqlDbType.Int).Value = class_sec_info_id + 1;
+                cmd.Parameters.AddWithValue("@class_sec_info_id_out", SqlDbType.Int).Direction = ParameterDirection.Output;
 
                 cmd.Parameters.AddWithValue("@firstname", SqlDbType.VarChar).Value = name.Text;
                 cmd.Parameters.AddWithValue("@lastname", SqlDbType.VarChar).Value = lname.Text;
@@ -65,6 +68,8 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@usertype_id", SqlDbType.Int).Value = 3;
                 cmd.Parameters.AddWithValue("@date_of_join", SqlDbType.Date).Value = DateTime.Now.ToString("");
                 cmd.Parameters.AddWithValue("@school_id", SqlDbType.VarChar).Value = DropDownList3.SelectedValue;
+                cmd.Parameters.AddWithValue("@class_id", SqlDbType.Int).Value = DropDownList4.SelectedValue;
+                cmd.Parameters.AddWithValue("@section_id", SqlDbType.Int).Value = DropDownList5.SelectedValue;
 
                 cmd.ExecuteNonQuery();
                 con.Close();
