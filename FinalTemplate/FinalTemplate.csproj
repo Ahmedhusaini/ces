@@ -308,6 +308,7 @@
     <Content Include="Teacherprofile.aspx" />
     <Content Include="TeacherUpload.aspx" />
     <Content Include="Teacher_timetable.aspx" />
+    <Content Include="UpdateAndViewEventDetails.aspx" />
     <Content Include="updatepasswordpanel.aspx" />
     <Content Include="UpdateStudentInformationByAdmin.aspx" />
     <Content Include="UpdateTeacherInformation.aspx" />
@@ -601,6 +602,13 @@
     </Compile>
     <Compile Include="Teacher_timetable.aspx.designer.cs">
       <DependentUpon>Teacher_timetable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateAndViewEventDetails.aspx.cs">
+      <DependentUpon>UpdateAndViewEventDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateAndViewEventDetails.aspx.designer.cs">
+      <DependentUpon>UpdateAndViewEventDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="updatepasswordpanel.aspx.cs">
       <DependentUpon>updatepasswordpanel.aspx</DependentUpon>
