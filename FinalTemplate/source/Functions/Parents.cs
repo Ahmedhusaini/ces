@@ -30,18 +30,16 @@ namespace FinalTemplate.source.Functions
         static public string Phone { get; set; }
         static public string sclass { get; set; }
         static public string section { get; set; }
+        static public string photo { get; set; }
       
 
         static public void GetChildDetails(string parentsid)
         {
             mydatabse.CreateConnection();
-            mydatabse.InitializeSQLCommandObject(mydatabse.GetCurrentConnection, "parents_child", true);
+            mydatabse.InitializeSQLCommandObject(mydatabse.GetCurrentConnection, "select std_id from [tbl_P&S_relation] where Parent_ID ='"+Parents.parentschild+"';");
             try
             {
                 mydatabse.OpenConnection();
-                SqlParameter p_authrizedID = new SqlParameter("@Parents_id ", SqlDbType.VarChar, 50);
-                p_authrizedID.Value = parentsid;
-                mydatabse.obj_sqlcommand.Parameters.Add(p_authrizedID);
                 mydatabse.obj_reader = mydatabse.obj_sqlcommand.ExecuteReader();
                 if (mydatabse.obj_reader.HasRows)
                 {
@@ -175,9 +173,11 @@ namespace FinalTemplate.source.Functions
                          Phone = mydatabse.obj_reader["phone"].ToString();
                          Schoolname = mydatabse.obj_reader["school_name"].ToString();
                          //schooltypee = mydatabse.obj_reader["school_type "].ToString();
-                         contactprimary = mydatabse.obj_reader["contact_primary"].ToString();
- 
-                        
+                         contactprimary  = mydatabse.obj_reader["contact_primary"].ToString();
+                         photo = mydatabse.obj_reader["photo"].ToString();
+
+
+
                      }
                  }
                  else

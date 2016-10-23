@@ -10,7 +10,7 @@
 namespace FinalTemplate {
     
     
-    public partial class parentsviewchild {
+    public partial class parentchildpanel {
         
         /// <summary>
         /// head control.
