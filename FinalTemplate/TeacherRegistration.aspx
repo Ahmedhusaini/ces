@@ -400,6 +400,30 @@
                                         <asp:SqlDataSource ID="schooltype" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [school_name], [school_id] FROM [tbl_school]"></asp:SqlDataSource>
                                          
                                     </div>
+                                     <div class="col-md-6">
+                                        <label for="regname" class="control-label form-label">
+                                            SELECT CLASS<span class="highlight">*<br />
+                                            </span>
+                                        </label>
+                                        <!-- p.help-block Warning !-->
+                                        <br />
+                                         <asp:DropDownList CssClass="form-control" ID="DropDownList4" runat="server" DataSourceID="class" DataTextField="class" DataValueField="class_id"></asp:DropDownList>
+                                         
+                                         <asp:SqlDataSource ID="class" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT * FROM [tbl_class]"></asp:SqlDataSource>
+                                         
+                                    </div>
+                                     <div class="col-md-6">
+                                        <label for="regname" class="control-label form-label">
+                                            SELECT SECTION<span class="highlight">*<br />
+                                            </span>
+                                        </label>
+                                        <!-- p.help-block Warning !-->
+                                        <br />
+                                         <asp:DropDownList CssClass="form-control" ID="DropDownList5" runat="server" DataSourceID="section" DataTextField="section" DataValueField="section_id"></asp:DropDownList>
+                                         
+                                         <asp:SqlDataSource ID="section" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT * FROM [tbl_section]"></asp:SqlDataSource>
+                                         
+                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -477,7 +501,7 @@
                                 <span>
                                     <asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>
                      </div>
-                             <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                             <asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
 
                             </div>                            
                         </div>                           
