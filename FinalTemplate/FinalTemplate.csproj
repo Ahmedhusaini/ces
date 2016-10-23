@@ -397,6 +397,7 @@
     <Compile Include="PostNews.aspx.designer.cs">
       <DependentUpon>PostNews.aspx</DependentUpon>
     </Compile>
+    <Compile Include="source\Functions\JEvents.cs" />
     <Compile Include="source\Functions\Jfunctionparents.cs" />
     <Compile Include="source\Functions\Jfunctionstudents.cs" />
     <Compile Include="Logintype.aspx.cs">
@@ -432,6 +433,7 @@
     <Compile Include="source\Functions\JTeacher.cs" />
     <Compile Include="source\Functions\Parents.cs" />
     <Compile Include="source\Functions\Privileges.cs" />
+    <Compile Include="source\Functions\SchoolRelatedFunction.cs" />
     <Compile Include="source\Functions\student.cs" />
     <Compile Include="source\Functions\StudentUpdate.cs" />
     <Compile Include="source\Registration\ClassStudentRegistration.cs" />

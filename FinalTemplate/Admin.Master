@@ -85,18 +85,11 @@
                                 <li><a href="UpdateStudentInformationByAdmin.aspx" class="link-page">Update Student information</a></li>                                
                             </ul>
                         </li>
-                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu">gallery<span class="fa fa-angle-down icons-dropdown"></span></a>
-                            <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                <li><a href="gallery-3column.html" class="link-page">gallery 3 column</a></li>
-                                <li><a href="gallery-4column.html" class="link-page">gallery 4 column</a></li>
-                                <li><a href="gallery-masonry.html" class="link-page">gallery masonry</a></li>
-                            </ul>
-                        </li>
                         <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Events<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
                                 <li><a href="AddEvent.aspx" class="link-page">Add Event</a></li>
                                 <li><a href="AllEvents.aspx" class="link-page">All Events</a></li>
-                                <li><a href="profile-teacher.html" class="link-page">Update & View Event Details</a></li>               
+                                <li><a href="UpdateAndViewEventDetails.aspx" class="link-page">Update & View Event Details</a></li>               
                             </ul>
                         </li>
                         <li class="dropdown"><a href="javascript:void(0)" class="main-menu">News<span class="fa fa-angle-down icons-dropdown"></span></a>
