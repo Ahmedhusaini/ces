@@ -140,6 +140,7 @@
     <Content Include="Mark_attendance.aspx" />
     <Content Include="Mark_sheet.aspx" />
     <Content Include="Our_Team.aspx" />
+    <Content Include="PackageInformation.aspx" />
     <Content Include="parentpanel.aspx" />
     <Content Include="parent_view_child.aspx" />
     <Content Include="PostNews.aspx" />
@@ -372,6 +373,12 @@
     </Compile>
     <Compile Include="Date_sheet.aspx.designer.cs">
       <DependentUpon>Date_sheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PackageInformation.aspx.cs">
+      <DependentUpon>PackageInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PackageInformation.aspx.designer.cs">
+      <DependentUpon>PackageInformation.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\Functions\JStudent.cs" />
     <Compile Include="Mark_attendance.aspx.cs">
