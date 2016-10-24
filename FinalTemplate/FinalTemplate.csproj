@@ -137,6 +137,7 @@
     <Content Include="Mark_attendance.aspx" />
     <Content Include="Mark_sheet.aspx" />
     <Content Include="Our_Team.aspx" />
+    <Content Include="PackageInformation.aspx" />
     <Content Include="parentpanel.aspx" />
     <Content Include="PostNews.aspx" />
     <Content Include="School_Rgistration.aspx" />
@@ -389,6 +390,13 @@
     </Compile>
     <Compile Include="Our_Team.aspx.designer.cs">
       <DependentUpon>Our_Team.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PackageInformation.aspx.cs">
+      <DependentUpon>PackageInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PackageInformation.aspx.designer.cs">
+      <DependentUpon>PackageInformation.aspx</DependentUpon>
     </Compile>
     <Compile Include="PostNews.aspx.cs">
       <DependentUpon>PostNews.aspx</DependentUpon>
