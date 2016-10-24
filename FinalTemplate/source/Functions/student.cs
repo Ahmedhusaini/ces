@@ -40,41 +40,6 @@ namespace FinalTemplate.source.Functions
         static public string s_primarycontact { get; set; }
         static public string s_secondarycontact { get; set; }
 
-
-        //view student profile
-
-        public string u_firstname { get; set; }
-        public string u_lastname { get; set; }
-        public int u_dobid { get; set; }
-        public int u_day { get; set; }
-        public int u_month { get; set; }
-        public int u_year { get; set; }
-        public string u_nationality { get; set; }
-        public string u_gender { get; set; }
-        public string u_photo { get; set; }
-        public string u_religion { get; set; }
-        public string u_phone { get; set; }
-        public string u_address { get; set; }
-        public int u_locid { get; set; }
-        public int u_postalcode { get; set; }
-        public string u_class { get; set; }
-        public string u_section { get; set; }
-        public int u_sectionid { get; set; }
-        public int u_classid { get; set; }
-        public int u_classsectioninfoid { get; set; }
-        public string u_city { get; set; }
-        public string u_gurdianname { get; set; }
-        public string u_previousschool { get; set; }
-        public int u_generalid { get; set; }
-        public string u_lastclassattend { get; set; }
-        public string u_authorizeid { get; set; }
-        public string u_schoolid { get; set; }
-        public string u_gurdiancontact { get; set; }
-        public string u_stdid { get; set; }
-        public string u_username { get; set; }
-        public string u_primaryemail { get; set; }
-        public string u_secondaryemail { get; set; }
-
         static public void GetstudentlDetails(string stdlid)
         {
             mydatabse.CreateConnection();

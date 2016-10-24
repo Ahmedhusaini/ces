@@ -70,24 +70,25 @@
                                         <div class="col-md-6" style="width: 40%">
                                             <div class="form-group">
                                                 <label class="control-label form-label">NAME </label>
-                                                <input type="text" placeholder="" class="form-control form-input" /><!--label.control-label.form-label.warning-label(for="") Warning for the above !-->
+                                                <asp:TextBox runat="server" ID="name"  class="form-control form-input" ></asp:TextBox>                                                
                                             </div>
                                         </div>
                                         <div class="col-md-6" style="width: 40%">
                                             <div class="form-group">
                                                 <label class="control-label form-label">EMAIL </label>
-                                                <input type="text" placeholder="" class="form-control form-input" /><!--label.control-label.form-label.warning-label(for="")-->
+                                                <asp:TextBox runat="server" ID="email"  class="form-control form-input" ></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-6" style="width: 40%">
                                             <div class="form-group">
-                                                <label class="control-label form-label">SUBJECT</label><input type="text" placeholder="" class="form-control form-input" /><!--label.control-label.form-label.warning-label(for="", hidden)-->
+                                                <label class="control-label form-label">SUBJECT</label>
+                                                <asp:TextBox runat="server" ID="subject"  class="form-control form-input" ></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="contact-question form-group">
-                                                <label class="control-label form-label">HOW CAN WE HELP? <span class="highlight">*</span></label>
-                                                <textarea class="form-control form-input" style="height: 100px"></textarea>
+                                                <label class="control-label form-label">HOW CAN WE HELP?</label>
+                                                <asp:TextBox runat="server" ID="TextBox1" Height="100px"  class="form-control form-input" TextMode="MultiLine"></asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
