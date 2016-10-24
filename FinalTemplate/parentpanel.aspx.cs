@@ -110,6 +110,11 @@ namespace FinalTemplate
         {
 
         }
+         protected void linkbutton(object sender, EventArgs e)
+         {
+             Response.Redirect("~/parent_view_child.aspx?ID=" + ((LinkButton)sender).Text);
+ 
+         }
 
         }
 
