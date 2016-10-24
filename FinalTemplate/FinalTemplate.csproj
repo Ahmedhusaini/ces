@@ -41,6 +41,10 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Recaptcha, Version=1.0.5.0, Culture=neutral, PublicKeyToken=9afc4d65b28c38c2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Recaptcha.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -437,6 +441,7 @@
       <DependentUpon>School_Rgistration.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\Functions\JSchool.cs" />
+    <Compile Include="source\Functions\JStudent.cs" />
     <Compile Include="source\Functions\JTeacher.cs" />
     <Compile Include="source\Functions\Parents.cs" />
     <Compile Include="source\Functions\Privileges.cs" />
