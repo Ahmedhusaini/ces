@@ -381,6 +381,7 @@
     <Compile Include="PackageInformation.aspx.designer.cs">
       <DependentUpon>PackageInformation.aspx</DependentUpon>
     </Compile>
+    <Compile Include="source\Functions\Jfunctionteacher.cs" />
     <Compile Include="source\Functions\JStudent.cs" />
     <Compile Include="Mark_attendance.aspx.cs">
       <DependentUpon>Mark_attendance.aspx</DependentUpon>
@@ -462,6 +463,7 @@
     <Compile Include="source\Functions\SParents.cs" />
     <Compile Include="source\Functions\student.cs" />
     <Compile Include="source\Functions\StudentUpdate.cs" />
+    <Compile Include="source\Functions\teacher.cs" />
     <Compile Include="source\Registration\ClassStudentRegistration.cs" />
     <Compile Include="source\Database\Database.cs" />
     <Compile Include="source\Functions\CurrentUser.cs" />
