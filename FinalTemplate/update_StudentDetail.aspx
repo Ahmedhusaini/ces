@@ -9,28 +9,23 @@
             return this.optional(element) || /^[a-z\s]+$/i.test(value);
         }, "Letters only please");
 
+        $("#form1").validate({                   
+            rules: {
+                <%=txtFirstName.UniqueID%>:{
+                    required: true,
+                    lettersonly: true
+                },
+                messages: {
+                    <%=txtFirstName.UniqueID%>: {
+                        required: "Please enter your name"
+                    },
+                }
+            }
+            });
+
         $(document).ready(function () {
             $('.rlp').removeClass("rlp");
             $('.register-form').css('margin-left', '25%');
-<%--            centerText( <%=stdid.ClientID%>);
-            centerText( <%=name.ClientID%>);
-            centerText( <%=lastname.ClientID%>);
-            centerText( <%=contact.ClientID%>);
-            centerText( <%=dateofbirth.ClientID%>);
-            centerText( <%=nationality.ClientID%>);
-            centerText( <%=religion.ClientID%>);
-            centerText( <%=address.ClientID%>);
-            centerText( <%=gurdianname.ClientID%>);
-            centerText( <%=gurdiancontact.ClientID%>);
-            centerText( <%=previousschool.ClientID%>);
-            centerText( <%=lastclassattend.ClientID%>);
-            centerText( <%=postalcode.ClientID%>);
-            centerText( <%=username.ClientID%>);
-            centerText( <%=primaryemail.ClientID%>);
-            centerText( <%=generalid.ClientID%>);
-            centerText( <%=dobid.ClientID%>);
-            centerText( <%=authorizedid.ClientID%>);
-            centerText( <%=locationid.ClientID%>);--%>
             removeBackToTop();
             validation();
         });
