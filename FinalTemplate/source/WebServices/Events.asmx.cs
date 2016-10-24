@@ -65,6 +65,48 @@ namespace FinalTemplate.source.WebServices
             }
             HttpContext.Current.Response.Write(serializer.Serialize(listeventDetails));
         }
+
+        [WebMethod]
+        public void SearchEvent(int _categoryid, string _searchKey, string _schoolid)
+        {
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            List<EventDetails> listsearchevents = new List<EventDetails>();
+            eventDatabase.CreateConnection();
+            eventDatabase.InitializeSQLCommandObject(eventDatabase.GetCurrentConnection, "spSearchEvent", true);
+            eventDatabase.obj_sqlcommand.Parameters.Add("@categoryID", SqlDbType.Int).Value = _categoryid;
+            eventDatabase.obj_sqlcommand.Parameters.Add("@searchKey", SqlDbType.VarChar, 50).Value = _searchKey;
+            eventDatabase.obj_sqlcommand.Parameters.Add("@schoolID", SqlDbType.VarChar, 50).Value = _schoolid;
+            try
+            {
+                eventDatabase.OpenConnection();
+                eventDatabase.obj_reader = eventDatabase.obj_sqlcommand.ExecuteReader();
+                if (eventDatabase.obj_reader.HasRows)
+                {
+                    while (eventDatabase.obj_reader.Read())
+                    {
+                        EventDetails eventDetails = new EventDetails();
+                        eventDetails.EventID = Convert.ToInt32(eventDatabase.obj_reader["event_id"]);
+                        eventDetails.Title = (eventDatabase.obj_reader["title"]).ToString();
+                        eventDetails.Description = (eventDatabase.obj_reader["discription_of_event"]).ToString();
+                        eventDetails.Place = (eventDatabase.obj_reader["place"]).ToString();
+                        eventDetails.Picture = (eventDatabase.obj_reader["event_picture"]).ToString();
+                        eventDetails.EventCreatorID = (eventDatabase.obj_reader["event_creator_id"]).ToString();
+                        listsearchevents.Add(eventDetails);
+                    }
+                }
+                else
+                {
+                    HttpContext.Current.Response.Write("No row found");
+                }
+            }
+            finally
+            {
+                eventDatabase.CloseConnection();
+                eventDatabase.obj_reader.Close();
+                eventDatabase.obj_reader.Dispose();
+            }
+            HttpContext.Current.Response.Write(serializer.Serialize(listsearchevents));
+        }
     }
 
 
