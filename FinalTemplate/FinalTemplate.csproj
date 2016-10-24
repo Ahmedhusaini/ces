@@ -373,7 +373,7 @@
     <Compile Include="Date_sheet.aspx.designer.cs">
       <DependentUpon>Date_sheet.aspx</DependentUpon>
     </Compile>
-    <Compile Include="JStudent.cs" />
+    <Compile Include="source\Functions\JStudent.cs" />
     <Compile Include="Mark_attendance.aspx.cs">
       <DependentUpon>Mark_attendance.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
