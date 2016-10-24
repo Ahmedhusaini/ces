@@ -21,28 +21,28 @@ namespace FinalTemplate
             lab1.Text = "Date :" + System.DateTime.Now.ToShortDateString();
             lab2.Text = "Time :" + System.DateTime.Now.ToShortTimeString();
 
-           
-            
+
+
             if (Session["userid"] != null)
             {
 
                 string[] col = { "General_Id" };
-                string[] colwhere = {"authorized_id"};
-                string[] whereoperator = {"="};
-                string[] multiwhere = {""};
-             
+                string[] colwhere = { "authorized_id" };
+                string[] whereoperator = { "=" };
+                string[] multiwhere = { "" };
+
                 CurrentUser.GetAuthorizedDetails(Session["userid"].ToString());
                 //Parents.GetChildDetails(Session["userid"].ToString());
 
 
                 string[] whereoperatorvale = { "'" + CurrentUser.AuthorizedID + "'" };
-              
-                string[,] parentid = myDatabase.SelectQuery("tbl_Parents",col,colwhere,whereoperator,whereoperatorvale,multiwhere );
-           
-                CurrentUser.GetPersonalDetails(Convert.ToInt32(parentid[0, 0]));              
-              
-                Label lbl = (Label) this.Master.FindControl("fname");
-                if (lbl!=null)
+
+                string[,] parentid = myDatabase.SelectQuery("tbl_Parents", col, colwhere, whereoperator, whereoperatorvale, multiwhere);
+
+                CurrentUser.GetPersonalDetails(Convert.ToInt32(parentid[0, 0]));
+
+                Label lbl = (Label)this.Master.FindControl("fname");
+                if (lbl != null)
                 {
                     lbl.Text = CurrentUser.FirstName + " " + CurrentUser.LastName;
                 }
@@ -53,19 +53,19 @@ namespace FinalTemplate
                 phone.Text = CurrentUser.Phone;
                 address.Text = CurrentUser.Address;
                 pemail.Text = CurrentUser.PrimaryEmailAddress;
-                atype.Text= CurrentUser.AuthorizedID;
-                Image1.ImageUrl=CurrentUser.Photo;
+                atype.Text = CurrentUser.AuthorizedID;
+                Image1.ImageUrl = CurrentUser.Photo;
 
 
                 Parents.GetParentsID(Session["userid"].ToString());
-                 
 
 
-               Parents.childern(Parents.parentschild);
 
-                
-          
-              
+                Parents.childern(Parents.parentschild);
+
+
+
+
 
                 //Name.Text = Parents.Firstname + " " + Parents.Lastname;
                 //gname.Text = Parents.Guardianname;
@@ -78,14 +78,14 @@ namespace FinalTemplate
 
 
 
-             
+
                 //name2.Text = Parents.Firstname + " " + Parents.Lastname;
                 //gender2.Text = Parents.Gender;
 
 
-                
-               //DropDownList1.Enabled = false;
-                
+
+                //DropDownList1.Enabled = false;
+
 
 
 
@@ -98,8 +98,8 @@ namespace FinalTemplate
             {
                 Response.Redirect("~/Default.aspx");
             }
-           
-            }
+
+        }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
@@ -110,18 +110,18 @@ namespace FinalTemplate
         {
 
         }
-         protected void linkbutton(object sender, EventArgs e)
-         {
-             Response.Redirect("~/parent_view_child.aspx?ID=" + ((LinkButton)sender).Text);
- 
-         }
+        protected void linkbutton(object sender, EventArgs e)
+        {
+            Response.Redirect("~/parent_view_child.aspx?ID=" + ((LinkButton)sender).Text);
 
         }
 
-    
-       
-
-     
-
-        
     }
+
+
+
+
+
+
+
+}

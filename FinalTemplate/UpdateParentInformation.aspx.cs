@@ -19,7 +19,7 @@ namespace FinalTemplate
 
             if (!IsPostBack)
             {
-                JFunctions.BindDropDownList(ddlCity, "city", "city_id", "select * from tbl_city");
+                Jfunctionparents.BindDropDownList(ddlCity, "city", "city_id", "select * from tbl_city");
                 JFunctions.BindDropDownList(ddlCountry, "country", "country_id", "select * from tbl_country");
 
                 if (objJParents.showParent(Parents.parentschild) == "true")

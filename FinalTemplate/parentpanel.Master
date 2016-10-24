@@ -47,9 +47,9 @@
             <div class="row">
                 <div class="col-md-5 topbar-left text-left info-text1">
 <%--                    <div class="email"><a href="#"><i class="topbar-icon fa fa-envelope-o"></i><span>info@ces.com</span></a></div>--%>
-                    <div class="hotline"><a href="#"><i class="topbar-icon fa fa-photo"></i><span>Update Profile Detail</span></a></div>
+                    <div class="hotline"><a href="UpdateParentInformation.aspx"><i class="topbar-icon fa fa-photo"></i><span>Update Profile Detail</span></a></div>
                 </div>
-                <div class="col-md-2 logo-topbar info-text2"><a href="index.html"><b><h1 class="heading-table">CES</h1></b></a></div>
+                <div class="col-md-2 logo-topbar info-text2"><a href="index.html"><b><h1 class="heading-table" title="hidding">CES</h1></b></a></div>
                 <div class="col-md-5 topbar-right text-right info-text3">
                     <div class="group-sign-in"><a href="#" class="login">
                         <asp:Label ID="fname" ForeColor="#86bc42" Font-size="12" runat="server" ></asp:Label>
