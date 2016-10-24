@@ -41,9 +41,6 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
-    <Reference Include="Recaptcha">
-      <HintPath>..\..\git\FinalTemplate\bin\Recaptcha.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -140,8 +137,8 @@
     <Content Include="Mark_attendance.aspx" />
     <Content Include="Mark_sheet.aspx" />
     <Content Include="Our_Team.aspx" />
+    <Content Include="PackageInformation.aspx" />
     <Content Include="parentpanel.aspx" />
-    <Content Include="parent_view_child.aspx" />
     <Content Include="PostNews.aspx" />
     <Content Include="School_Rgistration.aspx" />
     <Content Include="source\Jvalidation\blacklist_keywords.txt" />
@@ -312,7 +309,7 @@
     <Content Include="Teacherprofile.aspx" />
     <Content Include="TeacherUpload.aspx" />
     <Content Include="Teacher_timetable.aspx" />
-    <Content Include="UpdateParentInformation.aspx" />
+    <Content Include="UpdateAndViewEventDetails.aspx" />
     <Content Include="updatepasswordpanel.aspx" />
     <Content Include="UpdateStudentInformationByAdmin.aspx" />
     <Content Include="UpdateTeacherInformation.aspx" />
@@ -373,7 +370,6 @@
     <Compile Include="Date_sheet.aspx.designer.cs">
       <DependentUpon>Date_sheet.aspx</DependentUpon>
     </Compile>
-    <Compile Include="JStudent.cs" />
     <Compile Include="Mark_attendance.aspx.cs">
       <DependentUpon>Mark_attendance.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -395,19 +391,12 @@
     <Compile Include="Our_Team.aspx.designer.cs">
       <DependentUpon>Our_Team.aspx</DependentUpon>
     </Compile>
-    <Compile Include="parentchildpanel.Master.cs">
-      <DependentUpon>parentchildpanel.Master</DependentUpon>
+    <Compile Include="PackageInformation.aspx.cs">
+      <DependentUpon>PackageInformation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="parentchildpanel.Master.designer.cs">
-      <DependentUpon>parentchildpanel.Master</DependentUpon>
-    </Compile>
-    <Compile Include="parent_view_child.aspx.cs">
-      <DependentUpon>parent_view_child.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="parent_view_child.aspx.designer.cs">
-      <DependentUpon>parent_view_child.aspx</DependentUpon>
+    <Compile Include="PackageInformation.aspx.designer.cs">
+      <DependentUpon>PackageInformation.aspx</DependentUpon>
     </Compile>
     <Compile Include="PostNews.aspx.cs">
       <DependentUpon>PostNews.aspx</DependentUpon>
@@ -416,6 +405,7 @@
     <Compile Include="PostNews.aspx.designer.cs">
       <DependentUpon>PostNews.aspx</DependentUpon>
     </Compile>
+    <Compile Include="source\Functions\JEvents.cs" />
     <Compile Include="source\Functions\Jfunctionparents.cs" />
     <Compile Include="source\Functions\Jfunctionstudents.cs" />
     <Compile Include="Logintype.aspx.cs">
@@ -447,10 +437,11 @@
       <DependentUpon>School_Rgistration.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\Functions\JSchool.cs" />
+    <Compile Include="source\Functions\JStudent.cs" />
     <Compile Include="source\Functions\JTeacher.cs" />
     <Compile Include="source\Functions\Parents.cs" />
     <Compile Include="source\Functions\Privileges.cs" />
-    <Compile Include="source\Functions\SParents.cs" />
+    <Compile Include="source\Functions\SchoolRelatedFunction.cs" />
     <Compile Include="source\Functions\student.cs" />
     <Compile Include="source\Functions\StudentUpdate.cs" />
     <Compile Include="source\Registration\ClassStudentRegistration.cs" />
@@ -622,11 +613,12 @@
     <Compile Include="Teacher_timetable.aspx.designer.cs">
       <DependentUpon>Teacher_timetable.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UpdateParentInformation.aspx.cs">
-      <DependentUpon>UpdateParentInformation.aspx</DependentUpon>
+    <Compile Include="UpdateAndViewEventDetails.aspx.cs">
+      <DependentUpon>UpdateAndViewEventDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UpdateParentInformation.aspx.designer.cs">
-      <DependentUpon>UpdateParentInformation.aspx</DependentUpon>
+    <Compile Include="UpdateAndViewEventDetails.aspx.designer.cs">
+      <DependentUpon>UpdateAndViewEventDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="updatepasswordpanel.aspx.cs">
       <DependentUpon>updatepasswordpanel.aspx</DependentUpon>
@@ -739,7 +731,6 @@
     <Content Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Content>
-    <Content Include="parentchildpanel.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
