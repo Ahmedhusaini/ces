@@ -376,6 +376,7 @@
     </Compile>
     <Compile Include="PackageInformation.aspx.cs">
       <DependentUpon>PackageInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PackageInformation.aspx.designer.cs">
       <DependentUpon>PackageInformation.aspx</DependentUpon>
@@ -632,6 +633,7 @@
     </Compile>
     <Compile Include="UpdateParentInformation.aspx.cs">
       <DependentUpon>UpdateParentInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UpdateParentInformation.aspx.designer.cs">
       <DependentUpon>UpdateParentInformation.aspx</DependentUpon>
