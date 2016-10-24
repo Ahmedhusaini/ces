@@ -10,7 +10,6 @@ using FinalTemplate.source.Validation;
 
 namespace FinalTemplate
 {
-
     public partial class ContactUs_Student : System.Web.UI.Page
     { 
         public student std = new student();
