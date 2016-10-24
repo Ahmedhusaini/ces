@@ -437,7 +437,6 @@
       <DependentUpon>School_Rgistration.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\Functions\JSchool.cs" />
-    <Compile Include="source\Functions\JStudent.cs" />
     <Compile Include="source\Functions\JTeacher.cs" />
     <Compile Include="source\Functions\Parents.cs" />
     <Compile Include="source\Functions\Privileges.cs" />
