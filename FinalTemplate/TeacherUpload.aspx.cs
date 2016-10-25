@@ -22,9 +22,63 @@ namespace FinalTemplate
         Database db = new Database("abc");
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(!IsPostBack)
+            {
+                filldata();
+            }
+        }
+        private void filldata()
+        {
+            DataTable dt=new DataTable();
+            int lec_id = Convert.ToInt32(db.GetLastValueByColumnName("lec_id", "tbl_Teacher_lecture"));
+              using (SqlConnection con = new SqlConnection(a))
+              {
+                SqlCommand cmd = new SqlCommand("SP_Get_file", con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lec_id", SqlDbType.Int).Value = lec_id;
+                con.Open();
+                SqlDataReader reader=cmd.ExecuteReader();
+             
+                dt.Load(reader);
+              }
+            if(dt.Rows.Count >0)
+            {
+                GridView1.DataSource=dt;
+                GridView1.DataBind();
+            }
         }
 
+        protected void OpenDocument(object sender,EventArgs e)
+        {
+            LinkButton li = (LinkButton)sender;
+            GridViewRow gr = (GridViewRow)li.NamingContainer;
+
+            int lec_id = int.Parse(GridView1.DataKeys[gr.RowIndex].Value.ToString());
+            download(lec_id);
+        }
+        private void download(int lec_id)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(a))
+            {
+                SqlCommand cmd = new SqlCommand("SP_Get_file", con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lec_id", SqlDbType.Int).Value = lec_id;
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                dt.Load(reader);
+            }
+            string name = dt.Rows[0]["lectures"].ToString();
+            byte[] documentBytes=(byte[])dt.Rows[0]["content"];
+
+                   Response.Clear();
+                   Response.ContentType = "application/octect-stream";
+                   Response.AppendHeader("content-disposition", string.Format("attachment; filename={0}",name));
+                   Response.AppendHeader("content-Length",documentBytes.Length.ToString());
+                   Response.BinaryWrite(documentBytes);
+                   Response.Flush();
+                   Response.Close();
+        }
         protected void Button1_Click(object sender, EventArgs e)
         {
             FileInfo f = new FileInfo(FileUpload1.FileName);
