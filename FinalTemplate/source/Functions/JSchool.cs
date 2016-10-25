@@ -110,5 +110,17 @@ namespace FinalTemplate.source.Functions
             }
             return 0;
         }
+
+        public string[,] GetSchoolDetails()
+        {
+            string[,] result;
+            string[] columns = { "authorized_id", "username", "password", "account_pin", "primary_email", "secondary_email", "usertype_id", "login_count", "last_login_date", "loc_id", "country_id", "city_id", "postal_code", "school_id", "school_name", "owner_name", "founded_in", "logo", "contact_primary", "contact_secondary", "school_type_id", "school_type" };
+            string[] wherecolumn = { "school_id" };
+            string[] whereoperator = { "=" };
+            string[] wherevalue = { "'" + SchoolID + "'" };
+            string[] multiwhere = { "" };
+            result = mydb.SelectQuery("View_SchoolProfile", columns, wherecolumn, whereoperator, wherevalue, multiwhere);
+            return result;
+        }
     }
 }
