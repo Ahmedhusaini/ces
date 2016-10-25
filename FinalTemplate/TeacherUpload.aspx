@@ -5,7 +5,7 @@
     <asp:FileUpload ID="FileUpload1" runat="server" />
     <br/>
     <asp:Button ID="Button1" runat="server" Text="UPLOAD FILE" OnClick="Button1_Click" />
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnRowCommand="GridView1_RowCommand" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+ <%--   <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnRowCommand="GridView1_RowCommand" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
         <Columns>
             <asp:TemplateField HeaderText="FILE">
                 <ItemTemplate>
@@ -24,7 +24,7 @@
         <SortedAscendingHeaderStyle BackColor="#007DBB" />
         <SortedDescendingCellStyle BackColor="#CAC9C9" />
         <SortedDescendingHeaderStyle BackColor="#00547E" />
-    </asp:GridView>
+    </asp:GridView>--%>
     <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
 
 </asp:Content>
