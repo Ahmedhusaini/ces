@@ -3,11 +3,26 @@ using System;
 
 namespace FinalTemplate
 {
-    public partial class UpdateSchoolInformation : System.Web.UI.Page
+    public partial class UpdateSchoolInformation2 : System.Web.UI.Page
     {
-        private string[,] SchoolInformation;
-        private JSchool objJSchool = new JSchool();
-        private string FileName { get; set; }
+        private string file = string.Empty;
+        private int cityid = 0;
+        private SchoolRelatedFunction objJSchool = new SchoolRelatedFunction();
+        private string FileName
+        {
+            get { return file; }
+            set
+            {
+                if (fuLogo.HasFile)
+                {
+                    file = fuLogo.FileName;
+                }
+                else
+                {
+                    file = objJSchool.Logo;
+                }
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -18,37 +33,45 @@ namespace FinalTemplate
             ShowSchoolInformation();
             imgLogo.ImageUrl = "images/registeredSchools/" + FileName;
         }
-        private bool LoadSchoolInformation()
-        {
-            SchoolInformation = objJSchool.GetSchoolDetails();
-            if (SchoolInformation.Length == 0)
-                return false;
-            return true;
-        }
-
         private void ShowSchoolInformation()
         {
-            if (LoadSchoolInformation())
+            if (objJSchool.GetSchoolDetails() == "true")
             {
-                txtSchoolName.Text = SchoolInformation[0, 14];
-                txtOwnerName.Text = SchoolInformation[0, 15];
-                txtFoundedIn.Text = SchoolInformation[0, 16];
-                FileName = SchoolInformation[0, 17];
+                txtSchoolName.Text = objJSchool.SchoolName;
+                txtOwnerName.Text = objJSchool.OwnerName;
+                txtFoundedIn.Text = objJSchool.FoundedIn.Substring(0, 10);
+                FileName = objJSchool.Logo;
                 ddlCity.ClearSelection();
-                ddlCity.Items.FindByValue(SchoolInformation[0, 11].ToString()).Selected = true;
+                ddlCity.Items.FindByValue(objJSchool.CityID.ToString()).Selected = true;
                 ddlCountry.ClearSelection();
-                ddlCountry.Items.FindByValue(SchoolInformation[0, 10].ToString()).Selected = true;
-                txtPostalCode.Text = SchoolInformation[0, 12];
-                txtSchoolTpe.Text = SchoolInformation[0, 21];
-                txtContactPrimary.Text = SchoolInformation[0, 18];
-                txtContactSecondary.Text = SchoolInformation[0, 19];
-                txtUsername.Text = SchoolInformation[0, 1];
-                txtPassword.Text = SchoolInformation[0, 2];
-                txtAccountPin.Text = SchoolInformation[0, 3];
-                txtPrimaryEmail.Text = SchoolInformation[0, 4];
-                txtSecondaryEmail.Text = SchoolInformation[0, 5];
-                txtLoginCount.Text = SchoolInformation[0, 7];
-                txtlastLoginDate.Text = SchoolInformation[0, 8];
+                ddlCountry.Items.FindByValue(objJSchool.CountryID.ToString()).Selected = true;
+                txtPostalCode.Text = objJSchool.PostalCode.ToString();
+                txtSchoolTpe.Text = objJSchool.SchoolType;
+                txtContactPrimary.Text = objJSchool.PrimaryContact;
+                txtContactSecondary.Text = objJSchool.SecondaryContact;
+                txtUsername.Text = objJSchool.Username;
+                txtAccountPin.Text = objJSchool.AccountPin.ToString();
+                txtPrimaryEmail.Text = objJSchool.PrimaryEmail;
+                txtSecondaryEmail.Text = objJSchool.SecondaryEmail;
+                txtLoginCount.Text = objJSchool.LoginCount.ToString();
+                txtlastLoginDate.Text = objJSchool.LastLoginDate.Substring(0, 10);
+            }
+        }
+
+        protected void btnSaveChanges_Click(object sender, EventArgs e)
+        {
+
+            string result = objJSchool.UpdateSchoolInformation(txtUsername.Text, Convert.ToInt32(txtAccountPin.Text),
+                 txtPrimaryEmail.Text, txtSecondaryEmail.Text, objJSchool.AuthorizedID,
+                 Convert.ToInt32(ddlCountry.SelectedValue), Convert.ToInt32(ddlCity.SelectedValue),
+                 Convert.ToInt32(txtPostalCode.Text), objJSchool.LocationID, txtSchoolName.Text,
+                 txtOwnerName.Text, txtFoundedIn.Text, FileName, txtContactPrimary.Text, txtContactSecondary.Text,
+                 JSchool.SchoolID);
+            if (result == "true")
+            {
+                Response.Write("<script>alert('Record Updated');</script>");
+                if (JFunctions.UploadSingleFile(fuLogo, "images/registeredSchools/") == "true")
+                    Response.Write("<script>alert('File has been uploaded');</script>");
             }
         }
     }

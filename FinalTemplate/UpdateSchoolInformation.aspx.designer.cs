@@ -10,7 +10,7 @@
 namespace FinalTemplate {
     
     
-    public partial class UpdateSchoolInformation {
+    public partial class UpdateSchoolInformation2 {
         
         /// <summary>
         /// txtSchoolName control.
@@ -119,15 +119,6 @@ namespace FinalTemplate {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtUsername;
-        
-        /// <summary>
-        /// txtPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword;
         
         /// <summary>
         /// txtAccountPin control.

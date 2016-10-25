@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="UpdateSchoolInformation.aspx.cs" Inherits="FinalTemplate.UpdateSchoolInformation" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="UpdateSchoolInformation.aspx.cs" Inherits="FinalTemplate.UpdateSchoolInformation2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="AdminHeadPlaceHolder" runat="server">
-    
+     
 <script src="assets/js/jquery-2.2.3.js"></script>
     <script type="text/javascript">
         $(window).load(function () {
@@ -8,7 +8,7 @@
         });
         $(document).ready(function () {
             teacherwidth();
-      
+
             rowbg();
             setbuttonlayout();
         });
@@ -26,11 +26,11 @@
             $('.heading-table').css('background-color', '#7d4646');
             $('span').css('color', 'black');
         }
-      
+
 
         function setbuttonlayout() {
-            $('#<%=btnSaveChanges.ClientID%>').mouseup(function() {
-                $(this).css('border-color','teal');
+            $('#<%=btnSaveChanges.ClientID%>').mouseup(function () {
+                $(this).css('border-color', 'teal');
             });
             $('#<%=btnSaveChanges.ClientID%>').mousedown(function () {
                 $(this).css('border-color', 'salmon');
@@ -51,7 +51,7 @@
         
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="AdminContentPlaceHolder" runat="server">
-      <div class="section section-padding top-courses">
+     <div class="section section-padding top-courses">
         <div class="container">
             <div class="group-title-index">
                 <h2 class="center-title">Update School Information</h2>
@@ -93,12 +93,12 @@
 
                                     <tr class="table-row">
                                         <td class="col-3"><span>City</span></td>
-                                        <td class="col-2"><asp:DropDownList runat="server"  CssClass="form-control" ID="ddlCity"/></td>
+                                        <td class="col-2"><asp:DropDownList  runat="server"  CssClass="form-control" ID="ddlCity" /></td>
                                     </tr>
                                     
                                     <tr class="table-row">
                                         <td class="col-3"><span>Country</span></td>
-                                        <td class="col-2"><asp:DropDownList runat="server" CssClass="form-control"  ID="ddlCountry"/></td>
+                                        <td class="col-2"><asp:DropDownList  runat="server" CssClass="form-control"  ID="ddlCountry"/></td>
                                     </tr>
 
                                     <tr class="table-row">
@@ -140,11 +140,6 @@
                                         <td class="col-3"></td>
                                     </tr>
                                      <tr class="table-row">
-                                        <td class="col-3"><span>Password</span></td>
-                                        <td class="col-2"><asp:TextBox runat="server" ID="txtPassword" CssClass="form-control"  ReadOnly="True" ></asp:TextBox></td>
-                                        <td class="col-3"></td>
-                                    </tr>
-                                     <tr class="table-row">
                                         <td class="col-3"><span>Account Pin</span></td>
                                         <td class="col-2"><asp:TextBox runat="server" ID="txtAccountPin" CssClass="form-control" ></asp:TextBox></td>
                                         <td class="col-3"></td>
@@ -173,7 +168,7 @@
                                    <tr class="table-row">
                                         <td class="col-3"></td>
                                         <td class="col-3"><span>
-                                            <asp:Button ID="btnSaveChanges" Text="Update Information" CssClass="form-control" runat="server" ForeColor="Black" /></span></td>
+                                            <asp:Button ID="btnSaveChanges" Text="Update Information" CssClass="form-control" runat="server" ForeColor="Black" OnClick="btnSaveChanges_Click" /></span></td>
                                         <td class="col-3"></td>
                                     </tr>
                                     
