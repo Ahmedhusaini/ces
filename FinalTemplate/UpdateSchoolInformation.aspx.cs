@@ -25,13 +25,16 @@ namespace FinalTemplate
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+
+
             if (!IsPostBack)
             {
                 JFunctions.BindDropDownList(ddlCity, "city", "city_id", "select * from tbl_city");
                 JFunctions.BindDropDownList(ddlCountry, "country", "country_id", "select * from tbl_country");
+                ShowSchoolInformation();
+                imgLogo.ImageUrl = "images/registeredSchools/" + FileName;
             }
-            ShowSchoolInformation();
-            imgLogo.ImageUrl = "images/registeredSchools/" + FileName;
+
         }
         private void ShowSchoolInformation()
         {
@@ -62,7 +65,7 @@ namespace FinalTemplate
         {
 
             string result = objJSchool.UpdateSchoolInformation(txtUsername.Text, Convert.ToInt32(txtAccountPin.Text),
-                 txtPrimaryEmail.Text, txtSecondaryEmail.Text, objJSchool.AuthorizedID,
+                 txtPrimaryEmail.Text, txtSecondaryEmail.Text, CurrentUser.AuthorizedID,
                  Convert.ToInt32(ddlCountry.SelectedValue), Convert.ToInt32(ddlCity.SelectedValue),
                  Convert.ToInt32(txtPostalCode.Text), objJSchool.LocationID, txtSchoolName.Text,
                  txtOwnerName.Text, txtFoundedIn.Text, FileName, txtContactPrimary.Text, txtContactSecondary.Text,
