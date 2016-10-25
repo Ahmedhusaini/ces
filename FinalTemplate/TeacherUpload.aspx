@@ -23,6 +23,5 @@
         <SortedDescendingCellStyle BackColor="#E5E5E5" />
         <SortedDescendingHeaderStyle BackColor="#275353" />
     </asp:GridView>
-    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-
+    
 </asp:Content>
