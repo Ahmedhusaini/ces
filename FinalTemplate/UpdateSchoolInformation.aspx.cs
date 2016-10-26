@@ -8,21 +8,7 @@ namespace FinalTemplate
         private string file = string.Empty;
         private int cityid = 0;
         private SchoolRelatedFunction objJSchool = new SchoolRelatedFunction();
-        private string FileName
-        {
-            get { return file; }
-            set
-            {
-                if (fuLogo.HasFile)
-                {
-                    file = fuLogo.FileName;
-                }
-                else
-                {
-                    file = objJSchool.Logo;
-                }
-            }
-        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -32,7 +18,6 @@ namespace FinalTemplate
                 JFunctions.BindDropDownList(ddlCity, "city", "city_id", "select * from tbl_city");
                 JFunctions.BindDropDownList(ddlCountry, "country", "country_id", "select * from tbl_country");
                 ShowSchoolInformation();
-                imgLogo.ImageUrl = "images/registeredSchools/" + FileName;
             }
 
         }
@@ -43,7 +28,6 @@ namespace FinalTemplate
                 txtSchoolName.Text = objJSchool.SchoolName;
                 txtOwnerName.Text = objJSchool.OwnerName;
                 txtFoundedIn.Text = objJSchool.FoundedIn.Substring(0, 10);
-                FileName = objJSchool.Logo;
                 ddlCity.ClearSelection();
                 ddlCity.Items.FindByValue(objJSchool.CityID.ToString()).Selected = true;
                 ddlCountry.ClearSelection();
@@ -68,13 +52,11 @@ namespace FinalTemplate
                  txtPrimaryEmail.Text, txtSecondaryEmail.Text, CurrentUser.AuthorizedID,
                  Convert.ToInt32(ddlCountry.SelectedValue), Convert.ToInt32(ddlCity.SelectedValue),
                  Convert.ToInt32(txtPostalCode.Text), objJSchool.LocationID, txtSchoolName.Text,
-                 txtOwnerName.Text, txtFoundedIn.Text, FileName, txtContactPrimary.Text, txtContactSecondary.Text,
+                 txtOwnerName.Text, txtFoundedIn.Text, txtContactPrimary.Text, txtContactSecondary.Text,
                  JSchool.SchoolID);
             if (result == "true")
             {
                 Response.Write("<script>alert('Record Updated');</script>");
-                if (JFunctions.UploadSingleFile(fuLogo, "images/registeredSchools/") == "true")
-                    Response.Write("<script>alert('File has been uploaded');</script>");
             }
         }
     }

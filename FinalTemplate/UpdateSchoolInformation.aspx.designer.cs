@@ -22,15 +22,6 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.TextBox txtSchoolName;
         
         /// <summary>
-        /// imgLogo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgLogo;
-        
-        /// <summary>
         /// txtOwnerName control.
         /// </summary>
         /// <remarks>
@@ -47,15 +38,6 @@ namespace FinalTemplate {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFoundedIn;
-        
-        /// <summary>
-        /// fuLogo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fuLogo;
         
         /// <summary>
         /// ddlCity control.
