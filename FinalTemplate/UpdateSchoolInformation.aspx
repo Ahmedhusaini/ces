@@ -73,49 +73,49 @@
                                     <tr class="table-row">
                                         <td class="col-3"><span>School Name</span></td>
                                         <td class="col-2"><asp:TextBox runat="server" ID="txtSchoolName" CssClass="form-control" ></asp:TextBox></td>
-                                        <td class="col-3" rowspan="10">
-                                            <asp:Image ID="imgLogo" Height="25%" Width="90%" runat="server"    />
-                                        </td>
-                                        
+                                        <td class="col-3"></td>
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>Owner Name</span></td>
                                         <td class="col-2"><asp:TextBox runat="server" ID="txtOwnerName" CssClass="form-control" ></asp:TextBox></td>
+                                        <td class="col-3"></td>
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>Founded In</span></td>
                                         <td class="col-2"><asp:TextBox runat="server" ID="txtFoundedIn"   CssClass="form-control" placeholder="mm/dd/yyyy"></asp:TextBox></td>
+                                        <td class="col-3"></td>
                                     </tr>
-                                    <tr class="table-row">
-                                        <td class="col-3"><span>Logo</span></td>
-                                        <td class="col-2"><asp:FileUpload runat="server" ID="fuLogo" CssClass="form-control" /></td>
-                                    </tr>
-
                                     <tr class="table-row">
                                         <td class="col-3"><span>City</span></td>
                                         <td class="col-2"><asp:DropDownList  runat="server"  CssClass="form-control" ID="ddlCity" /></td>
+                                        <td class="col-3"></td>
                                     </tr>
                                     
                                     <tr class="table-row">
                                         <td class="col-3"><span>Country</span></td>
                                         <td class="col-2"><asp:DropDownList  runat="server" CssClass="form-control"  ID="ddlCountry"/></td>
+                                        <td class="col-3"></td>
                                     </tr>
 
                                     <tr class="table-row">
                                         <td class="col-3"><span>PostalCode</span></td>
                                         <td class="col-2"><asp:TextBox runat="server" ID="txtPostalCode" CssClass="form-control" ></asp:TextBox></td>
+                                        <td class="col-3"></td>
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>School Type</span></td>
                                         <td class="col-2"><asp:TextBox runat="server" ID="txtSchoolTpe" CssClass="form-control" ReadOnly="True"></asp:TextBox></td>
+                                        <td class="col-3"></td>
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>Contact Primary</span></td>
                                         <td class="col-2"><asp:TextBox runat="server" ID="txtContactPrimary" CssClass="form-control" ></asp:TextBox></td>
+                                        <td class="col-3"></td>
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>Contact Secondary</span></td>
                                         <td class="col-2"><asp:TextBox runat="server"  CssClass="form-control" ID="txtContactSecondary"></asp:TextBox></td>
+                                        <td class="col-3"></td>
                                     </tr>
                                 </tbody>
                             </table>

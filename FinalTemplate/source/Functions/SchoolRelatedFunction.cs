@@ -59,7 +59,6 @@ namespace FinalTemplate.source.Functions
                         OwnerName = mydb.obj_reader["owner_name"].ToString();
                         SchoolName = mydb.obj_reader["school_name"].ToString();
                         SchoolType = mydb.obj_reader["school_type"].ToString();
-                        Logo = mydb.obj_reader["logo"].ToString();
                         LoginCount = Convert.ToInt32(mydb.obj_reader["login_count"]);
                         LastLoginDate = mydb.obj_reader["last_login_date"].ToString();
                         LocationID = Convert.ToInt32(mydb.obj_reader["loc_id"]);
@@ -80,7 +79,7 @@ namespace FinalTemplate.source.Functions
             return valuereturned;
         }
 
-        public string UpdateSchoolInformation(string _username, int _account_pin, string _primary_email, string _secondary_email, string _authorized_id, int _country_id, int _city_id, int _postal_code, int _loc_id, string _school_name, string _owner_name, string _founded_in, string _logo, string _contact_primary, string _contact_secondary, string _school_id)
+        public string UpdateSchoolInformation(string _username, int _account_pin, string _primary_email, string _secondary_email, string _authorized_id, int _country_id, int _city_id, int _postal_code, int _loc_id, string _school_name, string _owner_name, string _founded_in, string _contact_primary, string _contact_secondary, string _school_id)
         {
             string value = string.Empty;
             mydb.CreateConnection();
@@ -97,7 +96,6 @@ namespace FinalTemplate.source.Functions
             mydb.obj_sqlcommand.Parameters.Add("@school_name", SqlDbType.VarChar, 50).Value = _school_name;
             mydb.obj_sqlcommand.Parameters.Add("@owner_name", SqlDbType.VarChar, 50).Value = _owner_name;
             mydb.obj_sqlcommand.Parameters.Add("@founded_in", SqlDbType.DateTime).Value = Convert.ToDateTime(_founded_in);
-            mydb.obj_sqlcommand.Parameters.Add("@logo", SqlDbType.VarChar, 200).Value = _logo;
             mydb.obj_sqlcommand.Parameters.Add("@contact_primary", SqlDbType.VarChar, 20).Value = _contact_primary;
             mydb.obj_sqlcommand.Parameters.Add("@contact_secondary", SqlDbType.VarChar, 20).Value = _contact_secondary;
             mydb.obj_sqlcommand.Parameters.Add("@school_id", SqlDbType.VarChar, 50).Value = _school_id;
