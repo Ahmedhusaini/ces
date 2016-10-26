@@ -320,6 +320,7 @@
     <Content Include="UpdateStudentInformationByAdmin.aspx" />
     <Content Include="UpdateTeacherInformation.aspx" />
     <Content Include="update_StudentDetail.aspx" />
+    <Content Include="update_teacherDetail.aspx" />
     <Content Include="ViewAllStudents.aspx" />
     <Content Include="ViewAllTachers.aspx" />
     <Content Include="View_Attendance.aspx" />
@@ -691,6 +692,13 @@
     </Compile>
     <Compile Include="update_StudentDetail.aspx.designer.cs">
       <DependentUpon>update_StudentDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="update_teacherDetail.aspx.cs">
+      <DependentUpon>update_teacherDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="update_teacherDetail.aspx.designer.cs">
+      <DependentUpon>update_teacherDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="User.Master.cs">
       <DependentUpon>User.Master</DependentUpon>
