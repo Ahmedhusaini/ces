@@ -43,11 +43,11 @@
         <Columns>
             <asp:BoundField DataField="std_attend_id" HeaderText="std_attend_id" SortExpression="std_attend_id" ReadOnly="True" />
             <asp:BoundField DataField="username" HeaderText="username" SortExpression="username" />
-            <asp:BoundField DataField="remarks" HeaderText="remarks" SortExpression="remarks" />
-            <asp:BoundField DataField="month_name" HeaderText="month_name" SortExpression="month_name" />
             <asp:BoundField DataField="day" HeaderText="day" SortExpression="day" />
+            <asp:BoundField DataField="month_name" HeaderText="month_name" SortExpression="month_name" />
             <asp:BoundField DataField="class" HeaderText="class" SortExpression="class" />
             <asp:BoundField DataField="section" HeaderText="section" SortExpression="section" />
+            <asp:BoundField DataField="remarks" HeaderText="remarks" SortExpression="remarks" />
         </Columns>
         <FooterStyle BackColor="White" ForeColor="#333333" />
         <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
@@ -60,13 +60,9 @@
         <SortedDescendingHeaderStyle BackColor="#275353" />
     </asp:GridView>                     
                    
-    <asp:SqlDataSource ID="student_attendance" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [std_attend_id], [username], [remarks], [month_name], [day], [class], [section] FROM [Studentattendance] WHERE (([class] = @class) AND ([section] = @section) AND ([month_name] = @month_name))">
-        <SelectParameters>
-            <asp:ControlParameter ControlID="DropDownList1" Name="class" PropertyName="SelectedValue" Type="String" />
-            <asp:ControlParameter ControlID="DropDownList2" Name="section" PropertyName="SelectedValue" Type="String" />
-            <asp:ControlParameter ControlID="DropDownList3" Name="month_name" PropertyName="SelectedValue" Type="String" />
-        </SelectParameters>
-                                                            </asp:SqlDataSource>
+    <asp:SqlDataSource ID="student_attendance" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [std_attend_id], [username], [day], [month_name], [class], [section], [remarks] FROM [Studentattendance]">
+       
+    </asp:SqlDataSource>
                                                       
                                                     </div>
                                                 
