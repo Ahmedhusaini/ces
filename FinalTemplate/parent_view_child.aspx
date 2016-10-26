@@ -40,8 +40,8 @@
     
     
     <div> <asp:label ID="id" runat="server"> </asp:label>  </div>
-      <div class="style-show style-grid row" style="    margin-right: 446px;
-    margin-left: 98px;">
+      <div class="style-show style-grid row" style="        padding-right: 998px;
+    margin-left: 179px;">
     <div class="col-style">
                                             <div class="edugate-layout-2">
                                                 <div class="edugate-layout-2-wrapper">
@@ -89,19 +89,21 @@
     <br />
     <br />
     <br />
-        <div class="container">
+        <div class="container" style="    margin-right: 450px;">
         <div id="check_timetable" class="underline" style="height: 20px; text-align: left;">
                 <h2> TIME TABLE&nbsp;&nbsp;&nbsp;&nbsp; </h2>
              
             </div>
            
     <br />
-    <asp:GridView ID="GridView1"  class="edu-table-responsive"  runat="server"  AutoGenerateColumns="False" Width="1220px "  ForeColor="#86BC42" AllowPaging="True" AllowSorting="True" CellPadding="4" GridLines="None" DataSourceID="SqlDataSource2">
+    <asp:GridView ID="GridView1"  class="edu-table-responsive"  runat="server"  AutoGenerateColumns="False" Width="1220px"   ForeColor="#86BC42" AllowPaging="True" AllowSorting="True" CellPadding="4" GridLines="None" DataSourceID="SqlDataSource2">
         <Columns>
             <asp:BoundField DataField="day" HeaderText="day" SortExpression="day" />
             <asp:BoundField DataField="subject" HeaderText="subject" SortExpression="subject" />
             <asp:BoundField DataField="starting_time" HeaderText="starting_time" SortExpression="starting_time" />
             <asp:BoundField DataField="ending_time" HeaderText="ending_time" SortExpression="ending_time" />
+           
+            
         </Columns>
          <EditRowStyle BackColor="#7C6F57" />
                                         <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -113,7 +115,10 @@
                                         <SortedAscendingHeaderStyle BackColor="#246B61" />
                                         <SortedDescendingCellStyle BackColor="#D4DFE1" />
                                         <SortedDescendingHeaderStyle BackColor="#15524A" />
+
+        
     </asp:GridView>
+            <asp:Button ID="Button1" runat="server" Text="Download" OnClick="Button1_Click" />
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="sp_chileTimetable" SelectCommandType="StoredProcedure">
         <SelectParameters>
             <asp:ControlParameter ControlID="Dp2" Name="section" PropertyName="SelectedValue" Type="String" />
@@ -122,7 +127,62 @@
         </SelectParameters>
     </asp:SqlDataSource>
     
-    </div>
+  
+       
+
+
+            <br/>
+             <br/>
+             <br/>
+             <br/>
+             <br/>
+             <br/>
+
+
+                 <div id="check_timetable" class="underline" style="height: 20px; text-align: left;">
+                <h2> Attendance &nbsp;&nbsp;&nbsp;&nbsp; </h2>
+             
+            </div>
+        <br />
+            <asp:Label ID="Label1" runat="server" Text="Month"></asp:Label>
+            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource4" DataTextField="Column1" DataValueField="Column1" AutoPostBack="True" >
+            </asp:DropDownList>
+        <br />
+        <br />
+        <asp:GridView ID="GridView2" class="edu-table-responsive"  runat="server"  AutoGenerateColumns="False" Width="1220px"  ForeColor="#86BC42" AllowPaging="True" AllowSorting="True" CellPadding="4" GridLines="None" DataSourceID="SqlDataSource3">
+      
+            
+             <Columns>
+                 <asp:BoundField DataField="date" HeaderText="date" SortExpression="date" />
+                 <asp:BoundField DataField="time" HeaderText="time" SortExpression="time" />
+                 <asp:BoundField DataField="remarks" HeaderText="remarks" SortExpression="remarks" />
+             </Columns>
+      
+            
+             <EditRowStyle BackColor="#7C6F57" />
+                                        <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                                        <HeaderStyle BackColor="#737373" Font-Bold="True" ForeColor="#86bc42" />
+                                        <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                                        <RowStyle BackColor="#E3EAEB" />
+                                        <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                                        <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                                        <SortedAscendingHeaderStyle BackColor="#246B61" />
+                                        <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                                        <SortedDescendingHeaderStyle BackColor="#15524A" />
+              </asp:GridView>
+        
+            <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="select distinct  MONTH([date]) from tbl_student_attendance">
+            </asp:SqlDataSource>
+            <br />
+        
+            <br />
+            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="sp_Parents_view_attendance" SelectCommandType="StoredProcedure">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="DropDownList1" Name="month" PropertyName="SelectedValue" Type="Int32" />
+                    <asp:ControlParameter ControlID="id" Name="std_id" PropertyName="Text" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+        
         </div>
    
 </asp:Content>

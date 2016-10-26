@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Recaptcha">
@@ -627,6 +630,7 @@
     </Compile>
     <Compile Include="UpdateParentInformation.aspx.cs">
       <DependentUpon>UpdateParentInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UpdateParentInformation.aspx.designer.cs">
       <DependentUpon>UpdateParentInformation.aspx</DependentUpon>
