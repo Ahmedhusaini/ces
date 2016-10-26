@@ -39,9 +39,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="itextsharp">
-      <HintPath>..\..\itextsharp.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Recaptcha">
@@ -143,6 +140,7 @@
     <Content Include="Mark_attendance.aspx" />
     <Content Include="Mark_sheet.aspx" />
     <Content Include="Our_Team.aspx" />
+    <Content Include="PackageInformation.aspx" />
     <Content Include="parentpanel.aspx" />
     <Content Include="parent_view_child.aspx" />
     <Content Include="PostNews.aspx" />
@@ -315,11 +313,14 @@
     <Content Include="Teacherprofile.aspx" />
     <Content Include="TeacherUpload.aspx" />
     <Content Include="Teacher_timetable.aspx" />
+    <Content Include="UpdateAndViewEventDetails.aspx" />
     <Content Include="UpdateParentInformation.aspx" />
     <Content Include="updatepasswordpanel.aspx" />
+    <Content Include="UpdateSchoolInformation.aspx" />
     <Content Include="UpdateStudentInformationByAdmin.aspx" />
     <Content Include="UpdateTeacherInformation.aspx" />
     <Content Include="update_StudentDetail.aspx" />
+    <Content Include="update_teacherDetail.aspx" />
     <Content Include="ViewAllStudents.aspx" />
     <Content Include="ViewAllTachers.aspx" />
     <Content Include="View_Attendance.aspx" />
@@ -376,6 +377,14 @@
     <Compile Include="Date_sheet.aspx.designer.cs">
       <DependentUpon>Date_sheet.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PackageInformation.aspx.cs">
+      <DependentUpon>PackageInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PackageInformation.aspx.designer.cs">
+      <DependentUpon>PackageInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="source\Functions\JEvents.cs" />
     <Compile Include="source\Functions\Jfunctionteacher.cs" />
     <Compile Include="source\Functions\JStudent.cs" />
     <Compile Include="Mark_attendance.aspx.cs">
@@ -628,6 +637,13 @@
     <Compile Include="Teacher_timetable.aspx.designer.cs">
       <DependentUpon>Teacher_timetable.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UpdateAndViewEventDetails.aspx.cs">
+      <DependentUpon>UpdateAndViewEventDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateAndViewEventDetails.aspx.designer.cs">
+      <DependentUpon>UpdateAndViewEventDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UpdateParentInformation.aspx.cs">
       <DependentUpon>UpdateParentInformation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -649,6 +665,13 @@
     <Compile Include="updatepasswordpanel.Master.designer.cs">
       <DependentUpon>updatepasswordpanel.Master</DependentUpon>
     </Compile>
+    <Compile Include="UpdateSchoolInformation.aspx.cs">
+      <DependentUpon>UpdateSchoolInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateSchoolInformation.aspx.designer.cs">
+      <DependentUpon>UpdateSchoolInformation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UpdateStudentInformationByAdmin.aspx.cs">
       <DependentUpon>UpdateStudentInformationByAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -669,6 +692,13 @@
     </Compile>
     <Compile Include="update_StudentDetail.aspx.designer.cs">
       <DependentUpon>update_StudentDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="update_teacherDetail.aspx.cs">
+      <DependentUpon>update_teacherDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="update_teacherDetail.aspx.designer.cs">
+      <DependentUpon>update_teacherDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="User.Master.cs">
       <DependentUpon>User.Master</DependentUpon>

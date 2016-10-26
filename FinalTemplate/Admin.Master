@@ -101,8 +101,8 @@
                         </li>  
                         <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Settings<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                <li><a href="news.html" class="link-page">Update School Profile</a></li>
-                                <li><a href="news-grid-nonsidebar.html" class="link-page">View Package Information</a></li>
+                                <li><a href="UpdateSchoolInformation.aspx" class="link-page">Update School Profile</a></li>
+                                <li><a href="PackageInformation.aspx" class="link-page">View Package Information</a></li>
                             </ul>
                         </li> 
                          <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Contact<span class="fa fa-angle-down icons-dropdown"></span></a>

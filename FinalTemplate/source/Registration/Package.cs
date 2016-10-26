@@ -1,5 +1,6 @@
 ﻿
 
+using FinalTemplate.source.Functions;
 using System;
 
 namespace FinalTemplate.source.Registration
@@ -169,6 +170,78 @@ namespace FinalTemplate.source.Registration
                 AdminPanelType = "Advance";
                 SchoolID = schoolID;
             }
+        }
+
+        public int GetMyPackageID()
+        {
+            string[,] packageid;
+            string[] col = { "package_id" };
+            string[] wherecol = { "school_id" };
+            string[] whereoperator = { "=" };
+            string[] wherevalue = { "'" + JSchool.SchoolID + "'" };
+            string[] multiwhere = { "" };
+            packageid = myDatabase.SelectQuery("tbl_packages", col, wherecol, whereoperator, wherevalue, multiwhere);
+            return Convert.ToInt32(packageid[0, 0]);
+        }
+        public bool GetPackageDetailsByID(int _packageid)
+        {
+            myDatabase.CreateConnection();
+            myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "select * from tbl_packages where package_id=@packageid;");
+            myDatabase.obj_sqlcommand.Parameters.AddWithValue("@packageid", _packageid);
+            try
+            {
+                myDatabase.OpenConnection();
+                myDatabase.obj_reader = myDatabase.obj_sqlcommand.ExecuteReader();
+                if (myDatabase.obj_reader.HasRows)
+                {
+                    while (myDatabase.obj_reader.Read())
+                    {
+                        PackageID = Convert.ToInt32(myDatabase.obj_reader["package_id"]);
+                        OnlineAdmission = Convert.ToInt32(myDatabase.obj_reader["online_admission"]);
+                        TeacherProfile = Convert.ToInt32(myDatabase.obj_reader["teacher_profile"]);
+                        PostJobVacancies = Convert.ToInt32(myDatabase.obj_reader["post_job_vacancies"]);
+                        Emails = myDatabase.obj_reader["emails"].ToString();
+                        AttendanceForStaff = myDatabase.obj_reader["attendance_for_staff"].ToString();
+                        AttendanceForStudent = myDatabase.obj_reader["attendance_for_students"].ToString();
+                        Results = Convert.ToInt32(myDatabase.obj_reader["results"]);
+                        FeesStructure = Convert.ToInt32(myDatabase.obj_reader["fee_structure"]);
+                        Syllabus = myDatabase.obj_reader["syllabus"].ToString();
+                        DateSheets = myDatabase.obj_reader["date_sheets"].ToString();
+                        Events = myDatabase.obj_reader["events"].ToString();
+                        Gallery = myDatabase.obj_reader["gallery"].ToString();
+                        Reports = myDatabase.obj_reader["report"].ToString();
+                        StudentOfTheMonth = Convert.ToInt32(myDatabase.obj_reader["student_of_the_month"]);
+                        AssignmentAndHomework = Convert.ToInt32(myDatabase.obj_reader["assignment_homework"]);
+                        SMS = Convert.ToInt32(myDatabase.obj_reader["sms"]);
+                        EmailAccounts = Convert.ToInt32(myDatabase.obj_reader["email_accounts"]);
+                        Notifications = myDatabase.obj_reader["notifications"].ToString();
+                        ComparisonOfSchools = Convert.ToInt32(myDatabase.obj_reader["comparison_of_schools"]);
+                        SchoolRating = Convert.ToInt32(myDatabase.obj_reader["school_rating"]);
+                        SchoolPublicProfile = Convert.ToInt32(myDatabase.obj_reader["school_public_profile"]);
+                        SchoolIntroductionVideo = Convert.ToInt32(myDatabase.obj_reader["school_intro_video"]);
+                        ActiveUsers = myDatabase.obj_reader["active_users"].ToString();
+                        SchoolToSchoolMessage = myDatabase.obj_reader["school_to_school_communication"].ToString();
+                        SameAccountForOtherBranch = myDatabase.obj_reader["same_account_for_other_branch"].ToString();
+                        DatabaseBackup = myDatabase.obj_reader["database_backup"].ToString();
+                        SecurityAndConfidentiality = myDatabase.obj_reader["security_confidenctiality"].ToString();
+                        DataAvailability = myDatabase.obj_reader["data_availability"].ToString();
+                        PackageCustomization = Convert.ToInt32(myDatabase.obj_reader["package_customization"]);
+                        PackageTerminationReport = Convert.ToInt32(myDatabase.obj_reader["package_termination_report"]);
+                        OnlineSupport = myDatabase.obj_reader["online_support"].ToString();
+                        DataFilters = myDatabase.obj_reader["data_filters"].ToString();
+                        AdminPanelType = myDatabase.obj_reader["admin_panel_type"].ToString();
+                        PackageTypeID = Convert.ToInt32(myDatabase.obj_reader["package_type_id"]);
+                    }
+                    return true;
+                }
+            }
+            finally
+            {
+                myDatabase.CloseConnection();
+                myDatabase.obj_reader.Close();
+                myDatabase.obj_reader.Dispose();
+            }
+            return false;
         }
 
         public string AssignPackage()
