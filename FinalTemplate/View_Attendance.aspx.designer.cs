@@ -67,6 +67,24 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.SqlDataSource month;
         
         /// <summary>
+        /// DropDownList4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList4;
+        
+        /// <summary>
+        /// day control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource day;
+        
+        /// <summary>
         /// Button1 control.
         /// </summary>
         /// <remarks>

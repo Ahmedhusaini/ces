@@ -6,15 +6,17 @@
                         <div class="container">
                             <div class="search-input-wrapper">
                               
-                                                <asp:DropDownList ID="DropDownList1" runat="server" class="sbHolder"  DataSourceID="class" DataTextField="class" DataValueField="class_id"></asp:DropDownList>
-                                                        <asp:SqlDataSource ID="class" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [class_id], [class] FROM [tbl_class]">
-                                                        </asp:SqlDataSource>
-                                                        <asp:DropDownList ID="DropDownList2" runat="server" class="sbHolder" DataSourceID="section" DataTextField="section" DataValueField="section_id"></asp:DropDownList>
-                                                        <asp:SqlDataSource ID="section" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [section_id], [section] FROM [tbl_section]">
-                                                        </asp:SqlDataSource>
-                                                        <asp:DropDownList ID="DropDownList3" runat="server" class="sbHolder" DataSourceID="month" DataTextField="month_name" DataValueField="month_id"></asp:DropDownList>
-                                                        <asp:SqlDataSource ID="month" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [month_id], [month_name] FROM [tbl_month]">
-                                                        </asp:SqlDataSource>
+                                       <asp:DropDownList ID="DropDownList1" runat="server" class="sbHolder"  DataSourceID="class" DataTextField="class" DataValueField="class_id"></asp:DropDownList>
+                                       <asp:SqlDataSource ID="class" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [class_id], [class] FROM [tbl_class]">
+                                       </asp:SqlDataSource>
+                                       <asp:DropDownList ID="DropDownList2" runat="server" class="sbHolder" DataSourceID="section" DataTextField="section" DataValueField="section_id"></asp:DropDownList>
+                                       <asp:SqlDataSource ID="section" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [section_id], [section] FROM [tbl_section]">
+                                       </asp:SqlDataSource>
+                                       <asp:DropDownList ID="DropDownList3" runat="server" class="sbHolder" DataSourceID="month" DataTextField="month_name" DataValueField="month_id"></asp:DropDownList>
+                                       <asp:SqlDataSource ID="month" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [month_id], [month_name] FROM [tbl_month]">
+                                       </asp:SqlDataSource>
+                                       <asp:DropDownList ID="DropDownList4" runat="server" class="sbHolder" DataSourceID="day" DataTextField="day" DataValueField="day_id"></asp:DropDownList>         
+                                       <asp:SqlDataSource ID="day" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [day_id], [day] FROM [tbl_day]"></asp:SqlDataSource>
 
                                     <span>
                                                
@@ -41,13 +43,9 @@
                                          
         <asp:GridView ID="GridView1" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataSourceID="student_attendance" GridLines="Horizontal" DataKeyNames="std_attend_id">
         <Columns>
-            <asp:BoundField DataField="std_attend_id" HeaderText="std_attend_id" SortExpression="std_attend_id" ReadOnly="True" />
-            <asp:BoundField DataField="username" HeaderText="username" SortExpression="username" />
-            <asp:BoundField DataField="day" HeaderText="day" SortExpression="day" />
-            <asp:BoundField DataField="month_name" HeaderText="month_name" SortExpression="month_name" />
-            <asp:BoundField DataField="class" HeaderText="class" SortExpression="class" />
-            <asp:BoundField DataField="section" HeaderText="section" SortExpression="section" />
-            <asp:BoundField DataField="remarks" HeaderText="remarks" SortExpression="remarks" />
+            <asp:BoundField DataField="std_attend_id" HeaderText="ID" SortExpression="std_attend_id" ReadOnly="True" />
+            <asp:BoundField DataField="username" HeaderText="Username" SortExpression="username" />
+            <asp:BoundField DataField="remarks" HeaderText="Remarks" SortExpression="remarks" />
         </Columns>
         <FooterStyle BackColor="White" ForeColor="#333333" />
         <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
@@ -60,7 +58,13 @@
         <SortedDescendingHeaderStyle BackColor="#275353" />
     </asp:GridView>                     
                    
-    <asp:SqlDataSource ID="student_attendance" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [std_attend_id], [username], [day], [month_name], [class], [section], [remarks] FROM [Studentattendance]">
+    <asp:SqlDataSource ID="student_attendance" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [std_attend_id], [username], [remarks] FROM [Studentattendance] WHERE (([class_id] = @class_id) AND ([section_id] = @section_id) AND ([month_id] = @month_id) AND ([day_id] = @day_id))">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="DropDownList1" Name="class_id" PropertyName="SelectedValue" Type="Int32" />
+            <asp:ControlParameter ControlID="DropDownList2" Name="section_id" PropertyName="SelectedValue" Type="Int32" />
+            <asp:ControlParameter ControlID="DropDownList3" Name="month_id" PropertyName="SelectedValue" Type="Int32" />
+            <asp:ControlParameter ControlID="DropDownList4" Name="day_id" PropertyName="SelectedValue" Type="Int32" />
+        </SelectParameters>
        
     </asp:SqlDataSource>
                                                       
