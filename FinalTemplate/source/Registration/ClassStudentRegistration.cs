@@ -8,7 +8,7 @@ namespace FinalTemplate.source
 {
     public class ClassStudentRegistration
     {
-        private Database.Database studentdatabase = new Database.Database("cesConnectionString2");
+        private Database.Database studentdatabase = new Database.Database("ces");
         public string studentregister(string name, string lastname, string contactno, string gurdianname, string gurdiancontact,
                                 string gender, string dob, string nationality, string religion, int country, int city, string address, int postalcode,
                                 string prvschool, string lastclass, string image, string schoolname, int classname, int section, string username,

@@ -97,7 +97,7 @@
                             <h2 class="center-title">check profile of your Child&nbsp;&nbsp;&nbsp;&nbsp; </h2>
 
                             <div class="bottom-title">
-                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="GetParentid" SelectCommandType="StoredProcedure">
+                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="GetParentid" SelectCommandType="StoredProcedure">
                                     <SelectParameters>
                                         <asp:SessionParameter Name="authorized_id" SessionField="userid" Type="String" />
                                     </SelectParameters>
@@ -107,7 +107,7 @@
                                 <i class="bottom-icon icon-a-1-01-01"></i>
                                 <br />
                                 <br />
-                                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="spchild" SelectCommandType="StoredProcedure">
+                                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="spchild" SelectCommandType="StoredProcedure">
                                     <SelectParameters>
                                         <asp:ControlParameter ControlID="DropDownList1" Name="Parent_ID" PropertyName="SelectedValue" Type="String" />
                                     </SelectParameters>
@@ -207,157 +207,13 @@
                     </div>
                 </div>     
     <div class="section teacher-course section-padding">
-                    <div class="container teacher-course-wrapper" style="width:1220px">
-                        <div class="group-title-index edu-ab-title"><h2 class="center-title">Check<b> your student</b> time table</h2></div>
-                       <div class="course-table">
-                            <div class="outer-container">
-                                <div class="inner-container">
-                                    <div class="table-header">
-                                        <table class="edu-table-responsive">
-                                            <thead>
-                                            <tr class="heading-table">
-                                                <th class="col-1">ID</th>
-                                                <th class="col-3">MONDAY</th>
-                                                <th class="col-3">TUESDAY</th>
-                                                <th class="col-3">WEDNESDAY</th>
-                                                <th class="col-3">THURSDAY</th>
-                                                <th class="col-3">FRIDAY</th>
-                                            </tr>
-                                            </thead>
-                                        </table>
-                                    </div>
-                                    <div class="table-body">
-                                        <table class="edu-table-responsive table-hover">
-                                            <tbody>
-                                            <tr class="table-row">
-                                                <td class="col-1"><span>P1</span></td>
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>                                                
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                            </tr>
-                                            <tr class="table-row">
-                                                <td class="col-1"><span>P2</span></td>
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>                                                
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                            </tr>
-                                            <tr class="table-row">
-                                                <td class="col-1"><span>P3</span></td>
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>                                                
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                            </tr>
-                                            <tr class="table-row">
-                                                <td class="col-1"><span>P4</span></td>
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>                                                
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                            </tr>
-                                            <tr class="table-row">
-                                                <td class="col-1"><span>P5</span></td>
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>                                                
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                            </tr>
-                                            <tr class="table-row">
-                                                <td class="col-1"><span>P6</span></td>
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>                                                
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                            </tr>
-                                            <tr class="table-row">
-                                                <td class="col-1"><span>P7</span></td>
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>                                                
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                                <td class="col-3"><span><a href="#">2 months</a></span></td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
            <div class="section teacher-course section-padding">
                     <div class="container teacher-course-wrapper">
-                        <div class="group-title-index edu-ab-title"><h2 class="center-title">check<b> your</b> student cources</h2></div>
                         <div class="course-table">
                             <div class="outer-container">
                                 <div class="inner-container">
-                                    <div class="table-header">
-                                        <table class="edu-table-responsive">
-                                            <thead>
-                                            <tr class="heading-table">
-                                                <th class="col-1">id</th>
-                                                <th class="col-2">course name</th>
-                                                <th class="col-3">duration</th>
-                                                <th class="col-4">timeline</th>
-                                            </tr>
-                                            </thead>
-                                        </table>
-                                    </div>
                                     <div class="table-body">
-                                        <table class="edu-table-responsive table-hover">
-                                            <tbody>
-                                            <tr class="table-row">
-                                                <td class="col-1"><span>ED1</span></td>
-                                                <td class="col-2"><a href="courses-detail.html">Sport Exercise Sciences</a></td>
-                                                <td class="col-3"><span>2 months</span></td>
-                                                <td class="col-4"><span>01/01/2016 -  02/15/2016</span></td>
-                                            </tr>
-                                            <tr class="table-row">
-                                                <td class="col-1"><span>ED1</span></td>
-                                                <td class="col-2"><a href="courses-detail.html">Learning Website Optimization With Bootstrap</a></td>
-                                                <td class="col-3"><span>2 months</span></td>
-                                                <td class="col-4"><span>01/01/2016 -  02/15/2016</span></td>
-                                            </tr>
-                                            <tr class="table-row">
-                                                <td class="col-1"><span>ED1</span></td>
-                                                <td class="col-2"><a href="courses-detail.html">Skeching Custom Item Prize Design</a></td>
-                                                <td class="col-3"><span>2 months</span></td>
-                                                <td class="col-4"><span>01/01/2016 -  02/15/2016</span></td>
-                                            </tr>
-                                            <tr class="table-row">
-                                                <td class="col-1"><span>ED1</span></td>
-                                                <td class="col-2"><a href="courses-detail.html">Learning Website Optimization With Bootstrap</a></td>
-                                                <td class="col-3"><span>2 months</span></td>
-                                                <td class="col-4"><span>01/01/2016 -  02/15/2016</span></td>
-                                            </tr>
-                                            <tr class="table-row">
-                                                <td class="col-1"><span>ED1</span></td>
-                                                <td class="col-2"><a href="courses-detail.html">Learning Viral Web Design Projects</a></td>
-                                                <td class="col-3"><span>2 months</span></td>
-                                                <td class="col-4"><span>01/01/2016 -  02/15/2016</span></td>
-                                            </tr>
-                                            <tr class="table-row">
-                                                <td class="col-1"><span>ED1</span></td>
-                                                <td class="col-2"><a href="courses-detail.html">Email Marketing Strategy With MailChimp</a></td>
-                                                <td class="col-3"><span>2 months</span></td>
-                                                <td class="col-4"><span>01/01/2016 -  02/15/2016</span></td>
-                                            </tr>
-                                            <tr class="table-row">
-                                                <td class="col-1"><span>ED1</span></td>
-                                                <td class="col-2"><a href="courses-detail.html">Social Media Network & Marketing</a></td>
-                                                <td class="col-3"><span>2 months</span></td>
-                                                <td class="col-4"><span>01/01/2016 -  02/15/2016</span></td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
                                     </div>
                                 </div>
                             </div>
@@ -365,46 +221,14 @@
                     </div>
                 </div>
      <!-- SLIDER TALK ABOUT US-->                                        
-                <div class="section background-opacity slider-talk-about-us">
-                    <div class="container">
-                         
-
-                        <div id="people-talk" data-ride="carousel" data-interval="5000" class="slider-talk-about-us-wrapper carousel slide">
-                            <div role="listbox" class="slider-talk-about-us-content carousel-inner">
-                                <div class="peopel-item item active"><p class="peopel-comment">" There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. "</p>
-
-                                    <div class="group-peole-info">
-                                        <div class="peopel-avatar"><img src="assets/images/people-avatar-1.jpg" alt="" class="img-responsive"/></div>
-                                        <div class="peopel-name">john doe</div>
-                                        <div class="people-job">Microshop Crop.SEO</div>
-                                    </div>
-                                </div>
-                                <div class="peopel-item item"><p class="peopel-comment">" There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. "</p>
-
-                                    <div class="group-peole-info">
-                                        <div class="peopel-avatar"><img src="assets/images/people-avatar-1.jpg" alt="" class="img-responsive"/></div>
-                                        <div class="peopel-name">john doe</div>
-                                        <div class="people-job">Microshop Crop.SEO</div>
-                                    </div>
-                                </div>
-                                <div class="peopel-item item"><p class="peopel-comment">" There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. "</p>
-
-                                    <div class="group-peole-info">
-                                        <div class="peopel-avatar"><img src="assets/images/people-avatar-1.jpg" alt="" class="img-responsive"/></div>
-                                        <div class="peopel-name">john doe</div>
-                                        <div class="people-job">Microshop Crop.SEO</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <%--<div class="section background-opacity slider-talk-about-us">
                     <div class="group-btn-slider"><a href="#people-talk" role="button" data-slide="prev">
                     </a><a href="#people-talk" role="button" data-slide="next">
                         <div class="btn-next carousel-control right"><i class="fa fa-angle-right"></i></div>
                     </a></div>
-                </div>
+                </div>--%>
                     <!-- SLIDER LOGO-->
-                <div class="section slider-logo">
+                <%--<div class="section slider-logo">
                     <div class="container">
                         <div class="slider-logo-wrapper">
                             <div class="slider-logo-content">
@@ -425,6 +249,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>--%>
               </div>
 </asp:Content>

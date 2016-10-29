@@ -7,7 +7,7 @@ namespace FinalTemplate.source.Functions
 {
     public class Parents
     {
-        static private Database.Database mydatabse = new Database.Database("cesConnectionString3");
+        static private Database.Database mydatabse = new Database.Database("ces");
 
         static public string std_id { get; set; }
 

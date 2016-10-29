@@ -11,7 +11,7 @@ namespace FinalTemplate.source.Functions
 {
     public class student
     {
-        static private Database.Database mydatabse = new Database.Database("cesConnectionString2");
+        static private Database.Database mydatabse = new Database.Database("ces");
 
         //  Get StudentID
         static public string studentid { get; set; }

@@ -45,15 +45,15 @@
             <div class="search-input-wrapper">
                 <asp:DropDownList ID="DropDownList1" runat="server" CssClass="sbHolder" DataSourceID="class_DataSource" DataTextField="class" DataValueField="class">
                 </asp:DropDownList>
-                <asp:SqlDataSource ID="class_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="SELECT [class] FROM [tbl_class]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="class_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [class] FROM [tbl_class]"></asp:SqlDataSource>
                 <div>
                     <asp:DropDownList ID="DropDownList2" runat="server" CssClass="sbHolder" DataSourceID="sec_DataSource" DataTextField="section" DataValueField="section">
                     </asp:DropDownList>
-                    <asp:SqlDataSource ID="sec_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="SELECT [section] FROM [tbl_section]"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="sec_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [section] FROM [tbl_section]"></asp:SqlDataSource>
                 </div>
                 <div>
                     <asp:DropDownList ID="DropDownList3" CssClass="sbHolder" runat="server" DataSourceID="SqlDataSource1" DataTextField="school_name" DataValueField="school_name"></asp:DropDownList>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="SELECT [school_name] FROM [tbl_school]"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [school_name] FROM [tbl_school]"></asp:SqlDataSource>
                 </div>
                 <div></div>
                 <button type="submit" class="form-submit btn btn-blue"><span>Search</span></button>

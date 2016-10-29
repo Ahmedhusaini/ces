@@ -14,13 +14,15 @@ namespace FinalTemplate
 {
     public partial class parent_view_child : System.Web.UI.Page
     {
-        private Database myDatabase = new Database("cesConnectionString3");
+        private Database myDatabase = new Database("ces");
 
         protected void Page_Load(object sender, EventArgs e)
         {
             lab1.Text = "Date :" + System.DateTime.Now.ToShortDateString();
             lab2.Text = "Time :" + System.DateTime.Now.ToShortTimeString();
         //    Jfunctionparents.BindDropDownList(DropDownList2, "month", "month_id", "select * from tbl_month");
+
+
 
             if (Session["userid"] != null)
             {
@@ -111,6 +113,10 @@ namespace FinalTemplate
             Response.End();
 
         }
+
+       
+
+       
 
         
     }

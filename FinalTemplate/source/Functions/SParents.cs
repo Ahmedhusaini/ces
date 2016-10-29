@@ -14,8 +14,8 @@ namespace FinalTemplate.source.Functions
 {
     public class SParents
     {
-      //  public Database data = new Database("cesConnectionString");
-        public Database.Database data = new Database.Database("cesConnectionString3");
+      //  public Database data = new Database("ces");
+        public Database.Database data = new Database.Database("ces");
 
         #region parents
 
