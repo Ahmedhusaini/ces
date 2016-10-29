@@ -261,13 +261,13 @@
     </div>
     <br />
         <label>DAY : </label><asp:DropDownList CssClass="dropdown" ID="DropDownList3" runat="server" DataSourceID="SqlDataSource5" DataTextField="Column1" DataValueField="Column1"></asp:DropDownList>
-        <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="select DATENAME(DW, [date]) from tbl_student_attendance where Std_id=@Std_id">
+        <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="select DATENAME(DW, [date]) from tbl_student_attendance where Std_id=@Std_id">
             <SelectParameters>
                 <asp:ControlParameter ControlID="Label3" Name="Std_id" PropertyName="Text" />
             </SelectParameters>
     </asp:SqlDataSource>
         <label>MONTH : </label><asp:DropDownList CssClass="dropdown" ID="DropDownList5" AutoPostBack="true" runat="server" DataSourceID="SqlDataSource6" DataTextField="Column1" DataValueField="Column1"></asp:DropDownList>
-    <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="select DATENAME(mm, [date]) from tbl_student_attendance where Std_id=@Std_id">
+    <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="select DATENAME(mm, [date]) from tbl_student_attendance where Std_id=@Std_id">
         <SelectParameters>
             <asp:ControlParameter ControlID="Label3" Name="Std_id" PropertyName="Text" />
         </SelectParameters>
@@ -291,12 +291,12 @@
             <SortedDescendingCellStyle BackColor="#D4DFE1" />
             <SortedDescendingHeaderStyle BackColor="#15524A" />
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource8" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="shahwaiz_attendance" SelectCommandType="StoredProcedure">
+        <asp:SqlDataSource ID="SqlDataSource8" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="shahwaiz_attendance" SelectCommandType="StoredProcedure">
             <SelectParameters>
                 <asp:ControlParameter ControlID="Label3" Name="Std_id" PropertyName="Text" Type="String" />
             </SelectParameters>
     </asp:SqlDataSource>
-    <asp:SqlDataSource ID="SqlDataSource7" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="shahwaiz_attendance" SelectCommandType="StoredProcedure">
+    <asp:SqlDataSource ID="SqlDataSource7" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="shahwaiz_attendance" SelectCommandType="StoredProcedure">
         <SelectParameters>
             <asp:ControlParameter ControlID="Label3" Name="Std_id" PropertyName="Text" Type="String" />
             <asp:ControlParameter ControlID="DropDownList5" Name="month" PropertyName="SelectedValue" Type="String" />

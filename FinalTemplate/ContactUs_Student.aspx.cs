@@ -13,7 +13,7 @@ namespace FinalTemplate
 {
     public partial class ContactUs_Student : System.Web.UI.Page
     {
-        private Database mydatabase = new Database("cesConnectionString2");
+        private Database mydatabase = new Database("ces");
         public student std = new student();
         protected void Page_Load(object sender, EventArgs e)
         {
