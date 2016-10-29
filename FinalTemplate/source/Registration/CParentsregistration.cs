@@ -8,7 +8,7 @@ namespace FinalTemplate.source.Registration
 {
     public class CParentsregistraion
     {
-        private Database.Database mdata = new Database.Database("cesConnectionString3");
+        private Database.Database mdata = new Database.Database("cesConnectionString2");
 
         public string Registerparents(string firstname, string lastname, string nationality, string gender,string dob, string photo,
             string religion, string phone, string address, string officeaddress, string officeno, string cnicno,

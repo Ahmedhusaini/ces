@@ -13,18 +13,18 @@
               $('#<%=DropDownList4.ClientID%>').css('display', 'none')
         });
 
- //function samesizeimage() {
- //    $('a img').css({ 'height': '200px', 'width': '300px' });
- //}
+        //function samesizeimage() {
+        //    $('a img').css({ 'height': '200px', 'width': '300px' });
+        //}
 
 
- function teacherwidth() {
-     var path = "url(assets/images/cesThemeImages/searchTeacher.jpg)";
-     $('.page-title').css({
-         'background-image': path,
-         'height': '350px'
-     });
- }
+        function teacherwidth() {
+            var path = "url(assets/images/cesThemeImages/searchTeacher.jpg)";
+            $('.page-title').css({
+                'background-image': path,
+                'height': '350px'
+            });
+        }
 
     </script>
     <style type="text/css">
@@ -86,11 +86,11 @@
 
                 <div class="why-choose-us-wrapper">
                     <label class="title-2">Your Authorized ID : </label>
-              &nbsp;<asp:Label ID="namelab" CssClass="title-2" ForeColor="#86BC42" runat="server"></asp:Label>
+                    &nbsp;<asp:Label ID="namelab" CssClass="title-2" ForeColor="#86BC42" runat="server"></asp:Label>
                     <asp:Label ID="lab3" runat="server" Visible="False"></asp:Label>
-                    <asp:Label ID="Label3" runat="server" Visible="false"></asp:Label>
+                    <asp:Label ID="Label3" runat="server" Visible="False"></asp:Label>
                     <br />
-                    <label class="rlp-title" >CLASS :  </label>
+                    <label class="rlp-title">CLASS :  </label>
                     <asp:Label ID="Label4" CssClass="title-2" runat="server" ForeColor="#86BC42"></asp:Label>
                     <label class="title-404">SECTION : </label>
                     <asp:Label ID="Label5" CssClass="title-2" runat="server" ForeColor="#86BC42"></asp:Label>
@@ -222,7 +222,6 @@
         </div>
     </div>
     <%-- </div>--%>
-    <br />
 
     <asp:GridView ID="GridView1" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#86BC42" GridLines="None">
         <AlternatingRowStyle BackColor="White" />
@@ -249,6 +248,61 @@
             <asp:ControlParameter ControlID="DropDownList2" Name="section" PropertyName="SelectedValue" Type="String" />
         </SelectParameters>
     </asp:SqlDataSource>
+    <br />
+    <%--ATTENDANCE--%>
+    <div class="search-input">
+        <div class="container">
+            <%--  <div class="search-input-wrapper">--%>
+
+            <div class="underline" style="height: 20px; text-align: center;">
+                <h1 style="color: white;">ATTENDANCE </h1>
+            </div>
+        </div>
+    </div>
+    <br />
+        <label>DAY : </label><asp:DropDownList CssClass="dropdown" ID="DropDownList3" runat="server" DataSourceID="SqlDataSource5" DataTextField="Column1" DataValueField="Column1"></asp:DropDownList>
+        <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="select DATENAME(DW, [date]) from tbl_student_attendance where Std_id=@Std_id">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="Label3" Name="Std_id" PropertyName="Text" />
+            </SelectParameters>
+    </asp:SqlDataSource>
+        <label>MONTH : </label><asp:DropDownList CssClass="dropdown" ID="DropDownList5" AutoPostBack="true" runat="server" DataSourceID="SqlDataSource6" DataTextField="Column1" DataValueField="Column1"></asp:DropDownList>
+    <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="select DATENAME(mm, [date]) from tbl_student_attendance where Std_id=@Std_id">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="Label3" Name="Std_id" PropertyName="Text" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+    <br />
+        <asp:GridView ID="GridView2" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource8" AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#86BC42" GridLines="None">
+            <Columns>
+                <asp:BoundField DataField="Column1" HeaderText="Column1" ReadOnly="True" SortExpression="Column1" />
+                <asp:BoundField DataField="Column2" HeaderText="Column2" ReadOnly="True" SortExpression="Column2" />
+                <asp:BoundField DataField="time" HeaderText="time" SortExpression="time" />
+                <asp:BoundField DataField="remarks" HeaderText="remarks" SortExpression="remarks" />
+            </Columns>
+            <EditRowStyle BackColor="#7C6F57" />
+            <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#737373" Font-Bold="True" ForeColor="#86bc42" />
+            <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="#E3EAEB" />
+            <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+            <SortedAscendingCellStyle BackColor="#F8FAFA" />
+            <SortedAscendingHeaderStyle BackColor="#246B61" />
+            <SortedDescendingCellStyle BackColor="#D4DFE1" />
+            <SortedDescendingHeaderStyle BackColor="#15524A" />
+        </asp:GridView>
+        <asp:SqlDataSource ID="SqlDataSource8" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="shahwaiz_attendance" SelectCommandType="StoredProcedure">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="Label3" Name="Std_id" PropertyName="Text" Type="String" />
+            </SelectParameters>
+    </asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource7" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="shahwaiz_attendance" SelectCommandType="StoredProcedure">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="Label3" Name="Std_id" PropertyName="Text" Type="String" />
+            <asp:ControlParameter ControlID="DropDownList5" Name="month" PropertyName="SelectedValue" Type="String" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource4" runat="server"></asp:SqlDataSource>
     <br />
 
 </asp:Content>
