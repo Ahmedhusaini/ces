@@ -244,12 +244,7 @@
                                         <td class="col-3"></td>
 
                                     </tr>
-                                    <tr class="table-row">
-                                        <td class="col-3"><span>School ID</span></td>
-                                        <td class="col-2"><asp:Label runat="server" ID="lblSchoolID"></asp:Label></td>
-                                        <td class="col-3"></td>
-
-                                    </tr>
+                                   
                                 </tbody>
                             </table>
                         </div>

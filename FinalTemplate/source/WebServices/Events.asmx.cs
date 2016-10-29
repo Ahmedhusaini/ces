@@ -27,7 +27,7 @@ namespace FinalTemplate.source.WebServices
             public string Picture { get; set; }
             public string EventCreatorID { get; set; }
         }
-        private Database.Database eventDatabase = new Database.Database("cesConnectionString");
+        private Database.Database eventDatabase = new Database.Database("ces");
         [WebMethod]
         public void GetAllEvents(string _schoolID)
         {

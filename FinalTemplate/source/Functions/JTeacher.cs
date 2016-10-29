@@ -12,7 +12,7 @@ namespace FinalTemplate.source.Functions
 {
     public class JTeacher
     {
-        public Database.Database mydb = new Database.Database("cesConnectionString");
+        public Database.Database mydb = new Database.Database("ces");
         #region Properties of teacher
         public int CountryID { get; set; }
         public string Country { get; set; }

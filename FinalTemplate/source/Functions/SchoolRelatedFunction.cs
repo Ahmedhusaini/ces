@@ -8,7 +8,116 @@ namespace FinalTemplate.source.Functions
 {
     public class SchoolRelatedFunction
     {
-        Database.Database mydb = new Database.Database("cesConnectionString");
+        Database.Database mydb = new Database.Database("ces");
+        public string AuthorizedID { get; set; }
+        public string Username { get; set; }
+        public int AccountPin { get; set; }
+        public string PrimaryEmail { get; set; }
+        public int LoginCount { get; set; }
+        public string SecondaryEmail { get; set; }
+        public string PrimaryContact { get; set; }
+        public string SecondaryContact { get; set; }
+        public int PostalCode { get; set; }
+        public int CountryID { get; set; }
+        public int LocationID { get; set; }
+        public int CityID { get; set; }
+        public string Country { get; set; }
+        public string City { get; set; }
+        public string FoundedIn { get; set; }
+        public string OwnerName { get; set; }
+        public string SchoolName { get; set; }
+        public string SchoolType { get; set; }
+        public string LastLoginDate { get; set; }
+        public string Logo { get; set; }
+        public string GetSchoolDetails()
+        {
+            string valuereturned = string.Empty;
+            mydb.CreateConnection();
+            mydb.InitializeSQLCommandObject(mydb.GetCurrentConnection, "spGetSchoolDetailsByID", true);
+            mydb.obj_sqlcommand.Parameters.Add("@schoolid", SqlDbType.VarChar, 50).Value = JSchool.SchoolID;
+            try
+            {
+                mydb.OpenConnection();
+                mydb.obj_reader = mydb.obj_sqlcommand.ExecuteReader();
+                if (mydb.obj_reader.HasRows)
+                {
+                    while (mydb.obj_reader.Read())
+                    {
+                        AuthorizedID = mydb.obj_reader["authorized_id"].ToString();
+                        Username = mydb.obj_reader["username"].ToString();
+                        AccountPin = Convert.ToInt32(mydb.obj_reader["account_pin"]);
+                        PrimaryEmail = mydb.obj_reader["primary_email"].ToString();
+                        SecondaryEmail = mydb.obj_reader["secondary_email"].ToString();
+                        PrimaryContact = mydb.obj_reader["contact_primary"].ToString();
+                        SecondaryContact = mydb.obj_reader["contact_secondary"].ToString();
+                        PostalCode = Convert.ToInt32(mydb.obj_reader["postal_code"]);
+                        CountryID = Convert.ToInt32(mydb.obj_reader["country_id"]);
+                        CityID = Convert.ToInt32(mydb.obj_reader["city_id"]);
+                        Country = mydb.obj_reader["country"].ToString();
+                        City = mydb.obj_reader["city"].ToString();
+                        FoundedIn = mydb.obj_reader["founded_in"].ToString();
+                        OwnerName = mydb.obj_reader["owner_name"].ToString();
+                        SchoolName = mydb.obj_reader["school_name"].ToString();
+                        SchoolType = mydb.obj_reader["school_type"].ToString();
+                        LoginCount = Convert.ToInt32(mydb.obj_reader["login_count"]);
+                        LastLoginDate = mydb.obj_reader["last_login_date"].ToString();
+                        LocationID = Convert.ToInt32(mydb.obj_reader["loc_id"]);
+                    }
+                    valuereturned = "true";
+                }
+                else
+                {
+                    valuereturned = "false";
+                }
+            }
+            finally
+            {
+                mydb.CloseConnection();
+                mydb.obj_reader.Close();
+                mydb.obj_reader.Dispose();
+            }
+            return valuereturned;
+        }
+
+        public string UpdateSchoolInformation(string _username, int _account_pin, string _primary_email, string _secondary_email, string _authorized_id, int _country_id, int _city_id, int _postal_code, int _loc_id, string _school_name, string _owner_name, string _founded_in, string _contact_primary, string _contact_secondary, string _school_id)
+        {
+            string value = string.Empty;
+            mydb.CreateConnection();
+            mydb.InitializeSQLCommandObject(mydb.GetCurrentConnection, "spUpdateSchoolProfile", true);
+            mydb.obj_sqlcommand.Parameters.Add("@username", SqlDbType.VarChar, 50).Value = _username;
+            mydb.obj_sqlcommand.Parameters.Add("@account_pin", SqlDbType.Int).Value = _account_pin;
+            mydb.obj_sqlcommand.Parameters.Add("@primary_email", SqlDbType.VarChar, 50).Value = _primary_email;
+            mydb.obj_sqlcommand.Parameters.Add("@secondary_email", SqlDbType.VarChar, 50).Value = _secondary_email;
+            mydb.obj_sqlcommand.Parameters.Add("@authorized_id", SqlDbType.VarChar, 50).Value = _authorized_id;
+            mydb.obj_sqlcommand.Parameters.Add("@country_id", SqlDbType.Int).Value = _country_id;
+            mydb.obj_sqlcommand.Parameters.Add("@city_id", SqlDbType.Int).Value = _city_id;
+            mydb.obj_sqlcommand.Parameters.Add("@postal_code", SqlDbType.Int).Value = _postal_code;
+            mydb.obj_sqlcommand.Parameters.Add("@loc_id", SqlDbType.Int).Value = _loc_id;
+            mydb.obj_sqlcommand.Parameters.Add("@school_name", SqlDbType.VarChar, 50).Value = _school_name;
+            mydb.obj_sqlcommand.Parameters.Add("@owner_name", SqlDbType.VarChar, 50).Value = _owner_name;
+            mydb.obj_sqlcommand.Parameters.Add("@founded_in", SqlDbType.DateTime).Value = Convert.ToDateTime(_founded_in);
+            mydb.obj_sqlcommand.Parameters.Add("@contact_primary", SqlDbType.VarChar, 20).Value = _contact_primary;
+            mydb.obj_sqlcommand.Parameters.Add("@contact_secondary", SqlDbType.VarChar, 20).Value = _contact_secondary;
+            mydb.obj_sqlcommand.Parameters.Add("@school_id", SqlDbType.VarChar, 50).Value = _school_id;
+            try
+            {
+                mydb.OpenConnection();
+                if (mydb.obj_sqlcommand.ExecuteNonQuery() > 0)
+                {
+                    value = "true";
+                }
+                else
+                {
+                    value = "false";
+                }
+            }
+            finally
+            {
+                mydb.CloseConnection();
+                mydb.obj_sqlcommand.Dispose();
+            }
+            return value;
+        }
         public int AddEvents(string _title, string _description, string _place, int _eventTypeID, string _startingTime, string _endingTime, string _startingDate, string _endingDate, string _creatorID, string _picture, string _tags)
         {
             string[] blacklist = { _title, _description, _place, _picture };

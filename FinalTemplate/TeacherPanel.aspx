@@ -16,7 +16,7 @@
                 <div class="slider-banner-wrapper">
                     <h1 data-wow-delay="0.5s" class="sub-title wow fadeInUp">
                         <asp:Label Text="Date" ID="lab1" runat="server"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label Text="Time" ID="lab2" runat="server"></asp:Label></h1>
-                    <asp:Label ID="Label2" class="captions" runat="server"></asp:Label>
+                    <asp:Label ID="Label1" class="captions" runat="server"></asp:Label>
                     <ol class="breadcrumb">
                         <li><a href="index.html">Home</a></li>
                         <li class="active"><a href="#">Profile</a></li>
@@ -26,20 +26,10 @@
         </div>
     </div>
      <div class="why-choose-us-wrapper">
-                    <label class="title-2">Your Authorized ID : </label>
-              &nbsp;<asp:Label ID="name" CssClass="title-2" ForeColor="#86BC42" runat="server"></asp:Label>
-                    <asp:Label ID="generalid" runat="server" Visible="False"></asp:Label>
-                    <asp:Label ID="teacherid" runat="server" Visible="false"></asp:Label>
-                    <br />
-                    <label class="rlp-title" >CLASS :  </label>
-                    <asp:Label ID="tclass" CssClass="title-2" runat="server" ForeColor="#86BC42"></asp:Label>
-                    <label class="title-404">SECTION : </label>
-                    <asp:Label ID="section" CssClass="title-2" runat="server" ForeColor="#86BC42"></asp:Label>
+                  
 
                   
                 
-                    <asp:Label ID="Label1" runat="server"></asp:Label>
-
                 </div>
 
     <div id="teachingstaff" class="section section-padding background-opacity best-staff">

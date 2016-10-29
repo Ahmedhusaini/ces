@@ -15,7 +15,7 @@ namespace FinalTemplate
 {
     public partial class parentpanel1 : System.Web.UI.Page
     {
-        private Database myDatabase = new Database("cesConnectionString3");
+        private Database myDatabase = new Database("ces");
         protected void Page_Load(object sender, EventArgs e)
         {
             lab1.Text = "Date :" + System.DateTime.Now.ToShortDateString();

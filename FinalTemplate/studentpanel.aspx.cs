@@ -23,7 +23,7 @@ namespace FinalTemplate
 {
     public partial class studentpanel1 : System.Web.UI.Page
     {
-        private Database myDatabase = new Database("cesConnectionString2");
+        private Database myDatabase = new Database("ces");
         SqlConnection con = new SqlConnection(@"Data Source=SHAHWAIZ\SQLEXPRESS;Initial Catalog=ces;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -8,7 +8,7 @@ namespace FinalTemplate.source.Functions
 {
     public class JStudent
     {
-        private Database.Database jstudentDatabase = new Database.Database("cesConnectionString");
+        private Database.Database jstudentDatabase = new Database.Database("ces");
         public int GeneralID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

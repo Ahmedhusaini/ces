@@ -8,7 +8,7 @@ namespace FinalTemplate.source.Registration
     public class Package
     {
         //database object
-        private Database.Database myDatabase = new Database.Database("cesConnectionString");
+        private Database.Database myDatabase = new Database.Database("ces");
         //Defining the package attributes
         #region DatabaseAttributes
         public int PackageID { get; set; }
@@ -172,7 +172,7 @@ namespace FinalTemplate.source.Registration
             }
         }
 
-        public string GetMyPackageID()
+        public int GetMyPackageID()
         {
             string[,] packageid;
             string[] col = { "package_id" };
@@ -181,7 +181,7 @@ namespace FinalTemplate.source.Registration
             string[] wherevalue = { "'" + JSchool.SchoolID + "'" };
             string[] multiwhere = { "" };
             packageid = myDatabase.SelectQuery("tbl_packages", col, wherecol, whereoperator, wherevalue, multiwhere);
-            return packageid[0, 0];
+            return Convert.ToInt32(packageid[0, 0]);
         }
         public bool GetPackageDetailsByID(int _packageid)
         {
@@ -230,6 +230,7 @@ namespace FinalTemplate.source.Registration
                         OnlineSupport = myDatabase.obj_reader["online_support"].ToString();
                         DataFilters = myDatabase.obj_reader["data_filters"].ToString();
                         AdminPanelType = myDatabase.obj_reader["admin_panel_type"].ToString();
+                        PackageTypeID = Convert.ToInt32(myDatabase.obj_reader["package_type_id"]);
                     }
                     return true;
                 }

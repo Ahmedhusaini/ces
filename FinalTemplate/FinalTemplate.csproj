@@ -39,6 +39,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Desktop\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Recaptcha">
@@ -313,8 +317,10 @@
     <Content Include="Teacherprofile.aspx" />
     <Content Include="TeacherUpload.aspx" />
     <Content Include="Teacher_timetable.aspx" />
+    <Content Include="UpdateAndViewEventDetails.aspx" />
     <Content Include="UpdateParentInformation.aspx" />
     <Content Include="updatepasswordpanel.aspx" />
+    <Content Include="UpdateSchoolInformation.aspx" />
     <Content Include="UpdateStudentInformationByAdmin.aspx" />
     <Content Include="UpdateTeacherInformation.aspx" />
     <Content Include="update_StudentDetail.aspx" />
@@ -382,6 +388,7 @@
     <Compile Include="PackageInformation.aspx.designer.cs">
       <DependentUpon>PackageInformation.aspx</DependentUpon>
     </Compile>
+    <Compile Include="source\Functions\JEvents.cs" />
     <Compile Include="source\Functions\Jfunctionteacher.cs" />
     <Compile Include="source\Functions\JStudent.cs" />
     <Compile Include="Mark_attendance.aspx.cs">
@@ -634,6 +641,13 @@
     <Compile Include="Teacher_timetable.aspx.designer.cs">
       <DependentUpon>Teacher_timetable.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UpdateAndViewEventDetails.aspx.cs">
+      <DependentUpon>UpdateAndViewEventDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateAndViewEventDetails.aspx.designer.cs">
+      <DependentUpon>UpdateAndViewEventDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UpdateParentInformation.aspx.cs">
       <DependentUpon>UpdateParentInformation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -654,6 +668,13 @@
     </Compile>
     <Compile Include="updatepasswordpanel.Master.designer.cs">
       <DependentUpon>updatepasswordpanel.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateSchoolInformation.aspx.cs">
+      <DependentUpon>UpdateSchoolInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateSchoolInformation.aspx.designer.cs">
+      <DependentUpon>UpdateSchoolInformation.aspx</DependentUpon>
     </Compile>
     <Compile Include="UpdateStudentInformationByAdmin.aspx.cs">
       <DependentUpon>UpdateStudentInformationByAdmin.aspx</DependentUpon>

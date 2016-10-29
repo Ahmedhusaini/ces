@@ -110,7 +110,7 @@
                                                 <SortedDescendingCellStyle BackColor="#D4DFE1" />
                                                 <SortedDescendingHeaderStyle BackColor="#15524A" />
                                             </asp:GridView>
-                                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="SELECT [day], [starting_time], [ending_time], [subject], [username] FROM [student_timetable] WHERE ([username] = @username)">
+                                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [day], [starting_time], [ending_time], [subject], [username] FROM [student_timetable] WHERE ([username] = @username)">
                                                 <SelectParameters>
                                                     <asp:ControlParameter ControlID="TextBox1" Name="username" PropertyName="Text" Type="String" />
                                                 </SelectParameters>

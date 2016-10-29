@@ -12,7 +12,7 @@ namespace FinalTemplate
 {
     public partial class updatepasswordpanel1 : System.Web.UI.Page
     {
-        private Database myDatabase = new Database("cesConnectionString2");
+        private Database myDatabase = new Database("ces");
         protected void Page_Load(object sender, EventArgs e)
         {
             //Session.Remove("userid");
@@ -45,7 +45,7 @@ namespace FinalTemplate
         {
             if (Page.IsValid)
             {
-                string confstu = ConfigurationManager.ConnectionStrings["cesConnectionString2"].ConnectionString;
+                string confstu = ConfigurationManager.ConnectionStrings["ces"].ConnectionString;
                 SqlConnection con = new SqlConnection(confstu);
                 SqlDataAdapter sda = new SqlDataAdapter("select username,password from tbl_authorized_users where username='" + username.Text + "' and password='" + changepassword.Text + "'", con);
                 DataTable dt = new DataTable();

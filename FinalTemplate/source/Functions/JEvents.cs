@@ -5,7 +5,7 @@ namespace FinalTemplate.source.Functions
 {
     public class JEvents
     {
-        private Database.Database objeventdatabase = new Database.Database("cesConnectionString");
+        private Database.Database objeventdatabase = new Database.Database("ces");
         public int EventID { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }

@@ -17,7 +17,7 @@ namespace FinalTemplate.source.Functions
         {
             return Convert.ToString(System.DateTime.Today.ToString("HH:MM:ss"));
         }
-
+        
         public static void SendEmail(string To, string Subject, string MessageBody)
         {
             string smtpUsername = "jahangeer.ahmed11@gmail.com";
@@ -62,7 +62,7 @@ namespace FinalTemplate.source.Functions
         }
         public static void BindDropDownList(DropDownList ddl, string displayField, string valueField, string query)
         {
-            Database.Database myDatabase = new Database.Database("cesConnectionString2");
+            Database.Database myDatabase = new Database.Database("ces");
             myDatabase.CreateConnection();
             myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, query);
             try
