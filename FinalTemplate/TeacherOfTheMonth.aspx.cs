@@ -8,7 +8,7 @@ namespace FinalTemplate
 {
     public partial class TeacherOfTheMonth : System.Web.UI.Page
     {
-        private Database mydb = new Database("cesConnectionString");
+        private Database mydb = new Database("ces");
         public string schoolID;
         //private bool IsFirstRequest = true;
         protected void Page_Load(object sender, EventArgs e)

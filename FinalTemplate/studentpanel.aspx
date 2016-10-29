@@ -202,7 +202,7 @@
                 </asp:DropDownList>
             </div>
             <div>
-                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="sp_chileTimetable" SelectCommandType="StoredProcedure">
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="sp_chileTimetable" SelectCommandType="StoredProcedure">
                     <SelectParameters>
                         <asp:ControlParameter ControlID="DropDownList1" Name="section" PropertyName="SelectedValue" Type="String" />
                         <asp:ControlParameter ControlID="DropDownList4" Name="class" PropertyName="SelectedValue" Type="String" />
@@ -212,7 +212,7 @@
 
                 <asp:DropDownList ID="DropDownList4" runat="server" CssClass="sbHolder" DataSourceID="SqlDataSource3" DataTextField="class" DataValueField="class">
                 </asp:DropDownList>
-                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="sp_getstudent_class_section" SelectCommandType="StoredProcedure">
+                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="sp_getstudent_class_section" SelectCommandType="StoredProcedure">
                     <SelectParameters>
                         <asp:ControlParameter ControlID="Label3" Name="std_id" PropertyName="Text" Type="String" />
                     </SelectParameters>
@@ -243,7 +243,7 @@
         <SortedDescendingCellStyle BackColor="#D4DFE1" />
         <SortedDescendingHeaderStyle BackColor="#15524A" />
     </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString2 %>" SelectCommand="SELECT [day], [subject], [starting_time], [ending_time] FROM [View_Student_timetable] WHERE (([class] = @class) AND ([section] = @section))">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [day], [subject], [starting_time], [ending_time] FROM [View_Student_timetable] WHERE (([class] = @class) AND ([section] = @section))">
         <SelectParameters>
             <asp:ControlParameter ControlID="DropDownList1" Name="class" PropertyName="SelectedValue" Type="String" />
             <asp:ControlParameter ControlID="DropDownList2" Name="section" PropertyName="SelectedValue" Type="String" />

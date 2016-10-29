@@ -8,7 +8,7 @@ namespace FinalTemplate.source.Registration
     public class Package
     {
         //database object
-        private Database.Database myDatabase = new Database.Database("cesConnectionString");
+        private Database.Database myDatabase = new Database.Database("ces");
         //Defining the package attributes
         #region DatabaseAttributes
         public int PackageID { get; set; }

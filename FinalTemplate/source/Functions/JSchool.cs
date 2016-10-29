@@ -6,7 +6,7 @@ namespace FinalTemplate.source.Functions
 
     public class JSchool
     {
-        public static Database.Database mydb = new Database.Database("cesConnectionString");
+        public static Database.Database mydb = new Database.Database("ces");
         public static string SchoolID
         { get { return getschoolid(); } }
 

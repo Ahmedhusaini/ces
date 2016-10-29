@@ -8,7 +8,7 @@ namespace FinalTemplate.source.Functions
 {
     public class SchoolRelatedFunction
     {
-        Database.Database mydb = new Database.Database("cesConnectionString");
+        Database.Database mydb = new Database.Database("ces");
         public string AuthorizedID { get; set; }
         public string Username { get; set; }
         public int AccountPin { get; set; }

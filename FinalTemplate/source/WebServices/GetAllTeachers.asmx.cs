@@ -16,7 +16,7 @@ namespace FinalTemplate.source.WebServices
     [System.Web.Script.Services.ScriptService]
     public class GetAllTeachers : System.Web.Services.WebService
     {
-        private Database.Database myDatabase = new Database.Database("cesConnectionString");
+        private Database.Database myDatabase = new Database.Database("ces");
         private ClassSchoolRegistration objSchool = new ClassSchoolRegistration();
         [WebMethod]
         public void GetAllTeachersByFirstName(string SearchKey, string _schoolid)

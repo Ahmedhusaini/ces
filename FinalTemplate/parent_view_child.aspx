@@ -77,7 +77,7 @@
      <asp:DropDownList ID="Dp1" runat="server" DataSourceID="SqlDataSource1" DataTextField="class" DataValueField="class"></asp:DropDownList>
     <asp:DropDownList ID="Dp2" runat="server" DataSourceID="SqlDataSource1" DataTextField="section" DataValueField="section"></asp:DropDownList>
     <asp:DropDownList ID="Dp3" runat="server" DataSourceID="SqlDataSource1" DataTextField="school_name" DataValueField="school_name"></asp:DropDownList>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="sp_GetChildClassSec" SelectCommandType="StoredProcedure">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="sp_GetChildClassSec" SelectCommandType="StoredProcedure">
         <SelectParameters>
             <asp:ControlParameter ControlID="id" Name="Std_id" PropertyName="Text" Type="String" />
         </SelectParameters>
@@ -119,7 +119,7 @@
         
     </asp:GridView>
             <asp:Button ID="Button1" runat="server" Text="Download" OnClick="Button1_Click" />
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="sp_chileTimetable" SelectCommandType="StoredProcedure">
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="sp_chileTimetable" SelectCommandType="StoredProcedure">
         <SelectParameters>
             <asp:ControlParameter ControlID="Dp2" Name="section" PropertyName="SelectedValue" Type="String" />
             <asp:ControlParameter ControlID="Dp1" Name="class" PropertyName="SelectedValue" Type="String" />
@@ -144,12 +144,27 @@
              
             </div>
         <br />
+            
+       
+       
             <asp:Label ID="Label1" runat="server" Text="Month"></asp:Label>
-            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource4" DataTextField="Column1" DataValueField="Column1" AutoPostBack="True" >
+          
+            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource3" DataTextField="Column1" DataValueField="Column1" AutoPostBack="True" >
             </asp:DropDownList>
+           
+
+
+            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="select DATENAME(MM,[date]) from tbl_student_attendance ">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="id" Name="std" PropertyName="Text" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+           
+
+
         <br />
         <br />
-        <asp:GridView ID="GridView2" class="edu-table-responsive"  runat="server"  AutoGenerateColumns="False" Width="1220px"  ForeColor="#86BC42" AllowPaging="True" AllowSorting="True" CellPadding="4" GridLines="None" DataSourceID="SqlDataSource3">
+        <asp:GridView ID="GridView2" class="edu-table-responsive"  runat="server"  AutoGenerateColumns="False" Width="1220px"  ForeColor="#86BC42" AllowPaging="True" AllowSorting="True" CellPadding="4" GridLines="None" DataSourceID="SqlDataSource4">
       
             
              <Columns>
@@ -170,18 +185,19 @@
                                         <SortedDescendingCellStyle BackColor="#D4DFE1" />
                                         <SortedDescendingHeaderStyle BackColor="#15524A" />
               </asp:GridView>
+                 
         
-            <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="select distinct  MONTH([date]) from tbl_student_attendance">
-            </asp:SqlDataSource>
-            <br />
-        
-            <br />
-            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString3 %>" SelectCommand="sp_Parents_view_attendance" SelectCommandType="StoredProcedure">
+            <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="sp_Parents_view_attendance" SelectCommandType="StoredProcedure">
                 <SelectParameters>
-                    <asp:ControlParameter ControlID="DropDownList1" Name="month" PropertyName="SelectedValue" Type="Int32" />
+                   
                     <asp:ControlParameter ControlID="id" Name="std_id" PropertyName="Text" Type="String" />
                 </SelectParameters>
             </asp:SqlDataSource>
+                 
+        
+            <br />
+        
+            <br />
         
         </div>
    

@@ -10,7 +10,7 @@ namespace FinalTemplate.source.Registration
     public class ClassSchoolRegistration
     {
 
-        public Database.Database myDatabase = new Database.Database("cesConnectionString");
+        public Database.Database myDatabase = new Database.Database("ces");
         Random random = new Random();
         public string RegisterSchool(int country_id, int city_id, int postalcode, string username, string password, int accountpin, string primaryemail, string secondaryemail, string contactPrimary, string contactSecondary, string schoolName, string ownerName, string foundedIn, string logo, int school_type_id, string campusName)
         {
