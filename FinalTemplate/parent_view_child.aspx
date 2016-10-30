@@ -147,24 +147,34 @@
             
        
        
-            <asp:Label ID="Label1" runat="server" Text="Month"></asp:Label>
+            <asp:Label ID="Label1" runat="server" Text="Date"></asp:Label>
           
-            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource3" DataTextField="Column1" DataValueField="Column1" AutoPostBack="True" >
+           <%-- <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource3" DataTextField="Column1" DataValueField="Column1" AutoPostBack="True" >
             </asp:DropDownList>
-           
+           --%>
+            <asp:TextBox ID="TextBox1" type="date" EnableViewState="true"  runat="server"></asp:TextBox>
+
+        Month    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True">
+                <asp:ListItem Value="1">January</asp:ListItem>
+                <asp:ListItem Value="2">Feburary</asp:ListItem>
+                <asp:ListItem Value="3">March</asp:ListItem>
+                <asp:ListItem Value="4">April</asp:ListItem>
+                <asp:ListItem Value="5">May</asp:ListItem>
+                <asp:ListItem Value="6">June</asp:ListItem>
+                <asp:ListItem Value="7">July</asp:ListItem>
+                <asp:ListItem Value="8">August</asp:ListItem>
+                <asp:ListItem Value="9">September</asp:ListItem>
+                <asp:ListItem Value="10">Octuber</asp:ListItem>
+                <asp:ListItem Value="11">November</asp:ListItem>
+                <asp:ListItem Value="12">December</asp:ListItem>
+            </asp:DropDownList>
 
 
-            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="select DATENAME(MM,[date]) from tbl_student_attendance ">
-                <SelectParameters>
-                    <asp:ControlParameter ControlID="id" Name="std" PropertyName="Text" Type="String" />
-                </SelectParameters>
-            </asp:SqlDataSource>
-           
 
 
         <br />
         <br />
-        <asp:GridView ID="GridView2" class="edu-table-responsive"  runat="server"  AutoGenerateColumns="False" Width="1220px"  ForeColor="#86BC42" AllowPaging="True" AllowSorting="True" CellPadding="4" GridLines="None" DataSourceID="SqlDataSource4">
+        <asp:GridView ID="GridView2" class="edu-table-responsive"  runat="server"  AutoGenerateColumns="False" Width="1220px"  ForeColor="#86BC42" AllowPaging="True" AllowSorting="True" CellPadding="4" GridLines="None" DataSourceID="SqlDataSource3">
       
             
              <Columns>
@@ -187,10 +197,10 @@
               </asp:GridView>
                  
         
-            <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="sp_Parents_view_attendance" SelectCommandType="StoredProcedure">
+            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="sp_Parents_view_attendance" SelectCommandType="StoredProcedure">
                 <SelectParameters>
-                   
                     <asp:ControlParameter ControlID="id" Name="std_id" PropertyName="Text" Type="String" />
+                    <asp:ControlParameter ControlID="TextBox1" DbType="Date" Name="date" PropertyName="Text" />
                 </SelectParameters>
             </asp:SqlDataSource>
                  
