@@ -6,7 +6,7 @@ namespace FinalTemplate
     public partial class UpdateSchoolInformation2 : System.Web.UI.Page
     {
         private string file = string.Empty;
-        private int cityid = 0;
+        private int locationid= 0;
         private SchoolRelatedFunction objJSchool = new SchoolRelatedFunction();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -18,6 +18,7 @@ namespace FinalTemplate
                 JFunctions.BindDropDownList(ddlCity, "city", "city_id", "select * from tbl_city");
                 JFunctions.BindDropDownList(ddlCountry, "country", "country_id", "select * from tbl_country");
                 ShowSchoolInformation();
+                
             }
 
         }
@@ -42,6 +43,7 @@ namespace FinalTemplate
                 txtSecondaryEmail.Text = objJSchool.SecondaryEmail;
                 txtLoginCount.Text = objJSchool.LoginCount.ToString();
                 txtlastLoginDate.Text = objJSchool.LastLoginDate.Substring(0, 10);
+                hiddenlocationid.Value = objJSchool.LocationID.ToString();
             }
         }
 
@@ -51,7 +53,7 @@ namespace FinalTemplate
             string result = objJSchool.UpdateSchoolInformation(txtUsername.Text, Convert.ToInt32(txtAccountPin.Text),
                  txtPrimaryEmail.Text, txtSecondaryEmail.Text, CurrentUser.AuthorizedID,
                  Convert.ToInt32(ddlCountry.SelectedValue), Convert.ToInt32(ddlCity.SelectedValue),
-                 Convert.ToInt32(txtPostalCode.Text), objJSchool.LocationID, txtSchoolName.Text,
+                 Convert.ToInt32(txtPostalCode.Text), Convert.ToInt32(hiddenlocationid.Value), txtSchoolName.Text,
                  txtOwnerName.Text, txtFoundedIn.Text, txtContactPrimary.Text, txtContactSecondary.Text,
                  JSchool.SchoolID);
             if (result == "true")
@@ -59,5 +61,7 @@ namespace FinalTemplate
                 Response.Write("<script>alert('Record Updated');</script>");
             }
         }
+
+       
     }
 }

@@ -49,6 +49,15 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.DropDownList ddlCity;
         
         /// <summary>
+        /// hiddenlocationid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hiddenlocationid;
+        
+        /// <summary>
         /// ddlCountry control.
         /// </summary>
         /// <remarks>

@@ -87,8 +87,8 @@
                                     </tr>
                                     <tr class="table-row">
                                         <td class="col-3"><span>City</span></td>
-                                        <td class="col-2"><asp:DropDownList  runat="server"  CssClass="form-control" ID="ddlCity" /></td>
-                                        <td class="col-3"></td>
+                                        <td class="col-2"><asp:DropDownList  AutoPostBack="true" ViewStateMode="Enabled" EnableViewState="true" runat="server"  CssClass="form-control" ID="ddlCity" /></td>
+                                        <td class="col-3"><input type="hidden" id="hiddenlocationid" value="0" runat="server"/></td>
                                     </tr>
                                     
                                     <tr class="table-row">
