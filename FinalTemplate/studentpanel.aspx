@@ -95,6 +95,8 @@
                     <label class="title-404">SECTION : </label>
                     <asp:Label ID="Label5" CssClass="title-2" runat="server" ForeColor="#86BC42"></asp:Label>
 
+                    <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
+
                     <h4 runat="server" style="color: #A8CF78">Change Profile Picture</h4>
                     <asp:FileUpload ID="FileUpload1" runat="server" />
                     <asp:Button class="btn-green" BackColor="#86bc42" BorderColor="#86bc42" ID="btnSave" Text="Save" OnClick="btnSave_Click" runat="server" Height="30px" Width="70px"></asp:Button>
@@ -250,6 +252,37 @@
     </asp:SqlDataSource>
     <br />
     <%--ATTENDANCE--%>
+    <asp:GridView ID="GridView3" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" DataSourceID="timetable_1test" AllowSorting="True" BackColor="#000066" Font-Bold="False">
+        <Columns>
+            <asp:BoundField DataField="day" HeaderText="Day" SortExpression="day" ItemStyle-ForeColor="#6B9735" />
+            <asp:BoundField DataField="period_1" HeaderText="period 1" SortExpression="period_1" />
+            <asp:BoundField DataField="period_2" HeaderText="period 2" SortExpression="period_2" />
+            <asp:BoundField DataField="period_3" HeaderText="period 3" SortExpression="period_3" />
+            <asp:BoundField DataField="period_4" HeaderText="period 4" SortExpression="period_4" />
+            <asp:BoundField DataField="period_5" HeaderText="period 5" SortExpression="period_5" />
+            <asp:BoundField DataField="period_6" HeaderText="period 6" SortExpression="period_6" />
+            <asp:BoundField DataField="period_7" HeaderText="period 7" SortExpression="period_7" />
+            <asp:BoundField DataField="period_8" HeaderText="period 8" SortExpression="period_8" />
+        </Columns>
+                <EditRowStyle BackColor="#7C6F57" />
+        <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#737373" Font-Bold="True" ForeColor="#86bc42" />
+        <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="#E3EAEB" />
+        <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+        <SortedAscendingCellStyle BackColor="#F8FAFA" />
+        <SortedAscendingHeaderStyle BackColor="#246B61" />
+        <SortedDescendingCellStyle BackColor="#D4DFE1" />
+        <SortedDescendingHeaderStyle BackColor="#15524A" />
+    </asp:GridView>
+    <asp:SqlDataSource ID="timetable_1test" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="sp_timetable_test1" SelectCommandType="StoredProcedure">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="Label5" Name="section" PropertyName="Text" Type="String" />
+            <asp:ControlParameter ControlID="Label4" Name="class" PropertyName="Text" Type="String" />
+            <asp:ControlParameter ControlID="Label6" Name="school_id" PropertyName="Text" Type="String" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+    <br />
     <div class="search-input">
         <div class="container">
             <%--  <div class="search-input-wrapper">--%>

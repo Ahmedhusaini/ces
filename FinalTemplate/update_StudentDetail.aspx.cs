@@ -73,7 +73,6 @@ namespace FinalTemplate
             txtLocationID.Text = update.u_locid.ToString();
             txtDOBId.Text = update.u_dobid.ToString();
             authorizedidtxt.Text=update.u_authorizeid;
-
         }
 
         protected void Button1_Click(object sender, EventArgs e)

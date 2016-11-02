@@ -53,6 +53,7 @@ namespace FinalTemplate
                 student.Complete_Detail_Of_Student(Session["userid"].ToString());
                 Label4.Text = student.s_class;
                 Label5.Text = student.s_section;
+                Label6.Text = student.s_schoolid;
             }
             else
             {
