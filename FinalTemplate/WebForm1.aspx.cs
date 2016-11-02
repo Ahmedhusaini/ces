@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using FinalTemplate.source.Functions;
 
 namespace FinalTemplate
 {
@@ -11,7 +12,8 @@ namespace FinalTemplate
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Label1.Text= CurrentUser.AuthorizedID;
+            Label2.Text = student.studentid;
         }
     }
 }

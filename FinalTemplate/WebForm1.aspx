@@ -47,24 +47,25 @@
     <br />
     <form runat="server">
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="236px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="100%">
-            <LocalReport ReportPath="Report1.rdlc">
-                <DataSources>
-                    <rsweb:ReportDataSource DataSourceId="ObjectDataSource2" Name="DataSet1" />
-                </DataSources>
-            </LocalReport>
+            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+            <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="100%">
+                <LocalReport ReportPath="Report3.rdlc">
+                    <DataSources>
+                        <rsweb:ReportDataSource DataSourceId="SqlDataSource2" Name="DataSet1" />
+                    </DataSources>
+                </LocalReport>
             </rsweb:ReportViewer>
-            <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" DeleteMethod="Delete" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="FinalTemplate.DataSet1TableAdapters.assignmentTableAdapter" UpdateMethod="Update">
-                <DeleteParameters>
-                    <asp:Parameter Name="Original_assignment_id" Type="Int32" />
-                </DeleteParameters>
-                <UpdateParameters>
-                    <asp:Parameter Name="teacher_name" Type="String" />
-                    <asp:Parameter Name="assignment" Type="Object" />
-                    <asp:Parameter Name="Original_assignment_id" Type="Int32" />
-                </UpdateParameters>
-            </asp:ObjectDataSource>
-            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetData" TypeName="FinalTemplate.DataSet1TableAdapters.assignmentTableAdapter"></asp:ObjectDataSource>
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="sp_getstudent_class_section" SelectCommandType="StoredProcedure">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="Label2" Name="std_id" PropertyName="Text" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="sp_getstudent_class_section" SelectCommandType="StoredProcedure">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="Label1" Name="std_id" PropertyName="Text" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
     </form>
 </body>
 </html>

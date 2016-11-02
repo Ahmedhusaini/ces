@@ -33,7 +33,6 @@
                 messages: {
                     <%=username.UniqueID%>: {
                         required: "Please enter your name"
-
                     },
                     <%=changepassword.UniqueID%>:{
                         required:"Please enter Password"
@@ -51,6 +50,7 @@
         $(document).ready(function () {
             $('.rlp').removeClass("rlp");
             $('.register-form').css('margin-left', '25%');
+            centerText( <%=email.ClientID%>);
             centerText( <%=username.ClientID%>);
             centerText( <%=changepassword.ClientID%>);
             centerText( <%=newpassword.ClientID%>);
@@ -104,8 +104,9 @@
                                                     </span>
                                                 </label>
                                                 <!--p.help-block Warning !-->
-                                                <asp:TextBox ID="email" runat="server" CssClass="form-control form-input" Height="35px" placeholder="User name" Width="331px"></asp:TextBox>
-                                            </div>                                            <div style="padding-left: 131px">
+                                                <asp:TextBox ID="email" runat="server" CssClass="form-control form-input" Height="35px" Width="331px" ReadOnly="True" BackColor="#CFF4FA"></asp:TextBox>
+                                            </div>                                            
+                                            <div style="padding-left: 131px">
                                                 <label for="regname" class="control-label form-label">
                                                     User Name <span class="highlight">*<br />
                                                     </span>

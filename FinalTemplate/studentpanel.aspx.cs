@@ -88,7 +88,7 @@ namespace FinalTemplate
                     }
                     con.Open();
                     string path = @"~\images\" + filename.ToString();
-                    SqlCommand cmd = new SqlCommand("update tbl_general set photo='" + path + "' where General_Id='"+lab3.Text+"'", con);
+                    SqlCommand cmd = new SqlCommand("update tbl_general set photo='" + path + "' where General_Id='" + lab3.Text + "'", con);
                     shah.ImageUrl = @"~\images\" + FileUpload1.FileName;
                     cmd.ExecuteNonQuery();
                     con.Close();
@@ -103,7 +103,7 @@ namespace FinalTemplate
 
         protected void clas(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
