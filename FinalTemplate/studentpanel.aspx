@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/studentpanel.Master" AutoEventWireup="true" CodeBehind="studentpanel.aspx.cs" Inherits="FinalTemplate.studentpanel1" %>
+﻿<%@ Page Title="Student Profile | Home" Language="C#" MasterPageFile="~/studentpanel.Master" AutoEventWireup="true" CodeBehind="studentpanel.aspx.cs" Inherits="FinalTemplate.studentpanel1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="assets/js/jquery-2.2.3.js"></script>
@@ -220,12 +220,11 @@
                     </SelectParameters>
                 </asp:SqlDataSource>
             </div>
-            <%--<button type="submit" class="form-submit btn btn-blue"><span>Search</span></button>--%>
         </div>
     </div>
     <%-- </div>--%>
 
-    <asp:GridView ID="GridView1" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#86BC42" GridLines="None">
+<%--    <asp:GridView ID="GridView1" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#86BC42" GridLines="None">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:BoundField DataField="day" HeaderText="day" SortExpression="day" />
@@ -249,7 +248,7 @@
             <asp:ControlParameter ControlID="DropDownList1" Name="class" PropertyName="SelectedValue" Type="String" />
             <asp:ControlParameter ControlID="DropDownList2" Name="section" PropertyName="SelectedValue" Type="String" />
         </SelectParameters>
-    </asp:SqlDataSource>
+    </asp:SqlDataSource>--%>
     <br />
     <%--ATTENDANCE--%>
     <asp:GridView ID="GridView3" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" DataSourceID="timetable_1test" AllowSorting="True" BackColor="#000066" Font-Bold="False">
@@ -335,5 +334,4 @@
         </SelectParameters>
     </asp:SqlDataSource>
     <br />
-
 </asp:Content>
