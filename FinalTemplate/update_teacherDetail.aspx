@@ -26,7 +26,7 @@
                                     <tr class="table-row" style="background-color: transparent;">
                                         <td class="col-3"><span style="color: black; font-weight: bolder">Teacher ID</span></td>
                                         <td class="col-2">
-                                            <asp:TextBox runat="server" Width="200px" ID="stdtxtid" ReadOnly="True"></asp:TextBox></td>
+                                            <asp:TextBox runat="server" Width="200px" ID="teachertxtid"></asp:TextBox></td>
                                         <td class="col-3"><span></span></td>
                                     </tr>
 
@@ -171,27 +171,27 @@
                                     <tr class="table-row" style="background-color: transparent;">
                                         <td class="col-3"><span style="color: black; font-weight: bolder">General Details ID</span></td>
                                         <td class="col-2">
-                                            <asp:TextBox runat="server" Width="200px" ID="txtGenealID" ReadOnly="true"></asp:TextBox></td>
+                                            <asp:TextBox runat="server" Width="200px" ID="txtGenealID" ></asp:TextBox></td>
                                         <td class="col-3"></td>
                                     </tr>
 
                                     <tr class="table-row" style="background-color: transparent;">
                                         <td class="col-3"><span style="color: black; font-weight: bolder">Location ID</span></td>
                                         <td class="col-2">
-                                            <asp:TextBox runat="server" Width="200px" ID="txtLocationID" ReadOnly="true"></asp:TextBox></td>
+                                            <asp:TextBox runat="server" Width="200px" ID="txtLocationID" ></asp:TextBox></td>
                                         <td class="col-3"></td>
                                     </tr>
 
                                     <tr class="table-row" style="background-color: transparent;">
                                         <td class="col-3"><span style="color: black; font-weight: bolder">Date Of Birth ID</span></td>
                                         <td class="col-2">
-                                            <asp:TextBox runat="server" Width="200px" ID="txtDOBId" ReadOnly="true"></asp:TextBox></td>
+                                            <asp:TextBox runat="server" Width="200px" ID="txtDOBId"></asp:TextBox></td>
                                         <td class="col-3"></td>
                                     </tr>
                                     <tr class="table-row" style="background-color: transparent;">
                                         <td class="col-3"><span style="color: black; font-weight: bolder">Authorized ID</span></td>
                                         <td class="col-2">
-                                            <asp:TextBox ReadOnly="true" runat="server" Width="200px" ID="authorizedidtxt"></asp:TextBox></td>
+                                            <asp:TextBox  runat="server" Width="200px" ID="authorizedidtxt"></asp:TextBox></td>
                                         <td class="col-3"></td>
                                     </tr>
                                     <tr class="table-row" style="background-color: transparent;">
@@ -200,7 +200,7 @@
                                             <div class="register-submit">
                                                 <button type="submit" class="btn btn-register btn-green">
                                                     <span>
-                                                        <asp:Button ID="Button1" runat="server" Text=" Update" Style="background-color: transparent" BorderStyle="None" /></span></button>
+                                                        <asp:Button ID="Button1" runat="server" Text=" Update" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>
                                                 <asp:Label ID="Label1" runat="server"></asp:Label>
                                             </div>
                                             <%--OnClick="Button1_Click"--%>

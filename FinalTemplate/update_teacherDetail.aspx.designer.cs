@@ -13,13 +13,13 @@ namespace FinalTemplate {
     public partial class update_teacherDetail {
         
         /// <summary>
-        /// stdtxtid control.
+        /// teachertxtid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox stdtxtid;
+        protected global::System.Web.UI.WebControls.TextBox teachertxtid;
         
         /// <summary>
         /// txtFirstName control.

@@ -490,6 +490,7 @@
     <Compile Include="source\Functions\student.cs" />
     <Compile Include="source\Functions\StudentUpdate.cs" />
     <Compile Include="source\Functions\teacher.cs" />
+    <Compile Include="source\Functions\TeacherUpdate.cs" />
     <Compile Include="source\Registration\ClassStudentRegistration.cs" />
     <Compile Include="source\Database\Database.cs" />
     <Compile Include="source\Functions\CurrentUser.cs" />
