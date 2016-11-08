@@ -35,7 +35,7 @@
                         </span>
 
                     </button>
-                    <button data-wow-delay="1.3s" data-wow-duration="1s" class="btn btn-green-3 wow fadeInRight"><span>Update Profile Details</span></button>
+                    <a href="UpdateSchoolInformation.aspx" data-wow-delay="1.3s" data-wow-duration="1s" class="btn btn-green-3 wow fadeInRight"><span>Update Profile Details</span></a>
                 </div>
             </div>
         </div>

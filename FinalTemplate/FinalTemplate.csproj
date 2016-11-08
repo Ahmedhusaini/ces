@@ -304,7 +304,6 @@
     <Content Include="assets\libs\smooth-scroll\jquery-smoothscroll.js" />
     <Content Include="assets\libs\wow-js\wow.min.js" />
     <Content Include="Default.aspx" />
-    <Content Include="news_description.aspx" />
     <Content Include="ParentRegistration.aspx" />
     <Content Include="select_resistration_type.aspx" />
     <Content Include="studentpanel.aspx" />
@@ -390,6 +389,7 @@
     </Compile>
     <Compile Include="source\Functions\JEvents.cs" />
     <Compile Include="source\Functions\Jfunctionteacher.cs" />
+    <Compile Include="source\Functions\JNews.cs" />
     <Compile Include="source\Functions\JStudent.cs" />
     <Compile Include="Mark_attendance.aspx.cs">
       <DependentUpon>Mark_attendance.aspx</DependentUpon>
@@ -527,13 +527,6 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="news_description.aspx.cs">
-      <DependentUpon>news_description.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="news_description.aspx.designer.cs">
-      <DependentUpon>news_description.aspx</DependentUpon>
     </Compile>
     <Compile Include="ParentRegistration.aspx.cs">
       <DependentUpon>ParentRegistration.aspx</DependentUpon>
@@ -790,6 +783,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="files\" />
+    <Folder Include="images\News\" />
     <Folder Include="images\registeredSchools\" />
   </ItemGroup>
   <ItemGroup>

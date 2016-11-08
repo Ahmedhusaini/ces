@@ -6,8 +6,7 @@
             button();
         });
         function button() {
-            $('button[type=submit]').css('padding-right', '130px');
-            $('button[type=submit] span').css('color', 'white');
+            $('#<%=btnPostNews.ClientID%>').css('width', '140px');
         }
     </script>
 </asp:Content>
@@ -19,16 +18,15 @@
                                 <div class="col-md-12 col-sm-12">
                                     <div class="news-detail"><img src="assets/images/cesThemeImages/hps.jpg" alt="" class="news-image"/>
 
-                                        <h1 class="title-news">Write the news content below.</h1>
                                         <div class="comment-write">
-                                            <div class="comment-write-title underline">Write your message</div>
+                                            <div class="comment-write-title underline">Category of news type will set its priority in news feed on CES Portal.</div>
                                             <form action="#" class="form-comment">
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <div class="input-icon right">
                                                                 News Title
-                                                                <asp:TextBox runat="server" ID="txtNewsTitle" placeholder="News Title" CssClass="form-control form-input"></asp:TextBox>
+                                                                <asp:TextBox runat="server" ID="txtNewsTitle"  CssClass="form-control form-input"></asp:TextBox>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -36,7 +34,7 @@
                                                         <div class="form-group">
                                                             <div class="input-icon right">
                                                                 News Type
-                                                                <asp:DropDownList runat="server" ID="ddlnewstype" CssClass="form-control form-input"/>
+                                                                <asp:DropDownList runat="server" ID="ddlnewstype" CssClass="form-select style-1 selectbox"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -48,19 +46,12 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                     <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <div class="input-icon right">
-                                                                News Video
-                                                                <asp:FileUpload runat="server" ID="fileuploadnewsvideo" CssClass="form-control  form-input"/>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                     
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <div class="input-icon right">
                                                                 News Tags
-                                                                   <asp:TextBox runat="server" ID="txtTags" placeholder="News Tags" CssClass="form-control form-input"></asp:TextBox>  
+                                                                   <asp:TextBox runat="server" ID="txtTags" placeholder="Separate tags with comma ( , ) to add multiple tags."  CssClass="form-control form-input"></asp:TextBox>  
                                                             </div>
                                                         </div>
                                                     </div>
@@ -73,7 +64,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="contact-submit">
-                                                    <button type="submit" class="btn btn-green btn-bold"><span>SUBMIT POST</span></button>
+                                                    
+                                                    <asp:Button runat="server" ID="btnPostNews" Text="Post News" CssClass="btn btn-green btn-bold" OnClick="btnPostNews_Click" />
                                                 </div>
                                             </form>
                                         </div>

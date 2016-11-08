@@ -60,6 +60,49 @@ namespace FinalTemplate.source.Functions
             return returnvalue;
 
         }
+        public static string UploadSingleFile(FileUpload objFileUpload, string filePath,string FilterFormat)
+        {
+            string fullPath = "~/" + filePath;
+            string[] imageformats = { ".jpg",".png",".gif"};
+            string[] videoformats = { ".mp4", ".alv", ".3gp" };
+            string savedPath = string.Empty, returnvalue = string.Empty;
+            returnvalue = "null";
+            if (objFileUpload.HasFile)
+            {
+                
+                string[] extensions =FilterFormat.Split('|');
+                for (int i = 0; i < FilterFormat.Length; i++)
+                {
+                    if (imageformats[i].Contains(extensions[i]))
+                    {
+                        returnvalue = "allowimage";
+                        break;
+                    }
+                    if (videoformats[i].Contains(extensions[i]))
+                    {
+                        returnvalue = "allowvideo";
+                        break;
+                    }
+                }
+                if (returnvalue=="allowimage" || returnvalue =="allowvideo")
+                {
+                    int currentFileSize = objFileUpload.PostedFile.ContentLength;
+                    savedPath = fullPath + objFileUpload.FileName;                    
+                    try
+                    {
+                        objFileUpload.SaveAs(HttpContext.Current.Server.MapPath(savedPath));
+                        returnvalue = "true";
+                    }
+                    catch (Exception exception)
+                    {
+                        returnvalue = exception.ToString();
+                    }    
+                }
+                
+            }
+            return returnvalue;
+
+        }
         public static void BindDropDownList(DropDownList ddl, string displayField, string valueField, string query)
         {
             Database.Database myDatabase = new Database.Database("ces");

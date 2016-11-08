@@ -1,0 +1,98 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using FinalTemplate.source.Functions;
+using FinalTemplate.source.Database;
+using FinalTemplate.source.Validation;
+namespace FinalTemplate.source.Functions
+{
+    public class JNews
+    {
+        private Database.Database objdbnews = new Database.Database("ces");
+        public int NewsID { get; set; }
+        public int NewsTypeID { get; set; }
+        public string Title { get; set; }
+        public string Image { get; set; }
+        public string Video { get; set; }
+        public string Description { get; set; }
+        public string Tags { get; set; }
+        public string SchoolID { get; set; }
+        #region Methods For NEWS
+        public string AddNews(int _newstypeid,string _title,string _imgae,string _descrption,string _tags)
+        {
+            string returnvalue = string.Empty;
+            string[] blacklistedKeywords={_title,_imgae,_descrption,_tags};
+            if (Jvalidate.FilterBlackLIstKeywords(blacklistedKeywords))
+            {
+                int newsID = Convert.ToInt32(objdbnews.GetLastValueByColumnName("news_id", "tbl_news")) + 1;
+                objdbnews.CreateConnection();
+                objdbnews.InitializeSQLCommandObject(objdbnews.GetCurrentConnection, "spAddNews", true);
+                objdbnews.obj_sqlcommand.Parameters.AddWithValue("@newsid", newsID);
+                objdbnews.obj_sqlcommand.Parameters.AddWithValue("@newstypeid", _newstypeid);
+                objdbnews.obj_sqlcommand.Parameters.AddWithValue("@title", _title);
+                objdbnews.obj_sqlcommand.Parameters.AddWithValue("@image", _imgae);
+                
+                objdbnews.obj_sqlcommand.Parameters.AddWithValue("@description", _descrption);
+                objdbnews.obj_sqlcommand.Parameters.AddWithValue("@schoolid", JSchool.SchoolID);
+                objdbnews.obj_sqlcommand.Parameters.AddWithValue("@tags", _tags);
+                try
+                {
+                    objdbnews.OpenConnection();
+                    if (objdbnews.obj_sqlcommand.ExecuteNonQuery() > 0)
+                    {
+                        returnvalue = "true";
+                        //HttpContext.Current.Response.Write("<script>alert('News Added successfully.');</script>");
+                    }
+                    else
+                        returnvalue = "false";
+                }
+                finally
+                {
+                    objdbnews.CloseConnection();
+                    objdbnews.obj_sqlcommand.Dispose();
+                }
+            }
+            else
+            {
+                returnvalue = "false";
+                //HttpContext.Current.Response.Write("<script>alert('Your input data is not valid, Kindly resubmit the form with valid data.');</script>");
+            }
+            return returnvalue;
+        }
+        public void UpdateNews(int _newsID,int _newstypeid, string _title, string _imgae, string _descrption, string _tags)
+        {
+            string[] blacklistedKeywords = { _title, _imgae,  _descrption, _tags };
+            if (Jvalidate.FilterBlackLIstKeywords(blacklistedKeywords))
+            {
+                objdbnews.CreateConnection();
+                objdbnews.InitializeSQLCommandObject(objdbnews.GetCurrentConnection, "spUpdateNews", true);
+                objdbnews.obj_sqlcommand.Parameters.AddWithValue("@newsid", _newsID);
+                objdbnews.obj_sqlcommand.Parameters.AddWithValue("@newstypeid", _newstypeid);
+                objdbnews.obj_sqlcommand.Parameters.AddWithValue("@title", _title);
+                objdbnews.obj_sqlcommand.Parameters.AddWithValue("@image", _imgae);
+                objdbnews.obj_sqlcommand.Parameters.AddWithValue("@description", _descrption);
+                objdbnews.obj_sqlcommand.Parameters.AddWithValue("@schoolid", JSchool.SchoolID);
+                objdbnews.obj_sqlcommand.Parameters.AddWithValue("@tags", _tags);
+                try
+                {
+                    objdbnews.OpenConnection();
+                    if (objdbnews.obj_sqlcommand.ExecuteNonQuery() > 0)
+                    {
+                        HttpContext.Current.Response.Write("alert('News updated successfully.');");
+                    }
+                }
+                finally
+                {
+                    objdbnews.CloseConnection();
+                    objdbnews.obj_sqlcommand.Dispose();
+                }
+            }
+            else
+            {
+                HttpContext.Current.Response.Write("alert('Your input data is not valid, Kindly resubmit the form with valid data.');");
+            }
+        }
+        #endregion
+    }
+}
