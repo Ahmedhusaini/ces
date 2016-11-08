@@ -33,6 +33,7 @@ namespace FinalTemplate.source.Functions
         static public string lastclassattend { get; set; }
 
         // school detail
+        static public string s_schoolid { get; set; }
         static public string s_username { get; set; }
         static public string s_schoolname { get; set; }
         static public string s_primaryemail { get; set; }
@@ -78,7 +79,7 @@ namespace FinalTemplate.source.Functions
         static public void SchoolDetails(string SchoolDEtail)
         {
             mydatabse.CreateConnection();
-            mydatabse.InitializeSQLCommandObject(mydatabse.GetCurrentConnection, "sp_schooldetailforstudent1", true);
+            mydatabse.InitializeSQLCommandObject(mydatabse.GetCurrentConnection, "sp_schooldetailforstudent", true);
             try
             {
                 mydatabse.OpenConnection();
@@ -91,6 +92,7 @@ namespace FinalTemplate.source.Functions
                     int totalRows = mydatabse.obj_reader.RecordsAffected;
                     while (mydatabse.obj_reader.Read())
                     {
+                        s_schoolid = mydatabse.obj_reader["school_id"].ToString();
                         s_schoolname = mydatabse.obj_reader["school_name"].ToString();
                         s_primarycontact = mydatabse.obj_reader["contact_primary"].ToString();
                         s_secondarycontact = mydatabse.obj_reader["contact_secondary"].ToString();
@@ -132,6 +134,7 @@ namespace FinalTemplate.source.Functions
                     int totalRows = mydatabse.obj_reader.RecordsAffected;
                     while (mydatabse.obj_reader.Read())
                     {
+                        s_schoolid = mydatabse.obj_reader["school_id"].ToString();
                         postalcode = mydatabse.obj_reader["postal_code"].ToString();
                         lastclassattend = mydatabse.obj_reader["last_class_attended"].ToString();
                         gurdianname = mydatabse.obj_reader["Guardian_Name"].ToString();

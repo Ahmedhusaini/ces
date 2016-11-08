@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/studentpanel.Master" AutoEventWireup="true" CodeBehind="studentpanel.aspx.cs" Inherits="FinalTemplate.studentpanel1" %>
+﻿<%@ Page Title="Student Profile | Home" Language="C#" MasterPageFile="~/studentpanel.Master" AutoEventWireup="true" CodeBehind="studentpanel.aspx.cs" Inherits="FinalTemplate.studentpanel1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="assets/js/jquery-2.2.3.js"></script>
@@ -94,6 +94,8 @@
                     <asp:Label ID="Label4" CssClass="title-2" runat="server" ForeColor="#86BC42"></asp:Label>
                     <label class="title-404">SECTION : </label>
                     <asp:Label ID="Label5" CssClass="title-2" runat="server" ForeColor="#86BC42"></asp:Label>
+
+                    <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
 
                     <h4 runat="server" style="color: #A8CF78">Change Profile Picture</h4>
                     <asp:FileUpload ID="FileUpload1" runat="server" />
@@ -218,12 +220,11 @@
                     </SelectParameters>
                 </asp:SqlDataSource>
             </div>
-            <%--<button type="submit" class="form-submit btn btn-blue"><span>Search</span></button>--%>
         </div>
     </div>
     <%-- </div>--%>
 
-    <asp:GridView ID="GridView1" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#86BC42" GridLines="None">
+<%--    <asp:GridView ID="GridView1" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#86BC42" GridLines="None">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:BoundField DataField="day" HeaderText="day" SortExpression="day" />
@@ -247,9 +248,40 @@
             <asp:ControlParameter ControlID="DropDownList1" Name="class" PropertyName="SelectedValue" Type="String" />
             <asp:ControlParameter ControlID="DropDownList2" Name="section" PropertyName="SelectedValue" Type="String" />
         </SelectParameters>
-    </asp:SqlDataSource>
+    </asp:SqlDataSource>--%>
     <br />
     <%--ATTENDANCE--%>
+    <asp:GridView ID="GridView3" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" DataSourceID="timetable_1test" AllowSorting="True" BackColor="#000066" Font-Bold="False">
+        <Columns>
+            <asp:BoundField DataField="day" HeaderText="Day" SortExpression="day" ItemStyle-ForeColor="#6B9735" />
+            <asp:BoundField DataField="period_1" HeaderText="period 1" SortExpression="period_1" />
+            <asp:BoundField DataField="period_2" HeaderText="period 2" SortExpression="period_2" />
+            <asp:BoundField DataField="period_3" HeaderText="period 3" SortExpression="period_3" />
+            <asp:BoundField DataField="period_4" HeaderText="period 4" SortExpression="period_4" />
+            <asp:BoundField DataField="period_5" HeaderText="period 5" SortExpression="period_5" />
+            <asp:BoundField DataField="period_6" HeaderText="period 6" SortExpression="period_6" />
+            <asp:BoundField DataField="period_7" HeaderText="period 7" SortExpression="period_7" />
+            <asp:BoundField DataField="period_8" HeaderText="period 8" SortExpression="period_8" />
+        </Columns>
+                <EditRowStyle BackColor="#7C6F57" />
+        <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#737373" Font-Bold="True" ForeColor="#86bc42" />
+        <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="#E3EAEB" />
+        <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+        <SortedAscendingCellStyle BackColor="#F8FAFA" />
+        <SortedAscendingHeaderStyle BackColor="#246B61" />
+        <SortedDescendingCellStyle BackColor="#D4DFE1" />
+        <SortedDescendingHeaderStyle BackColor="#15524A" />
+    </asp:GridView>
+    <asp:SqlDataSource ID="timetable_1test" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="sp_timetable_test1" SelectCommandType="StoredProcedure">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="Label5" Name="section" PropertyName="Text" Type="String" />
+            <asp:ControlParameter ControlID="Label4" Name="class" PropertyName="Text" Type="String" />
+            <asp:ControlParameter ControlID="Label6" Name="school_id" PropertyName="Text" Type="String" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+    <br />
     <div class="search-input">
         <div class="container">
             <%--  <div class="search-input-wrapper">--%>
@@ -260,49 +292,46 @@
         </div>
     </div>
     <br />
-        <label>DAY : </label><asp:DropDownList CssClass="dropdown" ID="DropDownList3" runat="server" DataSourceID="SqlDataSource5" DataTextField="Column1" DataValueField="Column1"></asp:DropDownList>
-        <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="select DATENAME(DW, [date]) from tbl_student_attendance where Std_id=@Std_id">
-            <SelectParameters>
-                <asp:ControlParameter ControlID="Label3" Name="Std_id" PropertyName="Text" />
-            </SelectParameters>
+    <label>MONTH&nbsp; : </label>
+    <asp:DropDownList CssClass="dropdown" ID="DropDownList3" runat="server" DataSourceID="SqlDataSource5" DataTextField="Column1" DataValueField="Column1"></asp:DropDownList>
+    <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="select month([date]) from tbl_student_attendance where Std_id=@Std_id">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="Label3" Name="Std_id" PropertyName="Text" />
+        </SelectParameters>
     </asp:SqlDataSource>
-        <label>MONTH : </label><asp:DropDownList CssClass="dropdown" ID="DropDownList5" AutoPostBack="true" runat="server" DataSourceID="SqlDataSource6" DataTextField="Column1" DataValueField="Column1"></asp:DropDownList>
-    <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="select DATENAME(mm, [date]) from tbl_student_attendance where Std_id=@Std_id">
+    <label>DAY&nbsp; : </label>
+    <asp:DropDownList CssClass="dropdown" ID="DropDownList5" runat="server" DataSourceID="SqlDataSource6" DataTextField="Column1" DataValueField="Column1"></asp:DropDownList>
+    <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="select day([date]) from tbl_student_attendance where Std_id=@Std_id">
         <SelectParameters>
             <asp:ControlParameter ControlID="Label3" Name="Std_id" PropertyName="Text" />
         </SelectParameters>
     </asp:SqlDataSource>
     <br />
-        <asp:GridView ID="GridView2" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource8" AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#86BC42" GridLines="None">
-            <Columns>
-                <asp:BoundField DataField="Column1" HeaderText="Column1" ReadOnly="True" SortExpression="Column1" />
-                <asp:BoundField DataField="Column2" HeaderText="Column2" ReadOnly="True" SortExpression="Column2" />
-                <asp:BoundField DataField="time" HeaderText="time" SortExpression="time" />
-                <asp:BoundField DataField="remarks" HeaderText="remarks" SortExpression="remarks" />
-            </Columns>
-            <EditRowStyle BackColor="#7C6F57" />
-            <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-            <HeaderStyle BackColor="#737373" Font-Bold="True" ForeColor="#86bc42" />
-            <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-            <RowStyle BackColor="#E3EAEB" />
-            <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-            <SortedAscendingCellStyle BackColor="#F8FAFA" />
-            <SortedAscendingHeaderStyle BackColor="#246B61" />
-            <SortedDescendingCellStyle BackColor="#D4DFE1" />
-            <SortedDescendingHeaderStyle BackColor="#15524A" />
-        </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource8" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="shahwaiz_attendance" SelectCommandType="StoredProcedure">
-            <SelectParameters>
-                <asp:ControlParameter ControlID="Label3" Name="Std_id" PropertyName="Text" Type="String" />
-            </SelectParameters>
-    </asp:SqlDataSource>
-    <asp:SqlDataSource ID="SqlDataSource7" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="shahwaiz_attendance" SelectCommandType="StoredProcedure">
+    <asp:GridView ID="GridView2" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource4" AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#86BC42" GridLines="None">
+        <Columns>
+            <asp:BoundField DataField="Column1" HeaderText="MONTH" ReadOnly="True" SortExpression="Column1" />
+            <asp:BoundField DataField="Column2" HeaderText="DAY" ReadOnly="True" SortExpression="Column2" />
+            <asp:BoundField DataField="Column3" HeaderText="DATE" SortExpression="Column3" ReadOnly="True" />
+            <asp:BoundField DataField="time" HeaderText="TIME" SortExpression="time" />
+            <asp:BoundField DataField="remarks" HeaderText="ATTANDANCE" SortExpression="remarks" />
+        </Columns>
+        <EditRowStyle BackColor="#7C6F57" />
+        <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#737373" Font-Bold="True" ForeColor="#86bc42" />
+        <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="#E3EAEB" />
+        <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+        <SortedAscendingCellStyle BackColor="#F8FAFA" />
+        <SortedAscendingHeaderStyle BackColor="#246B61" />
+        <SortedDescendingCellStyle BackColor="#D4DFE1" />
+        <SortedDescendingHeaderStyle BackColor="#15524A" />
+    </asp:GridView>
+    <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="shahwaiz_attendance" SelectCommandType="StoredProcedure">
         <SelectParameters>
             <asp:ControlParameter ControlID="Label3" Name="Std_id" PropertyName="Text" Type="String" />
-            <asp:ControlParameter ControlID="DropDownList5" Name="month" PropertyName="SelectedValue" Type="String" />
+            <asp:ControlParameter ControlID="DropDownList5" Name="day" PropertyName="SelectedValue" Type="Int32" />
+            <asp:ControlParameter ControlID="DropDownList3" Name="month" PropertyName="SelectedValue" Type="Int32" />
         </SelectParameters>
     </asp:SqlDataSource>
-    <asp:SqlDataSource ID="SqlDataSource4" runat="server"></asp:SqlDataSource>
     <br />
-
 </asp:Content>

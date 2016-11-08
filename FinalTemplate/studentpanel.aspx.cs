@@ -27,7 +27,6 @@ namespace FinalTemplate
         SqlConnection con = new SqlConnection(@"Data Source=SHAHWAIZ\SQLEXPRESS;Initial Catalog=ces;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
-
             lab1.Text = "DATE :" + System.DateTime.Now.ToShortDateString();
             lab2.Text = "TIME :" + System.DateTime.Now.ToLongTimeString();
 
@@ -53,12 +52,12 @@ namespace FinalTemplate
                 student.Complete_Detail_Of_Student(Session["userid"].ToString());
                 Label4.Text = student.s_class;
                 Label5.Text = student.s_section;
+                Label6.Text = student.s_schoolid;
             }
             else
             {
                 Response.Redirect("~/Default.aspx");
             }
-
         }
         protected void btnSave_Click(object sender, EventArgs e)
         {
@@ -88,7 +87,7 @@ namespace FinalTemplate
                     }
                     con.Open();
                     string path = @"~\images\" + filename.ToString();
-                    SqlCommand cmd = new SqlCommand("update tbl_general set photo='" + path + "' where General_Id='"+lab3.Text+"'", con);
+                    SqlCommand cmd = new SqlCommand("update tbl_general set photo='" + path + "' where General_Id='" + lab3.Text + "'", con);
                     shah.ImageUrl = @"~\images\" + FileUpload1.FileName;
                     cmd.ExecuteNonQuery();
                     con.Close();
@@ -103,7 +102,16 @@ namespace FinalTemplate
 
         protected void clas(object sender, EventArgs e)
         {
-            
+
+        }
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

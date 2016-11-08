@@ -3,7 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="RegisterHeadPlaceHolder" runat="server">
     <script src="assets/js/jquery-2.2.3.js"></script>
     <script src="assets/js/jquery.validate.js"></script>
-    <script type="text/javascript">      
+    <script type="text/javascript">  
+        //$.validator.addMethod("email",function(value,element){
+        //    return this.optional(element) || /^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{2,5}$/i.test(value);
+        //},"please enter a valid Email Address.");
         $.validator.addMethod("lettersonly", function (value, element) {
             return this.optional(element) || /^[a-z\s]+$/i.test(value);
         }, "Letters only please");
@@ -181,9 +184,6 @@
                          required:"You must confirm your password",
                          
                      },
-                    <%--                       <%=emaill.UniqueID%>:{
-                           required:"Please enter your an email"
-                       },--%>
                        <%=pemail.UniqueID%>:{
                            required:"Please enter your an email"
                        },
