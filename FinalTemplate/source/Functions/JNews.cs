@@ -60,8 +60,44 @@ namespace FinalTemplate.source.Functions
             }
             return returnvalue;
         }
-        public void UpdateNews(int _newsID,int _newstypeid, string _title, string _imgae, string _descrption, string _tags)
+        public string GetNewsDetails(int newsid)
         {
+            string returnvalue = string.Empty;
+            objdbnews.CreateConnection();
+            objdbnews.InitializeSQLCommandObject(objdbnews.GetCurrentConnection, "spGetNewsDetailsByNewsID", true);
+            objdbnews.obj_sqlcommand.Parameters.AddWithValue("@newsID",newsid);
+            try
+            {
+                objdbnews.OpenConnection();
+                objdbnews.obj_reader = objdbnews.obj_sqlcommand.ExecuteReader();
+                if (objdbnews.obj_reader.HasRows)
+                {
+                    while (objdbnews.obj_reader.Read())
+                    {
+                        NewsID = Convert.ToInt32(objdbnews.obj_reader["news_id"]);
+                        NewsTypeID = Convert.ToInt32(objdbnews.obj_reader["news_type_id"]);
+                        Title = objdbnews.obj_reader["news_title"].ToString();
+                        Image = objdbnews.obj_reader["news_image"].ToString();
+                        Description = objdbnews.obj_reader["news_description"].ToString();
+                        Tags = objdbnews.obj_reader["news_tags"].ToString();
+                        SchoolID = objdbnews.obj_reader["school_id"].ToString();
+                    }
+                    returnvalue = "true";
+                }
+                else
+                    returnvalue = "No record";
+            }
+            finally
+            {
+                objdbnews.CloseConnection();
+                objdbnews.obj_reader.Close();
+                objdbnews.obj_reader.Dispose();
+            }
+            return returnvalue;
+        }
+        public string UpdateNews(int _newsID,int _newstypeid, string _title, string _imgae, string _descrption, string _tags)
+        {
+            string returnvalue = string.Empty;
             string[] blacklistedKeywords = { _title, _imgae,  _descrption, _tags };
             if (Jvalidate.FilterBlackLIstKeywords(blacklistedKeywords))
             {
@@ -79,8 +115,11 @@ namespace FinalTemplate.source.Functions
                     objdbnews.OpenConnection();
                     if (objdbnews.obj_sqlcommand.ExecuteNonQuery() > 0)
                     {
-                        HttpContext.Current.Response.Write("alert('News updated successfully.');");
+                        returnvalue = "true";
+                        //HttpContext.Current.Response.Write("alert('News updated successfully.');");
                     }
+                    else
+                        returnvalue = "false";
                 }
                 finally
                 {
@@ -90,8 +129,10 @@ namespace FinalTemplate.source.Functions
             }
             else
             {
+                returnvalue = "Invalid Data.";
                 HttpContext.Current.Response.Write("alert('Your input data is not valid, Kindly resubmit the form with valid data.');");
             }
+            return returnvalue;
         }
         #endregion
     }
