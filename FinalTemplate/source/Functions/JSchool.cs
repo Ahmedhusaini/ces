@@ -10,7 +10,7 @@ namespace FinalTemplate.source.Functions
         public static string SchoolID
         { get { return getschoolid(); } }
 
-
+       
         private static string getschoolid()
         {
             string school_id = string.Empty;
@@ -42,9 +42,6 @@ namespace FinalTemplate.source.Functions
             }
             return school_id;
         }
-
-
-
 
     }
 }

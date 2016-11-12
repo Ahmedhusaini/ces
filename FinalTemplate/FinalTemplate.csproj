@@ -103,6 +103,7 @@
     <Content Include="assets\css\toggleSwitch.css" />
     <Content Include="assets\images\calender.png" />
     <Content Include="assets\images\cesThemeImages\evetns.jpg" />
+    <Content Include="assets\images\cesThemeImages\fade_to_color_texture_by_capricorn7769.jpg" />
     <Content Include="assets\images\cesThemeImages\hps.jpg" />
     <Content Include="assets\images\cesThemeImages\pakstudents.jpg" />
     <Content Include="assets\images\cesThemeImages\searchTeacher.jpg" />

@@ -29,6 +29,96 @@ namespace FinalTemplate.source.Functions
         public string SchoolType { get; set; }
         public string LastLoginDate { get; set; }
         public string Logo { get; set; }
+
+        public int TotalStudent(string _schoolID)
+        {
+            int foundstudent = 0;
+            mydb.CreateConnection();
+            mydb.InitializeSQLCommandObject(mydb.GetCurrentConnection, "StudentCountBySchoolID", true);
+            try
+            {
+                mydb.obj_sqlcommand.Parameters.AddWithValue("@schoolid", _schoolID);
+                mydb.obj_reader = mydb.obj_sqlcommand.ExecuteReader();
+                if (mydb.obj_reader.HasRows)
+                {
+                    while (mydb.obj_reader.Read())
+                    {
+                        foundstudent = (int)mydb.obj_reader["TotalStudents"];
+                    }
+                }
+                else
+                {
+                    return foundstudent;
+                }
+            }
+            finally
+            {
+                mydb.CloseConnection();
+                mydb.obj_reader.Close();
+                mydb.obj_reader.Dispose();
+            }
+            return foundstudent;
+        }
+        public int TotalCourse(string _schoolID)
+        {
+            int foundcourse = 0;
+            mydb.CreateConnection();
+            mydb.InitializeSQLCommandObject(mydb.GetCurrentConnection, "CourseCountBySchoolID", true);
+            try
+            {
+                mydb.obj_sqlcommand.Parameters.AddWithValue("@schoolid", _schoolID);
+                mydb.obj_reader = mydb.obj_sqlcommand.ExecuteReader();
+                if (mydb.obj_reader.HasRows)
+                {
+                    while (mydb.obj_reader.Read())
+                    {
+                        foundcourse = (int)mydb.obj_reader["CourseCount"];
+                    }
+                }
+                else
+                {
+                    return foundcourse;
+                }
+            }
+            finally
+            {
+                mydb.CloseConnection();
+                mydb.obj_reader.Close();
+                mydb.obj_reader.Dispose();
+            }
+            return foundcourse;
+        }
+        public int TotalTeachers(string _schoolID)
+        {
+            int foundteachers = 0;
+            mydb.CreateConnection();
+            mydb.InitializeSQLCommandObject(mydb.GetCurrentConnection, "NumberOfTeachers",true);
+            try
+            {
+                mydb.obj_sqlcommand.Parameters.AddWithValue("@schoolid", _schoolID);
+                mydb.obj_reader = mydb.obj_sqlcommand.ExecuteReader();
+                if (mydb.obj_reader.HasRows)
+                {
+                    while (mydb.obj_reader.Read())
+                    {
+                        foundteachers = (int)mydb.obj_reader["TotalTeachers"];
+                    }
+                }
+                else
+                {
+                    return foundteachers;
+                }
+            }
+            finally
+            {
+                mydb.CloseConnection();
+                mydb.obj_reader.Close();
+                mydb.obj_reader.Dispose();
+            }
+            return foundteachers;
+        }
+        
+
         public string GetSchoolDetails()
         {
             string valuereturned = string.Empty;

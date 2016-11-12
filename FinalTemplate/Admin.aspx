@@ -13,8 +13,15 @@
             $('div img[alt=TeacherOfTheMonth]').css({ 'width': '350px', 'height': '450px', 'border-radius': '50%' });
             $('div.staff-info a img[alt=teachers]').css({ 'height': '150px', 'width': '150px' });
             $('.best-staff-wrapper').mouseenter(function () {
-                 $('a img').css({ 'height': '150px', 'width': '150px','transition':'3s'});
+                $('a img').css({ 'height': '150px', 'width': '150px', 'transition': '3s' });
+               
             });
+
+            function SchoolImage() {
+                
+                $('.slider-banner-03').css('background-image', 'url(assets/images/cesThemeImages/fade_to_color_texture_by_capricorn7769.jpg);');
+            }
+
         });
     </script> 
 </asp:Content>
