@@ -12,9 +12,9 @@ namespace FinalTemplate.source.Functions
         private Database.Database objdbnews = new Database.Database("ces");
         public int NewsID { get; set; }
         public int NewsTypeID { get; set; }
+        public string NewsType { get; set; }
         public string Title { get; set; }
-        public string Image { get; set; }
-       
+        public string Image { get; set; }       
         public string Description { get; set; }
         public string Tags { get; set; }
         public string SchoolID { get; set; }

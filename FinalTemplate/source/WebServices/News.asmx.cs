@@ -43,7 +43,9 @@ namespace FinalTemplate.source.WebServices
                         newsobj.Tags = objnews.obj_reader["news_tags"].ToString();
                         newsobj.Image = objnews.obj_reader["news_image"].ToString();
                         newsobj.SchoolID = objnews.obj_reader["school_id"].ToString();
+                        newsobj.NewsType = objnews.obj_reader["news_type"].ToString();
                         listnews.Add(newsobj);
+                        
                     }
                 }
                 else
