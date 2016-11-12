@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="ViewNews.aspx.cs" Inherits="FinalTemplate.ViewNews" %>
+<%@ Import Namespace="FinalTemplate.source.Functions" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="AdminHeadPlaceHolder" runat="server">
 <script src="assets/js/jquery-2.2.3.js"></script>
     
@@ -12,27 +13,30 @@
             samesizeimage();
             setbuttonlayout();
             searchboxwidth();
-            searchTeacher();            
+            GetAllNews();
         });
 
         function GetAllNews() {
             $('.customs-rows').empty();
             var schoolid = $('#schoolIDvalue').val();
+            alert(schoolid);
             $.ajax({
                 url: 'source/WebServices/News.asmx/GetAllNewsBySchoolID',
                 method: 'post',
                 data: { _schoolid: schoolid },
                 dataType: 'json',
                 success: function (data) {
-                    var arrData = $.parseJSON(data);
-                    $.each(arrData, function (i, v) {
+                    var arrData = JSON.stringify(data);
+                    alert(arrData);
+                    var jsonarray = $.parseJSON(arrData);
+                    $.each(jsonarray, function (i, v) {
                         var parentdiv = $('div.customs-row');
-                        parentdiv.append('<div class="col-md-4 col-sm-6"><div class="edugate-layout-3"><div class="edugate-layout-3-wrapper"><a class="edugate-image"><img class="imgTeacher" src="images/News/' + v.Image + '" alt="" class="img-responsive" /></a><div class="edugate-content"><a href="#" class="title">' + v.Title + '</a><ul><li>News Title: <b>' + v.Title + '</b></li><li> Teacher ID: <b>' + v.TeacherID + '</b></li><li>General Teacher ID: <b>' + v.GeneralID + '</b></li><li>Teacher Authorized ID: <b>' + v.AuthorizedID + '</b></li><li>Date Of Join: <b>' + v.DateOfJoin + '</b></li></ul></div><br><br><br><button class="btn btn-green"style="padding-right:115px;margin-left:80px;"><span><a href="UpdateTeacherInformation.aspx?IAC=' + v.TeacherID + '">View Details</a></span></button></div></div></div></div>');
+                          parentdiv.append('<div class="col-md-4 col-sm-6"><div class="edugate-layout-3"><div class="edugate-layout-3-wrapper"><a class="edugate-image"><img class="imgTeacher" src="images/News/' + v.Image + '" alt="" class="img-responsive" /></a><div class="edugate-content"><a href="#" class="title">' + v.Title + '</a><ul><li>News Title: <b>' + v.Title + '</b></li><li> News Type: <b>' + v.NewsType+ '</b></li><li>Description: <b>' + v.Description+ '</b></li></ul></div><br><br><br><button class="btn btn-green"style="padding-right:115px;margin-left:80px;"><span><a href="UpdateNews.aspx?NC=' + v.NewsID + '">View Details</a></span></button></div></div></div></div>');
 
                     });
                 },
                 error: function (error) {
-
+                    alert("error"+error);
                 }
             });
         }       
@@ -83,7 +87,7 @@
                                 <form>
                                 <asp:TextBox ID="txtSearch" runat="server" CssClass="form-input" placeholder="Type news title or tags here to search for news post"></asp:TextBox>
                                 <button type="submit" id="btnsubmit" class="form-submit btn btn-blue"><span>search now<i class="fa fa-search"></i></span></button>
-                                    <input id="schoolIDvalue" type="hidden" value="<%=%>"/>
+                                    <input id="schoolIDvalue" type="hidden" value="<%=JSchool.SchoolID%>"/>
                                 <div class="clearfix"></div>
                                 </form>
                             </div>

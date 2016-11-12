@@ -17,6 +17,9 @@ namespace FinalTemplate
         {
             if(!IsPostBack)
                 JFunctions.BindDropDownList(ddlNewsType, "news_type", "news_type_id", "select * from tbl_news_type");
+
+            if (!string.IsNullOrWhiteSpace(Request.QueryString["NC"]))
+                txtNewsID.Text = Request.QueryString["NC"];
         }
         protected void GetNewsDetailsOnClick(object sender, EventArgs e)
         {
