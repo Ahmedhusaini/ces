@@ -1,9 +1,40 @@
 ﻿<%@ Page Title="AdminPanel - CES " Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="FinalTemplate.Admin1" %>
+<%@ Import Namespace="FinalTemplate.source.Functions" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="AdminHeadPlaceHolder" runat="server">
     
     <script src="assets/js/jquery-2.2.3.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
+            OtherFix();
+            UserCount();
+        });
+
+        function UserCount() {
+            var schoolid = $('#sid').val();
+            $.ajax({
+                url: 'source/WebServices/School.asmx/GetNumberOfUsers',
+                method:'post',
+                data: { _schoolid: schoolid },
+                dataType: 'json',
+                success: function(data) {
+                    var jsonarray = JSON.stringify(data);
+                    var array = $.parseJSON(jsonarray);
+                    var course = $('#divcourse').empty();
+                    var student = $('#divstudent').empty();
+                    var teacher = $('#divteacher').empty();
+                    var totalusers = $('#divtotalusers').empty();
+                    course.append(' <div data-from="0" data-to="' + array.course + '" data-speed="1000" class="num">0</div><p class="name-inner">Offered Courses</p>');
+                    student.append(' <div  data-from="0" data-to="' + array.student + '" data-speed="1000" class="num">0</div> <p class="name-inner">Registered Students</p>');
+                    teacher.append('<div  data-from="0" data-to="' + array.teacher + '" data-speed="1000" class="num">0</div><p class="name-inner">Registered Teachers</p>');
+                    totalusers.append('<div data-from="0" data-to="' + array.totaluser + '" data-speed="1000" class="num">0</div><p class="name-inner">Total Registered Users</p>');
+                },
+                error: function(data) {
+                    alert("ERROR" + JSON.stringify(data));
+                }
+            });
+        }
+
+        function OtherFix() {
             $('#topStudents').addClass('topPadding');
             $('#teachingstaff').addClass('teachingbackgroundImage');
             $('.btn').css('width', 'auto');
@@ -14,15 +45,9 @@
             $('div.staff-info a img[alt=teachers]').css({ 'height': '150px', 'width': '150px' });
             $('.best-staff-wrapper').mouseenter(function () {
                 $('a img').css({ 'height': '150px', 'width': '150px', 'transition': '3s' });
-               
+
             });
-
-            function SchoolImage() {
-                
-                $('.slider-banner-03').css('background-image', 'url(assets/images/cesThemeImages/fade_to_color_texture_by_capricorn7769.jpg);');
-            }
-
-        });
+        }
     </script> 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="AdminContentPlaceHolder" runat="server">
@@ -40,7 +65,7 @@
                         <span>
                             <asp:Button runat="server" ID="btn_logout" Text="LOGOUT" OnClick="btn_logout_Click" Style="background-color: transparent" BorderStyle="None" />
                         </span>
-
+                        <input type="hidden" value="<%=JSchool.SchoolID %>" id="sid" />
                     </button>
                     <a href="UpdateSchoolInformation.aspx" data-wow-delay="1.3s" data-wow-duration="1s" class="btn btn-green-3 wow fadeInRight"><span>Update Profile Details</span></a>
                 </div>
@@ -55,7 +80,7 @@
                     <div class="icon-course"><i class="icons-img icon-globe"></i></div>
                     <div class="info-course">
                         <a href="#" class="name-course">Results</a>
-
+                        
                         <div class="info">Search, view and generate results for any type of exames. You can also check feedback regarding any result posted by students or parents.</div>
                     </div>
                 </div>
@@ -194,27 +219,27 @@
                     <div class="row">
                         <div class="content">
                             <div class="col-sm-3">
-                                <div class="progress-bar-number">
-                                    <div data-from="0" data-to="45" data-speed="1000" class="num">0</div>
-                                    <p class="name-inner">Registered Teachers</p>
+                                <div id="divteacher" class="progress-bar-number">
+                                    <%--<div  data-from="0" data-to="0" data-speed="1000" class="num">0</div>
+                                    <p class="name-inner">Registered Teachers</p>--%>
                                 </div>
                             </div>
                             <div class="col-sm-3">
-                                <div class="progress-bar-number">
-                                    <div data-from="0" data-to="56" data-speed="1000" class="num">0</div>
-                                    <p class="name-inner">Offered Courses</p>
+                                <div id="divcourse" class="progress-bar-number">
+                                    <%--<div data-from="0" data-to="0" data-speed="1000" class="num">0</div>
+                                    <p class="name-inner">Offered Courses</p>--%>
                                 </div>
                             </div>
                             <div class="col-sm-3">
-                                <div class="progress-bar-number">
-                                    <div data-from="0" data-to="165" data-speed="1000" class="num">0</div>
-                                    <p class="name-inner">Registered Students</p>
+                                <div id="divstudent" class="progress-bar-number">
+                                    <%--<div id="totalstudents" data-from="0" data-to="0" data-speed="1000" class="num">0</div>
+                                    <p class="name-inner">Registered Students</p>--%>
                                 </div>
                             </div>
                             <div class="col-sm-3">
-                                <div class="progress-bar-number">
-                                    <div data-from="0" data-to="15" data-speed="1000" class="num">0</div>
-                                    <p class="name-inner">Total Registered Users</p>
+                                <div id="divtotalusers" class="progress-bar-number">
+                                    <%--<div data-from="0" data-to="0" data-speed="1000" class="num">0</div>
+                                    <p class="name-inner">Total Registered Users</p>--%>
                                 </div>
                             </div>
                         </div>

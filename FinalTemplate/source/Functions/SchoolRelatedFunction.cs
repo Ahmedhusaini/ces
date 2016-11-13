@@ -38,6 +38,7 @@ namespace FinalTemplate.source.Functions
             try
             {
                 mydb.obj_sqlcommand.Parameters.AddWithValue("@schoolid", _schoolID);
+                mydb.OpenConnection();
                 mydb.obj_reader = mydb.obj_sqlcommand.ExecuteReader();
                 if (mydb.obj_reader.HasRows)
                 {
@@ -59,6 +60,7 @@ namespace FinalTemplate.source.Functions
             }
             return foundstudent;
         }
+        //Returns number of total courses with provided school id.
         public int TotalCourse(string _schoolID)
         {
             int foundcourse = 0;
@@ -67,6 +69,7 @@ namespace FinalTemplate.source.Functions
             try
             {
                 mydb.obj_sqlcommand.Parameters.AddWithValue("@schoolid", _schoolID);
+                mydb.OpenConnection();
                 mydb.obj_reader = mydb.obj_sqlcommand.ExecuteReader();
                 if (mydb.obj_reader.HasRows)
                 {
@@ -96,6 +99,7 @@ namespace FinalTemplate.source.Functions
             try
             {
                 mydb.obj_sqlcommand.Parameters.AddWithValue("@schoolid", _schoolID);
+                mydb.OpenConnection();
                 mydb.obj_reader = mydb.obj_sqlcommand.ExecuteReader();
                 if (mydb.obj_reader.HasRows)
                 {

@@ -154,6 +154,7 @@
     <Content Include="source\WebServices\Events.asmx" />
     <Content Include="source\WebServices\GetAllTeachers.asmx" />
     <Content Include="source\WebServices\News.asmx" />
+    <Content Include="source\WebServices\School.asmx" />
     <Content Include="source\WebServices\Student.asmx" />
     <Content Include="StudentOfTheMonth.aspx" />
     <Content Include="StudentRgistration.aspx" />
@@ -495,6 +496,10 @@
     </Compile>
     <Compile Include="source\WebServices\News.asmx.cs">
       <DependentUpon>News.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="source\WebServices\School.asmx.cs">
+      <DependentUpon>School.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="source\WebServices\Student.asmx.cs">
