@@ -15,6 +15,12 @@ namespace FinalTemplate
         protected void Page_Load(object sender, EventArgs e)
         {
             JFunctions.BindDropDownList(ddlCity, "city", "city_id", "select * from tbl_city");
+
+            //authorizedidtxt.Text =CurrentUser.AuthorizedID;
+            //txtDOBId.Text=CurrentUser.DateOfBirthID.ToString();
+            //txtLocationID.Text = CurrentUser.LocationID.ToString();
+            //txtGenealID.Text = CurrentUser.GeneralID.ToString();
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)

@@ -58,9 +58,6 @@ namespace FinalTemplate
 
         protected void OpenDocument(object sender, EventArgs e)
         {
-            //LinkButton li = (LinkButton)sender;
-            //GridViewRow gr = (GridViewRow)li.NamingContainer;
-
             Button li1 = (Button)sender;
             GridViewRow gr1 = (GridViewRow)li1.NamingContainer;
 
