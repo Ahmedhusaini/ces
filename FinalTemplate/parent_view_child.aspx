@@ -99,9 +99,16 @@
     <asp:GridView ID="GridView1"  class="edu-table-responsive"  runat="server"  AutoGenerateColumns="False" Width="1220px"   ForeColor="#86BC42" AllowPaging="True" AllowSorting="True" CellPadding="4" GridLines="None" DataSourceID="SqlDataSource2">
         <Columns>
             <asp:BoundField DataField="day" HeaderText="day" SortExpression="day" />
-            <asp:BoundField DataField="subject" HeaderText="subject" SortExpression="subject" />
-            <asp:BoundField DataField="starting_time" HeaderText="starting_time" SortExpression="starting_time" />
-            <asp:BoundField DataField="ending_time" HeaderText="ending_time" SortExpression="ending_time" />
+            <asp:BoundField DataField="period_1" HeaderText="period_1" SortExpression="period_1" />
+            <asp:BoundField DataField="period_2" HeaderText="period_2" SortExpression="period_2" />
+            <asp:BoundField DataField="period_3" HeaderText="period_3" SortExpression="period_3" />
+           
+            
+            <asp:BoundField DataField="period_4" HeaderText="period_4" SortExpression="period_4" />
+            <asp:BoundField DataField="period_5" HeaderText="period_5" SortExpression="period_5" />
+            <asp:BoundField DataField="period_6" HeaderText="period_6" SortExpression="period_6" />
+            <asp:BoundField DataField="period_7" HeaderText="period_7" SortExpression="period_7" />
+            <asp:BoundField DataField="period_8" HeaderText="period_8" SortExpression="period_8" />
            
             
         </Columns>
