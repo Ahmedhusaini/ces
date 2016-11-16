@@ -30,8 +30,7 @@ namespace FinalTemplate.source.WebServices
             usercount["teacher"] = objSchoolRelatedFunction.TotalTeachers(_schoolid);
             usercount["student"] = objSchoolRelatedFunction.TotalStudent(_schoolid);
             usercount["course"] = objSchoolRelatedFunction.TotalCourse(_schoolid);
-            usercount["totaluser"] = objSchoolRelatedFunction.TotalCourse(_schoolid) +
-                                     objSchoolRelatedFunction.TotalStudent(_schoolid) +
+            usercount["totaluser"] = objSchoolRelatedFunction.TotalStudent(_schoolid) +
                                      objSchoolRelatedFunction.TotalTeachers(_schoolid);
             HttpContext.Current.Response.Write(objSerializer.Serialize(usercount));
         }
@@ -39,7 +38,7 @@ namespace FinalTemplate.source.WebServices
         [WebMethod]
         public void Teacherofthemonthphoto(string _schoolid)
         {
-            IDictionary<string,string> photo=new Dictionary<string, string>();
+            IDictionary<string, string> returnInformation = new Dictionary<string, string>();
             myDatabase.CreateConnection();
             myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "TeacherOfTheMonthImage",true);
             myDatabase.obj_sqlcommand.Parameters.AddWithValue("@schoolid", _schoolid);
@@ -51,7 +50,11 @@ namespace FinalTemplate.source.WebServices
                 {
                     while (myDatabase.obj_reader.Read())
                     {
-                        photo["photo"] = myDatabase.obj_reader["photo"].ToString();
+                        returnInformation["photo"] = myDatabase.obj_reader["photo"].ToString();
+                        returnInformation["schoolid"] = myDatabase.obj_reader["school_id"].ToString();
+                        returnInformation["teacherid"] = myDatabase.obj_reader["teacher_id"].ToString();
+                        returnInformation["firstname"] = myDatabase.obj_reader["firstname"].ToString();
+                        returnInformation["lastname"] = myDatabase.obj_reader["lastname"].ToString();
                     }
                 }
             }
@@ -61,7 +64,7 @@ namespace FinalTemplate.source.WebServices
                 myDatabase.obj_reader.Close();
                 myDatabase.obj_reader.Dispose();
             }
-            HttpContext.Current.Response.Write(objSerializer.Serialize(photo));
+            HttpContext.Current.Response.Write(objSerializer.Serialize(returnInformation));
         }
 
     }

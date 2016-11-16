@@ -7,8 +7,31 @@
         $(document).ready(function () {
             OtherFix();
             UserCount();
+            TeacherOfTheMonth();
         });
 
+        function TeacherOfTheMonth() {
+            var schoolid = $('#sid').val();
+            $.ajax({
+                url: 'source/WebServices/School.asmx/Teacherofthemonthphoto',
+                method: 'post',
+                data: { _schoolid: schoolid },
+                dataType: 'json',
+                success: function(data) {
+                    var objdata = JSON.stringify(data);
+                    var jsonarr = $.parseJSON(objdata);
+                    var container = $('#teacherofthemonthimage');
+                    alert(objdata);
+                    container.empty();
+                    container.append('<div class="why-choose-us-wrapper"><h2 class="title-2">Teacher of the month</h2><p>' + jsonarr.firstname + ' ' + jsonarr.lastname + '</p><button class="btn btn-green-2"><span>View Complete Profile</span></button></div><div data-wow-delay="0.2s" data-wow-duration="1.2s" class="background-girl-1 wow fadeInUp"><img src="images/teachers/'+jsonarr.photo+'" alt="TeacherOfTheMonth" class="img-responsive" /></div></div>');
+                    
+                },
+                error: function(data) {
+                    alert("Error" + JSON.stringify(data));
+                }
+            });
+        }
+        
         function UserCount() {
             var schoolid = $('#sid').val();
             $.ajax({
@@ -260,7 +283,7 @@
     <!-- WHY CHOOSE US-->
     <div class="section why-choose-us">
         <div class="why-choose-us-wrapper-top">
-            <div class="container">
+            <div id="teacherofthemonthimage" class="container">
                 <div class="why-choose-us-wrapper">
                     <h2 class="title-2">Teacher of the month </h2>
 
