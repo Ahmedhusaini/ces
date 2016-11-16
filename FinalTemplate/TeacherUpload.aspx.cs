@@ -12,6 +12,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using FinalTemplate.source.Database;
+using FinalTemplate.source.Functions;
 
 
 namespace FinalTemplate
@@ -86,7 +87,7 @@ namespace FinalTemplate
 
             string name = f.Name;
             string extension = f.Extension;
-            int lec_id = Convert.ToInt32(db.GetLastValueByColumnName("lec_id", "tbl_Teacher_lecture"));
+            int lec_id = Convert.ToInt32(db.GetLastValueByColumnName("lec_id", "tbl_teacher_attandance_test"));
            
             using (SqlConnection con = new SqlConnection(a))
             {
@@ -98,7 +99,11 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@lectures", SqlDbType.VarChar).Value = name;
                 cmd.Parameters.AddWithValue("@content", SqlDbType.VarChar).Value = documentcontent;
                 cmd.Parameters.AddWithValue("@extension", SqlDbType.VarChar).Value = extension;
-
+                cmd.Parameters.AddWithValue("@teacher_id", SqlDbType.Int).Value = CurrentUser.UserTypeID;
+                cmd.Parameters.AddWithValue("@school_id", SqlDbType.Int).Value = CurrentUser.GeneralID;
+                cmd.Parameters.AddWithValue("@authorized_id", SqlDbType.Int).Value = CurrentUser.AuthorizedID;
+                cmd.Parameters.AddWithValue("@class_sec_info_id", SqlDbType.Int).Value = CurrentUser.Religion;
+               
                 con.Open();
                 cmd.ExecuteNonQuery();
             }
