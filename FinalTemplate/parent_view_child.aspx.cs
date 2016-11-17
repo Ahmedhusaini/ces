@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -72,45 +73,36 @@ namespace FinalTemplate
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            PdfPTable pdf = new PdfPTable(GridView1.HeaderRow.Cells.Count);
-
-            foreach (TableCell headercell in GridView1.HeaderRow.Cells)
-            {
-                Font font = new Font();
-                font.Color = new BaseColor(GridView1.HeaderStyle.ForeColor);
-
-                PdfPCell pdfcell = new PdfPCell(new Phrase(headercell.Text,font));
-                pdfcell.BackgroundColor = new BaseColor(GridView1.HeaderStyle.BackColor);
-                pdf.AddCell(pdfcell);
-            }
-
-            foreach(GridViewRow grid in GridView1.Rows)
-            {
-
-                foreach (TableCell tablecell in grid.Cells)
+            PdfPTable pdftable = new PdfPTable(GridView1.HeaderRow.Cells.Count);
+            
+                foreach (TableCell headerCell in GridView1.HeaderRow.Cells)
                 {
-                    Font font = new Font();
-                    font.Color = new BaseColor(GridView1.RowStyle.ForeColor);
-
-
-                    PdfPCell pdfcell = new PdfPCell(new Phrase(tablecell.Text));
-                    pdfcell.BackgroundColor = new BaseColor(GridView1.RowStyle.BackColor);
-                    pdf.AddCell(pdfcell);
+                    PdfPCell pdfCell = new PdfPCell(new Phrase(headerCell.Text));
+                    pdftable.AddCell(pdfCell);
+                }
+            
+            foreach (GridViewRow gridViewRow in GridView1.Rows)
+            {
+                foreach (TableCell  tableCell in gridViewRow.Cells)
+                {
+                    PdfPCell pdfCell = new PdfPCell(new Phrase(tableCell.Text));
+                    pdftable.AddCell(pdfCell);
                 }
             }
+            Document pdfDocument = new Document(PageSize.A4,10f,10f,10f,10f);
+            PdfWriter.GetInstance(pdfDocument, Response.OutputStream);
 
-            Document pdfdoc = new Document(PageSize.A4, 10f, 10f, 10f, 10f);
-            PdfWriter.GetInstance(pdfdoc, Response.OutputStream);
+            pdfDocument.Open();
+            pdfDocument.Add(pdftable);
+            pdfDocument.Close();
 
-            pdfdoc.Open();
-            pdfdoc.Add(pdf);
-            pdfdoc.Close();
 
             Response.ContentType = "application/pdf";
-            Response.AppendHeader("content-disposition", "attachment;filename = Student's Time Table");
-            Response.Write(pdfdoc);
+            Response.AppendHeader("content-diposition","attachment; filename=Timetable.pdf");
+            Response.Write(pdfDocument);
             Response.Flush();
             Response.End();
+
 
         }
 

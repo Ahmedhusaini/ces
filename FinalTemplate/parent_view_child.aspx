@@ -159,7 +159,7 @@
            <%-- <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource3" DataTextField="Column1" DataValueField="Column1" AutoPostBack="True" >
             </asp:DropDownList>
            --%>
-            <asp:TextBox ID="TextBox1" type="date" EnableViewState="true"  runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBox1" type="date" AutoPostBack="True" runat="server"></asp:TextBox>
 
         Month    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True">
                 <asp:ListItem Value="1">January</asp:ListItem>
