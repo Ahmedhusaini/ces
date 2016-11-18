@@ -19,7 +19,7 @@
         function GetAllNews() {
             $('.customs-rows').empty();
             var schoolid = $('#schoolIDvalue').val();
-            alert(schoolid);
+            
             $.ajax({
                 url: 'source/WebServices/News.asmx/GetAllNewsBySchoolID',
                 method: 'post',
@@ -27,7 +27,6 @@
                 dataType: 'json',
                 success: function (data) {
                     var arrData = JSON.stringify(data);
-                    alert(arrData);
                     var jsonarray = $.parseJSON(arrData);
                     $.each(jsonarray, function (i, v) {
                         var parentdiv = $('div.customs-row');

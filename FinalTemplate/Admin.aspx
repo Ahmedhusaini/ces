@@ -8,7 +8,31 @@
             OtherFix();
             UserCount();
             TeacherOfTheMonth();
+            LastestNews();
         });
+
+        function LastestNews() {
+            var parentdiv = $('.latest-news-wrapper');
+            parentdiv.empty();
+            var schid = $('#sid').val();
+            $.ajax({
+                url: 'source/WebServices/News.asmx/GetLastNewsBySchoolID',
+                method: 'post',
+                data: { _schoolid: schid },
+                dataType: 'json',
+                success: function(data) {
+                    var str = JSON.stringify(data);
+                    var array = $.parseJSON(str);
+                    $.each(array, function(i, v) {
+                        parentdiv.append('<div class="edugate-layout-1"><div class="edugate-image"><img src="images/NEWS/' + v.Image + '" alt="" class="img-responsive" /></div><div class="edugate-content"><a href="#" class="title">' + v.Title + '</a><div class="info"><div class="author item"></div><div class="date-time item"></div></div><div class="description">' + v.Description + '</div><button id="browseall" class="btn btn-green"><span><a href="UpdateNews.aspx?NC=' + v.NewsID + '">Details</a></span></button></div></div><button class="btn btn-green btn-latest-new"><span><a href="ViewNews.aspx">Browser All Post</a><i class="fa fa-long-arrow-right"></i></span></button> </div>');
+                        $('#browseall').css('width', '200px');
+                    });
+                },
+                error: function(data) {
+                    alert("Error:"+data);
+                }
+            });
+        }
 
         function TeacherOfTheMonth() {
             var schoolid = $('#sid').val();
@@ -21,10 +45,10 @@
                     var objdata = JSON.stringify(data);
                     var jsonarr = $.parseJSON(objdata);
                     var container = $('#teacherofthemonthimage');
-                    alert(objdata);
-                    container.empty();
-                    container.append('<div class="why-choose-us-wrapper"><h2 class="title-2">Teacher of the month</h2><p>' + jsonarr.firstname + ' ' + jsonarr.lastname + '</p><button class="btn btn-green-2"><span>View Complete Profile</span></button></div><div data-wow-delay="0.2s" data-wow-duration="1.2s" class="background-girl-1 wow fadeInUp"><img src="images/teachers/'+jsonarr.photo+'" alt="TeacherOfTheMonth" class="img-responsive" /></div></div>');
                     
+                    container.empty();
+                    container.append('<div class="why-choose-us-wrapper"><h2 class="title-2">Teacher of the month</h2><p>' + jsonarr.firstname + ' ' + jsonarr.lastname + '</p><button class="btn btn-green-2"><span><a href="UpdateTeacherInformation.aspx?IAC=' + jsonarr.teacherid + '">View Complete Profile</a></span></button></div><div data-wow-delay="0.2s" data-wow-duration="1.2s" class="background-girl-1 wow fadeInUp"><img src="images/teachers/' + jsonarr.photo + '" alt="TeacherOfTheMonth" class="img-responsive" /></div></div>');
+                    $('button[class="btn btn-green-2"]').css('width', '215px');
                 },
                 error: function(data) {
                     alert("Error" + JSON.stringify(data));
@@ -64,12 +88,8 @@
             $('.item-course').css("height", "280px");
             $('#scrollLogo').css({ 'height': '54px', 'width': '63px' });
             $('#mainLogo').css({ 'height': '90px', 'width': '105px' });
-            $('div img[alt=TeacherOfTheMonth]').css({ 'width': '350px', 'height': '450px', 'border-radius': '50%' });
             $('div.staff-info a img[alt=teachers]').css({ 'height': '150px', 'width': '150px' });
-            $('.best-staff-wrapper').mouseenter(function () {
-                $('a img').css({ 'height': '150px', 'width': '150px', 'transition': '3s' });
-
-            });
+           
         }
     </script> 
 </asp:Content>
@@ -268,8 +288,8 @@
                         </div>
                     </div>
                     <div class="group-button">
-                        <button onclick="window.location.href='categories.html'" class="btn btn-transition-3"><span>View Statics</span></button>
-                        <button onclick="window.location.href='about-us.html'" class="btn btn-green-3"><span>Generate Report</span></button>
+                        <%--<button onclick="window.location.href='categories.html'" class="btn btn-transition-3"><span>View Statics</span></button>
+                        <button onclick="window.location.href='about-us.html'" class="btn btn-green-3"><span>Generate Report</span></button>--%>
                     </div>
                     <div class="group-btn-slider">
                         <div class="btn-prev"><i class="fa fa-angle-left"></i></div>
@@ -302,7 +322,7 @@
                         <div class="col-sm-4 col-xs-6 section-icon">
                             <i class="fa fa-pencil-square-o"></i>
 
-                            <p>343 Days Present</p>
+                            <p>Works Hard</p>
                         </div>
                         <div class="col-sm-4 col-xs-6 section-icon">
                             <i class="fa fa-folder-open"></i>
@@ -311,79 +331,11 @@
                         <div class="col-sm-4 col-xs-6 section-icon">
                             <i class="fa fa-external-link"></i>
 
-                            <p>003 Days Absent</p>
+                            <p>Determinant to job</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- BEST STAFF-->
-    <div id="teachingstaff" class="section section-padding background-opacity best-staff">
-        <div class="container">
-            <div class="group-title-index">
-                <h4 class="top-title">Complete teacher list</h4>
-
-                <h2 class="center-title">Here is your teaching staff</h2>
-
-                <div class="bottom-title"><i class="bottom-icon icon-icon-05"></i></div>
-            </div>
-            <div class="best-staff-wrapper">
-                <div class="best-staff-content">
-                    <div class="staff-item">
-                        <div class="staff-item-wrapper">
-                            <div class="staff-info">
-                                <a href="#" class="staff-avatar">
-                                    <img src="assets/images/cesThemeImages/teachers (1).jpg" alt="teachers" class="img-responsive" /></a><a href="#" class="staff-name">Zaheer Abro</a>
-
-                                <div class="staff-job">head teacher</div>
-                                <div class="staff-desctiption"><a href="#">Send Email</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#" >Send SMS</a></div>
-                            </div>
-                        </div>
-                        <div class="staff-socials"><a href="#" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" class="google"><i class="fa fa-google-plus"></i></a><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></div>
-                    </div>
-                    <div class="staff-item">
-                        <div class="staff-item-wrapper">
-                            <div class="staff-info">
-                                <a href="#" class="staff-avatar">
-                                    <img src="assets/images/cesThemeImages/teachers (2).jpg" alt="teachers" class="img-responsive" /></a><a href="#" class="staff-name">Saeen Soomro</a>
-
-                                <div class="staff-job">vice head teacher</div>
-                                <div class="staff-desctiption"><a href="#" >Send Email</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" >Send SMS</a></div>
-                            </div>
-                        </div>
-                        <div class="staff-socials"><a href="#" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" class="google"><i class="fa fa-google-plus"></i></a><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></div>
-                    </div>
-                    <div class="staff-item">
-                        <div class="staff-item-wrapper">
-                            <div class="staff-info">
-                                <a href="#" class="staff-avatar">
-                                    <img src="assets/images/cesThemeImages/teachers (3).jpg" alt="teachers" class="img-responsive" /></a><a href="#" class="staff-name">barry join</a>
-
-                                <div class="staff-job">advisory professor</div>
-                                <div class="staff-desctiption"><a href="#" >Send Email</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" >Send SMS</a></div>
-                            </div>
-                        </div>
-                        <div class="staff-socials"><a href="#" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" class="google"><i class="fa fa-google-plus"></i></a><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></div>
-                    </div>
-                    <div class="staff-item">
-                        <div class="staff-item-wrapper">
-                            <div class="staff-info">
-                                <a href="#" class="staff-avatar">
-                                    <img src="assets/images/cesThemeImages/teachers (4).jpg" alt="teachers" class="img-responsive" /></a><a href="#" class="staff-name">Ven Tomarme</a>
-
-                                <div class="staff-job">Design teacher</div>
-                                <div class="staff-desctiption"><a href="#" >Send Email</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" >Send SMS</a></div>
-                            </div>
-                        </div>
-                        <div class="staff-socials"><a href="#" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" class="google"><i class="fa fa-google-plus"></i></a><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="group-btn-slider">
-            <div class="btn-prev"><i class="fa fa-angle-left"></i></div>
-            <div class="btn-next"><i class="fa fa-angle-right"></i></div>
         </div>
     </div>
     <!--LATEST NEW-->
@@ -411,7 +363,7 @@
                         <button onclick="window.location.href='news-detail.html'" class="btn btn-green"><span>learn now</span></button>
                     </div>
                 </div>
-                <button class="btn btn-green btn-latest-new"><span>Browser All Post<i class="fa fa-long-arrow-right"></i></span></button>
+                <button class="btn btn-green btn-latest-new"><span><a href="ViewNews.aspx">Browser All Post</a><i class="fa fa-long-arrow-right"></i></span></button>
             </div>
         </div>
     </div>

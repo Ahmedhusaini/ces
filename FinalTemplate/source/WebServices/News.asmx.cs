@@ -20,6 +20,41 @@ namespace FinalTemplate.source.WebServices
     {
         private Database.Database objnews = new Database.Database("ces");
         JavaScriptSerializer objserializer = new JavaScriptSerializer();
+
+
+        [WebMethod]
+        public void GetLastNewsBySchoolID(string _schoolid)
+        {
+            List<JNews> listlastnews = new List<JNews>();
+            objnews.CreateConnection();
+            objnews.InitializeSQLCommandObject(objnews.GetCurrentConnection, "spLastNewsBySchoolID",true);
+            objnews.obj_sqlcommand.Parameters.AddWithValue("@schoolid", _schoolid);
+            try
+            {
+                objnews.OpenConnection();
+                objnews.obj_reader = objnews.obj_sqlcommand.ExecuteReader();
+                if (objnews.obj_reader.HasRows)
+                {
+                    while (objnews.obj_reader.Read())
+                    {
+                        JNews objn = new JNews();
+                        objn.Image = objnews.obj_reader["news_image"].ToString();
+                        objn.NewsType = objnews.obj_reader["news_type"].ToString();
+                        objn.Title = objnews.obj_reader["news_title"].ToString();
+                        objn.Description = objnews.obj_reader["news_description"].ToString();
+                        objn.NewsID = (int) objnews.obj_reader["news_id"];
+                        listlastnews.Add(objn);
+                    }
+                }
+            }
+            finally
+            {
+                objnews.CloseConnection();
+                objnews.obj_reader.Close();
+                objnews.obj_reader.Dispose();
+            }
+            HttpContext.Current.Response.Write(objserializer.Serialize(listlastnews));
+        }
         [WebMethod]
         public void GetAllNewsBySchoolID(string _schoolid)
         {
