@@ -58,7 +58,7 @@
         <SortedDescendingHeaderStyle BackColor="#275353" />
     </asp:GridView>                     
                    
-    <asp:SqlDataSource ID="student_attendance" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [std_attend_id], [username], [remarks] FROM [Studentattendance] WHERE (([class_id] = @class_id) AND ([section_id] = @section_id) AND ([month_id] = @month_id) AND ([day_id] = @day_id))">
+    <asp:SqlDataSource ID="student_attendance" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [std_attend_id], [username], [remarks] FROM [Studentattendance] WHERE (([class_id] = @class_id) AND ([section_id] = @section_id) AND ([month_id] = @month_id) AND ([day_id] = @day_id))">
         <SelectParameters>
             <asp:ControlParameter ControlID="DropDownList1" Name="class_id" PropertyName="SelectedValue" Type="Int32" />
             <asp:ControlParameter ControlID="DropDownList2" Name="section_id" PropertyName="SelectedValue" Type="Int32" />
