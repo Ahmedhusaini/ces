@@ -14,8 +14,7 @@ namespace FinalTemplate
 {
     public partial class Teacherprofile : System.Web.UI.Page
     {
-        SqlConnection con = new SqlConnection("Data Source=AHMED;Initial Catalog=images;Integrated Security=True");
-        private Database myDatabase = new Database("abc");
+        private Database myDatabase = new Database("ces");
         protected void Page_Load(object sender, EventArgs e)
         {
                 if (Session["userid"] != null)

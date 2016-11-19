@@ -17,7 +17,7 @@ namespace FinalTemplate
     public partial class TeacherPanel : System.Web.UI.Page
     {
 
-        private Database myDatabase = new Database("abc");
+        private Database myDatabase = new Database("ces");
         protected void Page_Load(object sender, EventArgs e)
         {
             lab1.Text = "DATE :" + System.DateTime.Now.ToShortDateString();
