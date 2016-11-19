@@ -95,7 +95,7 @@
                     <label class="title-404">SECTION : </label>
                     <asp:Label ID="Label5" CssClass="title-2" runat="server" ForeColor="#86BC42"></asp:Label>
 
-                    <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="Label6" runat="server" Text="Label" Visible="false"></asp:Label>
 
                     <h4 runat="server" style="color: #A8CF78">Change Profile Picture</h4>
                     <asp:FileUpload ID="FileUpload1" runat="server" />
@@ -103,33 +103,8 @@
                     <asp:Label ID="Label1" runat="server"></asp:Label>
 
                 </div>
-                <div data-wow-delay="0.2s" data-wow-duration="1.2s" class="background-girl-1 wow fadeInDown" style="color: transparent">
-                    <asp:Image ID="shah" CssClass="img-responsive" runat="server" Style="border-radius: 100px; color: transparent; height: 320px; width: 270px" />
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- WHY CHOOSE US-->
-    <div class="section why-choose-us">
-        <div class="why-choose-us-wrapper<%-- bottom background-opacity--%>">
-            <div class="container">
-                <div data-wow-delay="0.4s" data-wow-duration="1s" class="row why-choose-us-wrapper wow zoomIn">
-                    <div class="customs-row">
-                        <div class="col-sm-4 col-xs-6 section-icon">
-                            <i class="fa fa-calendar"></i>
-
-                            <p>365 Days</p>
-                        </div>
-                        <div class="col-sm-4 col-xs-6 section-icon">
-                            <i class="fa fa-bookmark-o"></i>
-                            <p>300 Days Present</p>
-                        </div>
-                        <div class="col-sm-4 col-xs-6 section-icon">
-                            <i class="fa fa-close"></i>
-
-                            <p>003 Days Absent</p>
-                        </div>
-                    </div>
+                <div id="profilepic" runat="server" data-wow-delay="0.2s" data-wow-duration="1.2s" class="background-girl-1 wow fadeInDown" style="color: transparent">
+                    <asp:Image ID="shah" CssClass="img-responsive" runat="server" Style="border-radius: 200px; color: transparent; height: 320px; width: 270px" />
                 </div>
             </div>
         </div>
@@ -176,7 +151,7 @@
                     <div class="col-md-6 skill-level">
                         <div class="skill-name">Home Work or Assignment</div>
                         <div class="progress">
-                            <div role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" class="progress-bar skill-1"></div>
+                            <div role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" class="progress-bar skill-1"></div>
                         </div>
                     </div>
                     <div class="col-md-6 skill-level">
@@ -222,33 +197,6 @@
             </div>
         </div>
     </div>
-    <%-- </div>--%>
-
-<%--    <asp:GridView ID="GridView1" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#86BC42" GridLines="None">
-        <AlternatingRowStyle BackColor="White" />
-        <Columns>
-            <asp:BoundField DataField="day" HeaderText="day" SortExpression="day" />
-            <asp:BoundField DataField="subject" HeaderText="subject" SortExpression="subject" />
-            <asp:BoundField DataField="starting_time" HeaderText="starting_time" SortExpression="starting_time" />
-            <asp:BoundField DataField="ending_time" HeaderText="ending_time" SortExpression="ending_time" />
-        </Columns>
-        <EditRowStyle BackColor="#7C6F57" />
-        <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-        <HeaderStyle BackColor="#737373" Font-Bold="True" ForeColor="#86bc42" />
-        <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-        <RowStyle BackColor="#E3EAEB" />
-        <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-        <SortedAscendingCellStyle BackColor="#F8FAFA" />
-        <SortedAscendingHeaderStyle BackColor="#246B61" />
-        <SortedDescendingCellStyle BackColor="#D4DFE1" />
-        <SortedDescendingHeaderStyle BackColor="#15524A" />
-    </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [day], [subject], [starting_time], [ending_time] FROM [View_Student_timetable] WHERE (([class] = @class) AND ([section] = @section))">
-        <SelectParameters>
-            <asp:ControlParameter ControlID="DropDownList1" Name="class" PropertyName="SelectedValue" Type="String" />
-            <asp:ControlParameter ControlID="DropDownList2" Name="section" PropertyName="SelectedValue" Type="String" />
-        </SelectParameters>
-    </asp:SqlDataSource>--%>
     <br />
     <%--ATTENDANCE--%>
     <asp:GridView ID="GridView3" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" DataSourceID="timetable_1test" AllowSorting="True" BackColor="#000066" Font-Bold="False">
@@ -263,7 +211,7 @@
             <asp:BoundField DataField="period_7" HeaderText="period 7" SortExpression="period_7" />
             <asp:BoundField DataField="period_8" HeaderText="period 8" SortExpression="period_8" />
         </Columns>
-                <EditRowStyle BackColor="#7C6F57" />
+        <EditRowStyle BackColor="#7C6F57" />
         <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
         <HeaderStyle BackColor="#737373" Font-Bold="True" ForeColor="#86bc42" />
         <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
@@ -279,58 +227,6 @@
             <asp:ControlParameter ControlID="Label5" Name="section" PropertyName="Text" Type="String" />
             <asp:ControlParameter ControlID="Label4" Name="class" PropertyName="Text" Type="String" />
             <asp:ControlParameter ControlID="Label6" Name="school_id" PropertyName="Text" Type="String" />
-        </SelectParameters>
-    </asp:SqlDataSource>
-    <br />
-    <div class="search-input">
-        <div class="container">
-            <%--  <div class="search-input-wrapper">--%>
-
-            <div class="underline" style="height: 20px; text-align: center;">
-                <h1 style="color: white;">ATTENDANCE </h1>
-            </div>
-        </div>
-    </div>
-    <br />
-    <label>MONTH&nbsp; : </label>
-    <asp:DropDownList CssClass="dropdown" ID="DropDownList3" runat="server" DataSourceID="SqlDataSource5" DataTextField="Column1" DataValueField="Column1"></asp:DropDownList>
-    <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="select month([date]) from tbl_student_attendance where Std_id=@Std_id">
-        <SelectParameters>
-            <asp:ControlParameter ControlID="Label3" Name="Std_id" PropertyName="Text" />
-        </SelectParameters>
-    </asp:SqlDataSource>
-    <label>DAY&nbsp; : </label>
-    <asp:DropDownList CssClass="dropdown" ID="DropDownList5" runat="server" DataSourceID="SqlDataSource6" DataTextField="Column1" DataValueField="Column1"></asp:DropDownList>
-    <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="select day([date]) from tbl_student_attendance where Std_id=@Std_id">
-        <SelectParameters>
-            <asp:ControlParameter ControlID="Label3" Name="Std_id" PropertyName="Text" />
-        </SelectParameters>
-    </asp:SqlDataSource>
-    <br />
-    <asp:GridView ID="GridView2" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource4" AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#86BC42" GridLines="None">
-        <Columns>
-            <asp:BoundField DataField="Column1" HeaderText="MONTH" ReadOnly="True" SortExpression="Column1" />
-            <asp:BoundField DataField="Column2" HeaderText="DAY" ReadOnly="True" SortExpression="Column2" />
-            <asp:BoundField DataField="Column3" HeaderText="DATE" SortExpression="Column3" ReadOnly="True" />
-            <asp:BoundField DataField="time" HeaderText="TIME" SortExpression="time" />
-            <asp:BoundField DataField="remarks" HeaderText="ATTANDANCE" SortExpression="remarks" />
-        </Columns>
-        <EditRowStyle BackColor="#7C6F57" />
-        <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-        <HeaderStyle BackColor="#737373" Font-Bold="True" ForeColor="#86bc42" />
-        <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-        <RowStyle BackColor="#E3EAEB" />
-        <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-        <SortedAscendingCellStyle BackColor="#F8FAFA" />
-        <SortedAscendingHeaderStyle BackColor="#246B61" />
-        <SortedDescendingCellStyle BackColor="#D4DFE1" />
-        <SortedDescendingHeaderStyle BackColor="#15524A" />
-    </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="shahwaiz_attendance" SelectCommandType="StoredProcedure">
-        <SelectParameters>
-            <asp:ControlParameter ControlID="Label3" Name="Std_id" PropertyName="Text" Type="String" />
-            <asp:ControlParameter ControlID="DropDownList5" Name="day" PropertyName="SelectedValue" Type="Int32" />
-            <asp:ControlParameter ControlID="DropDownList3" Name="month" PropertyName="SelectedValue" Type="Int32" />
         </SelectParameters>
     </asp:SqlDataSource>
     <br />

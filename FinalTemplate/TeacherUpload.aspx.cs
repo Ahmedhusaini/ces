@@ -8,21 +8,35 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
-using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using FinalTemplate.source.Database;
+using FinalTemplate.source.Functions;
+using FinalTemplate.source.WebServices;
 
 
 namespace FinalTemplate
 {
     public partial class TeacherUpload : System.Web.UI.Page
     {
-        string a = ConfigurationManager.ConnectionStrings["abc"].ConnectionString;
-        Database db = new Database("abc");
+        string a = ConfigurationManager.ConnectionStrings["ces"].ConnectionString;
+        Database db = new Database("ces");
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+
+            if (Session["userid"] != null)
+            {
+                string[] col = { "General_Id" };
+                string[] colwhere = { "authorized_id" };
+                string[] whereoperator = { "=" };
+                string[] multiwhere = { "" };
+            }
+            else
+            {
+                Response.Redirect("Default.aspx");
+            }
+
+             if(!IsPostBack)
             {
                 filldata();
             }
@@ -86,7 +100,7 @@ namespace FinalTemplate
 
             string name = f.Name;
             string extension = f.Extension;
-            int lec_id = Convert.ToInt32(db.GetLastValueByColumnName("lec_id", "tbl_Teacher_lecture"));
+            int lec_id = Convert.ToInt32(db.GetLastValueByColumnName("lec_id", "tbl_teacher_attandance_test"));
            
             using (SqlConnection con = new SqlConnection(a))
             {
@@ -98,7 +112,11 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@lectures", SqlDbType.VarChar).Value = name;
                 cmd.Parameters.AddWithValue("@content", SqlDbType.VarChar).Value = documentcontent;
                 cmd.Parameters.AddWithValue("@extension", SqlDbType.VarChar).Value = extension;
-
+                cmd.Parameters.AddWithValue("@teacher_id", SqlDbType.Int).Value = teacher.teacherid;
+                cmd.Parameters.AddWithValue("@school_id", SqlDbType.Int).Value = teacher.schoolid;
+                cmd.Parameters.AddWithValue("@authorized_id", SqlDbType.Int).Value = teacher.authorizedid;
+                cmd.Parameters.AddWithValue("@class_sec_info_id", SqlDbType.Int).Value =  teacher.classsecinfoid;
+               
                 con.Open();
                 cmd.ExecuteNonQuery();
             }

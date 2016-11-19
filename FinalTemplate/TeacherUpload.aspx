@@ -5,7 +5,7 @@
     <asp:FileUpload ID="FileUpload1" runat="server" />
     <br/>
     <asp:Button ID="Button1" runat="server" Text="UPLOAD FILE" OnClick="Button1_Click" />
-    &nbsp;<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataKeyNames="lec_id" GridLines="Horizontal">
+    &nbsp;<asp:GridView ID="GridView1" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataKeyNames="lec_id" GridLines="Horizontal">
         <Columns>
             <asp:TemplateField HeaderText="Lectures">
                 <ItemTemplate>

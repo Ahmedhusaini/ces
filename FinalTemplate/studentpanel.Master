@@ -79,7 +79,6 @@
                                 <ul class="dropdown-menu edugate-dropdown-menu-1">
                                     <li><a href="Syllabus.aspx" class="link-page">Syllabus</a></li>
                                     <li><a href="Date_sheet.aspx" class="link-page">Date Sheet</a></li>
-                                    <li><a href="Mark_sheet.aspx" class="link-page">Mark Sheet</a></li>
                                 </ul>
                             </li>
 
@@ -87,8 +86,9 @@
                                 <ul class="dropdown-menu edugate-dropdown-menu-1">
                                     <li><a href="Download_Homework.aspx" class="link-page">Download HomeWork</a></li></ul>
                             </li>
-                            <li class="dropdown"><a href="WebForm1.aspx" class="main-menu">Attendance</a></li>
-                            <li class="dropdown"><a href="#" class="main-menu">News</a></li>
+                            <li class="dropdown"><a href="Attendance_Student.aspx" class="main-menu">Attendance</a></li>
+                            <li class="dropdown"><a href="Check_News.aspx" class="main-menu">News</a></li>
+                            <li class="dropdown"><a href="check_event.aspx" class="main-menu">Event</a></li>
                             <li class="dropdown"><a href="update_StudentDetail.aspx" class="main-menu">Update Detail</a></li>
                             <div class="nav-search hide">
                                 <form>
