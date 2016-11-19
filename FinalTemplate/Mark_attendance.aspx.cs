@@ -39,7 +39,7 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@std_attend_id_out", SqlDbType.Int).Direction = ParameterDirection.Output;
                 cmd.Parameters.AddWithValue("@date", SqlDbType.VarChar).Value = DateTime.Now.ToString("");
                 cmd.Parameters.AddWithValue("@time", SqlDbType.VarChar).Value = DateTime.Now.ToString("");
-                cmd.Parameters.AddWithValue("@remark_id", SqlDbType.Int).Value = DropDownList1.SelectedValue;
+                cmd.Parameters.AddWithValue("@remark_id", SqlDbType.Int).Value =//DropDownList1.SelectedValue;
 
                 cmd.ExecuteNonQuery();
                 con.Close();
