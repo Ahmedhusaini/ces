@@ -7,7 +7,7 @@ namespace FinalTemplate.source.Functions
 {
     public class teacher
     {
-        static private Database.Database mydatabse = new Database.Database("abc");
+        static private Database.Database mydatabse = new Database.Database("ces");
         static public string teacherid { get; set; }
         static public int generalid { get; set; }
         static public int username { get; set; }
