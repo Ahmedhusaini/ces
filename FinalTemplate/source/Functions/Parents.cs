@@ -10,6 +10,7 @@ namespace FinalTemplate.source.Functions
         static private Database.Database mydatabse = new Database.Database("ces");
 
         static public string std_id { get; set; }
+        static public string school_id { get; set; }
 
         static public string parentschild { get; set; }
 
@@ -174,6 +175,7 @@ namespace FinalTemplate.source.Functions
                         //schooltypee = mydatabse.obj_reader["school_type "].ToString();
                         contactprimary = mydatabse.obj_reader["contact_primary"].ToString();
                         photo = mydatabse.obj_reader["photo"].ToString();
+                        school_id = mydatabse.obj_reader["school_id"].ToString();
 
 
 

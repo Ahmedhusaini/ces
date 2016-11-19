@@ -10,11 +10,28 @@
             // samesizeimage();
 
             $('#<%=Dp1.ClientID%>').css('display', 'none'),
-                 $('#<%=Dp2.ClientID%>').css('display', 'none'),
-              $('#<%=Dp3.ClientID%>').css('display', 'none')
+                $('#<%=Dp2.ClientID%>').css('display', 'none'),
+                $('#<%=Dp3.ClientID%>').css('display', 'none'),
             //$('li[title="time"]').attr("herf", "Time Table")
+
+            scroll();
+
+
         });
-        </Script>
+
+        function scroll() {
+            $('li a[title="time"]')
+                .click(function (e) {
+                    var seectionID = e.currentTarget.id + "section";
+
+
+
+                    //alert('button id' + seectionID);
+
+                })
+        }
+
+    </Script>
     
 
 </asp:Content>
@@ -40,6 +57,7 @@
     
     
     <div> <asp:label ID="id" runat="server"> </asp:label>  </div>
+     <div> <asp:label ID="lblschool_id" runat="server"> </asp:label>  </div>
       <div class="style-show style-grid row" style="        padding-right: 998px;
     margin-left: 179px;">
     <div class="col-style">
@@ -89,13 +107,20 @@
     <br />
     <br />
     <br />
+     <br />
+    <br />
+    <br />
+     <br />
+    <br />
+    <br />
         <div class="container" style="    margin-right: 450px;">
-        <div id="check_timetable" class="underline" style="height: 20px; text-align: left;">
+        <div id="myDiv" class="underline" style="height: 20px; text-align: left;">
                 <h2> TIME TABLE&nbsp;&nbsp;&nbsp;&nbsp; </h2>
              
             </div>
            
     <br />
+            <div >
     <asp:GridView ID="GridView1"  class="edu-table-responsive"  runat="server"  AutoGenerateColumns="False" Width="1220px"   ForeColor="#86BC42" AllowPaging="True" AllowSorting="True" CellPadding="4" GridLines="None" DataSourceID="SqlDataSource2">
         <Columns>
             <asp:BoundField DataField="day" HeaderText="day" SortExpression="day" />
@@ -125,7 +150,9 @@
 
         
     </asp:GridView>
+            
             <asp:Button ID="Button1" runat="server" Text="Download" OnClick="Button1_Click" />
+                </div>
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="sp_chileTimetable" SelectCommandType="StoredProcedure">
         <SelectParameters>
             <asp:ControlParameter ControlID="Dp2" Name="section" PropertyName="SelectedValue" Type="String" />
@@ -138,15 +165,47 @@
        
 
 
-            <br/>
+            
              <br/>
              <br/>
              <br/>
              <br/>
+            
+              <div id="check_timetable" class="underline" style="height: 20px; text-align: left;">
+                <h2> Home Work&nbsp;&nbsp;&nbsp;&nbsp; </h2>
+             
+            </div>
+             <%-- <asp:Label ID="Label2" Visible="false" runat="server" Text="Label"></asp:Label>    
+    <asp:Label ID="Label3"  Visible="false" runat="server" Text="Label"></asp:Label>    
+    <asp:Label ID="Label4" runat="server" Visible="false" Text="Label"></asp:Label>--%>
+    <asp:GridView ID="GridView4" class="edu-table-responsive" runat="server" DataKeyNames="lec_id" CellPadding="4" GridLines="None">
+        <AlternatingRowStyle BackColor="White" />
+        <Columns>
+            <asp:TemplateField HeaderText="DOWNLOAD">
+                <ItemTemplate>
+                            <%-- <asp:LinkButton ID="LinkButton1" OnClick="OpenDocument" runat="server" Text='<%# Eval("lectures") %>' Font-Size="Large" Font-Bold="True" Font-Names="'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"></asp:LinkButton>--%>
+                            <asp:Button CssClass="btn btn-green" Height="70%" Width="30%" ID="Button1"  runat="server" OnClick="OpenDocument" Text='<%# Eval("lectures") %>' />
+                </ItemTemplate>
+            </asp:TemplateField>
+        </Columns>
+        <EditRowStyle BackColor="#7C6F57" />
+        <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#86bc42" Font-Bold="True" ForeColor="#86bc42" />
+        <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="#E3EAEB" />
+        <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+        <SortedAscendingCellStyle BackColor="#F8FAFA" />
+        <SortedAscendingHeaderStyle BackColor="#246B61" />
+        <SortedDescendingCellStyle BackColor="#D4DFE1" />
+        <SortedDescendingHeaderStyle BackColor="#15524A" />
+    </asp:GridView>
+
+              <br/>
              <br/>
 
 
-                 <div id="check_timetable" class="underline" style="height: 20px; text-align: left;">
+
+                 <div id="atten" class="underline" style="height: 20px; text-align: left;">
                 <h2> Attendance &nbsp;&nbsp;&nbsp;&nbsp; </h2>
              
             </div>
