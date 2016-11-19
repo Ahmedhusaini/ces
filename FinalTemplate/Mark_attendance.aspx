@@ -2,19 +2,18 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="TeacherHeadPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="TeacherPlaceHolder1" runat="server">
-                                                                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataSourceID="SqlDataSource1" GridLines="Horizontal" Width="293px">
+       
+<asp:GridView ID="GridView1" runat="server" class="edu-table-responsive" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataSourceID="SqlDataSource1" GridLines="Horizontal" Width="293px">
                                     <Columns>
                                         <asp:BoundField DataField="Std_id" HeaderText="Student ID" SortExpression="Std_id" />
                                         <asp:TemplateField HeaderText="Remarks">
-                                            <ItemTemplate>
-                                              
-                                               <asp:RadioButtonList ID="Radio1" runat="server">
-                                                   <asp:ListItem>Present</asp:ListItem>
-                                                   <asp:ListItem>Absent</asp:ListItem>
-                                                   <asp:ListItem>Leave</asp:ListItem>
-                                               </asp:RadioButtonList>
-
-                                            </ItemTemplate>
+                                        <ItemTemplate>               
+                                           <asp:RadioButtonList ID="Radio1" runat="server">
+                                              <asp:ListItem>Present</asp:ListItem>
+                                              <asp:ListItem>Absent</asp:ListItem>
+                                              <asp:ListItem>Leave</asp:ListItem>
+                                           </asp:RadioButtonList>
+                                         </ItemTemplate>
                                         </asp:TemplateField>
                                     </Columns>
                                     <FooterStyle BackColor="White" ForeColor="#333333" />
@@ -27,14 +26,17 @@
                                     <SortedDescendingCellStyle BackColor="#E5E5E5" />
                                     <SortedDescendingHeaderStyle BackColor="#275353" />
                                 </asp:GridView>
-    <asp:DropDownList ID="DropDownList1" runat="server">
+    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="remarks" DataValueField="remark_id">
         <asp:ListItem>Present</asp:ListItem>
         <asp:ListItem>Absent</asp:ListItem>
         <asp:ListItem>Leave</asp:ListItem>
                                                                 </asp:DropDownList>
     
                                                                          
-                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [Std_id] FROM [tbl_student_attendance]"></asp:SqlDataSource>
+                                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT * FROM [tbl_remarks]"></asp:SqlDataSource>
+    
+                                                                         
+                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [Std_id] FROM [tbl_student_attendance]"></asp:SqlDataSource>
                                                                          
                                     <button type="submit" class="form-submit btn btn-blue"><span>
                                         <asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>
