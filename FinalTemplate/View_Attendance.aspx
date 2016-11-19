@@ -7,16 +7,16 @@
                             <div class="search-input-wrapper">
                               
                                        <asp:DropDownList ID="DropDownList1" runat="server" class="sbHolder"  DataSourceID="class" DataTextField="class" DataValueField="class_id"></asp:DropDownList>
-                                       <asp:SqlDataSource ID="class" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [class_id], [class] FROM [tbl_class]">
+                                       <asp:SqlDataSource ID="class" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [class_id], [class] FROM [tbl_class]">
                                        </asp:SqlDataSource>
                                        <asp:DropDownList ID="DropDownList2" runat="server" class="sbHolder" DataSourceID="section" DataTextField="section" DataValueField="section_id"></asp:DropDownList>
-                                       <asp:SqlDataSource ID="section" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [section_id], [section] FROM [tbl_section]">
+                                       <asp:SqlDataSource ID="section" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [section_id], [section] FROM [tbl_section]">
                                        </asp:SqlDataSource>
                                        <asp:DropDownList ID="DropDownList3" runat="server" class="sbHolder" DataSourceID="month" DataTextField="month" DataValueField="month_id"></asp:DropDownList>
-                                       <asp:SqlDataSource ID="month" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [month_id], [month] FROM [tbl_month]">
+                                       <asp:SqlDataSource ID="month" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [month_id], [month] FROM [tbl_month]">
                                        </asp:SqlDataSource>
                                        <asp:DropDownList ID="DropDownList4" runat="server" class="sbHolder" DataSourceID="day" DataTextField="day" DataValueField="day_id"></asp:DropDownList>         
-                                       <asp:SqlDataSource ID="day" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [day_id], [day] FROM [tbl_day]"></asp:SqlDataSource>
+                                       <asp:SqlDataSource ID="day" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [day_id], [day] FROM [tbl_day]"></asp:SqlDataSource>
 
                                     <span>
                                                
