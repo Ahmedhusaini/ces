@@ -129,6 +129,9 @@
     <Content Include="assets\images\cesThemeImages\teachers %284%29.jpg" />
     <Content Include="assets\images\cesThemeImages\teachers %285%29.jpg" />
     <Content Include="assets\images\crissxcross.png" />
+    <Content Include="Attendance_Student.aspx" />
+    <Content Include="check_event.aspx" />
+    <Content Include="Check_News.aspx" />
     <Content Include="ContactUs_Student.aspx" />
     <Content Include="Download_Homework.aspx" />
     <Content Include="images\Events\bicycle-1280x720.jpg" />
@@ -365,6 +368,27 @@
     </Compile>
     <Compile Include="AllEvents.aspx.designer.cs">
       <DependentUpon>AllEvents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Attendance_Student.aspx.cs">
+      <DependentUpon>Attendance_Student.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Attendance_Student.aspx.designer.cs">
+      <DependentUpon>Attendance_Student.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="check_event.aspx.cs">
+      <DependentUpon>check_event.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="check_event.aspx.designer.cs">
+      <DependentUpon>check_event.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Check_News.aspx.cs">
+      <DependentUpon>Check_News.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Check_News.aspx.designer.cs">
+      <DependentUpon>Check_News.aspx</DependentUpon>
     </Compile>
     <Compile Include="ContactUs_Student.aspx.cs">
       <DependentUpon>ContactUs_Student.aspx</DependentUpon>
