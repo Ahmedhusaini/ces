@@ -30,7 +30,7 @@
                     <div class="customs-row">
                         <div class="col-sm-4 col-xs-6 section-icon">
                             <i class="fa fa-calendar"></i>
-                            <p>365 Days</p>
+                            <asp:Label runat="server" Text=" Total Days" ID="total"></asp:Label>
                         </div>
                         <div class="col-sm-4 col-xs-6 section-icon">
                             <i class="fa fa-bookmark-o"></i>

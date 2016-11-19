@@ -79,7 +79,6 @@
                                 <ul class="dropdown-menu edugate-dropdown-menu-1">
                                     <li><a href="Syllabus.aspx" class="link-page">Syllabus</a></li>
                                     <li><a href="Date_sheet.aspx" class="link-page">Date Sheet</a></li>
-                                    <li><a href="Mark_sheet.aspx" class="link-page">Mark Sheet</a></li>
                                 </ul>
                             </li>
 

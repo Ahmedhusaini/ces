@@ -24,6 +24,7 @@ namespace FinalTemplate
             Label7.Text = DateTime.Now.ToString("yyyy/MM/dd");
             present_();
             absent_();
+            total_();
         }
 
         private void present_()
@@ -49,5 +50,17 @@ namespace FinalTemplate
             con1.Close();
             absent.Text = ds1.Tables[0].Rows[0]["totalcount1"].ToString() + " Days Absent ";
         }
+
+        private void total_()
+        {
+            con1.Open();
+            SqlCommand cmd2 = new SqlCommand("select count(remark_id) as totalcount2 from tbl_student_attendance where Std_id='" + student.studentid + "' and school_id='" + student.s_schoolid + "'", con1);
+            SqlDataAdapter da2 = new SqlDataAdapter();
+            da2.SelectCommand = cmd2;
+            DataSet ds2 = new DataSet();
+            da2.Fill(ds2);
+            con1.Close();
+            total.Text = ds2.Tables[0].Rows[0]["totalcount2"].ToString() + " Total Days ";
+        }        
     }
 }

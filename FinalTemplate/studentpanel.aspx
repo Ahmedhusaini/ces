@@ -104,31 +104,7 @@
 
                 </div>
                 <div id="profilepic" runat="server" data-wow-delay="0.2s" data-wow-duration="1.2s" class="background-girl-1 wow fadeInDown" style="color: transparent">
-                    <asp:Image ID="shah" CssClass="img-responsive" runat="server" Style="border-radius: 100px; color: transparent; height: 320px; width: 270px" />
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- WHY CHOOSE US-->
-    <div class="section why-choose-us">
-        <div class="why-choose-us-wrapper<%-- bottom background-opacity--%>">
-            <div class="container">
-                <div data-wow-delay="0.4s" data-wow-duration="1s" class="row why-choose-us-wrapper wow zoomIn">
-                    <div class="customs-row">
-                        <div class="col-sm-4 col-xs-6 section-icon">
-                            <i class="fa fa-calendar"></i>
-                            <p>365 Days</p>
-                        </div>
-                        <div class="col-sm-4 col-xs-6 section-icon">
-                            <i class="fa fa-bookmark-o"></i>
-                            <%--<p id="present" runat="server"></p>--%>
-                            <asp:Label runat="server" ID="present"></asp:Label>
-                        </div>
-                        <div class="col-sm-4 col-xs-6 section-icon">
-                            <i class="fa fa-close"></i>
-                            <p id="absent">003 Days Absent</p>
-                        </div>
-                    </div>
+                    <asp:Image ID="shah" CssClass="img-responsive" runat="server" Style="border-radius: 200px; color: transparent; height: 320px; width: 270px" />
                 </div>
             </div>
         </div>
@@ -175,7 +151,7 @@
                     <div class="col-md-6 skill-level">
                         <div class="skill-name">Home Work or Assignment</div>
                         <div class="progress">
-                            <div role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" class="progress-bar skill-1"></div>
+                            <div role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" class="progress-bar skill-1"></div>
                         </div>
                     </div>
                     <div class="col-md-6 skill-level">
@@ -221,33 +197,6 @@
             </div>
         </div>
     </div>
-    <%-- </div>--%>
-
-    <%--    <asp:GridView ID="GridView1" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#86BC42" GridLines="None">
-        <AlternatingRowStyle BackColor="White" />
-        <Columns>
-            <asp:BoundField DataField="day" HeaderText="day" SortExpression="day" />
-            <asp:BoundField DataField="subject" HeaderText="subject" SortExpression="subject" />
-            <asp:BoundField DataField="starting_time" HeaderText="starting_time" SortExpression="starting_time" />
-            <asp:BoundField DataField="ending_time" HeaderText="ending_time" SortExpression="ending_time" />
-        </Columns>
-        <EditRowStyle BackColor="#7C6F57" />
-        <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-        <HeaderStyle BackColor="#737373" Font-Bold="True" ForeColor="#86bc42" />
-        <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-        <RowStyle BackColor="#E3EAEB" />
-        <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-        <SortedAscendingCellStyle BackColor="#F8FAFA" />
-        <SortedAscendingHeaderStyle BackColor="#246B61" />
-        <SortedDescendingCellStyle BackColor="#D4DFE1" />
-        <SortedDescendingHeaderStyle BackColor="#15524A" />
-    </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [day], [subject], [starting_time], [ending_time] FROM [View_Student_timetable] WHERE (([class] = @class) AND ([section] = @section))">
-        <SelectParameters>
-            <asp:ControlParameter ControlID="DropDownList1" Name="class" PropertyName="SelectedValue" Type="String" />
-            <asp:ControlParameter ControlID="DropDownList2" Name="section" PropertyName="SelectedValue" Type="String" />
-        </SelectParameters>
-    </asp:SqlDataSource>--%>
     <br />
     <%--ATTENDANCE--%>
     <asp:GridView ID="GridView3" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" DataSourceID="timetable_1test" AllowSorting="True" BackColor="#000066" Font-Bold="False">
@@ -280,4 +229,5 @@
             <asp:ControlParameter ControlID="Label6" Name="school_id" PropertyName="Text" Type="String" />
         </SelectParameters>
     </asp:SqlDataSource>
+    <br />
 </asp:Content>

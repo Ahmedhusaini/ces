@@ -13,6 +13,15 @@ namespace FinalTemplate {
     public partial class Attendance_Student {
         
         /// <summary>
+        /// total control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label total;
+        
+        /// <summary>
         /// present control.
         /// </summary>
         /// <remarks>
