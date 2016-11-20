@@ -58,8 +58,8 @@
     
     <div> <asp:label ID="id" runat="server"> </asp:label>  </div>
      <div> <asp:label ID="lblschool_id" runat="server"> </asp:label>  </div>
-      <div class="style-show style-grid row" style="        padding-right: 998px;
-    margin-left: 179px;">
+      <div class="style-show style-grid row" style="           margin-right: 598px;
+    padding-left: 80px;">
     <div class="col-style">
                                             <div class="edugate-layout-2">
                                                 <div class="edugate-layout-2-wrapper">
