@@ -58,12 +58,10 @@ namespace FinalTemplate
 
             addresstxt.Text = update.u_address;
             gurdiannaametxt.Text = update.u_gurdianname;
-            gurdiancontacttxt.Text = update.u_gurdianname;
+            gurdiancontacttxt.Text = update.u_gurdiancontact;
             preschooltxt.Text = update.u_previousschool;
             lastclasstxt.Text = update.u_lastclassattend.ToString();
-
             ddlCity.ClearSelection();
-
             postalcodetxt.Text = update.u_postalcode.ToString();
             usernametxt.Text = update.u_username;
             pemailtxt.Text = update.u_primaryemail;
@@ -73,7 +71,6 @@ namespace FinalTemplate
             txtLocationID.Text = update.u_locid.ToString();
             txtDOBId.Text = update.u_dobid.ToString();
             authorizedidtxt.Text=update.u_authorizeid;
-
         }
 
         protected void Button1_Click(object sender, EventArgs e)

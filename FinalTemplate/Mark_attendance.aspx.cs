@@ -19,15 +19,15 @@ namespace FinalTemplate
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-             string a = ConfigurationManager.ConnectionStrings["abc"].ConnectionString;
-            Database db = new Database("abc");
+             string a = ConfigurationManager.ConnectionStrings["ces"].ConnectionString;
+            Database db = new Database("ces");
             int std_attend_id = Convert.ToInt32(db.GetLastValueByColumnName("std_attend_id", "tbl_student_attendance"));
             var std_id = Convert.ToString(db.GetLastValueByColumnName("std_id", "tbl_Student_Reg"));
 
             using (SqlConnection con = new SqlConnection(a))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("std_attendance", con);
+                SqlCommand cmd = new SqlCommand("sp_Mark_std_attendance", con);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@std_id", SqlDbType.VarChar).Value = std_id;
@@ -39,7 +39,7 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@std_attend_id_out", SqlDbType.Int).Direction = ParameterDirection.Output;
                 cmd.Parameters.AddWithValue("@date", SqlDbType.VarChar).Value = DateTime.Now.ToString("");
                 cmd.Parameters.AddWithValue("@time", SqlDbType.VarChar).Value = DateTime.Now.ToString("");
-                cmd.Parameters.AddWithValue("@remarks", SqlDbType.VarChar).Value = DropDownList1.SelectedValue;
+                cmd.Parameters.AddWithValue("@remark_id", SqlDbType.Int).Value =//DropDownList1.SelectedValue;
 
                 cmd.ExecuteNonQuery();
                 con.Close();

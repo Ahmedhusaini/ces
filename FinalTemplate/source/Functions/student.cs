@@ -33,12 +33,67 @@ namespace FinalTemplate.source.Functions
         static public string lastclassattend { get; set; }
 
         // school detail
+        static public string s_schoolid { get; set; }
         static public string s_username { get; set; }
         static public string s_schoolname { get; set; }
         static public string s_primaryemail { get; set; }
         static public string s_secondaryemail { get; set; }
         static public string s_primarycontact { get; set; }
         static public string s_secondarycontact { get; set; }
+
+        //present 
+        static public string pressent_count { get; set; }
+
+        static public string title { get; set; }
+        static public string discription { get; set; }
+        static public string place { get; set; }
+        static public string starting_time { get; set; }
+        static public string ending_time { get; set; }
+        static public string starting_date { get; set; }
+        static public string ending_date { get; set; }
+        static public string event_pic { get; set; }
+        static public string tags { get; set; }
+
+        static public void forevent(string events)
+        {
+            mydatabse.CreateConnection();
+            mydatabse.InitializeSQLCommandObject(mydatabse.GetCurrentConnection, "select * from check_event where school_id ='" + student.s_schoolid + "';");
+            try
+            {
+                mydatabse.OpenConnection();
+                mydatabse.obj_reader = mydatabse.obj_sqlcommand.ExecuteReader();
+                if (mydatabse.obj_reader.HasRows)
+                {
+                    int totalRows = mydatabse.obj_reader.RecordsAffected;
+                    while (mydatabse.obj_reader.Read())
+                    {
+                        title = mydatabse.obj_reader["title"].ToString();
+                        place = mydatabse.obj_reader["place"].ToString();
+                        starting_time = mydatabse.obj_reader["starting_time"].ToString();
+                        ending_time = mydatabse.obj_reader["ending_time"].ToString();
+                        starting_date = mydatabse.obj_reader["start_date"].ToString();
+                        ending_date = mydatabse.obj_reader["end_date"].ToString();
+                        tags = mydatabse.obj_reader["event_tags"].ToString();
+                        discription = mydatabse.obj_reader["discription_of_event"].ToString();
+                        event_pic = mydatabse.obj_reader["event_picture"].ToString();
+                    }
+                }
+                else
+                {
+                    HttpContext.Current.Response.Write("No records");
+                }
+            }
+            catch (Exception ex)
+            {
+                HttpContext.Current.Response.Write(ex.ToString());
+            }
+            finally
+            {
+                mydatabse.CloseConnection();
+                mydatabse.obj_reader.Close();
+            }
+        }
+
 
         static public void GetstudentlDetails(string stdlid)
         {
@@ -78,7 +133,7 @@ namespace FinalTemplate.source.Functions
         static public void SchoolDetails(string SchoolDEtail)
         {
             mydatabse.CreateConnection();
-            mydatabse.InitializeSQLCommandObject(mydatabse.GetCurrentConnection, "sp_schooldetailforstudent1", true);
+            mydatabse.InitializeSQLCommandObject(mydatabse.GetCurrentConnection, "sp_schooldetailforstudent", true);
             try
             {
                 mydatabse.OpenConnection();
@@ -91,6 +146,7 @@ namespace FinalTemplate.source.Functions
                     int totalRows = mydatabse.obj_reader.RecordsAffected;
                     while (mydatabse.obj_reader.Read())
                     {
+                        s_schoolid = mydatabse.obj_reader["school_id"].ToString();
                         s_schoolname = mydatabse.obj_reader["school_name"].ToString();
                         s_primarycontact = mydatabse.obj_reader["contact_primary"].ToString();
                         s_secondarycontact = mydatabse.obj_reader["contact_secondary"].ToString();
@@ -132,6 +188,7 @@ namespace FinalTemplate.source.Functions
                     int totalRows = mydatabse.obj_reader.RecordsAffected;
                     while (mydatabse.obj_reader.Read())
                     {
+                        s_schoolid = mydatabse.obj_reader["school_id"].ToString();
                         postalcode = mydatabse.obj_reader["postal_code"].ToString();
                         lastclassattend = mydatabse.obj_reader["last_class_attended"].ToString();
                         gurdianname = mydatabse.obj_reader["Guardian_Name"].ToString();

@@ -94,6 +94,7 @@ namespace FinalTemplate.source.Functions
                                 u_schoolid = mydatabse.obj_reader["school_id"].ToString();
                                 u_gurdiancontact = mydatabse.obj_reader["gurdian_contact"].ToString();
                                 u_stdid = mydatabse.obj_reader["Std_id"].ToString();
+                              
                                 u_username = mydatabse.obj_reader["username"].ToString();
                                 u_primaryemail = mydatabse.obj_reader["primary_email"].ToString();
                                 u_secondaryemail = mydatabse.obj_reader["secondary_email"].ToString();

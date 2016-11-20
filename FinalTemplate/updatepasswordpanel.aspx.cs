@@ -12,11 +12,10 @@ namespace FinalTemplate
 {
     public partial class updatepasswordpanel1 : System.Web.UI.Page
     {
+        private CurrentUser info = new CurrentUser();
         private Database myDatabase = new Database("ces");
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Session.Remove("userid");
-            //bool sessiongone = (Session["userid"] == null);
 
             if (Session["userid"] != null)
             {
@@ -29,8 +28,9 @@ namespace FinalTemplate
                 string[] whereoperatorvale = { "'" + CurrentUser.AuthorizedID + "'" };
                 string[,] studentid = myDatabase.SelectQuery("tbl_Student_Reg", col, colwhere, whereoperator, whereoperatorvale, multiwhere);
                 CurrentUser.GetPersonalDetails(Convert.ToInt32(studentid[0, 0]));
-
                 student.GetstudentlDetails(Session["userid"].ToString());
+
+              email.Text= CurrentUser.PrimaryEmailAddress;
             }
             else
             {
@@ -98,7 +98,7 @@ namespace FinalTemplate
             mmsg.From = new MailAddress("shahwaizhasan106@gmail.com");
             mmsg.To.Add(email.Text);
             mmsg.Subject = "Activation";
-            mmsg.Body = "HELLOW  " + username.Text + "</br> This is check your password "+newpassword.Text;
+            mmsg.Body = "HELLOW  " + username.Text + "</br> This is your updated password "+newpassword.Text;
             mmsg.IsBodyHtml = true;
             client.EnableSsl = true;
             client.UseDefaultCredentials = true;

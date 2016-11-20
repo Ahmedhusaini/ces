@@ -39,15 +39,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="itextsharp, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\itextsharp.dll</HintPath>
+      <HintPath>..\..\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Recaptcha">
-      <HintPath>..\..\git\FinalTemplate\bin\Recaptcha.dll</HintPath>
+      <HintPath>..\..\Recaptcha.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -120,7 +130,11 @@
     <Content Include="assets\images\cesThemeImages\teachers %284%29.jpg" />
     <Content Include="assets\images\cesThemeImages\teachers %285%29.jpg" />
     <Content Include="assets\images\crissxcross.png" />
+    <Content Include="Attendance_Student.aspx" />
+    <Content Include="check_event.aspx" />
+    <Content Include="Check_News.aspx" />
     <Content Include="ContactUs_Student.aspx" />
+    <Content Include="Download_Homework.aspx" />
     <Content Include="images\Events\bicycle-1280x720.jpg" />
     <Content Include="images\Events\code.png" />
     <Content Include="images\Events\codemap.png" />
@@ -359,6 +373,27 @@
     <Compile Include="AllEvents.aspx.designer.cs">
       <DependentUpon>AllEvents.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Attendance_Student.aspx.cs">
+      <DependentUpon>Attendance_Student.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Attendance_Student.aspx.designer.cs">
+      <DependentUpon>Attendance_Student.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="check_event.aspx.cs">
+      <DependentUpon>check_event.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="check_event.aspx.designer.cs">
+      <DependentUpon>check_event.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Check_News.aspx.cs">
+      <DependentUpon>Check_News.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Check_News.aspx.designer.cs">
+      <DependentUpon>Check_News.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ContactUs_Student.aspx.cs">
       <DependentUpon>ContactUs_Student.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -384,6 +419,13 @@
     </Compile>
     <Compile Include="Date_sheet.aspx.designer.cs">
       <DependentUpon>Date_sheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Download_Homework.aspx.cs">
+      <DependentUpon>Download_Homework.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Download_Homework.aspx.designer.cs">
+      <DependentUpon>Download_Homework.aspx</DependentUpon>
     </Compile>
     <Compile Include="PackageInformation.aspx.cs">
       <DependentUpon>PackageInformation.aspx</DependentUpon>
@@ -477,6 +519,7 @@
     <Compile Include="source\Functions\student.cs" />
     <Compile Include="source\Functions\StudentUpdate.cs" />
     <Compile Include="source\Functions\teacher.cs" />
+    <Compile Include="source\Functions\TeacherUpdate.cs" />
     <Compile Include="source\Registration\ClassStudentRegistration.cs" />
     <Compile Include="source\Database\Database.cs" />
     <Compile Include="source\Functions\CurrentUser.cs" />
@@ -801,6 +844,9 @@
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Content>
     <Content Include="parentchildpanel.Master" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -819,6 +865,10 @@
   <ItemGroup>
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

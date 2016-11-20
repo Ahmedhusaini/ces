@@ -29,17 +29,7 @@ namespace FinalTemplate
         {
             lab1.Text = "DATE :" + System.DateTime.Now.ToShortDateString();
             lab2.Text = "TIME :" + System.DateTime.Now.ToLongTimeString();
-            //if (!IsPostBack)
-            //{
-            //    if (Session["userid"] != null)
-            //    {
-            //        namelab.Text = "Your User ID: " + Session["userid"].ToString();
-            //    }
-            //    else
-            //    {
-            //        Response.Redirect("~/Default.aspx");
-            //    }
-            //}
+
             if (Session["userid"] != null)
             {
                 string[] col = { "General_Id" };
@@ -58,16 +48,18 @@ namespace FinalTemplate
                 student.GetstudentlDetails(Session["userid"].ToString());
                 namelab.Text = CurrentUser.AuthorizedID.ToString();
                 lab3.Text = CurrentUser.GeneralID.ToString();
+                shah.ImageUrl=CurrentUser.Photo;
                 Label3.Text = student.studentid;
                 student.Complete_Detail_Of_Student(Session["userid"].ToString());
                 Label4.Text = student.s_class;
                 Label5.Text = student.s_section;
+                Label6.Text = student.s_schoolid;
+                //present.Text = 110 + " present";
             }
             else
             {
                 Response.Redirect("~/Default.aspx");
             }
-
         }
         protected void btnSave_Click(object sender, EventArgs e)
         {
@@ -97,7 +89,7 @@ namespace FinalTemplate
                     }
                     con.Open();
                     string path = @"~\images\" + filename.ToString();
-                    SqlCommand cmd = new SqlCommand("update tbl_general set photo='" + path + "' where General_Id='"+lab3.Text+"'", con);
+                    SqlCommand cmd = new SqlCommand("update tbl_general set photo='" + path + "' where General_Id='" + lab3.Text + "'", con);
                     shah.ImageUrl = @"~\images\" + FileUpload1.FileName;
                     cmd.ExecuteNonQuery();
                     con.Close();
@@ -112,7 +104,16 @@ namespace FinalTemplate
 
         protected void clas(object sender, EventArgs e)
         {
-            
+
+        }
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

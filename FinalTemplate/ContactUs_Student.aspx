@@ -32,7 +32,7 @@
 
                                             <p class="sub">COME TO</p>
                                             <label>School Name :</label>
-                                            <asp:Label id="lab2" CssClass="h5" ForeColor="#8BBD4D" runat="server"></asp:Label>
+                                            <asp:Label ID="lab2" CssClass="h5" ForeColor="#8BBD4D" runat="server"></asp:Label>
                                             <div class="detail">
                                                 <p>Karachi,Pakistan</p>
                                             </div>
@@ -40,12 +40,14 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="method-item">
-                                            <i class="fa fa-phone"></i>                    
+                                            <i class="fa fa-phone"></i>
                                             <p class="sub">CALL TO</p>
                                             <div class="detail">
-                                                <label>Contact 1: </label>&nbsp;<asp:Label CssClass="h5" ID="contact1" runat="server" ForeColor="#8BBD4D"></asp:Label>
+                                                <label>Contact 1: </label>
+                                                &nbsp;<asp:Label CssClass="h5" ID="contact1" runat="server" ForeColor="#8BBD4D"></asp:Label>
                                                 <br />
-                                                <label>Contact 2: </label>&nbsp;<asp:Label CssClass="h5" ID="contact2" runat="server" ForeColor="#8BBD4D"></asp:Label>
+                                                <label>Contact 2: </label>
+                                                &nbsp;<asp:Label CssClass="h5" ID="contact2" runat="server" ForeColor="#8BBD4D"></asp:Label>
                                             </div>
                                         </div>
                                     </div>
@@ -70,33 +72,21 @@
                                         <div class="col-md-6" style="width: 40%">
                                             <div class="form-group">
                                                 <label class="control-label form-label">NAME </label>
-                                                <asp:TextBox runat="server" ID="name"  class="form-control form-input" ></asp:TextBox>                                                
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6" style="width: 40%">
-                                            <div class="form-group">
-                                                <label class="control-label form-label">EMAIL </label>
-                                                <asp:TextBox runat="server" ID="email"  class="form-control form-input" ></asp:TextBox>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6" style="width: 40%">
-                                            <div class="form-group">
-                                                <label class="control-label form-label">SUBJECT</label>
-                                                <asp:TextBox runat="server" ID="subject"  class="form-control form-input" ></asp:TextBox>
+                                                <asp:TextBox runat="server" ID="name" class="form-control form-input"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="contact-question form-group">
-                                                <label class="control-label form-label">HOW CAN WE HELP?</label>
-                                                <asp:TextBox runat="server" ID="TextBox1" Height="100px"  class="form-control form-input" TextMode="MultiLine"></asp:TextBox>
+                                                <label class="control-label form-label">Enter your Message</label>
+                                                <asp:TextBox runat="server" ID="TextBox1" Height="100px" class="form-control form-input" TextMode="MultiLine"></asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="contact-submit">
+                                    <button type="submit" class="btn btn-register btn-green">
                                         <span>
-                                            <button type="submit" class="btn btn-contact btn-green">Submit</button>
+                                            <asp:Button ID="Button1" OnClick="messege" runat="server" Text=" Message" Style="background-color: transparent" BorderStyle="None" />
                                         </span>
-                                    </div>
+                                    </button>
                                 </form>
                             </div>
                         </div>

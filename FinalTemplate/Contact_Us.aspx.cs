@@ -37,9 +37,9 @@ namespace FinalTemplate
                  client.Timeout=10000;
                  client.DeliveryMethod=SmtpDeliveryMethod.Network;
                  client.UseDefaultCredentials=false;
-                 client.Credentials = new NetworkCredential("jahangeer.ahmed11@gmail.com", "dovocgsfopxjqjko");
+                 client.Credentials = new NetworkCredential("shahwaizhasan106@gmail.com", "uombhdylobfcwnjp");
                  MailMessage msg = new MailMessage();
-                 msg.From = new MailAddress("jahangeer.ahmed11@gmail.com");
+                 msg.From = new MailAddress("shahwaizhasan106@gmail.com");
                  msg.Subject=(TextBox1.Text);
                  msg.To.Add(TextBox2.Text);  
                  msg.Subject=(DropDownList1.SelectedValue);
