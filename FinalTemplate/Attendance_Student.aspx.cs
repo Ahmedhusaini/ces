@@ -25,6 +25,7 @@ namespace FinalTemplate
             present_();
             absent_();
             total_();
+            Label8.Text = student.studentid;
         }
 
         private void present_()
