@@ -54,13 +54,14 @@
         </div>
     </div>
     <asp:Label ID="Label7" runat="server" Visible="false" Text="Label"></asp:Label>
+    &nbsp;<asp:Label ID="Label8" runat="server" Visible="false" Text="Label"></asp:Label>
     <asp:GridView ID="GridView2" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource4" AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#86BC42" GridLines="None">
         <Columns>
-            <asp:BoundField DataField="Column1" HeaderText="MONTH" ReadOnly="True" SortExpression="Column1" />
-            <asp:BoundField DataField="Column2" HeaderText="DAY" ReadOnly="True" SortExpression="Column2" />
-            <asp:BoundField DataField="Column3" HeaderText="DATE" SortExpression="Column3" ReadOnly="True" />
-            <asp:BoundField DataField="time" HeaderText="TIME" SortExpression="time" />
-            <asp:BoundField DataField="remarks" HeaderText="ATTANDANCE" SortExpression="remarks" />
+            <asp:BoundField DataField="Column1" HeaderText="Column1" ReadOnly="True" SortExpression="Column1" />
+            <asp:BoundField DataField="Column2" HeaderText="Column2" ReadOnly="True" SortExpression="Column2" />
+            <asp:BoundField DataField="Column3" HeaderText="Column3" SortExpression="Column3" ReadOnly="True" />
+            <asp:BoundField DataField="time" HeaderText="time" SortExpression="time" />
+            <asp:BoundField DataField="remarks" HeaderText="remarks" SortExpression="remarks" />
         </Columns>
         <EditRowStyle BackColor="#7C6F57" />
         <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -75,7 +76,7 @@
     </asp:GridView>
     <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="shahwaiz_attendance" SelectCommandType="StoredProcedure">
         <SelectParameters>
-            <asp:Parameter DefaultValue="'C/sha/E/4/S/2/11/9'" Name="Std_id" Type="String" />
+            <asp:ControlParameter ControlID="Label8" DefaultValue="" Name="Std_id" PropertyName="Text" Type="String" />
             <asp:ControlParameter ControlID="Label7" DefaultValue="" Name="date" PropertyName="Text" Type="DateTime" />
         </SelectParameters>
     </asp:SqlDataSource>
