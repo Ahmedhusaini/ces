@@ -11,12 +11,12 @@ namespace FinalTemplate.source.Functions
         //Returns Date in dd/mm/yyyy format
         public static string GetSystemDate()
         {
-            return Convert.ToString(DateTime.Today.ToString("d"));
+            return Convert.ToString(DateTime.Now.ToString("d"));
         }
 
         public static string GetSystemTime()
         {
-            return Convert.ToString(System.DateTime.Today.ToString("t"));
+            return Convert.ToString(System.DateTime.Now.ToString("t"));
         }
 
         public static void SendEmail(string To, string Subject, string MessageBody)

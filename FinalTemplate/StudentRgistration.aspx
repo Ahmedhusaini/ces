@@ -581,6 +581,7 @@
                                     <button type="submit" class="btn btn-register btn-green">
                                         <span>
                                             <asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>
+                                    <asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
                                 </div>
                             </div>
                         </div>
