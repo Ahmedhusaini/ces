@@ -76,7 +76,7 @@ namespace FinalTemplate
                 if (result == "true")
                 {
                    Jfunctionstudents.SendEmail(pemail.Text, "CES - Registration", EmailBody());
-                   picture();
+                   //picture();
                    Response.Write("Register Successfully Complete Go To Login Page");
                     
                 }
