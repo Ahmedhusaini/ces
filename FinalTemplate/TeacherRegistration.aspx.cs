@@ -17,8 +17,8 @@ namespace FinalTemplate
         {
 
             string date = dob.Text;
-            string a = ConfigurationManager.ConnectionStrings["abc"].ConnectionString;
-            Database db = new Database("abc");
+            string a = ConfigurationManager.ConnectionStrings["ces"].ConnectionString;
+            Database db = new Database("ces");
             int general_id = Convert.ToInt32(db.GetLastValueByColumnName("general_id", "tbl_general"));
             int dob_id = Convert.ToInt32(db.GetLastValueByColumnName("dob_id", "tbl_dob"));
             int loc_id = Convert.ToInt32(db.GetLastValueByColumnName("loc_id", "tbl_location"));
