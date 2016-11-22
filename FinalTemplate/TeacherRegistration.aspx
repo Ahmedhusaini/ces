@@ -400,6 +400,28 @@
                                         <asp:SqlDataSource ID="schooltype" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [school_name], [school_id] FROM [tbl_school]"></asp:SqlDataSource>
                                          
                                     </div>
+                                      <div class="col-md-6">
+                                        <label for="regname" class="control-label form-label">
+                                            CLASS<span class="highlight">*<br />
+                                            </span>
+                                        </label>
+                                          <asp:DropDownList ID="DropDownList4" runat="server" DataSourceID="class" DataTextField="class" DataValueField="Class_id"></asp:DropDownList>
+                                          <asp:SqlDataSource ID="class" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT * FROM [tbl_class]"></asp:SqlDataSource>
+                                        <!-- p.help-block Warning !-->
+                                        <br />
+                            
+                                         
+                                    </div>
+                                      <div class="col-md-6">
+                                        <label for="regname" class="control-label form-label">
+                                            SECTION<span class="highlight">*<br />
+                                            </span>
+                                        </label>
+                                        <!-- p.help-block Warning !-->
+                                        <br />
+                                          <asp:DropDownList ID="DropDownList5" runat="server" DataSourceID="section" DataTextField="section" DataValueField="Section_id"></asp:DropDownList>
+                                          <asp:SqlDataSource ID="section" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT * FROM [tbl_section]"></asp:SqlDataSource>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
