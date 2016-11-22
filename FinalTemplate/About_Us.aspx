@@ -30,7 +30,7 @@
             <div class="intro-edu-wrapper">
                 <div class="row">
                     <div class="col-md-5">
-                        <img src="assets/images/people-avatar-8.png" alt="" class="intro-image fadeInLeft animated wow" />
+                        <img src="images/im.png" alt="" class="intro-image fadeInLeft animated wow" />
                     </div>
                     <div class="col-md-7">
                         <div class="intro-title"><b>CES MISSION </b>!</div>
@@ -209,7 +209,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <img src="assets/images/picture-8.png" alt="" class="computer-image">
+                        <img src="images/im.png" alt="" class="computer-image">
                     </div>
                 </div>
             </div>
