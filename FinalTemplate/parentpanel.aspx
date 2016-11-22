@@ -10,10 +10,23 @@
         $(document).ready(function () {
 
             $('#<%=DropDownList1.ClientID%>').css('display', 'none'),
+            $('#<%=Label3.ClientID%>').css('display', 'none'),
+                $('.table-row').css(' text-align', 'inherit'),
 
-            $('.table-row').css(' text-align', 'inherit')
+                check();
 
         });
+
+        function check()
+        {
+            $('li a[title="time"]')
+                .click(function (e) {
+                var seectionID = e.currentTarget.id + "section";
+                //alert("daba hai");
+
+            })
+            
+        }
 
 
 
@@ -37,6 +50,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li class="active"><a href="#">Profile</a></li>
                     </ol>
+                    
                 </div>
             </div>
         </div>
@@ -44,13 +58,24 @@
     <div class="col-md-9">
     <div class="news-page-wrapper">
            <div id="detail" class="edugate-layout-1" style="    background-color: rgba(144, 161, 174, 0.63)">
-                                        <div class="edugate-image"><asp:Image ID="Image1" runat="server"  /></div>
+                                        <div class="edugate-image"><asp:Image ID="Image1" runat="server"  />
+                                               <div>
+               <asp:FileUpload ID="FileUpload1"  runat="server" />
+               <asp:Button class="btn-green" BackColor="#86bc42" BorderColor="#86bc42" ID="btnSave" Text="upload" runat="server" Height="30px" Width="70px" OnClick="btnSave_Click"></asp:Button>
+                                        <asp:Label ID="Label3"  runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="Label1" runat="server"></asp:Label>
+                   </div>
+                                        </div>
+               <br/>
+            
                                         <div class="edugate-content"><a href="news-detail.html" class="title">
-                                                <asp:Label ID="headlbl" runat="server" Font-size="18"  ></asp:Label></a>&nbsp;&nbsp;
+                                                
+                                                <asp:Label ID="headlbl" runat="server" Font-size="18"  ></asp:Label>
+                                            </a>&nbsp;&nbsp;
                                             <a href="news-detail.html" class="title"> 
                                                  <asp:Label ID="headll" runat="server" Font-size="18"  ></asp:Label></a>
                                             <div class="info">
-                                                <div class="author item"><a href="#">Gender: </a>&nbsp&nbsp;&nbsp;&nbsp; <asp:Label ID="gender" Font-size="13" runat="server"></asp:Label> </div>
+                                                <div class="author item"><a href="#">Gender: </a> &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="gender" Font-size="13" runat="server"></asp:Label></div>
                      
                                             </div>
                                             <div class="info">
@@ -72,8 +97,11 @@
                                            
                                             <div class="description"></div>
                                           <%-- <button class="btn btn-green"><span>read more</span></button>--%>
+
                                         </div>
+
                                     </div>
+
         </div>
         </div>
     
@@ -92,9 +120,14 @@
       
         <!-- CHOOSE COURSES-->
     <br />
-                        <div class="group-title-index"><h4 class="top-title">Your Childerns </h4>
+     <br />
+     <br />
+     <br />
+     <br />
+     <br />
+                        <div class="group-title-index"> <div id="checkstudent"> <h4 class="top-title">Your Childerns </h4></div>
 
-                            <h2 class="center-title">check profile of your Child&nbsp;&nbsp;&nbsp;&nbsp; </h2>
+                            <h2 class="center-title" >check profile of your Child&nbsp;&nbsp;&nbsp;&nbsp; </h2>
 
                             <div class="bottom-title">
                                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="GetParentid" SelectCommandType="StoredProcedure">
@@ -115,7 +148,12 @@
                                 <asp:GridView ID="GridView1"  class="edu-table-responsive"  runat="server"  AutoGenerateColumns="False" Width="1220px  " AllowPaging="True" AllowSorting="True" CellPadding="4" DataSourceID="SqlDataSource2"  ForeColor="#86BC42" GridLines="None">
                                     <AlternatingRowStyle BackColor="White" />
                                     <Columns>
-                                        <asp:BoundField DataField="firstname"  HeaderText="Firstname" SortExpression="firstname" />
+                                          <asp:TemplateField  HeaderText="Firstname">
+                                             <ItemTemplate>
+                                                 <asp:LinkButton ID="LinkButton1"   OnClick="linkbutton" Text='<%#Eval("Firstname")%>'  runat="server">Link</asp:LinkButton>
+                                             </ItemTemplate>
+                                               <HeaderStyle BackColor="#737373" Font-Bold="True" ForeColor="#86bc42" />
+                                         </asp:TemplateField>
                                         <asp:BoundField DataField="lastname" HeaderText="Lastname" SortExpression="lastname" />
                                         <asp:BoundField DataField="Gender" HeaderText="Gender" SortExpression="Gender" />
                                         <asp:BoundField DataField="Guardian_Name" HeaderText="Guardian Name" SortExpression="Guardian_Name" />
@@ -123,11 +161,7 @@
                                         <asp:BoundField DataField="school_type" HeaderText="School Type" SortExpression="school_type" />
                                         <asp:BoundField DataField="class" HeaderText="Class" SortExpression="class" />
                                         <asp:BoundField DataField="section" HeaderText="Section" SortExpression="section" />
-                                         <asp:TemplateField>
-                                             <ItemTemplate>
-                                                 <asp:LinkButton ID="LinkButton1" OnClick="linkbutton" Text='<%#Eval("Firstname")%>'  runat="server">Link</asp:LinkButton>
-                                             </ItemTemplate>
-                                         </asp:TemplateField>
+                                        
                                     </Columns>
                                      <EditRowStyle BackColor="#7C6F57" />
                                         <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
