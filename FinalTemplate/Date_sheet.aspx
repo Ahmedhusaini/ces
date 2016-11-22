@@ -40,17 +40,22 @@
             </div>
         </div>
     </div>
+    <asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
     <br />
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div>
-        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="100%" Font-Names="Verdana" Font-Size="8pt" Height="500px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" BackColor="#86BC42" ShowPageNavigationControls="False" ShowZoomControl="False">
-            <LocalReport ReportPath="Report2.rdlc">
+        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="100%" Font-Names="Verdana" Font-Size="8pt" Height="647px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" BackColor="#86BC42" ShowPageNavigationControls="False" CssClass="reader" InternalBorderStyle="Double" ShowBackButton="False">
+            <LocalReport ReportPath="DateSheet.rdlc">
                 <DataSources>
-                    <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSet1" />
+                    <rsweb:ReportDataSource DataSourceId="SqlDataSource1" Name="DataSet1" />
                 </DataSources>
             </LocalReport>
         </rsweb:ReportViewer>
-        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetData1" TypeName="FinalTemplate.DataSet1TableAdapters.View_Student_timetableTableAdapter"></asp:ObjectDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="select [date],datename(dw,[date]),class1,class2,class3,class4,class5,class6,class7,class8 from tbl_DateSheet where school_id=@school_id">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="Label1" Name="school_id" PropertyName="Text" />
+            </SelectParameters>
+        </asp:SqlDataSource>
     </div>
     <br />
 </asp:Content>

@@ -19,7 +19,7 @@
 
 
         function teacherwidth() {
-            var path = "url(assets/images/cesThemeImages/searchTeacher.jpg)";
+            var path = "url(assets/images/cesThemeImages/378173.jpg)";
             $('.page-title').css({
                 'background-image': path,
                 'height': '350px'

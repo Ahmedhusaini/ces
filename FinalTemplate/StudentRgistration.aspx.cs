@@ -29,13 +29,18 @@ namespace FinalTemplate
         SqlConnection con = new SqlConnection(@"Data Source=SHAHWAIZ\SQLEXPRESS;Initial Catalog=ces;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                Jfunctionstudents.BindDropDownList(DropDownList2, "city", "city_id", "select * from tbl_city");
-                Jfunctionstudents.BindDropDownList(DropDownList3, "class", "class_id", "select * from tbl_class");
-                Jfunctionstudents.BindDropDownList(DropDownList4, "section", "Section_id", "select * from tbl_section");
-                Jfunctionstudents.BindDropDownList(DropDownList5, "school_name", "school_id", "select * from tbl_school");
-            }
+        //    if (Session["userid"] != null)
+        //    {
+                if (!IsPostBack)
+                {
+                    Jfunctionstudents.BindDropDownList(DropDownList2, "city", "city_id", "select * from tbl_city");
+                    Jfunctionstudents.BindDropDownList(DropDownList3, "class", "class_id", "select * from tbl_class");
+                    Jfunctionstudents.BindDropDownList(DropDownList4, "section", "Section_id", "select * from tbl_section");
+                    Jfunctionstudents.BindDropDownList(DropDownList5, "school_name", "school_id", "select * from tbl_school");
+                }
+            //}
+            //else
+            //{ Response.Redirect("Defult.aspx"); }
         }
 
         private string EmailBody()
@@ -71,7 +76,9 @@ namespace FinalTemplate
                 if (result == "true")
                 {
                    Jfunctionstudents.SendEmail(pemail.Text, "CES - Registration", EmailBody());
-                    Response.Write("Register Successfully Complete Go To Login Page");
+                   //picture();
+                   Response.Write("Register Successfully Complete Go To Login Page");
+                    
                 }
                 else
                 {

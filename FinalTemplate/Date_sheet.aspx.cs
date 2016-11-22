@@ -8,6 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.IO;
+using FinalTemplate.source.Functions;
 
 namespace FinalTemplate
 {
@@ -20,6 +21,13 @@ namespace FinalTemplate
             //{
             //    filldata();
             //}
+
+            if(Session["userid"]!=null)
+            {
+                Label1.Text = student.s_schoolid;
+            }
+            else
+                Response.Redirect("Default.aspx");
         }
 
         //private void filldata()
