@@ -56,8 +56,11 @@
     </div>
     
     
-    <div> <asp:label ID="id" runat="server"> </asp:label>  </div>
-     <div> <asp:label ID="lblschool_id" runat="server"> </asp:label>  </div>
+    <div> <asp:label ID="id" Visible="False" runat="server"> </asp:label>  </div>
+     <div> <asp:label ID="lblschool_id" Visible="False" runat="server"> </asp:label>  </div>
+    <br/>
+    <br/>
+    <br/>
       <div class="style-show style-grid row" style="           margin-right: 598px;
     padding-left: 80px;">
     <div class="col-style">
@@ -171,7 +174,7 @@
              <br/>
              <br/>
             
-              <div id="check_timetable" class="underline" style="height: 20px; text-align: left;">
+              <div id="homework" class="underline" style="height: 20px; text-align: left;">
                 <h2> Home Work&nbsp;&nbsp;&nbsp;&nbsp; </h2>
              
             </div>
@@ -212,7 +215,7 @@
     <asp:Label ID="Label2" Visible="false" runat="server" Text="Label"></asp:Label>    
     <asp:Label ID="Label3"  Visible="false" runat="server" Text="Label"></asp:Label>    
     <asp:Label ID="Label4" runat="server" Visible="false" Text="Label"></asp:Label>
-    <asp:GridView ID="GridView4" class="edu-table-responsive" runat="server" DataKeyNames="lec_id" CellPadding="4" GridLines="None">
+    <asp:GridView ID="GridView4" class="edu-table-responsive" runat="server" DataKeyNames="lec_id" Width="1220px" ForeColor="#86BC42" CellPadding="4" GridLines="None">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:TemplateField HeaderText="DOWNLOAD">
@@ -237,7 +240,10 @@
               <br/>
              <br/>
 
-
+              <br />
+     <br />
+    <br />
+    <br />
 
                  <div id="atten" class="underline" style="height: 20px; text-align: left;">
                 <h2> Attendance &nbsp;&nbsp;&nbsp;&nbsp; </h2>
@@ -245,7 +251,8 @@
             </div>
         <br />
             
-       
+        <br />
+  
        
             <asp:Label ID="Label1" runat="server" Text="Date"></asp:Label>
           

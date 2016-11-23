@@ -73,17 +73,17 @@
                          <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Schedules<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
                                 <li><a id="timetable" href="#myDiv" class="link-page" title="time">Time Table</a></li>
-                                <li><a href="categories.html" class="link-page">Date Sheet</a></li>
-                                <li><a href="categories.html" class="link-page">Mark Sheet</a></li>
+                                <li><a href="#" class="link-page">Date Sheet</a></li>
+                                <li><a href="#" class="link-page">Mark Sheet</a></li>
                             </ul>
                         </li>
 
-                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Download<span class="fa fa-angle-down icons-dropdown"></span></a>
-                            <ul class="dropdown-menu edugate-dropdown-menu-1">
+                           <li class="dropdown"><a id="home" href="#homework" class="main-menu" title="time">Homework</a>
+                           <%-- <ul class="dropdown-menu edugate-dropdown-menu-1">
                               
-                                <li><a href="news-grid.html" class="link-page">Download Homework</a></li>
+                                <li><a  href="#homework" class="link-page">Download Homework</a></li>
                                 <li><a href="news-grid-nonsidebar.html" class="link-page">Download Assignments</a></li>
-                            </ul>
+                            </ul>--%>
                         </li>
                         <li class="dropdown"><a id="attendence" href="#atten" class="main-menu" title="time">Attendence</a>
                        </li>
@@ -97,11 +97,11 @@
                         <li class="button-search"><p class="main-menu"><i class="fa fa-search"></i></p>
                         </li>
 
-                        <div class="nav-search hide">
+                       <%-- <div class="nav-search hide">
                             <form><input type="text" placeholder="Search" class="searchbox"/>
                                 <button type="submit" class="searchbutton fa fa-search"></button>
                             </form>
-                        </div>
+                        </div>--%>
                     </ul>
                 </nav>
             </div>
