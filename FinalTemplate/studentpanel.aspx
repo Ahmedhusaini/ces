@@ -199,17 +199,17 @@
     </div>
     <br />
     <%--ATTENDANCE--%>
-    <asp:GridView ID="GridView3" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" DataSourceID="timetable_1test" AllowSorting="True" BackColor="#000066" Font-Bold="False">
+    <asp:GridView ID="GridView3" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" DataSourceID="timetable_1test" AllowSorting="True" BackColor="#000066" Font-Bold="False" GridLines="Horizontal">
         <Columns>
             <asp:BoundField DataField="day" HeaderText="Day" SortExpression="day" ItemStyle-ForeColor="#6B9735" />
-            <asp:BoundField DataField="period_1" HeaderText="period 1" SortExpression="period_1" />
-            <asp:BoundField DataField="period_2" HeaderText="period 2" SortExpression="period_2" />
-            <asp:BoundField DataField="period_3" HeaderText="period 3" SortExpression="period_3" />
-            <asp:BoundField DataField="period_4" HeaderText="period 4" SortExpression="period_4" />
-            <asp:BoundField DataField="period_5" HeaderText="period 5" SortExpression="period_5" />
-            <asp:BoundField DataField="period_6" HeaderText="period 6" SortExpression="period_6" />
-            <asp:BoundField DataField="period_7" HeaderText="period 7" SortExpression="period_7" />
-            <asp:BoundField DataField="period_8" HeaderText="period 8" SortExpression="period_8" />
+            <asp:BoundField DataField="period_1" HeaderText="Unit 1" SortExpression="period_1" />
+            <asp:BoundField DataField="period_2" HeaderText="Unit 2" SortExpression="period_2" />
+            <asp:BoundField DataField="period_3" HeaderText="Unit 3" SortExpression="period_3" />
+            <asp:BoundField DataField="period_4" HeaderText="Unit 4" SortExpression="period_4" />
+            <asp:BoundField DataField="period_5" HeaderText="Unit 5" SortExpression="period_5" />
+            <asp:BoundField DataField="period_6" HeaderText="Unit 6" SortExpression="period_6" />
+            <asp:BoundField DataField="period_7" HeaderText="Unit 7" SortExpression="period_7" />
+            <asp:BoundField DataField="period_8" HeaderText="Unit 8" SortExpression="period_8" />
         </Columns>
         <EditRowStyle BackColor="#7C6F57" />
         <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
