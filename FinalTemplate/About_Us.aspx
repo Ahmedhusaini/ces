@@ -30,7 +30,7 @@
             <div class="intro-edu-wrapper">
                 <div class="row">
                     <div class="col-md-5">
-                        <img src="assets/images/people-avatar-8.png" alt="" class="intro-image fadeInLeft animated wow" />
+                        <img src="images/im.png" alt="" class="intro-image fadeInLeft animated wow" />
                     </div>
                     <div class="col-md-7">
                         <div class="intro-title"><b>CES MISSION </b>!</div>
@@ -118,7 +118,7 @@
                         <div class="staff-item-wrapper"  style="height:250px">
                             <div class="staff-info">
                                 <a href="#" class="staff-avatar">
-                                    <img src="assets/images/people-avatar-4.jpg" alt="" class="img-responsive" /></a>
+                                    <img src="assets/images/shaheryar.jpg" alt="" class="img-responsive" /></a>
                                 <a href="#" class="staff-name">M.Shaheryar Khan</a>
                                 <div class="staff-job">Developer & Designer</div>
                                 <div class="staff-desctiption">He is another a talented member of our former team. He started as a designer of our portal but when it comes to coding side he is a bright shining start of our team who is responsible for dealing with security domain like Validation and User Authentication criteria.</div>
@@ -209,7 +209,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <img src="assets/images/picture-8.png" alt="" class="computer-image">
+                        <img src="images/im.png" alt="" class="computer-image">
                     </div>
                 </div>
             </div>

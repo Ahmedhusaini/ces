@@ -48,7 +48,7 @@ namespace FinalTemplate
                 student.GetstudentlDetails(Session["userid"].ToString());
                 namelab.Text = CurrentUser.AuthorizedID.ToString();
                 lab3.Text = CurrentUser.GeneralID.ToString();
-                shah.ImageUrl=CurrentUser.Photo;
+                shah.ImageUrl = CurrentUser.Photo;
                 Label3.Text = student.studentid;
                 student.Complete_Detail_Of_Student(Session["userid"].ToString());
                 Label4.Text = student.s_class;
@@ -74,6 +74,7 @@ namespace FinalTemplate
                     string extension = Path.GetExtension(filename);
                     Label1.Text = filepath;
                     int filesize = FileUpload1.PostedFile.ContentLength / 1024;
+                    Convert.ToString(filesize);
                     int i = 0;
                     if (extension == ".jpg" || extension == ".png")
                     {
@@ -98,7 +99,7 @@ namespace FinalTemplate
             }
             catch (Exception ex)
             {
-                Label1.Text = (ex.Message);
+                Response.Write("Make sure your Picture Name is Valid means proper name like 'PICTURE1'");
             }
         }
 
