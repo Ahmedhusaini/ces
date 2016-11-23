@@ -41,7 +41,7 @@ namespace FinalTemplate
         public void filldata2()
         {
             DataTable dt1 = new DataTable();
-            using (SqlConnection co = new SqlConnection(@"Data Source=SHAHWAIZ\SQLEXPRESS;Initial Catalog=ces;Integrated Security=True"))
+            using (SqlConnection co = new SqlConnection(@"Data Source=ABBASI\JAHANGEER;Initial Catalog=ces;Persist Security Info=True;User ID=sa;Password=159abbasi789"))
             {
                 SqlCommand cmd1 = new SqlCommand(@"select lec_id,lectures,content,class,section from view_lecture_attandance_test where school_id='" + Label3.Text + "' and class='" + Label1.Text + "' and section='" + Label2.Text + "'", co);
                 //cmd1.CommandType = CommandType.StoredProcedure;
@@ -68,7 +68,7 @@ namespace FinalTemplate
         private void download(int lec_id)
         {
             DataTable dt1 = new DataTable();
-            using (SqlConnection co = new SqlConnection(@"Data Source=SHAHWAIZ\SQLEXPRESS;Initial Catalog=ces;Integrated Security=True"))
+            using (SqlConnection co = new SqlConnection(@"Data Source=ABBASI\JAHANGEER;Initial Catalog=ces;Persist Security Info=True;User ID=sa;Password=159abbasi789"))
             {
                 SqlCommand cmd1 = new SqlCommand("SP_Get_file", co);
                 cmd1.CommandType = System.Data.CommandType.StoredProcedure;

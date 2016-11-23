@@ -46,7 +46,11 @@
 
            $(document).ready(function() {
                $('.rlp').removeClass("rlp");
-               $('.register-form').css('margin-left', '25%');
+               $('.container').css('width', '50%');
+               //$('div[class="register-title"]').css({
+               //    'margin-top': '0px',
+               //    'margin-bottom':'0px'
+               //});
                centerform();
                centerText( <%=ddl_type.ClientID%>);
                centerText( <%=txt_username.ClientID%>);
@@ -92,7 +96,8 @@
 
                     </a>
                         ---->
-                    <div class="register-title rlp-title">Sign In</div>
+                    <div><img src="assets/images/logo-color-1.png" /></div>
+                    <%--<div class="register-title rlp-title">Sign In</div>--%>
                     <div id="divinvisible" class="register-title rlp-title">
                         <asp:Label runat="server" ID="lbl_error">error message</asp:Label>
                     </div>

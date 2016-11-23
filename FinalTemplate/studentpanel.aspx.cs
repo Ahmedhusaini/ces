@@ -24,7 +24,7 @@ namespace FinalTemplate
     public partial class studentpanel1 : System.Web.UI.Page
     {
         private Database myDatabase = new Database("ces");
-        SqlConnection con = new SqlConnection(@"Data Source=SHAHWAIZ\SQLEXPRESS;Initial Catalog=ces;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=ABBASI\JAHANGEER;Initial Catalog=ces;Persist Security Info=True;User ID=sa;Password=159abbasi789");
         protected void Page_Load(object sender, EventArgs e)
         {
             lab1.Text = "DATE :" + System.DateTime.Now.ToShortDateString();
