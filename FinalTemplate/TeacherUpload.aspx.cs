@@ -44,7 +44,7 @@ namespace FinalTemplate
         private void filldata()
         {
             DataTable dt=new DataTable();
-            int lec_id = Convert.ToInt32(db.GetLastValueByColumnName("lec_id", "tbl_Teacher_lecture"));
+            int lec_id = Convert.ToInt32(db.GetLastValueByColumnName("lec_id", "lecture_attandance_test"));
               using (SqlConnection con = new SqlConnection(a))
               {
                 SqlCommand cmd = new SqlCommand("SP_Get_file", con);
@@ -100,7 +100,7 @@ namespace FinalTemplate
 
             string name = f.Name;
             string extension = f.Extension;
-            int lec_id = Convert.ToInt32(db.GetLastValueByColumnName("lec_id", "tbl_teacher_attandance_test"));
+            int lec_id = Convert.ToInt32(db.GetLastValueByColumnName("lec_id", "lecture_attandance_test"));
            
             using (SqlConnection con = new SqlConnection(a))
             {
