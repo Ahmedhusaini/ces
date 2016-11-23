@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
 using FinalTemplate.source.Database;
+using FinalTemplate.source.Functions;
 
 namespace FinalTemplate
 {
@@ -39,7 +40,11 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@std_attend_id_out", SqlDbType.Int).Direction = ParameterDirection.Output;
                 cmd.Parameters.AddWithValue("@date", SqlDbType.VarChar).Value = DateTime.Now.ToString("");
                 cmd.Parameters.AddWithValue("@time", SqlDbType.VarChar).Value = DateTime.Now.ToString("");
-                cmd.Parameters.AddWithValue("@remark_id", SqlDbType.Int).Value =//DropDownList1.SelectedValue;
+                cmd.Parameters.AddWithValue("@Class_id", SqlDbType.Int).Value = teacher.teacher_class;
+                cmd.Parameters.AddWithValue("@Section_id", SqlDbType.Int).Value = teacher.teacher_section;
+                cmd.Parameters.AddWithValue("@day_id", SqlDbType.Int).Value = 2;
+                cmd.Parameters.AddWithValue("@remark_id", SqlDbType.Int).Value = DropDownList1.SelectedValue;
+                cmd.Parameters.AddWithValue("@month_id", SqlDbType.Int).Value = 3;
 
                 cmd.ExecuteNonQuery();
                 con.Close();
