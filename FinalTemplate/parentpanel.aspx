@@ -59,14 +59,16 @@
     <div class="news-page-wrapper">
            <div id="detail" class="edugate-layout-1" style="    background-color: rgba(144, 161, 174, 0.63)">
                                         <div class="edugate-image"><asp:Image ID="Image1" runat="server"  />
-                                               <div>
+                                                                          <div>
                <asp:FileUpload ID="FileUpload1"  runat="server" />
                <asp:Button class="btn-green" BackColor="#86bc42" BorderColor="#86bc42" ID="btnSave" Text="upload" runat="server" Height="30px" Width="70px" OnClick="btnSave_Click"></asp:Button>
                                         <asp:Label ID="Label3"  runat="server" Text="Label"></asp:Label>
                 <asp:Label ID="Label1" runat="server"></asp:Label>
                    </div>
+                          
                                         </div>
                <br/>
+
             
                                         <div class="edugate-content"><a href="news-detail.html" class="title">
                                                 
@@ -94,7 +96,13 @@
                                                 <div class="author item"><a href="#">Authorized ID : </a>&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="atype" Font-size="13" runat="server"></asp:Label></div>
                      
                                             </div>
-                                           
+              <%--                                                             <div>
+               <asp:FileUpload ID="FileUpload1"  runat="server" />
+               <asp:Button class="btn-green" BackColor="#86bc42" BorderColor="#86bc42" ID="btnSave" Text="upload" runat="server" Height="30px" Width="70px" OnClick="btnSave_Click"></asp:Button>
+                                        <asp:Label ID="Label3"  runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="Label1" runat="server"></asp:Label>
+                   </div>
+                          --%>                 
                                             <div class="description"></div>
                                           <%-- <button class="btn btn-green"><span>read more</span></button>--%>
 
@@ -228,15 +236,7 @@
                                    
                                 </div>--%>
                         </div>
-                        <div class="item-course" style="display:none">
-                            <div class="item-course-wrapper">
-                                <div class="icon-course"><i class="icons-img fa fa-male"></i></div>
-                                <div class="info-course"><a href="#" class="name-course">siddique</a>
-
-                                    <div class="info">check them out</div>
-                                </div>
-                            </div>
-                        </div>
+                     
                         
                     </div>
                 </div>     

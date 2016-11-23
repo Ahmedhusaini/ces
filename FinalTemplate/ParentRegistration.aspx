@@ -62,7 +62,7 @@
            },"please only Lowercase and must have digits ");
            $.validator.addMethod( "imageonly", function( value, element ) {
                return this.optional( element ) || /^([a-zA-Z0-9\s_\\.\-:])+(.png|.jpg|.gif)$/.test( value );
-           }, ".jpeg ,.png, .gif format allow only " );  
+           }, ".jpeg ,.png, .gif format allow only " );
            
 
            function validation() {

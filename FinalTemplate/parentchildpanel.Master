@@ -53,7 +53,7 @@
                 <div class="col-md-5 topbar-right text-right info-text3">
                     <div class="group-sign-in"><a href="#" class="login">
                         <asp:Label ID="fname" ForeColor="#86bc42" Font-size="12" runat="server" ></asp:Label>
-                        <asp:Label ID="lname" ForeColor="#86bc42" Font-size="12" runat="server" ></asp:Label></a><a href="register.html" class="register">Logout</a></div>
+                        <asp:Label ID="lname" ForeColor="#86bc42" Font-size="12" runat="server" ></asp:Label></a><a onserverclick="btn_logout_Click" runat="server"  title="logout" class="register">Logout</a></div>
                 </div>
             </div>
         </div>
