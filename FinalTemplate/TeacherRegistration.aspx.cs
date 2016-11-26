@@ -68,7 +68,7 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@secondary_email", SqlDbType.VarChar).Value = semail.Text;
                 cmd.Parameters.AddWithValue("@login_count", SqlDbType.Int).Value = 0;
                 cmd.Parameters.AddWithValue("@last_login_date", SqlDbType.Date).Value = DateTime.Now.ToString("");
-                cmd.Parameters.AddWithValue("@usertype_id", SqlDbType.Int).Value = 2;
+                cmd.Parameters.AddWithValue("@usertype_id", SqlDbType.Int).Value = 3;
                 cmd.Parameters.AddWithValue("@date_of_join", SqlDbType.Date).Value = DateTime.Now.ToString("");
                 cmd.Parameters.AddWithValue("@school_id", SqlDbType.VarChar).Value = DropDownList3.SelectedValue;
                 cmd.Parameters.AddWithValue("@class_id", SqlDbType.Int).Value = DropDownList4.SelectedValue;

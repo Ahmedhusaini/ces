@@ -47,31 +47,16 @@
            $(document).ready(function() {
                $('.rlp').removeClass("rlp");
                $('.container').css('width', '50%');
-               //$('div[class="register-title"]').css({
-               //    'margin-top': '0px',
-               //    'margin-bottom':'0px'
-               //});
-               centerform();
-               centerText( <%=ddl_type.ClientID%>);
-               centerText( <%=txt_username.ClientID%>);
-               centerText( <%=txt_password.ClientID%>);
                removeBackToTop();
+               sameheight('#<%=txt_password.ClientID%>');
+               sameheight('#<%=txt_username.ClientID%>');
+               sameheight('#<%=ddl_type.ClientID%>');
            });
 
-           function centerform() {
-               var windowHeight = $(window).height();
-               var formheight = $('div.register-wrappe').height();
-               var newheight = windowHeight - formheight;
-               $('div.register-wrappe').css('padding-top',newheight+" px");
+           function sameheight(id) {
+               $(id).css('height','35px');
            }
 
-           function centerText(control) {
-               $(control).css('text-align', 'center');
-           }
-
-           function invisiblediv() {
-               $('#divinvisible').delay(3200).fadeOut(1000);
-           }
            function removeBackToTop() {
                $('#back-top').css('display', 'none');
            }
@@ -96,17 +81,17 @@
 
                     </a>
                         ---->
-                    <div><img src="assets/images/logo-color-1.png" /></div>
+                    <div><img src="assets/images/logo-color-1.png" height="150px" /></div>
                     <%--<div class="register-title rlp-title">Sign In</div>--%>
-                    <div id="divinvisible" class="register-title rlp-title">
+                    <%--<div id="divinvisible" class="register-title rlp-title">--%>
                         <asp:Label runat="server" ID="lbl_error">error message</asp:Label>
-                    </div>
+                    <%--</div>--%>
                    
                     <asp:Panel ID="Panel1" runat="server">
                         <div class="register-form bg-w-form rlp-form">  
                                  
                             
-                            <div style="padding-left:131px">
+                            <div style="padding-left:95px">
                                  
 
                                     <label for="regname" class="control-label form-label">
@@ -115,10 +100,10 @@
                                     </label>
                                     <!--p.help-block Warning !-->
                                     <br />
-                              <asp:DropDownList ID="ddl_type" CssClass="form-control form-input" Width="331px" placeholder="----Select----" runat="server" ></asp:DropDownList>
+                              <asp:DropDownList ID="ddl_type" CssClass="form-control form-input" Width="331px"  placeholder="----Select----" runat="server" ></asp:DropDownList>
                                 </div>
 
-                                <div style="padding-left:131px">
+                                <div style="padding-left:95px">
 
                                     <label for="regname" class="control-label form-label">
                                         User Name<span class="highlight">*<br />
@@ -131,7 +116,7 @@
                                 
                                       
                                
-                                <div style="padding-left:131px">
+                                <div style="padding-left:95px">
                                     <label for="regname" class="control-label form-label">
                                         Password <span class="highlight">*<br />
                                         </span>
