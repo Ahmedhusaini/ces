@@ -134,6 +134,7 @@
     <Content Include="check_event.aspx" />
     <Content Include="Check_News.aspx" />
     <Content Include="ContactUs_Student.aspx" />
+    <Content Include="DefineFeesStructure.aspx" />
     <Content Include="Download_Homework.aspx" />
     <Content Include="images\Events\bicycle-1280x720.jpg" />
     <Content Include="images\Events\code.png" />
@@ -419,6 +420,13 @@
     </Compile>
     <Compile Include="Date_sheet.aspx.designer.cs">
       <DependentUpon>Date_sheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DefineFeesStructure.aspx.cs">
+      <DependentUpon>DefineFeesStructure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefineFeesStructure.aspx.designer.cs">
+      <DependentUpon>DefineFeesStructure.aspx</DependentUpon>
     </Compile>
     <Compile Include="Download_Homework.aspx.cs">
       <DependentUpon>Download_Homework.aspx</DependentUpon>

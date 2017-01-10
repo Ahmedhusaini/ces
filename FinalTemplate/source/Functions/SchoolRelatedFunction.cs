@@ -91,11 +91,42 @@ namespace FinalTemplate.source.Functions
             }
             return foundcourse;
         }
+
+        public int DefineFeesStructure(string _registrationfees, string _addmissionfees, string _securityfees, string _annualfees, string _tuitionfees, string _transportfees1, string _transportfees2, string _transportfees3, string _transportfees4)
+        {
+            mydb.CreateConnection();
+            mydb.InitializeSQLCommandObject(mydb.GetCurrentConnection, "spDefineFeesStructure", true);
+            mydb.obj_sqlcommand.Parameters.Add("@registrationfees", SqlDbType.VarChar, 20).Value = _registrationfees;
+            mydb.obj_sqlcommand.Parameters.Add("@addmissionfees", SqlDbType.VarChar, 20).Value = _addmissionfees;
+            mydb.obj_sqlcommand.Parameters.Add("@securityfees", SqlDbType.VarChar, 20).Value = _securityfees;
+            mydb.obj_sqlcommand.Parameters.Add("@annualfees", SqlDbType.VarChar, 20).Value = _annualfees;
+            mydb.obj_sqlcommand.Parameters.Add("@tuitionfees", SqlDbType.VarChar, 20).Value = _tuitionfees;
+            mydb.obj_sqlcommand.Parameters.Add("@transport1", SqlDbType.VarChar, 20).Value = _transportfees1;
+            mydb.obj_sqlcommand.Parameters.Add("@transport2", SqlDbType.VarChar, 20).Value = _transportfees2;
+            mydb.obj_sqlcommand.Parameters.Add("@transport3", SqlDbType.VarChar, 20).Value = _transportfees3;
+            mydb.obj_sqlcommand.Parameters.Add("@transport4", SqlDbType.VarChar, 20).Value = _transportfees4;
+            mydb.obj_sqlcommand.Parameters.Add("@schoolid", SqlDbType.VarChar, 50).Value = JSchool.SchoolID;
+            mydb.obj_sqlcommand.Parameters.Add("@opfeesid", SqlDbType.Int).Direction = ParameterDirection.Output;
+            try
+            {
+                mydb.OpenConnection();
+                if (mydb.obj_sqlcommand.ExecuteNonQuery() > 0)
+                {
+                    return 1;
+                }
+            }
+            catch (Exception exception)
+            {
+                HttpContext.Current.Response.Write("Error:" + exception.ToString());
+            }
+            return 0;
+        }
+
         public int TotalTeachers(string _schoolID)
         {
             int foundteachers = 0;
             mydb.CreateConnection();
-            mydb.InitializeSQLCommandObject(mydb.GetCurrentConnection, "NumberOfTeachers",true);
+            mydb.InitializeSQLCommandObject(mydb.GetCurrentConnection, "NumberOfTeachers", true);
             try
             {
                 mydb.obj_sqlcommand.Parameters.AddWithValue("@schoolid", _schoolID);
@@ -121,7 +152,7 @@ namespace FinalTemplate.source.Functions
             }
             return foundteachers;
         }
-        
+
 
         public string GetSchoolDetails()
         {
