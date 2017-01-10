@@ -136,6 +136,7 @@
     <Content Include="ContactUs_Student.aspx" />
     <Content Include="DefineFeesStructure.aspx" />
     <Content Include="Download_Homework.aspx" />
+    <Content Include="EditMarksheet.aspx" />
     <Content Include="images\Events\bicycle-1280x720.jpg" />
     <Content Include="images\Events\code.png" />
     <Content Include="images\Events\codemap.png" />
@@ -434,6 +435,13 @@
     </Compile>
     <Compile Include="Download_Homework.aspx.designer.cs">
       <DependentUpon>Download_Homework.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditMarksheet.aspx.cs">
+      <DependentUpon>EditMarksheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditMarksheet.aspx.designer.cs">
+      <DependentUpon>EditMarksheet.aspx</DependentUpon>
     </Compile>
     <Compile Include="PackageInformation.aspx.cs">
       <DependentUpon>PackageInformation.aspx</DependentUpon>
