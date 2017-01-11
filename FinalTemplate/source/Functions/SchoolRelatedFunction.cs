@@ -68,6 +68,14 @@ namespace FinalTemplate.source.Functions
             return mydb.InsertQuery("tbl_maplocation", cols, vals);
         }
 
+        public int PostJob(string _title, string _description, int _jobcategory)
+        {
+            string[] cols = { "job_title", "job_description", "jcat_id", "school_id" };
+            object[] vals = { _title, _description, _jobcategory, JSchool.SchoolID };
+            return mydb.InsertQuery("tbl_post_jobs", cols, vals);
+
+        }
+
         public int TotalCourse(string _schoolID)
         {
             int foundcourse = 0;

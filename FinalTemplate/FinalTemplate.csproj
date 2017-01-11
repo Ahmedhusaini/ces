@@ -140,7 +140,6 @@
     <Content Include="ContactUs_Student.aspx" />
     <Content Include="DefineFeesStructure.aspx" />
     <Content Include="Download_Homework.aspx" />
-    <Content Include="EditMarksheet.aspx" />
     <Content Include="images\Events\bicycle-1280x720.jpg" />
     <Content Include="images\Events\code.png" />
     <Content Include="images\Events\codemap.png" />
@@ -168,6 +167,7 @@
     <Content Include="PackageInformation.aspx" />
     <Content Include="parentpanel.aspx" />
     <Content Include="parent_view_child.aspx" />
+    <Content Include="PostJob.aspx" />
     <Content Include="PostNews.aspx" />
     <Content Include="School_Rgistration.aspx" />
     <Content Include="source\Jvalidation\blacklist_keywords.txt" />
@@ -447,19 +447,19 @@
     <Compile Include="Download_Homework.aspx.designer.cs">
       <DependentUpon>Download_Homework.aspx</DependentUpon>
     </Compile>
-    <Compile Include="EditMarksheet.aspx.cs">
-      <DependentUpon>EditMarksheet.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="EditMarksheet.aspx.designer.cs">
-      <DependentUpon>EditMarksheet.aspx</DependentUpon>
-    </Compile>
     <Compile Include="PackageInformation.aspx.cs">
       <DependentUpon>PackageInformation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PackageInformation.aspx.designer.cs">
       <DependentUpon>PackageInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PostJob.aspx.cs">
+      <DependentUpon>PostJob.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostJob.aspx.designer.cs">
+      <DependentUpon>PostJob.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\Functions\JEvents.cs" />
     <Compile Include="source\Functions\Jfunctionteacher.cs" />

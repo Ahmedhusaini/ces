@@ -105,6 +105,7 @@
                                 <li><a href="PackageInformation.aspx" class="link-page">View Package Information</a></li>
                                 <li><a href="DefineFeesStructure.aspx" class="link-page">Define Fees Structure</a></li>
                                 <li><a href="AddSchoolLocation.aspx" class="link-page">Add Location Coordinates</a></li>
+                                <li><a href="PostJob.aspx" class="link-page">Post Job</a></li>
                             </ul>
                         </li> 
                          <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Contact<span class="fa fa-angle-down icons-dropdown"></span></a>
