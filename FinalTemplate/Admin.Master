@@ -23,7 +23,7 @@
     <link type="text/css" rel="stylesheet" href="assets/libs/bootstrap-3.3.5/css/bootstrap.css"/>
     <link type="text/css" rel="stylesheet" href="assets/libs/owl-carousel-2.0/assets/owl.carousel.css"/>
     <link type="text/css" rel="stylesheet" href="assets/libs/selectbox/css/jquery.selectbox.css"/>
-    <link type="text/css" rel="stylesheet" href="assets/libs/fancybox/css/jquery.fancybox.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/libs/fancybox/css/jquery.fancybox.css"/> 
     <link type="text/css" rel="stylesheet" href="assets/libs/fancybox/css/jquery.fancybox-buttons.css"/>
     <link type="text/css" rel="stylesheet" href="assets/libs/media-element/build/mediaelementplayer.min.css"/>
     
@@ -104,6 +104,7 @@
                                 <li><a href="UpdateSchoolInformation.aspx" class="link-page">Update School Profile</a></li>
                                 <li><a href="PackageInformation.aspx" class="link-page">View Package Information</a></li>
                                 <li><a href="DefineFeesStructure.aspx" class="link-page">Define Fees Structure</a></li>
+                                <li><a href="AddSchoolLocation.aspx" class="link-page">Add Location Coordinates</a></li>
                             </ul>
                         </li> 
                          <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Contact<span class="fa fa-angle-down icons-dropdown"></span></a>

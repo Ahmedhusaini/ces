@@ -170,7 +170,7 @@ namespace FinalTemplate.source.Database
                         else
                             break;
                     }
-                    else if (CurrentColumnType == "Syste.Decimal")
+                    else if (CurrentColumnType == "System.Decimal" || CurrentColumnType == "System.Double")
                     {
                         //if black listed keywords are filtered successfully. Then converting actual value to respective column type match as sql server database table
                         if (Jvalidate.FilterBlackLIstKeywords(columnArray))

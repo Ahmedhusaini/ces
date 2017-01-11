@@ -61,6 +61,13 @@ namespace FinalTemplate.source.Functions
             return foundstudent;
         }
         //Returns number of total courses with provided school id.
+        public int AddCoordinates(double _longitude, double latitude)
+        {
+            string[] cols = { "school_id", "longitude", "latitude" };
+            object[] vals = { JSchool.SchoolID, _longitude, latitude };
+            return mydb.InsertQuery("tbl_maplocation", cols, vals);
+        }
+
         public int TotalCourse(string _schoolID)
         {
             int foundcourse = 0;

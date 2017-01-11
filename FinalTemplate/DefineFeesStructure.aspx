@@ -20,7 +20,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr class="table-row">
-                                                    <td class="col-6"><span>Addmission Fees</span></td>
+                                                    <td class="col-6"><span>Admission Fees</span></td>
                                                     <td class="col-6">
                                                         <asp:TextBox runat="server" ID="txtAddmissionFees"></asp:TextBox>
                                                     </td>

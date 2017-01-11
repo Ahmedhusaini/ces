@@ -78,6 +78,7 @@
   <ItemGroup>
     <Content Include="About_Us.aspx" />
     <Content Include="AddEvent.aspx" />
+    <Content Include="AddSchoolLocation.aspx" />
     <Content Include="AllEvents.aspx" />
     <Content Include="assets\AddEventDatePicker\assets\css\bootstrap-theme.css" />
     <Content Include="assets\AddEventDatePicker\assets\css\bootstrap-theme.min.css" />
@@ -130,6 +131,9 @@
     <Content Include="assets\images\cesThemeImages\teachers %284%29.jpg" />
     <Content Include="assets\images\cesThemeImages\teachers %285%29.jpg" />
     <Content Include="assets\images\crissxcross.png" />
+    <Content Include="assets\images\map-instruction\1.png" />
+    <Content Include="assets\images\map-instruction\2.png" />
+    <Content Include="assets\images\map-instruction\3.png" />
     <Content Include="Attendance_Student.aspx" />
     <Content Include="check_event.aspx" />
     <Content Include="Check_News.aspx" />
@@ -366,6 +370,13 @@
     </Compile>
     <Compile Include="AddEvent.aspx.designer.cs">
       <DependentUpon>AddEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddSchoolLocation.aspx.cs">
+      <DependentUpon>AddSchoolLocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddSchoolLocation.aspx.designer.cs">
+      <DependentUpon>AddSchoolLocation.aspx</DependentUpon>
     </Compile>
     <Compile Include="AllEvents.aspx.cs">
       <DependentUpon>AllEvents.aspx</DependentUpon>
