@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FinalTemplate
-{
-
-
-    public partial class parentpanel
-    {
-
+namespace FinalTemplate {
+    
+    
+    public partial class parentpanel {
+        
         /// <summary>
         /// head control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
-
+        
         /// <summary>
         /// colorskins control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlLink colorskins;
-
+        
         /// <summary>
         /// fname control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label fname;
-
+        
         /// <summary>
         /// lname control.
         /// </summary>
@@ -49,7 +47,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lname;
-
+        
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -58,7 +56,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
         /// ContentPlaceHolder1 control.
         /// </summary>
