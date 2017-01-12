@@ -13,7 +13,13 @@ namespace FinalTemplate
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-
+            string[] filepaths = Directory.GetFiles(Server.MapPath("~/files"));
+            List<ListItem> files = new List<ListItem>();
+            foreach(string filepath in filepaths)  
+            {
+             string filename=Path.GetFileName(filepath);
+             files.Add(new ListItem(filename,"~/file/"+filename));
+                            }
 		}
 
 
@@ -29,12 +35,9 @@ namespace FinalTemplate
             dt.Columns.Add("Size", typeof(string));
             dt.Columns.Add("Type", typeof(string));
 
-            //foreach(string strfile in Directory.GetFiles(Server.MapPath("~/files/")));
-            //{
-            //    FileInfo fi = new FileInfo(strfile);
-            //    dt.Rows.Add(fi.Name, fi.Length, fi.Extension);
+       
 
-            //}
+          
             GridView1.DataSource = dt;
             GridView1.DataBind();
         } 
