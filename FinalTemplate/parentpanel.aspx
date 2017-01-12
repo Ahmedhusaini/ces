@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
 
-     <script src="assets/js/jquery-2.2.3.js"></script>  
+     <script src="assets/js/jquery-2.2.3.js"></script>  <script src="assets/js/jquery.validate.js"></script>
    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.js" type="text/javascript"></script>
 <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/themes/start/jquery-ui.css"
@@ -22,6 +22,7 @@
             $('[title="Dialog"]').css('dsiplay', 'none'),
 
                 check();
+            validation();
 
           
         });
@@ -44,6 +45,25 @@
             })
             
         }
+        function validation() {
+            $("#form1").validate({
+
+                rules: {
+                    <%=TextBox1.UniqueID%>:{
+                        required:true,
+
+                    }
+                },
+                messages: {
+                     <%=TextBox1.UniqueID%>:{
+                         required:"You have to mention your Child's ID"
+
+                     }
+                }
+
+            });
+
+        }
 
 
 
@@ -52,6 +72,33 @@
     </script>
     <style type="text/css">
        .header { text-align:inherit; }
+         }
+         label.error {
+            color: red;
+            display: inline-flexbox;
+            display:block;
+           
+        }
+        input.error {
+            border:1px solid red;
+            float: none; color: red;
+        padding-left: .3em; vertical-align: top;
+        }
+        .modalBackground {
+        opacity: 0.6;
+    background-color: black;
+        
+        }
+        .modalpopup
+{
+    padding: 20px 0px 24px 10px;
+    position:relative;
+    width:450px;
+    height:66px;
+    background-color:#86BC42;
+    border:1px solid black;
+}
+
    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -81,6 +128,7 @@
                <asp:Button class="btn-green" BackColor="#86bc42" BorderColor="#86bc42" ID="btnSave" Text="upload" runat="server" Height="30px" Width="70px" OnClick="btnSave_Click"></asp:Button>
                                         <asp:Label ID="Label3"  runat="server" Text="Label"></asp:Label>
                 <asp:Label ID="Label1" runat="server"></asp:Label>
+<asp:Label ID="Label2" runat="server"></asp:Label>
                    </div>
                           
                                         </div>
@@ -116,8 +164,9 @@
                                             <div class="info">
                                                 <div class="author item"><a href="#">Add child record to ur profile  &nbsp;&nbsp;</div>
                                                                   
-                                                <asp:Button ID="btnShow" runat="server" Text="ADD" />
+                                                <asp:Button ID="btnShow" runat="server" Text="ADD" OnClick="btnShow_Click" />
 
+                                               
                                                 <div id="pop">
                                                     <center>
 
@@ -134,8 +183,9 @@
 
                                                             &nbsp;&nbsp; &nbsp;<asp:Button ID="Button2" runat="server" Text="Cancel" />
 
+
                                                         </asp:Panel>
-                                                        <asp:ModalPopupExtender ID="ModalPopupExtender1" runat="server" CancelControlID="Button2" PopupControlID="Panel1" TargetControlID="btnShow" BackgroundCssClass="modalBackground">
+                                                        <asp:ModalPopupExtender ID="ModalPopupExtender1" runat="server" CancelControlID="Button2" PopupControlID="Panel1" TargetControlID="btnShow" BackgroundCssClass="modalBackground" >
 
                                                         </asp:ModalPopupExtender>
                                                     </center>

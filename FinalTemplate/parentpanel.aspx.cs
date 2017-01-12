@@ -63,6 +63,8 @@ namespace FinalTemplate
 
 
                 Parents.GetParentsID(Session["userid"].ToString());
+                Label2.Text = Parents.parentschild;
+                
 
 
 
@@ -90,12 +92,6 @@ namespace FinalTemplate
 
 
                 //DropDownList1.Enabled = false;
-
-
-
-
-
-
 
             }
 
@@ -170,7 +166,35 @@ namespace FinalTemplate
 
         protected void Button1_Click2(object sender, EventArgs e)
         {
+            Parents objp = new Parents();
+            if(
+            objp.parentchild(TextBox1.Text)>0)
+             {
+                Response.Write("<script>alert('Chid record has been added successfully.');</script>");
+            }
+            else
+            {
+                Response.Write("<script>alert('Error.');</script>");
+            }
+        }
 
+        protected void btnShow_Click(object sender, EventArgs e)
+        {
+            
+            //Parents objp = new Parents();
+            //if (
+            //objp.parentc() > 0)
+            //{
+            //    Response.Write("<script>alert('Job successfully posted.');</script>");
+            //}
+            //else
+            //{
+            //    Response.Write("<script>alert('Error uccured while posting job.');</script>");
+            //}
+
+           
+          
+                            
         }
 
 
