@@ -67,6 +67,22 @@ namespace FinalTemplate.source.Functions
             }
         }
 
+        public int parentchild(string _student) { 
+            
+            string[] column = {"Parent_ID","Std_id"};
+            object[] val = { Parents.parentschild, _student };
+            return mydatabse.InsertQuery("[tbl_P&S_relation]", column, val);
+ 
+        }
+
+        public int parentc()
+        {
+
+            string[] col = { "Parent_ID" };
+            object[] value = { Parents.parentschild };
+            return mydatabse.InsertQuery("[tbl_P&S_relation]", col, value);
+        }
+
         static public void childern(string child)
         {
             mydatabse.CreateConnection();
