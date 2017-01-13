@@ -32,6 +32,7 @@ namespace FinalTemplate
         {
            try
             {
+                TextBox2.Text = "shahwaizhasan106@gmail.com";
                  SmtpClient client=new SmtpClient ("smtp.gmail.com",587);
                  client.EnableSsl=true;
                  client.Timeout=10000;
