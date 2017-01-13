@@ -16,10 +16,12 @@
      <th class="col-2">
                      <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" /></th>
               </tr>
+              <tr>
+                  <asp:Label ID="Label1" runat="server" Text="Message"></asp:Label></tr>
           </thead>
               <tr class="table-row">
                   <td>
-                  <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
+                  <asp:GridView ID="GridView1" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
                       <Columns>
                           <asp:TemplateField HeaderText="File">
                               <ItemTemplate>
