@@ -556,6 +556,7 @@
     <Compile Include="source\Functions\SchoolRelatedFunction.cs" />
     <Compile Include="source\Functions\SParents.cs" />
     <Compile Include="source\Functions\student.cs" />
+    <Compile Include="source\Functions\studentid.cs" />
     <Compile Include="source\Functions\StudentUpdate.cs" />
     <Compile Include="source\Functions\teacher.cs" />
     <Compile Include="source\Functions\TeacherUpdate.cs" />

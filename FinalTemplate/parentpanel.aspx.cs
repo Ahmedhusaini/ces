@@ -18,6 +18,10 @@ namespace FinalTemplate
     {
         private Database myDatabase = new Database("ces");
         SqlConnection con = new SqlConnection(@"Data Source=SHAHERYAR\SQLEXPRESS;Initial Catalog=ces;Integrated Security=True");
+        
+        Parents objp = new Parents();
+        studentid objstd = new studentid();
+        private string studentexists;
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -166,15 +170,27 @@ namespace FinalTemplate
 
         protected void Button1_Click2(object sender, EventArgs e)
         {
-            Parents objp = new Parents();
-            if(
-            objp.parentchild(TextBox1.Text)>0)
-             {
-                Response.Write("<script>alert('Chid record has been added successfully.');</script>");
+            objstd.students = "\'" + TextBox1.Text + "\'";
+
+          studentexists = objstd.checkstudentid(objstd.students);
+            
+
+
+            if (studentexists=="true")
+            {
+
+                if (objp.parentchild(TextBox1.Text) > 0)
+                {
+                    Response.Write("<script>alert('Chid record has been added successfully.');</script>");
+                }
+                else
+                {
+                    Response.Write("<script>alert('Error.');</script>");
+                }
             }
             else
             {
-                Response.Write("<script>alert('Error.');</script>");
+                Response.Write("<script>alert('Not Exists .');</script>");
             }
         }
 

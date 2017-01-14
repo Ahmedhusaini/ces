@@ -91,12 +91,12 @@
         }
         .modalpopup
 {
-    padding: 20px 0px 24px 10px;
-    position:relative;
-    width:450px;
-    height:66px;
-    background-color:#86BC42;
-    border:1px solid black;
+       position: fixed;
+    z-index: 100001;
+    left: 726.5px;
+    top: 304px;
+    background-color: #86BC42;
+    border-color: #86BC42;
 }
 
    </style>
