@@ -14,7 +14,7 @@ using FinalTemplate.source.WebServices;
 
 namespace FinalTemplate
 {
-	public partial class EditMarksheet : System.Web.UI.Page
+	public partial class Teacher_Marksheet : System.Web.UI.Page
 	{
         string a = ConfigurationManager.ConnectionStrings["ces"].ConnectionString;
         Database db = new Database("ces");
@@ -25,7 +25,8 @@ namespace FinalTemplate
                  string[] col = { "General_Id" };
                  string[] colwhere = { "authorized_id" };
                  string[] whereoperator = { "=" };
-                 string[] multiwhere = { "" };  
+                 string[] multiwhere = { "" };
+              
              }
             else
             {
@@ -47,8 +48,8 @@ namespace FinalTemplate
                  cmd.CommandType = System.Data.CommandType.StoredProcedure;
  
                  cmd.Parameters.AddWithValue("@marksheet_id", SqlDbType.Int).Value = marksheet_id + 1;
-                 cmd.Parameters.AddWithValue("@teacher_id", SqlDbType.Int).Value = 3;
-                 cmd.Parameters.AddWithValue("@school_id", SqlDbType.VarChar).Value = "3/C/jah/E/owa/S/8/30/2016/00:08:00/9" ;       
+                 cmd.Parameters.AddWithValue("@teacher_id", SqlDbType.Int).Value = teacher.teacherid;
+                 cmd.Parameters.AddWithValue("@std_id", SqlDbType.VarChar).Value = "C/sha/E/4/S/4/11/4";       
                  cmd.Parameters.AddWithValue("@marksheet", SqlDbType.VarChar).Value = marksheet_name;
  
                  con.Open();

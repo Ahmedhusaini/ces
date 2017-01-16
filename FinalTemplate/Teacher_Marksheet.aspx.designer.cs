@@ -10,7 +10,7 @@
 namespace FinalTemplate {
     
     
-    public partial class EditMarksheet {
+    public partial class Teacher_Marksheet {
         
         /// <summary>
         /// FileUpload1 control.

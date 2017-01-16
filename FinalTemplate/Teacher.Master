@@ -96,7 +96,7 @@
                                 <li><a href="Teacher_timetable.aspx" class="link-page">View Teacher Timetable</a></li>
                                 <li><a href="about-us.html" class="link-page">Syllabus</a></li>
                                 <li><a href="categories.html" class="link-page">Date Sheet</a></li>
-                                <li><a href="EditMarksheet.aspx" class="link-page">Upload Marksheet</a></li>
+                                <li><a href="Teacher_Marksheet.aspx" class="link-page">Upload Marksheet</a></li>
                                  
                             </ul>
                         </li>
