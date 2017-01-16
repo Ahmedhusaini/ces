@@ -13,6 +13,7 @@
                 $('#<%=Dp2.ClientID%>').css('display', 'none'),
                 $('#<%=Dp3.ClientID%>').css('display', 'none'),
             //$('li[title="time"]').attr("herf", "Time Table")
+            $('#<%=Button1.ClientID%>').css('padding-right','112px')
 
             scroll();
 
@@ -117,6 +118,9 @@
     <br />
     <br />
         <div class="container" style="    margin-right: 450px;">
+        <br/>
+            <br/>
+           
         <div id="myDiv" class="underline" style="height: 20px; text-align: left;">
                 <h2> TIME TABLE&nbsp;&nbsp;&nbsp;&nbsp; </h2>
              
@@ -127,16 +131,16 @@
     <asp:GridView ID="GridView1"  class="edu-table-responsive"  runat="server"  AutoGenerateColumns="False" Width="1220px"   ForeColor="#86BC42" AllowPaging="True" AllowSorting="True" CellPadding="4" GridLines="None" DataSourceID="SqlDataSource2">
         <Columns>
             <asp:BoundField DataField="day" HeaderText="day" SortExpression="day" />
-            <asp:BoundField DataField="period_1" HeaderText="period_1" SortExpression="period_1" />
-            <asp:BoundField DataField="period_2" HeaderText="period_2" SortExpression="period_2" />
-            <asp:BoundField DataField="period_3" HeaderText="period_3" SortExpression="period_3" />
+            <asp:BoundField DataField="period_1" HeaderText="Unit 1" SortExpression="period_1" />
+            <asp:BoundField DataField="period_2" HeaderText="Unit 2" SortExpression="period_2" />
+            <asp:BoundField DataField="period_3" HeaderText="Unit 3" SortExpression="period_3" />
            
             
-            <asp:BoundField DataField="period_4" HeaderText="period_4" SortExpression="period_4" />
-            <asp:BoundField DataField="period_5" HeaderText="period_5" SortExpression="period_5" />
-            <asp:BoundField DataField="period_6" HeaderText="period_6" SortExpression="period_6" />
-            <asp:BoundField DataField="period_7" HeaderText="period_7" SortExpression="period_7" />
-            <asp:BoundField DataField="period_8" HeaderText="period_8" SortExpression="period_8" />
+            <asp:BoundField DataField="period_4" HeaderText="Unit 4" SortExpression="period_4" />
+            <asp:BoundField DataField="period_5" HeaderText="Unit 5" SortExpression="period_5" />
+            <asp:BoundField DataField="period_6" HeaderText="Unit 6" SortExpression="period_6" />
+            <asp:BoundField DataField="period_7" HeaderText="Unit 7" SortExpression="period_7" />
+            <asp:BoundField DataField="period_8" HeaderText="Unit 8" SortExpression="period_8" />
            
             
         </Columns>
@@ -153,8 +157,9 @@
 
         
     </asp:GridView>
-            
-            <asp:Button ID="Button1" runat="server" Text="Download" OnClick="Button1_Click" />
+            <br/>
+            <asp:Button ID="Button1" class="btn btn-register btn-green" runat="server" Text="Download" OnClick="Button1_Click" />
+                
                 </div>
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="sp_chileTimetable" SelectCommandType="StoredProcedure">
         <SelectParameters>
@@ -173,7 +178,12 @@
              <br/>
              <br/>
              <br/>
-            
+             <br/>
+            <br/>
+            <br/>
+ <br/>
+            <br/>
+                       
               <div id="homework" class="underline" style="height: 20px; text-align: left;">
                 <h2> Home Work&nbsp;&nbsp;&nbsp;&nbsp; </h2>
              
@@ -262,7 +272,7 @@
             <asp:Label ID="lbldatetime" runat="server"></asp:Label>
           <%--  <asp:TextBox ID="TextBox1" type="date" AutoPostBack="True" runat="server"></asp:TextBox>--%>
 
-        Month    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True">
+      <%--  Month    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True">
                 <asp:ListItem Value="1">January</asp:ListItem>
                 <asp:ListItem Value="2">Feburary</asp:ListItem>
                 <asp:ListItem Value="3">March</asp:ListItem>
@@ -275,7 +285,7 @@
                 <asp:ListItem Value="10">Octuber</asp:ListItem>
                 <asp:ListItem Value="11">November</asp:ListItem>
                 <asp:ListItem Value="12">December</asp:ListItem>
-            </asp:DropDownList>
+            </asp:DropDownList>--%>
 
 
 

@@ -18,6 +18,10 @@ namespace FinalTemplate
     {
         private Database myDatabase = new Database("ces");
         SqlConnection con = new SqlConnection(@"Data Source=SHAHERYAR\SQLEXPRESS;Initial Catalog=ces;Integrated Security=True");
+        
+        Parents objp = new Parents();
+        studentid objstd = new studentid();
+        private string studentexists;
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -63,6 +67,8 @@ namespace FinalTemplate
 
 
                 Parents.GetParentsID(Session["userid"].ToString());
+                Label2.Text = Parents.parentschild;
+                
 
 
 
@@ -90,12 +96,6 @@ namespace FinalTemplate
 
 
                 //DropDownList1.Enabled = false;
-
-
-
-
-
-
 
             }
 
@@ -166,6 +166,51 @@ namespace FinalTemplate
             {
                 Response.Write("Make sure your Picture Name is Valid means proper name like 'PICTURE1'");
             }
+        }
+
+        protected void Button1_Click2(object sender, EventArgs e)
+        {
+            objstd.students = "\'" + TextBox1.Text + "\'";
+
+          studentexists = objstd.checkstudentid(objstd.students);
+            
+
+
+            if (studentexists=="true")
+            {
+
+                if (objp.parentchild(TextBox1.Text) > 0)
+                {
+                    Response.Write("<script>alert('Chid record has been added successfully.');</script>");
+                }
+                else
+                {
+                    Response.Write("<script>alert('Error.');</script>");
+                }
+            }
+            else
+            {
+                Response.Write("<script>alert('Not Exists .');</script>");
+            }
+        }
+
+        protected void btnShow_Click(object sender, EventArgs e)
+        {
+            
+            //Parents objp = new Parents();
+            //if (
+            //objp.parentc() > 0)
+            //{
+            //    Response.Write("<script>alert('Job successfully posted.');</script>");
+            //}
+            //else
+            //{
+            //    Response.Write("<script>alert('Error uccured while posting job.');</script>");
+            //}
+
+           
+          
+                            
         }
 
 

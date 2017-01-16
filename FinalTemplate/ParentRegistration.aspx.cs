@@ -60,7 +60,7 @@ namespace FinalTemplate
                     Convert.ToInt32(accountp.Text),pemail.Text,semail.Text);
                 if (result == "true")
                 {
-                    //JFunctions.SendEmail(pemail.Text, "CES - Registration", EmailBody());
+                    JFunctions.SendEmail(pemail.Text, "CES - Registration", EmailBody());
 
                     //ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "tmp", "popup();", true);
                     Response.Write("Register");

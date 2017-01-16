@@ -210,3 +210,23 @@
 .roundborder {
     border-radius:5px;
 }
+.modalBackground
+{
+       position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 0;
+    width: 1903px;
+    height: 2322px;
+    background-color: #9ea7ad;
+    opacity: 0.5;
+}
+.modalpopup
+{
+       position: fixed;
+    z-index: 100001;
+    left: 726.5px;
+    top: 304px;
+    background-color: #86BC42;
+    border-color: #86BC42;
+}
