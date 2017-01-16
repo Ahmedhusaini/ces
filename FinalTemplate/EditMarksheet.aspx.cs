@@ -4,26 +4,88 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
+using FinalTemplate.source.Database;
+using FinalTemplate.source.Functions;
+using FinalTemplate.source.WebServices;
 
 namespace FinalTemplate
 {
 	public partial class EditMarksheet : System.Web.UI.Page
 	{
+        string a = ConfigurationManager.ConnectionStrings["ces"].ConnectionString;
+        Database db = new Database("ces");
 		protected void Page_Load(object sender, EventArgs e)
-		{
-
+        {
+            if (Session["userid"] != null)
+            {
+                 string[] col = { "General_Id" };
+                 string[] colwhere = { "authorized_id" };
+                 string[] whereoperator = { "=" };
+                 string[] multiwhere = { "" };  
+             }
+            else
+            {
+                 Response.Redirect("Default.aspx");
+            }
 		}
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            int m, g, u, i, s, c;
-            m = Convert.ToInt32(TextBox1.Text);
-            g = Convert.ToInt32(TextBox2.Text);
-            u = Convert.ToInt32(TextBox3.Text);
-            i = Convert.ToInt32(TextBox4.Text);
-            s = Convert.ToInt32(TextBox5.Text);
-            c = Convert.ToInt32(TextBox6.Text);
-            TextBox7.Text = Convert.ToString(((m + g + u + i + s + c) / 6));
+            FileInfo f = new FileInfo(FileUpload1.FileName);
+            string marksheet_name = f.Name;
+    
+             int marksheet_id = Convert.ToInt32(db.GetLastValueByColumnName("marksheet_id", "tbl_Marksheet"));
+ 
+             using (SqlConnection con = new SqlConnection(a))
+             {
+ 
+                 SqlCommand cmd = new SqlCommand("SP_Insert_Marksheet", con);
+                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
+ 
+                 cmd.Parameters.AddWithValue("@marksheet_id", SqlDbType.Int).Value = marksheet_id + 1;
+                 cmd.Parameters.AddWithValue("@teacher_id", SqlDbType.Int).Value = 3;
+                 cmd.Parameters.AddWithValue("@school_id", SqlDbType.VarChar).Value = "3/C/jah/E/owa/S/8/30/2016/00:08:00/9" ;       
+                 cmd.Parameters.AddWithValue("@marksheet", SqlDbType.VarChar).Value = marksheet_name;
+ 
+                 con.Open();
+                 cmd.ExecuteNonQuery();
+             }
+             if (FileUpload1.HasFile)
+              {
+                // FileUpload1.PostedFile.SaveAs(Server.MapPath("~/files/") + FileUpload1.FileName);
+                 string fileExtension = System.IO.Path.GetExtension(FileUpload1.FileName);
+ 
+                 if (fileExtension.ToLower() != ".xlsx" && fileExtension.ToLower() != ".xlsm")
+                 {
+                     Label1.Text = "Only Excel File are allowed to upload";
+                     Label1.ForeColor = System.Drawing.Color.Red;
+                 }
+                 else
+                 {
+                     int filesize = FileUpload1.PostedFile.ContentLength;
+                     if (filesize > 2097152)
+                     {
+                         Label1.Text = "Maximum Size of 2MB can upload";
+                         Label1.ForeColor = System.Drawing.Color.Red;
+                     }
+                    else
+                     {
+                         FileUpload1.SaveAs(Server.MapPath("~/files" + FileUpload1.FileName));
+                         Label1.Text = "file uploaded";
+                         Label1.ForeColor = System.Drawing.Color.Green;
+                         // FileUpload1.PostedFile.SaveAs(Server.MapPath("~/files") + FileUpload1.FileName);
+                     }
+                 }
+             }
+             else
+             {
+                 Label1.Text = "Please Upload the File";
+                Label1.ForeColor = System.Drawing.Color.Red;
+              }
         }
 	}
 }
