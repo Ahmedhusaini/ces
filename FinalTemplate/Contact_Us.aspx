@@ -66,7 +66,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label form-label">EMAIL <span class="highlight">*</span>
-                                    <asp:TextBox ID="TextBox2" CssClass="form-control form-input" runat="server" Width="455px" Height="40px"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox2" CssClass="form-control form-input" runat="server" Width="455px" Height="40px" ReadOnly="True"></asp:TextBox>
                                 </label>
                                 <!--label.control-label.form-label.warning-label(for="")-->
                             </div>
@@ -99,8 +99,50 @@
                 </form>
             </div>
         </div><br />
+
+    <input type="text" id="mapsearch" size="50" />
+    <div id="map-curve"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCs6JNdcD-avNuHSyp-M2ceRrMKlG9FIFQ&libraries=places"
+  type="text/javascript"></script>
+    <script>
+        var map = new google.maps.Map(document.getElementById('#map-curve'),{
+            center:{
+                Lat:27.72,
+                Lng:85.36
+            },
+            zoom:15
+        });
+
+        var marker = new google.maps.Marker({
+            position: {
+                Lat: 27.72,
+                Lng: 85.36
+            },
+            map: map,
+            draggable:true
+        });
+
+        var searchbox = new google.maps.places.searchbox(document.getElementById('mapsearch'));
+        google.maps.event.addListener(searchbox, 'places_changed', function () {
+            //console.log(searchbox.getplaces());
+            var places = searchbox.getplaces();
+            var bounds = new google.maps.latlngbounds();
+            var i, place;
+
+            for (i = 0; place = places[i]; i++){
+                bounds.extend(place.geometry.Location);
+            marker.setposition(place.geometry.Location);
+        }
+            map.fitbounds(bounds);
+            map.setzoom(15); 
+
+        });
+    </script>
+
+    <br/>
             <%--<%GOOGLE_MAP%>--%>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.8386948649977!2d67.07599486448838!3d24.937564448305604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f5b169470c3%3A0x7a2cf4aadd3b4bb4!2sU+K+Square%2C+Karachi%2C+Pakistan!5e0!3m2!1sen!2sin!4v1478114423209" width="1400" height="400" frameborder="0" style="border:0" allowfullscreen>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d57895.64701802451!2d67.05779682141163!3d24.91578325490705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3eb33f32a0f2c3f3%3A0x4fc0a6fd386117f0!2sSir+Syed+University+of+Engineering+and+Technology%2C+Karachi%2C+Pakistan!3m2!1d24.9157095!2d67.0928165!5e0!3m2!1sen!2s!4v1482820514043" width="1400" height="400" frameborder="0" style="border:0" allowfullscreen>
     </iframe>
 
 <%--    <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
