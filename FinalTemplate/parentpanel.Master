@@ -94,6 +94,8 @@
 
                         <li><a href="Contact_Us.aspx" class="main-menu">Contact</a>
                         </li>
+                        <li><a href="#" title="click" class="main-menu">Add Child</a>
+                        </li>
                         <li class="button-search"><p class="main-menu"><i class="fa fa-search"></i></p>
                         </li>
 

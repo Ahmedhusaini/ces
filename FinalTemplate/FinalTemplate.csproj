@@ -39,6 +39,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.7.123, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Downloads\Compressed\AjaxControlToolkit.Binary.NET4\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -140,6 +144,7 @@
     <Content Include="ContactUs_Student.aspx" />
     <Content Include="DefineFeesStructure.aspx" />
     <Content Include="Download_Homework.aspx" />
+    <Content Include="Teacher_Marksheet.aspx" />
     <Content Include="images\Events\bicycle-1280x720.jpg" />
     <Content Include="images\Events\code.png" />
     <Content Include="images\Events\codemap.png" />
@@ -446,6 +451,14 @@
     </Compile>
     <Compile Include="Download_Homework.aspx.designer.cs">
       <DependentUpon>Download_Homework.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="source\Functions\studentid.cs" />
+    <Compile Include="Teacher_Marksheet.aspx.cs">
+      <DependentUpon>Teacher_Marksheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teacher_Marksheet.aspx.designer.cs">
+      <DependentUpon>Teacher_Marksheet.aspx</DependentUpon>
     </Compile>
     <Compile Include="PackageInformation.aspx.cs">
       <DependentUpon>PackageInformation.aspx</DependentUpon>
