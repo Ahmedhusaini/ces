@@ -452,6 +452,7 @@
     <Compile Include="Download_Homework.aspx.designer.cs">
       <DependentUpon>Download_Homework.aspx</DependentUpon>
     </Compile>
+    <Compile Include="source\Functions\studentid.cs" />
     <Compile Include="Teacher_Marksheet.aspx.cs">
       <DependentUpon>Teacher_Marksheet.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
