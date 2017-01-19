@@ -30,7 +30,7 @@
                     var jsonarray = $.parseJSON(arrData);
                     $.each(jsonarray, function (i, v) {
                         var parentdiv = $('div.customs-row');
-                          parentdiv.append('<div class="col-md-4 col-sm-6"><div class="edugate-layout-3"><div class="edugate-layout-3-wrapper"><a class="edugate-image"><img class="imgTeacher" src="images/News/' + v.Image + '" alt="" class="img-responsive" /></a><div class="edugate-content"><a href="#" class="title">' + v.Title + '</a><ul><li>News Title: <b>' + v.Title + '</b></li><li> News Type: <b>' + v.NewsType+ '</b></li><li>Description: <b>' + v.Description+ '</b></li></ul></div><br><br><br><button class="btn btn-green"style="padding-right:115px;margin-left:80px;"><span><a href="UpdateNews.aspx?NC=' + v.NewsID + '">View Details</a></span></button></div></div></div></div>');
+                          parentdiv.append('<div class="col-md-4 col-sm-6"><div class="edugate-layout-3"><div class="edugate-layout-3-wrapper"><a class="edugate-image"><img class="imgTeacher" src="' + v.Image + '" alt="" class="img-responsive" /></a><div class="edugate-content"><a href="#" class="title">' + v.Title + '</a><ul><li>News Title: <b>' + v.Title + '</b></li><li> News Type: <b>' + v.NewsType+ '</b></li><li>Description: <b>' + v.Description+ '</b></li></ul></div><br><br><br><button class="btn btn-green"style="padding-right:115px;margin-left:80px;"><span><a href="UpdateNews.aspx?NC=' + v.NewsID + '">View Details</a></span></button></div></div></div></div>');
 
                     });
                 },

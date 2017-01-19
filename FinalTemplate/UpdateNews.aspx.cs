@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using FinalTemplate.source.Database;
 using FinalTemplate.source.Functions;
-using FinalTemplate.source.Database;
+using System;
 
 namespace FinalTemplate
 {
@@ -15,7 +10,7 @@ namespace FinalTemplate
         JNews objnews = new JNews();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (!IsPostBack)
                 JFunctions.BindDropDownList(ddlNewsType, "news_type", "news_type_id", "select * from tbl_news_type");
 
             if (!string.IsNullOrWhiteSpace(Request.QueryString["NC"]))
@@ -27,7 +22,7 @@ namespace FinalTemplate
             {
                 txtTitle.Text = objnews.Title;
                 txtDescription.Text = objnews.Description;
-                imgNews.ImageUrl = "~/images/News/"+objnews.Image;
+                imgNews.ImageUrl = objnews.Image;
                 ddlNewsType.ClearSelection();
                 ddlNewsType.Items.FindByValue(objnews.NewsTypeID.ToString()).Selected = true;
                 txtTags.Text = objnews.Tags;
@@ -38,13 +33,31 @@ namespace FinalTemplate
         }
         protected void btnUpdateNews_Click(object sender, EventArgs e)
         {
-            if (objnews.UpdateNews(Convert.ToInt32(txtNewsID.Text), Convert.ToInt32(ddlNewsType.SelectedValue), txtTitle.Text, fuImage.FileName, txtDescription.Text, txtTags.Text) == "true")
+            if (fuImage.HasFile)
             {
-                Response.Write("<script>alert('News information updated.');</script>");
+                if (
+                    objnews.UpdateNews(Convert.ToInt32(txtNewsID.Text), Convert.ToInt32(ddlNewsType.SelectedValue),
+                        txtTitle.Text, fuImage.FileName, fuImage, txtDescription.Text, txtTags.Text) == "true")
+                {
+                    Response.Write("<script>alert('News information updated.');</script>");
+                }
+                else
+                {
+                    Response.Write("<script>alert('An Error Occured during updating news information.');</script>");
+                }
             }
             else
             {
-                Response.Write("<script>alert('An Error Occured during updating news information.');</script>");
+                if (
+                    objnews.UpdateNews(Convert.ToInt32(txtNewsID.Text), Convert.ToInt32(ddlNewsType.SelectedValue),
+                        txtTitle.Text, imgNews.ImageUrl, fuImage, txtDescription.Text, txtTags.Text) == "true")
+                {
+                    Response.Write("<script>alert('News information updated.');</script>");
+                }
+                else
+                {
+                    Response.Write("<script>alert('An Error Occured during updating news information.');</script>");
+                }
             }
         }
     }

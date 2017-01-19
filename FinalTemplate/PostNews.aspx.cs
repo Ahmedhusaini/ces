@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using FinalTemplate.source.Functions;
+﻿using FinalTemplate.source.Functions;
+using System;
 
 namespace FinalTemplate
 {
@@ -23,7 +18,7 @@ namespace FinalTemplate
         {
             if (objnews.AddNews(Convert.ToInt32(ddlnewstype.SelectedValue), txtNewsTitle.Text, fileuploadnewsimage.FileName, txtNewsContent.Text, txtTags.Text) == "true")
             {
-                if (JFunctions.UploadSingleFile(fileuploadnewsimage, "images/News/",".jpg|.png") == "true")
+                if (JFunctions.UploadSingleFile(fileuploadnewsimage, "images/News/", ".jpg|.png") == "true")
                 {
                     Response.Write("<script>alert('News Addes successfully.');</script>");
                 }
@@ -31,6 +26,10 @@ namespace FinalTemplate
                 {
                     Response.Write("<script>alert('News Addes successfully, but image/video may not uploaded.');</script>");
                 }
+            }
+            else
+            {
+                Response.Write("<script>alert('You have inserted invalid data. which is restricted for insertion into database.');</script>");
             }
         }
     }

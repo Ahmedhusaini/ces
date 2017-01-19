@@ -17,7 +17,7 @@ namespace FinalTemplate.source.Functions
         {
             return Convert.ToString(System.DateTime.Today.ToString("HH:MM:ss"));
         }
-        
+
         public static void SendEmail(string To, string Subject, string MessageBody)
         {
             string smtpUsername = "jahangeer.ahmed11@gmail.com";
@@ -38,16 +38,17 @@ namespace FinalTemplate.source.Functions
         //File size limit in bytes
         public static string UploadSingleFile(FileUpload objFileUpload, string filePath)
         {
-            string fullPath = "~/" + filePath;
+            string fullPath = "/" + filePath;
             string savedPath = string.Empty, returnvalue = string.Empty;
             returnvalue = "null";
             if (objFileUpload.HasFile)
             {
                 int currentFileSize = objFileUpload.PostedFile.ContentLength;
-                savedPath = fullPath + objFileUpload.FileName;
+                //savedPath = fullPath + objFileUpload.FileName;
+
                 try
                 {
-                    objFileUpload.SaveAs(HttpContext.Current.Server.MapPath(savedPath));
+                    objFileUpload.SaveAs(HttpContext.Current.Server.MapPath(fullPath));
                     returnvalue = "true";
                 }
                 catch (Exception exception)
@@ -60,17 +61,17 @@ namespace FinalTemplate.source.Functions
             return returnvalue;
 
         }
-        public static string UploadSingleFile(FileUpload objFileUpload, string filePath,string FilterFormat)
+        public static string UploadSingleFile(FileUpload objFileUpload, string filePath, string FilterFormat)
         {
             string fullPath = "~/" + filePath;
-            string[] imageformats = { ".jpg",".png",".gif"};
+            string[] imageformats = { ".jpg", ".png", ".gif" };
             string[] videoformats = { ".mp4", ".alv", ".3gp" };
             string savedPath = string.Empty, returnvalue = string.Empty;
             returnvalue = "null";
             if (objFileUpload.HasFile)
             {
-                
-                string[] extensions =FilterFormat.Split('|');
+
+                string[] extensions = FilterFormat.Split('|');
                 for (int i = 0; i < FilterFormat.Length; i++)
                 {
                     if (imageformats[i].Contains(extensions[i]))
@@ -84,10 +85,10 @@ namespace FinalTemplate.source.Functions
                         break;
                     }
                 }
-                if (returnvalue=="allowimage" || returnvalue =="allowvideo")
+                if (returnvalue == "allowimage" || returnvalue == "allowvideo")
                 {
                     int currentFileSize = objFileUpload.PostedFile.ContentLength;
-                    savedPath = fullPath + objFileUpload.FileName;                    
+                    savedPath = fullPath + objFileUpload.FileName;
                     try
                     {
                         objFileUpload.SaveAs(HttpContext.Current.Server.MapPath(savedPath));
@@ -96,9 +97,9 @@ namespace FinalTemplate.source.Functions
                     catch (Exception exception)
                     {
                         returnvalue = exception.ToString();
-                    }    
+                    }
                 }
-                
+
             }
             return returnvalue;
 
