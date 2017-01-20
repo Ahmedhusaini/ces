@@ -129,45 +129,7 @@ namespace FinalTemplate.source.Functions
         }
        
 
-        public static string school_id    
-        { get { return GetSchoolid(); } }
-
-        private static string GetSchoolid()
-        {
-         
-            string school_id = string.Empty;
-         
-            mydatabase.CreateConnection();
-            mydatabase.InitializeSQLCommandObject(mydatabase.GetCurrentConnection, "select school_id from tbl_teacher where teacher_id=2 and authorized_id='" + CurrentUser.AuthorizedID + "'");
-            try
-            {
-                mydatabase.OpenConnection();
-                mydatabase.obj_reader = mydatabase.obj_sqlcommand.ExecuteReader();
-                if (mydatabase.obj_reader.HasRows)
-                {
-                    while (mydatabase.obj_reader.Read())
-                    {
-                     
-                        school_id = mydatabase.obj_reader["school_id"].ToString();
-                    }
-                }
-                else
-                { HttpContext.Current.Response.Write("No Teacher id is Found"); }
-            }
-            catch (Exception ex)
-            {
-                HttpContext.Current.Response.Write(ex.ToString());
-            }
-            finally
-            {
-                mydatabase.CloseConnection();
-                mydatabase.obj_reader.Dispose();
-                mydatabase.obj_reader.Close();
-            }
        
-            return school_id;        
-
-        }
         public static string class_id
         { get { return Getclassid(); } }
 

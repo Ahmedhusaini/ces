@@ -113,7 +113,6 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@content", SqlDbType.VarChar).Value = documentcontent;
                 cmd.Parameters.AddWithValue("@extension", SqlDbType.VarChar).Value = extension;
                 cmd.Parameters.AddWithValue("@teacher_id", SqlDbType.Int).Value = teacher.teacher_id;
-                cmd.Parameters.AddWithValue("@school_id", SqlDbType.VarChar).Value = teacher.school_id;
                 cmd.Parameters.AddWithValue("@authorized_id", SqlDbType.VarChar).Value =CurrentUser.AuthorizedID;
                 cmd.Parameters.AddWithValue("@class_sec_info_id", SqlDbType.Int).Value =  teacher.class_id;
                
