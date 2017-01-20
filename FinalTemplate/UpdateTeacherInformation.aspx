@@ -222,6 +222,7 @@
             <div class="group-title-index">
                 <h2 class="center-title">Update Teacher Information</h2>
                 <div class="bottom-title"><i class="bottom-icon icon-icon-04"></i></div>
+                <p><a href="TeacherPrivileges.aspx">Change privileges</a></p>
                 <div class="container teacher-course-wrapper">
                     <div class="inner-container">
                         <div class="table-header">
