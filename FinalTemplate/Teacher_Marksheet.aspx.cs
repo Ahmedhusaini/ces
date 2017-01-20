@@ -48,7 +48,8 @@ namespace FinalTemplate
                  cmd.CommandType = System.Data.CommandType.StoredProcedure;
  
                  cmd.Parameters.AddWithValue("@marksheet_id", SqlDbType.Int).Value = marksheet_id + 1;
-                 cmd.Parameters.AddWithValue("@teacher_id", SqlDbType.Int).Value = teacher.teacherid;
+                 cmd.Parameters.AddWithValue("@teacher_id", SqlDbType.Int).Value = teacher.teacher_id;
+                 cmd.Parameters.AddWithValue("@teacher_id_out", SqlDbType.Int).Direction = ParameterDirection.Output;
                  cmd.Parameters.AddWithValue("@std_id", SqlDbType.VarChar).Value = "C/sha/E/4/S/4/11/4";       
                  cmd.Parameters.AddWithValue("@marksheet", SqlDbType.VarChar).Value = marksheet_name;
  
