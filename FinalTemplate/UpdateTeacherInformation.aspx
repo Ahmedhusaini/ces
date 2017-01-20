@@ -1,10 +1,23 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="UpdateTeacherInformation.aspx.cs" Inherits="FinalTemplate.UpdateTeacherInformation" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="AdminHeadPlaceHolder" runat="server">
 
-<script src="assets/js/jquery-2.2.3.js"></script>
+
+        <script src="assets/js/jquery-2.2.3.js"></script>   
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="assets/js/jquery.validate.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.js" type="text/javascript">
+    
+</script>
+<link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/themes/start/jquery-ui.css"
+    rel="stylesheet" type="text/css" />
+
+
     <script type="text/javascript">
+
+       
         $(window).load(function () {
             searchboxwidth();
+           
         });
         $(document).ready(function () {
             teacherwidth();
@@ -12,8 +25,16 @@
             setbuttonlayout();
             formfieldswidths();
             rowbg();
+            
 
         });
+        $(document).ready(function(){
+        
+        
+            validation();
+           
+        });
+
         function SelectedDivAnimation(aspControl) {
             $(aspControl).on('focus', function () {
                 $(this).css({ 'background-color': 'rgb(108, 208, 91)', 'transition': '2s', 'border-color': 'green', 'color': 'white', 'height': '40px' });
@@ -73,10 +94,129 @@
         function searchboxwidth() {
             $('.form-input').css('width', '900px');
         }
+
+
+        $.validator.addMethod("lettersonly", function (value, element) {
+            return this.optional(element) || /^[a-z\s]+$/i.test(value);
+        }, "Letters only please");
+        $.validator.addMethod("phone", function (phone_number, element) {
+            phone_number = phone_number.replace(/\s+/g, "");
+            return this.optional(element) || phone_number.length > 9 &&
+                phone_number.match(/^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/);
+        }, "Please specify a valid phone number with+92");
+        $.validator.addMethod("digitsonly", function (value, element) {
+            return this.optional(element) || /^[0-9]+$/i.test(value);
+        }, "Numbers only please");
+        $.validator.addMethod("pwcheck", function (value) {
+            return /^[A-Za-z0-9\d=!\-@._*]*$/.test(value) // consists of only these
+                && /[a-z]/.test(value) // has a lowercase letter
+                && /\d/.test(value) // has a digit
+        }, "please only Lowercase and must have digits ");
+        $.validator.addMethod("imageonly", function (value, element) {
+            return this.optional(element) || /^([a-zA-Z0-9\s_\\.\-:])+(.png|.jpg|.gif)$/.test(value);
+        }, ".jpeg ,.png, .gif format allow only ");
+
+
+        function validation() {
+            $("#form1").validate({
+
+                rules: {
+                     <%=txtFirstName.UniqueID%>:{
+                         required:true,
+                         lettersonly:true,
+                     },
+                       <%=txtLastName.UniqueID%>:{
+                           required:true,
+                           lettersonly:true,
+                       },
+                     <%=txtDateOfBirth.UniqueID%>:{
+                         required:true,
+                         
+                     },
+                     <%=txtReligion.UniqueID%>:{
+                         required:true,
+                         lettersonly:true,
+                         maxlength: 8
+                     },
+                      <%=txtPhone.UniqueID%>:{
+                          required: true,
+                          phone: true,
+                         
+                      },
+                    <%=txtAddress.UniqueID%>:{
+                        required:true,
+                        lettersonly:true,
+                    },
+                      <%=txtPostalCode.UniqueID%>:{
+                          required: true,
+                          digitsonly: true,
+                          minlength: 5,
+                          maxlength: 6
+                      },
+                     <%=txtDateOfJoin.UniqueID%>:{
+                         required:true,
+                         
+                     },
+
+                },
+                messages: {
+                     <%=txtFirstName.UniqueID%>:{
+                         required:"Please enter Teacher's name"
+                     },
+                      <%=txtLastName.UniqueID%>:{
+                    
+                          required: "Please enter  last name"
+                      },
+                     <%=txtDateOfBirth.UniqueID%>:{
+                         required:"Please mention  correct Date of birth"
+                         
+                     },
+                       <%=txtAddress.UniqueID%>:{
+                           required: "Please enter your Home address"
+                         
+                       },
+                      <%=txtPostalCode.UniqueID%>:{
+                          minlength: "Postal code must contain 5 digits",
+                          maxlength: "Postal code can't exceed more then 6 digits"
+                      },
+                     <%=txtDateOfJoin.UniqueID%>:{
+                         required:true,
+                         
+                     },
+
+
+
+                }
+
+            });
+
+
+        }
+
+
+
     </script>
         
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="AdminContentPlaceHolder" runat="server">
+      <link href="assets/css/mycss.css" rel="stylesheet" />
+    <style>
+        
+         label.error {
+
+            color: red;
+            display: inline-flexbox;
+            display:block;
+           
+        }
+        input.error {
+            border:1px solid red;
+            float: none; color: red;
+        padding-left: .3em; vertical-align: top;
+        }
+      
+      
+    </style>
     <div class="section section-padding top-courses">
         <div class="container">
             <div class="group-title-index">
