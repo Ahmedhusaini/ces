@@ -87,12 +87,16 @@ namespace FinalTemplate.source.Functions
             }
         }
         public static string teacher_id
+   
         { get { return GetTeacherid(); } }
 
 
         private static string GetTeacherid()
         {
             string teacher_id = string.Empty;
+         
+
+
             mydatabase.CreateConnection();
             mydatabase.InitializeSQLCommandObject(mydatabase.GetCurrentConnection, "select teacher_id from tbl_Teacher where authorized_id='" + CurrentUser.AuthorizedID + "'");
             try
@@ -104,6 +108,7 @@ namespace FinalTemplate.source.Functions
                     while (mydatabase.obj_reader.Read())
                     {
                         teacher_id = mydatabase.obj_reader["teacher_id"].ToString();
+                   
                     }
                 }
                 else
@@ -120,6 +125,49 @@ namespace FinalTemplate.source.Functions
                 mydatabase.obj_reader.Close();
             }
             return teacher_id;
+
+        }
+       
+
+       
+        public static string class_id
+        { get { return Getclassid(); } }
+
+        private static string Getclassid()
+        {
+
+            string class_id = string.Empty;
+
+            mydatabase.CreateConnection();
+            mydatabase.InitializeSQLCommandObject(mydatabase.GetCurrentConnection, "select class_sec_info_id from tbl_teacher where authorized_id='" + CurrentUser.AuthorizedID + "'");
+            try
+            {
+                mydatabase.OpenConnection();
+                mydatabase.obj_reader = mydatabase.obj_sqlcommand.ExecuteReader();
+                if (mydatabase.obj_reader.HasRows)
+                {
+                    while (mydatabase.obj_reader.Read())
+                    {
+
+                        class_id = mydatabase.obj_reader["class_sec_info_id"].ToString();
+                    }
+                }
+                else
+                { HttpContext.Current.Response.Write("No Teacher id is Found"); }
+            }
+            catch (Exception ex)
+            {
+                HttpContext.Current.Response.Write(ex.ToString());
+            }
+            finally
+            {
+                mydatabase.CloseConnection();
+                mydatabase.obj_reader.Dispose();
+                mydatabase.obj_reader.Close();
+            }
+
+            return class_id;
+
         }
     }
 }
