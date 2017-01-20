@@ -7,7 +7,7 @@ namespace FinalTemplate.source.Functions
 {
     public class teacher
     {
-        static private Database.Database mydatabse = new Database.Database("ces");
+        static private Database.Database mydatabase = new Database.Database("ces");
         static public string teacherid { get; set; }
         static public int generalid { get; set; }
         static public int username { get; set; }
@@ -19,21 +19,21 @@ namespace FinalTemplate.source.Functions
 
         static public void GetTeacherlDetails(string teacherid)
         {
-            mydatabse.CreateConnection();
-            mydatabse.InitializeSQLCommandObject(mydatabse.GetCurrentConnection, "GetTeacherID", true);
+            mydatabase.CreateConnection();
+            mydatabase.InitializeSQLCommandObject(mydatabase.GetCurrentConnection, "GetTeacherID", true);
             try
             {
-                mydatabse.OpenConnection();
+                mydatabase.OpenConnection();
                 SqlParameter p_autho = new SqlParameter("@authorized_id", SqlDbType.VarChar, 20);
                 p_autho.Value = teacherid;
-                mydatabse.obj_sqlcommand.Parameters.Add(p_autho);
-                mydatabse.obj_reader = mydatabse.obj_sqlcommand.ExecuteReader();
-                if (mydatabse.obj_reader.HasRows)
+                mydatabase.obj_sqlcommand.Parameters.Add(p_autho);
+                mydatabase.obj_reader = mydatabase.obj_sqlcommand.ExecuteReader();
+                if (mydatabase.obj_reader.HasRows)
                 {
-                    int totalRows = mydatabse.obj_reader.RecordsAffected;
-                    while (mydatabse.obj_reader.Read())
+                    int totalRows = mydatabase.obj_reader.RecordsAffected;
+                    while (mydatabase.obj_reader.Read())
                     {
-                        teacherid = mydatabse.obj_reader["teacher_id"].ToString();
+                        teacherid = mydatabase.obj_reader["teacher_id"].ToString();
                     }
                 }
                 else
@@ -47,28 +47,28 @@ namespace FinalTemplate.source.Functions
             }
             finally
             {
-                mydatabse.CloseConnection();
-                mydatabse.obj_reader.Close();
+                mydatabase.CloseConnection();
+                mydatabase.obj_reader.Close();
             }
         }
         static public void Teacher_detail(string com_stu)
         {
-            mydatabse.CreateConnection();
-            mydatabse.InitializeSQLCommandObject(mydatabse.GetCurrentConnection, "Teacher_detail", true);
+            mydatabase.CreateConnection();
+            mydatabase.InitializeSQLCommandObject(mydatabase.GetCurrentConnection, "Teacher_detail", true);
             try
             {
-                mydatabse.OpenConnection();
+                mydatabase.OpenConnection();
                 SqlParameter p_autho = new SqlParameter("@authorized_id", SqlDbType.VarChar, 20);
                 p_autho.Value = com_stu;
-                mydatabse.obj_sqlcommand.Parameters.Add(p_autho);
-                mydatabse.obj_reader = mydatabse.obj_sqlcommand.ExecuteReader();
-                if (mydatabse.obj_reader.HasRows)
+                mydatabase.obj_sqlcommand.Parameters.Add(p_autho);
+                mydatabase.obj_reader = mydatabase.obj_sqlcommand.ExecuteReader();
+                if (mydatabase.obj_reader.HasRows)
                 {
-                    int totalRows = mydatabse.obj_reader.RecordsAffected;
-                    while (mydatabse.obj_reader.Read())
+                    int totalRows = mydatabase.obj_reader.RecordsAffected;
+                    while (mydatabase.obj_reader.Read())
                     {
-                        teacher_class = mydatabse.obj_reader["class"].ToString();
-                        teacher_section = mydatabse.obj_reader["section"].ToString();
+                        teacher_class = mydatabase.obj_reader["class"].ToString();
+                        teacher_section = mydatabase.obj_reader["section"].ToString();
                     }
                 }
                 else
@@ -82,9 +82,44 @@ namespace FinalTemplate.source.Functions
             }
             finally
             {
-                mydatabse.CloseConnection();
-                mydatabse.obj_reader.Close();
+                mydatabase.CloseConnection();
+                mydatabase.obj_reader.Close();
             }
+        }
+        public static string teacher_id
+        { get { return GetTeacherid(); } }
+
+
+        private static string GetTeacherid()
+        {
+            string teacher_id = string.Empty;
+            mydatabase.CreateConnection();
+            mydatabase.InitializeSQLCommandObject(mydatabase.GetCurrentConnection, "select teacher_id from tbl_Teacher where authorized_id='" + CurrentUser.AuthorizedID + "'");
+            try
+            {
+                mydatabase.OpenConnection();
+                mydatabase.obj_reader = mydatabase.obj_sqlcommand.ExecuteReader();
+                if (mydatabase.obj_reader.HasRows)
+                {
+                    while (mydatabase.obj_reader.Read())
+                    {
+                        teacher_id = mydatabase.obj_reader["teacher_id"].ToString();
+                    }
+                }
+                else
+                { HttpContext.Current.Response.Write("No Teacher id is Found"); }
+            }
+            catch (Exception ex)
+            {
+                HttpContext.Current.Response.Write(ex.ToString());
+            }
+            finally
+            {
+                mydatabase.CloseConnection();
+                mydatabase.obj_reader.Dispose();
+                mydatabase.obj_reader.Close();
+            }
+            return teacher_id;
         }
     }
 }

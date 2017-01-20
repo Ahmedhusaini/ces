@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="TeacherPlaceHolder1" runat="server">
        <div class="section teacher-course section-padding">
                     <div class="container teacher-course-wrapper">
-                        <div>Edit Marks For The Student</div>
+                        <div class="underline">Upload Student Marksheet</div>
                         <div class="course-table">
                             <div class="outer-container">
                                 <div class="inner-container">
@@ -17,7 +17,7 @@
                       <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" /></th>
                 </tr>
                 <tr>
-                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="Label1" runat="server" Text="Label" Visible="false"></asp:Label>
                 </tr>
             </thead>
                 <tr class="table-row"> <td>
