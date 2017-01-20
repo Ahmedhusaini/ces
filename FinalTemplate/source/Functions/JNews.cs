@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using FinalTemplate.source.Validation;
+using System;
 using System.Web;
-using FinalTemplate.source.Functions;
-using FinalTemplate.source.Database;
-using FinalTemplate.source.Validation;
+using System.Web.UI.WebControls;
+
 namespace FinalTemplate.source.Functions
 {
     public class JNews
@@ -14,15 +12,15 @@ namespace FinalTemplate.source.Functions
         public int NewsTypeID { get; set; }
         public string NewsType { get; set; }
         public string Title { get; set; }
-        public string Image { get; set; }       
+        public string Image { get; set; }
         public string Description { get; set; }
         public string Tags { get; set; }
         public string SchoolID { get; set; }
         #region Methods For NEWS
-        public string AddNews(int _newstypeid,string _title,string _imgae,string _descrption,string _tags)
+        public string AddNews(int _newstypeid, string _title, string _imgae, string _descrption, string _tags)
         {
             string returnvalue = string.Empty;
-            string[] blacklistedKeywords={_title,_imgae,_descrption,_tags};
+            string[] blacklistedKeywords = { _title, _imgae, _descrption, _tags };
             if (Jvalidate.FilterBlackLIstKeywords(blacklistedKeywords))
             {
                 int newsID = Convert.ToInt32(objdbnews.GetLastValueByColumnName("news_id", "tbl_news")) + 1;
@@ -31,8 +29,8 @@ namespace FinalTemplate.source.Functions
                 objdbnews.obj_sqlcommand.Parameters.AddWithValue("@newsid", newsID);
                 objdbnews.obj_sqlcommand.Parameters.AddWithValue("@newstypeid", _newstypeid);
                 objdbnews.obj_sqlcommand.Parameters.AddWithValue("@title", _title);
-                objdbnews.obj_sqlcommand.Parameters.AddWithValue("@image", _imgae);
-                
+                objdbnews.obj_sqlcommand.Parameters.AddWithValue("@image", "images/News/" + _imgae);
+
                 objdbnews.obj_sqlcommand.Parameters.AddWithValue("@description", _descrption);
                 objdbnews.obj_sqlcommand.Parameters.AddWithValue("@schoolid", JSchool.SchoolID);
                 objdbnews.obj_sqlcommand.Parameters.AddWithValue("@tags", _tags);
@@ -65,7 +63,7 @@ namespace FinalTemplate.source.Functions
             string returnvalue = string.Empty;
             objdbnews.CreateConnection();
             objdbnews.InitializeSQLCommandObject(objdbnews.GetCurrentConnection, "spGetNewsDetailsByNewsID", true);
-            objdbnews.obj_sqlcommand.Parameters.AddWithValue("@newsID",newsid);
+            objdbnews.obj_sqlcommand.Parameters.AddWithValue("@newsID", newsid);
             try
             {
                 objdbnews.OpenConnection();
@@ -95,10 +93,10 @@ namespace FinalTemplate.source.Functions
             }
             return returnvalue;
         }
-        public string UpdateNews(int _newsID,int _newstypeid, string _title, string _imgae, string _descrption, string _tags)
+        public string UpdateNews(int _newsID, int _newstypeid, string _title, string _imgae, FileUpload _fileUpload, string _descrption, string _tags)
         {
             string returnvalue = string.Empty;
-            string[] blacklistedKeywords = { _title, _imgae,  _descrption, _tags };
+            string[] blacklistedKeywords = { _title, _imgae, _descrption, _tags };
             if (Jvalidate.FilterBlackLIstKeywords(blacklistedKeywords))
             {
                 objdbnews.CreateConnection();
@@ -106,7 +104,7 @@ namespace FinalTemplate.source.Functions
                 objdbnews.obj_sqlcommand.Parameters.AddWithValue("@newsid", _newsID);
                 objdbnews.obj_sqlcommand.Parameters.AddWithValue("@newstypeid", _newstypeid);
                 objdbnews.obj_sqlcommand.Parameters.AddWithValue("@title", _title);
-                objdbnews.obj_sqlcommand.Parameters.AddWithValue("@image", _imgae);
+                objdbnews.obj_sqlcommand.Parameters.AddWithValue("@image", "/images/News/" + _imgae);
                 objdbnews.obj_sqlcommand.Parameters.AddWithValue("@description", _descrption);
                 objdbnews.obj_sqlcommand.Parameters.AddWithValue("@schoolid", JSchool.SchoolID);
                 objdbnews.obj_sqlcommand.Parameters.AddWithValue("@tags", _tags);
@@ -115,6 +113,7 @@ namespace FinalTemplate.source.Functions
                     objdbnews.OpenConnection();
                     if (objdbnews.obj_sqlcommand.ExecuteNonQuery() > 0)
                     {
+                        JFunctions.UploadSingleFile(_fileUpload, "images/News/" + _imgae);
                         returnvalue = "true";
                         //HttpContext.Current.Response.Write("alert('News updated successfully.');");
                     }
