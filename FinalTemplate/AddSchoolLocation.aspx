@@ -1,5 +1,18 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="AddSchoolLocation.aspx.cs" Inherits="FinalTemplate.AddSchoolLocation" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="AdminHeadPlaceHolder" runat="server">
+
+    <script src="assets/js/jquery-2.2.3.js"></script>
+    <script src="assets/js/jquery.validate.js"></script>
+
+
+    <script type="text/javascript">
+
+
+
+    </script>
+
+
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="AdminContentPlaceHolder" runat="server">
 <div id="wrapper-content"><!-- PAGE WRAPPER-->
