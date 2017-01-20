@@ -17,7 +17,7 @@ namespace FinalTemplate
         {
             JSchool objSchool = new JSchool();
             SchoolRelatedFunction objSchoolRelatedFunction = new SchoolRelatedFunction();
-            int result = objSchoolRelatedFunction.AddEvents(txtEventTitle.Text, txtEventDescription.Text, txtEventPlace.Text,
+            int result = objSchoolRelatedFunction.AddEvents(fuPicture, txtEventTitle.Text, txtEventDescription.Text, txtEventPlace.Text,
                 Convert.ToInt32(ddlEventType.SelectedValue), txtStartTime.Text, txtEndTime.Text, txtStartDate.Text,
                 txtEndDate.Text, JSchool.SchoolID, fuPicture.FileName, txtTags.Text);
             if (result > 0)

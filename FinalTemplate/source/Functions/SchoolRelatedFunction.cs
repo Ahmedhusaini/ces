@@ -3,6 +3,7 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Web;
+using System.Web.UI.WebControls;
 
 namespace FinalTemplate.source.Functions
 {
@@ -258,7 +259,7 @@ namespace FinalTemplate.source.Functions
             }
             return value;
         }
-        public int AddEvents(string _title, string _description, string _place, int _eventTypeID, string _startingTime, string _endingTime, string _startingDate, string _endingDate, string _creatorID, string _picture, string _tags)
+        public int AddEvents(FileUpload _fileUpload, string _title, string _description, string _place, int _eventTypeID, string _startingTime, string _endingTime, string _startingDate, string _endingDate, string _creatorID, string _picture, string _tags)
         {
             string[] blacklist = { _title, _description, _place, _picture };
 
@@ -313,6 +314,7 @@ namespace FinalTemplate.source.Functions
                 {
                     mydb.OpenConnection();
                     rowsaffected = mydb.obj_sqlcommand.ExecuteNonQuery();
+                    JFunctions.UploadSingleFile(_fileUpload, "images/Events/" + _picture);
                 }
                 catch (Exception exception)
                 {
