@@ -112,9 +112,9 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@lectures", SqlDbType.VarChar).Value = name;
                 cmd.Parameters.AddWithValue("@content", SqlDbType.VarChar).Value = documentcontent;
                 cmd.Parameters.AddWithValue("@extension", SqlDbType.VarChar).Value = extension;
-                cmd.Parameters.AddWithValue("@teacher_id", SqlDbType.Int).Value = teacher.Teacherid;
-                cmd.Parameters.AddWithValue("@school_id", SqlDbType.Int).Value = teacher.school_id;
-                cmd.Parameters.AddWithValue("@authorized_id", SqlDbType.Int).Value =teacher.authorized_id;
+                cmd.Parameters.AddWithValue("@teacher_id", SqlDbType.Int).Value = teacher.teacher_id;
+                cmd.Parameters.AddWithValue("@school_id", SqlDbType.VarChar).Value = teacher.school_id;
+                cmd.Parameters.AddWithValue("@authorized_id", SqlDbType.VarChar).Value =CurrentUser.AuthorizedID;
                 cmd.Parameters.AddWithValue("@class_sec_info_id", SqlDbType.Int).Value =  teacher.class_id;
                
                 con.Open();
