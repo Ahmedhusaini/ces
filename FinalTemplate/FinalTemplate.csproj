@@ -141,6 +141,7 @@
     <Content Include="ContactUs_Student.aspx" />
     <Content Include="DefineFeesStructure.aspx" />
     <Content Include="Download_Homework.aspx" />
+    <Content Include="school_comparision.aspx" />
     <Content Include="Teacher_Marksheet.aspx" />
     <Content Include="images\Events\bicycle-1280x720.jpg" />
     <Content Include="images\Events\code.png" />
@@ -448,6 +449,13 @@
     </Compile>
     <Compile Include="Download_Homework.aspx.designer.cs">
       <DependentUpon>Download_Homework.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="school_comparision.aspx.cs">
+      <DependentUpon>school_comparision.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="school_comparision.aspx.designer.cs">
+      <DependentUpon>school_comparision.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\Functions\studentid.cs" />
     <Compile Include="Teacher_Marksheet.aspx.cs">
