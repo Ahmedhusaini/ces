@@ -58,13 +58,13 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// head_school_name control.
+        /// school1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label head_school_name;
+        protected global::System.Web.UI.WebControls.TextBox school1;
         
         /// <summary>
         /// School_Name control.
@@ -166,13 +166,13 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.Label tut;
         
         /// <summary>
-        /// head_school_name1 control.
+        /// school2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label head_school_name1;
+        protected global::System.Web.UI.WebControls.TextBox school2;
         
         /// <summary>
         /// School_Name1 control.

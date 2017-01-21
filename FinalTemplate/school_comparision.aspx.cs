@@ -29,6 +29,7 @@ namespace FinalTemplate
 
            
             School_Name.Text = SSComparission.school_name;
+            school1.Text = SSComparission.school_name1;
             found.Text = SSComparission.founnded;
             pos.Text = SSComparission.Schoool_type;
             coun.Text = SSComparission.country;
@@ -43,6 +44,7 @@ namespace FinalTemplate
         public void com() {
             SSComparission.Comparission(Dd2.SelectedValue);
             School_Name1.Text = SSComparission.school_name;
+            school2.Text = SSComparission.school_name2;
             found1.Text = SSComparission.founnded;
             pos1.Text = SSComparission.Schoool_type;
             coun1.Text = SSComparission.country;

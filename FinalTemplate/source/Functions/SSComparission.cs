@@ -10,6 +10,8 @@ namespace FinalTemplate.source.Functions
         static private Database.Database mydatabse = new Database.Database("ces");
 
         static public string school_name { get; set; }
+        static public string school_name1 { get; set; }
+        static public string school_name2 { get; set; }
         static public string founnded { get; set; }
         static public string Schoool_type { get; set; }
         static public string country { get; set; }
@@ -44,6 +46,8 @@ namespace FinalTemplate.source.Functions
                     {
 
                         school_name = mydatabse.obj_reader["school_name"].ToString();
+                        school_name1 = mydatabse.obj_reader["school_name"].ToString();
+                        school_name2 = mydatabse.obj_reader["school_name"].ToString();
                         founnded = mydatabse.obj_reader["founded_in"].ToString();
                         Schoool_type = mydatabse.obj_reader["school_type"].ToString();
                         country = mydatabse.obj_reader["country"].ToString();
