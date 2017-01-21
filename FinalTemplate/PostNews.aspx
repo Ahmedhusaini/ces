@@ -1,16 +1,98 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="PostNews.aspx.cs" Inherits="FinalTemplate.PostNews" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="AdminHeadPlaceHolder" runat="server">
      <script src="assets/js/jquery-2.2.3.js"></script>
+    <script src="assets/js/jquery.validate.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             button();
+            validation();
         });
         function button() {
             $('#<%=btnPostNews.ClientID%>').css('width', '140px');
         }
+
+
+        $.validator.addMethod("lettersonly", function (value, element) {
+            return this.optional(element) || /^[a-z\s]+$/i.test(value);
+        }, "Letters only please");
+        $.validator.addMethod("phone", function (phone_number, element) {
+            phone_number = phone_number.replace(/\s+/g, "");
+            return this.optional(element) || phone_number.length > 9 &&
+                phone_number.match(/^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/);
+        }, "Please specify a valid phone number with+92");
+        $.validator.addMethod("digitsonly", function (value, element) {
+            return this.optional(element) || /^[0-9]+$/i.test(value);
+        }, "Numbers only please");
+        $.validator.addMethod("pwcheck", function (value) {
+            return /^[A-Za-z0-9\d=!\-@._*]*$/.test(value) // consists of only these
+                && /[a-z]/.test(value) // has a lowercase letter
+                && /\d/.test(value) // has a digit
+        }, "please only Lowercase and must have digits ");
+        $.validator.addMethod("imageonly", function (value, element) {
+            return this.optional(element) || /^([a-zA-Z0-9\s_\\.\-:])+(.png|.jpg|.gif)$/.test(value);
+        }, ".jpeg ,.png, .gif format allow only ");
+
+
+        function validation() {
+            $("#form1").validate({
+
+                rules: {
+
+                     <%=txtNewsTitle.UniqueID%>:{
+                         required:true,
+                         
+                     },
+                     <%=txtNewsContent.UniqueID%>:{
+                         required:true,
+                         minlength:10
+
+                         
+                     }
+
+                },
+
+                messages: {
+                    <%=txtNewsTitle.UniqueID%>:{
+                        required:"Please mention News Title"
+                         
+                    },
+                      <%=txtNewsContent.UniqueID%>:{
+                          required:true,
+                          minlength:"Must be 10 letters long"
+
+                         
+                      },
+
+
+                }
+
+            });
+
+
+        }
+
+
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="AdminContentPlaceHolder" runat="server">
+     <link href="assets/css/mycss.css" rel="stylesheet" />
+    <style>
+        
+         label.error {
+
+            color: red;
+            display: inline-flexbox;
+            display:block;
+           
+        }
+        input.error {
+            border:1px solid red;
+            float: none; color: red;
+        padding-left: .3em; vertical-align: top;
+        }
+      
+      
+    </style>
     <div class="section section-padding news-detail">
                     <div class="container">
                         <div class="news-detail-wrapper">

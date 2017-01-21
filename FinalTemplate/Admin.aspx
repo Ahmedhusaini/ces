@@ -24,7 +24,7 @@
                     var str = JSON.stringify(data);
                     var array = $.parseJSON(str);
                     $.each(array, function(i, v) {
-                        parentdiv.append('<div class="edugate-layout-1"><div class="edugate-image"><img src="images/NEWS/' + v.Image + '" alt="" class="img-responsive" /></div><div class="edugate-content"><a href="#" class="title">' + v.Title + '</a><div class="info"><div class="author item"></div><div class="date-time item"></div></div><div class="description">' + v.Description + '</div><button id="browseall" class="btn btn-green"><span><a href="UpdateNews.aspx?NC=' + v.NewsID + '">Details</a></span></button></div></div><button class="btn btn-green btn-latest-new"><span><a href="ViewNews.aspx">Browser All Post</a><i class="fa fa-long-arrow-right"></i></span></button> </div>');
+                        parentdiv.append('<div class="edugate-layout-1"><div class="edugate-image"><img src="' + v.Image + '" alt="" class="img-responsive" /></div><div class="edugate-content"><a href="#" class="title">' + v.Title + '</a><div class="info"><div class="author item"></div><div class="date-time item"></div></div><div class="description">' + v.Description + '</div><button id="browseall" class="btn btn-green"><span><a href="UpdateNews.aspx?NC=' + v.NewsID + '">Details</a></span></button></div></div><button class="btn btn-green btn-latest-new"><span><a href="ViewNews.aspx">Browser All Post</a><i class="fa fa-long-arrow-right"></i></span></button> </div>');
                         $('#browseall').css('width', '200px');
                     });
                 },

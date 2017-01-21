@@ -36,33 +36,33 @@ namespace FinalTemplate
                 Response.Redirect("Default.aspx");
             }
 
-             if(!IsPostBack)
+            if (!IsPostBack)
             {
                 filldata();
             }
         }
         private void filldata()
         {
-            DataTable dt=new DataTable();
+            DataTable dt = new DataTable();
             int lec_id = Convert.ToInt32(db.GetLastValueByColumnName("lec_id", "lecture_attandance_test"));
-              using (SqlConnection con = new SqlConnection(a))
-              {
+            using (SqlConnection con = new SqlConnection(a))
+            {
                 SqlCommand cmd = new SqlCommand("SP_Get_file", con);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@lec_id", SqlDbType.Int).Value = lec_id;
                 con.Open();
-                SqlDataReader reader=cmd.ExecuteReader();
-             
+                SqlDataReader reader = cmd.ExecuteReader();
+
                 dt.Load(reader);
-              }
-            if(dt.Rows.Count >0)
+            }
+            if (dt.Rows.Count > 0)
             {
-                GridView1.DataSource=dt;
+                GridView1.DataSource = dt;
                 GridView1.DataBind();
             }
         }
 
-        protected void OpenDocument(object sender,EventArgs e)
+        protected void OpenDocument(object sender, EventArgs e)
         {
             LinkButton li = (LinkButton)sender;
             GridViewRow gr = (GridViewRow)li.NamingContainer;
@@ -83,15 +83,15 @@ namespace FinalTemplate
                 dt.Load(reader);
             }
             string name = dt.Rows[0]["lectures"].ToString();
-            byte[] documentBytes=(byte[])dt.Rows[0]["content"];
+            byte[] documentBytes = (byte[])dt.Rows[0]["content"];
 
-                   Response.Clear();
-                   Response.ContentType = "application/octect-stream";
-                   Response.AppendHeader("content-disposition", string.Format("attachment; filename={0}",name));
-                   Response.AppendHeader("content-Length",documentBytes.Length.ToString());
-                   Response.BinaryWrite(documentBytes);
-                   Response.Flush();
-                   Response.Close();
+            Response.Clear();
+            Response.ContentType = "application/octect-stream";
+            Response.AppendHeader("content-disposition", string.Format("attachment; filename={0}", name));
+            Response.AppendHeader("content-Length", documentBytes.Length.ToString());
+            Response.BinaryWrite(documentBytes);
+            Response.Flush();
+            Response.Close();
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -112,10 +112,9 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@lectures", SqlDbType.VarChar).Value = name;
                 cmd.Parameters.AddWithValue("@content", SqlDbType.VarChar).Value = documentcontent;
                 cmd.Parameters.AddWithValue("@extension", SqlDbType.VarChar).Value = extension;
-                cmd.Parameters.AddWithValue("@teacher_id", SqlDbType.Int).Value = teacher.teacherid;
-                cmd.Parameters.AddWithValue("@school_id", SqlDbType.Int).Value = teacher.schoolid;
-                cmd.Parameters.AddWithValue("@authorized_id", SqlDbType.Int).Value = teacher.authorizedid;
-                cmd.Parameters.AddWithValue("@class_sec_info_id", SqlDbType.Int).Value =  teacher.classsecinfoid;
+                cmd.Parameters.AddWithValue("@teacher_id", SqlDbType.Int).Value = teacher.teacher_id;
+                cmd.Parameters.AddWithValue("@authorized_id", SqlDbType.VarChar).Value =CurrentUser.AuthorizedID;
+                cmd.Parameters.AddWithValue("@class_sec_info_id", SqlDbType.Int).Value =  teacher.class_id;
                
                 con.Open();
                 cmd.ExecuteNonQuery();

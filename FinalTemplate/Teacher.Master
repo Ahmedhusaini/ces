@@ -96,7 +96,7 @@
                                 <li><a href="Teacher_timetable.aspx" class="link-page">View Teacher Timetable</a></li>
                                 <li><a href="about-us.html" class="link-page">Syllabus</a></li>
                                 <li><a href="categories.html" class="link-page">Date Sheet</a></li>
-                                <li><a href="EditMarksheet.aspx" class="link-page">Upload Marksheet</a></li>
+                               
                                
                                  
                             </ul>
@@ -112,8 +112,7 @@
                           <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Upload<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
                                 <li><a href="TeacherUpload.aspx" class="link-page">Upload Lectures</a></li>
-                                <li><a href="TeacherUpload.aspx" class="link-page">Upload Homework</a></li>
-                                <li><a href="TeacherUpload.aspx" class="link-page">Upload Assignments</a></li>
+                                <li><a href="Teacher_Marksheet.aspx" class="link-page">Upload Marksheet</a></li>
                             </ul>
                         </li>
                        
