@@ -68,40 +68,39 @@ namespace FinalTemplate
             GridViewRow gr = (GridViewRow)li.NamingContainer;
 
             int lec_id = int.Parse(GridView1.DataKeys[gr.RowIndex].Value.ToString());
-            download(lec_id);
+            //download(lec_id);
         }
-        private void download(int lec_id)
-        {
-            DataTable dt = new DataTable();
-            using (SqlConnection con = new SqlConnection(a))
-            {
-                SqlCommand cmd = new SqlCommand("SP_Get_file", con);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@lec_id", SqlDbType.Int).Value = lec_id;
-                con.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                dt.Load(reader);
-            }
-            string name = dt.Rows[0]["lectures"].ToString();
-            byte[] documentBytes = (byte[])dt.Rows[0]["content"];
+        //private void download(int lec_id)
+        //{
+        //    DataTable dt = new DataTable();
+        //    using (SqlConnection con = new SqlConnection(a))
+        //    {
+        //        SqlCommand cmd = new SqlCommand("SP_Get_file", con);
+        //        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+        //        cmd.Parameters.AddWithValue("@lec_id", SqlDbType.Int).Value = lec_id;
+        //        con.Open();
+        //        SqlDataReader reader = cmd.ExecuteReader();
+        //        dt.Load(reader);
+        //    }
+        //    string name = dt.Rows[0]["lectures"].ToString();
+        //    byte[] documentBytes = (byte[])dt.Rows[0]["content"];
 
-            Response.Clear();
-            Response.ContentType = "application/octect-stream";
-            Response.AppendHeader("content-disposition", string.Format("attachment; filename={0}", name));
-            Response.AppendHeader("content-Length", documentBytes.Length.ToString());
-            Response.BinaryWrite(documentBytes);
-            Response.Flush();
-            Response.Close();
-        }
+        //    Response.Clear();
+        //    Response.ContentType = "application/octect-stream";
+        //    Response.AppendHeader("content-disposition", string.Format("attachment; filename={0}", name));
+        //    Response.AppendHeader("content-Length", documentBytes.Length.ToString());
+        //    Response.BinaryWrite(documentBytes);
+        //    Response.Flush();
+        //    Response.Close();
+        //}
         protected void Button1_Click(object sender, EventArgs e)
         {
-            FileInfo f = new FileInfo(FileUpload1.FileName);
-            byte[] documentcontent = FileUpload1.FileBytes;
 
-            string name = f.Name;
-            string extension = f.Extension;
+            string fullpath="files/Lectures/";
+
+            
             int lec_id = Convert.ToInt32(db.GetLastValueByColumnName("lec_id", "lecture_attandance_test"));
-           
+            
             using (SqlConnection con = new SqlConnection(a))
             {
 
@@ -109,15 +108,33 @@ namespace FinalTemplate
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@lec_id", SqlDbType.Int).Value = lec_id + 1;
-                cmd.Parameters.AddWithValue("@lectures", SqlDbType.VarChar).Value = name;
-                cmd.Parameters.AddWithValue("@content", SqlDbType.VarChar).Value = documentcontent;
-                cmd.Parameters.AddWithValue("@extension", SqlDbType.VarChar).Value = extension;
+                cmd.Parameters.AddWithValue("@fullpath", SqlDbType.VarChar).Value = fullpath+FileUpload1.FileName;
                 cmd.Parameters.AddWithValue("@teacher_id", SqlDbType.Int).Value = teacher.teacher_id;
-                cmd.Parameters.AddWithValue("@authorized_id", SqlDbType.VarChar).Value =CurrentUser.AuthorizedID;
-                cmd.Parameters.AddWithValue("@class_sec_info_id", SqlDbType.Int).Value =  teacher.class_id;
-               
-                con.Open();
-                cmd.ExecuteNonQuery();
+                cmd.Parameters.AddWithValue("@authorized_id", SqlDbType.VarChar).Value = CurrentUser.AuthorizedID;
+                cmd.Parameters.AddWithValue("@class_sec_info_id", SqlDbType.Int).Value = teacher.class_id;
+
+
+                try
+                {
+
+                    con.Open();
+
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        if (JFunctions.UploadSingleFile(FileUpload1, fullpath + FileUpload1.FileName) == "true")
+                        { HttpContext.Current.Response.Write("<script>alert('File Uploaded.')</script>"); }
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    HttpContext.Current.Response.Write(ex.ToString());
+                }
+                finally
+                {
+                    con.Close();
+                    cmd.Dispose();                   
+                }
             }
         }
     }
