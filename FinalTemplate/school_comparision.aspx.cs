@@ -24,7 +24,7 @@ namespace FinalTemplate
            }
         public void comm() { 
             
-            SSComparission.Comparission(DropDownList1.SelectedValue);
+            SSComparission.Comparission(Dd1.SelectedValue);
            
 
            
@@ -41,7 +41,7 @@ namespace FinalTemplate
             tut.Text = SSComparission.tution;
         }
         public void com() {
-            SSComparission.Comparission(DropDownList2.SelectedValue);
+            SSComparission.Comparission(Dd2.SelectedValue);
             School_Name1.Text = SSComparission.school_name;
             found1.Text = SSComparission.founnded;
             pos1.Text = SSComparission.Schoool_type;

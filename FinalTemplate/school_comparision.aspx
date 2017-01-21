@@ -40,7 +40,7 @@
                                             </label>
                                             <!--p.help-block Warning !-->
                                             <br />
-                                            <asp:DropDownList runat="server" CssClass="form-select style-1 selectbox"  ID="DropDownList1" DataSourceID="SqlDataSource2" DataTextField="school_name" DataValueField="school_name"></asp:DropDownList>
+                                            <asp:DropDownList runat="server" CssClass="form-select style-1 selectbox"  ID="Dd1" DataSourceID="SqlDataSource2" DataTextField="school_name" DataValueField="school_name"></asp:DropDownList>
                                         <asp:SqlDataSource runat="server" ID="SqlDataSource2" ConnectionString='<%$ ConnectionStrings:ces %>' SelectCommand="SELECT [school_name] FROM [tbl_school]"></asp:SqlDataSource>
                                         </div>
                                         <div class="col-md-6">
@@ -50,7 +50,7 @@
                                             </label>
                                             <!-- p.help-block Warning !-->
                                             <br />
-                                          <asp:DropDownList runat="server" CssClass="form-select style-1 selectbox" ID="DropDownList2" DataSourceID="SqlDataSource2" DataTextField="school_name" DataValueField="school_name"></asp:DropDownList>
+                                          <asp:DropDownList runat="server" CssClass="form-select style-1 selectbox" ID="Dd2" DataSourceID="SqlDataSource2" DataTextField="school_name" DataValueField="school_name"></asp:DropDownList>
                                              <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:ces %>' SelectCommand="SELECT [school_name] FROM [tbl_school]"></asp:SqlDataSource>
                                         </div>
                                     </div>
