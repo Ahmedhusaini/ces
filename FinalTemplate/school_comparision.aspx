@@ -19,19 +19,47 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="UserContentPlaceHolder" runat="server">
     <div id="wrapper-content">
          <div class="main-content">
-        <div class="content">
-            
-        <div class="section section-padding news-page">
-           
-        <div class="container">
-            
-        <div class="row">
-             
+        <div class="content">            
+        <div class="section section-padding news-page">           
+        <div class="container">            
+        <div class="row">             
         <div class="col-md-3 sidebar layout-right">
-            <asp:DropDownList runat="server" CssClass="form-select style-1 selectbox" ID="DropDownList1"></asp:DropDownList>
-        
-            
-             <br />
+                    <div style="left: -880px; position: relative">
+                        <div class="section pricing">
+                            <div class="container">
+                                <div class="group-title-index">
+                                    <br />
+                                    <h2 class="center-title" style="color:#86bc42">Schools Comparision</h2>
+                                </div>
+                                <div class="row">
+                                    <div class="pricing-wrapper">
+                                        <div class="col-md-6">
+                                            <label for="regname" style="color:#86bc42;font-size:15px" class="control-label form-label">
+                                                Select school Name <span class="highlight">*<br />
+                                                </span>
+                                            </label>
+                                            <!--p.help-block Warning !-->
+                                            <br />
+                                            <asp:DropDownList runat="server" CssClass="form-select style-1 selectbox"  ID="DropDownList5" DataSourceID="SqlDataSource2" DataTextField="school_name" DataValueField="school_name"></asp:DropDownList>
+                                        <asp:SqlDataSource runat="server" ID="SqlDataSource2" ConnectionString='<%$ ConnectionStrings:ces %>' SelectCommand="SELECT [school_name] FROM [tbl_school]"></asp:SqlDataSource>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="regname" style="color:#86bc42;font-size:15px" class="control-label form-label">
+                                                Select school Name <span class="highlight">*<br />
+                                                </span>
+                                            </label>
+                                            <!-- p.help-block Warning !-->
+                                            <br />
+                                          <asp:DropDownList runat="server" CssClass="form-select style-1 selectbox" ID="DropDownList6" DataSourceID="SqlDataSource2" DataTextField="school_name" DataValueField="school_name"></asp:DropDownList>
+                                             <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:ces %>' SelectCommand="SELECT [school_name] FROM [tbl_school]"></asp:SqlDataSource>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            <asp:Button ID="Button1" runat="server" Text="click" OnClick="Button1_Click" />
+            <br />
       <div class="archive-widget widget col-sm-6 col-md-12 col-xs-6 sd380" style="    margin-left: -898px;">
                                         <div class="title-widget">Charaterstics</div>
                                         <div class="content-widget">
@@ -52,7 +80,7 @@
                                     </div>
 
              <div class="archive-widget widget col-sm-6 col-md-12 col-xs-6 sd380" style="    margin-left: -510px;">
-                                        <div class="title-widget"><asp:Label runat="server" id="head_school_name"></asp:Label></div>
+                                        <div class="title-widget"><asp:Label runat="server" id="head_school_name">school</asp:Label></div>
                                         <div class="content-widget">
                                             <ul class="archive-widget list-unstyled">
                                                 <li><a href="#" class="link archive-item" ><asp:Label runat="server" ID="School_Name"></asp:Label></a></li>
@@ -71,7 +99,7 @@
                                     </div>
 
              <div class="archive-widget widget col-sm-6 col-md-12 col-xs-6 sd380" style= "   margin-left: -146px;""  >
-                                        <div class="title-widget"><asp:Label runat="server" ID="head_school_name1">sd</asp:Label></div>
+                                        <div class="title-widget"><asp:Label runat="server" ID="head_school_name1">school</asp:Label></div>
                                         <div class="content-widget">
                                             <ul class="archive-widget list-unstyled">
                                                 <li><a href="#" class="link archive-item" ><asp:Label runat="server" ID="School_Name1"></asp:Label></a></li>
