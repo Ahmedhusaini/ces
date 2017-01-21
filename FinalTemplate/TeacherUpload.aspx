@@ -9,7 +9,7 @@
         <Columns>
             <asp:TemplateField HeaderText="Lectures">
                 <ItemTemplate>
-                    <asp:LinkButton ID="LinkButton1" runat="server" Text='<%# Eval("fullpath") %>' OnClick="OpenDocument"></asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton1" CommandArgument='<%#Eval("fullpath") %>' runat="server" Text='<%# Eval("fullpath") %>' OnClick="OpenDocument"></asp:LinkButton>
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>

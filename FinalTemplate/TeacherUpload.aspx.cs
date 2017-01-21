@@ -68,31 +68,33 @@ namespace FinalTemplate
             GridViewRow gr = (GridViewRow)li.NamingContainer;
 
             int lec_id = int.Parse(GridView1.DataKeys[gr.RowIndex].Value.ToString());
-            //download(lec_id);
-        }
-        //private void download(int lec_id)
-        //{
-        //    DataTable dt = new DataTable();
-        //    using (SqlConnection con = new SqlConnection(a))
-        //    {
-        //        SqlCommand cmd = new SqlCommand("SP_Get_file", con);
-        //        cmd.CommandType = System.Data.CommandType.StoredProcedure;
-        //        cmd.Parameters.AddWithValue("@lec_id", SqlDbType.Int).Value = lec_id;
-        //        con.Open();
-        //        SqlDataReader reader = cmd.ExecuteReader();
-        //        dt.Load(reader);
-        //    }
-        //    string name = dt.Rows[0]["lectures"].ToString();
-        //    byte[] documentBytes = (byte[])dt.Rows[0]["content"];
 
-        //    Response.Clear();
-        //    Response.ContentType = "application/octect-stream";
-        //    Response.AppendHeader("content-disposition", string.Format("attachment; filename={0}", name));
-        //    Response.AppendHeader("content-Length", documentBytes.Length.ToString());
-        //    Response.BinaryWrite(documentBytes);
-        //    Response.Flush();
-        //    Response.Close();
-        //}
+            FileInfo fi = new FileInfo(download(lec_id));
+            string filePath = (sender as LinkButton).CommandArgument;
+            Response.ContentType = ContentType;
+            Response.AppendHeader("Content-Disposition", "attachment; filename=" + Path.GetFileName(filePath));
+            Response.WriteFile(filePath);
+            Response.End();
+        }
+        private string download(int lec_id)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(a))
+            {
+                SqlCommand cmd = new SqlCommand("SP_Get_file", con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lec_id", SqlDbType.Int).Value = lec_id;
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                dt.Load(reader);
+            }
+            return dt.Rows[0]["fullpath"].ToString();
+            //byte[] documentBytes = (byte[])dt.Rows[0]["content"];
+            
+            //Response.AppendHeader("content-Length", documentBytes.Length.ToString());
+            //Response.BinaryWrite(documentBytes);
+            
+        }
         protected void Button1_Click(object sender, EventArgs e)
         {
 
@@ -135,6 +137,7 @@ namespace FinalTemplate
                     con.Close();
                     cmd.Dispose();                   
                 }
+                Server.TransferRequest(Request.Url.AbsolutePath, false);
             }
         }
     }
