@@ -457,6 +457,7 @@
     <Compile Include="school_comparision.aspx.designer.cs">
       <DependentUpon>school_comparision.aspx</DependentUpon>
     </Compile>
+    <Compile Include="source\Functions\SSComparission.cs" />
     <Compile Include="source\Functions\studentid.cs" />
     <Compile Include="Teacher_Marksheet.aspx.cs">
       <DependentUpon>Teacher_Marksheet.aspx</DependentUpon>
