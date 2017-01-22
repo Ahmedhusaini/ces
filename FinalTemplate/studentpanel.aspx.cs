@@ -78,7 +78,7 @@ namespace FinalTemplate
                     int i = 0;
                     if (extension == ".jpg" || extension == ".png")
                     {
-                        if (filesize > 5000)
+                        if (filesize > 10000)
                         {
                             FileUpload1.SaveAs(fullfilepath);
                             i = 1;
@@ -88,6 +88,7 @@ namespace FinalTemplate
                             Label1.Text = "Filesize Exceed 1MB.";
                         }
                     }
+
                     con.Open();
                     string path = @"~\images\" + filename.ToString();
                     SqlCommand cmd = new SqlCommand("update tbl_general set photo='" + path + "' where General_Id='" + lab3.Text + "'", con);

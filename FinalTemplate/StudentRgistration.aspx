@@ -428,7 +428,7 @@
                                     <br />
                                     <div class="col-md-6">
                                         <label for="regname" class="control-label form-label">
-                                            Upload an Image<span class="highlight">*<br />
+                                            Upload an Image <span class="highlight">(use small size image)*<br />
                                             </span>
                                         </label>
                                         <!-- p.help-block Warning !-->
