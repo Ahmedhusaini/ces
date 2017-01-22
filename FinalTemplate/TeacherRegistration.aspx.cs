@@ -60,7 +60,7 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@postal_code", SqlDbType.Int).Value = postal.Text;
                 cmd.Parameters.AddWithValue("@city_id", SqlDbType.Int).Value = DropDownList2.SelectedValue;
                 cmd.Parameters.AddWithValue("@country_id", SqlDbType.Int).Value = DropDownList1.SelectedValue;
-                cmd.Parameters.AddWithValue("@photo", SqlDbType.VarChar).Value = fileupload.ValidateRequestMode;
+                cmd.Parameters.AddWithValue("@photo", SqlDbType.VarChar).Value = fileupload.FileName;
                 cmd.Parameters.AddWithValue("@username", SqlDbType.VarChar).Value = user.Text;
                 cmd.Parameters.AddWithValue("@account_pin", SqlDbType.Int).Value = accountp.Text;
                 cmd.Parameters.AddWithValue("@password", SqlDbType.VarChar).Value = pass.Text;
