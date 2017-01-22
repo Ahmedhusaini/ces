@@ -88,7 +88,7 @@
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
                                 <li><a href="Teacher_student_timetable.aspx" class="link-page">View Class Timetable</a></li>
                                 <li><a href="Teacher_timetable.aspx" class="link-page">View Teacher Timetable</a></li>
-                                <li><a href="Date_sheet.aspx" class="link-page">Date Sheet</a></li>
+                                <li><a href="Teacher_Datesheet.aspx" class="link-page">Date Sheet</a></li>
                                
                                
                                  
