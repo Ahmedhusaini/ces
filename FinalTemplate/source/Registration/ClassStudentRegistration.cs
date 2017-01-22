@@ -72,7 +72,7 @@ namespace FinalTemplate.source
             lastnameParameter.Value = lastname;
             NationalityParameter.Value = nationality;
             genderParameter.Value = gender;
-            photoParameter.Value = image;
+            photoParameter.Value = "images/student/" + image;
             religionParameter.Value = religion;
             phoneParameter.Value = contactno;
             addressParameter.Value = address;

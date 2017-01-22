@@ -12,16 +12,17 @@
         </div>
     </div>
     <br />
-    <asp:Label ID="Label1" Visible="false" runat="server" Text="Label"></asp:Label>    
-    <asp:Label ID="Label2"  Visible="false" runat="server" Text="Label"></asp:Label>    
-    <asp:Label ID="Label3" runat="server" Visible="false" Text="Label"></asp:Label>
+    <asp:Label ID="Label1"  runat="server" Text="Label" Visible="False"></asp:Label>    
+    <asp:Label ID="Label2" runat="server" Text="Label" Visible="False"></asp:Label>    
+    <asp:Label ID="Label3" runat="server"  Text="Label" Visible="False"></asp:Label>
     <asp:GridView ID="GridView4" class="edu-table-responsive" runat="server" DataKeyNames="lec_id" CellPadding="4" GridLines="None">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:TemplateField HeaderText="DOWNLOAD">
                 <ItemTemplate>
                             <%-- <asp:LinkButton ID="LinkButton1" OnClick="OpenDocument" runat="server" Text='<%# Eval("lectures") %>' Font-Size="Large" Font-Bold="True" Font-Names="'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"></asp:LinkButton>--%>
-                            <asp:Button CssClass="btn btn-green" Height="70%" Width="30%" ID="Button1"  runat="server" OnClick="OpenDocument" Text='<%# Eval("lectures") %>' />
+                            <%--<asp:Button CssClass="btn btn-green" Height="70%" Width="30%" ID="Button1"  runat="server" OnClick="OpenDocument" Text='<%# Eval("lectures") %>' />--%>
+                            <asp:LinkButton ID="LinkButton1" ForeColor="#86bc42" Font-Bold="true" runat="server" CommandArgument='<%# Eval("fullpath") %>' Text='<%# Eval("fullpath") %>' OnClick="OpenDocument"></asp:LinkButton>
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>

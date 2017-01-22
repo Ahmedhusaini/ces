@@ -231,7 +231,8 @@
             <asp:TemplateField HeaderText="DOWNLOAD">
                 <ItemTemplate>
                             <%-- <asp:LinkButton ID="LinkButton1" OnClick="OpenDocument" runat="server" Text='<%# Eval("lectures") %>' Font-Size="Large" Font-Bold="True" Font-Names="'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"></asp:LinkButton>--%>
-                            <asp:Button CssClass="btn btn-green" Height="70%" Width="30%" ID="Button1"  runat="server" OnClick="OpenDocument" Text='<%# Eval("lectures") %>' />
+                            <%--<asp:Button CssClass="btn btn-green" Height="70%" Width="30%" ID="Button1"  runat="server" OnClick="OpenDocument" Text='<%# Eval("lectures") %>' />--%>
+                            <asp:LinkButton ID="LinkButton1" ForeColor="#86bc42" Font-Bold="true" runat="server" CommandArgument='<%# Eval("fullpath") %>' Text='<%# Eval("fullpath") %>' OnClick="OpenDocument"></asp:LinkButton>
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
@@ -256,15 +257,7 @@
     <br />
 
                  <div id="atten" class="underline" style="height: 20px; text-align: left;">
-                <h2> Attendance &nbsp;&nbsp;&nbsp;&nbsp; </h2>
-             
-            </div>
-        <br />
-            
-        <br />
-  
-       
-            <asp:Label ID="Label1" runat="server" Text="Date"></asp:Label>
+                <h2> Attendance &nbsp;&nbsp;&nbsp;&nbsp;         <asp:Label ID="Label1" runat="server" Text="Date"></asp:Label>
           
            <%-- <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource3" DataTextField="Column1" DataValueField="Column1" AutoPostBack="True" >
             </asp:DropDownList>

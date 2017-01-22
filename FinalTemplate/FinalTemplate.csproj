@@ -912,6 +912,7 @@
     <Folder Include="files\Lectures\" />
     <Folder Include="images\News\" />
     <Folder Include="images\registeredSchools\" />
+    <Folder Include="images\student\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

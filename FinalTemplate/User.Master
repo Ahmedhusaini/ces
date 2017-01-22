@@ -50,7 +50,7 @@
                 <div class="hotline"><a href="javascript:void(0)"><i></i><span>| Reshaping Education into Digital World </span></a></div>
             </div>
             <div class="topbar-right pull-right">
-                <div class="socials"><a href="#" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" class="google"><i class="fa fa-google-plus"></i></a><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></div>
+                
                 <div class="group-sign-in"><a href="Logintype.aspx" class="login">login</a><a href="select_resistration_type.aspx" class="register">register</a></div>
             </div>
         </div>
@@ -64,25 +64,16 @@
                 </div>
                 <nav class="navigation collapse navbar-collapse pull-right">
                     <ul class="nav-links nav navbar-nav">
-                        <li class="dropdown active"><a href="javascript:void(0)" class="main-menu">Home</a>
-                             </li>
-                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu">comparision<span class="fa fa-angle-down icons-dropdown"></span></a>
-                            <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                <li><a href="school_comparision.aspx" class="link-page">School Comparision</a></li>
-                            </ul>
+                        <li class="dropdown "><a href="javascript:void(0)" class="main-menu">Home</a>
                         </li>
-                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu">gallery</a>
-                            </li>
-                      <li class="dropdown"><a href="javascript:void(0)" class="main-menu">News</a>
-                            </li>
+
+                        <li class="dropdown"><a href="school_comparision.aspx" class="main-menu">School Comparision</a>
+                        </li>
+                        </li>
                         <li class="dropdown"><a href="About_Us.aspx" class="main-menu">About Us</a></li>
                         <li><a href="Contact_Us.aspx" class="main-menu">Contact</a></li>
-                        <li class="button-search"><p class="main-menu"><i class="fa fa-search"></i></p></li>
-                        <div class="nav-search hide">
-                            <form><input type="text" placeholder="Search" class="searchbox"/>
-                                <button type="submit" class="searchbutton fa fa-search"></button>
-                            </form>
-                        </div>
+
+
                     </ul>
                 </nav>
             </div>

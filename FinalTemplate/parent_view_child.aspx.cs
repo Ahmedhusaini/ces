@@ -19,7 +19,9 @@ namespace FinalTemplate
     public partial class parent_view_child : System.Web.UI.Page
     {
         private Database myDatabase = new Database("ces");
-
+        string a = ConfigurationManager.ConnectionStrings["ces"].ConnectionString;
+        Database db = new Database("ces");
+        string fullpath = "files/Lectures/";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -121,57 +123,53 @@ namespace FinalTemplate
 
         public void filldata2()
         {
-            DataTable dt1 = new DataTable();
-            using (SqlConnection co = new SqlConnection(@"Data Source=ABBASI\JAHANGEER;;Initial Catalog=ces;Integrated Security=True"))
+            DataTable dt = new DataTable();
+            int lec_id = Convert.ToInt32(db.GetLastValueByColumnName("lec_id", "lecture_attandance_test"));
+            using (SqlConnection con = new SqlConnection(a))
             {
-                SqlCommand cmd1 = new SqlCommand(@"select lec_id,lectures,content,class,section from view_lecture_attandance_test where school_id='" + lblschool_id.Text + "' and class='" + lblclass.Text + "' and section='" + lblsec.Text + "'", co);
-                //cmd1.CommandType = CommandType.StoredProcedure;
-                co.Open();
-                SqlDataReader reader1 = cmd1.ExecuteReader();
-                dt1.Load(reader1);
+                SqlCommand cmd = new SqlCommand("sp_lecture_test", con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lec_id", SqlDbType.Int).Value = lec_id;
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                dt.Load(reader);
             }
-            if (dt1.Rows.Count > 0)
+            if (dt.Rows.Count > 0)
             {
-                GridView4.DataSource = dt1;
+                GridView4.DataSource = dt;
                 GridView4.DataBind();
             }
         }
 
         protected void OpenDocument(object sender, EventArgs e)
         {
-            Button li1 = (Button)sender;
-            GridViewRow gr1 = (GridViewRow)li1.NamingContainer;
+            LinkButton li = (LinkButton)sender;
+            GridViewRow gr = (GridViewRow)li.NamingContainer;
 
-            int lec_id = int.Parse(GridView4.DataKeys[gr1.RowIndex].Value.ToString());
-            download(lec_id);
+            int lec_id = int.Parse(GridView4.DataKeys[gr.RowIndex].Value.ToString());
+
+            FileInfo fi = new FileInfo(download(lec_id));
+            string filePath = (sender as LinkButton).CommandArgument;
+            Response.ContentType = ContentType;
+            Response.AppendHeader("Content-Disposition", "attachment; filename=" + Path.GetFileName(filePath));
+            Response.WriteFile(filePath);
+            Response.End();
         }
 
-        private void download(int lec_id)
+        private string download(int lec_id)
         {
-            DataTable dt1 = new DataTable();
-            using (SqlConnection co = new SqlConnection(@"Data Source=SHAHERYAR\SQLEXPRESS;Initial Catalog=ces;Integrated Security=True"))
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(a))
             {
-                SqlCommand cmd1 = new SqlCommand("SP_Get_file", co);
-                cmd1.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd1.Parameters.AddWithValue("@lec_id", SqlDbType.Int).Value = lec_id;
-                co.Open();
-                SqlDataReader reader1 = cmd1.ExecuteReader();
-                dt1.Load(reader1);
+                SqlCommand cmd = new SqlCommand("sp_lecture_test", con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lec_id", SqlDbType.Int).Value = lec_id;
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                dt.Load(reader);
             }
-            string name = dt1.Rows[0]["lectures"].ToString();
-            byte[] documentBytes = (byte[])dt1.Rows[0]["content"];
-
-            Response.Clear();
-            Response.ContentType = "application/octect-stream";
-            Response.AppendHeader("content-disposition", string.Format("attachment; filename={0}", name));
-            Response.AppendHeader("content-Length", documentBytes.Length.ToString());
-            Response.BinaryWrite(documentBytes);
-            Response.Flush();
-            Response.Close();
+            return dt.Rows[0]["fullpath"].ToString();
         }
-
-
-
-
     }
 }
