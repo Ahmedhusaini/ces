@@ -33,21 +33,17 @@ namespace FinalTemplate
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-           
+            foreach (GridViewRow g in GridView1.Rows)
+            {
+                if (g.RowType == DataControlRowType.DataRow)
+                {
                 string a = ConfigurationManager.ConnectionStrings["ces"].ConnectionString;
                 Database db = new Database("ces");
                 int std_attend_id = Convert.ToInt32(db.GetLastValueByColumnName("std_attend_id", "tbl_student_attendance"));
                 var std_id = Convert.ToString(db.GetLastValueByColumnName("std_id", "tbl_Student_Reg"));
 
                 using (SqlConnection con = new SqlConnection(a))
-                { 
-                 
-
-                   
-                    foreach (GridViewRow g in GridView1.Rows)
-                    {
-                        if (g.RowType == DataControlRowType.DataRow)
-                        {
+                {      
                             con.Open();
                             SqlCommand cmd = new SqlCommand("sp_Mark_std_attendance", con);
                             cmd.CommandType = System.Data.CommandType.StoredProcedure;
