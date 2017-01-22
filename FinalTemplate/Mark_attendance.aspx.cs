@@ -31,9 +31,7 @@ namespace FinalTemplate
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            int rowcount = GridView1.Rows.Count;
-            for (int i = 0; i < rowcount; i++)
-            {
+           
                 string a = ConfigurationManager.ConnectionStrings["ces"].ConnectionString;
                 Database db = new Database("ces");
                 int std_attend_id = Convert.ToInt32(db.GetLastValueByColumnName("std_attend_id", "tbl_student_attendance"));
@@ -67,4 +65,3 @@ namespace FinalTemplate
             }
         }
 	}
-}

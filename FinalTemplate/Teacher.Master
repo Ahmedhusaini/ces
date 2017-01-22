@@ -55,7 +55,7 @@
                 <div class="hotline"><a href="#"><i class="topbar-icon fa fa-phone"></i><span>+92335667778</span></a></div>
             </div>
             <div class="topbar-right pull-right">
-            <div class="group-sign-in"><a href="select_resistration_type.aspx" class="logout">logout</a></div>
+            <div class="group-sign-in"><a href="Logintype.aspx" class="logout">logout</a></div>
             <div class="group-sign-in"><a href="update_teacherDetail.aspx" class="logout">Update Profile</a></div>
             </div>
         </div>
@@ -86,10 +86,9 @@
                         </li>
                         <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Schedules<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                <li><a href="Teacher_timetable.aspx" class="link-page">View Class Timetable</a></li>
+                                <li><a href="Teacher_student_timetable.aspx" class="link-page">View Class Timetable</a></li>
                                 <li><a href="Teacher_timetable.aspx" class="link-page">View Teacher Timetable</a></li>
-                                <li><a href="about-us.html" class="link-page">Syllabus</a></li>
-                                <li><a href="categories.html" class="link-page">Date Sheet</a></li>
+                                <li><a href="Date_sheet.aspx" class="link-page">Date Sheet</a></li>
                                
                                
                                  
@@ -151,7 +150,7 @@
                         <div class="col-md-3 col-sm-6 col-xs-6 sd380">
                             <div class="edugate-widget widget">
                                 <div class="title-widget">CES</div>
-                                <div class="content-widget"><p>CES  is a great start for an education personnel or organization to start the online business with 1 Click.</p>
+                                <div class="content-widget"><p>CES is Pakistan's only web portal that combines the educational institutes all over the pakistan to enhance the quality of education and support the future by securing the education quality and make it easier for everyone to approach to best and modern education.</p>
 
                                     <div class="info-list">
                                         <ul class="list-unstyled">

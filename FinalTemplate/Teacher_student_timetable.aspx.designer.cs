@@ -10,24 +10,24 @@
 namespace FinalTemplate {
     
     
-    public partial class Admin1 {
+    public partial class Teacher_student_timetable {
         
         /// <summary>
-        /// lbl_schoolid control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_schoolid;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// btn_logout control.
+        /// SqlDataSource1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_logout;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
     }
 }
