@@ -99,8 +99,6 @@
                 </form>
             </div>
         </div><br />
-
-    <input type="text" id="mapsearch" size="50" />
     <div id="map-curve"></div>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCs6JNdcD-avNuHSyp-M2ceRrMKlG9FIFQ&libraries=places"
