@@ -23,10 +23,6 @@ namespace FinalTemplate
                 string[] whereoperator = { "=" };
                 string[] multiwhere = { "" };
 
-                CurrentUser.GetAuthorizedDetails(Session["userid"].ToString());
-                string[] whereoperatorvale = { "'" + CurrentUser.AuthorizedID + "'" };
-                string[,] teacherid = myDatabase.SelectQuery("tbl_teacher", col, colwhere, whereoperator, whereoperatorvale, multiwhere);
-                CurrentUser.GetPersonalDetails(Convert.ToInt32(teacherid[0, 0]));
 
             }
             else

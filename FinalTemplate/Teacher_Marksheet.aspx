@@ -14,7 +14,7 @@
                 <tr class="heading-table">
                      <th class="col-1"><asp:FileUpload ID="FileUpload1" runat="server" /></th>
       <th class="col-2">
-                      <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" /></th>
+                      <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" ForeColor="Black" /></th>
                 </tr>
                 <tr>
                     <asp:Label ID="Label1" runat="server" Text="Label" Visible="false"></asp:Label>
