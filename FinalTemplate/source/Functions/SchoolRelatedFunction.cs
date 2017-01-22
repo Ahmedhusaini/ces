@@ -168,6 +168,122 @@ namespace FinalTemplate.source.Functions
             }
             return foundteachers;
         }
+        public int TotalTeachers()
+        {
+            int foundteachers = 0;
+            mydb.CreateConnection();
+            mydb.InitializeSQLCommandObject(mydb.GetCurrentConnection, "spTotalTeachers", true);
+            try
+            {
+                mydb.OpenConnection();
+                mydb.obj_reader = mydb.obj_sqlcommand.ExecuteReader();
+                if (mydb.obj_reader.HasRows)
+                {
+                    while (mydb.obj_reader.Read())
+                    {
+                        foundteachers = (int)mydb.obj_reader["totalTeacher"];
+                    }
+                }
+                else
+                {
+                    return foundteachers;
+                }
+            }
+            finally
+            {
+                mydb.CloseConnection();
+                mydb.obj_reader.Close();
+                mydb.obj_reader.Dispose();
+            }
+            return foundteachers;
+        }
+        public int TotalParents()
+        {
+            int foundteachers = 0;
+            mydb.CreateConnection();
+            mydb.InitializeSQLCommandObject(mydb.GetCurrentConnection, "spTotalNumberOfParents", true);
+            try
+            {
+                mydb.OpenConnection();
+                mydb.obj_reader = mydb.obj_sqlcommand.ExecuteReader();
+                if (mydb.obj_reader.HasRows)
+                {
+                    while (mydb.obj_reader.Read())
+                    {
+                        foundteachers = (int)mydb.obj_reader["totalParents"];
+                    }
+                }
+                else
+                {
+                    return foundteachers;
+                }
+            }
+            finally
+            {
+                mydb.CloseConnection();
+                mydb.obj_reader.Close();
+                mydb.obj_reader.Dispose();
+            }
+            return foundteachers;
+        }
+        public int TotalSchools()
+        {
+            int foundschools = 0;
+            mydb.CreateConnection();
+            mydb.InitializeSQLCommandObject(mydb.GetCurrentConnection, "spTotalSchools", true);
+            try
+            {
+                mydb.OpenConnection();
+                mydb.obj_reader = mydb.obj_sqlcommand.ExecuteReader();
+                if (mydb.obj_reader.HasRows)
+                {
+                    while (mydb.obj_reader.Read())
+                    {
+                        foundschools = (int)mydb.obj_reader["totalSchools"];
+                    }
+                }
+                else
+                {
+                    return foundschools;
+                }
+            }
+            finally
+            {
+                mydb.CloseConnection();
+                mydb.obj_reader.Close();
+                mydb.obj_reader.Dispose();
+            }
+            return foundschools;
+        }
+        public int TotalStudents()
+        {
+            int foundstudents = 0;
+            mydb.CreateConnection();
+            mydb.InitializeSQLCommandObject(mydb.GetCurrentConnection, "spTotalStudents", true);
+            try
+            {
+                mydb.OpenConnection();
+                mydb.obj_reader = mydb.obj_sqlcommand.ExecuteReader();
+                if (mydb.obj_reader.HasRows)
+                {
+                    while (mydb.obj_reader.Read())
+                    {
+                        foundstudents = (int)mydb.obj_reader["totalStudents"];
+                    }
+                }
+                else
+                {
+                    return foundstudents;
+                }
+            }
+            finally
+            {
+                mydb.CloseConnection();
+                mydb.obj_reader.Close();
+                mydb.obj_reader.Dispose();
+            }
+            return foundstudents;
+        }
 
 
         public string GetSchoolDetails()
