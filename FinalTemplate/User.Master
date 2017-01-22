@@ -68,8 +68,7 @@
                              </li>
                         <li class="dropdown"><a href="javascript:void(0)" class="main-menu">comparision<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                <li><a href="courses.html" class="link-page">School Comparision</a></li>
-                                <li><a href="courses-detail.html" class="link-page">Student Comparision</a></li>
+                                <li><a href="school_comparision.aspx" class="link-page">School Comparision</a></li>
                             </ul>
                         </li>
                         <li class="dropdown"><a href="javascript:void(0)" class="main-menu">gallery</a>

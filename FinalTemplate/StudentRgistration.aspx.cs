@@ -105,10 +105,11 @@ namespace FinalTemplate
                     string extension = Path.GetExtension(filename);
                     //Label1.Text = filepath;
                     int filesize = FileUpload1.PostedFile.ContentLength / 1024;
+                    Convert.ToString(filesize);
                     int i = 0;
                     if (extension == ".jpg" || extension == ".png")
                     {
-                        if (filesize > 5000)
+                        if (filesize > 10000)
                         {
                             FileUpload1.SaveAs(fullfilepath);
                             i = 1;
