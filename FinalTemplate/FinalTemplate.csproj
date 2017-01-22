@@ -39,9 +39,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AjaxControlToolkit, Version=4.5.7.1213, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\shahwaiz\Desktop\AjaxControlToolkit.Binary.NET4\AjaxControlToolkit.dll</HintPath>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\AjaxControlToolkit.Binary.NET4\AjaxControlToolkit.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -457,6 +456,7 @@
     <Compile Include="school_comparision.aspx.designer.cs">
       <DependentUpon>school_comparision.aspx</DependentUpon>
     </Compile>
+    <Compile Include="source\Functions\SSComparission.cs" />
     <Compile Include="source\Functions\studentid.cs" />
     <Compile Include="Teacher_Marksheet.aspx.cs">
       <DependentUpon>Teacher_Marksheet.aspx</DependentUpon>
@@ -901,7 +901,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="files\" />
+    <Folder Include="files\Lectures\" />
     <Folder Include="images\News\" />
     <Folder Include="images\registeredSchools\" />
   </ItemGroup>

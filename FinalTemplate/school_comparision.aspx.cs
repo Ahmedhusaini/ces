@@ -14,52 +14,73 @@ namespace FinalTemplate
 {
     public partial class school_comparision : System.Web.UI.Page
     {
-        private Database myDatabase = new Database("ces");
-        SqlConnection con = new SqlConnection(@"Data Source=SHAHWAIZ\SQLEXPRESS;Initial Catalog=ces;Integrated Security=True");
+        
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (!IsPostBack)
-            //{
-            //    if (Session["userid"] != null)
-            //    {
-            //        Response.Redirect("~/Default.aspx");
-            //    }
-            //}
-            Jfunctionstudents.BindDropDownList(DropDownList1, "school_name", "school_id", "select * from tbl_school");
-           }
-
-        protected void comp_Click(object sender, EventArgs e)
-        {
-            using (SqlConnection connection = con)
-                {
-                    SqlCommand command =
-                    new SqlCommand("select * from comparison WHERE school_name='" + DropDownList1.SelectedItem + "'", connection);
-                    connection.Open();
-                    SqlDataReader read = command.ExecuteReader();
-                    while (read.Read())
-                    {
-                        school_name.Text = (read["school_name"].ToString());
-                        new1.Text = (read["school_name"].ToString());
-                        //CustName.Text = (read["Customer_Name"].ToString());
-                        //Add1.Text = (read["Address_1"].ToString());
-                        //Add2.Text = (read["Address_2"].ToString());
-                        //PostBox.Text = (read["Postcode"].ToString());
-                        //PassBox.Text = (read["Password"].ToString());
-                        //DatBox.Text = (read["Data_Important"].ToString());
-                        //LanNumb.Text = (read["Landline"].ToString());
-                        //MobNumber.Text = (read["Mobile"].ToString());
-                        //FaultRep.Text = (read["Fault_Report"].ToString());
-                    }
-                    read.Close();
-                }
+           
             
-        }
+            
+           }
+        public void comm() { 
+            
+            SSComparission.Comparission(Dd1.SelectedValue);
+           
 
+           
+            School_Name.Text = SSComparission.school_name;
+            school1.Text = SSComparission.school_name1;
+            found.Text = SSComparission.founnded;
+            pos.Text = SSComparission.Schoool_type;
+            coun.Text = SSComparission.country;
+            city.Text = SSComparission.city;
+            camp.Text = SSComparission.campus;
+            reg.Text = SSComparission.registration;
+            adm.Text = SSComparission.admission;
+            sec.Text = SSComparission.security;
+            ann.Text = SSComparission.annnaul;
+            tut.Text = SSComparission.tution;
+        }
+        public void com() {
+            SSComparission.Comparission(Dd2.SelectedValue);
+            School_Name1.Text = SSComparission.school_name;
+            school2.Text = SSComparission.school_name2;
+            found1.Text = SSComparission.founnded;
+            pos1.Text = SSComparission.Schoool_type;
+            coun1.Text = SSComparission.country;
+            city1.Text = SSComparission.city;
+            camp1.Text = SSComparission.campus;
+            reg1.Text = SSComparission.registration;
+            adm1.Text = SSComparission.admission;
+            sec1.Text = SSComparission.security;
+            ann1.Text = SSComparission.annnaul;
+            tut1.Text = SSComparission.tution;
+        
+        }
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Convert.ToInt32(DropDownList1.SelectedItem);
-            DropDownList1.Items.Insert(0, new ListItem("-Choose school-", "-Choose school-"));   
+            
+        
+
         }
+
+       
+
+        protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+              
+           
+
+        }
+    
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            comm();
+            com();
+        }
+    
+        
+
     }
 }

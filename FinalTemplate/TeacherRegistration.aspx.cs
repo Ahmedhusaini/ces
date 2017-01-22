@@ -71,8 +71,8 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@usertype_id", SqlDbType.Int).Value = 3;
                 cmd.Parameters.AddWithValue("@date_of_join", SqlDbType.Date).Value = DateTime.Now.ToString("");
                 cmd.Parameters.AddWithValue("@school_id", SqlDbType.VarChar).Value = DropDownList3.SelectedValue;
-                cmd.Parameters.AddWithValue("@class_id", SqlDbType.Int).Value = DropDownList4.SelectedValue;
-                cmd.Parameters.AddWithValue("@section_id", SqlDbType.Int).Value = DropDownList5.SelectedValue;
+                cmd.Parameters.AddWithValue("@class_id", SqlDbType.Int).Value =Convert.ToInt32(DropDownList4.SelectedValue);
+                cmd.Parameters.AddWithValue("@section_id", SqlDbType.Int).Value =Convert.ToInt32(DropDownList5.SelectedValue);
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
