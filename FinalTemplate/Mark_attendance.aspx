@@ -17,7 +17,7 @@
                                         <asp:TemplateField HeaderText="Remarks">
                                         <ItemTemplate>  
                                             
-                                  <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="remarks" DataValueField="remark_id">
+                                  <asp:DropDownList ID="remark" runat="server" DataSourceID="SqlDataSource2" DataTextField="remarks" DataValueField="remark_id">
                                             <asp:ListItem>Present</asp:ListItem>
                                             <asp:ListItem>Absent</asp:ListItem>
                                             <asp:ListItem>Leave</asp:ListItem>     
