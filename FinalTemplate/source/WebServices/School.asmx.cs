@@ -1,12 +1,9 @@
-﻿using System;
+﻿using FinalTemplate.source.Functions;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Script.Serialization;
 using System.Web.Services;
-using FinalTemplate.source.Functions;
-using FinalTemplate.source.Database;
 namespace FinalTemplate.source.WebServices
 {
     /// <summary>
@@ -22,7 +19,7 @@ namespace FinalTemplate.source.WebServices
         private SchoolRelatedFunction objSchoolRelatedFunction = new SchoolRelatedFunction();
         private Database.Database myDatabase = new Database.Database("ces");
         JavaScriptSerializer objSerializer = new JavaScriptSerializer();
-         
+
         [WebMethod]
         public void GetNumberOfUsers(string _schoolid)
         {
@@ -34,13 +31,23 @@ namespace FinalTemplate.source.WebServices
                                      objSchoolRelatedFunction.TotalTeachers(_schoolid);
             HttpContext.Current.Response.Write(objSerializer.Serialize(usercount));
         }
+        [WebMethod]
+        public void CounterForHomePage()
+        {
+            IDictionary<string, int> userDictionary = new ConcurrentDictionary<string, int>();
+            userDictionary["teacher"] = objSchoolRelatedFunction.TotalTeachers();
+            userDictionary["parent"] = objSchoolRelatedFunction.TotalParents();
+            userDictionary["school"] = objSchoolRelatedFunction.TotalSchools();
+            userDictionary["student"] = objSchoolRelatedFunction.TotalStudents();
+            HttpContext.Current.Response.Write(objSerializer.Serialize(userDictionary));
+        }
 
         [WebMethod]
         public void Teacherofthemonthphoto(string _schoolid)
         {
             IDictionary<string, string> returnInformation = new Dictionary<string, string>();
             myDatabase.CreateConnection();
-            myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "TeacherOfTheMonthImage",true);
+            myDatabase.InitializeSQLCommandObject(myDatabase.GetCurrentConnection, "TeacherOfTheMonthImage", true);
             myDatabase.obj_sqlcommand.Parameters.AddWithValue("@schoolid", _schoolid);
             try
             {

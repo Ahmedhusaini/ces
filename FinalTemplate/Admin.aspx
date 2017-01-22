@@ -24,7 +24,7 @@
                     var str = JSON.stringify(data);
                     var array = $.parseJSON(str);
                     $.each(array, function(i, v) {
-                        parentdiv.append('<div class="edugate-layout-1"><div class="edugate-image"><img src="' + v.Image + '" alt="" class="img-responsive" /></div><div class="edugate-content"><a href="#" class="title">' + v.Title + '</a><div class="info"><div class="author item"></div><div class="date-time item"></div></div><div class="description">' + v.Description + '</div><button id="browseall" class="btn btn-green"><span><a href="UpdateNews.aspx?NC=' + v.NewsID + '">Details</a></span></button></div></div><button class="btn btn-green btn-latest-new"><span><a href="ViewNews.aspx">Browser All Post</a><i class="fa fa-long-arrow-right"></i></span></button> </div>');
+                        parentdiv.append('<div class="edugate-layout-1"><div class="edugate-image"><img src="' + v.Image + '" alt="" class="img-responsive" /></div><div class="edugate-content"><a href="#" class="title">' + v.Title + '</a><div class="info"><div class="author item"></div><div class="date-time item"></div></div><div class="description">' + v.Description + '</div><button id="browseall" class="btn btn-green"><span><a href="UpdateNews.aspx?NC=' + v.NewsID + '">Details</a></span></button></div></div><button style="padding-right:175px;" class="btn btn-green btn-latest-new"><span><a href="ViewNews.aspx">Browser All Post</a><i class="fa fa-long-arrow-right"></i></span></button> </div>');
                         $('#browseall').css('width', '200px');
                     });
                 },
@@ -179,79 +179,7 @@
             </div>
         </div>
     </div>
-    <!-- TOP COURSES-->
-    <div class="section section-padding top-courses">
-        <div class="container">
-            <div class="group-title-index">
-                <h2 class="center-title">Pending Requests</h2>
-                <div class="bottom-title"><i class="bottom-icon icon-icon-04"></i></div>
-                <div class="container teacher-course-wrapper">
-                    <div class="inner-container">
-                        <div class="table-header">
-                            <table class="edu-table-responsive">
-                                <thead>
-                                    <tr class="heading-table">
-                                        <th class="col-3">Teacher ID</th>
-                                        <th class="col-2">Teacher Name</th>
-                                        <th class="col-3">Make Teacher Of the Month</th>
-                                    </tr>
-                                </thead>
-                            </table>
-                        </div>
-                        <div class="table-body">
-                            <table class="edu-table-responsive table-hover">
-                                <tbody>
-                                    <tr class="table-row">
-                                        <td class="col-3"><span>ED1</span></td>
-                                        <td class="col-2"><a href="courses-detail.html">Sport Exercise Sciences</a></td>
-                                        <td class="col-3"><span>
-                                            <asp:Button ID="btn1" Text="Okay" runat="server" /><asp:Button ID="btn2" Text="Reject" runat="server" /></span></td>
-                                    </tr>
-                                    <tr class="table-row">
-                                        <td class="col-3"><span>ED1</span></td>
-                                        <td class="col-2"><a href="courses-detail.html">Learning Website Optimization With Bootstrap</a></td>
-                                        <td class="col-3"><span>
-                                            <asp:Button ID="Button1" Text="Okay" runat="server" /><asp:Button ID="Button2" Text="Reject" runat="server" /></span></td>
-                                    </tr>
-                                    <tr class="table-row">
-                                        <td class="col-3"><span>ED1</span></td>
-                                        <td class="col-2"><a href="courses-detail.html">Skeching Custom Item Prize Design</a></td>
-                                        <td class="col-3"><span>
-                                            <asp:Button ID="Button3" Text="Okay" runat="server" /><asp:Button ID="Button4" Text="Reject" runat="server" /></span></td>
-                                    </tr>
-                                    <tr class="table-row">
-                                        <td class="col-3"><span>ED1</span></td>
-                                        <td class="col-2"><a href="courses-detail.html">Learning Website Optimization With Bootstrap</a></td>
-                                        <td class="col-3"><span>
-                                            <asp:Button ID="Button5" Text="Okay" runat="server" /><asp:Button ID="Button6" Text="Reject" runat="server" /></span></td>
-                                    </tr>
-                                    <tr class="table-row">
-                                        <td class="col-3"><span>ED1</span></td>
-                                        <td class="col-2"><a href="courses-detail.html">Learning Viral Web Design Projects</a></td>
-                                        <td class="col-3"><span>
-                                            <asp:Button ID="Button7" Text="Okay" runat="server" /><asp:Button ID="Button8" Text="Reject" runat="server" /></span></td>
-                                    </tr>
-                                    <tr class="table-row">
-                                        <td class="col-3"><span>ED1</span></td>
-                                        <td class="col-2"><a href="courses-detail.html">Email Marketing Strategy With MailChimp</a></td>
-                                        <td class="col-3"><span>
-                                            <asp:Button ID="Button9" Text="Okay" runat="server" /><asp:Button ID="Button10" Text="Reject" runat="server" /></span></td>
-                                    </tr>
-                                    <tr class="table-row">
-                                        <td class="col-3"><span>ED1</span></td>
-                                        <td class="col-2"><a href="courses-detail.html">Social Media Network & Marketing</a></td>
-                                        <td class="col-3"><span>
-                                            <asp:Button ID="Button11" Text="Okay" runat="server" /><asp:Button ID="Button12" Text="Reject" runat="server" /></span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+   
     <!-- PROGRESS BARS-->
     <div class="section progress-bars section-padding">
         <div class="container">
@@ -363,7 +291,7 @@
                         <button onclick="window.location.href='news-detail.html'" class="btn btn-green"><span>learn now</span></button>
                     </div>
                 </div>
-                <button class="btn btn-green btn-latest-new"><span><a href="ViewNews.aspx">Browser All Post</a><i class="fa fa-long-arrow-right"></i></span></button>
+                <button class="btn btn-green btn-latest-new"><span><a href="ViewNews.aspx">Browser All Posts</a><i class="fa fa-long-arrow-right"></i></span></button>
             </div>
         </div>
     </div>
