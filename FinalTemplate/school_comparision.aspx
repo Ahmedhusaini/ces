@@ -1,6 +1,25 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User.Master" AutoEventWireup="true" CodeBehind="school_comparision.aspx.cs" Inherits="FinalTemplate.school_comparision" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="UserHeadPlaceHolder" runat="server">
+    <script src="assets/js/jquery-2.2.3.js"></script>
+    <script type="text/javascript" >
+        $(document.window).ready(function() {
+            
+            
+
+        });
+
+        $(document).ready(function() {
+            //$('[title="remove"]').hide();
+            $('#<%=Button1.ClientID%>').click(function (e) {
+                //e.preventDefault();
+                $('[title="remove"]').show();
+            });
+        });
+
+
+    </script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="UserContentPlaceHolder" runat="server">
     <div id="wrapper-content">
@@ -47,10 +66,10 @@
                                     </div>
                                 </div>
                                 <div style="margin-left: -353px; border-radius: 10px">
-                                    <asp:Button ID="Button1" BackColor="#5bc0de" Font-Bold="true" CssClass=" btn btn-register btn-green" runat="server" Text="Check" OnClick="Button1_Click" />
+                                    <asp:Button ID="Button1"  BackColor="#5bc0de" Font-Bold="true" CssClass=" btn btn-register btn-green" runat="server" Text="Check" OnClick="Button1_Click" />
                                 </div>
                                 <br />
-                                <div class="archive-widget widget col-sm-6 col-md-12 col-xs-6 sd380" style="margin-left: -781px;">
+                                <div  class="archive-widget widget col-sm-6 col-md-12 col-xs-6 sd380" style="margin-left: -781px;">
                                     <div class="title-widget" style="color: #86bc42">Charaterstics</div>
                                     <div class="content-widget">
                                         <ul class="archive-widget list-unstyled">
@@ -81,7 +100,7 @@
                                     </div>
                                 </div>
 
-                                <div class="archive-widget widget col-sm-6 col-md-12 col-xs-6 sd380" style="margin-left: -435px">
+                                <div title="remove" class="archive-widget widget col-sm-6 col-md-12 col-xs-6 sd380" style="margin-left: -435px">
                                     <div class="title-widget">
                                         <asp:TextBox runat="server" BackColor="Transparent" Font-Bold="true" BorderStyle="None" ForeColor="#86bc42" ID="school1" placeholder="School Name 1"></asp:TextBox></div>
                                     <div class="content-widget">
@@ -113,7 +132,7 @@
                                     </div>
                                 </div>
 
-                                <div class="archive-widget widget col-sm-6 col-md-12 col-xs-6 sd380" style="margin-left: -81px;">
+                                <div title="remove" class="archive-widget widget col-sm-6 col-md-12 col-xs-6 sd380" style="margin-left: -81px;">
                                     <div class="title-widget">
                                         <asp:TextBox runat="server" BackColor="Transparent" Font-Bold="true" BorderStyle="None" ForeColor="#86bc42" ID="school2" placeholder="School Name 2"></asp:TextBox></div>
                                     <div class="content-widget">
