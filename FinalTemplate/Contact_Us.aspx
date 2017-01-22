@@ -66,7 +66,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label form-label">EMAIL <span class="highlight">*</span>
-                                    <asp:TextBox ID="TextBox2" CssClass="form-control form-input" runat="server" Width="455px" Height="40px" ReadOnly="True"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox2" CssClass="form-control form-input" runat="server" Width="455px" Height="40px" ></asp:TextBox>
                                 </label>
                                 <!--label.control-label.form-label.warning-label(for="")-->
                             </div>
