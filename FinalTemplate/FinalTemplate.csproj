@@ -140,6 +140,7 @@
     <Content Include="ContactUs_Student.aspx" />
     <Content Include="DefineFeesStructure.aspx" />
     <Content Include="Download_Homework.aspx" />
+    <Content Include="images\Parents\aaaa.png" />
     <Content Include="school_comparision.aspx" />
     <Content Include="Teacher_Marksheet.aspx" />
     <Content Include="images\Events\bicycle-1280x720.jpg" />
