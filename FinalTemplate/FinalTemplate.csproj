@@ -902,7 +902,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="files\" />
+    <Folder Include="files\Lectures\" />
     <Folder Include="images\News\" />
     <Folder Include="images\registeredSchools\" />
   </ItemGroup>

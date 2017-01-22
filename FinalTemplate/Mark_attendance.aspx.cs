@@ -31,7 +31,7 @@ namespace FinalTemplate
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            int rowcount = GridView1.Columns.Count;
+            int rowcount = GridView1.Rows.Count;
             for (int i = 0; i < rowcount; i++)
             {
                 string a = ConfigurationManager.ConnectionStrings["ces"].ConnectionString;
@@ -54,12 +54,11 @@ namespace FinalTemplate
                     cmd.Parameters.AddWithValue("@std_attend_id_out", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.AddWithValue("@date", SqlDbType.VarChar).Value = DateTime.Now.ToString("");
                     cmd.Parameters.AddWithValue("@time", SqlDbType.VarChar).Value = DateTime.Now.ToString("");
-                    cmd.Parameters.AddWithValue("@Class_id", SqlDbType.Int).Value = teacher.teacher_class;
-                    cmd.Parameters.AddWithValue("@Section_id", SqlDbType.Int).Value = teacher.teacher_section;
-                    cmd.Parameters.AddWithValue("@school_id", SqlDbType.VarChar).Value = teacher.schoolid;
-                    cmd.Parameters.AddWithValue("@day_id", SqlDbType.Int).Value = 2;
-                    cmd.Parameters.AddWithValue("@remark_id", SqlDbType.Int).Value = DropDownList1.SelectedValue;
-                    cmd.Parameters.AddWithValue("@month_id", SqlDbType.Int).Value = 3;
+                    cmd.Parameters.AddWithValue("@day_id", SqlDbType.Int).Value = DropDownList1.SelectedValue;
+                    cmd.Parameters.AddWithValue("@month_id", SqlDbType.Int).Value = DropDownList2.SelectedValue;
+                    cmd.Parameters.AddWithValue("@remark_id", SqlDbType.Int).Value = DropDownList3.SelectedValue;
+                    cmd.Parameters.AddWithValue("@teacher_id", SqlDbType.Int).Value = teacher.teacher_id;
+                 
 
                     cmd.ExecuteNonQuery();
                     con.Close();
