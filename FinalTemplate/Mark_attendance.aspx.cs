@@ -22,10 +22,16 @@ namespace FinalTemplate
                 string[] colwhere = { "authorized_id" };
                 string[] whereoperator = { "=" };
                 string[] multiwhere = { "" };
+
+                CurrentUser.GetAuthorizedDetails(Session["userid"].ToString());
+                string[] whereoperatorvale = { "'" + CurrentUser.AuthorizedID + "'" };
+                string[,] teacherid = myDatabase.SelectQuery("tbl_teacher", col, colwhere, whereoperator, whereoperatorvale, multiwhere);
+                CurrentUser.GetPersonalDetails(Convert.ToInt32(teacherid[0, 0]));
+
             }
             else
             {
-                Response.Redirect("~/Default.aspx");
+                Response.Redirect("Default.aspx");
             }
         }
 
