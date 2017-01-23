@@ -18,14 +18,25 @@
 
             $('#<%=DropDownList1.ClientID%>').css('display', 'none'),
             $('#<%=Label3.ClientID%>').css('display', 'none'),
+            $('#<%=Label2.ClientID%>').hide();
+
                 $('.table-row').css(' text-align', 'inherit'),
             $('[title="Dialog"]').css('dsiplay', 'none'),
+            $('li a[title="Reset Password"]').hide(),
 
                 check();
-            validation();
+                validation();
+               
 
           
         });
+
+        function refresh(){
+        
+        
+            
+        
+        }
        
         $('li a[title="click"]').live("click", function () {
             alert("kam kar raha hai")
@@ -37,7 +48,7 @@
          
         function check()
         {
-            $('li a[title="time"]')
+            $('li a[title="Child Profile"]')
                 .click(function (e) {
                 var seectionID = e.currentTarget.id + "section";
                
@@ -97,6 +108,9 @@
     top: 304px;
     background-color: #86BC42;
     border-color: #86BC42;
+    padding-top: 52px;
+    padding-bottom: 48px;
+    padding-left: 24px;
 }
 
    </style>
@@ -179,9 +193,9 @@
                                                             &nbsp;<br />
                                                             &nbsp;
                                                             <br />
-                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Button ID="Button1" runat="server" Text="Submit" OnClick="Button1_Click2" />
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Button ID="Button1" runat="server" Text="Submit" OnClick="Button1_Click2"  />
 
-                                                            &nbsp;&nbsp; &nbsp;<asp:Button ID="Button2" runat="server" Text="Cancel" />
+                                                            &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<asp:Button ID="Button2" runat="server" Text="Cancel" />
 
 
                                                         </asp:Panel>

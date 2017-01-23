@@ -24,7 +24,7 @@ namespace FinalTemplate
     public partial class studentpanel1 : System.Web.UI.Page
     {
         private Database myDatabase = new Database("ces");
-        SqlConnection con = new SqlConnection(@"Data Source=ABBASI\JAHANGEER;Initial Catalog=ces;Persist Security Info=True;User ID=sa;Password=159abbasi789");
+        SqlConnection con = new SqlConnection(@"Data Source=SHAHWAIZ\SQLEXPRESS;Initial Catalog=ces;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
             lab1.Text = "DATE :" + System.DateTime.Now.ToShortDateString();
@@ -55,6 +55,10 @@ namespace FinalTemplate
                 Label5.Text = student.s_section;
                 Label6.Text = student.s_schoolid;
                 //present.Text = 110 + " present";
+                name.Text = "Name :" + " " + CurrentUser.FirstName + " " + CurrentUser.LastName;
+                father.Text= "Parent Name :"+" "+student.gurdianname;
+                cotact.Text = "Contact :" + " " + CurrentUser.Phone.ToString();
+                email.Text = "Email :  " + " " + CurrentUser.PrimaryEmailAddress;
             }
             else
             {

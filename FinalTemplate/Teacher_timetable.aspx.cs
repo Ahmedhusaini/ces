@@ -11,7 +11,19 @@ namespace FinalTemplate
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["userid"] != null)
+            {
+                string[] col = { "General_Id" };
+                string[] colwhere = { "authorized_id" };
+                string[] whereoperator = { "=" };
+                string[] multiwhere = { "" };
 
+
+            }
+            else
+            {
+                Response.Redirect("Default.aspx");
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)

@@ -23,13 +23,13 @@ namespace FinalTemplate
         Database db = new Database("ces");
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (Session["userid"] != null)
             {
                 string[] col = { "General_Id" };
                 string[] colwhere = { "authorized_id" };
                 string[] whereoperator = { "=" };
-                string[] multiwhere = { "" };
+                string[] multiwhere = { "" };      
+
             }
             else
             {

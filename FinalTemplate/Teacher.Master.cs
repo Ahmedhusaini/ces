@@ -13,5 +13,11 @@ namespace FinalTemplate
         {
 
         }
+        protected void btn_logout_Click(object sender, EventArgs e)
+        {
+            Session.Remove("userid");
+            Session.RemoveAll();
+            Response.Redirect("~/Default.aspx");
+        }
     }
 }

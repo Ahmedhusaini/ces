@@ -22,15 +22,16 @@ namespace FinalTemplate
         {
             if (Session["userid"] != null)
             {
-                 string[] col = { "General_Id" };
-                 string[] colwhere = { "authorized_id" };
-                 string[] whereoperator = { "=" };
-                 string[] multiwhere = { "" };
-              
-             }
+                string[] col = { "General_Id" };
+                string[] colwhere = { "authorized_id" };
+                string[] whereoperator = { "=" };
+                string[] multiwhere = { "" };
+
+
+            }
             else
             {
-                 Response.Redirect("Default.aspx");
+                Response.Redirect("Default.aspx");
             }
 		}
 

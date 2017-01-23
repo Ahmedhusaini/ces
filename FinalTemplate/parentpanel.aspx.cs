@@ -26,6 +26,8 @@ namespace FinalTemplate
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+
             lab1.Text = "Date :" + System.DateTime.Now.ToShortDateString();
             lab2.Text = "Time :" + System.DateTime.Now.ToShortTimeString();
 
@@ -138,12 +140,12 @@ namespace FinalTemplate
                     string fullfilepath = filepath + filename;
                     string extension = Path.GetExtension(filename);
                     Label1.Text = filepath;
-                    int filesize = FileUpload1.PostedFile.ContentLength / 1024;
+                    int filesize = FileUpload1.PostedFile.ContentLength / 2048;
                     Convert.ToString(filesize);
                     int i = 0;
                     if (extension == ".jpg" || extension == ".png")
                     {
-                        if (filesize > 5000)
+                        if (filesize > 10000)
                         {
                             FileUpload1.SaveAs(fullfilepath);
                             i = 1;
@@ -170,6 +172,7 @@ namespace FinalTemplate
 
         protected void Button1_Click2(object sender, EventArgs e)
         {
+            
             objstd.students = "\'" + TextBox1.Text + "\'";
 
           studentexists = objstd.checkstudentid(objstd.students);
@@ -192,6 +195,9 @@ namespace FinalTemplate
             {
                 Response.Write("<script>alert('Not Exists .');</script>");
             }
+
+            
+            
         }
 
         protected void btnShow_Click(object sender, EventArgs e)

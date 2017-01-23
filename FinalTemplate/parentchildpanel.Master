@@ -73,7 +73,7 @@
                          <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Schedules<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
                                 <li><a id="timetable" href="#myDiv" class="link-page" title="time">Time Table</a></li>
-                                <li><a href="#" class="link-page">Date Sheet</a></li>
+                                
                                 <li><a href="#" class="link-page">Mark Sheet</a></li>
                             </ul>
                         </li>
@@ -87,15 +87,14 @@
                         </li>
                         <li class="dropdown"><a id="attendence" href="#atten" class="main-menu" title="time">Attendence</a>
                        </li>
-                        <li class="dropdown"><a href="StudentRegistration.aspx" class="main-menu">gallery</a>
-                        </li>
-                        <li class="dropdown"><a href="#" class="main-menu">News</a>
-                        </li>
+                        
+                      <%--  <li class="dropdown"><a href="#" class="main-menu">News</a>
+                        </li>--%>
 
-                        <li><a href="contact.html" class="main-menu">Contact</a>
+                        <li><a href="Contact_Us.aspx" class="main-menu">Contact</a>
                         </li>
-                        <li class="button-search"><p class="main-menu"><i class="fa fa-search"></i></p>
-                        </li>
+                       <%-- <li class="button-search"><p class="main-menu"><i class="fa fa-search"></i></p>
+                        </li>--%>
 
                        <%-- <div class="nav-search hide">
                             <form><input type="text" placeholder="Search" class="searchbox"/>
@@ -161,12 +160,12 @@
                                         <div class="row">
                                             <div class="col-md-6 col-sm-6 col-xs-6">
                                                 <ul class="list-unstyled">
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Teachers</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Courses</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">CES Suggestion</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Site Map</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="school_comparision.aspx">Compare Schools</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="About_Us.aspx">Why CES</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="About_Us.aspx">About us</a></li>
+                                                     <li><i class="fa fa-angle-right"></i><a href="About_Us.aspx">contact us</a></li>
                                                 </ul>
-                                            </div>
+                                                              </div>
                                         </div>
                                     </div>
                                 </div>
@@ -175,16 +174,22 @@
                     </div>
                     <div class="col-2">
                         <div class="col-md-3 col-sm-6 col-xs-6 sd380">
+                            <div class="gallery-widget widget">
+                                <div class="title-widget"></div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-6 sd380">
                             <div class="mailing-widget widget">
-                                <div class="title-widget">MAILING</div>
-                                <div class="content-wiget"><p>Sign up for our mailing list to get latest updates and offers.</p>
+                                <div class="title-widget">Subscribe</div>
+                                <div class="content-wiget"><p>Sign up to get latest News and Updates</p>
 
                                     <form action="http://swlabs.co/edugate/index.html">
                                         <div class="input-group"><input type="text" placeholder="Email address" class="form-control form-email-widget"/><span class="input-group-btn"><input type="submit" value="✓" class="btn btn-email"/></span></div>
                                     </form>
                                     <p>We respect your privacy</p>
 
-                                    <div class="socials"><a href="#" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" class="google"><i class="fa fa-google-plus"></i></a><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></div>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -193,7 +198,7 @@
             </div>
         </div>
     </div>
-</footer>
+</footer
 
 <!-- LOADING--><!-- JAVASCRIPT LIBS-->
 <script>if ((Cookies.get('color-skin') != undefined) && (Cookies.get('color-skin') != 'color-1')) {
