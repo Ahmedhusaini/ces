@@ -24,7 +24,7 @@ namespace FinalTemplate.source.WebServices
         {
             List<IDictionary<string, object>> ListJobs = new List<IDictionary<string, object>>();
             objnews.CreateConnection();
-            objnews.InitializeSQLCommandObject(objnews.GetCurrentConnection, "select top 4 * from tbl_post_jobs order by pj_id desc");
+            objnews.InitializeSQLCommandObject(objnews.GetCurrentConnection, "select top 4 j.job_title,j.job_description,c.job_category,s.school_name,s.contact_primary from tbl_post_jobs as j inner join tbl_job_category as c on j.jcat_id=c.jcat_id inner join tbl_school as s on j.school_id=s.school_id order by j.pj_id desc;");
             try
             {
                 objnews.OpenConnection();
@@ -34,11 +34,11 @@ namespace FinalTemplate.source.WebServices
                     while (objnews.obj_reader.Read())
                     {
                         IDictionary<string, object> jobsDictionary = new ConcurrentDictionary<string, object>();
-                        jobsDictionary["pj_id"] = Convert.ToInt32(objnews.obj_reader["pj_id"]);
                         jobsDictionary["job_title"] = objnews.obj_reader["job_title"].ToString();
                         jobsDictionary["job_discription"] = objnews.obj_reader["job_description"].ToString();
-                        jobsDictionary["jcat_id"] = Convert.ToInt32(objnews.obj_reader["jcat_id"]);
-                        jobsDictionary["school_id"] = objnews.obj_reader["school_id"].ToString();
+                        jobsDictionary["job_category"] = objnews.obj_reader["job_category"].ToString();
+                        jobsDictionary["school_name"] = objnews.obj_reader["school_name"].ToString();
+                        jobsDictionary["contact_primary"] = objnews.obj_reader["contact_primary"].ToString();
                         ListJobs.Add(jobsDictionary);
                     }
                 }
