@@ -1,11 +1,10 @@
-﻿using System;
+﻿using FinalTemplate.source.Functions;
+using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
-using System.Web.Services;
-using FinalTemplate.source.Database;
 using System.Web.Script.Serialization;
-using FinalTemplate.source.Functions;
+using System.Web.Services;
 namespace FinalTemplate.source.WebServices
 {
     /// <summary>
@@ -20,14 +19,88 @@ namespace FinalTemplate.source.WebServices
     {
         private Database.Database objnews = new Database.Database("ces");
         JavaScriptSerializer objserializer = new JavaScriptSerializer();
+        [WebMethod]
+        public void GetTopFourJobs()
+        {
+            List<IDictionary<string, object>> ListJobs = new List<IDictionary<string, object>>();
+            objnews.CreateConnection();
+            objnews.InitializeSQLCommandObject(objnews.GetCurrentConnection, "select top 4 * from tbl_post_jobs order by pj_id desc");
+            try
+            {
+                objnews.OpenConnection();
+                objnews.obj_reader = objnews.obj_sqlcommand.ExecuteReader();
+                if (objnews.obj_reader.HasRows)
+                {
+                    while (objnews.obj_reader.Read())
+                    {
+                        IDictionary<string, object> jobsDictionary = new ConcurrentDictionary<string, object>();
+                        jobsDictionary["pj_id"] = Convert.ToInt32(objnews.obj_reader["pj_id"]);
+                        jobsDictionary["job_title"] = objnews.obj_reader["job_title"].ToString();
+                        jobsDictionary["job_discription"] = objnews.obj_reader["job_description"].ToString();
+                        jobsDictionary["jcat_id"] = Convert.ToInt32(objnews.obj_reader["jcat_id"]);
+                        jobsDictionary["school_id"] = objnews.obj_reader["school_id"].ToString();
+                        ListJobs.Add(jobsDictionary);
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                HttpContext.Current.Response.Write(objserializer.Serialize(exception));
+            }
+            finally
+            {
+                objnews.CloseConnection();
+                objnews.obj_reader.Close();
+                objnews.obj_reader.Dispose();
+            }
+            HttpContext.Current.Response.Write(objserializer.Serialize(ListJobs));
+        }
 
+        [WebMethod]
+        public void GetTopThreeNews()
+        {
+            List<IDictionary<string, object>> listOfNews = new List<IDictionary<string, object>>();
+            objnews.CreateConnection();
+            objnews.InitializeSQLCommandObject(objnews.GetCurrentConnection, "select top 3 * from View_AllNews order by news_id desc");
+            try
+            {
+                objnews.OpenConnection();
+                objnews.obj_reader = objnews.obj_sqlcommand.ExecuteReader();
+                if (objnews.obj_reader.HasRows)
+                {
+                    while (objnews.obj_reader.Read())
+                    {
+                        IDictionary<string, object> newsDictionary = new ConcurrentDictionary<string, object>();
+                        newsDictionary["newsid"] = Convert.ToInt32(objnews.obj_reader["news_id"]);
+                        newsDictionary["newstype"] = objnews.obj_reader["news_type"].ToString();
+                        newsDictionary["newstitle"] = objnews.obj_reader["news_title"].ToString();
+                        newsDictionary["newsimage"] = objnews.obj_reader["news_image"].ToString();
+                        newsDictionary["newsdiscription"] = objnews.obj_reader["news_description"].ToString();
+                        newsDictionary["schoolid"] = objnews.obj_reader["school_id"].ToString();
+                        newsDictionary["newstags"] = objnews.obj_reader["news_tags"].ToString();
+                        listOfNews.Add(newsDictionary);
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                HttpContext.Current.Response.Write(objserializer.Serialize(exception));
+            }
+            finally
+            {
+                objnews.CloseConnection();
+                objnews.obj_reader.Close();
+                objnews.obj_reader.Dispose();
+            }
+            HttpContext.Current.Response.Write(objserializer.Serialize(listOfNews));
+        }
 
         [WebMethod]
         public void GetLastNewsBySchoolID(string _schoolid)
         {
             List<JNews> listlastnews = new List<JNews>();
             objnews.CreateConnection();
-            objnews.InitializeSQLCommandObject(objnews.GetCurrentConnection, "spLastNewsBySchoolID",true);
+            objnews.InitializeSQLCommandObject(objnews.GetCurrentConnection, "spLastNewsBySchoolID", true);
             objnews.obj_sqlcommand.Parameters.AddWithValue("@schoolid", _schoolid);
             try
             {
@@ -42,7 +115,7 @@ namespace FinalTemplate.source.WebServices
                         objn.NewsType = objnews.obj_reader["news_type"].ToString();
                         objn.Title = objnews.obj_reader["news_title"].ToString();
                         objn.Description = objnews.obj_reader["news_description"].ToString();
-                        objn.NewsID = (int) objnews.obj_reader["news_id"];
+                        objn.NewsID = (int)objnews.obj_reader["news_id"];
                         listlastnews.Add(objn);
                     }
                 }
@@ -60,7 +133,7 @@ namespace FinalTemplate.source.WebServices
         {
             List<JNews> listnews = new List<JNews>();
             objnews.CreateConnection();
-            objnews.InitializeSQLCommandObject(objnews.GetCurrentConnection, "GetAllNews",true);
+            objnews.InitializeSQLCommandObject(objnews.GetCurrentConnection, "GetAllNews", true);
             objnews.obj_sqlcommand.Parameters.AddWithValue("@schoolID", _schoolid);
             try
             {
@@ -80,7 +153,7 @@ namespace FinalTemplate.source.WebServices
                         newsobj.SchoolID = objnews.obj_reader["school_id"].ToString();
                         newsobj.NewsType = objnews.obj_reader["news_type"].ToString();
                         listnews.Add(newsobj);
-                        
+
                     }
                 }
                 else

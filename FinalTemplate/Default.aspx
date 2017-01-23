@@ -5,6 +5,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
             UserCount();
+            Jobs();
         });
         function UserCount() {
             
@@ -23,6 +24,26 @@
                     student.append(' <div  data-from="0" data-to="' + array.student + '" data-speed="1000" class="num">0</div> <p class="name-inner">Total Students Registered</p>');
                     teacher.append('<div  data-from="0" data-to="' + array.teacher + '" data-speed="1000" class="num">0</div><p class="name-inner">Total Teachers Registered</p>');
                     totalschool.append('<div data-from="0" data-to="' + array.school + '" data-speed="1000" class="num">0</div><p class="name-inner">Total Schools Registered</p>');
+                },
+                error: function (data) {
+                    alert("ERROR" + JSON.stringify(data));
+                }
+            });
+        }
+        function Jobs() {
+
+            $.ajax({
+                url: 'source/WebServices/News.asmx/GetTopThreeNews',
+                method: 'post',
+                dataType: 'json',
+                success: function (data) {
+                    var jsonarray = JSON.stringify(data);
+                    var array = $.parseJSON(jsonarray);
+                    var parentDiv = $('div[class="latest-news-wrapper"]').empty();
+                    $.each(array, function(i,v) {
+                        parentDiv.append('<div class="edugate-layout-1"><div class="edugate-image"><img src="' + v.newsimage + '" alt="' + v.newstype + '" class="img-responsive" /></div><div class="edugate-content"><a href="#" class="title">' + v.newstitle + '</a><div class="description">' + v.newsdiscription + '</div>');
+                    });
+
                 },
                 error: function (data) {
                     alert("ERROR" + JSON.stringify(data));
@@ -414,21 +435,19 @@
             <div class="group-title-index">
                 <h4 class="top-title">latest news</h4>
 
-                <h2 class="center-title">all about edugate updates</h2>
+                <h2 class="center-title">News updates from school which are registered on CES portal.</h2>
 
                 <div class="bottom-title"><i class="bottom-icon icon-a-01-01"></i></div>
             </div>
             <div class="latest-news-wrapper">
                 <div class="edugate-layout-1">
                     <div class="edugate-image">
-                        <img src="assets/images/news/news-1.jpg" alt="" class="img-responsive" /></div>
+                        <img src="assets/images/news/news-1.jpg" alt="" class="img-responsive" />
+                    </div>
                     <div class="edugate-content">
                         <a href="news-detail.html" class="title">Effective researching method</a>
 
-                        <div class="info">
-                            <div class="author item"><a href="#">By Admin</a></div>
-                            <div class="date-time item"><a href="#">17 sep 2015</a></div>
-                        </div>
+                       
                         <div class="info-more">
                             <div class="view item">
                                 <i class="fa fa-user"></i>
@@ -445,58 +464,8 @@
                         <button onclick="window.location.href='news-detail.html'" style="padding-right: 106px" class="btn btn-green"><span>learn now</span></button>
                     </div>
                 </div>
-                <div class="edugate-layout-1">
-                    <div class="edugate-image">
-                        <img src="assets/images/news/news-2.jpg" alt="" class="img-responsive" /></div>
-                    <div class="edugate-content">
-                        <a href="news-detail.html" class="title">Effective researching method</a>
-
-                        <div class="info">
-                            <div class="author item"><a href="#">By Admin</a></div>
-                            <div class="date-time item"><a href="#">17 sep 2015</a></div>
-                        </div>
-                        <div class="info-more">
-                            <div class="view item">
-                                <i class="fa fa-user"></i>
-
-                                <p>56</p>
-                            </div>
-                            <div class="comment item">
-                                <i class="fa fa-comment"></i>
-
-                                <p>239</p>
-                            </div>
-                        </div>
-                        <div class="description">Dalmatian hello amazing the rmore flung as thanks a manta dealt to under emu some the and one baldbe dear sobbingly save and spitefully less Dalmatian hello amazing the rmore flung as thanks a manta dealt to under emu some the and one baldbe dear sobbingly save and spitefully Dalmatian hello amazing the...</div>
-                        <button onclick="window.location.href='news-detail.html'" style="padding-right: 106px" class="btn btn-green"><span>learn now</span></button>
-                    </div>
-                </div>
-                <div class="edugate-layout-1">
-                    <div class="edugate-image">
-                        <img src="assets/images/news/news-3.jpg" alt="" class="img-responsive" /></div>
-                    <div class="edugate-content">
-                        <a href="news-detail.html" class="title">Effective researching method</a>
-
-                        <div class="info">
-                            <div class="author item"><a href="#">By Admin</a></div>
-                            <div class="date-time item"><a href="#">17 sep 2015</a></div>
-                        </div>
-                        <div class="info-more">
-                            <div class="view item">
-                                <i class="fa fa-user"></i>
-
-                                <p>56</p>
-                            </div>
-                            <div class="comment item">
-                                <i class="fa fa-comment"></i>
-
-                                <p>239</p>
-                            </div>
-                        </div>
-                        <div class="description">Dalmatian hello amazing the rmore flung as thanks a manta dealt to under emu some the and one baldbe dear sobbingly save and spitefully less Dalmatian hello amazing the rmore flung as thanks a manta dealt to under emu some the and one baldbe dear sobbingly save and spitefully Dalmatian hello amazing the...</div>
-                        <button onclick="window.location.href='news-detail.html'" style="padding-right: 106px" class="btn btn-green"><span>learn now</span></button>
-                    </div>
-                </div>
+                
+                
                 <button class="btn btn-green btn-latest-new" style="padding-right: 180px"><span>Browser All Post<i class="fa fa-long-arrow-right"></i></span></button>
             </div>
         </div>
