@@ -141,6 +141,7 @@
     <Content Include="DefineFeesStructure.aspx" />
     <Content Include="Download_Homework.aspx" />
     <Content Include="images\Parents\aaaa.png" />
+    <Content Include="maplocation.aspx" />
     <Content Include="school_comparision.aspx" />
     <Content Include="Teacher_Datesheet.aspx" />
     <Content Include="Teacher_Marksheet.aspx" />
@@ -451,6 +452,13 @@
     </Compile>
     <Compile Include="Download_Homework.aspx.designer.cs">
       <DependentUpon>Download_Homework.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="maplocation.aspx.cs">
+      <DependentUpon>maplocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="maplocation.aspx.designer.cs">
+      <DependentUpon>maplocation.aspx</DependentUpon>
     </Compile>
     <Compile Include="school_comparision.aspx.cs">
       <DependentUpon>school_comparision.aspx</DependentUpon>
