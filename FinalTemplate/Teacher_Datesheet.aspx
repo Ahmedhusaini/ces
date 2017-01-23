@@ -1,13 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="FinalTemplate.WebForm1" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher.Master" AutoEventWireup="true" CodeBehind="Teacher_Datesheet.aspx.cs" Inherits="FinalTemplate.Teacher_Datesheet" %>
 <%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-      <link rel="icon" href="assets/images/logo/logo-carousel-6.png" />
+<asp:Content ID="Content1" ContentPlaceHolderID="TeacherHeadPlaceHolder" runat="server">
+     <link rel="icon" href="assets/images/logo/logo-carousel-6.png" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- LIBRARY FONT-->
@@ -34,9 +29,9 @@
 } else if ((Cookies.get('colorskin') == undefined) || (Cookies.get('colorskin') == 'color-1')) {
     $('#colorskins').attr('href', 'assets/css/color-1.css');
 }</script>
-</head>
-<body>
-<div class="section background-opacity page-title set-height-top">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="TeacherPlaceHolder1" runat="server">
+      <div class="section background-opacity page-title set-height-top">
         <div class="container">
             <div class="page-title-wrapper">
                 <!--.page-title-content-->
@@ -44,36 +39,22 @@
             </div>
         </div>
     </div>
+    <asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
     <br />
-    <form runat="server">
-            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-            &nbsp;&nbsp;&nbsp;
-            <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-            &nbsp;&nbsp;&nbsp;
-            <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
-            <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="100%">
-                <LocalReport ReportPath="Report3.rdlc">
-                    <DataSources>
-                        <rsweb:ReportDataSource DataSourceId="SqlDataSource1" Name="DataSet1" />
-                    </DataSources>
-                </LocalReport>
-            </rsweb:ReportViewer>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [day], [period_1], [period_2], [period_3], [period_4], [period_5], [period_6], [period_7], [period_8], [class], [section], [school_id] FROM [view_timetable_1_test] WHERE (([class] = @class) AND ([section] = @section) AND ([school_id] = @school_id))">
-                <SelectParameters>
-                    <asp:ControlParameter ControlID="Label1" Name="class" PropertyName="Text" Type="String" />
-                    <asp:ControlParameter ControlID="Label2" Name="section" PropertyName="Text" Type="String" />
-                    <asp:ControlParameter ControlID="Label3" Name="school_id" PropertyName="Text" Type="String" />
-                </SelectParameters>
-            </asp:SqlDataSource>
-
-    <asp:GridView ID="GridView1" runat="server">
-        <EmptyDataTemplate>
-            <asp:LinkButton ID="LinkButton1" runat="server" Text='<%# Eval("Marksheet") %>'></asp:LinkButton>
-        </EmptyDataTemplate>
-            </asp:GridView>
-
-    </form>
-
-    </body>
-</html>
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <div>
+        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="100%" Font-Names="Verdana" Font-Size="8pt" Height="647px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" BackColor="#86BC42" ShowPageNavigationControls="False" CssClass="reader" InternalBorderStyle="Double" ShowBackButton="False">
+            <LocalReport ReportPath="DateSheet.rdlc">
+                <DataSources>
+                    <rsweb:ReportDataSource DataSourceId="SqlDataSource1" Name="DataSet1" />
+                </DataSources>
+            </LocalReport>
+        </rsweb:ReportViewer>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="select [date],datename(dw,[date]),class1,class2,class3,class4,class5,class6,class7,class8 from tbl_DateSheet where school_id=@school_id">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="Label1" Name="school_id" PropertyName="Text" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+    </div>
+    <br />
+</asp:Content>

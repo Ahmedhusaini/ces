@@ -140,7 +140,10 @@
     <Content Include="ContactUs_Student.aspx" />
     <Content Include="DefineFeesStructure.aspx" />
     <Content Include="Download_Homework.aspx" />
+    <Content Include="images\Parents\aaaa.png" />
+    <Content Include="maplocation.aspx" />
     <Content Include="school_comparision.aspx" />
+    <Content Include="Teacher_Datesheet.aspx" />
     <Content Include="Teacher_Marksheet.aspx" />
     <Content Include="images\Events\bicycle-1280x720.jpg" />
     <Content Include="images\Events\code.png" />
@@ -340,6 +343,7 @@
     <Content Include="TeacherPanel.aspx" />
     <Content Include="Teacherprofile.aspx" />
     <Content Include="TeacherUpload.aspx" />
+    <Content Include="Teacher_student_timetable.aspx" />
     <Content Include="Teacher_timetable.aspx" />
     <Content Include="UpdateAndViewEventDetails.aspx" />
     <Content Include="UpdateNews.aspx" />
@@ -449,6 +453,13 @@
     <Compile Include="Download_Homework.aspx.designer.cs">
       <DependentUpon>Download_Homework.aspx</DependentUpon>
     </Compile>
+    <Compile Include="maplocation.aspx.cs">
+      <DependentUpon>maplocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="maplocation.aspx.designer.cs">
+      <DependentUpon>maplocation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="school_comparision.aspx.cs">
       <DependentUpon>school_comparision.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -458,6 +469,13 @@
     </Compile>
     <Compile Include="source\Functions\SSComparission.cs" />
     <Compile Include="source\Functions\studentid.cs" />
+    <Compile Include="Teacher_Datesheet.aspx.cs">
+      <DependentUpon>Teacher_Datesheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teacher_Datesheet.aspx.designer.cs">
+      <DependentUpon>Teacher_Datesheet.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Teacher_Marksheet.aspx.cs">
       <DependentUpon>Teacher_Marksheet.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -727,6 +745,13 @@
     </Compile>
     <Compile Include="TeacherUpload.aspx.designer.cs">
       <DependentUpon>TeacherUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher_student_timetable.aspx.cs">
+      <DependentUpon>Teacher_student_timetable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teacher_student_timetable.aspx.designer.cs">
+      <DependentUpon>Teacher_student_timetable.aspx</DependentUpon>
     </Compile>
     <Compile Include="Teacher_timetable.aspx.cs">
       <DependentUpon>Teacher_timetable.aspx</DependentUpon>

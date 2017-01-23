@@ -5,9 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace FinalTemplate
 {
-    public partial class Teacher_timetable : System.Web.UI.Page
+    public partial class Teacher_student_timetable : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,8 +17,7 @@ namespace FinalTemplate
                 string[] col = { "General_Id" };
                 string[] colwhere = { "authorized_id" };
                 string[] whereoperator = { "=" };
-                string[] multiwhere = { "" };
-
+                string[] multiwhere = { "" }; 
 
             }
             else
@@ -25,17 +25,5 @@ namespace FinalTemplate
                 Response.Redirect("Default.aspx");
             }
         }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        
     }
 }
