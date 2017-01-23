@@ -133,11 +133,10 @@
                                         <div class="row">
                                             <div class="col-md-6 col-sm-6 col-xs-6">
                                                 <ul class="list-unstyled">
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Schools</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Why CES</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">about us</a></li>
-                                                     <li><i class="fa fa-angle-right"></i><a href="#">contact us</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Site Map</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="school_comparision.aspx">Compare Schools</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="About_Us.aspx">Why CES</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="About_Us.aspx">About us</a></li>
+                                                     <li><i class="fa fa-angle-right"></i><a href="About_Us.aspx">contact us</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -149,12 +148,8 @@
                     <div class="col-2">
                         <div class="col-md-3 col-sm-6 col-xs-6 sd380">
                             <div class="gallery-widget widget">
-                                <div class="title-widget">GALLERY</div>
-                                <div class="content-widget">
-                                    <div class="gallery-list"><a href="#" class="thumb"><img src="assets/images/gallery/gallery-01.jpg" alt="" class="img-responsive"/></a><a href="#" class="thumb"><img src="assets/images/gallery/gallery-02.jpg" alt="" class="img-responsive"/></a><a href="#" class="thumb"><img src="assets/images/gallery/gallery-03.jpg" alt="" class="img-responsive"/></a><a href="#" class="thumb"><img src="assets/images/gallery/gallery-04.jpg" alt="" class="img-responsive"/></a><a href="#" class="thumb"><img src="assets/images/gallery/gallery-05.jpg" alt="" class="img-responsive"/></a><a href="#" class="thumb"><img src="assets/images/gallery/gallery-06.jpg" alt="" class="img-responsive"/></a><a href="#" class="thumb"><img src="assets/images/gallery/gallery-07.jpg" alt="" class="img-responsive"/></a><a href="#" class="thumb"><img src="assets/images/gallery/gallery-08.jpg"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        alt="" class="img-responsive"/></a></div>
-                                    <div class="clearfix"></div>
-                                    <a href="#" class="view-more">View more&nbsp;<i class="fa fa-angle-double-right mls"></i></a></div>
+                                <div class="title-widget"></div>
+                                
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-6 sd380">
@@ -167,7 +162,7 @@
                                     </form>
                                     <p>We respect your privacy</p>
 
-                                    <div class="socials"><a href="#" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" class="google"><i class="fa fa-google-plus"></i></a><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></div>
+                                   
                                 </div>
                             </div>
                         </div>
