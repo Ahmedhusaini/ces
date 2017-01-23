@@ -66,6 +66,14 @@
                     <asp:ControlParameter ControlID="Label3" Name="school_id" PropertyName="Text" Type="String" />
                 </SelectParameters>
             </asp:SqlDataSource>
+
+    <asp:GridView ID="GridView1" runat="server">
+        <EmptyDataTemplate>
+            <asp:LinkButton ID="LinkButton1" runat="server" Text='<%# Eval("Marksheet") %>'></asp:LinkButton>
+        </EmptyDataTemplate>
+            </asp:GridView>
+
     </form>
-</body>
+
+    </body>
 </html>

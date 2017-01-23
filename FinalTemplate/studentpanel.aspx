@@ -114,28 +114,33 @@
         <div class="choose-course-3-wrapper row">
             <div class="item-course">
                 <div class="item-course-wrapper">
-                    <div class="icon-course"><i class="icons-img icon-globe"></i></div>
+                    <div class="icon-course"><i class="icons-img icon-a-1-01"></i></div>
                     <div class="info-course">
-                        <a href="#" class="name-course">Results</a>
-                        <div class="info">view results of Your exams. You can also check feedback regarding any result posted by Teachers & parents.</div>
+                        <a href="update_StudentDetail.aspx" class="name-course">DETAIL</a>
+                        <div class="info">
+                            <asp:label runat="server" ForeColor="#86bc42" id="name" Text="name "></asp:label><br />
+                            <asp:label runat="server" ForeColor="#86bc42" id="father" Text="father name "></asp:label><br />
+                            <asp:label runat="server" ForeColor="#86bc42" id="cotact" Text="contact "></asp:label><br />
+                            <asp:label runat="server" ForeColor="#86bc42" id="email" Text="email "></asp:label><br />
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="item-course">
                 <div class="item-course-wrapper">
-                    <div class="icon-course"><i class="icons-img icon-photocamera_1"></i></div>
-                    <a href="#" class="info-course">
-                        <div class="name-course">Photography</div>
-                        <div class="info">Relive the past memories and view the pictures of past events and functions.</div>
+                    <div class="icon-course"><i class="icons-img icon-credit_card"></i></div>
+                    <a href="Attendance_Student.aspx" class="info-course">
+                        <div class="name-course">ATTENDANCE</div>
+                        <div class="info">Check out Your Attendance Counter and Today's Attendance</div>
                     </a>
                 </div>
             </div>
             <div class="item-course">
                 <div class="item-course-wrapper">
-                    <div class="icon-course"><i class="icons-img icon-chat_bubbles"></i></div>
+                    <div class="icon-course"><i class="icons-img icon-computer_network"></i></div>
                     <div class="info-course">
-                        <a href="#" class="name-course">Communication</a>
-                        <div class="info">Make some interaction to Teacher and ask some queries. Click to check what is available now.</div>
+                        <a href="update_StudentDetail.aspx" class="name-course">UPDATE DETAIL</a>
+                        <div class="info">Update your Profile with new confidential Information Feel Free without any hesitation.</div>
                     </div>
                 </div>
             </div>
@@ -146,21 +151,8 @@
     <div class="section teacher-skill">
         <div class="container teacher-skill-content">
             <div class="teacher-skill-wrapper">
-                <div class="title">Shows Some Important Works</div>
-                <div class="row skill-content">
-                    <div class="col-md-6 skill-level">
-                        <div class="skill-name">Home Work or Assignment</div>
-                        <div class="progress">
-                            <div role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" class="progress-bar skill-1"></div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 skill-level">
-                        <div class="skill-name">Your Fees Of Month</div>
-                        <div class="progress">
-                            <div role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" class="progress-bar skill-2"></div>
-                        </div>
-                    </div>
-                </div>
+               <b style="font-size:medium" class="title"> " future is bright when you choose straight or correct path "<br />
+                " trigger yourself for future to make sparke light "</b>
             </div>
         </div>
     </div>
