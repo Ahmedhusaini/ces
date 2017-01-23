@@ -30,7 +30,7 @@ namespace FinalTemplate
                 else
                 {
 
-                    Response.Write("<script>alert('No record found with given teacher id. Try again with valid ID.');</script>");
+                    Response.Write("<script>alert('No record found . Try again with valid ID.');</script>");
                 }
             
             }
