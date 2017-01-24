@@ -50,12 +50,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-5 topbar-left text-left info-text1">
-                    <div class="email"><a href="#"><i class="topbar-icon fa fa-envelope-o"></i><span>Support</span></a></div>
-                    <div class="hotline"><a href="#"><i class="topbar-icon fa fa-phone"></i><span>+92 345 3570132</span></a></div>
+                    
                 </div>
                 <div class="col-md-2 logo-topbar info-text2"><a href="Admin.aspx"><img class="mainLogo" src="assets/images/logo-color-1.png" alt=""/></a></div>
                 <div class="col-md-5 topbar-right text-right info-text3">
-                    <div class="group-sign-in"><a href="login.html" class="login">Subscription Expires in 13 Day(s)</a><a href="register.html" class="register">Renew Package</a></div>
+                    
                 </div>
             </div>
         </div>
@@ -108,18 +107,7 @@
                                 <li><a href="PostJob.aspx" class="link-page">Post Job</a></li>
                             </ul>
                         </li> 
-                        <%-- <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Contact<span class="fa fa-angle-down icons-dropdown"></span></a>
-                            <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                <li><a href="news.html" class="link-page">Teacher</a></li>
-                                <li><a href="news-grid-nonsidebar.html" class="link-page">Parent</a></li>
-                            </ul>
-                        </li> 
-                        <li class="button-search"><p class="main-menu"><i class="fa fa-search"></i></p></li>
-                        <div class="nav-search hide">
-                            <form><input type="text" placeholder="Search" class="searchbox"/>
-                                <button type="submit" class="searchbutton fa fa-search"></button>
-                            </form>
-                        </div>--%>
+                   
                     </ul>
                 </nav>
             </div>
@@ -155,72 +143,26 @@
         <div class="container">
             <div class="footer-main-wrapper">
                 <div class="row">
-                    <div class="col-2">
-                        <div class="col-md-3 col-sm-6 col-xs-6 sd380">
-                            <div class="edugate-widget widget">
-                                <div class="title-widget">CES</div>
-                                <div class="content-widget"><p>CES is Pakistan's only web portal that combines the educational institutes all over the pakistan to enhance the quality of education and support the future by securing the education quality and make it easier for everyone to approach to best and modern education.</p>
+                    <div class="col-lg-6">
+                       
+                        <div class="edugate-widget widget">
 
-                                    <div class="info-list">
-                                        <ul class="list-unstyled">
-                                            <li><i class="fa fa-envelope-o"></i><a href="#">support@ces.com</a></li>
-                                            <li><i class="fa fa-phone"></i><a href="#">+92 345 357012</a></li>
-                                            <li><i class="fa fa-map-marker"></i><a href="#"><p>Gulistan-e-jauhar block-7, uniersity road karachi.</p>
-
-                                                <p>Sindh-Pakistan</p></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                            <div class="content-widget">
+                                <p>CES is Pakistan's only web portal that combines the educational institutes all over the pakistan to enhance the quality of education and support the future by securing the education quality and make it easier for everyone to approach to best and modern education.</p>
                             </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-6 sd380">
-                            <div class="useful-link-widget widget">
-                                <div class="title-widget">USEFUL LINKS</div>
-                                <div class="content-widget">
-                                    <div class="useful-link-list">
-                                        <div class="row">
-                                            <div class="col-md-6 col-sm-6 col-xs-6">
-                                                <ul class="list-unstyled">
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Teachers</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Courses</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">CES Suggestions</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">CES Technical Support</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Parent Tickets</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Site Map</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-6 col-sm-6 col-xs-6">
-                                                <ul class="list-unstyled">
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">School Repo</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Updates</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">User views</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Last psoted job</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">Last Posted news</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="#">addmission policies</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
-                        </div>
                     </div>
-                    <div class="col-2">
-                        <div class="col-md-3 col-sm-6 col-xs-6 sd380">
-                            
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-6 sd380">
-                            <div class="mailing-widget widget">
-                                <div class="title-widget">MAILING</div>
-                                <div class="content-wiget"><p>Sign up for our mailing list to get latest updates and offers.</p>
-
-                                    <form action="http://swlabs.co/edugate/index.html">
-                                        <div class="input-group"><input type="text" placeholder="Email address" class="form-control form-email-widget"/><span class="input-group-btn"><input type="submit" value="✓" class="btn btn-email"/></span></div>
-                                    </form>
-                                    <p>We respect your privacy</p>
-
-                                    <div class="socials"><a href="#" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" class="google"><i class="fa fa-google-plus"></i></a><a href="#" class="twitter"><i class="fa fa-twitter"></i></a><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a><a href="#" class="blog"><i class="fa fa-rss"></i></a><a href="#" class="dribbble"><i class="fa fa-dribbble"></i></a></div>
-                                </div>
+                    <div class="col-lg-6">
+                        <div class="edugate-widget widget">
+                            <div class="info-list">
+                                <ul class="list-unstyled">
+                                    <li><i class="fa fa-envelope-o"></i><a href="mailto:support@ces.com.pk?subject=Support">support@ces.com</a></li>
+                                    <li><i class="fa fa-phone"></i>+92 345 357012</li>
+                                    <li><i class="fa fa-map-marker"></i>
+                                        <p>Gulistan-e-jauhar block-7, uniersity road karachi.</p>
+                                        <p>Sindh-Pakistan</p>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -229,15 +171,16 @@
             <div class="hyperlink">
                 <div class="pull-left hyper-left">
                     <ul class="list-inline">
-                        <li><a href="index.html">HOME</a></li>
-                        <li><a href="courses.html">COURSES</a></li>
-                        <li><a href="about-us.html">ABOUT</a></li>
-                        <li><a href="categories.html">PAGES</a></li>
-                        <li><a href="news.html">NEWS</a></li>
-                        <li><a href="contact.html">CONTACT</a></li>
+                        <li><a href="Admin.aspx">HOME</a></li>
+                        <li><a href="ViewAllTachers.aspx">View All Teachers</a></li>
+                        <li><a href="ViewAllStudents.aspx">View All Students</a></li>
+                        <li><a href="ViewNews.aspx">View NEWS</a></li>
+                        <li><a href="AllEvents.aspx">View Events</a></li>
+                        <li><a href="About_Us.aspx">ABOUT</a></li>
+                        <li><a href="Contact_Us.aspx">CONTACT</a></li>
                     </ul>
                 </div>
-                <div class="pull-right hyper-right">@ SWLABS</div>
+                <div class="pull-right hyper-right"> All Rights are reserved @ Centralized Education System - CES</div>
             </div>
         </div>
     </div>
