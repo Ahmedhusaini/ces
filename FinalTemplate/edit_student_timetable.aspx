@@ -81,14 +81,14 @@
                                     </tr>
                                     <tr class="table-row" style="background-color: transparent;">
                                         <td class="col-3" style="color: black; font-weight: bolder">day</td>
-                                        <td class="col-2"><asp:DropDownList  runat="server" ID="ddlday" DataSourceID="SqlDataSource1" DataTextField="day" DataValueField="day_id"></asp:DropDownList>                        
+                                        <td class="col-2"><asp:DropDownList  runat="server" ID="ddlday" Width="200px" DataSourceID="SqlDataSource1" DataTextField="day" DataValueField="day_id"></asp:DropDownList>                        
                                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT * FROM [tbl_day]"></asp:SqlDataSource>
                                         </td>
                                         <td class="col-3"></td>
                                     </tr>
                                     <tr class="table-row" style="background-color: transparent;">
                                         <td class="col-3" style="color: black; font-weight: bolder">class</td>
-                                        <td class="col-2"><asp:DropDownList runat="server" ID="ddlclass" DataSourceID="SqlDataSource2" DataTextField="class" DataValueField="Class_id"></asp:DropDownList>
+                                        <td class="col-2"><asp:DropDownList runat="server" ID="ddlclass" Width="200px" DataSourceID="SqlDataSource2" DataTextField="class" DataValueField="Class_id"></asp:DropDownList>
                                            
                                             
                                             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT * FROM [tbl_class]"></asp:SqlDataSource>
@@ -99,7 +99,7 @@
                                     </tr>
                                     <tr class="table-row" style="background-color: transparent;">
                                         <td class="col-3" style="color: black; font-weight: bolder">section</td>
-                                        <td class="col-2"><asp:DropDownList runat="server" ID="ddlsection" DataSourceID="SqlDataSource3" DataTextField="section" DataValueField="Section_id"></asp:DropDownList>
+                                        <td class="col-2"><asp:DropDownList runat="server" ID="ddlsection" Width="200px" DataSourceID="SqlDataSource3" DataTextField="section" DataValueField="Section_id"></asp:DropDownList>
                                            
                                            
                                             <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT * FROM [tbl_section]"></asp:SqlDataSource>
@@ -117,7 +117,7 @@
                                     </tr>
                                     <tr class="table-row" style="background-color: transparent;">
                                         <td class="col-3" style="color: black; font-weight: bolder">school</td>
-                                        <td class="col-2"><asp:DropDownList  runat="server" ID="ddlschool" DataSourceID="SqlDataSource4" DataTextField="school_name" DataValueField="school_id">
+                                        <td class="col-2"><asp:DropDownList  runat="server" ID="ddlschool" Width="200px" DataSourceID="SqlDataSource4" DataTextField="school_name" DataValueField="school_id">
                                             </asp:DropDownList>
                                             <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [school_id], [school_name] FROM [tbl_school]"></asp:SqlDataSource>
                                         </td>
