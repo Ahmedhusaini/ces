@@ -53,7 +53,7 @@ namespace FinalTemplate.source.Functions
                 }
                 else
                 {
-                    HttpContext.Current.Response.Write("No records");
+                    HttpContext.Current.Response.Write("No record in getchild detail");
                 }
             }
             catch (Exception ex)
@@ -114,7 +114,7 @@ namespace FinalTemplate.source.Functions
                 }
                 else
                 {
-                    HttpContext.Current.Response.Write("No records");
+                    HttpContext.Current.Response.Write("No records in childern");
                 }
             }
             catch (Exception ex)
@@ -149,7 +149,7 @@ namespace FinalTemplate.source.Functions
                 }
                 else
                 {
-                    HttpContext.Current.Response.Write("No records");
+                    HttpContext.Current.Response.Write("No record child_id");
                 }
             }
             catch (Exception ex)
@@ -199,7 +199,7 @@ namespace FinalTemplate.source.Functions
                 }
                 else
                 {
-                    HttpContext.Current.Response.Write("No records");
+                    HttpContext.Current.Response.Write("No record in child_detail");
                 }
             }
             catch (Exception ex)
@@ -240,7 +240,7 @@ namespace FinalTemplate.source.Functions
                 }
                 else
                 {
-                    HttpContext.Current.Response.Write("No records");
+                    HttpContext.Current.Response.Write("No record getparentID");
                 }
             }
             catch (Exception ex)

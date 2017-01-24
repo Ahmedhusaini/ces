@@ -74,7 +74,7 @@ namespace FinalTemplate
 
 
 
-                Parents.childern(Parents.parentschild);
+                Parents.childern(Label2.Text);
 
 
 
