@@ -68,7 +68,7 @@ namespace FinalTemplate.source.Registration
             lastnameParameter.Value = lastname;
             nationalityParameter.Value = nationality;
             genderParameter.Value = gender;
-            photoParameter.Value = "images/Parents/"+photo;
+            photoParameter.Value = photo;
             religionParameter.Value = religion;
             phoneParameter.Value = phone;
             addressParameter.Value = address;

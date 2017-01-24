@@ -40,7 +40,8 @@ namespace FinalTemplate
                 string a = ConfigurationManager.ConnectionStrings["ces"].ConnectionString;
                 Database db = new Database("ces");
                 int std_attend_id = Convert.ToInt32(db.GetLastValueByColumnName("std_attend_id", "tbl_student_attendance"));
-                var std_id = Convert.ToString(db.GetLastValueByColumnName("std_id", "tbl_Student_Reg"));
+                //var std_id ="select std_id from tbl_student_attendance" 
+                    //Convert.ToString(db.GetLastValueByColumnName("std_id", "tbl_Student_Reg"));
 
                 using (SqlConnection con = new SqlConnection(a))
                 {      
@@ -51,7 +52,7 @@ namespace FinalTemplate
 
 
 
-                            cmd.Parameters.AddWithValue("@std_id", SqlDbType.VarChar).Value = std_id;
+                            cmd.Parameters.AddWithValue("@std_id", SqlDbType.VarChar).Value = teacher.student_id;
                             cmd.Parameters.AddWithValue("@std_id_out", SqlDbType.VarChar).Direction = ParameterDirection.Output;
 
 
