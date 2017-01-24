@@ -53,7 +53,7 @@ namespace FinalTemplate
 
             try
             {
-                if (JFunctions.UploadSingleFile(fileupload, "images/Parents/") == "true")
+                if (JFunctions.UploadSingleFile(fileupload, "images/Parents/"+fileupload.FileName) == "true")
                 {
                     result = classparent.Registerparents(name.Text, lname.Text, nation.Text, radiobut.SelectedValue, dob.Text,
                         fileupload.FileName, religion.Text, contact1.Text, address.Text, officeadd.Text,

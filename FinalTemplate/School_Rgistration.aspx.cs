@@ -56,7 +56,7 @@ namespace FinalTemplate
                 string selectedpackage = this.hiddenFieild.Value.ToString();
                 if (selectedpackage == "Gold" || selectedpackage == "Silver" || selectedpackage == "Platinum")
                 {
-                    if (JFunctions.UploadSingleFile(fileupload, "images/registeredSchools/") == "true")
+                    if (JFunctions.UploadSingleFile(fileupload, "images/registeredSchools/"+fileupload.FileName) == "true")
                     {
                         result = classSchool.RegisterSchool(1, Convert.ToInt32(ddl_city.SelectedValue),
                              Convert.ToInt32(txt_postalcode.Text), txt_username.Text, txt_password.Text,
