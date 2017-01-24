@@ -2996,7 +2996,7 @@ footer {
 .choose-course-3 .item-course {
     width: 33.33333333%;
     float: left;
-    cursor: pointer;
+    
     border: 1px solid #e1e1e1;
     border-left: 0;
     border-bottom: 0;

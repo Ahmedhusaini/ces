@@ -120,60 +120,60 @@
         <div class="choose-course-3-wrapper row">
             <div class="item-course">
                 <div class="item-course-wrapper">
-                    <div class="icon-course"><i class="icons-img icon-globe"></i></div>
+                    <a href="TeacherOfTheMonth.aspx"><div class="icon-course"><i class="icons-img icon-globe"></i></div></a>
                     <div class="info-course">
-                        <a href="#" class="name-course">Results</a>
+                        <a href="TeacherOfTheMonth.aspx" class="name-course">Teacher OF the Month</a>
                         
-                        <div class="info">Search, view and generate results for any type of exames. You can also check feedback regarding any result posted by students or parents.</div>
+                        <div class="info">You will be able to make any teacher <b>"Teacher Of The Month"</b> who belong to your shcool. There will be some static data which shows and hightlight the abilities of teacher and gives you the option to view his/her profile.</div>
                     </div>
                 </div>
             </div>
             <div class="item-course">
                 <div class="item-course-wrapper">
-                    <div class="icon-course"><i class="icons-img fa fa-database"></i></div>
+                    <a href="TeacherPrivileges.aspx"><div class="icon-course"><i class="icons-img fa fa-database"></i></div></a>
                     <div class="info-course">
-                        <a href="#" class="name-course">Management</a>
+                        <a href="TeacherPrivileges.aspx" class="name-course">Management Of Rights</a>
 
-                        <div class="info">All features related to any management section are available in this section of website. Click anywhere on this to view more options.</div>
+                        <div class="info">On the teacher privileges page you can assign or unassing different rights to particular teacher. These options are also used for temporary access.</div>
                     </div>
                 </div>
             </div>
             <div class="item-course">
                 <div class="item-course-wrapper">
-                    <div class="icon-course"><i class="icons-img icon-computer_network"></i></div>
+                    <a href="UpdateSchoolInformation.aspx"><div class="icon-course"><i class="icons-img icon-computer_network"></i></div></a>
                     <div class="info-course">
-                        <a href="#" class="name-course">School Feedback</a>
+                        <a href="UpdateSchoolInformation.aspx" class="name-course">School Profile</a>
 
-                        <div class="info">Check what other people are saying about your school. View their feedback for improvement.</div>
+                        <div class="info">You are allowed to change your school details as you want. This section of page contain all inforatiom about the school profile.</div>
                     </div>
                 </div>
             </div>
             <div class="item-course" style="height: 280px;">
                 <div class="item-course-wrapper">
-                    <div class="icon-course"><i class="icons-img icon-photocamera_1"></i></div>
-                    <a href="#" class="info-course">
-                        <div class="name-course">Photography</div>
-                        <div class="info">Relive the past memories and view all pictures from past events and functions.</div>
+                    <a href="PackageInformation.aspx"><div class="icon-course"><i class="icons-img icon-photocamera_1"></i></div></a>
+                    <a href="PackageInformation.aspx" class="info-course">
+                        <div class="name-course">View Package Informations</div>
+                        <div class="info">You can get every detail about your package and check what options you are left which.</div>
                     </a>
                 </div>
             </div>
             <div class="item-course">
                 <div class="item-course-wrapper">
-                    <div class="icon-course"><i class="icons-img icon-credit_card"></i></div>
+                    <a href="PostJob.aspx"><div class="icon-course"><i class="icons-img icon-credit_card"></i></div></a>
                     <div class="info-course">
-                        <a href="#" class="name-course">Business</a>
+                        <a href="PostJob.aspx" class="name-course">Jobs</a>
 
-                        <div class="info">Check your monthly expense and view subscription details. Keep an eye on everything that is important. If you find any kind of information irrelevent to your school kindly let us know my going to support section.</div>
+                        <div class="info">You can post jobs directly to the CES Portal where all users can see your post of JOB and will contact you via CES Contact US page.</div>
                     </div>
                 </div>
             </div>
             <div class="item-course">
                 <div class="item-course-wrapper">
-                    <div class="icon-course"><i class="icons-img icon-chat_bubbles"></i></div>
+                    <a href="PostNews.aspx"><div class="icon-course"><i class="icons-img icon-chat_bubbles"></i></div></a>
                     <div class="info-course">
-                        <a href="#" class="name-course">Communication</a>
+                        <a href="PostNews.aspx" class="name-course">NEWS</a>
 
-                        <div class="info">Make some interaction to students/parents and answer some queries. Click to check what is available now.</div>
+                        <div class="info">News is very important task to everybody and you can also post NEWS about your school to CES portal and let others know about it. You can post any type of NEWS.</div>
                     </div>
                 </div>
             </div>
