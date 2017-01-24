@@ -27,7 +27,7 @@ namespace FinalTemplate.source.Registration
             SqlParameter lastnameParameter = new SqlParameter("@lastname ", SqlDbType.VarChar, 50);
             SqlParameter nationalityParameter = new SqlParameter("@nationality ", SqlDbType.VarChar, 50);
             SqlParameter genderParameter = new SqlParameter("@gender ", SqlDbType.VarChar, 7);
-            SqlParameter photoParameter = new SqlParameter("@photo  ", SqlDbType.VarChar, 50);
+            SqlParameter photoParameter = new SqlParameter("@photo  ", SqlDbType.VarChar, 200);
             SqlParameter religionParameter = new SqlParameter("@religion  ", SqlDbType.VarChar, 20);
             SqlParameter phoneParameter = new SqlParameter("@phone   ", SqlDbType.VarChar, 50);
             SqlParameter addressParameter = new SqlParameter("@address  ", SqlDbType.VarChar, 50);

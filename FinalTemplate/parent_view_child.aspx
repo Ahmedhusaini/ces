@@ -91,7 +91,8 @@
                                                            
                                                     
                                                     </div>
-                                                    <div class="edugate-image"><img src="assets/images/courses/courses-4.jpg" alt="" class="img-responsive"/></div>
+                                                    <div class="edugate-image"><asp:Image ID="Image1" runat="server" CssClass="img-responsive"  />
+                                                        </div>
                                                 </div>
                                             </div>
                                         </div>

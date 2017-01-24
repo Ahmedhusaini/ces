@@ -73,6 +73,7 @@ namespace FinalTemplate
             lblsname.Text = Parents.Schoolname;
             lblcontact.Text = Parents.contactprimary;
             lblschool_id.Text = Parents.school_id;
+            Image1.ImageUrl = "images/student/" + Parents.photo;
 
             if (!IsPostBack)
             {

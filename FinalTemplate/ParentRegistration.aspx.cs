@@ -66,6 +66,7 @@ namespace FinalTemplate
 
                         //ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "tmp", "popup();", true);
                         Response.Write("Register");
+                        Response.Redirect("~/Default.aspx");
 
                     }
                     else
