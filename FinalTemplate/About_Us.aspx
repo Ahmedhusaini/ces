@@ -1,6 +1,19 @@
 ﻿<%@ Page Title=" CES | About Us" Language="C#" MasterPageFile="~/User.Master" AutoEventWireup="true" CodeBehind="About_Us.aspx.cs" Inherits="FinalTemplate.About_Us" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="UserHeadPlaceHolder" runat="server">
+    <script src="assets/js/jquery-2.2.3.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+
+        });
+
+
+    </script>
+
+
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="UserContentPlaceHolder" runat="server">
     <div class="section background-opacity page-title set-height-top">
@@ -90,6 +103,18 @@
             </div>
             <div class="best-staff-wrapper">
                 <div class="best-staff-content">
+                      <div class="staff-item customize">
+                        <div class="staff-item-wrapper"  style="height:250px">
+                            <div class="staff-info">
+                                <a href="#" class="staff-avatar">
+                                    <img src="assets/images/shahwaiz_pic.jpg" alt="" class="img-responsive" /></a>
+                                <a href="#" class="staff-name">M.Shahwaiz Hasan</a>
+                                <div class="staff-job">Team Lead , Developer & Designer</div>
+                                <div class="staff-desctiption">He start his work as a developer but his devotion and leadership quality cause him to steer us as a leader. He has served as devoted member for last couple of years in different IT Fairs programs in SSUET.</div>
+                            </div>
+                        </div>
+                        <div class="staff-socials"><a href="https://www.facebook.com/mshahwaizhasan?fref=ts" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" title="shahwaizhasan106@gmail.com" class="google"><i class="fa fa-google-plus"></i></a></div>
+                    </div>
                     <div class="staff-item customize">
                         <div class="staff-item-wrapper" style="height:250px">
                             <div class="staff-info">
@@ -100,20 +125,9 @@
                                 <div class="staff-desctiption">Apart from being bald &amp; older among us all he is an experienced .Net Developer for last couple of years, and ofcourse he is the Co-Founder of our project who came up with this brilliant idea and inspired us all to become a part of this esteemed team.</div>
                             </div>
                         </div>
-                        <div class="staff-socials"><a href="www.facebook.com" class="facebook"><i class="fa fa-facebook"></i></a><a href="www.gmail.com" class="google"><i class="fa fa-google-plus"></i></a></div>
+                        <div class="staff-socials"><a href="https://www.facebook.com/mjahangeerahmed?fref=ts" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" title="jahangeer.ahmed11@gmail.com" class="google"><i class="fa fa-google-plus"></i></a></div>
                     </div>
-                    <div class="staff-item customize">
-                        <div class="staff-item-wrapper"  style="height:250px">
-                            <div class="staff-info">
-                                <a href="#" class="staff-avatar">
-                                    <img src="assets/images/shahwaiz_pic.jpg" alt="" class="img-responsive" /></a>
-                                <a href="#" class="staff-name">M.Shahwaiz Hasan</a>
-                                <div class="staff-job">Team Lead , Developer & Designer</div>
-                                <div class="staff-desctiption">He start his work as a developer but his devotion and leadership quality cause him to steer us as a leader. He has served as devoted member for last couple of years in different IT Fairs programs in SSUET.</div>
-                            </div>
-                        </div>
-                        <div class="staff-socials"><a href="www.facebook.com" class="facebook"><i class="fa fa-facebook"></i></a><a href="www.gmail.com" class="google"><i class="fa fa-google-plus"></i></a></div>
-                    </div>
+                  
                     <div class="staff-item customize">
                         <div class="staff-item-wrapper"  style="height:250px">
                             <div class="staff-info">
@@ -124,7 +138,7 @@
                                 <div class="staff-desctiption">He is another a talented member of our former team. He started as a designer of our portal but when it comes to coding side he is a bright shining start of our team who is responsible for dealing with security domain like Validation and User Authentication criteria.</div>
                             </div>
                         </div>
-                        <div class="staff-socials"><a href="www.facebook.com" class="facebook"><i class="fa fa-facebook"></i></a><a href="www.gmail.com" class="google"><i class="fa fa-google-plus"></i></a></div>
+                        <div class="staff-socials"><a href="https://www.facebook.com/shaheryar.khan.9883" class="facebook"><i class="fa fa-facebook"></i></a><a  href="#" title="shaheryar.shakaib@gmail.com" class="google"><i class="fa fa-google-plus"></i></a></div>
                     </div>
                     <div class="staff-item customize">
                         <div class="staff-item-wrapper"  style="height:250px">
@@ -133,12 +147,12 @@
                                     <img src="assets/images/ahmed.jpg" alt="" class="img-responsive" /></a>
                                 <a href="#" class="staff-name">Syed Ahmed Husaini</a>
                                 <div class="staff-job">Developer & Designer</div>
-                                <div class="staff-desctiption">Our most multitasking member blessed with great singing skills with nice vocals &amp;amp; is talented sportsman too.. Ahmed is our Data-base administrator also responsible for server side data mangement possessing expertise in .Net Development.</div>
+                                <div class="staff-desctiption">Our most multitasking member Ahmed is our Data-base administrator also responsible for server side data mangement possessing expertise in .Net Development.</div>
                             </div>
                         </div>
-                        <div class="staff-socials"><a href="www.facebook.com" class="facebook"><i class="fa fa-facebook"></i></a><a href="www.gmail.com" class="google"><i class="fa fa-google-plus"></i></a></div>
+                        <div class="staff-socials"><a href="https://www.facebook.com/ahmed.husaini.33?fref=ts" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" title="syedahmedhusaini94@yahoo.com" class="google"><i class="fa fa-google-plus"></i></a></div>
                     </div>
-                    <div class="staff-item customize">
+                 <%--   <div class="staff-item customize">
                         <div class="staff-item-wrapper"  style="height:250px">
                             <div class="staff-info">
                                 <a href="#" class="staff-avatar">
@@ -149,7 +163,7 @@
                             </div>
                         </div>
                         <div class="staff-socials"><a href="www.facebook.com" class="facebook"><i class="fa fa-facebook"></i></a><a href="www.gmail.com" class="google"><i class="fa fa-google-plus"></i></a></div>
-                    </div>
+                    </div>--%>
                 </div>
             </div>
         </div>
