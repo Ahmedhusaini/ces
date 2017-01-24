@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FinalTemplate
-{
-
-
-    public partial class parentpanel1
-    {
-
+namespace FinalTemplate {
+    
+    
+    public partial class parentpanel1 {
+        
         /// <summary>
         /// lab1 control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lab1;
-
+        
         /// <summary>
         /// lab2 control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lab2;
-
+        
         /// <summary>
         /// Image1 control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image Image1;
-
+        
         /// <summary>
         /// FileUpload1 control.
         /// </summary>
@@ -49,7 +47,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
-
+        
         /// <summary>
         /// btnSave control.
         /// </summary>
@@ -58,7 +56,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSave;
-
+        
         /// <summary>
         /// Label3 control.
         /// </summary>
@@ -67,7 +65,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label3;
-
+        
         /// <summary>
         /// Label1 control.
         /// </summary>
@@ -76,7 +74,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
-
+        
         /// <summary>
         /// Label2 control.
         /// </summary>
@@ -85,7 +83,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label2;
-
+        
         /// <summary>
         /// headlbl control.
         /// </summary>
@@ -94,7 +92,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label headlbl;
-
+        
         /// <summary>
         /// headll control.
         /// </summary>
@@ -103,7 +101,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label headll;
-
+        
         /// <summary>
         /// gender control.
         /// </summary>
@@ -112,7 +110,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label gender;
-
+        
         /// <summary>
         /// phone control.
         /// </summary>
@@ -121,7 +119,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label phone;
-
+        
         /// <summary>
         /// address control.
         /// </summary>
@@ -130,7 +128,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label address;
-
+        
         /// <summary>
         /// pemail control.
         /// </summary>
@@ -139,7 +137,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label pemail;
-
+        
         /// <summary>
         /// atype control.
         /// </summary>
@@ -148,7 +146,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label atype;
-
+        
         /// <summary>
         /// btnShow control.
         /// </summary>
@@ -157,7 +155,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnShow;
-
+        
         /// <summary>
         /// ToolkitScriptManager1 control.
         /// </summary>
@@ -166,7 +164,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.ToolkitScriptManager ToolkitScriptManager1;
-
+        
         /// <summary>
         /// Panel1 control.
         /// </summary>
@@ -175,7 +173,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Panel1;
-
+        
         /// <summary>
         /// TextBox1 control.
         /// </summary>
@@ -184,7 +182,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox1;
-
+        
         /// <summary>
         /// Button1 control.
         /// </summary>
@@ -193,7 +191,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
-
+        
         /// <summary>
         /// Button2 control.
         /// </summary>
@@ -202,7 +200,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button2;
-
+        
         /// <summary>
         /// ModalPopupExtender1 control.
         /// </summary>
@@ -211,7 +209,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.ModalPopupExtender ModalPopupExtender1;
-
+        
         /// <summary>
         /// SqlDataSource1 control.
         /// </summary>
@@ -220,7 +218,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
-
+        
         /// <summary>
         /// DropDownList1 control.
         /// </summary>
@@ -229,7 +227,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
-
+        
         /// <summary>
         /// SqlDataSource2 control.
         /// </summary>
@@ -238,7 +236,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
-
+        
         /// <summary>
         /// GridView1 control.
         /// </summary>
@@ -247,7 +245,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView1;
-
+        
         /// <summary>
         /// Name control.
         /// </summary>
@@ -256,7 +254,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Name;
-
+        
         /// <summary>
         /// gname control.
         /// </summary>
@@ -265,7 +263,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label gname;
-
+        
         /// <summary>
         /// cgender control.
         /// </summary>
@@ -274,7 +272,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label cgender;
-
+        
         /// <summary>
         /// school control.
         /// </summary>
@@ -283,7 +281,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label school;
-
+        
         /// <summary>
         /// stype control.
         /// </summary>
@@ -292,7 +290,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label stype;
-
+        
         /// <summary>
         /// classsss control.
         /// </summary>
@@ -301,7 +299,7 @@ namespace FinalTemplate
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label classsss;
-
+        
         /// <summary>
         /// section control.
         /// </summary>

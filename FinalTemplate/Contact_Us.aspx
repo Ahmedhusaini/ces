@@ -93,7 +93,7 @@
                     <div class="register-submit">
                         <button type="submit" class="btn btn-register btn-green">
                             <span>
-                                <asp:Button ID="Button2" runat="server" Text=" Update" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>
+                                <asp:Button ID="Button2" runat="server" Text=" Submit" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>
                         <asp:Label ID="Label1" runat="server"></asp:Label>
                     </div>
                 </form>
