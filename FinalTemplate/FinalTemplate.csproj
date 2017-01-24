@@ -140,6 +140,7 @@
     <Content Include="ContactUs_Student.aspx" />
     <Content Include="DefineFeesStructure.aspx" />
     <Content Include="Download_Homework.aspx" />
+    <Content Include="edit_student_timetable.aspx" />
     <Content Include="images\Parents\aaaa.png" />
     <Content Include="maplocation.aspx" />
     <Content Include="school_comparision.aspx" />
@@ -452,6 +453,13 @@
     </Compile>
     <Compile Include="Download_Homework.aspx.designer.cs">
       <DependentUpon>Download_Homework.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="edit_student_timetable.aspx.cs">
+      <DependentUpon>edit_student_timetable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="edit_student_timetable.aspx.designer.cs">
+      <DependentUpon>edit_student_timetable.aspx</DependentUpon>
     </Compile>
     <Compile Include="maplocation.aspx.cs">
       <DependentUpon>maplocation.aspx</DependentUpon>
