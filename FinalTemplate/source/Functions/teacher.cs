@@ -169,5 +169,46 @@ namespace FinalTemplate.source.Functions
             return class_id;
 
         }
+        public static string student_id
+
+        { get { return Getstudentid(); } }
+
+
+        private static string Getstudentid()
+        {
+            string std_id = string.Empty;
+
+
+
+            mydatabase.CreateConnection();
+            mydatabase.InitializeSQLCommandObject(mydatabase.GetCurrentConnection, "select std_id from tbl_Student_Reg");
+            try
+            {
+                mydatabase.OpenConnection();
+                mydatabase.obj_reader = mydatabase.obj_sqlcommand.ExecuteReader();
+                if (mydatabase.obj_reader.HasRows)
+                {
+                    while (mydatabase.obj_reader.Read())
+                    {
+                       std_id = mydatabase.obj_reader["std_id"].ToString();
+
+                    }
+                }
+                else
+                { HttpContext.Current.Response.Write("No id is Found"); }
+            }
+            catch (Exception ex)
+            {
+                HttpContext.Current.Response.Write(ex.ToString());
+            }
+            finally
+            {
+                mydatabase.CloseConnection();
+                mydatabase.obj_reader.Dispose();
+                mydatabase.obj_reader.Close();
+            }
+            return std_id;
+
+        }
     }
 }

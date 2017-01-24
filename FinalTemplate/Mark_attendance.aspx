@@ -50,7 +50,7 @@
                    <SortedDescendingHeaderStyle BackColor="#275353" />
                    </asp:GridView>                                                                         
                 <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT * FROM [tbl_remarks]"></asp:SqlDataSource>                                               
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [Std_id] FROM [tbl_student_attendance]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [Std_id] FROM [tbl_Student_Reg]"></asp:SqlDataSource>
             </div>
           </div>
         </div>
