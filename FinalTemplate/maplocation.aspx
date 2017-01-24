@@ -14,7 +14,7 @@ body { height: 100%; margin: 0; padding: 0 }
            var markers = JSON.parse('<%=ConvertDataTabletoString() %>');
            var mapOptions = {
                center: new google.maps.LatLng(markers[0].lat, markers[0].lng),
-               zoom: 3,
+               zoom: 2,
                mapTypeId: google.maps.MapTypeId.ROADMAP
                //marker:true
     };

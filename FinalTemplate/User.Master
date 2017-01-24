@@ -64,12 +64,11 @@
                 </div>
                 <nav class="navigation collapse navbar-collapse pull-right">
                     <ul class="nav-links nav navbar-nav">
-                        <li class="dropdown "><a href="javascript:void(0)" class="main-menu">Home</a>
+                        <li class="dropdown "><a href="Default.aspx" class="main-menu">Home</a>
                         </li>
-
                         <li class="dropdown"><a href="school_comparision.aspx" class="main-menu">School Comparision</a>
-                        </li>
-                        </li>
+                        </li>                        
+                        <li><a href="maplocation.aspx" class="main-menu">Map Location</a></li>
                         <li class="dropdown"><a href="About_Us.aspx" class="main-menu">About Us</a></li>
                         <li><a href="Contact_Us.aspx" class="main-menu">Contact</a></li>
 
