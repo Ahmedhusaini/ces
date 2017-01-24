@@ -45,7 +45,7 @@ namespace FinalTemplate
                 {
                     lbl_error.Visible = true;
                     lbl_error.Text = "username and password fields can not be null or empty.";
-                    lbl_error.ForeColor = Color.SteelBlue;
+                    lbl_error.ForeColor = Color.Red;
                 }
                 else
                 {
@@ -80,7 +80,7 @@ namespace FinalTemplate
                     {
                         lbl_error.Text = "username and password combination is incorrect.";
                         lbl_error.Visible = true;
-                        lbl_error.ForeColor = Color.Gold;
+                        lbl_error.ForeColor = Color.Red;
                     }
                 }
             }
