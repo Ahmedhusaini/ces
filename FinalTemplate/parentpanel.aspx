@@ -268,22 +268,26 @@
                                         <asp:ControlParameter ControlID="DropDownList1" Name="Parent_ID" PropertyName="SelectedValue" Type="String" />
                                     </SelectParameters>
                                 </asp:SqlDataSource>
-                                <asp:GridView ID="GridView1"  class="edu-table-responsive"  runat="server"  AutoGenerateColumns="False" Width="1220px  " AllowPaging="True" AllowSorting="True" CellPadding="4" DataSourceID="SqlDataSource2"  ForeColor="#86BC42" GridLines="None">
+                                <asp:GridView ID="GridView1"  class="edu-table-responsive"  runat="server"  AutoGenerateColumns="False" Width="1220px" AllowPaging="True" AllowSorting="True" CellPadding="4" DataSourceID="SqlDataSource2"  ForeColor="#86BC42" GridLines="None" DataKeyNames="Std_id" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                                     <AlternatingRowStyle BackColor="White" />
                                     <Columns>
-                                          <asp:TemplateField  HeaderText="Firstname">
-                                             <ItemTemplate>
-                                                 <asp:LinkButton ID="LinkButton1"   OnClick="linkbutton" Text='<%#Eval("Firstname")%>'  runat="server">Link</asp:LinkButton>
-                                             </ItemTemplate>
-                                               <HeaderStyle BackColor="#737373" Font-Bold="True" ForeColor="#86bc42" />
-                                         </asp:TemplateField>
-                                        <asp:BoundField DataField="lastname" HeaderText="Lastname" SortExpression="lastname" />
+                                        <asp:TemplateField HeaderText="Std_id" >
+                                            <ItemTemplate>
+                                                <asp:LinkButton ID="LinkButton1"  OnClick="linkbutton" Text='<%#Eval("Std_id") %>' runat="server">Link</asp:LinkButton>
+                                            </ItemTemplate>
+                                            <HeaderStyle BackColor="#737373" Font-Bold="True" ForeColor="#86bc42"/>
+                                        </asp:TemplateField>
+
+                                        
+                                        <asp:BoundField DataField="firstname" HeaderText="firstname" SortExpression="firstname" />
+                                        <asp:BoundField DataField="lastname" HeaderText="lastname" SortExpression="lastname" />
                                         <asp:BoundField DataField="Gender" HeaderText="Gender" SortExpression="Gender" />
-                                        <asp:BoundField DataField="Guardian_Name" HeaderText="Guardian Name" SortExpression="Guardian_Name" />
-                                        <asp:BoundField DataField="school_name" HeaderText="School" SortExpression="school_name" />
-                                        <asp:BoundField DataField="school_type" HeaderText="School Type" SortExpression="school_type" />
-                                        <asp:BoundField DataField="class" HeaderText="Class" SortExpression="class" />
-                                        <asp:BoundField DataField="section" HeaderText="Section" SortExpression="section" />
+                                        <asp:BoundField DataField="Guardian_Name" HeaderText="Guardian_Name" SortExpression="Guardian_Name" />
+                                        <asp:BoundField DataField="school_name" HeaderText="school_name" SortExpression="school_name" />
+                                        <asp:BoundField DataField="school_type" HeaderText="school_type" SortExpression="school_type" />
+                                        
+                                          <asp:BoundField DataField="class" HeaderText="class" SortExpression="class" />
+                                          <asp:BoundField DataField="section" HeaderText="section" SortExpression="section" />
                                         
                                     </Columns>
                                      <EditRowStyle BackColor="#7C6F57" />

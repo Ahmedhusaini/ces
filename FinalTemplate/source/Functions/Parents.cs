@@ -25,6 +25,7 @@ namespace FinalTemplate.source.Functions
         static public string schooltype { get; set; }
 
         static public string sectionn { get; set; }
+        static public string pemail { get; set; }
 
         public static string contactprimary { get; set; }
         static public string Phone { get; set; }
@@ -37,6 +38,7 @@ namespace FinalTemplate.source.Functions
         {
             mydatabse.CreateConnection();
             mydatabse.InitializeSQLCommandObject(mydatabse.GetCurrentConnection, "select std_id from [tbl_P&S_relation] where Parent_ID ='" + Parents.parentschild + "';");
+           
             try
             {
                 mydatabse.OpenConnection();
@@ -188,10 +190,9 @@ namespace FinalTemplate.source.Functions
                         Gender = mydatabse.obj_reader["Gender"].ToString();
                         Phone = mydatabse.obj_reader["phone"].ToString();
                         Schoolname = mydatabse.obj_reader["school_name"].ToString();
-                        //schooltypee = mydatabse.obj_reader["school_type "].ToString();
-                        contactprimary = mydatabse.obj_reader["contact_primary"].ToString();
+                        pemail = mydatabse.obj_reader["primary_email"].ToString();
                         photo = mydatabse.obj_reader["photo"].ToString();
-                        school_id = mydatabse.obj_reader["school_id"].ToString();
+                       
 
 
 

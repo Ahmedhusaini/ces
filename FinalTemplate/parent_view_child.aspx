@@ -56,8 +56,10 @@
         </div>
     </div>
     
-    
-    <div> <asp:label ID="id" Visible="False" runat="server"> </asp:label>  </div>
+      
+    <div> <asp:label ID="id"  runat="server"> </asp:label> 
+         <asp:label ID="std"  runat="server"> </asp:label>
+    </div>
      <div> <asp:label ID="lblschool_id" Visible="False" runat="server"> </asp:label>  </div>
     <br/>
     <br/>
@@ -84,9 +86,10 @@
                                                          School Name : <asp:Label ID="lblsname" runat="server"></asp:Label>
                                                                      </div>
                                                            <div class="info-more">
-                                                         Contact School : <asp:Label ID="lblcontact" runat="server"></asp:Label>
+                                                         Primary Email : <asp:Label ID="lblcontact" runat="server"></asp:Label>
                                                                      </div>
                                                                 
+                                                         
                                                                 
                                                            
                                                     
@@ -102,7 +105,7 @@
     <asp:DropDownList ID="Dp3" runat="server" DataSourceID="SqlDataSource1" DataTextField="school_name" DataValueField="school_name"></asp:DropDownList>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="sp_GetChildClassSec" SelectCommandType="StoredProcedure">
         <SelectParameters>
-            <asp:ControlParameter ControlID="id" Name="Std_id" PropertyName="Text" Type="String" />
+            <asp:ControlParameter ControlID="std" Name="Std_id" PropertyName="Text" Type="String" />
         </SelectParameters>
     </asp:SqlDataSource>
     

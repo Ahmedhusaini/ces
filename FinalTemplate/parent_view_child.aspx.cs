@@ -30,6 +30,16 @@ namespace FinalTemplate
             //    Jfunctionparents.BindDropDownList(DropDownList2, "month", "month_id", "select * from tbl_month");
             lbldatetime.Text = DateTime.Now.ToString("yyyy/MM/dd");
 
+            
+
+            //if (this.Page.PreviousPage != null)
+            //{
+            //    int rowindex = int.Parse(Request.QueryString["RowIndex"]);
+            //    GridView GridVie = (GridView)this.Page.PreviousPage.FindControl("GridView1");
+            //    GridViewRow row = GridVie.Rows[rowindex];
+            //    std.Text = row.Cells[0].Text;
+            //}
+
 
             if (Session["userid"] != null)
             {
@@ -60,19 +70,20 @@ namespace FinalTemplate
 
 
             }
+            std.Text = Request.QueryString["ID"].ToString();
 
-            Parents.GetChildDetails(Parents.parentschild);
+            Parents.GetChildDetails(std.Text);
 
-            id.Text = Parents.std_id;
-            Parents.child_detail(id.Text);
+            //id.Text = Parents.std_id;   
+            Parents.child_detail(std.Text);
             lblfl.Text = Parents.Firstname + " " + Parents.Lastname;
             lblclass.Text = Parents.sclass;
             lblsec.Text = Parents.sectionn;
             lblgen.Text = Parents.Gender;
             lblph.Text = Parents.Phone;
             lblsname.Text = Parents.Schoolname;
-            lblcontact.Text = Parents.contactprimary;
-            lblschool_id.Text = Parents.school_id;
+            lblcontact.Text = Parents.pemail;
+           
             Image1.ImageUrl = "images/student/" + Parents.photo;
 
             if (!IsPostBack)
