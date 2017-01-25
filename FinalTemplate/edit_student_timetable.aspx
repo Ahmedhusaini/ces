@@ -2,7 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="TeacherHeadPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="TeacherPlaceHolder1" runat="server">
-  
+   <div class="container">
+        <div class="register-wrapper rlp-wrapper reg-sk" style="opacity: 0.98;">
+            <div class="register-table rlp-table" style="box-shadow: 5px 5px 50px 5px; background-color: #C8E1AE;">
     <div class="group-title-index">
                     <h2 class="center-title">Update Student Timetable</h2>
                     <div class="bottom-title">
@@ -101,20 +103,15 @@
                                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT * FROM [tbl_day]"></asp:SqlDataSource>
                                         </td>
                                         <td class="col-3"></td>
-                                    </tr>
-                                 
-                                                         
-                                  
+                                    </tr>                 
                      </div>
                                       
                                 </tbody>
                             </table>
-                         <%--    <div class="register-submit">
-                            <button type="submit"   class="btn btn-register btn-green">--%>
+                            
                                 <asp:Button ID="Button1" runat="server" Text="UPDATE" OnClick="Button1_Click" />
-                            <%--  </button>
-                        </div>--%>
+                           
                     </div>
-                  
+                  </div></div></div>
                 </div>
 </asp:Content>

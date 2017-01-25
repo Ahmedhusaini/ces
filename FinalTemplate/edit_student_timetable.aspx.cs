@@ -32,7 +32,8 @@ namespace FinalTemplate
             string a = ConfigurationManager.ConnectionStrings["ces"].ConnectionString;
             Database db = new Database("ces");
             int class_sec_info_id = Convert.ToInt32(db.GetLastValueByColumnName("class_sec_info_id", "tbl_class_sec_info"));
-
+            try
+            {
             using (SqlConnection con = new SqlConnection(a))
             {
                 con.Open();
@@ -57,11 +58,14 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@school_id", SqlDbType.VarChar).Value = teacher.schoolid;
                 cmd.ExecuteNonQuery();
                 con.Close();
-            } try
-            {
+            }
+                
                     Response.Write("<script>alert('Successfully updated class timetable');</script>");
             }
-            catch { }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Please Update');</script>");
+            }
            
         }
     }
