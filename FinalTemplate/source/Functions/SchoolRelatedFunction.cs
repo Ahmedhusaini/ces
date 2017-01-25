@@ -31,6 +31,36 @@ namespace FinalTemplate.source.Functions
         public string LastLoginDate { get; set; }
         public string Logo { get; set; }
 
+        public bool UpdateLastLoginDate()
+        {
+            string lastLoginDate = string.Empty;
+            mydb.CreateConnection();
+            mydb.InitializeSQLCommandObject(mydb.GetCurrentConnection, "spLastLoginDate", true);
+            mydb.obj_sqlcommand.Parameters.AddWithValue("@date", SqlDbType.Date).Value = JFunctions.GetSystemDate();
+            mydb.obj_sqlcommand.Parameters.AddWithValue("@authorizedid", SqlDbType.VarChar).Value = CurrentUser.AuthorizedID;
+            try
+            {
+                mydb.OpenConnection();
+                if (mydb.obj_sqlcommand.ExecuteNonQuery() <= 0)
+                {
+                    return false;
+                }
+            }
+            catch (Exception exception)
+            {
+                HttpContext.Current.Response.Write(exception.ToString());
+            }
+            finally
+            {
+                mydb.CloseConnection();
+                mydb.obj_reader.Close();
+                mydb.obj_reader.Dispose();
+            }
+            return true;
+        }
+
+
+
         public int TotalStudent(string _schoolID)
         {
             int foundstudent = 0;
