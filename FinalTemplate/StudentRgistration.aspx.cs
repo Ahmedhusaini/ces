@@ -71,7 +71,7 @@ namespace FinalTemplate
                 {
                     result = classStudent.studentregister(name.Text, lname.Text, contact1.Text, guardian.Text,
                         gurcontact.Text, radiobut.SelectedValue,
-                        dob.Text, nation.Text, religion.Text, Convert.ToInt32(DropDownList2.SelectedValue), 1,
+                        dob.Text, nation.Text, religion.Text,1, Convert.ToInt32(DropDownList2.SelectedValue),
                         address.Text,
                         Convert.ToInt32(postal.Text), prevchool.Text, preclass.Text, FileUpload1.FileName,
                         DropDownList5.SelectedValue,
