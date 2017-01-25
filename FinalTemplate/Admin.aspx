@@ -98,10 +98,9 @@
     <div class="section slider-banner-03 background-opacity-2">
         <div class="container">
             <div class="slider-banner-wrapper">
-                <h3 data-wow-delay="0.5s" class="sub-title wow fadeInUp">Last Login Date:03/08/2016 &nbsp;&nbsp;Last Login Time: 09:23:00 AM</h3>
+                <h3 data-wow-delay="0.5s" class="sub-title wow fadeInUp">Last Login Date:<asp:Label runat="server"  ID="lbllogoutDate" Font-Size="Larger"></asp:Label> &nbsp;&nbsp;User ID: <asp:Label runat="server" ID="lblUserID" Font-Size="Larger"></asp:Label></h3>
 
-                <h1 data-wow-delay="0.5s" class="main-title wow fadeInUp">
-                    <asp:Label Text="school name" ID="lbl_schoolid" runat="server"></asp:Label></h1>
+
 
                 <div class="group-button">
                     <button data-wow-delay="1.3s" data-wow-duration="1s" class="btn btn-transition-3 wow fadeInLeft">

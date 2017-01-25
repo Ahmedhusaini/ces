@@ -13,7 +13,7 @@ namespace FinalTemplate
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             SchoolRelatedFunction objSchoolRelatedFunction = new SchoolRelatedFunction();
-            if (objSchoolRelatedFunction.AddCoordinates(double.Parse(txtLongitude.Text), double.Parse(txtLatitude.Text)) > 0)
+            if (objSchoolRelatedFunction.AddCoordinates(double.Parse(txtLatitude.Text), double.Parse(txtLongitude.Text)) > 0)
             {
                 Response.Write("<script>alert('Coordinates are successfully set.');</script>");
             }

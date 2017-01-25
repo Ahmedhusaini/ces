@@ -15,9 +15,9 @@ namespace FinalTemplate
         public string ConvertDataTabletoString()
         {
             DataTable dt = new DataTable();
-            using (SqlConnection con = new SqlConnection(@"Data Source=ABBASI\JAHANGEER;Initial Catalog=ces;Integrated Security=True"))
+            using (SqlConnection con = new SqlConnection(@"Data Source=SHAHWAIZ\SQLEXPRESS;Initial Catalog=ces;Integrated Security=True"))
             {
-                using (SqlCommand cmd = new SqlCommand("select title=ml_id,lat=latitude,lng=longitude,school_name from View_locationmap", con))
+                using (SqlCommand cmd = new SqlCommand("select title=ml_id,lng=longitude,lat=latitude,school_name from View_locationmap", con))
                 {
                     con.Open();
                     SqlDataAdapter da = new SqlDataAdapter(cmd);

@@ -22,7 +22,7 @@ body { height: 100%; margin: 0; padding: 0 }
     var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
     for (i = 0; i < markers.length; i++) {
         var data = markers[i]
-        var myLatlng = new google.maps.LatLng(data.lat, data.lng);
+        var myLatlng = new google.maps.LatLng(data.lat, data.lng); 
         var marker = new google.maps.Marker({
             position: myLatlng,
             map: map,

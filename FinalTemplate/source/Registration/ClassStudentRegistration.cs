@@ -78,8 +78,8 @@ namespace FinalTemplate.source
             addressParameter.Value = address;
             generalidoutParameter.Direction = ParameterDirection.Output;
             dobidParameter.Value = Convert.ToInt32(dobid) + 1;
-            dayParameter.Value = Convert.ToInt32(dob.Substring(2, 2));
-            monthParameter.Value = Convert.ToInt32(dob.Substring(0, 1));
+            dayParameter.Value = Convert.ToInt32(dob.Substring(8, 2));
+            monthParameter.Value = Convert.ToInt32(dob.Substring(5, 2));
             yearParameter.Value = Convert.ToInt32(dob.Substring(0, 4));
             dobidoutParameter.Direction = ParameterDirection.Output;
             stdidParameter.Value = Generatestudentid(username, classname.ToString(), section.ToString());

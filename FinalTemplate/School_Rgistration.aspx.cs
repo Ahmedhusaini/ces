@@ -56,7 +56,7 @@ namespace FinalTemplate
                 string selectedpackage = this.hiddenFieild.Value.ToString();
                 if (selectedpackage == "Gold" || selectedpackage == "Silver" || selectedpackage == "Platinum")
                 {
-                    if (JFunctions.UploadSingleFile(fileupload, "images/registeredSchools/"+fileupload.FileName) == "true")
+                    if (JFunctions.UploadSingleFile(fileupload, "images/registeredSchools/" + fileupload.FileName) == "true")
                     {
                         result = classSchool.RegisterSchool(1, Convert.ToInt32(ddl_city.SelectedValue),
                              Convert.ToInt32(txt_postalcode.Text), txt_username.Text, txt_password.Text,
@@ -73,9 +73,11 @@ namespace FinalTemplate
                             {
                                 JFunctions.SendEmail(txt_primaryEmailAddress.Text, "CES - Registration", EmailBody());
                                 Response.Write("<script>alert('An email has been sent to your primary email address which contain basic information about your account. You will be redirected to home page.');</script>");
+                                Response.Redirect("Default.aspx");
                             }
                             else
                                 Response.Write("Regisration completed successfully, but package assingment is not completed due to an error.");
+
                         }
                         else
                             Response.Write("not register");
