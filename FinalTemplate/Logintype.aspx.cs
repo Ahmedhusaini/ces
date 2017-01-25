@@ -51,25 +51,25 @@ namespace FinalTemplate
                 {
                     if (loginresult == "true")
                     {
-                        if (ddl_type.SelectedIndex == 1 || ddl_type.SelectedIndex == 2)
+                        if (int.Parse(ddl_type.SelectedValue) == 1)
                         {
                             Session["userid"] = myLogin.myDatabase.GetAuthorizedID(myLogin.valideUsername, myLogin.validePasswoerd);
                             Response.Redirect("~/Admin.aspx");
 
                         }
-                        else if (ddl_type.SelectedIndex == 3)
+                        else if (int.Parse(ddl_type.SelectedValue) == 3)
                         {
                             Session["userid"] = myLogin.myDatabase.GetAuthorizedID(myLogin.valideUsername, myLogin.validePasswoerd);
                             Response.Redirect("~/TeacherPanel.aspx");
 
                         }
-                        else if (ddl_type.SelectedIndex == 4)
+                        else if (int.Parse(ddl_type.SelectedValue) == 4)
                         {
                             Session["userid"] = myLogin.myDatabase.GetAuthorizedID(myLogin.valideUsername, myLogin.validePasswoerd);
                             Response.Redirect("~/studentpanel.aspx");
 
                         }
-                        else if (ddl_type.SelectedIndex == 5)
+                        else if (int.Parse(ddl_type.SelectedValue) == 6)
                         {
                             Session["userid"] = myLogin.myDatabase.GetAuthorizedID(myLogin.valideUsername, myLogin.validePasswoerd);
                             Response.Redirect("~/parentpanel.aspx");

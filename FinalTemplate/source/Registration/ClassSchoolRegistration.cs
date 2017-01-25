@@ -66,7 +66,7 @@ namespace FinalTemplate.source.Registration
             ownernameParameter.Value = ownerName;
             contactprimaryParameter.Value = contactPrimary;
             contactsecondaryParameter.Value = contactSecondary;
-            foundedinParameter.Value = Convert.ToDateTime(JFunctions.GetSystemDate());
+            foundedinParameter.Value = foundedIn;
             logoParameter.Value = logo;
             schooltypeidParameter.Value = school_type_id;
             schoolidoutParameter.Direction = ParameterDirection.Output;
