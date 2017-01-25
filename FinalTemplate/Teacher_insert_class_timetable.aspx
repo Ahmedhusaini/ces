@@ -1,27 +1,15 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher.Master" AutoEventWireup="true" CodeBehind="edit_student_timetable.aspx.cs" Inherits="FinalTemplate.edit_student_timetable" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher.Master" AutoEventWireup="true" CodeBehind="Teacher_insert_class_timetable.aspx.cs" Inherits="FinalTemplate.Teacher_insert_class_timetable" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TeacherHeadPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="TeacherPlaceHolder1" runat="server">
-  
-    <div class="group-title-index">
+     <div class="group-title-index">
                     <h2 class="center-title">Update Student Timetable</h2>
                     <div class="bottom-title">
                         <i class="bottom-icon icon-icon-04"></i>
                     </div>
                     <div class="inner-container">
                         <div class="table-body">
-                            <table class="edu-table-responsive table-hover">
-                                <tbody>
-                                    <tr class="table-row" style="background-color: transparent;">
-                                        <td class="col-3"><span style="color: black; font-weight: bolder">Timetable ID</span></td>
-                                        <td class="col-2">
-                                            <asp:DropDownList  runat="server" ID="ddltimetable" Width="200px" DataSourceID="SqlDataSource5" DataTextField="timetable_1_id" DataValueField="timetable_1_id"></asp:DropDownList> 
-                                            <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [timetable_1_id] FROM [timetable_1test]"></asp:SqlDataSource>
-                                        <td class="col-3"><span></span></td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
+                          
                         </div>
                     </div>
                     <div class="inner-container">
@@ -29,6 +17,20 @@
                         <div class="table-body">
                             <table class="edu-table-responsive table-hover">
                                 <tbody>
+                                      <tr class="table-row" style="background-color: transparent;">
+                                        <td class="col-3" style="color: black; font-weight: bolder">Class</td>
+                                        <td class="col-2"> <asp:DropDownList  runat="server" ID="ddlclass" Width="200px" DataSourceID="SqlDataSource2" DataTextField="class" DataValueField="Class_id"></asp:DropDownList>
+                                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT * FROM [tbl_class]"></asp:SqlDataSource>
+                                        </td>
+                                        <td class="col-3"></td>
+                                    </tr>
+                                      <tr class="table-row" style="background-color: transparent;">
+                                        <td class="col-3" style="color: black; font-weight: bolder">Section</td>
+                                        <td class="col-2"> <asp:DropDownList  runat="server" ID="ddlsection" Width="200px" DataSourceID="SqlDataSource3" DataTextField="section" DataValueField="Section_id"></asp:DropDownList>
+                                            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT * FROM [tbl_section]"></asp:SqlDataSource>
+                                           </td>
+                                        <td class="col-3"></td>
+                                    </tr>
                                     <tr class="table-row" style="background-color: transparent;">
                                         <td class="col-3"><span style="color: black; font-weight: bolder">Period 1</span></td>
                                         <td class="col-2">
@@ -88,28 +90,16 @@
                                         </td>
                                         <td class="col-3"></td>
                                     </tr>
-                                    <tr class="table-row" style="background-color: transparent;">
-                                        <td class="col-3" style="color: black; font-weight: bolder">Class ID</td>
-                                        <td class="col-2"><asp:DropDownList runat="server" ID="ddlclass" Width="200px" DataSourceID="SqlDataSource3" DataTextField="class_sec_info_id" DataValueField="class_sec_info_id"></asp:DropDownList>
-                                           
-                                           
-                                            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [class_sec_info_id] FROM [tbl_class_sec_info]"></asp:SqlDataSource>
-                                           
-                                           
-                                        </td>
-                                        <td class="col-3"></td>
-                                    </tr>
+                                  
                                                          
                                   
                      </div>
                                       
                                 </tbody>
                             </table>
-                         <%--    <div class="register-submit">
-                            <button type="submit"   class="btn btn-register btn-green">--%>
+      
                                 <asp:Button ID="Button1" runat="server" Text="UPDATE" OnClick="Button1_Click" />
-                            <%--  </button>
-                        </div>--%>
+                         
                     </div>
                   
                 </div>

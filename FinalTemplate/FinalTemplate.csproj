@@ -145,6 +145,7 @@
     <Content Include="maplocation.aspx" />
     <Content Include="school_comparision.aspx" />
     <Content Include="Teacher_Datesheet.aspx" />
+    <Content Include="Teacher_insert_class_timetable.aspx" />
     <Content Include="Teacher_Marksheet.aspx" />
     <Content Include="images\Events\bicycle-1280x720.jpg" />
     <Content Include="images\Events\code.png" />
@@ -483,6 +484,13 @@
     </Compile>
     <Compile Include="Teacher_Datesheet.aspx.designer.cs">
       <DependentUpon>Teacher_Datesheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher_insert_class_timetable.aspx.cs">
+      <DependentUpon>Teacher_insert_class_timetable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teacher_insert_class_timetable.aspx.designer.cs">
+      <DependentUpon>Teacher_insert_class_timetable.aspx</DependentUpon>
     </Compile>
     <Compile Include="Teacher_Marksheet.aspx.cs">
       <DependentUpon>Teacher_Marksheet.aspx</DependentUpon>
