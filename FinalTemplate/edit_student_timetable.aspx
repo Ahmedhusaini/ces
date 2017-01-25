@@ -12,6 +12,20 @@
                         <div class="table-body">
                             <table class="edu-table-responsive table-hover">
                                 <tbody>
+                                       <tr class="table-row" style="background-color: transparent;">
+                                        <td class="col-3" style="color: black; font-weight: bolder">Class ID</td>
+                                        <td class="col-2"><asp:DropDownList runat="server" ID="ddlclass" Width="200px" DataSourceID="SqlDataSource2" DataTextField="class" DataValueField="Class_id"></asp:DropDownList>                         
+                                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT * FROM [tbl_class]"></asp:SqlDataSource>
+                                        </td>
+                                        <td class="col-3"></td>
+                                    </tr>
+                                       <tr class="table-row" style="background-color: transparent;">
+                                        <td class="col-3" style="color: black; font-weight: bolder">Section</td>
+                                        <td class="col-2"><asp:DropDownList runat="server" ID="ddlsection" Width="200px" DataSourceID="SqlDataSource3" DataTextField="section" DataValueField="Section_id"></asp:DropDownList>                         
+                                            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT * FROM [tbl_section]"></asp:SqlDataSource>
+                                        </td>
+                                        <td class="col-3"></td>
+                                    </tr>
                                     <tr class="table-row" style="background-color: transparent;">
                                         <td class="col-3"><span style="color: black; font-weight: bolder">Timetable ID</span></td>
                                         <td class="col-2">
@@ -88,17 +102,7 @@
                                         </td>
                                         <td class="col-3"></td>
                                     </tr>
-                                    <tr class="table-row" style="background-color: transparent;">
-                                        <td class="col-3" style="color: black; font-weight: bolder">Class ID</td>
-                                        <td class="col-2"><asp:DropDownList runat="server" ID="ddlclass" Width="200px" DataSourceID="SqlDataSource3" DataTextField="class_sec_info_id" DataValueField="class_sec_info_id"></asp:DropDownList>
-                                           
-                                           
-                                            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [class_sec_info_id] FROM [tbl_class_sec_info]"></asp:SqlDataSource>
-                                           
-                                           
-                                        </td>
-                                        <td class="col-3"></td>
-                                    </tr>
+                                 
                                                          
                                   
                      </div>

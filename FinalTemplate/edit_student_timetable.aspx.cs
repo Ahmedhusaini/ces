@@ -31,6 +31,7 @@ namespace FinalTemplate
 
             string a = ConfigurationManager.ConnectionStrings["ces"].ConnectionString;
             Database db = new Database("ces");
+            int class_sec_info_id = Convert.ToInt32(db.GetLastValueByColumnName("class_sec_info_id", "tbl_class_sec_info"));
 
             using (SqlConnection con = new SqlConnection(a))
             {
@@ -48,13 +49,20 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@period_7", SqlDbType.VarChar).Value = p7txt.Text;
                 cmd.Parameters.AddWithValue("@period_8", SqlDbType.VarChar).Value = p8txt.Text;
                 cmd.Parameters.AddWithValue("@day_id", SqlDbType.Int).Value =Convert.ToInt32(ddlday.SelectedValue);
-                cmd.Parameters.AddWithValue("@class_sec_info_id", SqlDbType.Int).Value =Convert.ToInt32(ddlclass.SelectedValue);
+                cmd.Parameters.AddWithValue("@class_sec_info_id", SqlDbType.Int).Value = class_sec_info_id + 1;
+                cmd.Parameters.AddWithValue("@class_sec_info_id_out", SqlDbType.Int).Direction = ParameterDirection.Output;
+                cmd.Parameters.AddWithValue("@class_id", SqlDbType.Int).Value = Convert.ToInt32(ddlclass.SelectedValue);
+                cmd.Parameters.AddWithValue("@section_id", SqlDbType.Int).Value = Convert.ToInt32(ddlsection.SelectedValue);
                 cmd.Parameters.AddWithValue("@teacher_id", SqlDbType.Int).Value =teacher.teacher_id;
                 cmd.Parameters.AddWithValue("@school_id", SqlDbType.VarChar).Value = teacher.schoolid;
                 cmd.ExecuteNonQuery();
                 con.Close();
+            } try
+            {
+                    Response.Write("<script>alert('Successfully updated class timetable');</script>");
             }
-
+            catch { }
+           
         }
     }
 }
