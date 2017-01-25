@@ -13,9 +13,32 @@ namespace FinalTemplate.source.Functions
         static public int username { get; set; }
         static public int classsecinfoid { get; set; }
         static public string authorizedid { get; set; }
-        static public string schoolid { get; set; }
+        static public string schoolid { get { return TeacherSchoolID(); } }
         static public string teacher_class { get; set; }
         static public string teacher_section { get; set; }
+
+        private static string TeacherSchoolID()
+        {
+            string returnSchoolID=string.Empty;
+            mydatabase.CreateConnection();
+            mydatabase.InitializeSQLCommandObject(mydatabase.GetCurrentConnection, "select school_id from tbl_teacher where authorized_id='"+CurrentUser.AuthorizedID+"'");
+            try
+            {
+                mydatabase.OpenConnection();
+                mydatabase.obj_reader=mydatabase.obj_sqlcommand.ExecuteReader();
+                if(mydatabase.obj_reader.HasRows)
+                {
+                    while(mydatabase.obj_reader.Read())
+                    {
+                        returnSchoolID=mydatabase.obj_reader["school_id"].ToString();
+                    }
+                }
+            }
+            catch(Exception ex)
+            {HttpContext.Current.Response.Write(ex.ToString());}
+            finally{mydatabase.CloseConnection();mydatabase.obj_reader.Close();mydatabase.obj_reader.Dispose();}
+            return returnSchoolID;
+        }
 
         static public void GetTeacherlDetails(string teacherid)
         {

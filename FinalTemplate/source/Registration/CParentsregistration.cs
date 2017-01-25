@@ -10,7 +10,7 @@ namespace FinalTemplate.source.Registration
     {
         private Database.Database mdata = new Database.Database("ces");
 
-        public string Registerparents(string firstname, string lastname, string nationality, string gender,string dob, string photo,
+        public string Registerparents(string firstname, string lastname, string nationality, string gender, string dob, string photo,
             string religion, string phone, string address, string officeaddress, string officeno, string cnicno,
             string postdesignation, string salaryanum, int country_id, int city_id, int postalcode, string username,
             string password, int accountpin, string primaryemail, string secondaryemail)
@@ -80,9 +80,9 @@ namespace FinalTemplate.source.Registration
             generalidoutParameter.Direction = ParameterDirection.Output;
             parentidoutParameter.Direction = ParameterDirection.Output;
             dobidParameter.Value = Convert.ToInt32(dobid) + 1;
-            dayParameter.Value = Convert.ToInt32(dob.Substring(2, 2));
-            monthParameter.Value = Convert.ToInt32(dob.Substring(0, 1));
             yearParameter.Value = Convert.ToInt32(dob.Substring(0, 4));
+            monthParameter.Value = Convert.ToInt32(dob.Substring(5, 2));
+            dayParameter.Value = Convert.ToInt32(dob.Substring(8, 2));
             dobidoutParameter.Direction = ParameterDirection.Output;
             locidParameter.Value = Convert.ToInt32(locationid) + 1;
             countryidParameter.Value = country_id;
