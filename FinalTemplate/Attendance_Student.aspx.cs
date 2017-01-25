@@ -10,14 +10,15 @@ using System.Text;
 using FinalTemplate.source.Database;
 using FinalTemplate.source.Functions;
 using System.Data;
+using System.Configuration;
 
 namespace FinalTemplate
 {
     public partial class Attendance_Student : System.Web.UI.Page
     {
         private Database myDatabase = new Database("ces");
-        SqlConnection con = new SqlConnection(@"Data Source=ABBASI\JAHANGEER;Initial Catalog=ces;Integrated Security=True");
-        SqlConnection con1 = new SqlConnection(@"Data Source=ABBASI\JAHANGEER;Initial Catalog=ces;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=SHAHWAIZ\SQLEXPRESS;Initial Catalog=ces;Integrated Security=True");
+        SqlConnection con1 = new SqlConnection(@"Data Source=SHAHWAIZ\SQLEXPRESS;Initial Catalog=ces;Integrated Security=True");
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,7 +27,24 @@ namespace FinalTemplate
             absent_();
             total_();
             Label8.Text = student.studentid;
+            Label9.Text =DateTime.Now.ToString("MMMM");
+            Label10.Text = DateTime.Now.Month.ToString();
+
+            //if (!this.IsPostBack)
+            //{
+            //    DisplayRecord();
+            //}
         }
+        //public DataTable DisplayRecord()
+        //{
+        //    SqlDataAdapter Adp = new SqlDataAdapter("select DATENAME(mm, [date]),day([date]),CONVERT(VARCHAR(10), [date], 111),[time],remarks from tbl_student_attendance join tbl_remarks on tbl_student_attendance.remark_id=tbl_remarks.remark_id", con);
+        //    DataTable Dt = new DataTable();
+        //    Adp.Fill(Dt);
+        //    GridView2.DataSource = Dt;
+        //    GridView2.DataBind();
+        //    return Dt;
+        //}
+
 
         private void present_()
         {
@@ -62,6 +80,8 @@ namespace FinalTemplate
             da2.Fill(ds2);
             con1.Close();
             total.Text = ds2.Tables[0].Rows[0]["totalcount2"].ToString() + " Total Days ";
-        }        
+        }    
+    
+
     }
 }

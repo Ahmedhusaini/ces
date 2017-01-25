@@ -135,8 +135,8 @@
     </div>
     <div class="col-md-9">
     <div class="news-page-wrapper">
-           <div id="detail" class="edugate-layout-1" style="    background-color: rgba(144, 161, 174, 0.63)">
-                                        <div class="edugate-image"><asp:Image ID="Image1" runat="server"  />
+           <div id="detail" class="edugate-layout-1" style="border-radius: 50px;   background-color: rgba(144, 161, 174, 0.63)">
+                                        <div class="edugate-image" style="border-radius: 100px"><asp:Image ID="Image1" runat="server"  />
                                                                           <div>
                <asp:FileUpload ID="FileUpload1"  runat="server" />
                <asp:Button class="btn-green" BackColor="#86bc42" BorderColor="#86bc42" ID="btnSave" Text="upload" runat="server" Height="30px" Width="70px" OnClick="btnSave_Click"></asp:Button>

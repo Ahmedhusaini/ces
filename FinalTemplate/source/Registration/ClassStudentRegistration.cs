@@ -28,7 +28,7 @@ namespace FinalTemplate.source
             SqlParameter lastnameParameter = new SqlParameter("@lastname", SqlDbType.VarChar, 50);
             SqlParameter NationalityParameter = new SqlParameter("@Nationality", SqlDbType.VarChar, 15);
             SqlParameter genderParameter = new SqlParameter("@Gender", SqlDbType.VarChar, 7);
-            SqlParameter photoParameter = new SqlParameter("@photo", SqlDbType.VarChar, 50);
+            SqlParameter photoParameter = new SqlParameter("@photo", SqlDbType.VarChar, 200);
             SqlParameter religionParameter = new SqlParameter("@religion", SqlDbType.VarChar, 20);
             SqlParameter phoneParameter = new SqlParameter("@phone", SqlDbType.VarChar, 50);
             SqlParameter addressParameter = new SqlParameter("@address", SqlDbType.VarChar, 50);
@@ -72,7 +72,7 @@ namespace FinalTemplate.source
             lastnameParameter.Value = lastname;
             NationalityParameter.Value = nationality;
             genderParameter.Value = gender;
-            photoParameter.Value = "images/student/" + image;
+            photoParameter.Value =  image;
             religionParameter.Value = religion;
             phoneParameter.Value = contactno;
             addressParameter.Value = address;

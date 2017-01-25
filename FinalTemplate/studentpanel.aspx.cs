@@ -48,7 +48,7 @@ namespace FinalTemplate
                 student.GetstudentlDetails(Session["userid"].ToString());
                 namelab.Text = CurrentUser.AuthorizedID.ToString();
                 lab3.Text = CurrentUser.GeneralID.ToString();
-                shah.ImageUrl = CurrentUser.Photo;
+                shah.ImageUrl ="images/student/"+ CurrentUser.Photo;
                 Label3.Text = student.studentid;
                 student.Complete_Detail_Of_Student(Session["userid"].ToString());
                 Label4.Text = student.s_class;

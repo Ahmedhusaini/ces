@@ -67,22 +67,33 @@ namespace FinalTemplate
             string result = string.Empty;
             try
             {
-                result = classStudent.studentregister(name.Text, lname.Text, contact1.Text, guardian.Text, gurcontact.Text, radiobut.SelectedValue,
-                                            dob.Text,nation.Text, religion.Text, Convert.ToInt32(DropDownList2.SelectedValue),1, address.Text,
-                                            Convert.ToInt32(postal.Text), prevchool.Text, preclass.Text, FileUpload1.FileName, DropDownList5.SelectedValue,
-                                            Convert.ToInt32(DropDownList3.SelectedValue), Convert.ToInt32(DropDownList4.SelectedValue), 
-                                            user.Text, Convert.ToInt32(accountp.Text),pass.Text,pemail.Text,semail.Text);
-
-                if (result == "true")
+                if (JFunctions.UploadSingleFile(FileUpload1, "images/student/" + FileUpload1.FileName) == "true")
                 {
-                   Jfunctionstudents.SendEmail(pemail.Text, "CES - Registration", EmailBody());
-                   //picture();
-                   Response.Write("Register Successfully Complete Go To Login Page");
-                    
+                    result = classStudent.studentregister(name.Text, lname.Text, contact1.Text, guardian.Text,
+                        gurcontact.Text, radiobut.SelectedValue,
+                        dob.Text, nation.Text, religion.Text,1, Convert.ToInt32(DropDownList2.SelectedValue),
+                        address.Text,
+                        Convert.ToInt32(postal.Text), prevchool.Text, preclass.Text, FileUpload1.FileName,
+                        DropDownList5.SelectedValue,
+                        Convert.ToInt32(DropDownList3.SelectedValue), Convert.ToInt32(DropDownList4.SelectedValue),
+                        user.Text, Convert.ToInt32(accountp.Text), pass.Text, pemail.Text, semail.Text);
+
+                    if (result == "true")
+                    {
+                        Jfunctionstudents.SendEmail(pemail.Text, "CES - Registration", EmailBody());
+                        //picture();
+                        Response.Write("Register Successfully Complete Go To Login Page");
+                        Response.Redirect("~/Default.aspx");
+
+                    }
+                    else
+                    {
+                        Response.Write("not register");
+                    }
                 }
                 else
                 {
-                    Response.Write("not register");
+                    Response.Write("Image not uploaded to server");
                 }
             }
             catch (Exception exception)

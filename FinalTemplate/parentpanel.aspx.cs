@@ -64,7 +64,7 @@ namespace FinalTemplate
                 address.Text = CurrentUser.Address;
                 pemail.Text = CurrentUser.PrimaryEmailAddress;
                 atype.Text = CurrentUser.AuthorizedID;
-                Image1.ImageUrl = CurrentUser.Photo;
+                Image1.ImageUrl = "images/Parents/"+CurrentUser.Photo;
                 Label3.Text = CurrentUser.GeneralID.ToString();
 
 
