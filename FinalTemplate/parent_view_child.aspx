@@ -192,38 +192,7 @@
                 <h2> Home Work&nbsp;&nbsp;&nbsp;&nbsp; </h2>
              
             </div>
-             <%-- <asp:Label ID="Label2" Visible="false" runat="server" Text="Label"></asp:Label>    
-    <asp:Label ID="Label3"  Visible="false" runat="server" Text="Label"></asp:Label>    
-    <asp:Label ID="Label4" runat="server" Visible="false" Text="Label"></asp:Label>--%>
- <%--   <asp:GridView ID="GridView4" class="edu-table-responsive" runat="server" DataKeyNames="lec_id" CellPadding="4" GridLines="None" AutoGenerateColumns="False" DataSourceID="SqlDataSource4">
-        <AlternatingRowStyle BackColor="White" />
-        <Columns>
-            <asp:BoundField DataField="lectures" HeaderText="lectures" SortExpression="lectures" />
-            <asp:BoundField DataField="lec_id" HeaderText="lec_id" ReadOnly="True" SortExpression="lec_id" />
-            <asp:BoundField DataField="extension" HeaderText="extension" SortExpression="extension" />
-        </Columns>
-        <EditRowStyle BackColor="#7C6F57" />
-        <EmptyDataTemplate>
-            <asp:LinkButton ID="LinkButton1" runat="server" Text="<%# Eval("lectures") %>"></asp:LinkButton>
-        </EmptyDataTemplate>
-        <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-        <HeaderStyle BackColor="#86bc42" Font-Bold="True" ForeColor="#86bc42" />
-        <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-        <RowStyle BackColor="#E3EAEB" />
-        <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-        <SortedAscendingCellStyle BackColor="#F8FAFA" />
-        <SortedAscendingHeaderStyle BackColor="#246B61" />
-        <SortedDescendingCellStyle BackColor="#D4DFE1" />
-        <SortedDescendingHeaderStyle BackColor="#15524A" />
-    </asp:GridView>
 
-              <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [content], [lectures], [lec_id], [extension] FROM [view_lecture_attandance_test] WHERE (([school_id] = @school_id) AND ([class] = @class) AND ([section] = @section))">
-                  <SelectParameters>
-                      <asp:ControlParameter ControlID="lblschool_id" Name="school_id" PropertyName="Text" Type="String" />
-                      <asp:ControlParameter ControlID="lblclass" Name="class" PropertyName="Text" Type="String" />
-                      <asp:ControlParameter ControlID="lblsec" Name="section" PropertyName="Text" Type="String" />
-                  </SelectParameters>
-            </asp:SqlDataSource>--%>
             
             
     <asp:Label ID="Label2" Visible="false" runat="server" Text="Label"></asp:Label>    
@@ -261,69 +230,45 @@
     <br />
 
                  <div id="atten" class="underline" style="height: 20px; text-align: left;">
-                <h2> Attendance &nbsp;&nbsp;&nbsp;&nbsp;         <asp:Label ID="Label1" runat="server" Text="Date"></asp:Label>
+                <h2> Attendance &nbsp;&nbsp;&nbsp;&nbsp;    </h2> </div>    <asp:Label ID="Label1" runat="server" Text="Date"></asp:Label>
           
-           <%-- <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource3" DataTextField="Column1" DataValueField="Column1" AutoPostBack="True" >
-            </asp:DropDownList>
-           --%>
+       
             <asp:Label ID="lbldatetime" runat="server"></asp:Label>
-          <%--  <asp:TextBox ID="TextBox1" type="date" AutoPostBack="True" runat="server"></asp:TextBox>--%>
 
-      <%--  Month    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True">
-                <asp:ListItem Value="1">January</asp:ListItem>
-                <asp:ListItem Value="2">Feburary</asp:ListItem>
-                <asp:ListItem Value="3">March</asp:ListItem>
-                <asp:ListItem Value="4">April</asp:ListItem>
-                <asp:ListItem Value="5">May</asp:ListItem>
-                <asp:ListItem Value="6">June</asp:ListItem>
-                <asp:ListItem Value="7">July</asp:ListItem>
-                <asp:ListItem Value="8">August</asp:ListItem>
-                <asp:ListItem Value="9">September</asp:ListItem>
-                <asp:ListItem Value="10">Octuber</asp:ListItem>
-                <asp:ListItem Value="11">November</asp:ListItem>
-                <asp:ListItem Value="12">December</asp:ListItem>
-            </asp:DropDownList>--%>
-
-
-
-
-        <br />
-        <br />
-        <asp:GridView ID="GridView2" class="edu-table-responsive"  runat="server"  AutoGenerateColumns="False" Width="1220px"  ForeColor="#86BC42" AllowPaging="True" AllowSorting="True" CellPadding="4" GridLines="None" DataSourceID="SqlDataSource3">
-      
-            
-             <Columns>
-                 <asp:BoundField DataField="Column1" HeaderText="Column1" SortExpression="Column1" ReadOnly="True" />
-                 <asp:BoundField DataField="time" HeaderText="time" SortExpression="time" />
-                 <asp:BoundField DataField="remarks" HeaderText="remarks" SortExpression="remarks" />
-             </Columns>
-      
-            
-             <EditRowStyle BackColor="#7C6F57" />
-                                        <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                                        <HeaderStyle BackColor="#737373" Font-Bold="True" ForeColor="#86bc42" />
-                                        <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-                                        <RowStyle BackColor="#E3EAEB" />
-                                        <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-                                        <SortedAscendingCellStyle BackColor="#F8FAFA" />
-                                        <SortedAscendingHeaderStyle BackColor="#246B61" />
-                                        <SortedDescendingCellStyle BackColor="#D4DFE1" />
-                                        <SortedDescendingHeaderStyle BackColor="#15524A" />
-              </asp:GridView>
-                 
+       
         
-            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="sp_Parents_view_attendance" SelectCommandType="StoredProcedure">
-                <SelectParameters>
-                    <asp:ControlParameter ControlID="id" Name="std_id" PropertyName="Text" Type="String" />
-                    <asp:ControlParameter ControlID="lbldatetime" DbType="Date" Name="date" PropertyName="Text" />
-                </SelectParameters>
-            </asp:SqlDataSource>
-                 
+       &nbsp;&nbsp;     <asp:Label ID="Label5"  Visible="false" runat="server"></asp:Label>
+
+           &nbsp;&nbsp; <asp:Label ID="Label6" Visible="false"  runat="server" ></asp:Label>
+          &nbsp;&nbsp;  <asp:Label ID="Label7" Visible="false"  runat="server" ></asp:Label>
         
             <br />
+      <asp:GridView ID="GridView2" class="edu-table-responsive" runat="server" AutoGenerateColumns="False"  Width="1220px" AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#86BC42" GridLines="None" DataSourceID="SqlDataSource3">
+          <Columns>
+              <asp:BoundField DataField="Column1" HeaderText="Month" ReadOnly="True" SortExpression="Column1" />
+              <asp:BoundField DataField="Column2" HeaderText="Date" ReadOnly="True" SortExpression="Column2" />
+              <asp:BoundField DataField="time" HeaderText="time" SortExpression="time" />
+              <asp:BoundField DataField="remarks" HeaderText="remarks" SortExpression="remarks" />
+          </Columns>
+        <EditRowStyle BackColor="#7C6F57" />
+        <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#737373" Font-Bold="True" ForeColor="#86bc42" />
+        <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="#E3EAEB" />
+        <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+        <SortedAscendingCellStyle BackColor="#F8FAFA" />
+        <SortedAscendingHeaderStyle BackColor="#246B61" />
+        <SortedDescendingCellStyle BackColor="#D4DFE1" />
+        <SortedDescendingHeaderStyle BackColor="#15524A" />
+    </asp:GridView>
+    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="select DATENAME(mm, [date]),CONVERT(VARCHAR(10), [date], 111),[time],remarks from tbl_student_attendance 
+join tbl_remarks on tbl_student_attendance.remark_id=tbl_remarks.remark_id where  DATENAME(mm, [date])=@month and Std_id=@Std_id">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="Label6" Name="month" PropertyName="Text" />
+            <asp:ControlParameter ControlID="Label5" Name="std_id" PropertyName="Text" />
+        </SelectParameters>
+    </asp:SqlDataSource>
         
             <br />
-        
-        </div>
    
 </asp:Content>

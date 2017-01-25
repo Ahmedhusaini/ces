@@ -29,6 +29,9 @@ namespace FinalTemplate
             lab2.Text = "Time :" + System.DateTime.Now.ToShortTimeString();
             //    Jfunctionparents.BindDropDownList(DropDownList2, "month", "month_id", "select * from tbl_month");
             lbldatetime.Text = DateTime.Now.ToString("yyyy/MM/dd");
+            Label5.Text = Request.QueryString["ID"].ToString();
+            Label6.Text = DateTime.Now.ToString("MMMM");
+            Label7.Text = DateTime.Now.Month.ToString();
 
             
 
