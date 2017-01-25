@@ -2,9 +2,25 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="TeacherHeadPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="TeacherPlaceHolder1" runat="server">
+
+                
+                        <div class="underline">UPLOAD LECTURE </div>
+                        <div class="course-table">
+                            <div class="outer-container">
+                                <div class="inner-container">
+                                    <div class="table-body">
+      <table class="edu-table-responsive table-hover">
+            <thead>
+                <tr class="heading-table">
+                    <th class="col-1">
     <asp:FileUpload ID="FileUpload1" runat="server" />
-    <br/>
-    <asp:Button ID="Button1" runat="server" Text="UPLOAD FILE" OnClick="Button1_Click" />
+    <th class="col-2">
+    <asp:Button ID="Button1" runat="server" Text="UPLOAD LECTURE" OnClick="Button1_Click" />
+         </tr>
+                </thead>
+       </table>
+
+                                    </div></div></div></div>
     &nbsp;<asp:GridView ID="GridView1" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataKeyNames="lec_id" GridLines="Horizontal">
         <Columns>
             <asp:TemplateField HeaderText="Lectures">
@@ -22,6 +38,6 @@
         <SortedAscendingHeaderStyle BackColor="#487575" />
         <SortedDescendingCellStyle BackColor="#E5E5E5" />
         <SortedDescendingHeaderStyle BackColor="#275353" />
-    </asp:GridView>
+    </asp:GridView>  
     
 </asp:Content>
