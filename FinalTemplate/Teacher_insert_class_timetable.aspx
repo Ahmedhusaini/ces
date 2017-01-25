@@ -2,8 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="TeacherHeadPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="TeacherPlaceHolder1" runat="server">
+     <div class="container">
+        <div class="register-wrapper rlp-wrapper reg-sk" style="opacity: 0.98;">
+            <div class="register-table rlp-table" style="box-shadow: 5px 5px 50px 5px; background-color: #C8E1AE;">
      <div class="group-title-index">
-                    <h2 class="center-title">Update Student Timetable</h2>
+                    <h2 class="center-title">Insert Student Timetable</h2>
                     <div class="bottom-title">
                         <i class="bottom-icon icon-icon-04"></i>
                     </div>
@@ -98,9 +101,12 @@
                                 </tbody>
                             </table>
       
-                                <asp:Button ID="Button1" runat="server" Text="UPDATE" OnClick="Button1_Click" />
+                                <asp:Button ID="Button1" runat="server" Text="INSERT DETAIL" OnClick="Button1_Click" />
                          
                     </div>
                   
                 </div>
+                </div>
+            </div>
+         </div>
 </asp:Content>
