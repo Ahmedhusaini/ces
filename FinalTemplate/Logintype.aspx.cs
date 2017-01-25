@@ -69,7 +69,7 @@ namespace FinalTemplate
                             Response.Redirect("~/studentpanel.aspx");
 
                         }
-                        else if (int.Parse(ddl_type.SelectedValue) == 5)
+                        else if (int.Parse(ddl_type.SelectedValue) == 6)
                         {
                             Session["userid"] = myLogin.myDatabase.GetAuthorizedID(myLogin.valideUsername, myLogin.validePasswoerd);
                             Response.Redirect("~/parentpanel.aspx");
