@@ -78,26 +78,8 @@ namespace FinalTemplate
 
 
 
+               
 
-
-                //Name.Text = Parents.Firstname + " " + Parents.Lastname;
-                //gname.Text = Parents.Guardianname;
-                //cgender.Text = Parents.Gender;
-                //school.Text = Parents.Schoolname;
-                //stype.Text = Parents.schooltype;
-                //classsss.Text = Parents.sclass;
-                //section.Text = Parents.section;
-
-
-
-
-
-                //name2.Text = Parents.Firstname + " " + Parents.Lastname;
-                //gender2.Text = Parents.Gender;
-
-
-
-                //DropDownList1.Enabled = false;
 
             }
 
@@ -178,13 +160,14 @@ namespace FinalTemplate
           studentexists = objstd.checkstudentid(objstd.students);
             
 
-
+            
             if (studentexists=="true")
             {
 
                 if (objp.parentchild(TextBox1.Text) > 0)
                 {
                     Response.Write("<script>alert('Chid record has been added successfully.');</script>");
+                    Response.Redirect("parentpanel.aspx");
                 }
                 else
                 {

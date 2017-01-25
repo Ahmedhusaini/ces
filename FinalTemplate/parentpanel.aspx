@@ -19,6 +19,7 @@
             $('#<%=DropDownList1.ClientID%>').css('display', 'none'),
             $('#<%=Label3.ClientID%>').css('display', 'none'),
             $('#<%=Label2.ClientID%>').hide();
+            $('#<%=Image1.ClientID%>').css('border-radius', '50px'),
 
                 $('.table-row').css(' text-align', 'inherit'),
             $('[title="Dialog"]').css('dsiplay', 'none'),
@@ -136,7 +137,7 @@
     <div class="col-md-9">
     <div class="news-page-wrapper">
            <div id="detail" class="edugate-layout-1" style="border-radius: 50px;   background-color: rgba(144, 161, 174, 0.63)">
-                                        <div class="edugate-image" style="border-radius: 100px"><asp:Image ID="Image1" runat="server"  />
+                                        <div class="edugate-image" style="border-radius: 100px"><asp:Image ID="Image1" runat="server" />
                                                                           <div>
                <asp:FileUpload ID="FileUpload1"  runat="server" />
                <asp:Button class="btn-green" BackColor="#86bc42" BorderColor="#86bc42" ID="btnSave" Text="upload" runat="server" Height="30px" Width="70px" OnClick="btnSave_Click"></asp:Button>
