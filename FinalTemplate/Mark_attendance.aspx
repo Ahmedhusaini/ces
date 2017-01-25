@@ -16,7 +16,8 @@
                                                 </span>
                                 <button type="submit" class="form-submit btn btn-blue">
                                      <asp:Button ID="Button2" runat="server" Text="SEARCH" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" />
-                                    </button>                           
+                                    </button> <span></span>  
+                                
                              <div class="clearfix"></div>
                                
                          </div>
@@ -28,7 +29,7 @@
          <div class="attendance-logo-content">
            <div class="table-body">  
    
-<asp:GridView ID="GridView1" class="edu-table-responsive" runat="server"  AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataSourceID="SqlDataSource1" GridLines="Horizontal" Width="293px">
+    <asp:GridView ID="GridView1" class="edu-table-responsive" runat="server"  AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataSourceID="SqlDataSource1" GridLines="Horizontal" Width="1046px">
              <Columns>
                    <asp:BoundField DataField="Std_id" HeaderText="Student ID" SortExpression="Std_id" />
                    <asp:TemplateField HeaderText="Remarks">
@@ -61,11 +62,8 @@
           </div>
         </div>
       </div>
-     </div>                           
-                                 <div>
-                                      <button type="submit" class="form-submit btn btn-blue"><span>
-                                        <asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>
-     
-                                 </div>  
-
-    </asp:Content>
+     </div>              
+     <button type="submit" class="form-submit btn btn-blue"><span>
+                                        <asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>                                     
+                                 
+                        </asp:Content>
