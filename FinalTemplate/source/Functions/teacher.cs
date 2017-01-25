@@ -204,7 +204,7 @@ namespace FinalTemplate.source.Functions
 
 
             mydatabase.CreateConnection();
-            mydatabase.InitializeSQLCommandObject(mydatabase.GetCurrentConnection, "select std_id from tbl_Student_Reg");
+            mydatabase.InitializeSQLCommandObject(mydatabase.GetCurrentConnection, "");
             try
             {
                 mydatabase.OpenConnection();
