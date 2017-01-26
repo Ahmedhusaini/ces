@@ -5,16 +5,19 @@
         <div class="search-input">
                         <div class="container">
                             <div class="search-input-wrapper">
-                                  <asp:DropDownList ID="DropDownList1" runat="server" class="sbHolder" DataSourceID="SqlDataSource3" DataTextField="day" DataValueField="day_id"></asp:DropDownList>
-                                  <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT * FROM [tbl_day]"></asp:SqlDataSource>
-                                  <asp:DropDownList ID="DropDownList2" runat="server" class="sbHolder" DataSourceID="SqlDataSource4" DataTextField="month" DataValueField="month_id"></asp:DropDownList>
-                                  <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT * FROM [tbl_month]"></asp:SqlDataSource>
-                
-                               
+                                  <asp:DropDownList ID="ddlclass" runat="server" class="sbHolder" DataSourceID="SqlDataSource3" DataTextField="class" DataValueField="Class_id"></asp:DropDownList>
+                                  <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT * FROM [tbl_class]"></asp:SqlDataSource>
+                                  <asp:DropDownList ID="ddlsection" runat="server" class="sbHolder"  DataSourceID="SqlDataSource4" DataTextField="section" DataValueField="Section_id"></asp:DropDownList>
+                                  <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT * FROM [tbl_section]"></asp:SqlDataSource>
                                         <span>
                                                
+ 
+                                               
                                                 </span>
-                           
+                                <button type="submit" class="form-submit btn btn-blue">
+                                     <asp:Button ID="Button2" runat="server" Text="SEARCH" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" />
+                                    </button> <span></span>  
+                                
                              <div class="clearfix"></div>
                                
                          </div>
@@ -26,7 +29,7 @@
          <div class="attendance-logo-content">
            <div class="table-body">  
    
-<asp:GridView ID="GridView1" class="edu-table-responsive" runat="server"  AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataSourceID="SqlDataSource1" GridLines="Horizontal" Width="293px">
+    <asp:GridView ID="GridView1" class="edu-table-responsive" runat="server"  AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataSourceID="SqlDataSource1" GridLines="Horizontal" Width="1046px">
              <Columns>
                    <asp:BoundField DataField="Std_id" HeaderText="Student ID" SortExpression="Std_id" />
                    <asp:TemplateField HeaderText="Remarks">
@@ -50,16 +53,17 @@
                    <SortedDescendingHeaderStyle BackColor="#275353" />
                    </asp:GridView>                                                                         
                 <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT * FROM [tbl_remarks]"></asp:SqlDataSource>                                               
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [Std_id] FROM [tbl_Student_Reg]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [std_id] FROM [tbl_student_attendance] WHERE (([class_id] = @class_id) AND ([section_id] = @section_id))">
+                  <SelectParameters>
+            <asp:ControlParameter ControlID="ddlclass" Name="class_id" PropertyName="SelectedValue" Type="Int32" />
+            <asp:ControlParameter ControlID="ddlsection" Name="section_id" PropertyName="SelectedValue" Type="Int32" />
+        </SelectParameters></asp:SqlDataSource>
             </div>
           </div>
         </div>
       </div>
-     </div>                           
-                                 <div>
-                                      <button type="submit" class="form-submit btn btn-blue"><span>
-                                        <asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>
-     
-                                 </div>  
-
-    </asp:Content>
+     </div>              
+     <button type="submit" class="form-submit btn btn-blue"><span>
+                                        <asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>                                     
+                                 
+                        </asp:Content>

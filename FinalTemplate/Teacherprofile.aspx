@@ -10,11 +10,13 @@
                                     <div class="staff-item-wrapper">
                                         <div class="staff-info"><a href="#" class="staff-avatar">
                                             <%--<img src="assets/images/people-avatar-4.jpg" alt="" class="img-responsive"/>--%>
+                                            <asp:Image ID="Image1" runat="server" />
+                                            <asp:FileUpload ID="FileUpload1" runat="server" />
                                            
-                                         
-                                           
-                                            
-                                             
+                                            <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
+                                            <asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
+                                            <asp:Label ID="Label2" runat="server" Text="Label" Visible="False"></asp:Label>
+                                            <asp:Label ID="Label3" runat="server" Text="Label" Visible="False"></asp:Label>
                                                                 </a><a href="#" class="staff-name">
                                                                    </a></div>
                                     </div>

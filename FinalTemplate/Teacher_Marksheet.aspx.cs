@@ -37,6 +37,8 @@ namespace FinalTemplate
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            if (FileUpload1.HasFile)
+            {
             FileInfo f = new FileInfo(FileUpload1.FileName);
             string marksheet_name = f.Name;
     
@@ -54,38 +56,14 @@ namespace FinalTemplate
  
                  con.Open();
                  cmd.ExecuteNonQuery();
+                 Response.Write("<script>alert('MARKSHEET HAS BEEN UPLOADED');</script>");
+            
              }
-             if (FileUpload1.HasFile)
-              {
-                // FileUpload1.PostedFile.SaveAs(Server.MapPath("~/files/") + FileUpload1.FileName);
-                 string fileExtension = System.IO.Path.GetExtension(FileUpload1.FileName);
- 
-                 if (fileExtension.ToLower() != ".xlsx" && fileExtension.ToLower() != ".xlsm")
-                 {
-                     Label1.Text = "Only Excel File are allowed to upload";
-                     Label1.ForeColor = System.Drawing.Color.Red;
-                 }
-                 else
-                 {
-                     int filesize = FileUpload1.PostedFile.ContentLength;
-                     if (filesize > 2097152)
-                     {
-                         Label1.Text = "Maximum Size of 2MB can upload";
-                         Label1.ForeColor = System.Drawing.Color.Red;
-                     }
-                    else
-                     {
-                         FileUpload1.SaveAs(Server.MapPath("~/files" + FileUpload1.FileName));
-                         Label1.Text = "file uploaded";
-                         Label1.ForeColor = System.Drawing.Color.Green;
-                         // FileUpload1.PostedFile.SaveAs(Server.MapPath("~/files") + FileUpload1.FileName);
-                     }
-                 }
-             }
+  }
+           
              else
              {
-                 Label1.Text = "Please Upload the File";
-                Label1.ForeColor = System.Drawing.Color.Red;
+                 Response.Write("<script>alert('PLEASE UPLOAD MARKSHEET');</script>");
               }
         }
 	}

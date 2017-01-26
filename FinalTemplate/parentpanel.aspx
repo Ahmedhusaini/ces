@@ -19,6 +19,7 @@
             $('#<%=DropDownList1.ClientID%>').css('display', 'none'),
             $('#<%=Label3.ClientID%>').css('display', 'none'),
             $('#<%=Label2.ClientID%>').hide();
+            $('#<%=Image1.ClientID%>').css('border-radius', '50px'),
 
                 $('.table-row').css(' text-align', 'inherit'),
             $('[title="Dialog"]').css('dsiplay', 'none'),
@@ -136,7 +137,7 @@
     <div class="col-md-9">
     <div class="news-page-wrapper">
            <div id="detail" class="edugate-layout-1" style="border-radius: 50px;   background-color: rgba(144, 161, 174, 0.63)">
-                                        <div class="edugate-image" style="border-radius: 100px"><asp:Image ID="Image1" runat="server"  />
+                                        <div class="edugate-image" style="border-radius: 100px"><asp:Image ID="Image1" runat="server" />
                                                                           <div>
                <asp:FileUpload ID="FileUpload1"  runat="server" />
                <asp:Button class="btn-green" BackColor="#86bc42" BorderColor="#86bc42" ID="btnSave" Text="upload" runat="server" Height="30px" Width="70px" OnClick="btnSave_Click"></asp:Button>
@@ -268,22 +269,26 @@
                                         <asp:ControlParameter ControlID="DropDownList1" Name="Parent_ID" PropertyName="SelectedValue" Type="String" />
                                     </SelectParameters>
                                 </asp:SqlDataSource>
-                                <asp:GridView ID="GridView1"  class="edu-table-responsive"  runat="server"  AutoGenerateColumns="False" Width="1220px  " AllowPaging="True" AllowSorting="True" CellPadding="4" DataSourceID="SqlDataSource2"  ForeColor="#86BC42" GridLines="None">
+                                <asp:GridView ID="GridView1"  class="edu-table-responsive"  runat="server"  AutoGenerateColumns="False" Width="1220px" AllowPaging="True" AllowSorting="True" CellPadding="4" DataSourceID="SqlDataSource2"  ForeColor="#86BC42" GridLines="None" DataKeyNames="Std_id" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                                     <AlternatingRowStyle BackColor="White" />
                                     <Columns>
-                                          <asp:TemplateField  HeaderText="Firstname">
-                                             <ItemTemplate>
-                                                 <asp:LinkButton ID="LinkButton1"   OnClick="linkbutton" Text='<%#Eval("Firstname")%>'  runat="server">Link</asp:LinkButton>
-                                             </ItemTemplate>
-                                               <HeaderStyle BackColor="#737373" Font-Bold="True" ForeColor="#86bc42" />
-                                         </asp:TemplateField>
-                                        <asp:BoundField DataField="lastname" HeaderText="Lastname" SortExpression="lastname" />
+                                        <asp:TemplateField HeaderText="Std_id" >
+                                            <ItemTemplate>
+                                                <asp:LinkButton ID="LinkButton1"  OnClick="linkbutton" Text='<%#Eval("Std_id") %>' runat="server">Link</asp:LinkButton>
+                                            </ItemTemplate>
+                                            <HeaderStyle BackColor="#737373" Font-Bold="True" ForeColor="#86bc42"/>
+                                        </asp:TemplateField>
+
+                                        
+                                        <asp:BoundField DataField="firstname" HeaderText="firstname" SortExpression="firstname" />
+                                        <asp:BoundField DataField="lastname" HeaderText="lastname" SortExpression="lastname" />
                                         <asp:BoundField DataField="Gender" HeaderText="Gender" SortExpression="Gender" />
-                                        <asp:BoundField DataField="Guardian_Name" HeaderText="Guardian Name" SortExpression="Guardian_Name" />
-                                        <asp:BoundField DataField="school_name" HeaderText="School" SortExpression="school_name" />
-                                        <asp:BoundField DataField="school_type" HeaderText="School Type" SortExpression="school_type" />
-                                        <asp:BoundField DataField="class" HeaderText="Class" SortExpression="class" />
-                                        <asp:BoundField DataField="section" HeaderText="Section" SortExpression="section" />
+                                        <asp:BoundField DataField="Guardian_Name" HeaderText="Guardian_Name" SortExpression="Guardian_Name" />
+                                        <asp:BoundField DataField="school_name" HeaderText="school_name" SortExpression="school_name" />
+                                        <asp:BoundField DataField="school_type" HeaderText="school_type" SortExpression="school_type" />
+                                        
+                                          <asp:BoundField DataField="class" HeaderText="class" SortExpression="class" />
+                                          <asp:BoundField DataField="section" HeaderText="section" SortExpression="section" />
                                         
                                     </Columns>
                                      <EditRowStyle BackColor="#7C6F57" />

@@ -15,6 +15,7 @@ namespace FinalTemplate
     public partial class Teacherprofile : System.Web.UI.Page
     {
         private Database myDatabase = new Database("ces");
+        SqlConnection con = new SqlConnection(@"Data Source=AHMED\SQLEXPRESS;Initial Catalog=ces;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
                 if (Session["userid"] != null)
@@ -37,6 +38,7 @@ namespace FinalTemplate
                     Address.Text=CurrentUser.Address;
                     Email.Text=CurrentUser.PrimaryEmailAddress;
                     Email2.Text = CurrentUser.SecondaryEmailAddress;
+                    Image1.ImageUrl = "images/teachers/" + CurrentUser.Photo;
                     
 
                 }
@@ -46,6 +48,48 @@ namespace FinalTemplate
                     Response.Redirect("~/Default.aspx");
                 }
 
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (FileUpload1.HasFile)
+                {
+                    string filename = FileUpload1.FileName;
+                    FileUpload1.PostedFile.SaveAs(Server.MapPath(".") + "//images//" + filename);
+                    string filepath = Server.MapPath(@"~\images\" + filename.ToString());
+                    string fullfilepath = filepath + filename;
+                    string extension = Path.GetExtension(filename);
+                    Label1.Text = filepath;
+                    int filesize = FileUpload1.PostedFile.ContentLength / 2048;
+                    Convert.ToString(filesize);
+                    int i = 0;
+                    if (extension == ".jpg" || extension == ".png")
+                    {
+                        if (filesize > 10000)
+                        {
+                            FileUpload1.SaveAs(fullfilepath);
+                            i = 1;
+                        }
+                        else
+                        {
+                            Label1.Text = "Filesize Exceed 1MB.";
+                        }
+                    }
+                    con.Open();
+                    string path = @"~\images\" + filename.ToString();
+                    SqlCommand cmd = new SqlCommand("update tbl_general set photo='" + path + "' where General_Id='" + Label3.Text + "'", con);
+                    Image1.ImageUrl = @"~\images\" + FileUpload1.FileName;
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    Label1.Text = "upload";
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write("Make sure your Picture Name is Valid means proper name like 'PICTURE1'");
+            }
         }
     }
 }
