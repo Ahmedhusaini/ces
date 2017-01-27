@@ -57,7 +57,12 @@
     &nbsp;<asp:Label ID="Label8" Visible="false" runat="server"  Text="Label"></asp:Label>
     &nbsp;<asp:Label ID="Label9" Visible="false" runat="server" Text="Label"></asp:Label>
     &nbsp;<asp:Label ID="Label10" runat="server" Visible="false" Text="Label"></asp:Label>
-&nbsp;<asp:GridView ID="GridView2" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#86BC42" GridLines="None" DataSourceID="SqlDataSource1">
+    <br />
+&nbsp;<asp:DropDownList ID="DropDownList1" Height="50px" Width="150px" style="border-radius:0px 10px 10px 0px;font-size:15px;font-family:Arial;color:#86BC42" AutoPostBack="true" runat="server" DataSourceID="SqlDataSource2" DataTextField="Column1" DataValueField="Column1" BackColor="#E3EAEB">
+    </asp:DropDownList><br /><br />
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="select distinct DATENAME(mm,[date]) from tbl_student_attendance "></asp:SqlDataSource>
+    <%--<asp:Button ID="Button1" runat="server" CssClass="btn btn-register btn-green" Text="Button" />--%>
+    <asp:GridView ID="GridView2" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#86BC42" GridLines="None" DataSourceID="SqlDataSource1">
         <Columns>
             <asp:BoundField DataField="Column1" HeaderText="Column1" ReadOnly="True" SortExpression="Column1" />
             <asp:BoundField DataField="Column2" HeaderText="Column2" ReadOnly="True" SortExpression="Column2" />
@@ -79,7 +84,7 @@
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="select DATENAME(mm, [date]),day([date]),CONVERT(VARCHAR(10), [date], 111),[time],remarks from tbl_student_attendance 
 join tbl_remarks on tbl_student_attendance.remark_id=tbl_remarks.remark_id where  DATENAME(mm, [date])=@month and Std_id=@std_id">
         <SelectParameters>
-            <asp:ControlParameter ControlID="Label9" Name="month" PropertyName="Text" />
+            <asp:ControlParameter ControlID="DropDownList1" Name="month" PropertyName="SelectedValue" />
             <asp:ControlParameter ControlID="Label8" Name="std_id" PropertyName="Text" />
         </SelectParameters>
     </asp:SqlDataSource>

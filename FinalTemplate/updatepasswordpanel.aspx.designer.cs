@@ -76,6 +76,15 @@ namespace FinalTemplate {
         protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
         
         /// <summary>
+        /// recaptcha control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Recaptcha.RecaptchaControl recaptcha;
+        
+        /// <summary>
         /// Button1 control.
         /// </summary>
         /// <remarks>
