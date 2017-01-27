@@ -6,14 +6,16 @@
     <div class="section section-padding profile-teacher">
         <div class="container">
             <div class="profile-teacher-wrapper">
-                <asp:GridView ID="GridView1" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
+                <asp:GridView ID="GridView1" class="edu-table-responsive" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal" DataKeyNames="Std_id">
                     <Columns>
-                        <asp:BoundField DataField="firstname" HeaderText="FIRST NAME" SortExpression="firstname" />
-                        <asp:BoundField DataField="lastname" HeaderText="LAST NAME" SortExpression="lastname" />
-                        <asp:BoundField DataField="Gender" HeaderText="GENDER" SortExpression="Gender" />
-                        <asp:BoundField DataField="phone" HeaderText="PHONE NO" SortExpression="phone" />
-                        <asp:BoundField DataField="address" HeaderText="ADDRESS" SortExpression="address" />
-                        <asp:BoundField DataField="primary_email" HeaderText="EMAIL ADDRESS" SortExpression="primary_email" />
+                        <asp:BoundField DataField="Std_id" HeaderText="Student id" ReadOnly="True" SortExpression="Std_id" />
+                        <asp:BoundField DataField="firstname" HeaderText="firstname" SortExpression="firstname" />
+                        <asp:BoundField DataField="lastname" HeaderText="lastname" SortExpression="lastname" />
+                        <asp:BoundField DataField="Gender" HeaderText="Gender" SortExpression="Gender" />
+                        <asp:BoundField DataField="phone" HeaderText="phone" SortExpression="phone" />
+                        <asp:BoundField DataField="address" HeaderText="address" SortExpression="address" />
+                        <asp:BoundField DataField="primary_email" HeaderText="primary_email" SortExpression="primary_email" />
+                      
                     </Columns>
                     <FooterStyle BackColor="White" ForeColor="#333333" />
                     <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
@@ -26,7 +28,7 @@
                     <SortedDescendingHeaderStyle BackColor="#275353" />
                 </asp:GridView>
                
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [firstname], [lastname], [Gender], [phone], [address], [primary_email] FROM [View_StudentGeneralInformation]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [firstname], [lastname], [Gender], [phone], [address], [primary_email], [Std_id] FROM [View_StudentGeneralInformation]"></asp:SqlDataSource>
                
             </div>
         </div>
