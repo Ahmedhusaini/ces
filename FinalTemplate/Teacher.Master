@@ -76,7 +76,7 @@
                                 <li><a href="StudentProfile.aspx" class="link-page">Student Profile</a></li>                        
                             </ul>
                         </li>
-                        <li class="dropdown"><a href="Admin.aspx" class="main-menu">Attendance<span class="fa fa-angle-down icons-dropdown"></span></a>
+                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu"> Attendance<span class="fa fa-angle-down icons-dropdown"></span></>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
                                 <li><a href="Mark_attendance.aspx" class="link-page">Mark Attendance</a></li>
                                 <li><a href="View_Attendance.aspx" class="link-page">View Attendance</a></li>
