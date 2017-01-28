@@ -26,6 +26,10 @@ namespace FinalTemplate.source.WebServices
             public string Place { get; set; }
             public string Picture { get; set; }
             public string EventCreatorID { get; set; }
+            public string start_time { get; set; }
+            public string end_time { get; set; }
+            public string date { get; set; }
+
         }
         private Database.Database eventDatabase = new Database.Database("ces");
         [WebMethod]
@@ -51,6 +55,10 @@ namespace FinalTemplate.source.WebServices
                         eventDetails.Place = eventDatabase.obj_reader["place"].ToString();
                         eventDetails.EventCreatorID = eventDatabase.obj_reader["event_creator_id"].ToString();
                         eventDetails.Picture = eventDatabase.obj_reader["event_picture"].ToString();
+                        eventDetails.start_time = eventDatabase.obj_reader["starting_time"].ToString();
+                        eventDetails.end_time = eventDatabase.obj_reader["ending_time"].ToString();
+                        eventDetails.date = eventDatabase.obj_reader["start_date"].ToString();
+
                         listeventDetails.Add(eventDetails);
                     }
                 }
@@ -65,6 +73,7 @@ namespace FinalTemplate.source.WebServices
             }
             HttpContext.Current.Response.Write(serializer.Serialize(listeventDetails));
         }
+
 
         [WebMethod]
         public void SearchEvent(int _categoryid, string _searchKey, string _schoolid)

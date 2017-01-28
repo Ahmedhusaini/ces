@@ -1,29 +1,26 @@
 ﻿using FinalTemplate.source.Functions;
 using FinalTemplate.source.Registration;
 using System;
-using System.Configuration;
-using System.Data.SqlClient;
 using System.Text;
-using System.Web.UI;
 
 namespace FinalTemplate
 {
     public partial class Parent_Registration : System.Web.UI.Page
     {
-       
+
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
             if (!IsPostBack)
             {
-                 Jfunctionparents.BindDropDownList(DropDownList2, "city", "city_id", "select * from tbl_city");
-               
+                Jfunctionparents.BindDropDownList(DropDownList2, "city", "city_id", "select * from tbl_city");
+
             }
         }
 
         protected void country_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
         private string EmailBody()
         {
@@ -53,7 +50,7 @@ namespace FinalTemplate
 
             try
             {
-                if (JFunctions.UploadSingleFile(fileupload, "images/Parents/"+fileupload.FileName) == "true")
+                if (JFunctions.UploadSingleFile(fileupload, "//images//" + fileupload.FileName) == "true")
                 {
                     result = classparent.Registerparents(name.Text, lname.Text, nation.Text, radiobut.SelectedValue, dob.Text,
                         fileupload.FileName, religion.Text, contact1.Text, address.Text, officeadd.Text,
@@ -89,8 +86,8 @@ namespace FinalTemplate
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            
-           
+
+
 
         }
     }

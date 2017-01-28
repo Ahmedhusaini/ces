@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using FinalTemplate.source.Database;
+﻿using FinalTemplate.source.Database;
 using FinalTemplate.source.Functions;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
-using iTextSharp.text.html.simpleparser;
-using System.Data.SqlClient;
+using System;
 using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
+using System.IO;
+using System.Web.UI.WebControls;
 
 namespace FinalTemplate
 {
@@ -33,7 +28,7 @@ namespace FinalTemplate
             Label6.Text = DateTime.Now.ToString("MMMM");
             Label7.Text = DateTime.Now.Month.ToString();
 
-            
+
 
             //if (this.Page.PreviousPage != null)
             //{
@@ -86,7 +81,9 @@ namespace FinalTemplate
             lblph.Text = Parents.Phone;
             lblsname.Text = Parents.Schoolname;
             lblcontact.Text = Parents.pemail;
-           
+            lblschool_id.Text = Parents.school_id;
+
+
             Image1.ImageUrl = "images/student/" + Parents.photo;
 
             if (!IsPostBack)
