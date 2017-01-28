@@ -8,7 +8,7 @@
 
         $(document).ready(function () {
 
-            // samesizeimage();
+            
 
             $('#<%=Dp1.ClientID%>').css('display', 'none'),
                 $('#<%=Dp2.ClientID%>').css('display', 'none'),
@@ -17,10 +17,10 @@
             $('#<%=Button1.ClientID%>').css('padding-right', '112px')
 
             scroll();
-           
+            GetAllEvents();
             removechilddivs();
             e.preventDefault();
-
+            
 
         });
 
@@ -49,11 +49,15 @@
                         parentDiv.append('<div class="col-md-4 col-sm-6"> <div class="edugate-layout-3"><div class="edugate-layout-3-wrapper">  <a class="edugate-image"> <img src="images/Events/' + v.Picture + '" alt="" class="img-responsive" /></a> <div class="edugate-content">  <a href="#" class="title">Event ID:' + v.EventID + '</a>  <ul> <li>Event Title:' + v.Title + '</li><li>Description:' + v.Description + '</li><li>Place: ' + v.Place + '</li><li>Event Creator ID: ' + v.EventCreatorID + '</li><li>Starting Time: ' + v.start_time + '</li><li>Ending Time: ' + v.end_time + '</li><li>Date: ' + v.data + '</li></div></div></div></div>');
                         samesizeimage();
                     });
+                    
                 },
                 error: function (data) {
                     alert('Error: ' + data);
                 }
             });
+        }
+        function samesizeimage() {
+            $('a img').css({ 'height': '200px', 'width': '300px' });
         }
         function removechilddivs() {
             $('div[class=customs-row]').empty();
@@ -89,7 +93,7 @@
         <asp:Label ID="std" Visible="False" runat="server"> </asp:Label>
     </div>
     <div>
-        <asp:Label ID="lblschool_id" Visible="False" runat="server"> </asp:Label>
+        <asp:Label ID="lblschool_id"  runat="server"> </asp:Label>
     </div>
     <br />
     <br />
