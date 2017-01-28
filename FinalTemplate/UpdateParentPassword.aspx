@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/updatepasswordpanel.Master" AutoEventWireup="true" CodeBehind="updatepasswordpanel.aspx.cs" Inherits="FinalTemplate.updatepasswordpanel1" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/parentpanel.Master" AutoEventWireup="true" CodeBehind="UpdateParentPassword.aspx.cs" Inherits="FinalTemplate.UpdateParentPassword" %>
 <%@ Register TagPrefix="recaptcha" Namespace="Recaptcha" Assembly="Recaptcha" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -50,7 +49,7 @@
         $(document).ready(function () {
             $('.rlp').removeClass("rlp");
             $('.register-form').css('margin-left', '25%');
-           
+            $('[title="Update Password"]').hide();
             centerText( <%=email.ClientID%>);
             centerText( <%=username.ClientID%>);
             centerText( <%=changepassword.ClientID%>);
@@ -58,6 +57,8 @@
             centerText( <%=conformpassword.ClientID%>);
             removeBackToTop();
             validation();
+            $('[title="Child Profile"]').attr("href","parentpanel.aspx");
+            
         });
 
 
