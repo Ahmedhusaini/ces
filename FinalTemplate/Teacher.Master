@@ -73,7 +73,6 @@
                         <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Profile<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
                                 <li><a href="Teacherprofile.aspx" class="link-page">My Profile</a></li>
-                                <li><a href="Teacherprofile.aspx" class="link-page">Staff Profile</a></li>
                                 <li><a href="StudentProfile.aspx" class="link-page">Student Profile</a></li>                        
                             </ul>
                         </li>
@@ -88,8 +87,7 @@
                                 <li><a href="Teacher_student_timetable.aspx" class="link-page">View Class Timetable</a></li>
                                  <li><a href="Teacher_insert_class_timetable.aspx" class="link-page">Insert Class Timetable</a></li>
                                  <li><a href="edit_student_timetable.aspx" class="link-page">Update Class Timetable</a></li>
-                                <li><a href="Teacher_timetable.aspx" class="link-page">View Teacher Timetable</a></li>
-                                <li><a href="Teacher_Datesheet.aspx" class="link-page">Date Sheet</a></li>         
+                                <li><a href="Teacher_timetable.aspx" class="link-page">View Teacher Timetable</a></li>        
                             </ul>
                         </li>
                       
@@ -151,7 +149,6 @@
 
                                     <div class="info-list">
                                         <ul class="list-unstyled">
-                                            <li><i class="fa fa-envelope-o"></i>ces@gmail.com</li>
                                             <li><i class="fa fa-phone"></i>Phone No: +92335667778 </li>
                                             <li><i class="fa fa-map-marker"></i><p>SIR SYED UNIVERSITY - Main University Road,Block 5,Gulshan-e-Iqbal </p>
 

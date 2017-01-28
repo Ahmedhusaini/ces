@@ -352,15 +352,9 @@
                                     <!-- p.help-block Warning !-->
                                     <br />
                                          <asp:DropDownList ID="DropDownList2" CssClass="form-control  form-input" placeholder="----Select----"  runat="server" DataSourceID="SqlDataSource1" DataTextField="city" DataValueField="city_id">
-                                       
-                                          <asp:ListItem>Karachi</asp:ListItem>
-                                          <asp:ListItem>Lahore</asp:ListItem>
-                                         <asp:ListItem>Peshawar</asp:ListItem>
-                                         <asp:ListItem>Islamabad</asp:ListItem>
-                                         <asp:ListItem>Quetta</asp:ListItem>
-                                         <asp:ListItem>Hyderabad</asp:ListItem>
+                                     
                                           </asp:DropDownList>
-                                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT * FROM [tbl_city]"></asp:SqlDataSource>
+                                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [city_id], [city] FROM [tbl_city]"></asp:SqlDataSource>
                             </div>
                                 <div class="col-md-6">
                                     <label for="regname" class="control-label form-label">
@@ -397,7 +391,7 @@
                                         <br />
                                         <asp:DropDownList ID="DropDownList3" CssClass="form-control" placeholder="----Select----"  runat="server" DataSourceID="schooltype" DataTextField="school_name" DataValueField="school_id"></asp:DropDownList>
                                          
-                                        <asp:SqlDataSource ID="schooltype" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [school_name], [school_id] FROM [tbl_school]"></asp:SqlDataSource>
+                                        <asp:SqlDataSource ID="schooltype" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [school_id], [school_name] FROM [tbl_school]"></asp:SqlDataSource>
                                          
                                     </div>
                                       <div class="col-md-6">
@@ -499,7 +493,7 @@
                                 <span>
                                     <asp:Button ID="Button1" runat="server" Text="Submit" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span></button>
                      </div>
-                             <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                             <asp:Label ID="Label1" runat="server" Visible="false" Text="Label"></asp:Label>
 
                             </div>                            
                         </div>                           

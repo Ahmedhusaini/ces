@@ -57,12 +57,12 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@nationality", SqlDbType.VarChar).Value = nation.Text;
                 cmd.Parameters.AddWithValue("@religion", SqlDbType.VarChar).Value = religion.Text;
                 cmd.Parameters.AddWithValue("@address", SqlDbType.VarChar).Value = address.Text;
-                cmd.Parameters.AddWithValue("@postal_code", SqlDbType.Int).Value = postal.Text;
-                cmd.Parameters.AddWithValue("@city_id", SqlDbType.Int).Value = DropDownList2.SelectedValue;
-                cmd.Parameters.AddWithValue("@country_id", SqlDbType.Int).Value = DropDownList1.SelectedValue;
+                cmd.Parameters.AddWithValue("@postal_code", SqlDbType.Int).Value =Convert.ToInt32(postal.Text);
+                cmd.Parameters.AddWithValue("@city_id", SqlDbType.Int).Value = Convert.ToInt32(DropDownList2.SelectedValue);
+                cmd.Parameters.AddWithValue("@country_id", SqlDbType.Int).Value =Convert.ToInt32(DropDownList1.SelectedValue);
                 cmd.Parameters.AddWithValue("@photo", SqlDbType.VarChar).Value = fileupload.FileName;
                 cmd.Parameters.AddWithValue("@username", SqlDbType.VarChar).Value = user.Text;
-                cmd.Parameters.AddWithValue("@account_pin", SqlDbType.Int).Value = accountp.Text;
+                cmd.Parameters.AddWithValue("@account_pin", SqlDbType.Int).Value = Convert.ToInt32(accountp.Text);
                 cmd.Parameters.AddWithValue("@password", SqlDbType.VarChar).Value = pass.Text;
                 cmd.Parameters.AddWithValue("@primary_email", SqlDbType.VarChar).Value = pemail.Text;
                 cmd.Parameters.AddWithValue("@secondary_email", SqlDbType.VarChar).Value = semail.Text;
@@ -73,7 +73,18 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@school_id", SqlDbType.VarChar).Value = DropDownList3.SelectedValue;
                 cmd.Parameters.AddWithValue("@class_id", SqlDbType.Int).Value =Convert.ToInt32(DropDownList4.SelectedValue);
                 cmd.Parameters.AddWithValue("@section_id", SqlDbType.Int).Value =Convert.ToInt32(DropDownList5.SelectedValue);
-                cmd.ExecuteNonQuery();
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    Response.Redirect("logintype.aspx");
+                }
+                catch (Exception ex)
+                {
+                    //Response.Write(ex.ToString());
+                    Response.Redirect("logintype.aspx");
+                }
+                
                 con.Close();
             }
 
