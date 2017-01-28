@@ -200,7 +200,7 @@ namespace FinalTemplate.source.Functions
                 }
                 else
                 {
-                    HttpContext.Current.Response.Write("No record in child_detail");
+                    HttpContext.Current.Response.Write("Please Click on add button to add your Child");
                 }
             }
             catch (Exception ex)
