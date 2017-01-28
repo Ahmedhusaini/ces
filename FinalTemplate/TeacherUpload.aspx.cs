@@ -43,25 +43,28 @@ namespace FinalTemplate
         }
         private void filldata()
         {
-            DataTable dt = new DataTable();
-            int lec_id = Convert.ToInt32(db.GetLastValueByColumnName("lec_id", "lecture_attandance_test"));
-            using (SqlConnection con = new SqlConnection(a))
-            {
-                SqlCommand cmd = new SqlCommand("SP_Get_file", con);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@lec_id", SqlDbType.Int).Value = lec_id;
-                con.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
+           
+                DataTable dt = new DataTable();
+                int lec_id = Convert.ToInt32(db.GetLastValueByColumnName("lec_id", "lecture_attandance_test"));
+                using (SqlConnection con = new SqlConnection(a))
+                {
+                    SqlCommand cmd = new SqlCommand("SP_Get_file", con);
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@lec_id", SqlDbType.Int).Value = lec_id;
+                    con.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
 
-                dt.Load(reader);
-            }
-            if (dt.Rows.Count > 0)
-            {
-                GridView1.DataSource = dt;
-                GridView1.DataBind();
-            }
-        }
-
+                    dt.Load(reader);
+                }
+                if (dt.Rows.Count > 0)
+                {
+                    GridView1.DataSource = dt;
+                    GridView1.DataBind();
+                }
+           
+        
+     
+}
         protected void OpenDocument(object sender, EventArgs e)
         {
             LinkButton li = (LinkButton)sender;
@@ -124,7 +127,9 @@ namespace FinalTemplate
                     if (cmd.ExecuteNonQuery() > 0)
                     {
                         if (JFunctions.UploadSingleFile(FileUpload1, fullpath + FileUpload1.FileName) == "true")
-                        { HttpContext.Current.Response.Write("<script>alert('File Uploaded.')</script>"); }
+                        { HttpContext.Current.Response.Write("<script>alert('File Uploaded Successfully.')</script>");
+                        Response.Write("<script>alert('LECTURE HAS BEEN UPLOADED SUCCESSFULLY');</script>");
+                        }
                     }
 
                 }

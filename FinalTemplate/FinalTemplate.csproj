@@ -57,6 +57,10 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Recaptcha, Version=1.0.5.0, Culture=neutral, PublicKeyToken=9afc4d65b28c38c2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\git\FinalTemplate\bin\Recaptcha.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -145,7 +149,6 @@
     <Content Include="images\Parents\aaaa.png" />
     <Content Include="maplocation.aspx" />
     <Content Include="school_comparision.aspx" />
-    <Content Include="Teacher_Datesheet.aspx" />
     <Content Include="Teacher_insert_class_timetable.aspx" />
     <Content Include="Teacher_Marksheet.aspx" />
     <Content Include="images\Events\bicycle-1280x720.jpg" />
@@ -351,6 +354,7 @@
     <Content Include="UpdateAndViewEventDetails.aspx" />
     <Content Include="UpdateNews.aspx" />
     <Content Include="UpdateParentInformation.aspx" />
+    <Content Include="UpdateParentPassword.aspx" />
     <Content Include="updatepasswordpanel.aspx" />
     <Content Include="UpdateSchoolInformation.aspx" />
     <Content Include="UpdateStudentInformationByAdmin.aspx" />
@@ -479,13 +483,6 @@
     </Compile>
     <Compile Include="source\Functions\SSComparission.cs" />
     <Compile Include="source\Functions\studentid.cs" />
-    <Compile Include="Teacher_Datesheet.aspx.cs">
-      <DependentUpon>Teacher_Datesheet.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Teacher_Datesheet.aspx.designer.cs">
-      <DependentUpon>Teacher_Datesheet.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Teacher_insert_class_timetable.aspx.cs">
       <DependentUpon>Teacher_insert_class_timetable.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -797,6 +794,13 @@
     </Compile>
     <Compile Include="UpdateParentInformation.aspx.designer.cs">
       <DependentUpon>UpdateParentInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateParentPassword.aspx.cs">
+      <DependentUpon>UpdateParentPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateParentPassword.aspx.designer.cs">
+      <DependentUpon>UpdateParentPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="updatepasswordpanel.aspx.cs">
       <DependentUpon>updatepasswordpanel.aspx</DependentUpon>

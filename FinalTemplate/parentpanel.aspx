@@ -20,6 +20,7 @@
             $('#<%=Label3.ClientID%>').css('display', 'none'),
             $('#<%=Label2.ClientID%>').hide();
             $('#<%=Image1.ClientID%>').css('border-radius', '50px'),
+            $('[title="Update Password"]').css('display','none'),
 
                 $('.table-row').css(' text-align', 'inherit'),
             $('[title="Dialog"]').css('dsiplay', 'none'),

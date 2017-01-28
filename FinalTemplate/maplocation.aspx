@@ -14,7 +14,7 @@ body { height: 100%; margin: 0; padding: 0 }
            var markers = JSON.parse('<%=ConvertDataTabletoString() %>');
            var mapOptions = {
                center: new google.maps.LatLng(markers[0].lat, markers[0].lng),
-               zoom: 2,
+               zoom:4,
                mapTypeId: google.maps.MapTypeId.ROADMAP
                //marker:true
     };
@@ -41,6 +41,6 @@ body { height: 100%; margin: 0; padding: 0 }
 </script>
 
     <form id="form1">
-<div id="map_canvas" style="width: auto; height: 400px"></div>
+<div id="map_canvas" style="width: auto; height: 400px;">map</div>
 </form>
 </asp:Content>
