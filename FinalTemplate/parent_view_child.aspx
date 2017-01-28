@@ -257,6 +257,9 @@
           &nbsp;&nbsp;  <asp:Label ID="Label7" Visible="false"  runat="server" ></asp:Label>
         
             <br />
+            &nbsp;<asp:DropDownList ID="DropDownList1" Height="50px" Width="150px" style="border-radius:0px 10px 10px 0px;font-size:15px;font-family:Arial;color:#86BC42" AutoPostBack="true" runat="server" DataSourceID="SqlDataSource4" DataTextField="Column1" DataValueField="Column1" BackColor="#E3EAEB">
+    </asp:DropDownList><br /><br />
+    <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="select distinct DATENAME(mm,[date]) from tbl_student_attendance "></asp:SqlDataSource>
       <asp:GridView ID="GridView2" class="edu-table-responsive" runat="server" AutoGenerateColumns="False"  Width="1220px" AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#86BC42" GridLines="None" DataSourceID="SqlDataSource3">
           <Columns>
               <asp:BoundField DataField="Column1" HeaderText="Month" ReadOnly="True" SortExpression="Column1" />
@@ -278,7 +281,7 @@
     <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="select DATENAME(mm, [date]),CONVERT(VARCHAR(10), [date], 111),[time],remarks from tbl_student_attendance 
 join tbl_remarks on tbl_student_attendance.remark_id=tbl_remarks.remark_id where  DATENAME(mm, [date])=@month and Std_id=@Std_id">
         <SelectParameters>
-            <asp:ControlParameter ControlID="Label6" Name="month" PropertyName="Text" />
+              <asp:ControlParameter ControlID="DropDownList1" Name="month" PropertyName="SelectedValue" />
             <asp:ControlParameter ControlID="Label5" Name="std_id" PropertyName="Text" />
         </SelectParameters>
     </asp:SqlDataSource>
