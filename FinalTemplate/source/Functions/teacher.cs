@@ -310,6 +310,44 @@ namespace FinalTemplate.source.Functions
             }
             return teacher_dateofjoin;
         }
+        public static string teacher_dob
+
+        { get { return Getdob(); } }
+
+
+        private static string Getdob()
+        {
+            string teacher_dob = string.Empty;
+
+            mydatabase.CreateConnection();
+            mydatabase.InitializeSQLCommandObject(mydatabase.GetCurrentConnection, "select dob_id from View_TeacherProfile where authorized_id='" + CurrentUser.AuthorizedID + "'");
+            try
+            {
+                mydatabase.OpenConnection();
+                mydatabase.obj_reader = mydatabase.obj_sqlcommand.ExecuteReader();
+                if (mydatabase.obj_reader.HasRows)
+                {
+                    while (mydatabase.obj_reader.Read())
+                    {
+                        teacher_dob = mydatabase.obj_reader["dob_id"].ToString();
+
+                    }
+                }
+                else
+                { HttpContext.Current.Response.Write("No id is Found"); }
+            }
+            catch (Exception ex)
+            {
+                HttpContext.Current.Response.Write(ex.ToString());
+            }
+            finally
+            {
+                mydatabase.CloseConnection();
+                mydatabase.obj_reader.Dispose();
+                mydatabase.obj_reader.Close();
+            }
+            return teacher_dob;
+        }
      
    }
 }
