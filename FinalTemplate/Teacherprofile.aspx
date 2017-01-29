@@ -22,18 +22,19 @@
                                     </div>
                                    </div>
                                 <div class="teacher-des">
-                                    <div class="title"> <h1><asp:Label ID="name" runat="server" Text="name"></asp:Label></h1></div>
+                                    <div class="title">
+                                        <table> <h1><asp:Label ID="name" runat="server" Text="name"></asp:Label></h1></div>
                                     <div class="subtitle">
                                         <asp:Label ID="usertype" runat="server" Text="usertype"></asp:Label></div>
                                     <div class="content"><p class="content-detail"></p>
                                         <ul class="detail-list">
-                                        <li><asp:Label ID="Gender" runat="server" Text="Label"></asp:Label></li>
-                                        <li><asp:Label ID="Nationality" runat="server" Text="Label"></asp:Label></li>
-                                        <li><asp:Label ID="Religion" runat="server" Text="Label"></asp:Label></li>
-                                        <li><asp:Label ID="Email" runat="server" Text="Label"></asp:Label></li>
-                                        <li><asp:Label ID="Email2" runat="server" Text="Label"></asp:Label></li>
-                                        <li><asp:Label ID="Phone" runat="server" Text="Label"></asp:Label></li>
-                                        <li><asp:Label ID="Address" runat="server" Text="Label"></asp:Label></li>
+                                       Gender <li><asp:Label ID="Gender" runat="server" Text="Label"></asp:Label></li>
+                                       Nationality<li><asp:Label ID="Nationality" runat="server" Text="Label"></asp:Label></li>
+                                       Religion <li><asp:Label ID="Religion" runat="server" Text="Label"></asp:Label></li>
+                                       Primary Email Address <li><asp:Label ID="Email" runat="server" Text="Label"></asp:Label></li>
+                                       Secondary Email Address <li><asp:Label ID="Email2" runat="server" Text="Label"></asp:Label></li>
+                                       Phone<li><asp:Label ID="Phone" runat="server" Text="Label"></asp:Label></li>
+                                       Address<li><asp:Label ID="Address" runat="server" Text="Label"></asp:Label></li></table>
 
 
 

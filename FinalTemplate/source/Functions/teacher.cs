@@ -261,6 +261,39 @@ namespace FinalTemplate.source.Functions
             }
             return student_id;
         }
+        public static string Getattendanceid()
+        {
+            string attend_id = string.Empty;
+
+            mydatabase.CreateConnection();
+            mydatabase.InitializeSQLCommandObject(mydatabase.GetCurrentConnection, "select std_attend_id from tbl_student_attendance as student inner join tbl_school as school on student.school_id=school.school_id inner join tbl_teacher as teacher on teacher.school_id=school.school_id  where teacher.authorized_id='" + CurrentUser.AuthorizedID + "'");
+            try
+            {
+                mydatabase.OpenConnection();
+                mydatabase.obj_reader = mydatabase.obj_sqlcommand.ExecuteReader();
+                if (mydatabase.obj_reader.HasRows)
+                {
+                    while (mydatabase.obj_reader.Read())
+                    {
+                        attend_id = mydatabase.obj_reader["std_attend_id"].ToString();
+
+                    }
+                }
+                else
+                { HttpContext.Current.Response.Write("No id is Found"); }
+            }
+            catch (Exception ex)
+            {
+                HttpContext.Current.Response.Write(ex.ToString());
+            }
+            finally
+            {
+                mydatabase.CloseConnection();
+                mydatabase.obj_reader.Dispose();
+                mydatabase.obj_reader.Close();
+            }
+            return attend_id;
+        }
         public static string teacher_cnic
 
         { get { return Getcnic(); } }
@@ -452,5 +485,7 @@ namespace FinalTemplate.source.Functions
             return teacher_postalcode;
         }
 
+
+        public static object attend_id { get; set; }
     }
 }
