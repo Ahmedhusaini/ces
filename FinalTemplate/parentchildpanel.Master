@@ -157,8 +157,8 @@
                                                 <div class="col-md-6 col-sm-6 col-xs-6">
                                                     <ul class="list-unstyled">
                                                         <li><i class="fa fa-angle-right"></i><a href="parentpanel.aspx">Home</a></li>
-                                                        <li><i class="fa fa-angle-right"></i><a href="Contact_Us.aspx">CES Suggestion</a></li>
-                                                        <li><i class="fa fa-angle-right"></i><a href="Default.aspx">Site Map</a></li>
+                                                        <li><i class="fa fa-angle-right"></i><a href="Contact_Us.aspx">Contact US</a></li>
+                                                        <li><i class="fa fa-angle-right"></i><a href="Default.aspx">User Default</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
