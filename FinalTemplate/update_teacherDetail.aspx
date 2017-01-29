@@ -1,7 +1,161 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher.Master" AutoEventWireup="true" CodeBehind="update_teacherDetail.aspx.cs" Inherits="FinalTemplate.update_teacherDetail" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TeacherHeadPlaceHolder" runat="server">
+       <script src="assets/js/jquery-2.2.3.js"></script>
+    <script src="assets/js/jquery.validate.js"></script>
+    <script type="text/javascript">
+
+        $.validator.addMethod("lettersonly", function (value, element) {
+            return this.optional(element) || /^[a-z\s]+$/i.test(value);
+        }, "Letters only please");
+        $.validator.addMethod("phone", function (phone_number, element) {
+            phone_number = phone_number.replace(/\s+/g, "");
+            return this.optional(element) || phone_number.length > 9 &&
+                phone_number.match(/^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/);
+        });
+        $.validator.addMethod( "digitsonly", function( value, element ) {
+            return this.optional( element ) || /^[0-9]+$/i.test( value );
+        }, "Numbers only please" );
+        $(document).ready(function () {
+            $.validator.addMethod( "romanonly", function( value, element ) {
+                return this.optional( element ) || /^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/g.test( value );
+            }, "Please type in Roman ( I,II,IX,X ) " ); 
+            $.validator.addMethod( "imageonly", function( value, element ) {
+                return this.optional( element ) || /^([a-zA-Z0-9\s_\\.\-:])+(.png|.jpg|.gif)$/.test( value );
+            }, ".jpeg ,.png, .gif format allow only " );  
+            $.validator.addMethod("pwcheck", function(value) {
+                return /^[A-Za-z0-9\d=!\-@._*]*$/.test(value) // consists of only these
+                    && /[a-z]/.test(value) // has a lowercase letter
+                    && /\d/.test(value) // has a digit
+            },"please only Lowercase and must have digits ");
+            $.validator.addMethod("email",function(value,element){
+                return this.optional(element) || /^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{2,5}$/i.test(value);
+            });    
+
+            $("#form1").validate({                   
+                rules: {
+                    <%=txtFirstName.UniqueID%>:{
+                        required: true,
+                        lettersonly: true                        
+                    },
+                    <%=txtLastName.UniqueID%>:{
+                        required: true,
+                        lettersonly: true                        
+                    },
+                    <%=txtReligion.UniqueID%>:{
+                        required: true,
+                        lettersonly: true                        
+                    },
+                    <%=txtPhone.UniqueID%>:{
+                        required: true,
+                        phone:true
+                    },
+                    <%=addresstxt.UniqueID%>:{
+                        required: true                        
+                    },
+                    <%=DateOfJointxt.UniqueID%>:{
+                        required: true,
+                        lettersonly: true                        
+                    },
+                    <%=cnicnotxt.UniqueID%>:{
+                        required: true,
+                        phone:true
+                    },
+                    <%=postalcodetxt.UniqueID%>:{
+                        required: true ,
+                        digitsonly:true,
+                        minlength:5,
+                        maxlength:6
+                    },
+                    <%=usernametxt.UniqueID%>:{
+                        required: true,
+                        lettersonly: true                        
+                    },
+                     <%=passwordtxt.UniqueID%>:{
+                         required: true,
+                         lettersonly: true                        
+                     },
+                    <%=pemailtxt.UniqueID%>:{
+                        required: true,
+                        email : true                       
+                    },
+                    <%=semailtxt.UniqueID%>:{
+                        required: true,
+                        email : true                       
+                    }
+                },
+                messages: {
+                    <%=txtFirstName.UniqueID%>: {
+                        required: "Please enter First name",
+                    },
+                    <%=txtLastName.UniqueID%>: {
+                        required: "Please enter Last name",
+                    },
+                    <%=txtReligion.UniqueID%>: {
+                        required: "Please enter Religion",
+                    },
+                    <%=txtPhone.UniqueID%>: {
+                        required: "Please enter Contact No",
+                    },
+                    <%=addresstxt.UniqueID%>: {
+                        required: "Please enter Address",
+                    },
+                    <%=postalcodetxt.UniqueID%>: {
+                        required: "Please enter postal code",
+                    },
+                    <%=usernametxt.UniqueID%>: {
+                        required: "Please enter username",
+                    },
+                     <%=passwordtxt.UniqueID%>: {
+                         required: "Please enter password",
+                     },
+                    <%=semailtxt.UniqueID%>: {
+                        required: "please enter a valid Email Address",
+                    },
+                    <%=pemailtxt.UniqueID%>: {
+                        required: "please enter a valid Email Address",
+                }                        
+                }
+            });
+        });
+        $(document).ready(function () {
+            $('.rlp').removeClass("rlp");
+            $('.register-form').css('margin-left', '25%');   
+            removeBackToTop();
+            validation();
+        });
+
+        function centerText(control) {
+            (control).css({ 'text-align': 'center' });
+        }
+        function removeBackToTop() {
+            $('#back-top').css('display', 'none');
+        }
+    </script>
 </asp:Content>
+<%--    <style>
+        .reg-sk {
+            padding-top: 26px;
+            padding-bottom: 26px;
+            opacity: 0.95;
+        }
+
+        label.error {
+            color: red;
+            display: inline-flexbox;
+            display:inline;
+            /*text-align:right;*/
+        }
+
+        input.error {
+            border: 1px solid red;
+            float: none;
+            color: green;
+            padding-left: .3em;
+            vertical-align: top;
+            
+        }
+    </style>--%>
 <asp:Content ID="Content2" ContentPlaceHolderID="TeacherPlaceHolder1" runat="server">
     <div class="section background-opacity page-title set-height-top">
         <div class="container">
@@ -26,7 +180,7 @@
                                     <tr class="table-row" style="background-color: transparent;">
                                         <td class="col-3"><span style="color: black; font-weight: bolder">Teacher ID</span></td>
                                         <td class="col-2">
-                                            <asp:TextBox runat="server" Width="200px" ID="teachertxtid"></asp:TextBox></td>
+                                            <asp:TextBox runat="server" Width="200px" ID="teachertxtid" ReadOnly="true"></asp:TextBox></td>
                                         <td class="col-3"><span></span></td>
                                     </tr>
 
@@ -60,12 +214,6 @@
                                         <td class="col-3"></td>
                                     </tr>
                                     <tr class="table-row" style="background-color: transparent;">
-                                        <td class="col-3"><span style="color: black; font-weight: bolder">Date Of Birth</span></td>
-                                        <td class="col-2">
-                                            <asp:TextBox runat="server" ID="txtDateOfBirth" Width="200px"></asp:TextBox></td>
-                                        <td class="col-3"></td>
-                                    </tr>
-                                    <tr class="table-row" style="background-color: transparent;">
                                         <td class="col-3"><span style="color: black; font-weight: bolder">Nationality</span></td>
                                         <td class="col-2">
                                             <asp:DropDownList Enabled="false" Width="200px" BackColor="White" CssClass="sbHolder" runat="server" ID="ddlNationality">
@@ -73,14 +221,6 @@
                                             </asp:DropDownList></td>
                                         <td class="col-3"></td>
                                     </tr>
-                                    <tr class="table-row" style="background-color: transparent;">
-                                        <td class="col-3"><span style="color: black; font-weight: bolder">Gender</span></td>
-                                        <td class="col-2">
-                                            <asp:RadioButton runat="server" ID="rbtnMale" Text="Male" GroupName="gender" />&nbsp;&nbsp;
-                                        <asp:RadioButton runat="server" ID="rbtnFemale" Text="Female" GroupName="gender" /></td>
-                                        <td class="col-3"></td>
-                                    </tr>
-
                                     <tr class="table-row" style="background-color: transparent;">
                                         <td class="col-3"><span style="color: black; font-weight: bolder">Religion</span></td>
                                         <td class="col-2">
@@ -103,7 +243,7 @@
                                     <tr class="table-row" style="background-color: transparent;">
                                         <td class="col-3" style="color: black; font-weight: bolder">Date Of Join</td>
                                         <td class="col-2">
-                                            <asp:TextBox ID="DateOfJointxt" Width="200px" runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="DateOfJointxt" Width="200px" runat="server" ReadOnly="true"></asp:TextBox>
                                         </td>
                                         <td class="col-3"></td>
                                     </tr>
@@ -117,9 +257,10 @@
                                     <tr class="table-row" style="background-color: transparent;">
                                         <td class="col-3" style="color: black; font-weight: bolder">City</td>
                                         <td class="col-2">
-                                            <asp:DropDownList runat="server" CssClass="sbHolder" BackColor="White" Width="200px" ID="ddlCity">
+                                           <asp:DropDownList runat="server" CssClass="sbHolder" BackColor="White" Width="200px" ID="ddlCity" DataSourceID="SqlDataSource1" DataTextField="city" DataValueField="city_id">
                                                 <asp:ListItem>Karachi</asp:ListItem>
                                             </asp:DropDownList>
+                                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [city_id], [city] FROM [tbl_city]"></asp:SqlDataSource>
                                         </td>
                                         <td class="col-3"></td>
                                     </tr>
@@ -130,10 +271,18 @@
                                         </td>
                                         <td class="col-3"></td>
                                     </tr>
+                                                                     
                                     <tr class="table-row" style="background-color: transparent;">
                                         <td class="col-3" style="color: black; font-weight: bolder">Username</td>
                                         <td class="col-2">
                                             <asp:TextBox ID="usernametxt" Width="200px" runat="server"></asp:TextBox>
+                                        </td>
+                                        <td class="col-3"></td>
+                                    </tr>
+                                    <tr class="table-row" style="background-color: transparent;">
+                                        <td class="col-3" style="color: black; font-weight: bolder">Password</td>
+                                        <td class="col-2">
+                                            <asp:TextBox ID="passwordtxt" Width="200px" runat="server"></asp:TextBox>
                                         </td>
                                         <td class="col-3"></td>
                                     </tr>
@@ -171,27 +320,27 @@
                                     <tr class="table-row" style="background-color: transparent;">
                                         <td class="col-3"><span style="color: black; font-weight: bolder">General Details ID</span></td>
                                         <td class="col-2">
-                                            <asp:TextBox runat="server" Width="200px" ID="txtGenealID" ></asp:TextBox></td>
+                                            <asp:TextBox runat="server" Width="200px" ID="txtGenealID" ReadOnly="true" ></asp:TextBox></td>
                                         <td class="col-3"></td>
                                     </tr>
 
                                     <tr class="table-row" style="background-color: transparent;">
                                         <td class="col-3"><span style="color: black; font-weight: bolder">Location ID</span></td>
                                         <td class="col-2">
-                                            <asp:TextBox runat="server" Width="200px" ID="txtLocationID" ></asp:TextBox></td>
+                                            <asp:TextBox runat="server" Width="200px" ID="txtLocationID" ReadOnly="true"></asp:TextBox></td>
                                         <td class="col-3"></td>
                                     </tr>
 
                                     <tr class="table-row" style="background-color: transparent;">
                                         <td class="col-3"><span style="color: black; font-weight: bolder">Date Of Birth ID</span></td>
                                         <td class="col-2">
-                                            <asp:TextBox runat="server" Width="200px" ID="txtDOBId"></asp:TextBox></td>
+                                            <asp:TextBox runat="server" Width="200px" ID="txtDOBId" ReadOnly="true"></asp:TextBox></td>
                                         <td class="col-3"></td>
                                     </tr>
                                     <tr class="table-row" style="background-color: transparent;">
                                         <td class="col-3"><span style="color: black; font-weight: bolder">Authorized ID</span></td>
                                         <td class="col-2">
-                                            <asp:TextBox  runat="server" Width="200px" ID="authorizedidtxt"></asp:TextBox></td>
+                                            <asp:TextBox  runat="server" Width="200px" ID="authorizedidtxt" ReadOnly="true"></asp:TextBox></td>
                                         <td class="col-3"></td>
                                     </tr>
                                     <tr class="table-row" style="background-color: transparent;">

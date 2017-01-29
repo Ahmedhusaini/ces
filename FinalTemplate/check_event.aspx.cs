@@ -13,19 +13,7 @@ namespace FinalTemplate
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["userid"] != null)
-            {
-                student.forevent(Session["userid"].ToString());
-                new_name.Text = "Event Title : " + student.title;
-                start_d.Text = student.starting_date;
-                end_d.Text = student.ending_date;
-                start_t.Text = student.starting_time;
-                end_t.Text = student.ending_time;
-                plac.Text = student.place;
-                desc.Text = student.discription;
-                tag.Text = student.tags;
-                eventimg.ImageUrl = student.event_pic;
-            }
+            
         }
     }
 }

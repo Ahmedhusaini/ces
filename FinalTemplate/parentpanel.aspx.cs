@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Data;
-using System.Data.SqlClient;
-using System.Configuration;
-using System.IO;
-using System.Runtime.CompilerServices;
-using FinalTemplate.source.Database;
+﻿using FinalTemplate.source.Database;
 using FinalTemplate.source.Functions;
+using System;
+using System.Data.SqlClient;
+using System.IO;
+using System.Web.UI.WebControls;
 
 namespace FinalTemplate
 {
@@ -18,7 +11,7 @@ namespace FinalTemplate
     {
         private Database myDatabase = new Database("ces");
         SqlConnection con = new SqlConnection(@"Data Source=SHAHERYAR\SQLEXPRESS;Initial Catalog=ces;Integrated Security=True");
-        
+
         Parents objp = new Parents();
         studentid objstd = new studentid();
         private string studentexists;
@@ -26,7 +19,7 @@ namespace FinalTemplate
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
 
             lab1.Text = "Date :" + System.DateTime.Now.ToShortDateString();
             lab2.Text = "Time :" + System.DateTime.Now.ToShortTimeString();
@@ -58,19 +51,19 @@ namespace FinalTemplate
                 }
 
                 headlbl.Text = CurrentUser.FirstName + " " + CurrentUser.LastName;
-               
+
                 gender.Text = CurrentUser.Gender;
                 phone.Text = CurrentUser.Phone;
                 address.Text = CurrentUser.Address;
                 pemail.Text = CurrentUser.PrimaryEmailAddress;
                 atype.Text = CurrentUser.AuthorizedID;
-                Image1.ImageUrl = "images/Parents/"+CurrentUser.Photo;
+                Image1.ImageUrl = "~/images/" + CurrentUser.Photo;
                 Label3.Text = CurrentUser.GeneralID.ToString();
 
 
                 Parents.GetParentsID(Session["userid"].ToString());
                 Label2.Text = Parents.parentschild;
-                
+
 
 
 
@@ -78,7 +71,7 @@ namespace FinalTemplate
 
 
 
-               
+
 
 
             }
@@ -118,7 +111,7 @@ namespace FinalTemplate
                 {
                     string filename = FileUpload1.FileName;
                     FileUpload1.PostedFile.SaveAs(Server.MapPath(".") + "//images//" + filename);
-                    string filepath = Server.MapPath(@"~\images\" + filename.ToString());
+                    string filepath = Server.MapPath("~/images/" + filename.ToString());
                     string fullfilepath = filepath + filename;
                     string extension = Path.GetExtension(filename);
                     Label1.Text = filepath;
@@ -138,9 +131,9 @@ namespace FinalTemplate
                         }
                     }
                     con.Open();
-                    string path = @"~\images\" + filename.ToString();
+                    string path = filename.ToString();
                     SqlCommand cmd = new SqlCommand("update tbl_general set photo='" + path + "' where General_Id='" + Label3.Text + "'", con);
-                    Image1.ImageUrl = @"~\images\" + FileUpload1.FileName;
+                    Image1.ImageUrl = "~/images/" + FileUpload1.FileName;
                     cmd.ExecuteNonQuery();
                     con.Close();
                     Label1.Text = "upload";
@@ -154,14 +147,14 @@ namespace FinalTemplate
 
         protected void Button1_Click2(object sender, EventArgs e)
         {
-            
+
             objstd.students = "\'" + TextBox1.Text + "\'";
 
-          studentexists = objstd.checkstudentid(objstd.students);
-            
+            studentexists = objstd.checkstudentid(objstd.students);
 
-            
-            if (studentexists=="true")
+
+
+            if (studentexists == "true")
             {
 
                 if (objp.parentchild(TextBox1.Text) > 0)
@@ -179,13 +172,13 @@ namespace FinalTemplate
                 Response.Write("<script>alert('Not Exists .');</script>");
             }
 
-            
-            
+
+
         }
 
         protected void btnShow_Click(object sender, EventArgs e)
         {
-            
+
             //Parents objp = new Parents();
             //if (
             //objp.parentc() > 0)
@@ -197,9 +190,9 @@ namespace FinalTemplate
             //    Response.Write("<script>alert('Error uccured while posting job.');</script>");
             //}
 
-           
-          
-                            
+
+
+
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)

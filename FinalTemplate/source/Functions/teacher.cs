@@ -74,6 +74,10 @@ namespace FinalTemplate.source.Functions
                 mydatabase.obj_reader.Close();
             }
         }
+
+
+      
+
         static public void Teacher_detail(string com_stu)
         {
             mydatabase.CreateConnection();
@@ -201,8 +205,6 @@ namespace FinalTemplate.source.Functions
         {
             string std_id = string.Empty;
 
-
-
             mydatabase.CreateConnection();
             mydatabase.InitializeSQLCommandObject(mydatabase.GetCurrentConnection, "");
             try
@@ -231,7 +233,121 @@ namespace FinalTemplate.source.Functions
                 mydatabase.obj_reader.Close();
             }
             return std_id;
-
         }
-    }
+        public static string teacher_cnic
+
+        { get { return Getcnic(); } }
+
+
+        private static string Getcnic()
+        {
+            string teacher_cnic = string.Empty;
+
+            mydatabase.CreateConnection();
+            mydatabase.InitializeSQLCommandObject(mydatabase.GetCurrentConnection, "select cnic_no from tbl_Teacher where authorized_id='" + CurrentUser.AuthorizedID + "'");
+            try
+            {
+                mydatabase.OpenConnection();
+                mydatabase.obj_reader = mydatabase.obj_sqlcommand.ExecuteReader();
+                if (mydatabase.obj_reader.HasRows)
+                {
+                    while (mydatabase.obj_reader.Read())
+                    {
+                        teacher_cnic = mydatabase.obj_reader["cnic_no"].ToString();
+
+                    }
+                }
+                else
+                { HttpContext.Current.Response.Write("No id is Found"); }
+            }
+            catch (Exception ex)
+            {
+                HttpContext.Current.Response.Write(ex.ToString());
+            }
+            finally
+            {
+                mydatabase.CloseConnection();
+                mydatabase.obj_reader.Dispose();
+                mydatabase.obj_reader.Close();
+            }
+            return teacher_cnic;
+        }
+        public static string teacher_dateofjoin
+
+        { get { return Getdateofjoin(); } }
+
+
+        private static string Getdateofjoin()
+        {
+            string teacher_dateofjoin = string.Empty;
+
+            mydatabase.CreateConnection();
+            mydatabase.InitializeSQLCommandObject(mydatabase.GetCurrentConnection, "select date_of_join from tbl_Teacher where authorized_id='" + CurrentUser.AuthorizedID + "'");
+            try
+            {
+                mydatabase.OpenConnection();
+                mydatabase.obj_reader = mydatabase.obj_sqlcommand.ExecuteReader();
+                if (mydatabase.obj_reader.HasRows)
+                {
+                    while (mydatabase.obj_reader.Read())
+                    {
+                        teacher_dateofjoin = mydatabase.obj_reader["date_of_join"].ToString();
+
+                    }
+                }
+                else
+                { HttpContext.Current.Response.Write("No id is Found"); }
+            }
+            catch (Exception ex)
+            {
+                HttpContext.Current.Response.Write(ex.ToString());
+            }
+            finally
+            {
+                mydatabase.CloseConnection();
+                mydatabase.obj_reader.Dispose();
+                mydatabase.obj_reader.Close();
+            }
+            return teacher_dateofjoin;
+        }
+        public static string teacher_dob
+
+        { get { return Getdob(); } }
+
+
+        private static string Getdob()
+        {
+            string teacher_dob = string.Empty;
+
+            mydatabase.CreateConnection();
+            mydatabase.InitializeSQLCommandObject(mydatabase.GetCurrentConnection, "select dob_id from View_TeacherProfile where authorized_id='" + CurrentUser.AuthorizedID + "'");
+            try
+            {
+                mydatabase.OpenConnection();
+                mydatabase.obj_reader = mydatabase.obj_sqlcommand.ExecuteReader();
+                if (mydatabase.obj_reader.HasRows)
+                {
+                    while (mydatabase.obj_reader.Read())
+                    {
+                        teacher_dob = mydatabase.obj_reader["dob_id"].ToString();
+
+                    }
+                }
+                else
+                { HttpContext.Current.Response.Write("No id is Found"); }
+            }
+            catch (Exception ex)
+            {
+                HttpContext.Current.Response.Write(ex.ToString());
+            }
+            finally
+            {
+                mydatabase.CloseConnection();
+                mydatabase.obj_reader.Dispose();
+                mydatabase.obj_reader.Close();
+            }
+            return teacher_dob;
+        }
+     
+   }
 }
