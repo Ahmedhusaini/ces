@@ -63,17 +63,7 @@ namespace FinalTemplate
 
                 Parents.GetParentsID(Session["userid"].ToString());
                 Label2.Text = Parents.parentschild;
-
-
-
-
                 Parents.childern(Label2.Text);
-
-
-
-
-
-
             }
 
             else
