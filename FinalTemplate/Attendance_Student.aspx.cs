@@ -1,24 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Data.Sql;
-using System.Data.SqlClient;
-using System.Text;
-using FinalTemplate.source.Database;
+﻿using FinalTemplate.source.Database;
 using FinalTemplate.source.Functions;
+using System;
 using System.Data;
-using System.Configuration;
+using System.Data.SqlClient;
 
 namespace FinalTemplate
 {
     public partial class Attendance_Student : System.Web.UI.Page
     {
         private Database myDatabase = new Database("ces");
-        SqlConnection con = new SqlConnection(@"Data Source=SHAHWAIZ\SQLEXPRESS;Initial Catalog=ces;Integrated Security=True");
-        SqlConnection con1 = new SqlConnection(@"Data Source=SHAHWAIZ\SQLEXPRESS;Initial Catalog=ces;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=JAHANGEER;Initial Catalog=ces;Persist Security Info=True;User ID=sa;Password=159abbasi789");
+        SqlConnection con1 = new SqlConnection(@"Data Source=JAHANGEER;Initial Catalog=ces;Persist Security Info=True;User ID=sa;Password=159abbasi789");
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,7 +19,7 @@ namespace FinalTemplate
             absent_();
             total_();
             Label8.Text = student.studentid;
-            Label9.Text =DateTime.Now.ToString("MMMM");
+            Label9.Text = DateTime.Now.ToString("MMMM");
             Label10.Text = DateTime.Now.Month.ToString();
 
             //if (!this.IsPostBack)
@@ -80,8 +72,8 @@ namespace FinalTemplate
             da2.Fill(ds2);
             con1.Close();
             total.Text = ds2.Tables[0].Rows[0]["totalcount2"].ToString() + " Total Days ";
-        }    
-    
+        }
+
 
     }
 }

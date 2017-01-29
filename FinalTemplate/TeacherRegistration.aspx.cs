@@ -1,8 +1,8 @@
-﻿using System;
-using System.Data.SqlClient;
-using System.Data;
+﻿using FinalTemplate.source.Database;
+using System;
 using System.Configuration;
-using FinalTemplate.source.Database;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace FinalTemplate
 {
@@ -53,13 +53,13 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@gender", SqlDbType.VarChar).Value = radiobut.SelectedValue;
                 cmd.Parameters.AddWithValue("@year", SqlDbType.Int).Value = Convert.ToInt32(date.Substring(0, 4));
                 cmd.Parameters.AddWithValue("@month", SqlDbType.Int).Value = Convert.ToInt32(date.Substring(5, 2));
-                cmd.Parameters.AddWithValue("@day", SqlDbType.Int).Value = Convert.ToInt32(date.Substring(8, 2));    
+                cmd.Parameters.AddWithValue("@day", SqlDbType.Int).Value = Convert.ToInt32(date.Substring(8, 2));
                 cmd.Parameters.AddWithValue("@nationality", SqlDbType.VarChar).Value = nation.Text;
                 cmd.Parameters.AddWithValue("@religion", SqlDbType.VarChar).Value = religion.Text;
                 cmd.Parameters.AddWithValue("@address", SqlDbType.VarChar).Value = address.Text;
-                cmd.Parameters.AddWithValue("@postal_code", SqlDbType.Int).Value =Convert.ToInt32(postal.Text);
+                cmd.Parameters.AddWithValue("@postal_code", SqlDbType.Int).Value = Convert.ToInt32(postal.Text);
                 cmd.Parameters.AddWithValue("@city_id", SqlDbType.Int).Value = Convert.ToInt32(DropDownList2.SelectedValue);
-                cmd.Parameters.AddWithValue("@country_id", SqlDbType.Int).Value =Convert.ToInt32(DropDownList1.SelectedValue);
+                cmd.Parameters.AddWithValue("@country_id", SqlDbType.Int).Value = Convert.ToInt32(DropDownList1.SelectedValue);
                 cmd.Parameters.AddWithValue("@photo", SqlDbType.VarChar).Value = fileupload.FileName;
                 cmd.Parameters.AddWithValue("@username", SqlDbType.VarChar).Value = user.Text;
                 cmd.Parameters.AddWithValue("@account_pin", SqlDbType.Int).Value = Convert.ToInt32(accountp.Text);
@@ -68,11 +68,11 @@ namespace FinalTemplate
                 cmd.Parameters.AddWithValue("@secondary_email", SqlDbType.VarChar).Value = semail.Text;
                 cmd.Parameters.AddWithValue("@login_count", SqlDbType.Int).Value = 0;
                 cmd.Parameters.AddWithValue("@last_login_date", SqlDbType.Date).Value = DateTime.Now.ToString("");
-                cmd.Parameters.AddWithValue("@usertype_id", SqlDbType.Int).Value = 3;
+                cmd.Parameters.AddWithValue("@usertype_id", SqlDbType.Int).Value = 2;
                 cmd.Parameters.AddWithValue("@date_of_join", SqlDbType.Date).Value = DateTime.Now.ToString("");
                 cmd.Parameters.AddWithValue("@school_id", SqlDbType.VarChar).Value = DropDownList3.SelectedValue;
-                cmd.Parameters.AddWithValue("@class_id", SqlDbType.Int).Value =Convert.ToInt32(DropDownList4.SelectedValue);
-                cmd.Parameters.AddWithValue("@section_id", SqlDbType.Int).Value =Convert.ToInt32(DropDownList5.SelectedValue);
+                cmd.Parameters.AddWithValue("@class_id", SqlDbType.Int).Value = Convert.ToInt32(DropDownList4.SelectedValue);
+                cmd.Parameters.AddWithValue("@section_id", SqlDbType.Int).Value = Convert.ToInt32(DropDownList5.SelectedValue);
 
                 try
                 {
@@ -84,7 +84,7 @@ namespace FinalTemplate
                     //Response.Write(ex.ToString());
                     Response.Redirect("logintype.aspx");
                 }
-                
+
                 con.Close();
             }
 

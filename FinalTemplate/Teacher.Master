@@ -55,7 +55,7 @@
                 <div class="hotline"><a href="#"><i class="topbar-icon fa fa-phone"></i><span>+92335667778</span></a></div>
             </div>
             <div class="topbar-right pull-right">
-            <div class="group-sign-in"><a href="Logintype.aspx" class="logout">logout</a></div>
+            <div class="group-sign-in"><a href="Default.aspx" class="logout">logout</a></div>
             </div>
         </div>
     </div>

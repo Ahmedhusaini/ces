@@ -354,7 +354,7 @@
                                          <asp:DropDownList ID="DropDownList2" CssClass="form-control  form-input" placeholder="----Select----"  runat="server" DataSourceID="SqlDataSource1" DataTextField="city" DataValueField="city_id">
                                      
                                           </asp:DropDownList>
-                                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [city_id], [city] FROM [tbl_city]"></asp:SqlDataSource>
+                                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [city_id], [city] FROM [tbl_city]"></asp:SqlDataSource>
                             </div>
                                 <div class="col-md-6">
                                     <label for="regname" class="control-label form-label">
@@ -367,7 +367,7 @@
                                        
                                        
                                           </asp:DropDownList>
-                                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT * FROM [tbl_country]"></asp:SqlDataSource>
+                                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT * FROM [tbl_country]"></asp:SqlDataSource>
                                   
                             </div>
                                  
@@ -391,7 +391,7 @@
                                         <br />
                                         <asp:DropDownList ID="DropDownList3" CssClass="form-control" placeholder="----Select----"  runat="server" DataSourceID="schooltype" DataTextField="school_name" DataValueField="school_id"></asp:DropDownList>
                                          
-                                        <asp:SqlDataSource ID="schooltype" runat="server" ConnectionString="<%$ ConnectionStrings:abc %>" SelectCommand="SELECT [school_id], [school_name] FROM [tbl_school]"></asp:SqlDataSource>
+                                        <asp:SqlDataSource ID="schooltype" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [school_id], [school_name] FROM [tbl_school]"></asp:SqlDataSource>
                                          
                                     </div>
                                       <div class="col-md-6">
