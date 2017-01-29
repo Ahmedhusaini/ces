@@ -50,6 +50,7 @@
         $(document).ready(function () {
             $('.rlp').removeClass("rlp");
             $('.register-form').css('margin-left', '25%');
+           
             centerText( <%=email.ClientID%>);
             centerText( <%=username.ClientID%>);
             centerText( <%=changepassword.ClientID%>);
@@ -145,7 +146,7 @@
 
                                             <div style="padding-left: 131px">
                                                 <br />
-                                                <recaptcha:RecaptchaControl D="recaptcha" runat="server" PublicKey="6LeB3SgTAAAAAHJYmC1_0bVytnFzfX4S5b_-cy2g"
+                                                <recaptcha:RecaptchaControl ID="recaptcha" runat="server" PublicKey="6LeB3SgTAAAAAHJYmC1_0bVytnFzfX4S5b_-cy2g"
                                                     PrivateKey="6LeB3SgTAAAAAGAAMNc2nhBvJZcxvIyM83WyvHy5" />
                                             </div>
 

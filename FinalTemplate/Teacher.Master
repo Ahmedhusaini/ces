@@ -55,7 +55,7 @@
                 <div class="hotline"><a href="#"><i class="topbar-icon fa fa-phone"></i><span>+92335667778</span></a></div>
             </div>
             <div class="topbar-right pull-right">
-            <div class="group-sign-in"><a href="Logintype.aspx" class="logout">logout</a></div>
+            <div class="group-sign-in"><a href="Default.aspx" class="logout">logout</a></div>
             </div>
         </div>
     </div>
@@ -76,7 +76,7 @@
                                 <li><a href="StudentProfile.aspx" class="link-page">Student Profile</a></li>                        
                             </ul>
                         </li>
-                        <li class="dropdown"><a href="Admin.aspx" class="main-menu">Attendance<span class="fa fa-angle-down icons-dropdown"></span></a>
+                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu"> Attendance<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
                                 <li><a href="Mark_attendance.aspx" class="link-page">Mark Attendance</a></li>
                                 <li><a href="View_Attendance.aspx" class="link-page">View Attendance</a></li>
@@ -149,7 +149,6 @@
 
                                     <div class="info-list">
                                         <ul class="list-unstyled">
-                                            <li><i class="fa fa-envelope-o"></i>ces@gmail.com</li>
                                             <li><i class="fa fa-phone"></i>Phone No: +92335667778 </li>
                                             <li><i class="fa fa-map-marker"></i><p>SIR SYED UNIVERSITY - Main University Road,Block 5,Gulshan-e-Iqbal </p>
 

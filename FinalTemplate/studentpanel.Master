@@ -48,8 +48,8 @@
                         <div class="hotline"><a href="javascript:void(0)"><i></i><span>| Reshaping Education into Digital World </span></a></div>
                     </div>
                     <div class="col-md-2 logo-topbar info-text2">
-                        <a href="index.html">
-                            <img src="assets/images/logo-color-1.png" alt="" />
+                        <a href="studentpanel.aspx">
+                            <img src="assets/images/logo-color-1.png" alt="logo" />
                         </a>
                     </div>
                     <div class="col-md-5 topbar-right text-right info-text3">

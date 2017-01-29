@@ -102,76 +102,51 @@
     </div>
    <!-- FOOTER-->
 <footer>
+  
     <div class="footer-main">
         <div class="container">
             <div class="footer-main-wrapper">
                 <div class="row">
-                    <div class="col-2">
-                        <div class="col-md-3 col-sm-6 col-xs-6 sd380">
-                            <div class="edugate-widget widget">
-                                <div class="title-widget">CES</div>
-                                <div class="content-widget"><p>CES is Pakistan's only web portal that combines the educational institutes all over the pakistan to enhance the quality of education and support the future by securing the education quality and make it easier for everyone to approach to best and modern education</p>
+                    <div class="col-lg-6">
+                       
+                        <div class="edugate-widget widget">
 
-                                    <div class="info-list">
-                                        <ul class="list-unstyled">
-                                            <li><i class="fa fa-envelope-o"></i><a href="#">www.ces/edu.pk</a></li>
-                                            <li><i class="fa fa-phone"></i><a href="#">P:03322556848</a></li>
-                                            <li><i class="fa fa-map-marker"></i><a href="#"><p>johar chorangi</p>
-
-                                                <p>karachi,pakistan 73950</p></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                            <div class="content-widget">
+                                <p>CES is Pakistan's only web portal that combines the educational institutes all over the pakistan to enhance the quality of education and support the future by securing the education quality and make it easier for everyone to approach to best and modern education.</p>
                             </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-6 sd380">
-                            <div class="useful-link-widget widget">
-                                <div class="title-widget">USEFUL LINKS</div>
-                                <div class="content-widget">
-                                    <div class="useful-link-list">
-                                        <div class="row">
-                                            <div class="col-md-6 col-sm-6 col-xs-6">
-                                                <ul class="list-unstyled">
-                                                    <li><i class="fa fa-angle-right"></i><a href="school_comparision.aspx">Compare Schools</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="About_Us.aspx">Why CES</a></li>
-                                                    <li><i class="fa fa-angle-right"></i><a href="About_Us.aspx">About us</a></li>
-                                                     <li><i class="fa fa-angle-right"></i><a href="About_Us.aspx">contact us</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
-                        </div>
                     </div>
-                    <div class="col-2">
-                        <div class="col-md-3 col-sm-6 col-xs-6 sd380">
-                            <div class="gallery-widget widget">
-                                <div class="title-widget"></div>
-                                
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-6 sd380">
-                            <div class="mailing-widget widget">
-                                <div class="title-widget">Subscribe</div>
-                                <div class="content-wiget"><p>Sign up to get latest News and Updates</p>
-
-                                    <form action="http://swlabs.co/edugate/index.html">
-                                        <div class="input-group"><input type="text" placeholder="Email address" class="form-control form-email-widget"/><span class="input-group-btn"><input type="submit" value="✓" class="btn btn-email"/></span></div>
-                                    </form>
-                                    <p>We respect your privacy</p>
-
-                                   
-                                </div>
+                    <div class="col-lg-6">
+                        <div class="edugate-widget widget">
+                            <div class="info-list">
+                                <ul class="list-unstyled">
+                                    <li><i class="fa fa-envelope-o"></i><a href="mailto:support@ces.com.pk?subject=Support">support@ces.com</a></li>
+                                    <li><i class="fa fa-phone"></i>+92 345 357012</li>
+                                    <li><i class="fa fa-map-marker"></i>
+                                        <p>Gulistan-e-jauhar block-7, uniersity road karachi.</p>
+                                        <p>Sindh-Pakistan</p>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="hyperlink">
+                <div class="pull-left hyper-left">
+                    <ul class="list-inline">
+                        <li><a href="Default.aspx">Home</a></li>
+                        <li><a href="school_comparision.aspx">School Comparision</a></li>
+                        <li><a href="maplocation.aspx">Map Location</a></li>
+                        <li><a href="About_Us.aspx">About Us</a></li>
+                        <li><a href="Contact_Us.aspx">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="pull-right hyper-right"> All Rights are reserved @ Centralized Education System - CES</div>
+            </div>
         </div>
     </div>
-</footer>
-<!-- LOADING-->
+</footer><!-- LOADING-->
 <div class="body-2 loading">
     <div class="dots-loader"></div>
 </div>

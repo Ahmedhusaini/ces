@@ -57,19 +57,19 @@ namespace FinalTemplate
                             Response.Redirect("~/Admin.aspx");
 
                         }
-                        else if (int.Parse(ddl_type.SelectedValue) == 3)
+                        else if (int.Parse(ddl_type.SelectedValue) == 2)
                         {
                             Session["userid"] = myLogin.myDatabase.GetAuthorizedID(myLogin.valideUsername, myLogin.validePasswoerd);
                             Response.Redirect("~/TeacherPanel.aspx");
 
                         }
-                        else if (int.Parse(ddl_type.SelectedValue) == 4)
+                        else if (int.Parse(ddl_type.SelectedValue) == 3)
                         {
                             Session["userid"] = myLogin.myDatabase.GetAuthorizedID(myLogin.valideUsername, myLogin.validePasswoerd);
                             Response.Redirect("~/studentpanel.aspx");
 
                         }
-                        else if (int.Parse(ddl_type.SelectedValue) == 6)
+                        else if (int.Parse(ddl_type.SelectedValue) == 4)
                         {
                             Session["userid"] = myLogin.myDatabase.GetAuthorizedID(myLogin.valideUsername, myLogin.validePasswoerd);
                             Response.Redirect("~/parentpanel.aspx");

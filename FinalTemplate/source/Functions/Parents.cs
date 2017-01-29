@@ -38,7 +38,7 @@ namespace FinalTemplate.source.Functions
         {
             mydatabse.CreateConnection();
             mydatabse.InitializeSQLCommandObject(mydatabse.GetCurrentConnection, "select std_id from [tbl_P&S_relation] where Parent_ID ='" + Parents.parentschild + "';");
-           
+
             try
             {
                 mydatabse.OpenConnection();
@@ -69,12 +69,13 @@ namespace FinalTemplate.source.Functions
             }
         }
 
-        public int parentchild(string _student) { 
-            
-            string[] column = {"Parent_ID","Std_id"};
+        public int parentchild(string _student)
+        {
+
+            string[] column = { "Parent_ID", "Std_id" };
             object[] val = { Parents.parentschild, _student };
             return mydatabse.InsertQuery("[tbl_P&S_relation]", column, val);
- 
+
         }
 
         public int parentc()
@@ -116,7 +117,7 @@ namespace FinalTemplate.source.Functions
                 }
                 else
                 {
-                    HttpContext.Current.Response.Write("No records in childern");
+                    HttpContext.Current.Response.Write("No records in childern Please click on add button");
                 }
             }
             catch (Exception ex)
@@ -192,7 +193,8 @@ namespace FinalTemplate.source.Functions
                         Schoolname = mydatabse.obj_reader["school_name"].ToString();
                         pemail = mydatabse.obj_reader["primary_email"].ToString();
                         photo = mydatabse.obj_reader["photo"].ToString();
-                       
+                        school_id = mydatabse.obj_reader["school_id"].ToString();
+
 
 
 
@@ -200,7 +202,7 @@ namespace FinalTemplate.source.Functions
                 }
                 else
                 {
-                    HttpContext.Current.Response.Write("No record in child_detail");
+                    HttpContext.Current.Response.Write("Please Click on add button to add your Child");
                 }
             }
             catch (Exception ex)

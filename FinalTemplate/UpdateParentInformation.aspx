@@ -18,6 +18,7 @@
             validation();
 
             $('li a[title="Child Profile"]').attr("href","parentpanel.aspx");
+            $('[title="Update Profile"]').css('display','none')
            
         });
 

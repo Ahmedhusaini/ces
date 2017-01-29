@@ -171,13 +171,13 @@
             <div class="hyperlink">
                 <div class="pull-left hyper-left">
                     <ul class="list-inline">
-                        <li><a href="Admin.aspx">HOME</a></li>
+                        <li><a href="Admin.aspx">Home</a></li>
                         <li><a href="ViewAllTachers.aspx">View All Teachers</a></li>
                         <li><a href="ViewAllStudents.aspx">View All Students</a></li>
                         <li><a href="ViewNews.aspx">View NEWS</a></li>
                         <li><a href="AllEvents.aspx">View Events</a></li>
-                        <li><a href="About_Us.aspx">ABOUT</a></li>
-                        <li><a href="Contact_Us.aspx">CONTACT</a></li>
+                        <li><a href="About_Us.aspx">About</a></li>
+                        <li><a href="Contact_Us.aspx">Contact</a></li>
                     </ul>
                 </div>
                 <div class="pull-right hyper-right"> All Rights are reserved @ Centralized Education System - CES</div>
