@@ -28,7 +28,8 @@ namespace FinalTemplate.source.WebServices
             public string EventCreatorID { get; set; }
             public string start_time { get; set; }
             public string end_time { get; set; }
-            public string date { get; set; }
+            public string StartDate { get; set; }
+            public string EndDate { get; set; }
 
         }
         private Database.Database eventDatabase = new Database.Database("ces");
@@ -57,8 +58,8 @@ namespace FinalTemplate.source.WebServices
                         eventDetails.Picture = eventDatabase.obj_reader["event_picture"].ToString();
                         eventDetails.start_time = eventDatabase.obj_reader["starting_time"].ToString();
                         eventDetails.end_time = eventDatabase.obj_reader["ending_time"].ToString();
-                        eventDetails.date = eventDatabase.obj_reader["start_date"].ToString();
-
+                        eventDetails.StartDate = eventDatabase.obj_reader["start_date"].ToString();
+                        eventDetails.EndDate = eventDatabase.obj_reader["end_date"].ToString();
                         listeventDetails.Add(eventDetails);
                     }
                 }

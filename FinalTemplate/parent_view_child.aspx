@@ -46,7 +46,7 @@
                     var array = $.parseJSON(obj);
                     $.each(array, function (i, v) {
                         var parentDiv = $('div.customs-row');
-                        parentDiv.append('<div class="col-md-4 col-sm-6"> <div class="edugate-layout-3"><div class="edugate-layout-3-wrapper">  <a class="edugate-image"> <img src="images/Events/' + v.Picture + '" alt="" class="img-responsive" /></a> <div class="edugate-content">  <a href="#" class="title">Event ID:' + v.EventID + '</a>  <ul> <li>Event Title:' + v.Title + '</li><li>Description:' + v.Description + '</li><li>Place: ' + v.Place + '</li><li>Event Creator ID: ' + v.EventCreatorID + '</li><li>Starting Time: ' + v.start_time + '</li><li>Ending Time: ' + v.end_time + '</li><li>Date: ' + v.data + '</li></div></div></div></div>');
+                        parentDiv.append('<div class="col-md-4 col-sm-6"> <div class="edugate-layout-3"><div class="edugate-layout-3-wrapper">  <a class="edugate-image"> <img src="images/Events/' + v.Picture + '" alt="" class="img-responsive" /></a> <div class="edugate-content">  <a href="#" class="title">Event ID:' + v.EventID + '</a>  <ul> <li>Event Title:' + v.Title + '</li><li>Description:' + v.Description + '</li><li>Place: ' + v.Place + '</li><li>Event Creator ID: ' + v.EventCreatorID + '</li><li>Starting Time: ' + v.start_time + '</li><li>Ending Time: ' + v.end_time + '</li><li>Start Date: ' + v.StartDate + '</li><li>End Date: ' + v.EndDate + '</li></div></div></div></div>');
                         samesizeimage();
                     });
                     
