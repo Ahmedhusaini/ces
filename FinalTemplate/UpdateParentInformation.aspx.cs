@@ -1,5 +1,4 @@
 ﻿using FinalTemplate.source.Functions;
-using FinalTemplate.source.Validation;
 using System;
 
 namespace FinalTemplate
@@ -12,10 +11,10 @@ namespace FinalTemplate
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            
-                
-           
-          
+
+
+
+
 
             if (!IsPostBack)
             {
@@ -32,11 +31,11 @@ namespace FinalTemplate
 
                     Response.Write("<script>alert('No record found . Try again with valid ID.');</script>");
                 }
-            
+
             }
 
-           
-            
+
+
         }
 
         private void viewdetail()
@@ -61,7 +60,7 @@ namespace FinalTemplate
                 rbtnFemale.Checked = true;
 
             txtuser.Text = objJParents.ParentID;
-           
+
             txtDOB.Text = objJParents.DOBID.ToString();
             txtReligion.Text = objJParents.Religion;
             txtPhone.Text = objJParents.Phone;
@@ -71,16 +70,16 @@ namespace FinalTemplate
             txtdesig.Text = objJParents.Post;
             txtsal.Text = objJParents.Salary;
             ddlCity.ClearSelection();
-           // ddlCity.Items.FindByValue(objJParents.CityID.ToString()).Selected = true;
+            // ddlCity.Items.FindByValue(objJParents.CityID.ToString()).Selected = true;
             txtPostalCode.Text = objJParents.PostalCode.ToString();
             txtCNIC.Text = objJParents.CNIC;
             txtautho.Text = objJParents.AuthorizeID;
             txtUsername.Text = objJParents.username;
             txtPrimaryEmail.Text = objJParents.PrimaryEmail;
             txtSecondaryEmail.Text = objJParents.SecondaryEmail;
-            txtGenealID.Text =objJParents.GeneralID.ToString();
+            txtGenealID.Text = objJParents.GeneralID.ToString();
             txtLocationID.Text = objJParents.LocationID.ToString();
-        
+
 
 
 
@@ -92,14 +91,18 @@ namespace FinalTemplate
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            if (rbtnMale.Checked == true && rbtnFemale.Checked == false)
+                gender = "male";
+            else
+                gender = "female";
             string result = objJParents.UpdateParentInfo(Convert.ToInt32(txtGenealID.Text), txtofficeadd.Text,
                 txtUsername.Text, txtPrimaryEmail.Text,
                 txtSecondaryEmail.Text, txtautho.Text, txtofficeno.Text, txtdesig.Text, txtsal.Text, txtuser.Text,
                 Convert.ToInt32(txtDOB.Text), Convert.ToInt32(txtLocationID.Text),
-                txtFirstName.Text, txtLastName.Text, ddlNationality.SelectedItem.ToString(),txtCNIC.Text, gender, txtReligion.Text,
+                txtFirstName.Text, txtLastName.Text, ddlNationality.SelectedItem.ToString(), txtCNIC.Text, gender, txtReligion.Text,
                 txtPhone.Text, txtAddress.Text, txtDateofB.Text, Convert.ToInt32(ddlCity.SelectedValue),
                 Convert.ToInt32(txtPostalCode.Text));
-            if (result=="true")
+            if (result == "true")
             {
                 Response.Write("<script> alert('Successfull');</script>");
             }

@@ -348,6 +348,82 @@ namespace FinalTemplate.source.Functions
             }
             return teacher_dob;
         }
+        public static string teacher_Nationality
+
+        { get { return Getnationality(); } }
+
+
+        private static string Getnationality()
+        {
+            string teacher_Nationality = string.Empty;
+
+            mydatabase.CreateConnection();
+            mydatabase.InitializeSQLCommandObject(mydatabase.GetCurrentConnection, "select Nationality from View_TeacherProfile where authorized_id='" + CurrentUser.AuthorizedID + "'");
+            try
+            {
+                mydatabase.OpenConnection();
+                mydatabase.obj_reader = mydatabase.obj_sqlcommand.ExecuteReader();
+                if (mydatabase.obj_reader.HasRows)
+                {
+                    while (mydatabase.obj_reader.Read())
+                    {
+                        teacher_Nationality = mydatabase.obj_reader["Nationality"].ToString();
+
+                    }
+                }
+                else
+                { HttpContext.Current.Response.Write("No id is Found"); }
+            }
+            catch (Exception ex)
+            {
+                HttpContext.Current.Response.Write(ex.ToString());
+            }
+            finally
+            {
+                mydatabase.CloseConnection();
+                mydatabase.obj_reader.Dispose();
+                mydatabase.obj_reader.Close();
+            }
+            return teacher_Nationality;
+        }
+        public static string teacher_postalcode
+
+        { get { return Getpostalcode(); } }
+
+
+        private static string Getpostalcode()
+        {
+            string teacher_postalcode = string.Empty;
+
+            mydatabase.CreateConnection();
+            mydatabase.InitializeSQLCommandObject(mydatabase.GetCurrentConnection, "select postal_code from View_TeacherProfile where authorized_id='" + CurrentUser.AuthorizedID + "'");
+            try
+            {
+                mydatabase.OpenConnection();
+                mydatabase.obj_reader = mydatabase.obj_sqlcommand.ExecuteReader();
+                if (mydatabase.obj_reader.HasRows)
+                {
+                    while (mydatabase.obj_reader.Read())
+                    {
+                        teacher_postalcode = mydatabase.obj_reader["postal_code"].ToString();
+
+                    }
+                }
+                else
+                { HttpContext.Current.Response.Write("No id is Found"); }
+            }
+            catch (Exception ex)
+            {
+                HttpContext.Current.Response.Write(ex.ToString());
+            }
+            finally
+            {
+                mydatabase.CloseConnection();
+                mydatabase.obj_reader.Dispose();
+                mydatabase.obj_reader.Close();
+            }
+            return teacher_postalcode;
+        }
      
    }
 }

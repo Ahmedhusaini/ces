@@ -117,7 +117,7 @@ namespace FinalTemplate.source.Functions
                 }
                 else
                 {
-                    HttpContext.Current.Response.Write("No records in childern");
+                    HttpContext.Current.Response.Write("No records in childern Please click on add button");
                 }
             }
             catch (Exception ex)
