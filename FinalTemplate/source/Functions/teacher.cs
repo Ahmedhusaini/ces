@@ -203,10 +203,10 @@ namespace FinalTemplate.source.Functions
 
         private static string Getstudentid()
         {
-            string std_id = string.Empty;
+            string student_id = string.Empty;
 
             mydatabase.CreateConnection();
-            mydatabase.InitializeSQLCommandObject(mydatabase.GetCurrentConnection, "");
+            mydatabase.InitializeSQLCommandObject(mydatabase.GetCurrentConnection, " select std_id from tbl_Student_Reg as student inner join tbl_school as school on student.school_id=school.school_id inner join tbl_teacher as teacher on teacher.school_id=school.school_id  where teacher.authorized_id='" + CurrentUser.AuthorizedID + "'");
             try
             {
                 mydatabase.OpenConnection();
@@ -215,7 +215,7 @@ namespace FinalTemplate.source.Functions
                 {
                     while (mydatabase.obj_reader.Read())
                     {
-                       std_id = mydatabase.obj_reader["std_id"].ToString();
+                       student_id = mydatabase.obj_reader["std_id"].ToString();
 
                     }
                 }
@@ -232,7 +232,7 @@ namespace FinalTemplate.source.Functions
                 mydatabase.obj_reader.Dispose();
                 mydatabase.obj_reader.Close();
             }
-            return std_id;
+            return student_id;
         }
         public static string teacher_cnic
 
