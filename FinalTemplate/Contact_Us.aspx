@@ -60,10 +60,11 @@
                 <form class="bg-w-form contact-form">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="control-label form-label">NAME <span class="highlight">*</span><asp:TextBox ID="TextBox1" CssClass="form-control form-input" runat="server" Width="455px" Height="40px"></asp:TextBox></label><!--label.control-label.form-label.warning-label(for="") Warning for the above !--></div>
+                            <div class="form-group" style="visibility:hidden">
+                                <label class="control-label form-label">NAME <span class="highlight">*</span>
+                                    <asp:TextBox ID="TextBox1" CssClass="form-control form-input" runat="server" Width="455px" Height="40px"></asp:TextBox></label><!--label.control-label.form-label.warning-label(for="") Warning for the above !--></div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6" style="visibility:hidden">
                             <div class="form-group">
                                 <label class="control-label form-label">EMAIL <span class="highlight">*</span>
                                     <asp:TextBox ID="TextBox2" CssClass="form-control form-input" runat="server" Width="455px" Height="40px" ></asp:TextBox>
@@ -86,7 +87,7 @@
                         <div class="col-md-12">
                             <div class="contact-question form-group">
                                 <label class="control-label form-label">Your Query ? <span class="highlight">*</span></label><br />
-                                <asp:TextBox ID="TextBox3" CssClass="form-control form-input" runat="server" Width="586px" Height="119px" runat="server" TextMode="MultiLine"></asp:TextBox>
+                                <asp:TextBox ID="TextBox3" Rows="3" placeholder="Email: &#10; Name:" CssClass="form-control form-input" runat="server" Width="586px" Height="119px" runat="server" TextMode="MultiLine"></asp:TextBox>
                             </div>
                         </div>
                     </div>
