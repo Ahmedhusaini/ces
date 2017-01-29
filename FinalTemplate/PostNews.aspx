@@ -98,7 +98,7 @@
                         <div class="news-detail-wrapper">
                             <div class="row">
                                 <div class="col-md-12 col-sm-12">
-                                    <div class="news-detail"><img src="assets/images/cesThemeImages/hps.jpg" alt="" class="news-image"/>
+                                    <div class="news-detail"><img src="assets/images/cesThemeImages/hps.jpg" height="300px" alt="" class="news-image"/>
 
                                         <div class="comment-write">
                                             <div class="comment-write-title underline">Category of news type will set its priority in news feed on CES Portal.</div>

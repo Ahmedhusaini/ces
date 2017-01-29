@@ -469,6 +469,12 @@ namespace FinalTemplate.source.Database
                         lastValue++;
                     }
                 }
+                else
+                {
+                    finalResult=new string[1,1];
+                    finalResult[0, 0] = "null";
+                }
+                    
 
 
             }

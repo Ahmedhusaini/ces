@@ -43,22 +43,21 @@ namespace FinalTemplate
         }
         public void filldata2()
         {
-            DataTable dt = new DataTable();
-            int lec_id = Convert.ToInt32(db.GetLastValueByColumnName("lec_id", "lecture_attandance_test"));
-            using (SqlConnection con = new SqlConnection(a))
             {
-                SqlCommand cmd = new SqlCommand("sp_lecture_test", con);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@lec_id", SqlDbType.Int).Value = lec_id;
-                con.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                dt.Load(reader);
-            }
-            if (dt.Rows.Count > 0)
-            {
-                GridView4.DataSource = dt;
-                GridView4.DataBind();
+                DataTable dt1 = new DataTable();
+                using (SqlConnection co = new SqlConnection(@"Data Source=ABBASI\JAHANGEER;Initial Catalog=ces;Integrated Security=True"))
+                {
+                    SqlCommand cmd1 = new SqlCommand(@"select lec_id,fullpath,class,section from view_lecture_attandance_test where school_id='" + Label3.Text + "' and class='" + Label1.Text + "' and section='" + Label2.Text + "'", co);
+                    //cmd1.CommandType = CommandType.StoredProcedure;
+                    co.Open();
+                    SqlDataReader reader1 = cmd1.ExecuteReader();
+                    dt1.Load(reader1);
+                }
+                if (dt1.Rows.Count > 0)
+                {
+                    GridView4.DataSource = dt1;
+                    GridView4.DataBind();
+                }
             }
         }
 

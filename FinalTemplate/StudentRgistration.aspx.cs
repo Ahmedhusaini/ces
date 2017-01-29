@@ -26,7 +26,7 @@ namespace FinalTemplate
     public partial class StudentRgistration : System.Web.UI.Page
     {
         private Database myDatabase = new Database("ces");
-        SqlConnection con = new SqlConnection(@"Data Source=SHAHWAIZ\SQLEXPRESS;Initial Catalog=ces;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=ABBASI\JAHANGEER;Initial Catalog=ces;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
         //    if (Session["userid"] != null)
@@ -67,7 +67,7 @@ namespace FinalTemplate
             string result = string.Empty;
             try
             {
-                if (JFunctions.UploadSingleFile(FileUpload1, "//images//" + FileUpload1.FileName) == "true")
+                if (JFunctions.UploadSingleFile(FileUpload1, "images/student/" + FileUpload1.FileName) == "true")
                 {
                     result = classStudent.studentregister(name.Text, lname.Text, contact1.Text, guardian.Text,
                         gurcontact.Text, radiobut.SelectedValue,

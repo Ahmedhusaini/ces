@@ -15,6 +15,7 @@ namespace FinalTemplate
 
             if (!string.IsNullOrWhiteSpace(Request.QueryString["NC"]))
                 txtNewsID.Text = Request.QueryString["NC"];
+            imgNews.ImageUrl = objnews.Image;
         }
         protected void GetNewsDetailsOnClick(object sender, EventArgs e)
         {

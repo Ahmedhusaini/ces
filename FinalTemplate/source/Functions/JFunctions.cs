@@ -38,7 +38,7 @@ namespace FinalTemplate.source.Functions
         //File size limit in bytes
         public static string UploadSingleFile(FileUpload objFileUpload, string filePath)
         {
-            string fullPath = "/" + filePath;
+            string fullPath = "" + filePath;
             string savedPath = string.Empty, returnvalue = string.Empty;
             returnvalue = "null";
             if (objFileUpload.HasFile)

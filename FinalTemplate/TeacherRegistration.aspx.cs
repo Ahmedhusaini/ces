@@ -3,6 +3,7 @@ using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using FinalTemplate.source.Functions;
 
 namespace FinalTemplate
 {
@@ -77,6 +78,11 @@ namespace FinalTemplate
                 try
                 {
                     cmd.ExecuteNonQuery();
+                    if (JFunctions.UploadSingleFile(fileupload, "images/teachers/" + fileupload.FileName) == "true")
+                        Response.Write("<script>alert('Image has been uploaded to server.');</script>");
+                    else
+                        Response.Write("<script>alert('Image not uploaded but registration is complete. You can update you image after login.');</script>");
+                    
                     Response.Redirect("logintype.aspx");
                 }
                 catch (Exception ex)
