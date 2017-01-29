@@ -48,7 +48,7 @@ namespace FinalTemplate
                 student.GetstudentlDetails(Session["userid"].ToString());
                 namelab.Text = CurrentUser.AuthorizedID.ToString();
                 lab3.Text = CurrentUser.GeneralID.ToString();
-                shah.ImageUrl ="images/student/"+ CurrentUser.Photo;
+                shah.ImageUrl = "~/images/" + CurrentUser.Photo;  //"images/student/"+
                 Label3.Text = student.studentid;
                 student.Complete_Detail_Of_Student(Session["userid"].ToString());
                 Label4.Text = student.s_class;
@@ -73,7 +73,7 @@ namespace FinalTemplate
                 {
                     string filename = FileUpload1.FileName;
                     FileUpload1.PostedFile.SaveAs(Server.MapPath(".") + "//images//" + filename);
-                    string filepath = Server.MapPath(@"~\images\" + filename.ToString());
+                    string filepath = Server.MapPath("~/images/" + filename.ToString());
                     string fullfilepath = filepath + filename;
                     string extension = Path.GetExtension(filename);
                     Label1.Text = filepath;
@@ -92,11 +92,10 @@ namespace FinalTemplate
                             Label1.Text = "Filesize Exceed 1MB.";
                         }
                     }
-
                     con.Open();
-                    string path = @"~\images\" + filename.ToString();
+                    string path = filename.ToString();
                     SqlCommand cmd = new SqlCommand("update tbl_general set photo='" + path + "' where General_Id='" + lab3.Text + "'", con);
-                    shah.ImageUrl = @"~\images\" + FileUpload1.FileName;
+                    shah.ImageUrl = "~/images/" + FileUpload1.FileName;
                     cmd.ExecuteNonQuery();
                     con.Close();
                     Label1.Text = "upload";

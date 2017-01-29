@@ -67,7 +67,7 @@ namespace FinalTemplate
             string result = string.Empty;
             try
             {
-                if (JFunctions.UploadSingleFile(FileUpload1, "images/student/" + FileUpload1.FileName) == "true")
+                if (JFunctions.UploadSingleFile(FileUpload1, "//images//" + FileUpload1.FileName) == "true")
                 {
                     result = classStudent.studentregister(name.Text, lname.Text, contact1.Text, guardian.Text,
                         gurcontact.Text, radiobut.SelectedValue,
