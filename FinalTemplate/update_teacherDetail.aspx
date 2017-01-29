@@ -42,10 +42,6 @@
                         required: true,
                         lettersonly: true                        
                     },
-                    <%=txtDateOfBirth.UniqueID%>:{
-                        required: true                       
-                    },
-
                     <%=txtReligion.UniqueID%>:{
                         required: true,
                         lettersonly: true                        
@@ -75,6 +71,10 @@
                         required: true,
                         lettersonly: true                        
                     },
+                     <%=passwordtxt.UniqueID%>:{
+                         required: true,
+                         lettersonly: true                        
+                     },
                     <%=pemailtxt.UniqueID%>:{
                         required: true,
                         email : true                       
@@ -91,9 +91,6 @@
                     <%=txtLastName.UniqueID%>: {
                         required: "Please enter Last name",
                     },
-                    <%=txtDateOfBirth.UniqueID%>: {
-                        required: "Please enter Birth date like  mm/dd/yyyy",
-                    },
                     <%=txtReligion.UniqueID%>: {
                         required: "Please enter Religion",
                     },
@@ -109,6 +106,9 @@
                     <%=usernametxt.UniqueID%>: {
                         required: "Please enter username",
                     },
+                     <%=passwordtxt.UniqueID%>: {
+                         required: "Please enter password",
+                     },
                     <%=semailtxt.UniqueID%>: {
                         required: "please enter a valid Email Address",
                     },
@@ -214,12 +214,6 @@
                                         <td class="col-3"></td>
                                     </tr>
                                     <tr class="table-row" style="background-color: transparent;">
-                                        <td class="col-3"><span style="color: black; font-weight: bolder">Date Of Birth</span></td>
-                                        <td class="col-2">
-                                            <asp:TextBox runat="server" ID="txtDateOfBirth" Width="200px"></asp:TextBox></td>
-                                        <td class="col-3"></td>
-                                    </tr>
-                                    <tr class="table-row" style="background-color: transparent;">
                                         <td class="col-3"><span style="color: black; font-weight: bolder">Nationality</span></td>
                                         <td class="col-2">
                                             <asp:DropDownList Enabled="false" Width="200px" BackColor="White" CssClass="sbHolder" runat="server" ID="ddlNationality">
@@ -227,14 +221,6 @@
                                             </asp:DropDownList></td>
                                         <td class="col-3"></td>
                                     </tr>
-                                    <tr class="table-row" style="background-color: transparent;">
-                                        <td class="col-3"><span style="color: black; font-weight: bolder">Gender</span></td>
-                                        <td class="col-2">
-                                            <asp:RadioButton runat="server" ID="rbtnMale" Text="Male" GroupName="gender" />&nbsp;&nbsp;
-                                        <asp:RadioButton runat="server" ID="rbtnFemale" Text="Female" GroupName="gender" /></td>
-                                        <td class="col-3"></td>
-                                    </tr>
-
                                     <tr class="table-row" style="background-color: transparent;">
                                         <td class="col-3"><span style="color: black; font-weight: bolder">Religion</span></td>
                                         <td class="col-2">
@@ -271,9 +257,10 @@
                                     <tr class="table-row" style="background-color: transparent;">
                                         <td class="col-3" style="color: black; font-weight: bolder">City</td>
                                         <td class="col-2">
-                                           <asp:DropDownList runat="server" CssClass="sbHolder" BackColor="White" Width="200px" ID="ddlCity">
+                                           <asp:DropDownList runat="server" CssClass="sbHolder" BackColor="White" Width="200px" ID="ddlCity" DataSourceID="SqlDataSource1" DataTextField="city" DataValueField="city_id">
                                                 <asp:ListItem>Karachi</asp:ListItem>
                                             </asp:DropDownList>
+                                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [city_id], [city] FROM [tbl_city]"></asp:SqlDataSource>
                                         </td>
                                         <td class="col-3"></td>
                                     </tr>
@@ -289,6 +276,13 @@
                                         <td class="col-3" style="color: black; font-weight: bolder">Username</td>
                                         <td class="col-2">
                                             <asp:TextBox ID="usernametxt" Width="200px" runat="server"></asp:TextBox>
+                                        </td>
+                                        <td class="col-3"></td>
+                                    </tr>
+                                    <tr class="table-row" style="background-color: transparent;">
+                                        <td class="col-3" style="color: black; font-weight: bolder">Password</td>
+                                        <td class="col-2">
+                                            <asp:TextBox ID="passwordtxt" Width="200px" runat="server"></asp:TextBox>
                                         </td>
                                         <td class="col-3"></td>
                                     </tr>
