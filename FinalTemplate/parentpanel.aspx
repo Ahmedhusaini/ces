@@ -361,50 +361,8 @@
                         
                     </div>
                 </div>     
-    <div class="section teacher-course section-padding">
-                </div>
-           <div class="section teacher-course section-padding">
-                    <div class="container teacher-course-wrapper">
-                        <div class="course-table">
-                            <div class="outer-container">
-                                <div class="inner-container">
-                                    <div class="table-body">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-     <!-- SLIDER TALK ABOUT US-->                                        
-                <%--<div class="section background-opacity slider-talk-about-us">
-                    <div class="group-btn-slider"><a href="#people-talk" role="button" data-slide="prev">
-                    </a><a href="#people-talk" role="button" data-slide="next">
-                        <div class="btn-next carousel-control right"><i class="fa fa-angle-right"></i></div>
-                    </a></div>
-                </div>--%>
-                    <!-- SLIDER LOGO-->
-                <%--<div class="section slider-logo">
-                    <div class="container">
-                        <div class="slider-logo-wrapper">
-                            <div class="slider-logo-content">
-                                <div class="carousel-logos owl-carousel">
-                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-1.png" alt="" class="img-responsive"/></a></div>
-                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-2.png" alt="" class="img-responsive"/></a></div>
-                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-3.png" alt="" class="img-responsive"/></a></div>
-                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-4.png" alt="" class="img-responsive"/></a></div>
-                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-5.png" alt="" class="img-responsive"/></a></div>
-                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-6.png" alt="" class="img-responsive"/></a></div>
-                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-1.png" alt="" class="img-responsive"/></a></div>
-                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-2.png" alt="" class="img-responsive"/></a></div>
-                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-3.png" alt="" class="img-responsive"/></a></div>
-                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-4.png" alt="" class="img-responsive"/></a></div>
-                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-5.png" alt="" class="img-responsive"/></a></div>
-                                    <div class="logo-iteam item"><a href="#"><img src="assets/images/logo/logo-carousel-6.png" alt="" class="img-responsive"/></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>--%>
+    
+         
  
          
               </div>
