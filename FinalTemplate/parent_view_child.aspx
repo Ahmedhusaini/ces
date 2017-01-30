@@ -335,9 +335,8 @@ join tbl_remarks on tbl_student_attendance.remark_id=tbl_remarks.remark_id where
             <h2>Events &nbsp;&nbsp;&nbsp;&nbsp; </h2>
 
         </div>
-        <input id="" type="hidden" /> 
         <input id="schoolIDvalue" type="hidden" value="<%=lblschool_id.Text%>" />
-        <div class="section section-padding list-categories">
+      <%--  <div class="section section-padding list-categories">--%>
             <div class="container">
                 <div class="list-categories-wrapper">
                     <div class="top-content">
@@ -372,7 +371,7 @@ join tbl_remarks on tbl_student_attendance.remark_id=tbl_remarks.remark_id where
                 </div>
             </div>
         </div>
-    </div>
+    
 
 
 
