@@ -7,6 +7,7 @@
              buttonFix();
              profileimageresolution();
              GetAllTeachers();
+             $("#but").css('width', '222px');
          });
 
          function GetAllTeachers() {
@@ -78,8 +79,15 @@
                                         </table>
                                     </div>
                                     <div class="teacherofthemonth">
-                                    <asp:TextBox ID="txt_teacherid" runat="server" placeholder="Enter Teacher ID for Teacher of the month" Width="515px"></asp:TextBox><asp:Button ID="Button1" runat="server" Text="Make teacher of the month" OnClick="Button1_Click" />
-                                        </div>
+                                    <asp:TextBox ID="txt_teacherid" runat="server" placeholder="Enter Teacher ID for Teacher of the month" Width="515px"></asp:TextBox>
+                                        
+                                          
+                            <button type="submit"  id="but"   class="btn btn-register btn-green">
+                               <span>
+                                        <asp:Button ID="Button1" runat="server" Text="Make teacher of the month" Style="background-color: transparent" BorderStyle="None" OnClick="Button1_Click" /></span>
+                            </button>
+                                        
+                                        
                                 </div>
                             </div>
                         </div>

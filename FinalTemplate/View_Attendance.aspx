@@ -42,7 +42,8 @@
             <asp:BoundField DataField="std_attend_id" HeaderText="std_attend_id" SortExpression="std_attend_id" ReadOnly="True" />
             <asp:BoundField DataField="username" HeaderText="username" SortExpression="username" />
             <asp:BoundField DataField="remarks" HeaderText="remarks" SortExpression="remarks" />
-            <asp:BoundField DataField="date" HeaderText="Date & Time" SortExpression="date" />
+            <asp:BoundField DataField="date" HeaderText="date" SortExpression="date" />
+            <asp:BoundField DataField="time" HeaderText="time" SortExpression="time" />
         </Columns>
         <FooterStyle BackColor="White" ForeColor="#333333" />
         <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
@@ -55,7 +56,7 @@
         <SortedDescendingHeaderStyle BackColor="#275353" />
     </asp:GridView>                     
                    
-    <asp:SqlDataSource ID="student_attendance" runat="server" ConnectionString="<%$ ConnectionStrings:ces %>" SelectCommand="SELECT [std_attend_id], [username], [remarks],[date] FROM [Studentattendance] WHERE (([class_id] = @class_id) AND ([section_id] = @section_id))">
+    <asp:SqlDataSource ID="student_attendance" runat="server" ConnectionString="<%$ ConnectionStrings:cesConnectionString %>" SelectCommand="SELECT [std_attend_id], [username], [remarks], [date], [time] FROM [Studentattendance] WHERE (([class_id] = @class_id) AND ([section_id] = @section_id))">
         <SelectParameters>
             <asp:ControlParameter ControlID="DropDownList1" Name="class_id" PropertyName="SelectedValue" Type="Int32" />
             <asp:ControlParameter ControlID="DropDownList2" Name="section_id" PropertyName="SelectedValue" Type="Int32" />
