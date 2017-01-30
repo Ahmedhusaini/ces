@@ -110,28 +110,17 @@ namespace FinalTemplate
                 if (FileUpload1.HasFile)
                 {
                     string filename = FileUpload1.FileName;
-                    FileUpload1.PostedFile.SaveAs(Server.MapPath(".") + "//images//" + filename);
-                    string filepath = Server.MapPath(@"~\images\" + filename.ToString());
+                    FileUpload1.PostedFile.SaveAs(Server.MapPath("images/student/" + filename));
+                    string filepath = Server.MapPath(@"images/student/" + filename);
                     string fullfilepath = filepath + filename;
                     string extension = Path.GetExtension(filename);
-                    //Label1.Text = filepath;
-                    int filesize = FileUpload1.PostedFile.ContentLength / 1024;
-                    Convert.ToString(filesize);
-                    int i = 0;
                     if (extension == ".jpg" || extension == ".png")
                     {
-                        if (filesize > 10000)
-                        {
                             FileUpload1.SaveAs(fullfilepath);
-                            i = 1;
-                        }
-                        else
-                        {
-                            Label1.Text = "Filesize Exceed 1MB.";
-                        }
+                         
                     }
                     con.Open();
-                    string path = @"~\images\" + filename.ToString();
+                    string path = @"images/student/" + filename.ToString();
                     SqlCommand cmd = new SqlCommand("insert into tbl_general values photo='" + path + "'", con);
                     //shah.ImageUrl = @"~\images\" + FileUpload1.FileName;
                     cmd.ExecuteNonQuery();

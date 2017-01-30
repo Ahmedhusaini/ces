@@ -10,7 +10,7 @@ namespace FinalTemplate
     public partial class parentpanel1 : System.Web.UI.Page
     {
         private Database myDatabase = new Database("ces");
-        SqlConnection con = new SqlConnection(@"Data Source=SHAHERYAR\SQLEXPRESS;Initial Catalog=ces;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=ABBASI\JAHANGEER;Initial Catalog=ces;Integrated Security=True");
 
         Parents objp = new Parents();
         studentid objstd = new studentid();
@@ -57,7 +57,7 @@ namespace FinalTemplate
                 address.Text = CurrentUser.Address;
                 pemail.Text = CurrentUser.PrimaryEmailAddress;
                 atype.Text = CurrentUser.AuthorizedID;
-                Image1.ImageUrl = "~/images/" + CurrentUser.Photo;
+                Image1.ImageUrl = "images/Parents/" + CurrentUser.Photo;
                 Label3.Text = CurrentUser.GeneralID.ToString();
 
 
@@ -110,30 +110,21 @@ namespace FinalTemplate
                 if (FileUpload1.HasFile)
                 {
                     string filename = FileUpload1.FileName;
-                    FileUpload1.PostedFile.SaveAs(Server.MapPath(".") + "//images//" + filename);
-                    string filepath = Server.MapPath("~/images/" + filename.ToString());
+                    FileUpload1.PostedFile.SaveAs(Server.MapPath("images/Parents/" + filename));
+                    string filepath = Server.MapPath("images/Parents/" + filename);
                     string fullfilepath = filepath + filename;
                     string extension = Path.GetExtension(filename);
                     Label1.Text = filepath;
-                    int filesize = FileUpload1.PostedFile.ContentLength / 2048;
-                    Convert.ToString(filesize);
                     int i = 0;
                     if (extension == ".jpg" || extension == ".png")
                     {
-                        if (filesize > 10000)
-                        {
                             FileUpload1.SaveAs(fullfilepath);
-                            i = 1;
-                        }
-                        else
-                        {
-                            Label1.Text = "Filesize Exceed 1MB.";
-                        }
+                         
                     }
                     con.Open();
                     string path = filename.ToString();
                     SqlCommand cmd = new SqlCommand("update tbl_general set photo='" + path + "' where General_Id='" + Label3.Text + "'", con);
-                    Image1.ImageUrl = "~/images/" + FileUpload1.FileName;
+                    Image1.ImageUrl = "images/Parents/" + FileUpload1.FileName;
                     cmd.ExecuteNonQuery();
                     con.Close();
                     Label1.Text = "upload";
