@@ -104,7 +104,7 @@ namespace FinalTemplate.source
             accountpinParameter.Value = accountpin;
             primaryemailParameter.Value = primaryemail;
             secondaryemailParameter.Value = secondaryemail;
-            usertypeidParameter.Value = 4;
+            usertypeidParameter.Value = 3;
             logincountParameter.Value = 0;
             lastlogindateParameter.Value = Convert.ToDateTime(Jfunctionstudents.GetSystemDate());
             authorizedidoutParameter.Direction = ParameterDirection.Output;

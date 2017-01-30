@@ -50,7 +50,7 @@
                removeBackToTop();
                sameheight('#<%=txt_password.ClientID%>');
                sameheight('#<%=txt_username.ClientID%>');
-               sameheight('#<%=ddl_type.ClientID%>');
+
            });
 
            function sameheight(id) {
@@ -91,7 +91,7 @@
                         <div class="register-form bg-w-form rlp-form">  
                                  
                             
-                            <div style="padding-left:95px">
+                           <%-- <div style="padding-left:95px">
                                  
 
                                     <label for="regname" class="control-label form-label">
@@ -101,7 +101,7 @@
                                     <!--p.help-block Warning !-->
                                     <br />
                               <asp:DropDownList ID="ddl_type" CssClass="form-control form-input" Width="331px"  placeholder="----Select----" runat="server" ></asp:DropDownList>
-                                </div>
+                                </div>--%>
 
                                 <div style="padding-left:95px">
 

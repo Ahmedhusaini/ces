@@ -12,7 +12,6 @@ namespace FinalTemplate
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            //ConvertDataTabletoString();
             MapMaper();
         }
 
@@ -41,31 +40,6 @@ namespace FinalTemplate
             return serializer.Serialize(rows);
         }
 
-        public string ConvertDataTabletoString()
-        {
-            DataTable dt = new DataTable();
-            using (SqlConnection con = new SqlConnection(@"Data Source=ABBASI\JAHANGEER;Initial Catalog=ces;Integrated Security=True"))
-            {
-                using (SqlCommand cmd = new SqlCommand("select title=ml_id,lng=longitude,lat=latitude,school_name from View_locationmap", con))
-                {
-                    con.Open();
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(dt);
-                    System.Web.Script.Serialization.JavaScriptSerializer serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
-                    List<Dictionary<string, object>> rows = new List<Dictionary<string, object>>();
-                    Dictionary<string, object> row;
-                    foreach (DataRow dr in dt.Rows)
-                    {
-                        row = new Dictionary<string, object>();
-                        foreach (DataColumn col in dt.Columns)
-                        {
-                            row.Add(col.ColumnName, dr[col]);
-                        }
-                        rows.Add(row);
-                    }
-                    return serializer.Serialize(rows);
-                }
-            }
-        }
+        
     }
 }
