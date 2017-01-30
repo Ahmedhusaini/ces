@@ -28,12 +28,7 @@
             
 
         });
-        $(document).ready(function(){
-        
-        
-            validation();
-           
-        });
+      
 
         function SelectedDivAnimation(aspControl) {
             $(aspControl).on('focus', function () {

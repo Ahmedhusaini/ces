@@ -11,10 +11,10 @@ body { height: 100%; margin: 0; padding: 0 }
 </script>
    <script type="text/javascript">
        window.onload = function () {
-           var markers = JSON.parse('<%=ConvertDataTabletoString() %>');
+           var markers = JSON.parse('<%=MapMaper() %>');
            var mapOptions = {
                center: new google.maps.LatLng(markers[0].lat, markers[0].lng),
-               zoom:4,
+               zoom:7,
                mapTypeId: google.maps.MapTypeId.ROADMAP
                //marker:true
     };

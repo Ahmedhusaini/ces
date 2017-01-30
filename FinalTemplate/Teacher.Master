@@ -97,8 +97,13 @@
                                 <li><a href="Teacher_Marksheet.aspx" class="link-page">Upload Marksheet</a></li>
                             </ul>
                         </li>
+                         <li>
                          <ul class="nav-links nav navbar-nav">
-                        <li><a href="update_teacherDetail.aspx" class="main-menu"><span>Update Profile</span></a>                    
+                        <li><a href="Teacher_Events.aspx" class="main-menu"><span>Events</span></a> </ul>                   
+                        </li>
+                        <li>
+                         <ul class="nav-links nav navbar-nav">
+                        <li><a href="update_teacherDetail.aspx" class="main-menu"><span>Update Profile</span></a> </ul>                   
                         </li>
                     
                        

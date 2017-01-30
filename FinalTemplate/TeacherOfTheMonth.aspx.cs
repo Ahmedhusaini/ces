@@ -21,8 +21,13 @@ namespace FinalTemplate
         private bool IsAllReadyThere()
         { 
             string[] col={"school_id"};
-            string returnedValue = mydb.SelectQuery("tbl_teacher_of_the_month", col).ToString();
-            if (returnedValue == "null")
+            string[] wherecol = {"teacher_id"};
+            string[] whereoperator = {"="};
+            string[] wherevalue = {txt_teacherid.Text};
+            string[] multiwhere = {""};
+            string[,] returnedValue = mydb.SelectQuery("tbl_teacher_of_the_month", col,wherecol,whereoperator,wherevalue,multiwhere);
+            
+            if (returnedValue[0,0] == "null")
                 return false;
             else
                 return true;

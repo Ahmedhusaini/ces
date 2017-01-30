@@ -58,7 +58,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Recaptcha">
-      <HintPath>G:\Recaptcha.dll</HintPath>
+      <HintPath>K:\Recaptcha.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -146,6 +146,7 @@
     <Content Include="Download_Homework.aspx" />
     <Content Include="edit_student_timetable.aspx" />
     <Content Include="images\Parents\aaaa.png" />
+    <Content Include="Logintype.aspx" />
     <Content Include="maplocation.aspx" />
     <Content Include="school_comparision.aspx" />
     <Content Include="Teacher_insert_class_timetable.aspx" />
@@ -170,7 +171,6 @@
     <Content Include="images\teachers\teachers%283%29.jpg" />
     <Content Include="images\teachers\teachers%284%29.jpg" />
     <Content Include="images\teachers\teachers%285%29.jpg" />
-    <Content Include="Logintype.aspx" />
     <Content Include="Mark_attendance.aspx" />
     <Content Include="Mark_sheet.aspx" />
     <Content Include="Our_Team.aspx" />
@@ -466,6 +466,13 @@
     <Compile Include="edit_student_timetable.aspx.designer.cs">
       <DependentUpon>edit_student_timetable.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Logintype.aspx.cs">
+      <DependentUpon>Logintype.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logintype.aspx.designer.cs">
+      <DependentUpon>Logintype.aspx</DependentUpon>
+    </Compile>
     <Compile Include="maplocation.aspx.cs">
       <DependentUpon>maplocation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -558,13 +565,6 @@
     </Compile>
     <Compile Include="source\Functions\Jfunctionparents.cs" />
     <Compile Include="source\Functions\Jfunctionstudents.cs" />
-    <Compile Include="Logintype.aspx.cs">
-      <DependentUpon>Logintype.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Logintype.aspx.designer.cs">
-      <DependentUpon>Logintype.aspx</DependentUpon>
-    </Compile>
     <Compile Include="parentpanel.aspx.cs">
       <DependentUpon>parentpanel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -26,7 +26,7 @@ namespace FinalTemplate
     public partial class StudentRgistration : System.Web.UI.Page
     {
         private Database myDatabase = new Database("ces");
-        SqlConnection con = new SqlConnection(@"Data Source=SHAHWAIZ\SQLEXPRESS;Initial Catalog=ces;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=ABBASI\JAHANGEER;Initial Catalog=ces;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
         //    if (Session["userid"] != null)
@@ -67,7 +67,7 @@ namespace FinalTemplate
             string result = string.Empty;
             try
             {
-                if (JFunctions.UploadSingleFile(FileUpload1, "//images//" + FileUpload1.FileName) == "true")
+                if (JFunctions.UploadSingleFile(FileUpload1, "images/student/" + FileUpload1.FileName) == "true")
                 {
                     result = classStudent.studentregister(name.Text, lname.Text, contact1.Text, guardian.Text,
                         gurcontact.Text, radiobut.SelectedValue,
@@ -110,28 +110,17 @@ namespace FinalTemplate
                 if (FileUpload1.HasFile)
                 {
                     string filename = FileUpload1.FileName;
-                    FileUpload1.PostedFile.SaveAs(Server.MapPath(".") + "//images//" + filename);
-                    string filepath = Server.MapPath(@"~\images\" + filename.ToString());
+                    FileUpload1.PostedFile.SaveAs(Server.MapPath("images/student/" + filename));
+                    string filepath = Server.MapPath(@"images/student/" + filename);
                     string fullfilepath = filepath + filename;
                     string extension = Path.GetExtension(filename);
-                    //Label1.Text = filepath;
-                    int filesize = FileUpload1.PostedFile.ContentLength / 1024;
-                    Convert.ToString(filesize);
-                    int i = 0;
                     if (extension == ".jpg" || extension == ".png")
                     {
-                        if (filesize > 10000)
-                        {
                             FileUpload1.SaveAs(fullfilepath);
-                            i = 1;
-                        }
-                        else
-                        {
-                            Label1.Text = "Filesize Exceed 1MB.";
-                        }
+                         
                     }
                     con.Open();
-                    string path = @"~\images\" + filename.ToString();
+                    string path = @"images/student/" + filename.ToString();
                     SqlCommand cmd = new SqlCommand("insert into tbl_general values photo='" + path + "'", con);
                     //shah.ImageUrl = @"~\images\" + FileUpload1.FileName;
                     cmd.ExecuteNonQuery();

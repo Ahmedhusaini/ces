@@ -43,7 +43,7 @@
         <div class="header-topbar homepage-03">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-5 topbar-left text-left info-text1">                       
+                    <div class="col-md-5 topbar-left text-left info-text1">
                         <div class="email"><a href="javascript:void(0)"><span>www.ces.edu.pk</span></a></div>
                         <div class="hotline"><a href="javascript:void(0)"><i></i><span>| Reshaping Education into Digital World </span></a></div>
                     </div>
@@ -75,11 +75,9 @@
                     <nav class="navigation collapse navbar-collapse">
                         <ul class="nav-links nav navbar-nav">
                             <li class="dropdown active"><a href="studentpanel.aspx" class="main-menu">Home</a></li>
-                            <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Schedules<span class="fa fa-angle-down icons-dropdown"></span></a>
-                                <ul class="dropdown-menu edugate-dropdown-menu-1">
-                                    <%--<li><a href="Syllabus.aspx" class="link-page">Syllabus</a></li>--%>
-                                    <li><a href="Date_sheet.aspx" class="link-page">Date Sheet</a></li>
-                                </ul>
+                            <li class="dropdown">
+                                <a href="Attendance_Student.aspx" class="main-menu">Attendance</a>
+                                        
                             </li>
 
                             <li class="dropdown"><a href="Download_Homework.aspx" class="main-menu">Download HomeWork</a></li>
@@ -90,7 +88,7 @@
                                     <input type="text" placeholder="Search" class="searchbox" />
                                     <button type="submit" class="searchbutton fa fa-search"></button>
                                 </form>
-                            </div>                            
+                            </div>
                         </ul>
                     </nav>
                 </div>

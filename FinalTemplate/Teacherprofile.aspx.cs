@@ -15,7 +15,7 @@ namespace FinalTemplate
     public partial class Teacherprofile : System.Web.UI.Page
     {
         private Database myDatabase = new Database("ces");
-        SqlConnection con = new SqlConnection(@"Data Source=AHMED\SQLEXPRESS;Initial Catalog=ces;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=ABBASI\JAHANGEER;Initial Catalog=ces;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
                 if (Session["userid"] != null)
@@ -57,8 +57,8 @@ namespace FinalTemplate
                 if (FileUpload1.HasFile)
                 {
                     string filename = FileUpload1.FileName;
-                    FileUpload1.PostedFile.SaveAs(Server.MapPath(".") + "//images//" + filename);
-                    string filepath = Server.MapPath(@"~\images\" + filename.ToString());
+                    FileUpload1.PostedFile.SaveAs(Server.MapPath("images/teachers/"+FileUpload1.FileName));
+                    string filepath = Server.MapPath("images/teachers/");
                     string fullfilepath = filepath + filename;
                     string extension = Path.GetExtension(filename);
                     Label1.Text = filepath;
